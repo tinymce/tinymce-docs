@@ -17,9 +17,12 @@ Data flow for a single AI request:
 . The client application requests a JWT from the token endpoint.
 . The client sends a prompt with the JWT to the AI service over HTTPS.
 . The AI service verifies the token, checks per-feature permissions, and forwards the prompt to the configured large language model (LLM).
-. The LLM streams its response back to the client through Server-Sent Events (SSE).
+. The LLM streams its response back to the AI service.
+. The AI service relays the response to the client through Server-Sent Events (SSE).
 
-When used with TinyMCE `tinymceai`, the plugin handles steps 1, 2, and 4 automatically through the `tinymceai_token_provider` callback.
+When used with TinyMCE `tinymceai`, the plugin handles steps 1, 2, and 5 automatically through the `tinymceai_token_provider` callback.
+
+IMPORTANT: The browser connects directly to the AI service — requests do not pass through the application back end. The AI service must be network-reachable from the end-user browser, which means it must have a public URL (or be accessible through a VPN/internal network when deployed on an intranet). Configure xref:tinymceai-on-premises-frameworks.adoc#_cross_origin_requests_to_the_ai_service[CORS] and xref:tinymceai-on-premises-production.adoc#_tls_https[TLS] on the AI service accordingly.
 
 The shared secret (API Secret) never leaves the back end; the editor and the AI service only ever see signed tokens.
 
@@ -64,7 +67,36 @@ The shared secret (API Secret) never leaves the back end; the editor and the AI 
 
 |Horizontal scaling
 |The service is stateless; add replicas behind a load balancer without shared local state.
+
+|OpenAPI specification
+|Published at `/v1/api/doc.json` with interactive documentation at `/docs/`. Auto-generate clients in any language.
 |===
+
+== Credentials
+
+Three credentials are involved in an on-premises deployment. They are distinct and serve different purposes.
+
+[cols="1,1,2,1",options="header"]
+|===
+|Credential |Where it lives |What it does |Required?
+
+|`LICENSE_KEY`
+|AI service container (environment variable)
+|Activates the AI service. A long string provided by the Tiny account representative.
+|Yes — the service refuses to start without it.
+
+|`TINYMCE_API_KEY`
+|Editor page (CDN script URL) or build configuration
+|Authenticates against `cdn.tiny.cloud` when loading TinyMCE from the CDN. This is the short string from the tiny.cloud dashboard.
+|Only when loading TinyMCE from the CDN. Omit for self-hosted editor bundles.
+
+|`license_key` (init option)
+|`tinymce.init({ license_key: 'T8LK:...' })`
+|Activates premium TinyMCE features when using a self-hosted editor bundle (not the CDN).
+|Only for self-hosted editor deployments. Provided by the Tiny account representative.
+|===
+
+NOTE: `LICENSE_KEY` (the AI service license) and `TINYMCE_API_KEY` / `license_key` (the editor license) are different credentials from different sources. Do not interchange them.
 
 == Prerequisites
 

@@ -19,6 +19,13 @@ For general framework setup (installing wrappers, component structure, server-si
 
 The on-premises AI integration adds the options documented below to the standard TinyMCE `init` configuration.
 
+== Token flow
+
+[.text-center]
+image::tinymceai-on-premises/framework-integration-fig-1.svg[alt="Sequence diagram showing editor calling token provider which fetches a JWT from the application backend then passes it to the AI service",width=100%]
+
+The plugin calls the token provider on initialization and again before the cached token expires. The application back end authenticates the browser request through its own session layer, signs an HS256 JWT with the API Secret, and returns it. The plugin then sends the JWT to the AI service with every request.
+
 
 
 == Required editor options
@@ -151,9 +158,38 @@ This pattern avoids cookies entirely and works well for cross-origin setups.
 
 == Cross-origin requests to the AI service
 
-When `tinymceai_service_url` points to a different origin from the page (the common production case), the AI service must return Cross-Origin Resource Sharing (CORS) headers permitting the editor origin. The service reads the `ALLOWED_ORIGINS` environment variable for this.
+In production the editor page and the AI service almost always live on different origins (`\https://app.yourcompany.com` vs `\https://ai.yourcompany.com`). The AI service must respond with CORS headers that permit the editor origin; otherwise the browser blocks every request.
 
-To verify CORS from a terminal:
+=== Configuring `ALLOWED_ORIGINS`
+
+Set the `ALLOWED_ORIGINS` environment variable on the AI service container to a comma-separated list of permitted editor origins (scheme + host + port):
+
+[source,bash]
+----
+-e ALLOWED_ORIGINS='https://app.yourcompany.com,https://staging.yourcompany.com'
+----
+
+[cols="1,3",options="header"]
+|===
+|Behavior |Detail
+
+|Format
+|Comma-separated origins. Each entry must include the scheme (`https://`). Do not include paths or trailing slashes.
+
+|Default when unset
+|The service rejects cross-origin requests (no `Access-Control-Allow-Origin` header). Set this variable for any deployment where the editor is on a different origin.
+
+|Wildcard
+|`*` is accepted but not recommended for production. It allows any origin to call the AI service endpoints.
+
+|Preflight (OPTIONS)
+|The service handles `OPTIONS` preflight requests internally and responds with the appropriate `Access-Control-Allow-Methods` and `Access-Control-Allow-Headers`. No reverse proxy configuration is required for OPTIONS.
+
+|Credentials
+|The service responds with `Access-Control-Allow-Credentials: true` when the requesting origin matches an entry in `ALLOWED_ORIGINS`.
+|===
+
+=== Verifying CORS
 
 [source,bash]
 ----
@@ -164,6 +200,25 @@ curl -i -X OPTIONS https://ai.yourcompany.com/v1/conversations \
 ----
 
 The response should include `Access-Control-Allow-Origin: \https://app.yourcompany.com`. If it shows `*` or no CORS header, update `ALLOWED_ORIGINS` on the AI service container and restart.
+
+=== Common CORS mistakes
+
+[cols="1,2",options="header"]
+|===
+|Mistake |Fix
+
+|Trailing slash in origin (`\https://app.example.com/`)
+|Remove the trailing slash.
+
+|Missing port for non-standard ports (`\https://app.example.com:3000`)
+|Include the port in `ALLOWED_ORIGINS`.
+
+|`ALLOWED_ORIGINS` not set at all
+|All cross-origin requests fail silently. Add the editor origin.
+
+|Reverse proxy stripping `Origin` header
+|Ensure the proxy passes the `Origin` header to the AI service.
+|===
 
 
 

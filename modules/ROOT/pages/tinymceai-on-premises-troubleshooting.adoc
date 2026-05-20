@@ -276,9 +276,11 @@ echo "$PROVIDERS" | jq .
 
 [source,bash]
 ----
-docker compose exec ai-service /bin/sh -c "nc -zv mysql 3306"
-docker compose exec ai-service /bin/sh -c "nc -zv redis 6379"
+docker exec ai-service /bin/sh -c "nc -zv mysql 3306"
+docker exec ai-service /bin/sh -c "nc -zv redis 6379"
 ----
+
+Replace `mysql` and `redis` with the actual hostnames configured in `DATABASE_HOST` and `REDIS_HOST`. If the AI service was started with `docker compose` rather than standalone `docker run`, use `docker compose exec ai-service` instead.
 
 *End-to-end smoke test (token mint through streamed response):*
 

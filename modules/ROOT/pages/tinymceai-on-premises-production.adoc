@@ -3,8 +3,19 @@
 :description: Production deployment guide for the TinyMCE AI on-premises service
 :keywords: AI, on-premises, production, Kubernetes, ECS, scaling
 
+This guide assumes a running Kubernetes cluster, ECS cluster, or Docker/Podman host with the relevant CLI tools (`kubectl`, `aws`, `docker`) configured. For cluster setup, refer to the platform documentation.
 
+== Production readiness checklist
 
+Before deploying to production, confirm each item:
+
+. xref:tinymceai-on-premises-database.adoc[Database and Redis] — provisioned, accessible from the AI service, schema created (PostgreSQL).
+. xref:tinymceai-on-premises-providers.adoc[LLM providers] — `PROVIDERS` configured and verified; `MODELS` defined for the target provider(s).
+. xref:tinymceai-on-premises-jwt.adoc[JWT authentication] — token endpoint deployed, signing with HS256 and the correct API Secret.
+. xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration] — `tinymceai_service_url` and `tinymceai_token_provider` configured; `ALLOWED_ORIGINS` set on the AI service.
+. Container image pulled and registry credentials stored as a secret.
+. Reverse proxy with TLS termination and `proxy_buffering off` for SSE.
+. Environment and access key created through the Management Panel.
 
 == Architecture overview
 
@@ -181,14 +192,7 @@ spec:
       labels:
         app: ai-service
     spec:
-      terminationGracePeriodSeconds: 120
-      topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: topology.kubernetes.io/zone
-          whenUnsatisfiable: DoNotSchedule
-          labelSelector:
-            matchLabels:
-              app: ai-service
+      terminationGracePeriodSeconds: 300
       imagePullSecrets:
         - name: tiny-registry
       containers:
@@ -220,6 +224,9 @@ spec:
                   key: db-password
             - name: DATABASE_DATABASE
               value: "ai_service"
+            # For PostgreSQL: set to "public" or ensure the cs-on-premises schema exists
+            # - name: DATABASE_SCHEMA
+            #   value: "public"
             - name: REDIS_HOST
               value: "redis.tinymce-ai.svc.cluster.local"
             - name: REDIS_PASSWORD
@@ -272,7 +279,9 @@ spec:
 ----
 ====
 
-TIP: For PostgreSQL, change `DATABASE_DRIVER` to `"postgres"`, update `DATABASE_HOST` to the PostgreSQL endpoint, and ensure the `cs-on-premises` schema exists or set `DATABASE_SCHEMA=public`. See xref:tinymceai-on-premises-database.adoc#postgresql-schema-prerequisite[PostgreSQL schema prerequisite].
+TIP: For PostgreSQL, change `DATABASE_DRIVER` to `"postgres"`, update `DATABASE_HOST` to the PostgreSQL endpoint, and add `DATABASE_SCHEMA` set to `"public"` (or ensure the `cs-on-premises` schema exists). See xref:tinymceai-on-premises-database.adoc#postgresql-schema-prerequisite[PostgreSQL schema prerequisite].
+
+NOTE: `terminationGracePeriodSeconds` is set to 300 to match the maximum SSE stream duration. On SIGTERM, the service finishes in-flight SSE streams before shutting down. Set this value equal to or greater than the longest expected AI response time. For multi-zone clusters, add `topologySpreadConstraints` to the pod spec to spread replicas across availability zones. Add a `PodDisruptionBudget` (`minAvailable: 1` or a percentage at scale) to prevent all replicas being evicted simultaneously during node maintenance. These resource values are evaluation defaults; adjust for production workload.
 
 === Service
 
@@ -365,25 +374,6 @@ spec:
 
 NOTE: The AI service is I/O-bound (waiting on upstream LLM responses). CPU-based autoscaling is a safe starting point but may not trigger under high concurrency if CPU remains low. For production, consider supplementing with custom metrics (concurrent SSE streams, request queue depth) through KEDA or the Prometheus Adapter.
 
-=== Pod disruption budget
-
-[source,yaml]
-----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: ai-service-pdb
-  namespace: tinymce-ai
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: ai-service
-----
-
-
-
-
 == AWS ECS / Fargate
 
 === Task definition
@@ -405,7 +395,7 @@ spec:
       "image": "registry.containers.tiny.cloud/ai-service-tiny:latest",
       "portMappings": [{ "containerPort": 8000 }],
       "healthCheck": {
-        "command": ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"],
+        "command": ["CMD-SHELL", "wget -q --spider http://localhost:8000/health || exit 1"],
         "interval": 30,
         "timeout": 5,
         "retries": 3
@@ -414,7 +404,8 @@ spec:
         { "name": "LICENSE_KEY", "valueFrom": "arn:aws:secretsmanager:us-east-1:111122223333:secret:ai-license" },
         { "name": "ENVIRONMENTS_MANAGEMENT_SECRET_KEY", "valueFrom": "arn:aws:secretsmanager:us-east-1:111122223333:secret:ai-mgmt-secret" },
         { "name": "DATABASE_PASSWORD", "valueFrom": "arn:aws:secretsmanager:us-east-1:111122223333:secret:ai-db" },
-        { "name": "PROVIDERS", "valueFrom": "arn:aws:secretsmanager:us-east-1:111122223333:secret:ai-providers" }
+        { "name": "PROVIDERS", "valueFrom": "arn:aws:secretsmanager:us-east-1:111122223333:secret:ai-providers" },
+        { "name": "MODELS", "valueFrom": "arn:aws:secretsmanager:us-east-1:111122223333:secret:ai-models" }
       ],
       "environment": [
         { "name": "DATABASE_DRIVER", "value": "mysql" },
@@ -424,7 +415,8 @@ spec:
         { "name": "REDIS_HOST", "value": "example-elasticache-endpoint.region.cache.amazonaws.com" },
         { "name": "STORAGE_DRIVER", "value": "s3" },
         { "name": "STORAGE_BUCKET", "value": "example-ai-storage-bucket" },
-        { "name": "STORAGE_REGION", "value": "us-east-1" }
+        { "name": "STORAGE_REGION", "value": "us-east-1" },
+        { "name": "ENABLE_METRIC_LOGS", "value": "true" }
       ]
     }
   ]
@@ -433,6 +425,11 @@ spec:
 ====
 
 NOTE: The AI service does not use ECS task role credentials for S3 access. Add `STORAGE_ACCESS_KEY_ID` and `STORAGE_SECRET_ACCESS_KEY` as secrets entries from AWS Secrets Manager.
+
+[IMPORTANT]
+--
+The AI service does not use platform-native credential chains. AWS IRSA, EC2 instance profiles, GCP Workload Identity, and Azure Managed Identity are all ignored. All provider credentials (LLM keys, S3 access keys, Vertex service accounts) must be supplied explicitly as environment variables. This is a known limitation that applies across all deployment targets.
+--
 
 === Infrastructure recommendations
 
@@ -468,37 +465,11 @@ NOTE: The AI service does not use ECS task role credentials for S3 access. Add `
 |Large language model (LLM) API key rotation |Add the new key to the `PROVIDERS` array, restart the service, then revoke the old key after confirming the new one works.
 |===
 
-NOTE: Azure-specific (AKS, Azure Database, Azure Cache) and GCP-specific (GKE, Cloud SQL, Memorystore) deployment guidance is planned. The secrets management, encryption, and observability recommendations above apply across all cloud providers.
+NOTE: The secrets management, encryption, and observability recommendations above apply across all cloud providers including Azure (AKS, Azure Database, Azure Cache) and GCP (GKE, Cloud SQL, Memorystore).
 
 == Rate limiting
 
-The AI service has no built-in rate limiting. Place rate-limit rules in front of the service to prevent a runaway client from consuming LLM provider quota or overloading the database.
-
-=== nginx
-
-[source,nginx]
-----
-limit_req_zone $http_authorization zone=ai_jwt:10m rate=10r/s;
-
-server {
-    location /v1/ {
-        limit_req zone=ai_jwt burst=20 nodelay;
-        proxy_pass http://ai-service:8000;
-        proxy_buffering off;
-        proxy_read_timeout 300s;
-    }
-}
-----
-
-=== AWS ALB / WAF
-
-ALB does not rate limit natively. Use AWS WAF with a rate-based rule keyed on the `Authorization` header.
-
-=== Cloudflare
-
-Use Cloudflare Rate Limiting with a custom rule keyed on the `Authorization` header for the AI service hostname.
-
-For per-tenant rate limiting, key on the `aud` claim by parsing it in the reverse proxy, or gate token issuance per tenant per minute at the token endpoint.
+The AI service has no built-in rate limiting. Place rate-limit rules (keyed on the `Authorization` header or the JWT `sub` claim) in front of the service using the reverse proxy, WAF, or CDN. For per-tenant rate limiting, key on the `aud` claim by parsing it in the reverse proxy, or gate token issuance per tenant per minute at the token endpoint. Refer to the platform documentation for implementation details (nginx `limit_req_zone`, AWS WAF rate-based rules, Cloudflare Rate Limiting).
 
 
 == Observability
@@ -521,7 +492,7 @@ Set the `ENABLE_METRIC_LOGS` environment variable to enable request-level JSON l
 -e ENABLE_METRIC_LOGS='true'
 ----
 
-When enabled, the service writes a structured JSON entry for each request. Key fields include the request duration, HTTP status code, and outcome status. These entries are suitable for ingestion into any log aggregator that supports JSON parsing.
+When enabled, the service writes a structured JSON entry for each request. Key fields include the request duration and HTTP status code. These entries are suitable for ingestion into any log aggregator that supports JSON parsing.
 
 .Example metric log entry
 [source,json]
@@ -573,36 +544,13 @@ Langfuse provides AI-specific observability: token usage, latency per LLM call, 
 |`LANGFUSE_DEBUG` |No |- |Verbose Langfuse logging
 |===
 
-Langfuse also requires `LLM_TELEMETRY_ENABLED=true` and a valid `OTEL_EXPORTER_OTLP_TRACES_ENDPOINT`.
+Langfuse also requires `LLM_TELEMETRY_ENABLED=true`. If the service version uses the OTLP pipeline for Langfuse export, a valid `OTEL_EXPORTER_OTLP_TRACES_ENDPOINT` is also required; check the release notes for the deployed version.
 
 OpenTelemetry and Langfuse can run at the same time. The service emits to both without conflict.
 
 === Distributed logging
 
-For production multi-instance deployments, ship container logs to a central aggregator.
-
-[cols="1,3",options="header"]
-|===
-|Platform |Log driver / approach
-|AWS |CloudWatch Logs through the `awslogs` driver, or Fluent Bit DaemonSet on EKS
-|GCP |Cloud Logging (automatic on GKE), or Fluent Bit
-|Azure |Azure Monitor (automatic on Azure Container Apps and AKS)
-|Self-hosted (ELK) |Fluent Bit or Filebeat to Elasticsearch {plus} Kibana
-|Self-hosted (Loki) |Fluent Bit or Promtail to Grafana Loki
-|Fluentd |Use the Docker fluentd log driver
-|===
-
-.Fluentd log driver example
-[source,bash]
-----
-docker run ... \
-  --log-driver=fluentd \
-  --log-opt fluentd-address=localhost:24224 \
-  --log-opt tag=ai-service \
-  ...
-----
-
-The metric logs produced by the `ENABLE_METRIC_LOGS` option are already structured JSON and parse cleanly in any aggregator.
+For production multi-instance deployments, ship container logs to the existing log aggregator. The metric logs produced by the `ENABLE_METRIC_LOGS` option are already structured JSON and parse cleanly in any pipeline. Refer to the platform documentation for the appropriate log driver or DaemonSet configuration (CloudWatch, Fluent Bit, Promtail, Filebeat, or the Docker fluentd log driver).
 
 === Recommended monitoring
 

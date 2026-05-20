@@ -210,11 +210,13 @@ Each example reads `AI_ENV_ID` and `AI_API_SECRET` from environment variables, a
 .Node.js (Express + jsonwebtoken)
 [%collapsible]
 ====
+.Install dependencies
 [source,bash]
 ----
 npm install express jsonwebtoken
 ----
 
+.Token endpoint
 [source,javascript]
 ----
 const express = require('express');
@@ -265,11 +267,13 @@ app.listen(3000);
 .Python (Django + PyJWT)
 [%collapsible]
 ====
+.Install dependencies
 [source,bash]
 ----
 pip install PyJWT
 ----
 
+.Token endpoint
 [source,python]
 ----
 import os
@@ -330,11 +334,13 @@ urlpatterns = [
 .Python (Flask + PyJWT)
 [%collapsible]
 ====
+.Install dependencies
 [source,bash]
 ----
 pip install Flask PyJWT
 ----
 
+.Token endpoint
 [source,python]
 ----
 import os
@@ -383,11 +389,13 @@ def ai_token():
 .PHP (Laravel {plus} firebase/php-jwt)
 [%collapsible]
 ====
+.Install dependencies
 [source,bash]
 ----
 composer require firebase/php-jwt
 ----
 
+.Token endpoint
 [source,php]
 ----
 <?php
@@ -506,11 +514,13 @@ post '/api/ai-token', to: 'ai_tokens#create'
 .C# (.NET {plus} System.IdentityModel.Tokens.Jwt)
 [%collapsible]
 ====
+.Install dependencies
 [source,bash]
 ----
 dotnet add package System.IdentityModel.Tokens.Jwt
 ----
 
+.Token endpoint
 [source,c#]
 ----
 using System;
@@ -574,11 +584,13 @@ public class AiTokenController : ControllerBase
 .Go (golang-jwt/jwt/v5)
 [%collapsible]
 ====
+.Install dependencies
 [source,bash]
 ----
 go get github.com/golang-jwt/jwt/v5
 ----
 
+.Token endpoint
 [source,go]
 ----
 package main
@@ -700,7 +712,7 @@ public class AiTokenController {
         Instant now = Instant.now();
 
         String token = Jwts.builder()
-                .audience().add(envId).and()
+                .claim("aud", envId)
                 .issuedAt(java.util.Date.from(now))
                 .expiration(java.util.Date.from(now.plusSeconds(3600)))
                 .subject(user.getUsername())

@@ -10,7 +10,7 @@ Alphabetized. Required-ness is marked relative to a minimum working deployment.
 [cols=",,,",options="header",]
 |===
 |Variable |Required |Default |Description
-|`ALLOWED_ORIGINS` |Recommended |- |Comma-separated list of Cross-Origin Resource Sharing (CORS)-allowed editor origins. Required for cross-origin editor deployments.
+|`ALLOWED_ORIGINS` |Recommended |- |Comma-separated list of CORS-allowed editor origins. Required for cross-origin editor deployments. See xref:tinymceai-on-premises-frameworks.adoc#_cross_origin_requests_to_the_ai_service[Cross-origin requests] for format, wildcards, and verification.
 |`DATABASE_DATABASE` |Yes |- |Database name (`ai_service` is the convention).
 |`DATABASE_DRIVER` |Yes |- |`mysql` or `postgres`.
 |`DATABASE_HOST` |Yes |- |Database hostname or IP.

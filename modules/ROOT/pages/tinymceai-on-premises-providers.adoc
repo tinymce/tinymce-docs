@@ -62,6 +62,22 @@ The diagram reflects three stacked layers: *how to authenticate* with each upstr
 [[models-required]]
 == Defining the model list
 
+=== Default model behavior (`agent-1`)
+
+When the AI service starts without an explicit `MODELS` environment variable, it exposes a single built-in placeholder model called `agent-1`. This model exists so that OpenAI, Anthropic, and Google direct providers can route requests without explicit configuration — the service has built-in routing knowledge for those three providers.
+
+However, the default `agent-1` model has important limitations:
+
+* The `/v1/models/1` endpoint reports `agent-1` with `allowed: false` unless the JWT includes the `ai:models:agent` permission.
+* The TinyMCE editor model picker does not display real model names — it shows only the generic `agent-1` entry.
+* Azure, Bedrock, Vertex, and openai-compatible providers do not work at all without `MODELS`.
+
+For production deployments, always set `MODELS` explicitly regardless of provider type. This ensures the editor model picker displays meaningful names, the correct provider handles each request, and JWT permissions can reference specific model IDs.
+
+The `ai:models:agent` permission in the JWT grants access to the built-in `agent-1` model. When adding custom models through `MODELS`, also add `ai:models:<provider>:<model-id>` permissions to expose each model to users. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication] for permission syntax.
+
+=== When `MODELS` is required
+
 `MODELS` is required for Azure, Bedrock, Vertex, and openai-compatible providers. Without it, these providers expose nothing usable to clients.
 
 For OpenAI, Anthropic, and Google direct, the service has built-in routing knowledge that allows requests to reach those providers without an explicit `MODELS` definition. However, the `/v1/models/1` endpoint still returns only a disabled `agent-1` placeholder, and the editor model picker will not display real model names. For a production deployment, always define `MODELS` explicitly regardless of provider type.

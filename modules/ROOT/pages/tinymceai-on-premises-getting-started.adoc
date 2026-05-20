@@ -3,7 +3,15 @@
 :description: Five-minute Docker Compose quick start for TinyMCE AI on-premises service
 :keywords: AI, on-premises, getting started, docker, quick start
 
-This section produces a fully working setup (AI service, database, Redis, token server, and a browser editor) in roughly five minutes on any machine with Docker. This quick start validates the stack components before designing a production deployment. Production engineers should still review this section to understand the conceptual flow before continuing to xref:tinymceai-on-premises-production.adoc[the Production Deployment Guide].
+This guide sets up a fully working local stack in roughly five minutes on any machine with Docker:
+
+* **MySQL 8.0** — conversation history and metadata
+* **Redis** — caching and session state
+* **TinyMCE AI service** — the on-premises AI back end
+* **A minimal token server** (Node.js) — signs JWTs for the editor
+* **A browser page with TinyMCE** — validates the end-to-end flow
+
+The quick start is designed to validate the stack components before moving to a production deployment. Production engineers should still review this section to understand the conceptual flow before continuing to xref:tinymceai-on-premises-production.adoc[the Production Deployment Guide].
 
 == Five-minute demo with Docker Compose
 
@@ -42,9 +50,11 @@ Replace `TINY_REGISTRY_USERNAME` with the username supplied by the Tiny account 
 docker pull registry.containers.tiny.cloud/ai-service-tiny:latest
 ----
 
-For Podman, substitute `podman pull`. For production, pin a specific version tag (for example `:5.1.0`) rather than `:latest`.
+For Podman, substitute `podman pull`. For production, pin a specific version tag (for example `:5.1.0`) rather than `:latest` to ensure repeatable deployments and avoid unexpected breaking changes.
 
-=== Create `docker-compose.yml`
+=== Create `docker-compose.yml` (data layer)
+
+This compose file starts the data layer services (MySQL and Redis) that the AI service depends on. The AI service itself is started separately in the next step, which allows upgrading or reconfiguring it independently.
 
 Create the file with exactly the contents below. Indentation is two spaces, never tabs.
 
@@ -80,7 +90,7 @@ volumes:
   mysql_data:
 ----
 
-TIP: Pin `mysql:8.0`, not `mysql:8`. The `:8` tag points to the latest MySQL, which is incompatible with the AI service. See xref:tinymceai-on-premises-database.adoc#mysql-version-pinning[MySQL version pinning] for details.
+TIP: Pin `mysql:8.0`, not `mysql:8`. The `:8` tag resolves to the latest MySQL minor version, which may use authentication plugins or SQL modes incompatible with the AI service schema migrations. See xref:tinymceai-on-premises-database.adoc#mysql-version-pinning[MySQL version pinning] for details.
 
 PostgreSQL is equally supported. See xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage] for an equivalent compose file. Review the xref:tinymceai-on-premises-database.adoc#postgresql-schema-prerequisite[PostgreSQL schema prerequisite] before switching.
 
@@ -102,26 +112,29 @@ Docker Desktop (macOS, Windows) and Podman 4{plus} auto-inject this alias. Nativ
 [source,bash]
 ----
 # --- Required: provided by Tiny ---
-LICENSE_KEY=PASTE_SUPPLIED_LICENSE_KEY_HERE
-TINYMCE_API_KEY=PASTE_TINYMCE_API_KEY_HERE
+LICENSE_KEY=<paste-license-key-here>
+
+# --- Optional: only required when loading TinyMCE from cdn.tiny.cloud ---
+# Omit for self-hosted editor bundles.
+TINYMCE_API_KEY=<paste-api-key-here>
 
 # --- Required: strong secret used to log into the Management Panel ---
-MANAGEMENT_SECRET=REPLACE_WITH_STRONG_SECRET
+MANAGEMENT_SECRET=<replace-with-strong-secret>
 
 # --- Required: database password (must match docker-compose.yml) ---
-DB_PASSWORD=changeme
+DB_PASSWORD=<replace-with-db-password>
 
 # --- Required: at least one LLM provider key ---
-OPENAI_API_KEY=sk-proj-PASTE_OPENAI_KEY_HERE
-# ANTHROPIC_API_KEY=sk-ant-PASTE_ANTHROPIC_KEY_HERE
-# GOOGLE_API_KEY=AIza-PASTE_GOOGLE_KEY_HERE
+OPENAI_API_KEY=<paste-openai-key-here>
+# ANTHROPIC_API_KEY=<paste-anthropic-key-here>
+# GOOGLE_API_KEY=<paste-google-key-here>
 
 # --- Filled in after creating an environment (Step 7). Used by the token server, not the AI service. ---
 AI_ENV_ID=
 AI_API_SECRET=
 ----
 
-IMPORTANT: `LICENSE_KEY` and `TINYMCE_API_KEY` are different credentials. `LICENSE_KEY` is the long string from the account representative. `TINYMCE_API_KEY` is the short string from the tiny.cloud dashboard.
+IMPORTANT: `LICENSE_KEY` and `TINYMCE_API_KEY` are different credentials. `LICENSE_KEY` is the long string from the account representative that activates the AI service. `TINYMCE_API_KEY` is the short string from the tiny.cloud dashboard used to load TinyMCE from the CDN — it is not required for self-hosted editor bundles. See the xref:tinymceai-on-premises.adoc#_credentials[Credentials] section on the Overview page.
 
 === Start MySQL and Redis
 
@@ -137,7 +150,7 @@ Wait ~15 seconds for MySQL to initialize, then verify:
 docker compose ps
 ----
 
-Both containers should report `healthy` in the STATUS column. If MySQL still shows `starting`, wait another 10 seconds and re-run.
+Both data layer containers (MySQL and Redis) should report `healthy` in the STATUS column. If MySQL still shows `starting`, wait another 10 seconds and re-run.
 
 === Launch the AI service
 

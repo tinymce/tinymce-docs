@@ -1,20 +1,21 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ECECFF', 'primaryBorderColor': '#9370DB', 'lineColor': '#333333', 'edgeLabelBackground': '#e8e8e8', 'fontSize': '14px' }, 'flowchart': { 'nodeSpacing': 30, 'rankSpacing': 60, 'wrappingWidth': 200 }}}%%
 flowchart LR
     subgraph JWT["JWT auth.ai.permissions"]
-        K1["ai:models:my-openai-key:<br>gpt-4.1"]
-        K2["ai:models:my-bedrock:<br>us.anthropic.claude-sonnet-4-..."]
-        K3["ai:models:my-ollama:<br>qwen3:0.6b"]
+        K1["ai:models:my-openai-key:\ngpt-4.1"]
+        K2["ai:models:my-bedrock:\nclaude-sonnet-4"]
+        K3["ai:models:my-ollama:\nqwen3:0.6b"]
     end
 
     subgraph MD["MODELS env var · JSON array"]
-        M1["gpt-4.1<br>provider: my-openai-key"]
-        M2["us.anthropic.claude-sonnet-4-...<br>provider: my-bedrock"]
-        M3["qwen3:0.6b<br>provider: my-ollama"]
+        M1["gpt-4.1\nprovider: my-openai-key"]
+        M2["claude-sonnet-4\nprovider: my-bedrock"]
+        M3["qwen3:0.6b\nprovider: my-ollama"]
     end
 
     subgraph PR["PROVIDERS env var · JSON object"]
-        P1["my-openai-key<br>type: openai"]
-        P2["my-bedrock<br>type: bedrock"]
-        P3["my-ollama<br>type: openai-compatible"]
+        P1["my-openai-key\ntype: openai"]
+        P2["my-bedrock\ntype: bedrock"]
+        P3["my-ollama\ntype: openai-compatible"]
     end
 
     K1 -->|"gates access"| M1
@@ -25,6 +26,6 @@ flowchart LR
     M2 -->|"provider key"| P2
     M3 -->|"provider key"| P3
 
-    P1 ==> LLM1["OpenAI API"]
-    P2 ==> LLM2["AWS Bedrock"]
-    P3 ==> LLM3["Local Ollama"]
+    P1 --> LLM1["OpenAI API"]
+    P2 --> LLM2["AWS Bedrock"]
+    P3 --> LLM3["Local Ollama"]

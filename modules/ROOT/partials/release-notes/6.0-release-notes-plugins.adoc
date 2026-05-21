@@ -98,7 +98,7 @@ As of {productname} 6.0, `autoresize_on_init` has been removed from the `autores
 [[changed-plugins-media]]
 === Media
 
-In {productname} 5.x, the `media` plugin used https://tiny.cloud/docs/api/tinymce.html/tinymce.html.saxparser/[`SaxParser`] to validate elements for parsing.
+In {productname} 5.x, the `media` plugin used https://www.tiny.cloud/docs/api/tinymce.html/tinymce.html.saxparser/[`SaxParser`] to validate elements for parsing.
 
 As of {productname} 6.0, `SaxParser` is no longer used. Another {productname} public API — `DomParser` — is used instead.
 

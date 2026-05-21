@@ -815,9 +815,9 @@ Note the duplicated material in the post-drag editor state example.
 === Using the Media plugin unexpectedly changed `<script>` tags in the editor body to `<image>` tags
 // TINY-10007
 
-As part of the {productname} 5.10 release, the `https://tiny.cloud/docs/plugins/opensource/media/#media_scripts)[media_scripts]` option was deprecated. And, as of the {productname} 6.0 release, this option was removed.
+As part of the {productname} 5.10 release, the `https://www.tiny.cloud/docs/plugins/opensource/media/#media_scripts)[media_scripts]` option was deprecated. And, as of the {productname} 6.0 release, this option was removed.
 
-When the setting was available, it was used to allow some script tags, with specified source URLs, to have some of their properties edited in the https://tiny.cloud/docs/plugins/opensource/media/[*Media*] plugin’s dialog.
+When the setting was available, it was used to allow some script tags, with specified source URLs, to have some of their properties edited in the https://www.tiny.cloud/docs/plugins/opensource/media/[*Media*] plugin’s dialog.
 
 And, while the `media_scripts` option was removed, the logic that allowed the plugin to edit properties in some script tags was not.
 

@@ -665,12 +665,11 @@ IMPORTANT: *Region mismatch:* set `location` to a region that hosts the model. *
 
 == OpenAI-compatible (Ollama, vLLM, LM Studio, and similar)
 
-For any HTTP API that implements the OpenAI Chat Completions interface, including self-hosted runtimes and commercial aggregators (OpenRouter, Together, Groq, Fireworks). The `baseUrl` *must* include the `/v1` suffix.
+Use this provider type for any runtime or aggregator that is not listed as a native provider above but exposes an OpenAI-compatible `/v1/chat/completions` endpoint — including Ollama, vLLM, LM Studio, OpenRouter, Together, Groq, and Fireworks.
 
-.Configuration details
-[%collapsible]
-====
-*JSON shape:*
+The `baseUrl` *must* include the `/v1` suffix.
+
+=== Configuration
 
 [source,json]
 ----
@@ -684,9 +683,7 @@ For any HTTP API that implements the OpenAI Chat Completions interface, includin
 }
 ----
 
-*Fields:*
-
-[cols=",,",options="header",]
+[cols="1,1,3",options="header"]
 |===
 |Field |Required |Notes
 |`type` |Yes |Literal `"openai-compatible"`
@@ -697,7 +694,7 @@ For any HTTP API that implements the OpenAI Chat Completions interface, includin
 
 NOTE: File uploads through this adapter are limited to `image/*` MIME types. PDFs and Office documents are not forwarded. To work with non-image files, route through an OpenAI, Anthropic, or Bedrock provider instead.
 
-*Ollama-specific setup:*
+=== Ollama networking
 
 Ollama listens on `127.0.0.1:11434` by default, which is unreachable from inside a Docker container. Bind to all interfaces:
 
@@ -749,6 +746,7 @@ PARAMETER stop "<|im_start|>"
 ----
 
 The exact template depends on the base model. Check the model card for the recommended chat template. Verify tool support with `ollama show <model>` before connecting to the AI service.
+====
 
 The reasoning toggle (`capabilities.reasoning: true`) is cosmetic for Ollama-backed models; the openai-compatible adapter does not translate it to the native Ollama API.
 
@@ -761,7 +759,7 @@ Large self-hosted models on consumer hardware can exceed the default 180-second 
 -e LLM_TIMEOUT_MS='600000'
 ----
 
-=== Example -- Ollama
+=== Example — Ollama
 
 [source,bash]
 ----
@@ -781,61 +779,67 @@ Large self-hosted models on consumer hardware can exceed the default 180-second 
     "features": ["conversations", "reviews", "actions"]
   }
 ]'
-
--e LLM_TIMEOUT_MS='600000'
 ----
 
-=== Example -- vLLM
+=== Example — vLLM and LM Studio
 
-[source,bash]
+The configuration pattern is identical to Ollama — only the `baseUrl`, provider key, and model ID differ.
+
+[cols="1,2,2",options="header"]
+|===
+|Runtime |`PROVIDERS` entry |`MODELS` entry
+
+|vLLM
+a|[source,json]
 ----
--e PROVIDERS='{
+{
   "vllm": {
     "type": "openai-compatible",
     "baseUrl": "http://vllm-host.internal:8001/v1",
     "apiKeys": ["YOUR_VLLM_TOKEN"]
   }
-}'
-
--e MODELS='[
-  {
-    "id": "meta-llama/Llama-3.1-8B-Instruct",
-    "provider": "vllm",
-    "name": "Llama 3.1 8B (vLLM)",
-    "description": "Self-hosted Llama 3.1 8B served through vLLM",
-    "features": ["conversations", "reviews", "actions"]
-  }
-]'
+}
+----
+a|[source,json]
+----
+{
+  "id": "meta-llama/Llama-3.1-8B-Instruct",
+  "provider": "vllm",
+  "name": "Llama 3.1 8B (vLLM)",
+  "features": ["conversations", "reviews", "actions"]
+}
 ----
 
-=== Example -- LM Studio
-
-[source,bash]
+|LM Studio
+a|[source,json]
 ----
--e PROVIDERS='{
+{
   "lmstudio": {
     "type": "openai-compatible",
     "baseUrl": "http://host.docker.internal:1234/v1"
   }
-}'
-
--e MODELS='[
-  {
-    "id": "lmstudio-community/Meta-Llama-3.1-8B-Instruct-GGUF",
-    "provider": "lmstudio",
-    "name": "Llama 3.1 8B (LM Studio)",
-    "description": "Local LM Studio runtime",
-    "features": ["conversations", "actions"]
-  }
-]'
+}
 ----
+a|[source,json]
+----
+{
+  "id": "lmstudio-community/Meta-Llama-3.1-8B-Instruct-GGUF",
+  "provider": "lmstudio",
+  "name": "Llama 3.1 8B (LM Studio)",
+  "features": ["conversations", "actions"]
+}
+----
+|===
 
 === Verify
 
+After starting the AI service with an openai-compatible provider configured, confirm it can reach the runtime:
+
 [source,bash]
 ----
-curl -s http://host.docker.internal:11434/v1/chat/completions \
+curl -s http://localhost:8000/v1/chat/completions \
   -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <your-jwt-token>" \
   -d '{
     "model": "qwen3:0.6b",
     "messages": [{"role":"user","content":"Say hello in five words."}],
@@ -843,7 +847,7 @@ curl -s http://host.docker.internal:11434/v1/chat/completions \
   }'
 ----
 
-When the `curl` call returns a chat completion, the AI service can use the same endpoint.
+A successful response confirms the AI service can forward requests to the local runtime.
 
 
 

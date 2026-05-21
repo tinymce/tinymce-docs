@@ -3,8 +3,13 @@
 :description: Database, Redis, and file storage setup for the TinyMCE AI On-Premises service
 :keywords: AI, on-premises, database, MySQL, PostgreSQL, Redis, Docker, Podman, file storage, S3, Azure Blob
 
-This page covers the data layer: the SQL database, Redis, and file storage.
-For container runtimes, reverse proxies, Transport Layer Security (TLS), Kubernetes, and ECS deployment, see the xref:tinymceai-on-premises-production.adoc[Production deployment guide].
+This page covers the *data layer*: the SQL database, Redis, and file storage. These components must be running and accessible before the AI service container can start — the service connects to them on boot and will not proceed without them.
+
+* *SQL database* — stores persistent data such as configurations, conversations, files, and documents.
+* *Redis* — handles temporary data and inter-instance communication for scaling. When multiple application instances are running, Redis ensures that data is shared correctly across all of them.
+* *File storage* — stores uploaded files and documents.
+
+Configure the data layer first, then proceed to xref:tinymceai-on-premises-providers.adoc[LLM providers] and xref:tinymceai-on-premises-jwt.adoc[JWT authentication]. For container runtimes, reverse proxies, Transport Layer Security (TLS), Kubernetes, and ECS deployment, see the xref:tinymceai-on-premises-production.adoc[Production deployment guide].
 
 == Supported versions
 
@@ -52,7 +57,7 @@ All paths produce the same end state: a running database the AI service can conn
 [[postgresql-schema-prerequisite]]
 == PostgreSQL schema prerequisite
 
-The AI service expects a schema named `cs-on-premises` (with a hyphen). If that schema does not exist, the container crashes on first boot with:
+The AI service expects a schema named `cs-on-premises` (with hyphens). If that schema does not exist, the container crashes on first boot with:
 
 ....
 error: schema "cs-on-premises" does not exist
@@ -79,14 +84,16 @@ Set the `DATABASE_SCHEMA` environment variable on the AI service container:
 DATABASE_SCHEMA=public
 ....
 
-This bypasses the hyphenated schema entirely.
-
-NOTE: MySQL does not have this issue. The database itself is the namespace, set through `DATABASE_DATABASE`.
+This bypasses the hyphenated schema entirely. MySQL deployments do not require this step — the database name (`DATABASE_DATABASE`) serves as the namespace.
 
 
+
+== Version pinning
+
+TIP: Pin specific major versions for all data layer images (`mysql:8.0`, `postgres:16`, `redis:7`). Floating tags like `:latest` or `:8` can introduce breaking changes during routine image pulls.
 
 [[mysql-version-pinning]]
-== MySQL version pinning
+=== MySQL
 
 Do *not* use `mysql:8`. That tag now floats to the latest MySQL, which removes the `default-authentication-plugin=mysql_native_password` startup flag the AI service relies on. The container crashloops with:
 
@@ -96,8 +103,6 @@ Do *not* use `mysql:8`. That tag now floats to the latest MySQL, which removes t
 ....
 
 Pin to `mysql:8.0` in every manifest: `docker run`, Docker Compose, Kubernetes, Helm, ECS. Running newer MySQL versions with workarounds (removing the flag and switching to `caching_sha2_password`) is not a supported configuration.
-
-TIP: The same principle applies to PostgreSQL. Pin `postgres:16` rather than `postgres:latest`.
 
 
 
@@ -131,10 +136,12 @@ GRANT ALL PRIVILEGES ON ai_service.* TO 'ai_service'@'%';
 
 [NOTE]
 --
-Some builds report false-positive "Not enough permissions to access database" errors even with `ALL PRIVILEGES`. If this occurs, grant the privileges globally rather than per-database, or use the MySQL `root` user for development.
+Some versions of the AI service image report false-positive "Not enough permissions to access database" errors even with `ALL PRIVILEGES`. If this occurs, grant the privileges globally rather than per-database, or use the MySQL `root` user for development.
 --
 
 === PostgreSQL
+
+If `DATABASE_SCHEMA=public` was chosen (see <<postgresql-schema-prerequisite>>), substitute `public` for `"cs-on-premises"` in each statement below.
 
 [source,sql]
 ----
@@ -160,11 +167,11 @@ GRANT ALL ON SCHEMA "cs-on-premises" TO ai_service;
 ----
 ====
 
-If `DATABASE_SCHEMA=public` was chosen, substitute `public` for `"cs-on-premises"` in each grant statement.
-
 
 
 == Database setup
+
+The sections below provide ready-to-use configuration for each database engine. Use the Docker Compose files for local evaluation; for production, provision managed database services (Amazon RDS, Azure Database, Cloud SQL) and pass the connection details as environment variables (see <<_connecting_the_ai_service>>).
 
 === Docker Compose (recommended for evaluation)
 
@@ -243,7 +250,7 @@ volumes:
 ----
 ====
 
-After `docker compose up -d`, create the PostgreSQL schema (if not using `DATABASE_SCHEMA=public`):
+If using PostgreSQL and not using `DATABASE_SCHEMA=public`, after `docker compose up -d`, create the schema:
 
 [source,bash]
 ----
@@ -251,7 +258,9 @@ docker compose exec postgres psql -U ai_service -d ai_service \
   -c 'CREATE SCHEMA "cs-on-premises";'
 ----
 
-=== Docker single container
+=== Docker single container (without Compose)
+
+Use these `docker run` commands when Docker Compose is not available or when integrating into existing orchestration scripts.
 
 .MySQL
 [%collapsible]
@@ -431,7 +440,7 @@ DATABASE_SSL_CA=/certs/server-ca.pem
 
 Mount the certificate file into the container and reference the path in `DATABASE_SSL_CA`. Download the CA bundle from the cloud provider documentation.
 
-NOTE: `DATABASE_SSL_CERT` and `DATABASE_SSL_KEY` are required only for mutual TLS (mTLS). Most managed database services require only the CA certificate for server verification.
+NOTE: Most managed database services require only the CA certificate (`DATABASE_SSL_CA`) for server verification. `DATABASE_SSL_CERT` and `DATABASE_SSL_KEY` are additionally required only for mutual TLS (mTLS).
 
 [WARNING]
 --
@@ -474,7 +483,7 @@ Every AI service instance must reach Redis. Redis holds session coordination, Se
 
 === Setup
 
-Redis is typically included in the Docker Compose file alongside the database (see the compose examples above). For standalone setup:
+When using Docker Compose files, Redis is typically included alongside the database (see the compose examples above). For standalone setup:
 
 [source,bash]
 ----

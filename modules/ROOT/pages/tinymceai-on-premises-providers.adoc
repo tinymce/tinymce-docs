@@ -6,7 +6,15 @@
 
 
 
-The `PROVIDERS` environment variable tells the AI service how to reach the configured large language model (LLM) provider. The `MODELS` environment variable tells the service which models are exposed to clients and which features each model supports. This page documents every supported `type`, every required field, and every known production issue for both variables.
+This page configures *how the AI service reaches LLM providers* and *which models are exposed to clients*. It sits between the xref:tinymceai-on-premises-database.adoc[data layer setup] (which must be complete first) and xref:tinymceai-on-premises-jwt.adoc[JWT authentication] (which gates per-user access to the models configured here). The environment variables documented below are set on the AI service container — in a `docker run` command, a Kubernetes Deployment manifest, or an ECS task definition.
+
+Two environment variables and one JWT claim control provider and model configuration:
+
+* `PROVIDERS` — tells the AI service how to authenticate with each LLM provider API.
+* `MODELS` — tells the service which models to expose to clients and which features each model supports.
+* `auth.ai.permissions` (JWT claim) — gates per-user access to individual models.
+
+This page documents every supported provider `type`, every required field, and every known production issue for both variables.
 
 Start with the xref:tinymceai-on-premises-getting-started.adoc[Getting started guide] if the AI service container is not yet running. The following sections assume a running `ai-service` container.
 

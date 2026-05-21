@@ -1,0 +1,23 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ECECFF', 'primaryBorderColor': '#9370DB', 'lineColor': '#333333', 'edgeLabelBackground': '#e8e8e8', 'fontSize': '16px' }, 'flowchart': { 'nodeSpacing': 40, 'rankSpacing': 80 }}}%%
+flowchart LR
+    subgraph Client["Client layer"]
+        Token["Token endpoint\n(back end)"]
+        App["TinyMCE editor\n(browser)"]
+    end
+
+    subgraph Service["Application layer"]
+        AI["AI service\n(container)"]
+    end
+
+    subgraph Data["Data layer"]
+        DB[("Database\n+ Redis\n+ Storage")]
+    end
+
+    LLM["LLM provider"]
+
+    Token -->|"1. signed JWT"| App
+    App -->|"2. prompt + JWT"| AI
+    AI -->|"5. SSE stream"| App
+    AI -->|"3. forward"| LLM
+    LLM -->|"4. stream"| AI
+    AI --- DB

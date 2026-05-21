@@ -9,8 +9,19 @@ The service ships as a single Open Container Initiative (OCI) container image (`
 
 == Architecture
 
+The infrastructure consists of three layers:
+
+* The *client layer* runs in the browser (TinyMCE editor with the `tinymceai` plugin) and in the application back end (token endpoint that signs JWTs).
+* The *application layer* runs the AI service container and communicates with LLM providers to process AI requests. It may consist of one or more instances behind a load balancer (round-robin recommended). Each instance runs the same stateless container image.
+* The *data layer* consists of a SQL database, a Redis instance, and file storage:
+** *SQL database* — stores persistent data: configurations, conversations, files, and documents.
+** *Redis* — handles temporary data and inter-instance communication for scaling. When multiple instances are running, Redis ensures data is shared correctly across all of them.
+** *File storage* — stores uploaded files and documents (S3, Azure Blob, filesystem, or the database itself).
+
 [.text-center]
-image::tinymceai-on-premises/overview-fig-1.svg[alt="High-level architecture showing client token endpoint AI service LLM provider and data layer",width=100%]
+image::tinymceai-on-premises/overview-fig-2.svg[alt="Deployment architecture showing data layer, application layer, client layer, and LLM provider connections",width=100%]
+
+=== Data flow
 
 Data flow for a single AI request:
 

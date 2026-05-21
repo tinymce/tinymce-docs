@@ -244,7 +244,7 @@ AI_API_SECRET=PASTE_API_SECRET_HERE
 
 [IMPORTANT]
 --
-Always create environments through the Management Panel UI. Environments created through the raw Management API are not fully registered and cause `invalid-jwt-payload` or `Environment not found` errors. See the xref:tinymceai-on-premises-jwt.adoc[JWT authentication] guide for details on environment and access key management.
+Always create environments through the Management Panel UI. See the xref:tinymceai-on-premises-jwt.adoc[JWT authentication] guide for details on environment and access key management.
 --
 
 === Create the token server
@@ -370,9 +370,12 @@ The TinyMCE AI on-premises service is now running.
 
 After completing the quick start, exercise the pipeline end-to-end from the command line.
 
+=== Step 1: Health check
+
+Confirms the AI service container is running and connected to the database and Redis.
+
 [source,bash]
 ----
-# 1. Health check
 curl http://localhost:8000/health
 ----
 
@@ -383,9 +386,12 @@ Expected:
 {"serviceName":"on-premises-http","uptime":12.345}
 ----
 
+=== Step 2: Generate a token
+
+Confirms the token server can sign a valid JWT using the API Secret and Environment ID.
+
 [source,bash]
 ----
-# 2. Generate a token
 curl -s -X POST http://localhost:3000/api/ai-token | python3 -m json.tool
 ----
 
@@ -398,9 +404,12 @@ Expected:
 }
 ----
 
+=== Step 3: Create a conversation and send a message
+
+Confirms the full chain: JWT verification, permissions, environment registration, LLM provider authentication, and SSE streaming.
+
 [source,bash]
 ----
-# 3. Create a conversation and send a message
 TOKEN=$(curl -s -X POST http://localhost:3000/api/ai-token | python3 -c "import sys,json;print(json.load(sys.stdin)['token'])")
 
 curl -s -X POST http://localhost:8000/v1/conversations \

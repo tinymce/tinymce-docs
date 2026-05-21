@@ -5,11 +5,11 @@
 
 This guide sets up a fully working local stack in roughly five minutes on any machine with Docker:
 
-* **MySQL 8.0** — conversation history and metadata
-* **Redis** — caching and session state
-* **TinyMCE AI service** — the on-premises AI back end
-* **A minimal token server** (Node.js) — signs JWTs for the editor
-* **A browser page with TinyMCE** — validates the end-to-end flow
+* *MySQL 8.0*: conversation history and metadata
+* *Redis*: caching and session state
+* *TinyMCE AI service*: the on-premises AI back end
+* *A minimal token server* (Node.js): signs JWTs for the editor
+* *A browser page with TinyMCE*: validates the end-to-end flow
 
 The quick start is designed to validate the stack components before moving to a production deployment. Production engineers can review this section to understand the conceptual flow before continuing to xref:tinymceai-on-premises-production.adoc[Production deployment].
 

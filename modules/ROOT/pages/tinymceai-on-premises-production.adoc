@@ -9,10 +9,10 @@ This guide assumes a running Kubernetes cluster, ECS cluster, or Docker/Podman h
 
 Before deploying to production, confirm each item:
 
-. xref:tinymceai-on-premises-database.adoc[Database and Redis] — provisioned, accessible from the AI service, schema created (PostgreSQL).
-. xref:tinymceai-on-premises-providers.adoc[LLM providers] — `PROVIDERS` configured and verified; `MODELS` defined for the target provider(s).
-. xref:tinymceai-on-premises-jwt.adoc[JWT authentication] — token endpoint deployed, signing with HS256 and the correct API Secret.
-. xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration] — `tinymceai_service_url` and `tinymceai_token_provider` configured; `ALLOWED_ORIGINS` set on the AI service.
+. xref:tinymceai-on-premises-database.adoc[Database and Redis]: provisioned, accessible from the AI service, schema created (PostgreSQL).
+. xref:tinymceai-on-premises-providers.adoc[LLM providers]: `PROVIDERS` configured and verified; `MODELS` defined for the target provider(s).
+. xref:tinymceai-on-premises-jwt.adoc[JWT authentication]: token endpoint deployed, signing with HS256 and the correct API Secret.
+. xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration]: `tinymceai_service_url` and `tinymceai_token_provider` configured; `ALLOWED_ORIGINS` set on the AI service.
 . Container image pulled and registry credentials stored as a secret.
 . Reverse proxy with TLS termination and `proxy_buffering off` for SSE.
 . Environment and access key created through the Management Panel.
@@ -564,10 +564,10 @@ For production multi-instance deployments, ship container logs to the existing l
 
 The following checks help catch common issues early:
 
-* **Health endpoint** -- poll `/health` on each instance; alert if any instance returns a non-200 response for more than 60 seconds.
-* **Error rate** -- monitor the HTTP 5xx rate in the metric logs or traces; a sustained increase may indicate an LLM provider outage or a misconfigured environment.
-* **Latency** -- track request duration; a sudden increase typically points to LLM provider throttling or network issues.
-* **Container restarts** -- alert on repeated container restarts, which may indicate a missing environment variable or a database connectivity problem.
+* *Health endpoint*: poll `/health` on each instance; alert if any instance returns a non-200 response for more than 60 seconds.
+* *Error rate*: monitor the HTTP 5xx rate in the metric logs or traces; a sustained increase may indicate an LLM provider outage or a misconfigured environment.
+* *Latency*: track request duration; a sudden increase typically points to LLM provider throttling or network issues.
+* *Container restarts*: alert on repeated container restarts, which may indicate a missing environment variable or a database connectivity problem.
 
 For troubleshooting specific error patterns, see xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting].
 

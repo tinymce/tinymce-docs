@@ -984,7 +984,7 @@ CAUTION: Conversation history is isolated by the `sub` claim within each Environ
 
 == See also
 
-* xref:tinymceai-on-premises-getting-started.adoc[Getting started] -- end-to-end deployment, including a demo token server
-* xref:tinymceai-on-premises-providers.adoc[large language model (LLM) providers] -- configuring custom models through `MODELS` and the `ai:models:<provider>:<model-id>` permission syntax
-* xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting] -- full troubleshooting catalog beyond JWT
-* xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration] -- editor-side integration patterns for React, Vue, and Angular, including `tinymceai_token_provider` wrappers
+* xref:tinymceai-on-premises-getting-started.adoc[Getting started]: end-to-end deployment, including a demo token server
+* xref:tinymceai-on-premises-providers.adoc[LLM providers]: configuring custom models through `MODELS` and the `ai:models:<provider>:<model-id>` permission syntax
+* xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting]: full troubleshooting catalog beyond JWT
+* xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration]: editor-side integration patterns for React, Vue, and Angular, including `tinymceai_token_provider` wrappers

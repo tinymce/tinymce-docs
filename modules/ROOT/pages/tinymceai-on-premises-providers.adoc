@@ -10,9 +10,9 @@ This page configures *how the AI service reaches LLM providers* and *which model
 
 Two environment variables and one JWT claim control provider and model configuration:
 
-* `PROVIDERS` — tells the AI service how to authenticate with each LLM provider API.
-* `MODELS` — tells the service which models to expose to clients and which features each model supports.
-* `auth.ai.permissions` (JWT claim) — gates per-user access to individual models.
+* `PROVIDERS`: tells the AI service how to authenticate with each LLM provider API.
+* `MODELS`: tells the service which models to expose to clients and which features each model supports.
+* `auth.ai.permissions` (JWT claim): gates per-user access to individual models.
 
 This page documents every supported provider `type`, every required field, and every known production issue for both variables.
 
@@ -1036,8 +1036,8 @@ More general troubleshooting (database, JWT, storage, networking) lives in xref:
 
 == See also
 
-* xref:tinymceai-on-premises-mcp.adoc[MCP and web integrations] -- Model Context Protocol tool calling and web scraping/search endpoints
-* xref:tinymceai-on-premises-getting-started.adoc[Getting started] -- initial container bring-up and demo
-* xref:tinymceai-on-premises-jwt.adoc[JWT authentication] -- per-model and per-provider JWT permissions
-* xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage] -- MySQL/Postgres configuration for the AI service
-* xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting] -- general troubleshooting beyond provider configuration
+* xref:tinymceai-on-premises-mcp.adoc[MCP and web integrations]: Model Context Protocol tool calling and web scraping/search endpoints
+* xref:tinymceai-on-premises-getting-started.adoc[Getting started]: initial container bring-up and demo
+* xref:tinymceai-on-premises-jwt.adoc[JWT authentication]: per-model and per-provider JWT permissions
+* xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage]: MySQL/Postgres configuration for the AI service
+* xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting]: general troubleshooting beyond provider configuration

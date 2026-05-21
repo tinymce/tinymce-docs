@@ -390,7 +390,7 @@ In {productname} {release-version}, the Full Screen plugin has been modified to 
 
 A cross-site scripting (XSS) vulnerability was identified in {productname} 6.8.x through 7.0.x caused by improper SVG namespace scope handling in the sanitizer. A crafted payload using nested elements could bypass attribute sanitization and execute arbitrary JavaScript. {productname} {release-version} resolves this issue through a rewrite of the affected sanitizer code.
 
-CVE: _pending_
+CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-47760[CVE-2026-47760]
 
 GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-mh5m-5hw4-5c69[GitHub Advisories].
 

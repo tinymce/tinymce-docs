@@ -13,10 +13,19 @@ This guide sets up a fully working local stack in roughly five minutes on any ma
 
 The quick start is designed to validate the stack components before moving to a production deployment. Production engineers can review this section to understand the conceptual flow before continuing to xref:tinymceai-on-premises-production.adoc[Production deployment].
 
-=== Prerequisites
+== Before you begin
 
-* Docker 20.10{plus} (or Podman 4{plus})
-* Node.js 18{plus} and npm (for the demo token server)
+Verify the following are installed and accessible:
+
+[source,bash]
+----
+docker --version   # 20.10+ required (or podman --version for Podman 4+)
+node --version     # 18+ required
+npm --version
+----
+
+Additionally, have the following credentials ready:
+
 * A TinyMCE license key and container registry credentials (from the Tiny account representative)
 * At least one LLM provider API key (OpenAI, Anthropic, or Google)
 
@@ -37,7 +46,7 @@ For Docker:
 
 [source,bash]
 ----
-docker login -u 'TINY_REGISTRY_USERNAME' https://registry.containers.tiny.cloud
+docker login -u '<registry-username>' https://registry.containers.tiny.cloud
 # Docker prompts for the password; this avoids leaking it in shell history.
 ----
 
@@ -45,10 +54,10 @@ For Podman:
 
 [source,bash]
 ----
-podman login -u 'TINY_REGISTRY_USERNAME' registry.containers.tiny.cloud
+podman login -u '<registry-username>' registry.containers.tiny.cloud
 ----
 
-Replace `TINY_REGISTRY_USERNAME` with the username supplied by the Tiny account representative. If credentials have not been received, contact `support@tiny.cloud`.
+Replace `<registry-username>` with the username supplied by the Tiny account representative. If credentials have not been received, contact `support@tiny.cloud`.
 
 === Pull the AI service image
 
@@ -155,35 +164,21 @@ Both data layer containers (MySQL and Redis) should report `healthy` in the STAT
 
 The AI service runs as a standalone container outside of the Docker Compose stack. This separation allows upgrading or reconfiguring the AI service without restarting the database and Redis.
 
-Run from the same folder as the `.env` file:
+First, find the Docker Compose network name (Docker creates it from the folder name):
+
+[source,bash]
+----
+docker network ls --format '{{.Name}}' | grep default
+----
+
+Use the matching network name in `--network` below. Then run from the same folder as the `.env` file:
 
 [source,bash]
 ----
 set -a && source .env && set +a
 
-PROVIDERS='{'
-if [ -n "$OPENAI_API_KEY" ]; then
-  PROVIDERS+='"openai":{"type":"openai","apiKeys":["'"$OPENAI_API_KEY"'"]}'
-fi
-if [ -n "$ANTHROPIC_API_KEY" ]; then
-  [ "$PROVIDERS" != '{' ] && PROVIDERS+=','
-  PROVIDERS+='"anthropic":{"type":"anthropic","apiKeys":["'"$ANTHROPIC_API_KEY"'"]}'
-fi
-if [ -n "$GOOGLE_API_KEY" ]; then
-  [ "$PROVIDERS" != '{' ] && PROVIDERS+=','
-  PROVIDERS+='"google":{"type":"google","apiKeys":["'"$GOOGLE_API_KEY"'"]}'
-fi
-PROVIDERS+='}'
-
-# Resolve the compose network name (varies across Docker versions and folder names)
-NETWORK=$(docker network ls --format '{{.Name}}' | grep -E "^$(basename "$PWD" | tr '[:upper:]' '[:lower:]')[_-]default$" | head -1)
-if [ -z "$NETWORK" ]; then
-  echo "ERROR: Could not find the Docker Compose network. Run 'docker network ls' and pass the network name with --network=<name>."
-  exit 1
-fi
-
 docker run --init -d -p 8000:8000 \
-  --network "$NETWORK" \
+  --network <compose-network-name>_default \
   --name ai-service \
   -e LICENSE_KEY="$LICENSE_KEY" \
   -e ENVIRONMENTS_MANAGEMENT_SECRET_KEY="$MANAGEMENT_SECRET" \
@@ -193,12 +188,14 @@ docker run --init -d -p 8000:8000 \
   -e DATABASE_PASSWORD="$DB_PASSWORD" \
   -e DATABASE_DATABASE='ai_service' \
   -e REDIS_HOST='redis' \
-  -e PROVIDERS="$PROVIDERS" \
+  -e PROVIDERS='{"openai":{"type":"openai","apiKeys":["'"$OPENAI_API_KEY"'"]}}' \
   -e STORAGE_DRIVER='database' \
   -e ALLOWED_ORIGINS='http://localhost:3000' \
   -e ENABLE_METRIC_LOGS='true' \
   registry.containers.tiny.cloud/ai-service-tiny:latest
 ----
+
+TIP: The network name is typically `<foldername>_default` (e.g., `tinymce-ai-onpremise_default`). Run `docker network ls` to confirm. For multiple LLM providers, extend the `PROVIDERS` JSON: `{"openai":{...},"anthropic":{...}}`.
 
 For Podman, replace `docker run` with `podman run` and use a Podman pod instead of a compose network. See xref:tinymceai-on-premises-production.adoc[Production deployment] for Podman-specific guidance. See xref:tinymceai-on-premises-production.adoc#_podman_deployment[Podman deployment] for a full example.
 
@@ -216,6 +213,17 @@ Expected response:
 [source,json]
 ----
 {"serviceName":"on-premises-http","uptime":5.123}
+----
+
+.Successful boot log (`docker logs ai-service`)
+[source,text]
+----
+Connecting to database (driver=mysql host=mysql)
+Running migrations...
+Migrations complete: 32 tables ready
+Connecting to Redis (host=redis:6379)
+Redis connected
+Server is listening on port 8000.
 ----
 
 [WARNING]
@@ -271,10 +279,8 @@ Create `package.json`:
 
 Create `token-server.js`:
 
-.Full token-server.js listing
-[%collapsible]
-====
 [source,javascript]
+.token-server.js
 ----
 require('dotenv').config();
 const express = require('express');
@@ -350,7 +356,6 @@ app.listen(PORT, () => {
   console.log('AI Service: ' + AI_SERVICE_URL);
 });
 ----
-====
 
 === Install and run
 
@@ -493,3 +498,13 @@ For Kubernetes, scale the deployment to zero or delete it. Persistent volumes fo
 ----
 kubectl delete deployment ai-service -n tinymce-ai
 ----
+
+== Next steps
+
+The quick start validates the stack end-to-end on a single machine. To deploy for production, work through each guide in order:
+
+. xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage]: provision managed databases, configure TLS, and set up production-grade file storage.
+. xref:tinymceai-on-premises-providers.adoc[LLM providers]: configure explicit model catalogs and multi-provider routing.
+. xref:tinymceai-on-premises-jwt.adoc[JWT authentication]: build the production token endpoint with proper permissions and multi-tenant isolation.
+. xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration]: wire the editor to the production AI service with CORS and CSP.
+. xref:tinymceai-on-premises-production.adoc[Production deployment]: deploy to Kubernetes or ECS with TLS, scaling, and observability.

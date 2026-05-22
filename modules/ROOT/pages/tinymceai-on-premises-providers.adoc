@@ -72,25 +72,20 @@ The diagram reflects three stacked layers: *how to authenticate* with each upstr
 
 === Default model behavior (`agent-1`)
 
-When the AI service starts without an explicit `MODELS` environment variable, it exposes a single built-in placeholder model called `agent-1`. This model exists so that OpenAI, Anthropic, and Google direct providers can route requests without explicit configuration — the service has built-in routing knowledge for those three providers.
+Without an explicit `MODELS` variable, the service exposes a single built-in placeholder called `agent-1`. This works only for OpenAI, Anthropic, and Google direct providers (the service has built-in routing for those three). Azure, Bedrock, Vertex, and openai-compatible providers do not work without `MODELS`.
 
-However, the default `agent-1` model has important limitations:
+IMPORTANT: Always set `MODELS` explicitly for production. Without it, the editor model picker shows only a generic `agent-1` entry, JWT permissions cannot target specific models, and non-native providers are non-functional.
 
+.Details: `agent-1` behavior and limitations
+[%collapsible]
+====
 * The `/v1/models/1` endpoint reports `agent-1` with `allowed: false` unless the JWT includes the `ai:models:agent` permission.
-* The TinyMCE editor model picker does not display real model names — it shows only the generic `agent-1` entry.
-* Azure, Bedrock, Vertex, and openai-compatible providers do not work at all without `MODELS`.
+* The TinyMCE editor model picker does not display real model names.
+* Setting `MODELS` explicitly makes the editor display meaningful names, routes to the correct provider, and enables per-model JWT permissions (`ai:models:<provider>:<model-id>`).
+* See xref:tinymceai-on-premises-jwt.adoc[JWT authentication] for permission syntax.
+====
 
-For production deployments, always set `MODELS` explicitly regardless of provider type. Setting `MODELS` explicitly makes the editor model picker display meaningful names, the correct provider handles each request, and JWT permissions can reference specific model IDs.
-
-The `ai:models:agent` permission in the JWT grants access to the built-in `agent-1` model. When adding custom models through `MODELS`, also add `ai:models:<provider>:<model-id>` permissions to expose each model to users. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication] for permission syntax.
-
-=== When `MODELS` is required
-
-`MODELS` is required for Azure, Bedrock, Vertex, and openai-compatible providers. Without it, these providers expose nothing usable to clients.
-
-For OpenAI, Anthropic, and Google direct, the service has built-in routing knowledge that allows requests to reach those providers without an explicit `MODELS` definition. However, the `/v1/models/1` endpoint still returns only a disabled `agent-1` placeholder, and the editor model picker will not display real model names. For a production deployment, always define `MODELS` explicitly regardless of provider type.
-
-When only `PROVIDERS` is configured and `MODELS` is omitted, a `GET /v1/models/1` call returns only the built-in `agent-1` placeholder with `allowed: false`:
+When `MODELS` is omitted, a `GET /v1/models/1` call returns:
 
 [source,json]
 ----

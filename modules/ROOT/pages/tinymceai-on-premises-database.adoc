@@ -37,20 +37,10 @@ The AI service supports both MySQL and PostgreSQL equally. Pick whichever the op
 
 == Choosing a setup path
 
+Use Docker Compose for evaluation, managed cloud services (Amazon RDS, Cloud SQL, Azure Database) for production. All paths produce the same end state: a running database the AI service can connect to. Both MySQL and PostgreSQL are supported in every configuration.
+
 [.text-center]
 image::tinymceai-on-premises/database-setup-fig-1.svg[Database setup decision tree: local Docker Compose vs managed cloud database for evaluation and production,width=100%]
-
-All paths produce the same end state: a running database the AI service can connect to.
-
-[cols="1,1,1",options="header"]
-|===
-|Path |MySQL |PostgreSQL
-
-|Docker / Podman |Yes |Yes
-|Docker Compose |Yes |Yes
-|Native (macOS / Linux) |Yes |Yes
-|Managed cloud (RDS, Cloud SQL, Azure) |Yes |Yes
-|===
 
 
 
@@ -117,7 +107,7 @@ The database user needs enough privilege to create, alter, and operate on these 
 
 [source,sql]
 ----
-CREATE USER 'ai_service'@'%' IDENTIFIED BY 'STRONG_PASSWORD';
+CREATE USER 'ai_service'@'%' IDENTIFIED BY '<strong-password>';
 GRANT SELECT, INSERT, UPDATE, DELETE,
       ALTER, CREATE, DROP, INDEX,
       TRIGGER, LOCK TABLES, REFERENCES
@@ -145,7 +135,7 @@ If `DATABASE_SCHEMA=public` was chosen (see <<postgresql-schema-prerequisite>>),
 
 [source,sql]
 ----
-CREATE USER ai_service WITH PASSWORD 'STRONG_PASSWORD';
+CREATE USER ai_service WITH PASSWORD '<strong-password>';
 CREATE DATABASE ai_service OWNER ai_service;
 \c ai_service
 CREATE SCHEMA "cs-on-premises" AUTHORIZATION ai_service;
@@ -175,19 +165,17 @@ The sections below provide ready-to-use configuration for each database engine. 
 
 === Docker Compose (recommended for evaluation)
 
-.MySQL compose file
-[%collapsible]
-====
 [source,yaml]
+.MySQL compose file
 ----
 services:
   mysql:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: ROOT_PASSWORD
+      MYSQL_ROOT_PASSWORD: <root-password>
       MYSQL_DATABASE: ai_service
       MYSQL_USER: ai_service
-      MYSQL_PASSWORD: STRONG_PASSWORD
+      MYSQL_PASSWORD: <strong-password>
     ports:
       - "3306:3306"
     volumes:
@@ -211,7 +199,6 @@ services:
 volumes:
   mysql_data:
 ----
-====
 
 .PostgreSQL compose file
 [%collapsible]
@@ -224,7 +211,7 @@ services:
     environment:
       POSTGRES_DB: ai_service
       POSTGRES_USER: ai_service
-      POSTGRES_PASSWORD: STRONG_PASSWORD
+      POSTGRES_PASSWORD: <strong-password>
     ports:
       - "5432:5432"
     volumes:
@@ -269,10 +256,10 @@ Use these `docker run` commands when Docker Compose is not available or when int
 ----
 docker run -d \
   --name ai-mysql \
-  -e MYSQL_ROOT_PASSWORD=ROOT_PASSWORD \
+  -e MYSQL_ROOT_PASSWORD=<root-password> \
   -e MYSQL_DATABASE=ai_service \
   -e MYSQL_USER=ai_service \
-  -e MYSQL_PASSWORD=STRONG_PASSWORD \
+  -e MYSQL_PASSWORD=<strong-password> \
   -p 3306:3306 \
   -v ai_mysql_data:/var/lib/mysql \
   mysql:8.0
@@ -288,7 +275,7 @@ docker run -d \
   --name ai-postgres \
   -e POSTGRES_DB=ai_service \
   -e POSTGRES_USER=ai_service \
-  -e POSTGRES_PASSWORD=STRONG_PASSWORD \
+  -e POSTGRES_PASSWORD=<strong-password> \
   -p 5432:5432 \
   -v ai_pg_data:/var/lib/postgresql/data \
   postgres:16
@@ -319,7 +306,7 @@ brew services start mysql
 mysql_secure_installation
 mysql -u root -p <<'SQL'
 CREATE DATABASE ai_service;
-CREATE USER 'ai_service'@'%' IDENTIFIED BY 'STRONG_PASSWORD';
+CREATE USER 'ai_service'@'%' IDENTIFIED BY '<strong-password>';
 GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, DROP,
       INDEX, TRIGGER, LOCK TABLES, REFERENCES
   ON ai_service.* TO 'ai_service'@'%';
@@ -361,7 +348,7 @@ sudo systemctl enable --now mysql
 sudo mysql_secure_installation
 sudo mysql <<'SQL'
 CREATE DATABASE ai_service;
-CREATE USER 'ai_service'@'%' IDENTIFIED BY 'STRONG_PASSWORD';
+CREATE USER 'ai_service'@'%' IDENTIFIED BY '<strong-password>';
 GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, DROP,
       INDEX, TRIGGER, LOCK TABLES, REFERENCES
   ON ai_service.* TO 'ai_service'@'%';
@@ -379,7 +366,7 @@ sudo apt update
 sudo apt install -y postgresql postgresql-contrib
 sudo systemctl enable --now postgresql
 sudo -u postgres psql <<'SQL'
-CREATE USER ai_service WITH PASSWORD 'STRONG_PASSWORD';
+CREATE USER ai_service WITH PASSWORD '<strong-password>';
 CREATE DATABASE ai_service OWNER ai_service;
 SQL
 sudo -u postgres psql -d ai_service \
@@ -653,7 +640,7 @@ After provisioning the database and Redis, pass the connection details to the AI
 -e DATABASE_HOST='mysql' \
 -e DATABASE_PORT='3306' \
 -e DATABASE_USER='ai_service' \
--e DATABASE_PASSWORD='STRONG_PASSWORD' \
+-e DATABASE_PASSWORD='<strong-password>' \
 -e DATABASE_DATABASE='ai_service' \
 -e REDIS_HOST='redis' \
 -e REDIS_PORT='6379'
@@ -667,7 +654,7 @@ After provisioning the database and Redis, pass the connection details to the AI
 -e DATABASE_HOST='postgres' \
 -e DATABASE_PORT='5432' \
 -e DATABASE_USER='ai_service' \
--e DATABASE_PASSWORD='STRONG_PASSWORD' \
+-e DATABASE_PASSWORD='<strong-password>' \
 -e DATABASE_DATABASE='ai_service' \
 -e DATABASE_SCHEMA='cs-on-premises' \
 -e REDIS_HOST='redis' \
@@ -714,7 +701,7 @@ For a complete `docker run` command including all env vars, see the xref:tinymce
 
 [source,bash]
 ----
-mysql --host=DB_HOST --user=ai_service --password=STRONG_PASSWORD \
+mysql --host=DB_HOST --user=ai_service --password=<strong-password> \
   ai_service --port=3306 -e "SELECT 1"
 ----
 

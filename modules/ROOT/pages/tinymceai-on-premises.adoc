@@ -139,10 +139,10 @@ NOTE: `LICENSE_KEY` (the AI service license) and `TINYMCE_API_KEY` / `license_ke
 
 == Choosing a setup path
 
+For evaluation, start with the xref:tinymceai-on-premises-getting-started.adoc[Getting started] guide (Docker Compose on a single machine). For production, work through each topic guide in order — the same components apply regardless of deployment target (Kubernetes, ECS, or standalone Docker).
+
 [.text-center]
 image::tinymceai-on-premises/complete-guide-fig-2.svg[Setup path decision tree,width=100%]
-
-All setup paths lead to the same set of topic guides listed below. The decision tree helps identify which guides to prioritize based on the deployment target.
 
 == Topic guides
 
@@ -161,9 +161,6 @@ For a first-time deployment, progress through the guides in order. Each guide ca
 |xref:tinymceai-on-premises-providers.adoc[LLM providers]
 |Connect to OpenAI, Anthropic, Google Gemini, Azure OpenAI, AWS Bedrock, Google Vertex AI, or any OpenAI-compatible endpoint (Ollama, vLLM, LM Studio). Custom model catalog and API key rotation.
 
-|xref:tinymceai-on-premises-mcp.adoc[MCP and web integrations]
-|Model Context Protocol (MCP) tool integration, web scraping endpoints, and web search endpoints.
-
 |xref:tinymceai-on-premises-jwt.adoc[JWT authentication]
 |HS256 signing model, required and optional claims, permissions reference, token endpoint examples in 8 languages, and multi-tenant deployment patterns.
 
@@ -172,6 +169,9 @@ For a first-time deployment, progress through the guides in order. Each guide ca
 
 |xref:tinymceai-on-premises-production.adoc[Production deployment]
 |Kubernetes manifests, AWS ECS task definitions, horizontal scaling, security hardening, rate limiting, observability, backup and recovery, and upgrades.
+
+|xref:tinymceai-on-premises-mcp.adoc[MCP and web integrations (optional)]
+|Model Context Protocol (MCP) tool integration, web scraping endpoints, and web search endpoints. Not required for initial setup.
 
 |xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting]
 |Quick triage, container startup failures, JWT errors, LLM provider errors, editor issues, performance, and diagnostic recipes.

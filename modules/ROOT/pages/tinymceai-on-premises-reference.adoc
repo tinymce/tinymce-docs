@@ -66,6 +66,38 @@ Alphabetized. Required-ness is marked relative to a minimum working deployment.
 |`WEBSEARCH_REQUEST_TIMEOUT` |No |- |Search request timeout in ms.
 |===
 
+== Complete `docker run` reference
+
+A single command with all required environment variables for a minimal production deployment (MySQL, OpenAI, S3 storage):
+
+[source,bash]
+----
+docker run --init -d -p 8000:8000 \
+  --name ai-service \
+  -e LICENSE_KEY='<license-key>' \
+  -e ENVIRONMENTS_MANAGEMENT_SECRET_KEY='<management-secret>' \
+  -e DATABASE_DRIVER='mysql' \
+  -e DATABASE_HOST='<database-host>' \
+  -e DATABASE_PORT='3306' \
+  -e DATABASE_USER='<database-user>' \
+  -e DATABASE_PASSWORD='<database-password>' \
+  -e DATABASE_DATABASE='ai_service' \
+  -e REDIS_HOST='<redis-host>' \
+  -e REDIS_PORT='6379' \
+  -e PROVIDERS='{"openai":{"type":"openai","apiKeys":["<openai-api-key>"]}}' \
+  -e MODELS='[{"id":"gpt-4.1","provider":"openai","name":"GPT-4.1","features":["conversations","reviews","actions"]}]' \
+  -e STORAGE_DRIVER='s3' \
+  -e STORAGE_BUCKET='<s3-bucket-name>' \
+  -e STORAGE_REGION='<aws-region>' \
+  -e STORAGE_ACCESS_KEY_ID='<s3-access-key>' \
+  -e STORAGE_SECRET_ACCESS_KEY='<s3-secret-key>' \
+  -e ALLOWED_ORIGINS='https://<your-app-domain>' \
+  -e ENABLE_METRIC_LOGS='true' \
+  registry.containers.tiny.cloud/ai-service-tiny:<version>
+----
+
+For PostgreSQL, change `DATABASE_DRIVER` to `'postgres'` and add `-e DATABASE_SCHEMA='cs-on-premises'` (or `'public'`). For Redis authentication, add `-e REDIS_PASSWORD='<redis-password>'`. For Redis TLS, add `-e REDIS_TLS_ENABLE='true'`.
+
 == API endpoint reference
 
 [cols=",,,",options="header",]

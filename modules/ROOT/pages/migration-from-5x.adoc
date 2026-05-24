@@ -279,7 +279,7 @@ Three plugins have been empty stub plugins since {productname} 5.0, and were rem
 . `contextmenu`
 . `textcolor`
 
-NOTE: The https://tiny.cloud/tinymce/features/#productivity[Premium plugin], xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro], which offers equivalent functionality and more, is available.
+NOTE: The https://www.tiny.cloud/tinymce/features/#productivity[Premium plugin], xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro], which offers equivalent functionality and more, is available.
 
 NOTE: No Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
@@ -287,11 +287,11 @@ NOTE: No Premium Plugins released with {productname} 6.0 are backwards compatibl
 
 As noted in the xref:6.0-release-notes-core-changes.adoc#removed-or-deprecated-plugins-imagetools[_{productname} 6.0 Release Notes_], the `imagetools` plugin is no longer included as part of the Free editor.
 
-_Image Tools_ is now _Enhanced Image Editing_, a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
+_Image Tools_ is now _Enhanced Image Editing_, a https://www.tiny.cloud/tinymce/features/#productivity[Premium plugin].
 
 The `imagetools_proxy` option has been renamed to `editimage_proxy`. However, when setting up xref:introduction-to-premium-selfhosted-services.adoc[Tiny services] the recommended configuration is now `editimage_proxy_service_url` and will be used in favour of `editimage_proxy` if both are set.
 
-Users of the Free version of {productname} 5.x who rely on the removed `imagetools` plugin should not upgrade to {productname} 6.0 without a https://tiny.cloud/pricing/[subscription plan] that provides access to xref:editimage.adoc[Enhanced Image Editing].
+Users of the Free version of {productname} 5.x who rely on the removed `imagetools` plugin should not upgrade to {productname} 6.0 without a https://www.tiny.cloud/pricing/[subscription plan] that provides access to xref:editimage.adoc[Enhanced Image Editing].
 
 NOTE: No Premium Plugins released with {productname} 6.0 are backwards compatible with earlier versions of {productname}.
 
@@ -374,9 +374,9 @@ In iframe (classic editor) mode, {productname} copies the `tabindex` attribute f
 
 As noted in the xref:6.0-release-notes-core-changes.adoc#new-and-improved-plugins-table-of-contents[_{productname} 6.0 Release Notes_], the `toc` plugin is no longer part of the Free editor.
 
-Table of Contents has been updated and is now a https://tiny.cloud/tinymce/features/#productivity[Premium plugin].
+Table of Contents has been updated and is now a https://www.tiny.cloud/tinymce/features/#productivity[Premium plugin].
 
-Users of the Free version of {productname} 5.x who rely on the, now deprecated and removed, `toc` plugin, should not upgrade to {productname} 6.0 without a https://tiny.cloud/pricing/[subscription plan] that provides access to Premium plugins such as xref:tableofcontents.adoc[Table of Contents].
+Users of the Free version of {productname} 5.x who rely on the, now deprecated and removed, `toc` plugin, should not upgrade to {productname} 6.0 without a https://www.tiny.cloud/pricing/[subscription plan] that provides access to Premium plugins such as xref:tableofcontents.adoc[Table of Contents].
 
 The new Premium `tableofcontents` plugin also changes the names of several elements.
 

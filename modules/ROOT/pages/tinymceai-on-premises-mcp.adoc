@@ -5,6 +5,8 @@
 
 The AI service extends model capabilities through two integration points: the https://modelcontextprotocol.io/[Model Context Protocol] (MCP) for tool calling, and pluggable web endpoints for page fetching and search. Both features operate within AI conversations only.
 
+TIP: Web search and scraping allow the AI to reference live internet content during conversations. For most deployments, enabling at least web search significantly improves response quality. These features are configured entirely through environment variables on the AI service container — no additional infrastructure is required beyond a search endpoint.
+
 
 
 [[mcp-integration]]
@@ -41,6 +43,8 @@ Set the `MCP_SERVERS` environment variable to a JSON object. Each key is a serve
 |===
 
 TIP: On Linux Docker, add `extra_hosts: ["host.docker.internal:host-gateway"]` to the AI service compose entry to reach MCP servers running on the host machine.
+
+WARNING: `host-gateway` resolves to the Docker bridge IP, not `127.0.0.1`. Host services bound to `127.0.0.1` only (common in Python MCP SDK examples and CLI-style servers) are unreachable from inside the container (`ECONNREFUSED`). Bind MCP servers to `0.0.0.0` or run them as sibling containers on the same Docker network.
 
 [[mcp-shared-token]]
 === Shared-token authentication limitation
@@ -153,10 +157,12 @@ The AI service can forward web page fetches and search queries to external endpo
 -e WEBSEARCH_ENABLED='true' \
 -e WEBSEARCH_ENDPOINT='http://host.docker.internal:4001/search' \
 -e WEBSEARCH_REQUEST_TIMEOUT='10000' \
--e WEBSEARCH_HEADERS='{"Authorization":"Bearer search-api-key"}'
+-e WEBSEARCH_HEADERS='Authorization: Bearer search-api-key, X-Source: tinymce'
 ----
 
-NOTE: A model must include `capabilities.webSearch: true` in its xref:tinymceai-on-premises-providers.adoc#models-required[`MODELS` entry] for the web search toggle to appear in the editor.
+IMPORTANT: `WEBSEARCH_HEADERS` uses **colon-CSV format** (`Header-Name: value, Another: value`), not JSON. Passing a JSON object produces `ERR_INVALID_HTTP_TOKEN` and silently prevents all outbound search requests.
+
+NOTE: A model must include `capabilities.webSearch: true` in its xref:tinymceai-on-premises-providers.adoc#models-required[`MODELS` entry] for the web search toggle to appear in the editor. Additionally, the JWT must include the `ai:conversations:webSearch` permission — see xref:tinymceai-on-premises-jwt.adoc#permissions-reference[JWT permissions].
 
 === Web scraping endpoint contract
 

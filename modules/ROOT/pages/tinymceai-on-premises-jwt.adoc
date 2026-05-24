@@ -95,10 +95,11 @@ This is the canonical permission list for the AI service.
 [cols=",",options="header",]
 |===
 |Permission |Grants
-|`ai:conversations:*` |All conversation operations: create, list, send message, delete
+|`ai:conversations:*` |All conversation operations: create, list, send message, delete, and web search
 |`ai:conversations:create` |Create new conversations
 |`ai:conversations:read` |List and read existing conversations
 |`ai:conversations:delete` |Delete conversations
+|`ai:conversations:webSearch` |Enable the web search toggle in conversations. Without this permission, `GET /v1/models/1` reports `capabilities.webSearch.allowed: false` even when `WEBSEARCH_ENABLED=true` and `capabilities.webSearch: true` is set on the model.
 |`ai:models:agent` |Access the built-in agent model (model ID `agent-1`)
 |`ai:models:<provider>:<model-id>` |Access a specific custom model configured through the `MODELS` env var
 |`ai:actions:system:*` |All built-in quick actions (rewrite, summarize, expand, translate, change tone, and related operations)

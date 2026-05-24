@@ -127,6 +127,8 @@ GRANT ALL PRIVILEGES ON ai_service.* TO 'ai_service'@'%';
 [NOTE]
 --
 Some versions of the AI service image report false-positive "Not enough permissions to access database" errors even with `ALL PRIVILEGES`. If this occurs, grant the privileges globally rather than per-database, or use the MySQL `root` user for development.
+
+On Cloud SQL MySQL, grant privileges to the service user **directly** — not via a role (e.g. `cloudsqlsuperuser`). The startup grant check runs `SHOW GRANTS FOR user` and does not resolve role-inherited grants.
 --
 
 === PostgreSQL
@@ -157,7 +159,10 @@ GRANT ALL ON SCHEMA "cs-on-premises" TO ai_service;
 ----
 ====
 
-
+[WARNING]
+--
+*Managed PostgreSQL TLS issue:* Amazon RDS, Cloud SQL, and Azure Database for PostgreSQL default to requiring TLS (`rds.force_ssl=1` / `require_secure_transport=ON`). When TLS is enforced and the AI service has not been configured with `DATABASE_SSL_CA`, the connection is rejected — but the error message surfaces as a generic "permissions" error, not a TLS error. If the service fails to start with a permissions-related database error after grants have been verified, check whether TLS is the underlying cause.
+--
 
 == Database setup
 

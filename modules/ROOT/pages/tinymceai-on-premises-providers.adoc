@@ -419,6 +419,8 @@ IMPORTANT: The AI service does *not* use the AWS SDK default credential chain. `
 
 The `sessionToken` field is optional but required for STS-issued short-lived credentials. Plan a rotation procedure when using temporary credentials.
 
+NOTE: Bedrock console-issued API keys have a separate billing entitlement check that can return `INVALID_PAYMENT_INSTRUMENT` on accounts where the IAM-credential path works fine. Prefer the `credentials` block (IAM user with `accessKeyId` / `secretAccessKey`) for production.
+
 *Prerequisites checklist:*
 
 . *Enable model access.* Bedrock console -> *Model access* -> Manage model access. Each model must be approved per-region.

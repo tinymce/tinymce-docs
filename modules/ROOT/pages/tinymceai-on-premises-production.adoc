@@ -286,7 +286,19 @@ spec:
 
 TIP: For PostgreSQL, change `DATABASE_DRIVER` to `"postgres"`, update `DATABASE_HOST` to the PostgreSQL endpoint, and add `DATABASE_SCHEMA` set to `"public"` (or ensure the `cs-on-premises` schema exists). See xref:tinymceai-on-premises-database.adoc#postgresql-schema-prerequisite[PostgreSQL schema prerequisite].
 
-NOTE: `terminationGracePeriodSeconds` is set to 300 to match the maximum SSE stream duration. On SIGTERM, the service finishes in-flight SSE streams before shutting down. Set this value equal to or greater than the longest expected AI response time. For multi-zone clusters, add `topologySpreadConstraints` to the pod spec to spread replicas across availability zones. Add a `PodDisruptionBudget` (`minAvailable: 1` or a percentage at scale) to prevent all replicas being evicted simultaneously during node maintenance. These resource values are evaluation defaults; adjust for production workload.
+NOTE: `terminationGracePeriodSeconds` is set to 300 to match the maximum SSE stream duration. On SIGTERM, the service finishes in-flight SSE streams before shutting down. Set this value equal to or greater than the longest expected AI response time. These resource values are evaluation defaults; adjust for production workload.
+
+IMPORTANT: The workload is *network-I/O bound* (waiting on LLM provider streams), not CPU-bound. CPU-based HPA scaling is a safe starting point but may not trigger under high concurrency. For production, consider supplementing with custom metrics (concurrent SSE streams, request queue depth) through KEDA or Prometheus Adapter.
+
+=== High-availability primitives
+
+Any multi-replica deployment should include the following Kubernetes primitives — configure them in line with the platform team's standards:
+
+* *`PodDisruptionBudget`*: prevents all replicas being evicted simultaneously during node maintenance (`minAvailable: 1` or a percentage at scale).
+* *`podAntiAffinity`*: distributes replicas across nodes to avoid single-node failures.
+* *`topologySpreadConstraints`*: spreads replicas across availability zones for zone-level resilience.
+
+The canonical Deployment example above does not include these — they are site-specific. Without them, the scheduler may bin-pack all replicas onto a single node in a single availability zone.
 
 === Step 4: Service
 
@@ -451,7 +463,48 @@ The AI service does not use platform-native credential chains. AWS IRSA, EC2 ins
 |Registry pull credentials |Secrets Manager {plus} ECR pull-through cache, or a private repository mirroring `registry.containers.tiny.cloud`
 |===
 
+=== Azure (AKS)
 
+Deploy on Azure Kubernetes Service with Azure Database for PostgreSQL Flexible Server, Azure Cache for Redis, and Azure Blob Storage. Service-shape considerations:
+
+* `STORAGE_DRIVER=azure` is the recommended storage backend on Azure.
+* PostgreSQL Flexible Server defaults to enforcing TLS — see the xref:tinymceai-on-premises-database.adoc#_postgresql[known TLS error surface].
+* The AI service does not use Workload Identity or managed identity for LLM credentials — inline Azure OpenAI credentials in `PROVIDERS` (see xref:tinymceai-on-premises-providers.adoc#_azure_openai[Azure OpenAI]).
+
+For AKS cluster setup, node pools, and networking, refer to the https://learn.microsoft.com/en-us/azure/aks/[Azure Kubernetes Service documentation].
+
+=== GCP (GKE)
+
+Deploy on Google Kubernetes Engine (Standard mode — not Autopilot) with Cloud SQL for PostgreSQL, Memorystore for Redis, and GCS for file storage. Service-shape considerations:
+
+* No native GCS driver exists. Use GCS via S3-interop (`STORAGE_DRIVER=s3` with HMAC credentials). The bucket must have `uniform_bucket_level_access` disabled (the SDK sends `x-amz-acl` headers).
+* The AI service does not use GKE Workload Identity or Application Default Credentials — inline Vertex SA credentials in `PROVIDERS` (see xref:tinymceai-on-premises-providers.adoc#_google_vertex_ai[Google Vertex AI]).
+* Cloud SQL for PostgreSQL defaults to enforcing TLS — see the xref:tinymceai-on-premises-database.adoc#_postgresql[known TLS error surface].
+
+For GKE cluster creation and node pool configuration, refer to the https://cloud.google.com/kubernetes-engine/docs[Google Kubernetes Engine documentation].
+
+== Network requirements
+
+The AI service requires outbound HTTPS access to the following endpoints. Configure firewall rules and security groups to allow this traffic:
+
+[cols="1,2,2",options="header"]
+|===
+|Endpoint |Purpose |Required
+
+|LLM provider APIs (e.g. `api.openai.com`, `bedrock-runtime.*.amazonaws.com`)
+|Forward AI requests to the configured providers
+|Yes
+
+|`license.container.tiny.cloud`
+|License key validation (phone-home check on startup)
+|Yes — service will not start if this is blocked
+
+|`registry.containers.tiny.cloud`
+|Pull container image updates
+|Yes (at deploy time)
+|===
+
+TIP: If the deployment environment blocks all outbound traffic by default, add these to the egress allowlist before starting the service. The license check occurs on every container start.
 
 == Security hardening
 

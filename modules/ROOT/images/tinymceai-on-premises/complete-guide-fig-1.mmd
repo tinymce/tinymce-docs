@@ -1,17 +1,13 @@
 flowchart TB
     Browser["Browser<br>TinyMCE editor + tinymceai plugin"]
     TokenEP["Your token endpoint<br>signs HS256 JWTs"]
-    Browser -->|"fetch JWT"| TokenEP
+    Browser -->|"HTTPS"| TokenEP
     Browser -->|"HTTPS + Bearer JWT"| LB
 
-    subgraph App["Application layer (stateless, N replicas)"]
+    subgraph App["Application layer (stateless, +N replicas)"]
         LB["Reverse proxy / Load balancer<br>nginx · ALB · K8s Ingress<br>TLS termination · SSE pass-through"]
-        AIN["ai-service replica N"]
-        AI2["ai-service replica 2"]
-        AI1["ai-service replica 1"]
-        LB --> AIN
-        LB --> AI2
-        LB --> AI1
+        AI1["ai-service"]
+        LB -->|"HTTP"| AI1
     end
 
     subgraph Data["Shared data layer"]
@@ -20,7 +16,9 @@ flowchart TB
         Storage[("File storage<br>S3 · Azure Blob · filesystem")]
     end
 
-    AI1 --> Data
+    AI1 <-->|"read/write"| DB
+    AI1 <-->|"read/write"| Cache
+    AI1 <-->|"read/write"| Storage
 
     AI1 -->|"HTTPS"| LLM["LLM provider<br>OpenAI · Anthropic · Google ·<br>Azure · Bedrock · Vertex ·<br>self-hosted"]
 

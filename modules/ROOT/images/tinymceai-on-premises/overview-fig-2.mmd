@@ -6,18 +6,25 @@ flowchart LR
     end
 
     subgraph Service["Application layer"]
+        LB["Load balancer /\nreverse proxy\n(TLS termination)"]
         AI["AI service\n(container)"]
     end
 
     subgraph Data["Data layer"]
-        DB[("Database\n+ Redis\n+ Storage")]
+        DB[("SQL database\n(conversations, configs)")]
+        Redis[("Redis\n(cache, coordination)")]
+        Storage[("File storage\n(uploads, documents)")]
     end
 
     LLM["LLM provider"]
 
-    Token -->|"1. signed JWT"| App
-    App -->|"2. prompt + JWT"| AI
-    AI -->|"5. SSE stream"| App
-    AI -->|"3. forward"| LLM
+    App -->|"1. request JWT"| Token
+    Token -->|"JWT"| App
+    App -->|"2. HTTPS"| LB
+    LB -->|"HTTP"| AI
+    AI -->|"3. HTTPS"| LLM
     LLM -->|"4. stream"| AI
-    AI --- DB
+    AI -->|"5. SSE response"| App
+    AI <-->|"read/write"| DB
+    AI <-->|"read/write"| Redis
+    AI <-->|"read/write"| Storage

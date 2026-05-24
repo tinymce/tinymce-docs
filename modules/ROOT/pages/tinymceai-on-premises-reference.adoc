@@ -27,7 +27,7 @@ Alphabetized. Required-ness is marked relative to a minimum working deployment.
 |`LANGFUSE_DEBUG` |No |- |Verbose Langfuse logging.
 |`LANGFUSE_PUBLIC_KEY` |If using Langfuse |- |Langfuse public key.
 |`LANGFUSE_SECRET_KEY` |If using Langfuse |- |Langfuse secret key.
-|`LICENSE_KEY` |Yes |- |AI service license key (long string from Tiny).
+|`LICENSE_KEY` |Yes |- |AI service license key (long string from Tiny). The same key is shared across all replicas of a deployment — no per-pod licensing is required.
 |`LLM_TELEMETRY_ENABLED` |No |`false` |Primary OpenTelemetry switch.
 |`LLM_TIMEOUT_MS` |No |180000 |Per-request large language model (LLM) timeout in ms. Raise for large self-hosted models.
 |`MCP_SERVERS` |No |- |JSON object; Model Context Protocol (MCP) server configuration. See xref:tinymceai-on-premises-mcp.adoc#mcp-integration[MCP integration].

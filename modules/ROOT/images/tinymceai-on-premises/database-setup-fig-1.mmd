@@ -5,7 +5,7 @@ flowchart TD
     Q2 -->|Cloud / managed services| Managed[AWS RDS · Cloud SQL ·<br>Azure Database<br>+ ElastiCache · Memorystore ·<br>Azure Cache for Redis]
     Q2 -->|Self-managed| Q3{Container runtime<br>available?}
     Q3 -->|Docker or Podman| Containers[Containers on the same<br>network or pod as ai-service]
-    Q3 -->|None - bare metal or VM| Native[Native install<br>brew · apt · yum · dnf<br>service runs on host]
+    Q3 -->|Native on host| Native[Native install<br>brew · apt · yum · dnf<br>AI service connects via<br>host.docker.internal]
     Compose --> Verify([Verify: nc -zv host port<br>then start ai-service])
     Managed --> Verify
     Containers --> Verify

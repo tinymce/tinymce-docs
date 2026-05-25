@@ -1,23 +1,33 @@
 = MCP and web integrations
-:navtitle: MCP and web integrations
+:navtitle: MCP and web integrations (optional)
 :description: Model Context Protocol (MCP) server integration and web scraping/search configuration for TinyMCE AI on-premises
 :keywords: AI, on-premises, MCP, Model Context Protocol, web search, web scraping
 
-The AI service extends model capabilities through two integration points: the https://modelcontextprotocol.io/[Model Context Protocol] (MCP) for tool calling, and pluggable web endpoints for page fetching and search. Both features operate within AI conversations only.
+The AI service extends model capabilities through two integration points: the https://modelcontextprotocol.io/[Model Context Protocol] (MCP) for tool calling, and pluggable web endpoints for page fetching and search. Both features operate within AI conversations only. Web search and scraping allow the AI to reference live internet content during conversations, and for most deployments, enabling at least web search improves response quality.
 
-TIP: Web search and scraping allow the AI to reference live internet content during conversations. For most deployments, enabling at least web search significantly improves response quality. These features are configured entirely through environment variables on the AI service container — no additional infrastructure is required beyond a search endpoint.
+These features are configured entirely through environment variables on the AI service container. No additional infrastructure is required beyond a search endpoint.
+
+[.text-center]
+image::tinymceai-on-premises/mcp-web-integrations-architecture.svg[MCP and web integrations architecture: TinyMCE editor connects to AI Service through SSE conversations. AI Service connects to LLM provider for inference and to MCP servers and web search and scrape endpoints for tool calling and live web content.,width=100%]
+
+== Prerequisites
+
+This page assumes the following are already configured:
+
+* A running AI service container with database and Redis (see xref:tinymceai-on-premises-database.adoc[Database and Redis]).
+* At least one LLM provider configured in `PROVIDERS` and `MODELS` (see xref:tinymceai-on-premises-providers.adoc[LLM providers]).
+* A JWT token endpoint deployed and signing tokens with the correct API Secret (see xref:tinymceai-on-premises-jwt.adoc[JWT authentication]).
 
 
 
 [[mcp-integration]]
 == Model Context Protocol (MCP)
 
-MCP allows the AI service to call external tools — internal wikis, API specifications, runbooks, contract databases, and compliance checkers — during conversations. The service connects to MCP servers over *Streamable HTTP transport*.
+MCP allows the AI service to call external tools (internal wikis, API specifications, runbooks, contract databases, and compliance checkers) during conversations. The service connects to MCP servers over *Streamable HTTP transport*.
 
-[.text-center]
-image::tinymceai-on-premises/advanced-scenarios-fig-1.svg[MCP integration: TinyMCE rich text editor communicates with AI service which calls MCP server,width=100%]
+Only Streamable HTTP transport is supported. Stdio-based MCP servers cannot connect directly to the AI service. Wrap them with the SDK's HTTP transport adapter (for example, `StreamableHTTPServerTransport` in the TypeScript SDK or `StreamableHTTPServer` in the Python SDK) before use.
 
-NOTE: MCP tools are available in AI *conversations* only. Reviews and quick actions do not invoke MCP tools.
+MCP tools are available in AI *conversations* only. Reviews and quick actions do not invoke MCP tools.
 
 === Configuration
 
@@ -42,28 +52,65 @@ Set the `MCP_SERVERS` environment variable to a JSON object. Each key is a serve
 |`options.callToolTimeout` |Per-tool-call timeout in seconds (default 60).
 |===
 
-TIP: On Linux Docker, add `extra_hosts: ["host.docker.internal:host-gateway"]` to the AI service compose entry to reach MCP servers running on the host machine.
+`MCP_SERVERS` supports multiple server entries. Add additional keys to the same JSON object:
+
+[source,bash]
+----
+-e MCP_SERVERS='{
+  "knowledge-hub": {
+    "url": "http://host.docker.internal:3001/mcp"
+  },
+  "compliance-checker": {
+    "url": "http://host.docker.internal:3002/mcp"
+  }
+}'
+----
+
+Each server's tools are namespaced independently (for example, `knowledge-hub-search_docs` and `compliance-checker-run_check`).
+
+[[mcp-docker-networking]]
+=== Docker networking
+
+On Linux Docker, add `extra_hosts: ["host.docker.internal:host-gateway"]` to the AI service compose entry to reach MCP servers running on the host machine.
 
 WARNING: `host-gateway` resolves to the Docker bridge IP, not `127.0.0.1`. Host services bound to `127.0.0.1` only (common in Python MCP SDK examples and CLI-style servers) are unreachable from inside the container (`ECONNREFUSED`). Bind MCP servers to `0.0.0.0` or run them as sibling containers on the same Docker network.
 
 [[mcp-shared-token]]
-=== Shared-token authentication limitation
+=== Authentication
 
 The `headers` field is fixed at deploy time. Every MCP tool call uses the same credentials; there is no per-user MCP authentication path. If the MCP server requires per-user context, encode identity in the conversation prompt or in a header that the MCP server resolves to a per-user identity on its own side.
 
+The AI service does not perform OAuth flows. MCP servers requiring OAuth must be fronted by a proxy that handles token exchange, or tokens must be rotated externally (requires a container restart to update `MCP_SERVERS`).
+
+[[mcp-tool-namespacing]]
+=== Tool namespacing
+
+MCP tools are exposed to the LLM with a namespaced identifier: `<server_id>-<tool_name>` (for example, `knowledge-hub-search_knowledge_base`). The `tools.disabled` array accepts the *bare tool name* only (for example, `"search_knowledge_base"`, not the namespaced form).
+
 === MCP server example
 
-The following is an illustrative example showing the JSON-RPC message flow. Production MCP servers must implement the full https://modelcontextprotocol.io/specification/2025-11-25/basic/transports#streamable-http[Streamable HTTP transport specification].
+The following example uses the official https://github.com/modelcontextprotocol/typescript-sdk[MCP TypeScript SDK] (`@modelcontextprotocol/sdk`) with `StreamableHTTPServerTransport`, which handles session management, SSE framing, and the full https://modelcontextprotocol.io/specification/2025-11-25/basic/transports#streamable-http[Streamable HTTP transport] specification.
 
-.Knowledge-base MCP server (illustrative)
+.Knowledge-base MCP server
 [%collapsible]
 ====
+Install dependencies:
+
+[source,bash]
+----
+npm install @modelcontextprotocol/sdk express zod
+----
+
+Create `knowledge-mcp-server.js` (requires `"type": "module"` in `package.json`):
+
 [source,javascript]
 ----
 // knowledge-mcp-server.js
-const express = require('express');
-const app = express();
-app.use(express.json());
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
+import express from 'express';
+import { randomUUID } from 'node:crypto';
+import { z } from 'zod';
 
 const KNOWLEDGE_BASE = {
   'api-guidelines': 'All REST APIs must use JSON, include pagination through Link headers, and return 4xx for client errors with a machine-readable error code.',
@@ -71,89 +118,82 @@ const KNOWLEDGE_BASE = {
   'security-policy': 'All user data must be encrypted at rest (AES-256) and in transit (TLS 1.3). PII requires additional field-level encryption.',
 };
 
-app.post('/mcp', (req, res) => {
-  const { method, id, params } = req.body;
-
-  if (method === 'initialize') {
-    return res.json({
-      jsonrpc: '2.0', id,
-      result: {
-        protocolVersion: '2024-11-05',
-        capabilities: { tools: {} },
-        serverInfo: { name: 'knowledge-hub', version: '1.0.0' }
-      }
-    });
-  }
-
-  if (method === 'tools/list') {
-    return res.json({
-      jsonrpc: '2.0', id,
-      result: {
-        tools: [{
-          name: 'search_knowledge_base',
-          description: 'Search the company knowledge base for policies, guidelines, and procedures',
-          inputSchema: {
-            type: 'object',
-            properties: {
-              query: { type: 'string', description: 'Search query' }
-            },
-            required: ['query']
-          }
-        }, {
-          name: 'get_api_spec',
-          description: 'Get the OpenAPI spec for an internal service',
-          inputSchema: {
-            type: 'object',
-            properties: {
-              service: { type: 'string', description: 'Service name (for example user-service, billing-api)' }
-            },
-            required: ['service']
-          }
-        }]
-      }
-    });
-  }
-
-  if (method === 'tools/call') {
-    const { name, arguments: args } = params;
-    if (name === 'search_knowledge_base') {
-      const query = (args?.query || '').toLowerCase();
-      const results = Object.entries(KNOWLEDGE_BASE)
-        .filter(([key]) => key.includes(query) || query.includes(key.split('-')[0]))
-        .map(([key, value]) => `##${key}\n${value}`)
-        .join('\n\n');
-      return res.json({
-        jsonrpc: '2.0', id,
-        result: { content: [{ type: 'text', text: results || 'No results found.' }] }
-      });
-    }
-    return res.json({
-      jsonrpc: '2.0', id,
-      result: { content: [{ type: 'text', text: 'Spec not found for: ' + args?.service }] }
-    });
-  }
-
-  res.json({ jsonrpc: '2.0', id, error: { code: -32601, message: 'Unknown method' } });
+const server = new McpServer({
+  name: 'knowledge-hub',
+  version: '1.0.0'
 });
 
-app.listen(3001, () => console.log('Knowledge MCP server on http://localhost:3001/mcp'));
+server.tool(
+  'search_knowledge_base',
+  'Search the company knowledge base for policies, guidelines, and procedures',
+  { query: z.string().describe('Search query') },
+  async ({ query }) => {
+    const q = query.toLowerCase();
+    const results = Object.entries(KNOWLEDGE_BASE)
+      .filter(([key]) => key.includes(q) || q.includes(key.split('-')[0]))
+      .map(([key, value]) => `## ${key}\n${value}`)
+      .join('\n\n');
+    return {
+      content: [{ type: 'text', text: results || 'No results found.' }]
+    };
+  }
+);
+
+server.tool(
+  'get_api_spec',
+  'Get the OpenAPI spec for an internal service',
+  { service: z.string().describe('Service name (for example user-service, billing-api)') },
+  async ({ service }) => {
+    return {
+      content: [{ type: 'text', text: `Spec not found for: ${service}` }]
+    };
+  }
+);
+
+const transport = new StreamableHTTPServerTransport({
+  sessionIdGenerator: () => randomUUID()
+});
+
+await server.connect(transport);
+
+const app = express();
+app.use(express.json());
+
+app.all('/mcp', (req, res) => transport.handleRequest(req, res, req.body));
+
+app.listen(3001, () => console.log('Knowledge MCP server on http://0.0.0.0:3001/mcp'));
 ----
 ====
 
+The example server binds to `0.0.0.0` so it is reachable from inside Docker containers. When the MCP server runs on the host machine, the AI service connects to it at `http://host.docker.internal:3001/mcp` (see <<mcp-docker-networking>>).
 
 
-[[web-scraping-and-search]]
-== Web scraping and web search
 
-The AI service can forward web page fetches and search queries to external endpoints, enabling AI conversations to reference live web content.
+[[web-search]]
+== Web search
 
-=== Configuration
+The AI service can forward search queries to an external endpoint, enabling AI conversations to reference live web content.
+
+=== Enabling web search
+
+Web search requires three components configured together:
+
+[cols="1,3",options="header"]
+|===
+|Component |Configuration
+
+|Environment variables
+|Set `WEBSEARCH_ENABLED='true'` and `WEBSEARCH_ENDPOINT` on the AI service container. Optionally set `WEBSEARCH_REQUEST_TIMEOUT` (default 10000ms) and `WEBSEARCH_HEADERS` for authenticated search backends.
+
+|MODELS entry
+|The model's `MODELS` entry must include `capabilities.webSearch: true` (boolean) for the web search toggle to appear in the editor. See xref:tinymceai-on-premises-providers.adoc#models-required[MODELS configuration].
+
+|JWT permission
+|The JWT must include `ai:conversations:webSearch` in the `auth.ai.permissions` array. See xref:tinymceai-on-premises-jwt.adoc#permissions-reference[JWT permissions]. Without this permission, the toggle remains grayed out even when the environment variables and MODELS entry are correct.
+|===
 
 [source,bash]
 ----
--e WEBRESOURCES_ENABLED='true' \
--e WEBRESOURCES_ENDPOINT='http://host.docker.internal:4000/scrape' \
--e WEBRESOURCES_REQUEST_TIMEOUT='10000' \
 -e WEBSEARCH_ENABLED='true' \
 -e WEBSEARCH_ENDPOINT='http://host.docker.internal:4001/search' \
 -e WEBSEARCH_REQUEST_TIMEOUT='10000' \
@@ -162,52 +202,27 @@ The AI service can forward web page fetches and search queries to external endpo
 
 IMPORTANT: `WEBSEARCH_HEADERS` uses **colon-CSV format** (`Header-Name: value, Another: value`), not JSON. Passing a JSON object produces `ERR_INVALID_HTTP_TOKEN` and silently prevents all outbound search requests.
 
-NOTE: A model must include `capabilities.webSearch: true` in its xref:tinymceai-on-premises-providers.adoc#models-required[`MODELS` entry] for the web search toggle to appear in the editor. Additionally, the JWT must include the `ai:conversations:webSearch` permission — see xref:tinymceai-on-premises-jwt.adoc#permissions-reference[JWT permissions].
+[[websearch-per-message]]
+=== Per-message activation (custom integrations)
 
-=== Web scraping endpoint contract
+The TinyMCE editor sends the web search activation flag when the user toggles web search on. Custom integrations that call the AI service API directly must include the following in each message request body where web search should be active:
 
-[cols="1,2",options="header"]
-|===
-|Direction |Payload
-|Request |JSON object with a `url` field (page to fetch).
-|Response |JSON object with `type` (`text/html` or `text/markdown`) and `data` (body content).
-|===
-
-.Request body
 [source,json]
 ----
-{ "url": "https://example.com/article" }
+{
+  "capabilities": { "webSearch": {} }
+}
 ----
 
-.Response body
-[source,json]
-----
-{ "type": "text/html", "data": "<html><body><p>Example page body</p></body></html>" }
-----
+The value *must* be an empty object (`{}`). This is the documented API contract (see https://ckeditor.com/docs/cs/latest/guides/ckeditor-ai/models.html#capability-configuration[CKEditor AI Models: Capability Configuration]). The service rejects other shapes:
 
-==== Scraper implementation example (Playwright)
+* `"webSearch": true` : rejected (schema expects an object, not a boolean).
+* `"webSearch": {"enabled": true}` : rejected (unrecognized key).
+* Omitted entirely: web search is not surfaced to the model, even when all server-side configuration is correct.
 
-[source,javascript]
-----
-// scraper-service.js
-const { chromium } = require('playwright');
-const express = require('express');
-const app = express();
-app.use(express.json());
+Without this field, the environment variables, JWT permission, and MODELS configuration are insufficient. The model never receives the web search tool.
 
-app.post('/scrape', async (req, res) => {
-  const browser = await chromium.launch();
-  const page = await browser.newPage();
-  await page.goto(req.body.url, { waitUntil: 'networkidle' });
-  const content = await page.content();
-  await browser.close();
-  res.json({ type: 'text/html', data: content });
-});
-
-app.listen(4000);
-----
-
-=== Web search endpoint contract
+=== Endpoint contract
 
 [cols="1,2",options="header"]
 |===
@@ -239,7 +254,7 @@ app.listen(4000);
 }
 ----
 
-==== Search implementation example (SerpAPI)
+=== Implementation example (SerpAPI)
 
 [source,javascript]
 ----
@@ -263,6 +278,156 @@ app.post('/search', async (req, res) => {
 
 app.listen(4001);
 ----
+
+
+
+[[web-scraping]]
+== Web scraping
+
+The AI service can forward web page fetches to an external endpoint, enabling AI conversations to reference specific pages.
+
+=== Enabling web scraping
+
+Set `WEBRESOURCES_ENABLED='true'` and `WEBRESOURCES_ENDPOINT` on the AI service container. Optionally set `WEBRESOURCES_REQUEST_TIMEOUT` (default 10000ms).
+
+[source,bash]
+----
+-e WEBRESOURCES_ENABLED='true' \
+-e WEBRESOURCES_ENDPOINT='http://host.docker.internal:4000/scrape' \
+-e WEBRESOURCES_REQUEST_TIMEOUT='10000'
+----
+
+[[web-scraping-trigger]]
+=== Trigger mechanism
+
+The AI service calls the scrape endpoint (`WEBRESOURCES_ENDPOINT`) when it receives a request on:
+
+[source]
+----
+POST /v1/conversations/{id}/web-resources
+Content-Type: application/json
+
+{ "url": "https://example.com/page-to-fetch" }
+----
+
+The TinyMCE editor sends this request when a user pastes or references a URL in conversation. Custom integrations must call this endpoint explicitly to trigger a page fetch.
+
+The response is stored against the conversation. The `type` field in the scrape response must be `text/html` or `text/markdown`. Other MIME types (for example, `application/pdf`) are rejected with a `422 web-resource-download-error`.
+
+=== Endpoint contract
+
+[cols="1,2",options="header"]
+|===
+|Direction |Payload
+|Request |JSON object with a `url` field (page to fetch).
+|Response |JSON object with `type` (`text/html` or `text/markdown`) and `data` (body content).
+|===
+
+.Request body
+[source,json]
+----
+{ "url": "https://example.com/article" }
+----
+
+.Response body
+[source,json]
+----
+{ "type": "text/html", "data": "<html><body><p>Example page body</p></body></html>" }
+----
+
+=== Implementation example (Playwright)
+
+[source,javascript]
+----
+// scraper-service.js
+const { chromium } = require('playwright');
+const express = require('express');
+const app = express();
+app.use(express.json());
+
+app.post('/scrape', async (req, res) => {
+  const browser = await chromium.launch();
+  const page = await browser.newPage();
+  await page.goto(req.body.url, { waitUntil: 'networkidle' });
+  const content = await page.content();
+  await browser.close();
+  res.json({ type: 'text/html', data: content });
+});
+
+app.listen(4000);
+----
+
+
+
+[[sse-events]]
+== SSE events
+
+Custom streaming UI integrations can use the following Server-Sent Events (SSE) to render tool call progress and search results. The AI service emits these events during conversations:
+
+[cols="1,3",options="header"]
+|===
+|Event name |Description
+|`mcp-tool-result` |Emitted when an MCP tool call completes. Contains the tool result. There is no pre-call event; clients receive no signal until the tool call finishes.
+|`web-search` |Emitted when a web search returns results (or fails without emitting an error event; see <<web-search-troubleshooting,Troubleshooting>>).
+|`source` |Emitted with source citations from the model response.
+|===
+
+
+
+[[mcp-kubernetes]]
+== Kubernetes deployment
+
+In Kubernetes, the `extra_hosts: host-gateway` Docker pattern does not apply. Deploy MCP servers and web integration endpoints as sibling Deployments with ClusterIP Services in the same namespace as the AI service. Reference them using cluster DNS:
+
+[source,bash]
+----
+-e MCP_SERVERS='{
+  "knowledge-hub": {
+    "url": "http://mcp-knowledge.tinymce-ai.svc.cluster.local:3001/mcp",
+    "options": { "callToolTimeout": 30 }
+  }
+}'
+-e WEBRESOURCES_ENDPOINT='http://web-scrape.tinymce-ai.svc.cluster.local:4000/scrape'
+-e WEBSEARCH_ENDPOINT='http://web-search.tinymce-ai.svc.cluster.local:4001/search'
+----
+
+Store `MCP_SERVERS` and `WEBSEARCH_HEADERS` in a Kubernetes Secret and mount them as environment variables in the AI service Deployment. This avoids exposing credentials in the Deployment manifest and allows rotation without redeploying.
+
+For production clusters, the MCP server Deployments should have dedicated resource requests, liveness probes, and replica counts independent of the AI service. See xref:tinymceai-on-premises-production.adoc[Production deployment] for general Kubernetes patterns.
+
+
+
+[[web-search-troubleshooting]]
+== Troubleshooting
+
+[cols="1,2",options="header"]
+|===
+|Symptom |Resolution
+
+|Web search or web scraping features do not appear at all
+|`WEBSEARCH_ENABLED` and `WEBRESOURCES_ENABLED` both default to `false`. Set them to `true` in the AI service environment and provide the corresponding `_ENDPOINT` values. Without these flags enabled, the AI service disables all web integration features regardless of JWT permissions or MODELS configuration.
+
+|Web search toggle is grayed out in the editor
+|The JWT is missing the `ai:conversations:webSearch` permission. Add it to the `auth.ai.permissions` array in the token (or use the wildcard `ai:conversations:*`). See xref:tinymceai-on-premises-jwt.adoc#permissions-reference[JWT permissions].
+
+|Web search is toggled on but the model never uses it
+|The per-message request body is missing `"capabilities": {"webSearch": {}}`. The TinyMCE editor sends this when the toggle is active. Custom integrations must include it in each request body. See <<websearch-per-message>>.
+
+|`ERR_INVALID_HTTP_TOKEN` in AI service logs related to web search
+|`WEBSEARCH_HEADERS` is set as a JSON object. The service expects colon-CSV format: `Header-Name: value, Another: value`.
+
+|`ECONNREFUSED` when connecting to MCP server
+|The MCP server is bound to `127.0.0.1`. Bind to `0.0.0.0` instead, or run the MCP server as a sibling container on the same Docker network (or Kubernetes namespace).
+
+|`[WARN] MCP client health check ping failed, evicting` every ~60 seconds
+|Non-functional. The AI service re-handshakes with the MCP server after each eviction. Tool calls continue to work. This log volume is expected in steady state and does not indicate a problem.
+
+|Web search returns "no results" but the search back end is running
+|Check AI service container logs for `[WARN] Web search request failed`. When the `WEBSEARCH_ENDPOINT` returns a 5xx error, the service logs a warning but emits an empty `event: web-search` to the client with no error payload. The model proceeds as if zero results were returned.
+
+|`422 web-resource-download-error` from the web-resources endpoint
+|This single error code covers multiple failure modes: the scrape endpoint returned 5xx, returned non-JSON, returned an empty `data` field, or returned an unsupported `type` (anything other than `text/html` or `text/markdown`). Check AI service container logs for the underlying cause.
+|===
 
 
 

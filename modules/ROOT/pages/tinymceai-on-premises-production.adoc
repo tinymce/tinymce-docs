@@ -16,6 +16,7 @@ Before deploying to production, confirm each item:
 . Container image pulled and registry credentials stored as a secret.
 . Reverse proxy with TLS termination and `proxy_buffering off` for SSE.
 . Environment and access key created through the Management Panel.
+. (Optional) xref:tinymceai-on-premises-mcp.adoc#mcp-kubernetes[MCP and web integrations]: MCP servers and web endpoints deployed as sibling Services if using tool calling or web search.
 
 == Architecture overview
 

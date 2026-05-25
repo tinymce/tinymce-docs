@@ -14,7 +14,7 @@ The infrastructure consists of three layers:
 * The *browser* runs the TinyMCE editor with the `tinymceai` plugin.
 * The *application layer* runs the token endpoint (which signs JWTs), the AI service container, and a load balancer or reverse proxy. It may consist of one or more AI service instances behind the load balancer (round-robin recommended). Each instance runs the same stateless container image.
 * The *data layer* consists of a SQL database, a Redis instance, and file storage:
-** *SQL database*: stores persistent data: configurations, conversations, files, and documents.
+** *SQL database*: stores persistent data such as configurations and conversations.
 ** *Redis*: caching and coordination (SSE delivery, rate limits, pub/sub). Enables the AI service to remain stateless.
 ** *File storage*: stores uploaded files and documents (S3, Azure Blob, filesystem, or the database itself).
 

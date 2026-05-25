@@ -37,7 +37,7 @@ The AI service supports both MySQL and PostgreSQL equally. Pick whichever the op
 
 == Choosing a setup path
 
-Use Docker Compose for evaluation, managed cloud services (Amazon RDS, Cloud SQL, Azure Database) for production. All paths produce the same end state: a running database the AI service can connect to. Both MySQL and PostgreSQL are supported in every configuration.
+Use Docker Compose for evaluation or managed cloud services (Amazon RDS, Cloud SQL, Azure Database) for production.
 
 [.text-center]
 image::tinymceai-on-premises/database-setup-fig-1.svg[Database setup decision tree: local Docker Compose vs managed cloud database for evaluation and production,width=100%]

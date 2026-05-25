@@ -15,7 +15,7 @@ The infrastructure consists of three layers:
 * The *application layer* runs the AI service container and communicates with LLM providers to process AI requests. It may consist of one or more instances behind a load balancer (round-robin recommended). Each instance runs the same stateless container image.
 * The *data layer* consists of a SQL database, a Redis instance, and file storage:
 ** *SQL database*: stores persistent data: configurations, conversations, files, and documents.
-** *Redis*: handles temporary data and inter-instance communication for scaling. When multiple instances are running, Redis ensures data is shared correctly across all of them.
+** *Redis*: caching and coordination (SSE delivery, rate limits, pub/sub). Enables the AI service to remain stateless.
 ** *File storage*: stores uploaded files and documents (S3, Azure Blob, filesystem, or the database itself).
 
 [.text-center]

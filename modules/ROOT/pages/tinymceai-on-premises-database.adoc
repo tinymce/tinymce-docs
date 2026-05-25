@@ -6,7 +6,7 @@
 This page covers the *data layer*: the SQL database, Redis, and file storage. These components must be running and accessible before the AI service container can start — the service connects to them on boot and will not proceed without them.
 
 * *SQL database*: stores persistent data such as configurations, conversations, files, and documents.
-* *Redis*: handles temporary data and inter-instance communication for scaling. When multiple application instances are running, Redis ensures that data is shared correctly across all of them.
+* *Redis*: caching and coordination (SSE delivery, rate limits, pub/sub). Enables the AI service to remain stateless.
 * *File storage*: stores uploaded files and documents.
 
 Configure the data layer first, then proceed to xref:tinymceai-on-premises-providers.adoc[LLM providers] and xref:tinymceai-on-premises-jwt.adoc[JWT authentication]. For container runtimes, reverse proxies, Transport Layer Security (TLS), Kubernetes, and ECS deployment, see the xref:tinymceai-on-premises-production.adoc[Production deployment guide].
@@ -85,7 +85,7 @@ TIP: Pin specific major versions for all data layer images (`mysql:8.0`, `postgr
 [[mysql-version-pinning]]
 === MySQL
 
-Do *not* use `mysql:8`. That tag now floats to the latest MySQL, which removes the `default-authentication-plugin=mysql_native_password` startup flag the AI service relies on. The container crashloops with:
+WARNING: Do *not* use `mysql:8`. That tag now floats to the latest MySQL, which removes the `default-authentication-plugin=mysql_native_password` startup flag the AI service relies on. The container crashloops with:
 
 ....
 [ERROR] [MY-000067] [Server] unknown variable 'default-authentication-plugin=mysql_native_password'.
@@ -206,8 +206,6 @@ volumes:
 ----
 
 .PostgreSQL compose file
-[%collapsible]
-====
 [source,yaml]
 ----
 services:
@@ -240,7 +238,6 @@ services:
 volumes:
   pg_data:
 ----
-====
 
 If using PostgreSQL and not using `DATABASE_SCHEMA=public`, after `docker compose up -d`, create the schema:
 
@@ -620,7 +617,7 @@ STORAGE_DRIVER=filesystem
 STORAGE_LOCATION=/tmp/ai-storage
 ----
 
-IMPORTANT: The container runs as a non-root user and cannot write under `/var`. Mount a writable volume and point `STORAGE_LOCATION` at the mount point: `-v ./ai-storage:/tmp/ai-storage`.
+IMPORTANT: The AI service container runs as a non-root user. Mount a writable volume and point `STORAGE_LOCATION` at the mount path (for example, `-v ./ai-storage:/tmp/ai-storage`).
 
 === Database
 

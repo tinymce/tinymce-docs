@@ -52,7 +52,7 @@ The API Secret is generated when creating an access key inside an environment, i
 |===
 |Credential |Purpose |Used by
 |*API Secret* |Signs user-facing JWTs presented to the AI runtime endpoints. Created per access key inside an environment. |The application token endpoint. Never appears in any management call.
-|*`ENVIRONMENTS_MANAGEMENT_SECRET_KEY`* |Signs Management Panel logins. Set as an environment variable on the AI service container. |The Management Panel UI.
+|*`ENVIRONMENTS_MANAGEMENT_SECRET_KEY`* |Password to log in to the Management Panel. Set as an environment variable on the AI service container. |The Management Panel UI.
 |===
 
 These two credentials are unrelated. Using one in place of the other produces `invalid-jwt-signature`.
@@ -70,7 +70,7 @@ Every token MUST contain the following claims.
 |`iat` |number |Issued-at, seconds since epoch (UTC).
 |`exp` |number |Expiry, seconds since epoch (UTC). Recommend `iat {plus} 3600` for demos, `iat {plus} 900` for production. The server applies 60 seconds of clock-skew leeway; tokens up to 60 seconds past `exp` still verify.
 |`sub` |string |Unique, stable user identifier. Conversation history is isolated per-`sub`; do not reuse one `sub` across users or conversations will leak between them.
-|`auth.ai.permissions` |`string[]` |Array of feature permission strings. See the permissions reference below. Wildcards (`*`) are accepted only in the documented positions; the bare string `"*"` is rejected.
+|`auth.ai.permissions` |`string[]` |Array of feature permission strings. See the permissions reference below. Wildcards (pass:[*]) are accepted only in the documented positions; the bare string `"*"` is rejected.
 |===
 
 == Optional claims

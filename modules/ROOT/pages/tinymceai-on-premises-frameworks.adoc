@@ -12,7 +12,7 @@ It assumes:
 * A token endpoint exists that signs HS256 JWTs (see xref:tinymceai-on-premises-jwt.adoc[JWT authentication]).
 * A valid TinyMCE license key or API key with the AI feature enabled.
 
-For general framework setup (installing wrappers, component structure, server-side rendering (SSR) patterns), see the existing integration guides:
+For general framework setup (installing wrappers, component structure), see the existing integration guides:
 
 * xref:react-cloud.adoc[React]
 * xref:vue-cloud.adoc[Vue.js]

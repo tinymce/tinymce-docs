@@ -195,7 +195,7 @@ docker run --init -d -p 8000:8000 \
   registry.containers.tiny.cloud/ai-service-tiny:latest
 ----
 
-TIP: The network name is typically `<foldername>_default` (e.g., `tinymce-ai-onpremise_default`). Run `docker network ls` to confirm. For multiple LLM providers, extend the `PROVIDERS` JSON: `{"openai":{...},"anthropic":{...}}`.
+TIP: The network name is typically `<foldername>_default` (e.g., `tinymce-ai-onpremise_default` for the folder created above). Run `docker network ls` to confirm the exact name — Docker Compose versions format it differently. For multiple LLM providers, extend the `PROVIDERS` JSON: `{"openai":{...},"anthropic":{...}}`.
 
 For Podman, replace `docker run` with `podman run` and use a Podman pod instead of a compose network. See xref:tinymceai-on-premises-production.adoc[Production deployment] for Podman-specific guidance. See xref:tinymceai-on-premises-production.adoc#_podman_deployment[Podman deployment] for a full example.
 
@@ -239,8 +239,8 @@ The AI service isolates users into Environments. Each environment has its own ac
 . Sign in using the `MANAGEMENT_SECRET` from `.env`.
 . Click *Create Environment* and give it a name (for example "Development").
 . Note the *Environment ID* displayed (a short identifier like `viOu8BnjJHb0HGK091p`).
-. Inside the environment, click *Create Access Key*.
-. *Copy the API Secret immediately*. The Management Panel shows it only once.
+. Inside the environment, click *Create a new access key*.
+. *Copy the Environment ID and Access Key*. The Management Panel shows the API Secret only once.
 
 Update `.env` with the new values:
 
@@ -282,7 +282,7 @@ Create `token-server.js`:
 [source,javascript]
 .token-server.js
 ----
-require('dotenv').config();
+require('dotenv').config({ override: true });
 const express = require('express');
 const jwt = require('jsonwebtoken');
 

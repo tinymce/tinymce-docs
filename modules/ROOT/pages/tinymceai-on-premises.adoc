@@ -27,15 +27,15 @@ Data flow for a single AI request:
 
 . The client application requests a JWT from the token endpoint.
 . The client sends a prompt with the JWT to the AI service over HTTPS.
-. The AI service verifies the token, checks per-feature permissions, and forwards the prompt to the configured large language model (LLM).
+. The AI service verifies the token and forwards the prompt to the configured large language model (LLM).
 . The LLM streams its response back to the AI service.
 . The AI service relays the response to the client through Server-Sent Events (SSE).
 
 When used with TinyMCE `tinymceai`, the plugin handles steps 1, 2, and 5 automatically through the `tinymceai_token_provider` callback.
 
-IMPORTANT: The browser connects directly to the AI service — requests do not pass through the application back end. The AI service must be network-reachable from the end-user browser, which means it must have a public URL (or be accessible through a VPN/internal network when deployed on an intranet). Configure xref:tinymceai-on-premises-frameworks.adoc#_cross_origin_requests_to_the_ai_service[CORS] and xref:tinymceai-on-premises-production.adoc#_tls_https[TLS] on the AI service accordingly.
+NOTE: The browser connects directly to the AI service — requests do not pass through the application back end. The AI service must be network-reachable from the end-user browser, which means it must have a public URL (or be accessible through a VPN/internal network when deployed on an intranet). Configure xref:tinymceai-on-premises-frameworks.adoc#_cross_origin_requests_to_the_ai_service[CORS] and xref:tinymceai-on-premises-production.adoc#_tls_https[TLS] on the AI service accordingly.
 
-The shared secret (API Secret) never leaves the back end; the editor and the AI service only ever see signed tokens.
+The shared secret (API Secret) exists only in the application back end (token endpoint) and the AI service container. The browser and the editor never see it — they only handle signed tokens.
 
 == Capabilities
 
@@ -107,7 +107,7 @@ Three credentials are involved in an on-premises deployment. They are distinct a
 |Only for self-hosted editor deployments. Provided by the Tiny account representative.
 |===
 
-NOTE: `LICENSE_KEY` (the AI service license) and `TINYMCE_API_KEY` / `license_key` (the editor license) are different credentials from different sources. Do not interchange them.
+NOTE: `LICENSE_KEY` (the AI service license) and `TINYMCE_API_KEY` / `license_key` (the editor license) are different credentials from different sources. They are not interchangeable.
 
 == Prerequisites
 

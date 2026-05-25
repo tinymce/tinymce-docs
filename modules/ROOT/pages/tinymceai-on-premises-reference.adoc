@@ -62,7 +62,7 @@ Alphabetized. Required-ness is marked relative to a minimum working deployment.
 |`WEBRESOURCES_REQUEST_TIMEOUT` |No |- |Scraper request timeout in ms.
 |`WEBSEARCH_ENABLED` |No |`false` |Enable web search forwarding. See xref:tinymceai-on-premises-mcp.adoc#web-scraping-and-search[Web scraping and web search].
 |`WEBSEARCH_ENDPOINT` |If web search enabled |- |Search URL.
-|`WEBSEARCH_HEADERS` |No |- |JSON object; extra headers sent to the search endpoint.
+|`WEBSEARCH_HEADERS` |No |- |Colon-CSV format (`Header-Name: value, Another: value`). Extra headers sent to the search endpoint. Do not use JSON — see xref:tinymceai-on-premises-mcp.adoc#web-scraping-and-search[Web scraping and web search].
 |`WEBSEARCH_REQUEST_TIMEOUT` |No |- |Search request timeout in ms.
 |===
 

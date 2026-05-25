@@ -197,6 +197,8 @@ docker run --init -d -p 8000:8000 \
 
 TIP: The network name is typically `<foldername>_default` (e.g., `tinymce-ai-onpremise_default` for the folder created above). Run `docker network ls` to confirm the exact name — Docker Compose versions format it differently. For multiple LLM providers, extend the `PROVIDERS` JSON: `{"openai":{...},"anthropic":{...}}`.
 
+NOTE: The launch command above starts the AI service with basic conversation support. To enable *web search* in conversations, add `WEBSEARCH_ENABLED='true'` and `WEBSEARCH_ENDPOINT` (pointing to a search backend) to the `docker run` command. See xref:tinymceai-on-premises-mcp.adoc#web-scraping-and-search[Web scraping and web search] for the full configuration, endpoint contracts, and a SerpAPI example.
+
 For Podman, replace `docker run` with `podman run` and use a Podman pod instead of a compose network. See xref:tinymceai-on-premises-production.adoc[Production deployment] for Podman-specific guidance. See xref:tinymceai-on-premises-production.adoc#_podman_deployment[Podman deployment] for a full example.
 
 For native databases (the database runs on the host or in a managed service rather than in Docker), drop the `--network` flag and set `DATABASE_HOST=host.docker.internal` (Docker Desktop and Podman 4{plus}). On native Linux Docker, additionally pass `--add-host=host.docker.internal:host-gateway`.

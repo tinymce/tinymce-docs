@@ -92,19 +92,14 @@ These assume the container is running and `/health` returns OK.
 |Token signed with RS256 instead of HS256
 |Re-sign with `algorithm: 'HS256'` and the API Secret. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication].
 
-|`allowed: false` on every endpoint
-|`auth.ai.permissions` is a string, shorthand, or wrong shape
-|Use the explicit array form. See the <<correct-permissions-shape,correct shape>> below.
-
 |`409 conversation in use` then `404 conversation does not exist`
 |Stream abort left temporary state blocking the conversation
 |Start a new conversation or reload the page. Custom UIs should create a fresh conversation after cancel.
-|===
 
-[[correct-permissions-shape]]
-.Correct permissions shape
-[%collapsible]
-====
+|`allowed: false` on every endpoint
+|`auth.ai.permissions` is a string, shorthand, or wrong shape
+a|Use the explicit array form:
+
 [source,json]
 ----
 {
@@ -121,8 +116,8 @@ These assume the container is running and `/health` returns OK.
 }
 ----
 
-Common mistakes that produce `allowed: false`: `"permissions": "ai:admin"` (string shorthand), `"permissions": "*"`, `"useAllFeatures": true`, or a single permission as a string instead of an array. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication] for the full permission catalog.
-====
+Common mistakes: `"permissions": "ai:admin"` (string shorthand), `"permissions": "*"`, `"useAllFeatures": true`, or a single permission as a string instead of an array. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication] for the full permission catalog.
+|===
 
 
 [[llm-provider-errors]]

@@ -7,7 +7,7 @@ sequenceDiagram
     participant LLM as LLM provider
 
     User->>Editor: Triggers an AI feature
-    Editor->>App: POST /api/ai-token<br>session cookie or Bearer
+    Editor->>App: tinymceai_token_provider callback<br>(e.g. POST /api/ai-token)
     App->>App: Authenticate the user
     Note over App: Sign HS256 JWT with API Secret<br>aud = environment ID<br>sub = user ID<br>auth.ai.permissions = [...]
     App-->>Editor: { "token": "eyJ..." }

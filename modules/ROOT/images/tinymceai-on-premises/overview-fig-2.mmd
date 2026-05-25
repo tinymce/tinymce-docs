@@ -1,11 +1,11 @@
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ECECFF', 'primaryBorderColor': '#9370DB', 'lineColor': '#333333', 'edgeLabelBackground': '#e8e8e8', 'fontSize': '16px' }, 'flowchart': { 'nodeSpacing': 40, 'rankSpacing': 80 }}}%%
 flowchart LR
-    subgraph Client["Client layer"]
-        Token["Token endpoint\n(back end)"]
+    subgraph Browser["Browser"]
         App["TinyMCE editor\n(browser)"]
     end
 
     subgraph Service["Application layer"]
+        Token["Token endpoint\n(your server)"]
         LB["Load balancer /\nreverse proxy\n(TLS termination)"]
         AI["AI service\n(container)"]
     end
@@ -21,10 +21,10 @@ flowchart LR
     App -->|"1. request JWT"| Token
     Token -->|"JWT"| App
     App -->|"2. HTTPS"| LB
-    LB -->|"HTTP"| AI
+    LB <-->|"HTTP / SSE"| AI
     AI -->|"3. HTTPS"| LLM
     LLM -->|"4. stream"| AI
-    AI -->|"5. SSE response"| App
+    LB -->|"5. SSE"| App
     AI <-->|"read/write"| DB
     AI <-->|"read/write"| Redis
     AI <-->|"read/write"| Storage

@@ -20,6 +20,7 @@ Only new customers can start a self-hosted trial. For trial duration and entitle
 * A trial license key, issued after sign-up.
 * https://nodejs.org/[Node.js (and npm)] installed.
 * A project directory with a `+package.json+` file. Initialize one by running `+npm init+` if needed.
+* A secure context: the page must be served over HTTPS or from `+localhost+`. Trial license keys require a secure context to complete key validation.
 
 == Setup
 
@@ -108,9 +109,6 @@ The following premium features require a connection to {cloudname} services and 
 
 | xref:tinymceai.adoc[TinyMCE AI]
 | AI-powered content generation and editing.
-
-| xref:tinydrive-introduction.adoc[Tiny Drive]
-| Cloud-based file management and storage service.
 |===
 
 All other premium plugins included in the `+tinymce-premium+` package function during the trial without a cloud connection.

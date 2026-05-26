@@ -112,6 +112,7 @@ For PostgreSQL, change `DATABASE_DRIVER` to `'postgres'` and add `-e DATABASE_SC
 |GET |`/v1/conversations` |JWT |List conversations for the current `sub`.
 |GET |`/v1/conversations/\{id}` |JWT |Read one conversation.
 |POST |`/v1/conversations/\{id}/messages` |JWT |Send a message. Returns Server-Sent Events (SSE) stream.
+|POST |`/v1/conversations/\{id}/web-resources` |JWT |Fetch a web page through the configured scrape endpoint. Body: `{"url":"https://..."}`. Returns 201 on success, 422 on scrape failure. Requires `WEBRESOURCES_ENABLED='true'`. See xref:tinymceai-on-premises-mcp.adoc#web-scraping[Web scraping].
 |DELETE |`/v1/conversations/\{id}` |JWT |Delete a conversation.
 |POST |`/v1/actions/\{actionId}` |JWT |Run a quick action. Body shape: `{"content":[{"type":"text","content":"..."}]}` (no `modelId`).
 |POST |`/v1/reviews/\{reviewId}` |JWT |Run a review.

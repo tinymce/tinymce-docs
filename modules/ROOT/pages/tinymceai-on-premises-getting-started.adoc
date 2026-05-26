@@ -138,8 +138,8 @@ OPENAI_API_KEY=<paste-openai-key-here>
 # GOOGLE_API_KEY=<paste-google-key-here>
 
 # --- Filled in after creating an environment (see "Create an environment and access key" below). Used by the token server, not the AI service. ---
-AI_ENV_ID=
-AI_API_SECRET=
+AI_ENV_ID=<paste-environment-id-here>
+AI_API_SECRET=<paste-api-secret-here>
 ----
 
 IMPORTANT: `LICENSE_KEY` and `TINYMCE_API_KEY` are different credentials. `LICENSE_KEY` is the long string from the account representative that activates the AI service. `TINYMCE_API_KEY` is the short string from the tiny.cloud dashboard used to load TinyMCE from the CDN — it is not required for self-hosted editor bundles. See the xref:tinymceai-on-premises.adoc#_credentials[Credentials] section on the Overview page.
@@ -248,8 +248,8 @@ Update `.env` with the new values:
 
 [source,bash]
 ----
-AI_ENV_ID=PASTE_ENVIRONMENT_ID_HERE
-AI_API_SECRET=PASTE_API_SECRET_HERE
+AI_ENV_ID=<paste-environment-id-here>
+AI_API_SECRET=<paste-api-secret-here>
 ----
 
 [IMPORTANT]

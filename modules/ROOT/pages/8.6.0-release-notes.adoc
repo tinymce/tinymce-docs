@@ -23,10 +23,10 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 === Self-hosted trial with cloud services
 
-{productname} {release-version} introduces self-hosted trials with optional access to cloud-powered premium features. Integrators can install {productname} and premium plugins via NPM, configure a trial license key, and optionally enable a connection to {cloudname} services by setting `+cloud_services_trial+` to `+true+`.
+{productname} {release-version} introduces self-hosted trials with optional access to cloud-powered premium features. Integrators can install {productname} and premium plugins via NPM, configure a trial license key, and optionally enable a connection to {cloudname} services by setting `+online_license_services_opt_in+` to `+true+`.
 
-When enabled, cloud-powered features such as Spell Checker Pro, Link Checker, Enhanced Media Embed, Export to PDF, Export to Word, Import from Word, Image Editing, Autocorrect, and TinyMCE AI become available during the trial period without requiring a separate API key or cloud deployment.
+When enabled, cloud-powered features such as Spell Checker Pro, Link Checker, Enhanced Media Embed, Export to PDF, Export to Word, Import from Word, Image Editing, TinyMCE AI, and Tiny Drive become available during the trial period without requiring a separate API key or cloud deployment.
 
-Without the `+cloud_services_trial+` option, the editor operates entirely self-hosted with no external network connection. All premium plugins that do not depend on cloud services continue to function regardless.
+Without the `+online_license_services_opt_in+` option, the trial license key still validates and the editor is fully operational. All premium plugins that do not depend on cloud services continue to function. Cloud-dependent plugins are not auto-configured but can be configured manually.
 
 For setup instructions, see xref:self-hosted-trial.adoc[Self-hosted trial with cloud services].

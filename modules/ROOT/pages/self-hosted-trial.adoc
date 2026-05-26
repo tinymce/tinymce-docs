@@ -3,13 +3,11 @@
 :description: Set up a self-hosted {productname} trial with access to cloud-powered premium features using NPM.
 :keywords: trial, self-hosted, npm, cloud services, premium plugins, license key, tinymce-premium
 
-// TODO: Update option name `cloud_services_trial` when final name is confirmed (TINY-14259).
-
 == Overview
 
 A self-hosted trial provides access to {productname} premium plugins in a self-hosted environment. Integrators can optionally connect to {cloudname} services during the trial to evaluate cloud-powered features such as Spell Checker Pro, Export to PDF, and TinyMCE AI, without requiring a separate cloud deployment or additional scripts.
 
-Connecting to cloud services is opt-in. Setting the `+cloud_services_trial+` option to `+true+` enables the connection. Without this option, the editor operates entirely offline with no cloud dependency. No separate API key is required.
+Connecting to cloud services is opt-in. Setting the `+online_license_services_opt_in+` option to `+true+` enables the connection. Without this option, the editor is licensed and operational but cloud-dependent premium plugins are not auto-configured. No separate API key is required.
 
 [NOTE]
 ====
@@ -51,7 +49,7 @@ tinymce.init({
     'linkchecker', 'mediaembed', 'editimage', 'autocorrect', 'tinymceai'
   ],
   toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | help',
-  cloud_services_trial: true
+  online_license_services_opt_in: true
 });
 ----
 
@@ -59,11 +57,13 @@ Replace the `+'your-trial-license-key'+` placeholder with the trial license key 
 
 === Step 3: Enable cloud services
 
-Set the `+cloud_services_trial+` option to `+true+` in the editor configuration. This option explicitly enables the connection to {cloudname} services for the duration of the trial.
+Set the `+online_license_services_opt_in+` option to `+true+` in the editor configuration. This option enables automatic configuration of cloud service URLs for all cloud-dependent premium plugins during the trial.
+
+Without this option, the trial license key still validates and the editor is fully functional, but cloud-dependent plugins (such as Spell Checker Pro, Link Checker, and Export to PDF) are not auto-configured and will report that their service URL is not set.
 
 [IMPORTANT]
 ====
-Setting `+cloud_services_trial+` to `+true+` enables a network connection from the editor to {cloudname}. Features that depend on cloud services will not function without this option enabled. Remove or set this option to `+false+` to disable the cloud connection at any time.
+Setting `+online_license_services_opt_in+` to `+true+` enables a network connection from the editor to {cloudname}. Remove or set this option to `+false+` to disable the cloud connection at any time.
 ====
 
 === Step 4: Ensure the license key manager is available
@@ -79,7 +79,7 @@ For hosting setups, ensure the `+licensekeymanager+` folder is present in the `+
 
 == Cloud-powered features
 
-The following premium features require a connection to {cloudname} services and will only function when `+cloud_services_trial+` is set to `+true+`:
+The following premium features require a connection to {cloudname} services and will only function when `+online_license_services_opt_in+` is set to `+true+`:
 
 [cols="1,2", options="header"]
 |===
@@ -106,11 +106,11 @@ The following premium features require a connection to {cloudname} services and 
 | xref:editimage.adoc[Image Editing]
 | Advanced image editing with cloud-based image proxy support.
 
-| xref:autocorrect.adoc[Autocorrect]
-| Automatic text corrections powered by cloud-based language services.
-
 | xref:tinymceai.adoc[TinyMCE AI]
 | AI-powered content generation and editing.
+
+| xref:tinydrive-introduction.adoc[Tiny Drive]
+| Cloud-based file management and storage service.
 |===
 
 All other premium plugins included in the `+tinymce-premium+` package function during the trial without a cloud connection.
@@ -119,7 +119,7 @@ For the full list of features included in a trial, see the link:https://www.tiny
 
 == Network requirements
 
-When `+cloud_services_trial+` is enabled, the editor connects to {cloudname} services. Ensure that `+*.tiny.cloud+` is allowed for outbound access if the network uses a forward proxy or firewall.
+When `+online_license_services_opt_in+` is enabled, the editor connects to {cloudname} services at `+*.api.tiny.cloud+`. Ensure that this domain pattern is allowed for outbound HTTPS access if the network uses a forward proxy or firewall.
 
 For detailed Content Security Policy (CSP) configuration, see xref:tinymce-and-csp.adoc[{productname} and Content Security Policy].
 
@@ -139,7 +139,7 @@ For detailed Content Security Policy (CSP) configuration, see xref:tinymce-and-c
 | The editor ceases to function when the trial license key expires. Purchase a commercial license to continue using {productname}.
 
 | Cloud services
-| Cloud-powered features require an active internet connection and the `+cloud_services_trial+` option set to `+true+`. Without this option, no cloud connection is made.
+| Cloud-powered features require an active internet connection and the `+online_license_services_opt_in+` option set to `+true+`. Without this option, cloud-dependent plugins are not auto-configured.
 |===
 
 == After the trial
@@ -160,16 +160,16 @@ To continue using {productname} after the trial period:
 | No. The trial license key is the only key required. There is no need to configure a separate API key for cloud services during the trial.
 
 | Can the cloud connection be disabled?
-| Yes. Remove the `+cloud_services_trial+` option or set it to `+false+`. Cloud-powered features will not function without this option, but all self-hosted plugins will continue to operate.
+| Yes. Remove the `+online_license_services_opt_in+` option or set it to `+false+`. Cloud-powered features will not be auto-configured, but the editor and all self-hosted plugins will continue to operate.
 
 | What happens when the trial expires?
 | {productname} disables the editor and displays a notification indicating that the license key has expired. Purchase a commercial license to continue use.
 
 | Is a separate script tag required for cloud services?
-| No. Unlike a hybrid deployment, the self-hosted trial does not require an additional script tag. The `+cloud_services_trial+` option and the trial license key handle all cloud service connectivity.
+| No. Unlike a hybrid deployment, the self-hosted trial does not require an additional script tag. The `+online_license_services_opt_in+` option and the trial license key handle all cloud service connectivity.
 
 | Which plugins work without cloud services?
-| All premium plugins that do not depend on an external service function during the trial regardless of the `+cloud_services_trial+` option value. Only the features listed in <<Cloud-powered features>> require the cloud connection to be enabled.
+| All premium plugins that do not depend on an external service function during the trial regardless of the `+online_license_services_opt_in+` option value. Only the features listed in <<Cloud-powered features>> require the cloud connection to be enabled.
 
 | Can the trial be extended?
 | Trial extensions are not available through self-service. Contact link:https://support.tiny.cloud[{productname} Support] for assistance.

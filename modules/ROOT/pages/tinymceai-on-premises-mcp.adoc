@@ -1,7 +1,9 @@
 = MCP and web integrations
 :navtitle: MCP and web integrations (optional)
 :description: Model Context Protocol (MCP) server integration and web scraping/search configuration for TinyMCE AI on-premises
-:keywords: AI, on-premises, MCP, Model Context Protocol, web search, web scraping
+:description_short: MCP, web search, and web scraping setup.
+:keywords: AI, on-premises, MCP, Model Context Protocol, web search, web scraping, tool calling, Streamable HTTP
+:pluginname: TinyMCE AI
 
 The AI service extends model capabilities through two integration points: the https://modelcontextprotocol.io/[Model Context Protocol] (MCP) for tool calling, and pluggable web endpoints for page fetching and search. Both features operate within AI conversations only. Web search and scraping allow the AI to reference live internet content during conversations, and for most deployments, enabling at least web search improves response quality.
 
@@ -205,7 +207,7 @@ IMPORTANT: `WEBSEARCH_HEADERS` uses **colon-CSV format** (`Header-Name: value, A
 [[websearch-per-message]]
 === Per-message activation (custom integrations)
 
-The TinyMCE editor sends the web search activation flag when the user toggles web search on. Custom integrations that call the AI service API directly must include the following in each message request body where web search should be active:
+The {productname} editor sends the web search activation flag when the user toggles web search on. Custom integrations that call the AI service API directly must include the following in each message request body where web search should be active:
 
 [source,json]
 ----
@@ -310,7 +312,7 @@ Content-Type: application/json
 { "url": "https://example.com/page-to-fetch" }
 ----
 
-The TinyMCE editor sends this request when a user pastes or references a URL in conversation. Custom integrations must call this endpoint explicitly to trigger a page fetch.
+The {productname} editor sends this request when a user pastes or references a URL in conversation. Custom integrations must call this endpoint explicitly to trigger a page fetch.
 
 The response is stored against the conversation. The `type` field in the scrape response must be `text/html` or `text/markdown`. Other MIME types (for example, `application/pdf`) are rejected with a `422 web-resource-download-error`.
 
@@ -411,7 +413,7 @@ For production clusters, the MCP server Deployments should have dedicated resour
 |The JWT is missing the `ai:conversations:webSearch` permission. Add it to the `auth.ai.permissions` array in the token (or use the wildcard `ai:conversations:*`). See xref:tinymceai-on-premises-jwt.adoc#permissions-reference[JWT permissions].
 
 |Web search is toggled on but the model never uses it
-|The per-message request body is missing `"capabilities": {"webSearch": {}}`. The TinyMCE editor sends this when the toggle is active. Custom integrations must include it in each request body. See <<websearch-per-message>>.
+|The per-message request body is missing `"capabilities": {"webSearch": {}}`. The {productname} editor sends this when the toggle is active. Custom integrations must include it in each request body. See <<websearch-per-message>>.
 
 |`ERR_INVALID_HTTP_TOKEN` in AI service logs related to web search
 |`WEBSEARCH_HEADERS` is set as a JSON object. The service expects colon-CSV format: `Header-Name: value, Another: value`.

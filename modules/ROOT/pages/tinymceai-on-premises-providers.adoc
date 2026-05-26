@@ -1,7 +1,9 @@
 = LLM provider configuration
 :navtitle: LLM providers
 :description: LLM provider configuration for TinyMCE AI on-premises service
+:description_short: LLM provider configuration and model catalog.
 :keywords: AI, on-premises, LLM, OpenAI, Anthropic, Google, Gemini, Azure, Bedrock, Vertex, Ollama, vLLM, openai-compatible
+:pluginname: TinyMCE AI
 
 
 
@@ -80,7 +82,7 @@ IMPORTANT: Always set `MODELS` explicitly for production. Without it, the editor
 [%collapsible]
 ====
 * The `/v1/models/1` endpoint reports `agent-1` with `allowed: false` unless the JWT includes the `ai:models:agent` permission.
-* The TinyMCE editor model picker does not display real model names.
+* The {productname} editor model picker does not display real model names.
 * Setting `MODELS` explicitly makes the editor display meaningful names, routes to the correct provider, and enables per-model JWT permissions (`ai:models:<provider>:<model-id>`).
 * See xref:tinymceai-on-premises-jwt.adoc[JWT authentication] for permission syntax.
 ====
@@ -96,7 +98,7 @@ When `MODELS` is omitted, a `GET /v1/models/1` call returns:
 }
 ----
 
-Clients (the TinyMCE editor included) will then fall back to the disabled agent and every AI request will fail with no useful error in the UI. The model list endpoint also only accepts the literal version `1`:
+Clients (the {productname} editor included) will then fall back to the disabled agent and every AI request will fail with no useful error in the UI. The model list endpoint also only accepts the literal version `1`:
 
 [source,bash]
 ----
@@ -222,7 +224,7 @@ API key from https://console.anthropic.com/[console.anthropic.com]. Same shape a
 
 *Reasoning models:*
 
-Claude 4.x models (Sonnet 4, Opus 4) support extended thinking. To surface the reasoning toggle in the TinyMCE UI, add `capabilities.reasoning: true` to the model entry in `MODELS`:
+Claude 4.x models (Sonnet 4, Opus 4) support extended thinking. To surface the reasoning toggle in the {productname} UI, add `capabilities.reasoning: true` to the model entry in `MODELS`:
 
 [source,json]
 ----
@@ -902,7 +904,7 @@ A `MODELS` array routes individual models to specific providers using the `provi
 ----
 ====
 
-This wires conversations to OpenAI, reviews to Bedrock-hosted Claude, and quick actions to a local Ollama model. The TinyMCE editor will pick the appropriate provider for each feature based on which models declare which `features`.
+This wires conversations to OpenAI, reviews to Bedrock-hosted Claude, and quick actions to a local Ollama model. The {productname} editor will pick the appropriate provider for each feature based on which models declare which `features`.
 
 A `MODELS` entry with a `provider` value that does not exist in `PROVIDERS` is silently skipped; that model will not appear in `/v1/models/1`. When a model is missing from the model selector in the rich text editor, check the spelling of its `provider` field against the keys in `PROVIDERS` (case-sensitive). See xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting] for additional debugging steps.
 

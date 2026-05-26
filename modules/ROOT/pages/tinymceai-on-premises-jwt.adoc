@@ -1,7 +1,9 @@
 = JWT authentication for the on-premises AI service
 :navtitle: JWT authentication
 :description: JWT authentication for the TinyMCE AI on-premises service using HS256 symmetric signing
-:keywords: AI, on-premises, JWT, authentication, HS256, multi-tenant
+:description_short: HS256 JWT authentication and permissions.
+:keywords: AI, on-premises, JWT, authentication, HS256, multi-tenant, token, permissions, security
+:pluginname: TinyMCE AI
 
 This page covers *authentication between the application back end and the AI service*. Every request from the editor to the AI service carries a signed JWT — this is how the service identifies users, enforces permissions, and isolates conversations. The token endpoint runs in the application back end; the editor calls it automatically through the `tinymceai_token_provider` callback configured in xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration].
 
@@ -748,7 +750,7 @@ public class AiTokenController {
 
 == Editor-side token provider
 
-Configure the TinyMCE editor to fetch a token from the application endpoint. The plugin calls the provider on demand and re-fetches when the token nears expiry.
+Configure the {productname} editor to fetch a token from the application endpoint. The plugin calls the provider on demand and re-fetches when the token nears expiry.
 
 [source,javascript]
 ----

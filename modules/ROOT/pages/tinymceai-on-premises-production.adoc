@@ -1,7 +1,9 @@
 = TinyMCE AI on-premises: Production deployment guide
 :navtitle: Production deployment
 :description: Production deployment guide for the TinyMCE AI on-premises service
-:keywords: AI, on-premises, production, Kubernetes, ECS, scaling
+:description_short: Production deployment and scaling guide.
+:keywords: AI, on-premises, production, Kubernetes, ECS, scaling, TLS, security, observability, Docker, Podman
+:pluginname: TinyMCE AI
 
 This guide assumes a running Kubernetes cluster, ECS cluster, or Docker/Podman host with the relevant CLI tools (`kubectl`, `aws`, `docker`) configured. For cluster setup, refer to the platform documentation.
 

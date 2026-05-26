@@ -1,15 +1,17 @@
 = Getting started with TinyMCE AI on-premises
 :navtitle: Getting started
 :description: Five-minute Docker Compose quick start for TinyMCE AI on-premises service
-:keywords: AI, on-premises, getting started, docker, quick start
+:description_short: Five-minute Docker Compose quick start.
+:keywords: AI, on-premises, getting started, Docker, quick start, Docker Compose, installation, setup
+:pluginname: TinyMCE AI
 
 This guide sets up a fully working local stack in roughly five minutes on any machine with Docker:
 
 * *MySQL 8.0*: conversation history and metadata
 * *Redis*: caching and session state
-* *TinyMCE AI service*: the on-premises AI back end
+* *{pluginname} service*: the on-premises AI back end
 * *A minimal token server* (Node.js): signs JWTs for the editor
-* *A browser page with TinyMCE*: validates the end-to-end flow
+* *A browser page with {productname}*: validates the end-to-end flow
 
 The quick start is designed to validate the stack components before moving to a production deployment. Production engineers can review this section to understand the conceptual flow before continuing to xref:tinymceai-on-premises-production.adoc[Production deployment].
 
@@ -26,7 +28,7 @@ npm --version
 
 Additionally, have the following credentials ready:
 
-* A TinyMCE license key and container registry credentials (from the Tiny account representative)
+* A {productname} license key and container registry credentials (from the Tiny account representative)
 * At least one LLM provider API key (OpenAI, Anthropic, or Google)
 
 == Five-minute demo with Docker Compose
@@ -142,7 +144,7 @@ AI_ENV_ID=<paste-environment-id-here>
 AI_API_SECRET=<paste-api-secret-here>
 ----
 
-IMPORTANT: `LICENSE_KEY` and `TINYMCE_API_KEY` are different credentials. `LICENSE_KEY` is the long string from the account representative that activates the AI service. `TINYMCE_API_KEY` is the short string from the tiny.cloud dashboard used to load TinyMCE from the CDN — it is not required for self-hosted editor bundles. See the xref:tinymceai-on-premises.adoc#_credentials[Credentials] section on the Overview page.
+IMPORTANT: `LICENSE_KEY` and `TINYMCE_API_KEY` are different credentials. `LICENSE_KEY` is the long string from the account representative that activates the AI service. `TINYMCE_API_KEY` is the short string from the tiny.cloud dashboard used to load {productname} from the CDN — it is not required for self-hosted editor bundles. See the xref:tinymceai-on-premises.adoc#_credentials[Credentials] section on the Overview page.
 
 === Start MySQL and Redis
 
@@ -371,7 +373,7 @@ npm start
 
 Open *http://localhost:3000* in a browser. The editor loads with the AI toolbar. Select text and try the AI features. Responses stream in real time from the chosen large language model (LLM) provider, processed entirely within the local infrastructure.
 
-The TinyMCE AI on-premises service is now running.
+The {pluginname} on-premises service is now running.
 
 == Verifying the installation
 

@@ -1,7 +1,9 @@
 = Troubleshooting
 :navtitle: Troubleshooting
 :description: Troubleshooting guide for the TinyMCE AI on-premises service
-:keywords: AI, on-premises, troubleshooting, errors, debugging
+:description_short: Troubleshooting and diagnostic recipes.
+:keywords: AI, on-premises, troubleshooting, errors, debugging, diagnostics, JWT, container, LLM
+:pluginname: TinyMCE AI
 
 Match the symptom to the fix below. If the symptom does not fit any section, escalate to `support@tiny.cloud` with the output of `docker logs ai-service --tail 200` and a redacted copy of the `PROVIDERS` value.
 
@@ -186,7 +188,7 @@ Confirm `/health` is OK and a direct `curl` to `/v1/conversations` works before 
 |Symptom |Fix
 
 |No AI buttons in the toolbar
-|Ensure TinyMCE 8{plus} is loaded, `plugins: 'tinymceai'` is set, and the toolbar string includes `tinymceai`. Verify the API key has the AI feature enabled.
+|Ensure {productname} 8{plus} is loaded, `plugins: 'tinymceai'` is set, and the toolbar string includes `tinymceai`. Verify the API key has the AI feature enabled.
 
 |Token fetch returns 401
 |The token endpoint's own authentication middleware is rejecting the request. Check session cookies, Cross-Origin Resource Sharing (CORS) credentials, and bearer tokens in the browser network tab.
@@ -201,7 +203,7 @@ Confirm `/health` is OK and a direct `curl` to `/v1/conversations` works before 
 |Add the editor's origin (scheme {plus} host {plus} port) to the `ALLOWED_ORIGINS` environment variable.
 
 |Editor renders then disappears (Next.js / Nuxt / SvelteKit)
-|TinyMCE references `window` at load time. Load the editor client-only: `dynamic(() => import('./Editor'), { ssr: false })` in Next.js, `<ClientOnly>` in Nuxt, `onMount` in SvelteKit. See xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration].
+|{productname} references `window` at load time. Load the editor client-only: `dynamic(() => import('./Editor'), { ssr: false })` in Next.js, `<ClientOnly>` in Nuxt, `onMount` in SvelteKit. See xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration].
 
 |`tinymceai_token_provider` called in a tight loop
 |Token endpoint is returning an invalid JWT or non-JSON response. Test with `curl -X POST http://localhost:3000/api/ai-token` and verify the response is `pass:c[{"token":"eyJ..."}]`.

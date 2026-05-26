@@ -1,16 +1,18 @@
 = TinyMCE AI on-premises: editor-side integration
 :navtitle: TinyMCE integration
 :description: Connecting the TinyMCE editor to the on-premises AI service from React, Vue, Angular, Svelte, or vanilla JavaScript.
-:keywords: AI, on-premises, React, Vue, Angular, Svelte, token provider
+:description_short: Editor-side AI service integration.
+:keywords: AI, on-premises, React, Vue, Angular, Svelte, token provider, CORS, integration, JavaScript
+:pluginname: TinyMCE AI
 
 
-This page covers the *editor-side* configuration — the final step that connects the browser-based TinyMCE editor to the running AI service. At this point in the deployment process, the xref:tinymceai-on-premises-database.adoc[data layer], xref:tinymceai-on-premises-providers.adoc[LLM providers], and xref:tinymceai-on-premises-jwt.adoc[JWT token endpoint] are already operational. This page wires the editor to that infrastructure.
+This page covers the *editor-side* configuration — the final step that connects the browser-based {productname} editor to the running AI service. At this point in the deployment process, the xref:tinymceai-on-premises-database.adoc[data layer], xref:tinymceai-on-premises-providers.adoc[LLM providers], and xref:tinymceai-on-premises-jwt.adoc[JWT token endpoint] are already operational. This page wires the editor to that infrastructure.
 
 It assumes:
 
 * The AI service is already running and reachable from the browser (see xref:tinymceai-on-premises-getting-started.adoc[Getting started]).
 * A token endpoint exists that signs HS256 JWTs (see xref:tinymceai-on-premises-jwt.adoc[JWT authentication]).
-* A valid TinyMCE license key or API key with the AI feature enabled.
+* A valid {productname} license key or API key with the AI feature enabled.
 
 For general framework setup (installing wrappers, component structure), see the existing integration guides:
 
@@ -19,7 +21,7 @@ For general framework setup (installing wrappers, component structure), see the 
 * xref:angular-cloud.adoc[Angular]
 * xref:svelte-cloud.adoc[Svelte]
 
-The on-premises AI integration adds the options documented below to the standard TinyMCE `init` configuration.
+The on-premises AI integration adds the options documented below to the standard {productname} `init` configuration.
 
 == Token flow
 
@@ -86,7 +88,7 @@ The following vanilla JavaScript example contains every on-premises-specific opt
 </html>
 ----
 
-Replace `/path/to/tinymce/` with the location of the self-hosted TinyMCE assets. See xref:installation.adoc[Self-hosted installation] for download and setup instructions.
+Replace `/path/to/tinymce/` with the location of the self-hosted {productname} assets. See xref:installation.adoc[Self-hosted installation] for download and setup instructions.
 
 
 
@@ -129,7 +131,7 @@ tinymceai_token_provider: () => {
 
 == Framework-specific examples
 
-The examples below show the minimum configuration needed to connect the TinyMCE AI plugin to the on-premises service. Each uses the framework wrapper's `init` prop to pass the same options documented above.
+The examples below show the minimum configuration needed to connect the {pluginname} plugin to the on-premises service. Each uses the framework wrapper's `init` prop to pass the same options documented above.
 
 === React
 
@@ -337,7 +339,7 @@ If using the Tiny CDN instead of self-hosted assets, also add `\https://cdn.tiny
 |Symptom |Likely cause |Fix
 
 |Editor loads but no AI buttons appear
-|`plugins` does not include `tinymceai`, or TinyMCE is version 7.x or earlier
+|`plugins` does not include `tinymceai`, or {productname} is version 7.x or earlier
 |Add `tinymceai` to the `plugins` list and confirm the script URL uses `/tinymce/8/`. Verify the API key has the AI feature enabled.
 
 |`POST /api/ai-token` returns 401

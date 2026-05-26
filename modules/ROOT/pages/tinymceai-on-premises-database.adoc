@@ -1,7 +1,9 @@
 = Database, Redis, and infrastructure setup
 :navtitle: Database, Redis, and storage
-:description: Database, Redis, and file storage setup for the TinyMCE AI On-Premises service
-:keywords: AI, on-premises, database, MySQL, PostgreSQL, Redis, Docker, Podman, file storage, S3, Azure Blob
+:description: Database, Redis, and file storage setup for the TinyMCE AI on-premises service
+:description_short: Database, Redis, and file storage setup.
+:keywords: AI, on-premises, database, MySQL, PostgreSQL, Redis, Docker, Podman, file storage, S3, Azure Blob, infrastructure
+:pluginname: TinyMCE AI
 
 This page covers the *data layer*: the SQL database, Redis, and file storage. These components must be running and accessible before the AI service container can start — the service connects to them on boot and will not proceed without them.
 

@@ -1,9 +1,11 @@
 = TinyMCE AI on-premises
 :navtitle: Overview
 :description: Self-hosted AI writing assistance for TinyMCE; architecture, prerequisites, and topic guide
-:keywords: AI, on-premises, self-hosted, deployment, overview
+:description_short: Self-hosted AI writing assistance for TinyMCE.
+:keywords: AI, on-premises, self-hosted, deployment, overview, architecture, prerequisites, container, LLM
+:pluginname: TinyMCE AI
 
-The TinyMCE AI on-premises service is a self-hosted back end that powers AI writing assistance. It can be used with the TinyMCE rich text editor, particularly the xref:tinymceai.adoc[TinyMCE AI plugin], or as a standalone service. It runs entirely within the host infrastructure. Document content, conversation history, file attachments, and user data stay within the host network and are not stored by Tiny. Data sent to a configured LLM provider is subject to that provider's data handling policies.
+The {pluginname} on-premises service is a self-hosted back end that powers AI writing assistance. It can be used with the {productname} rich text editor, particularly the xref:tinymceai.adoc[TinyMCE AI plugin], or as a standalone service. It runs entirely within the host infrastructure. Document content, conversation history, file attachments, and user data stay within the host network and are not stored by Tiny. Data sent to a configured LLM provider is subject to that provider's data handling policies.
 
 The service ships as a single Open Container Initiative (OCI) container image (`registry.containers.tiny.cloud/ai-service-tiny`). It exposes a REST API, a Management Panel, Server-Sent Events streaming, and an OpenAPI spec.
 
@@ -11,7 +13,7 @@ The service ships as a single Open Container Initiative (OCI) container image (`
 
 The infrastructure consists of three layers:
 
-* The *browser* runs the TinyMCE editor with the `tinymceai` plugin.
+* The *browser* runs the {productname} editor with the `tinymceai` plugin.
 * The *application layer* runs the token endpoint (which signs JWTs), the AI service container, and a load balancer or reverse proxy. It may consist of one or more AI service instances behind the load balancer (round-robin recommended). Each instance runs the same stateless container image.
 * The *data layer* consists of a SQL database, a Redis instance, and file storage:
 ** *SQL database*: stores persistent data such as configurations and conversations.
@@ -31,7 +33,7 @@ Data flow for a single AI request:
 . The LLM streams its response back to the AI service.
 . The AI service relays the response to the client through Server-Sent Events (SSE).
 
-When used with TinyMCE `tinymceai`, the plugin handles steps 1, 2, and 5 automatically through the `tinymceai_token_provider` callback.
+When used with {productname} `tinymceai`, the plugin handles steps 1, 2, and 5 automatically through the `tinymceai_token_provider` callback.
 
 NOTE: The browser connects directly to the AI service — requests do not pass through the application back end. The AI service must be network-reachable from the end-user browser, which means it must have a public URL (or be accessible through a VPN/internal network when deployed on an intranet). Configure xref:tinymceai-on-premises-frameworks.adoc#_cross_origin_requests_to_the_ai_service[CORS] and xref:tinymceai-on-premises-production.adoc#_tls_https[TLS] on the AI service accordingly.
 
@@ -98,12 +100,12 @@ Three credentials are involved in an on-premises deployment. They are distinct a
 
 |`TINYMCE_API_KEY`
 |Editor page (CDN script URL) or build configuration
-|Authenticates against `cdn.tiny.cloud` when loading TinyMCE from the CDN. This is the short string from the tiny.cloud dashboard.
-|Only when loading TinyMCE from the CDN. Omit for self-hosted editor bundles.
+|Authenticates against `cdn.tiny.cloud` when loading {productname} from the CDN. This is the short string from the tiny.cloud dashboard.
+|Only when loading {productname} from the CDN. Omit for self-hosted editor bundles.
 
 |`license_key` (init option)
 |`tinymce.init({ license_key: 'T8LK:...' })`
-|Activates premium TinyMCE features when using a self-hosted editor bundle (not the CDN).
+|Activates premium {productname} features when using a self-hosted editor bundle (not the CDN).
 |Only for self-hosted editor deployments. Provided by the Tiny account representative.
 |===
 

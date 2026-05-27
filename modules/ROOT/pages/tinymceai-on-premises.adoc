@@ -66,6 +66,9 @@ The shared secret (API Secret) exists only in the application back end (token en
 |Multi-tenant environments
 |Isolated conversation history and per-tenant access keys through Environments.
 
+|License validation
+|The AI service validates its license key against `license.containers.tiny.cloud` on every container start. This check confirms the license is active and valid. No customer data, conversation content, or usage telemetry is transmitted during this check. The service will not start if this endpoint is unreachable.
+
 |Per-user, per-feature permissions
 |Fine-grained control through the `auth.ai.permissions` JWT claim.
 

@@ -507,7 +507,9 @@ The AI service requires outbound HTTPS access to the following endpoints. Config
 |Yes (at deploy time)
 |===
 
-TIP: If the deployment environment blocks all outbound traffic by default, add these to the egress allowlist before starting the service. The license check occurs on every container start.
+TIP: If the deployment environment blocks all outbound traffic by default, add these to the egress allowlist before starting the service.
+
+The license validation request transmits only the license key and a service identifier. No conversation content, user data, or usage metrics are included. The check occurs on every container start; the service will not start if `license.containers.tiny.cloud` is unreachable.
 
 == Security hardening
 

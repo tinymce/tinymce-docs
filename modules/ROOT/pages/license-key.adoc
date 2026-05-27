@@ -108,6 +108,16 @@ a|
 * Premium plugin access
 a|
 * Environments where regular license key rotation cannot be performed.
+
+| Trial Keys (ONLINE+)
+a|
+* Key format starts with `+ONLINE++` prefix
+* Expires at the end of the trial period
+* Requires a network connection to {cloudname} for validation
+* Optionally connects to cloud services via `+online_license_services_opt_in: true+`
+a|
+* Evaluating {productname} in a self-hosted environment.
+* See xref:self-hosted-trial.adoc[Self-hosted trial] for setup instructions.
 |===
 
 === Deployment Types
@@ -214,9 +224,11 @@ Only use both keys in properly configured hybrid deployments. Using both keys wi
 
 === Will {productname} "phone home" to check the license key?
 
-No, {productname} does not contact any server to validate the license key for self-hosted deployments.
+For standard self-hosted deployments using a Time-based or Version-locked commercial key, no: validation happens entirely offline and no network connection is made.
 
-If using a cloud or hybrid deployment configuration, the license key may be checked by {cloudname}.
+For cloud and hybrid deployments, the license key may be checked by {cloudname}.
+
+For self-hosted trial deployments using a Trial (ONLINE+) key, yes: the editor contacts {cloudname} to complete key validation. This is required for trial keys and cannot be disabled. The optional `+online_license_services_opt_in+` setting controls whether cloud service URLs are also configured, but the validation network call happens regardless. See xref:self-hosted-trial.adoc[Self-hosted trial] for details.
 
 === What happens if I don't provide a valid license key?
 
@@ -348,10 +360,38 @@ a| * Verify that your API key is valid
 * Visit the link:https://support.tiny.cloud[Support Portal] if the issue persists
 
 | xref:resource-load-error[Resource Load Error]
-| The editor is disabled because the {productname} license key could not be validated.
 | The editor is disabled because the {productname} license key could not be validated. The {productname} Commercial License Key Manager plugin was unable to load additional required resources.
+| The editor is disabled because the {productname} license key could not be validated.
 a| * If bundling, verify that you are using the `licensekeymanager/index.js` file that imports other required resources.
 * If hosting, verify that a `js/commerciallicensekeymanager.js` file is also present in the `plugins/licensekeymanager` folder.
+
+| xref:online-plus-exchange-error[ONLINE+ Exchange Error]
+| The editor is disabled because the license key could not be validated by the cloud server [type: +${errorType}${statusMsg}+]
+| The editor is disabled because the license key could not be validated by the cloud server.
+a| * Verify that your ONLINE+ license key is valid
+* Ensure your deployment is self-hosted (ONLINE+ keys cannot be used with cloud or hybrid deployments)
+* Check that your server has network access to the cloud validation endpoint
+* Visit the link:https://support.tiny.cloud[Support Portal] if the issue persists
+
+| xref:online-plus-insecure-context[ONLINE+ Insecure Context]
+| The editor is disabled because the ONLINE+ license key requires a secure context (HTTPS or localhost) [type: online-insecure-context]
+| The editor is disabled because the ONLINE+ license key requires a secure context (HTTPS or localhost).
+a| * Serve the application over HTTPS
+* Use `localhost` for local development
+* ONLINE+ keys cannot be used over plain HTTP on non-localhost origins
+
+| xref:online-plus-config-conflict[ONLINE+ Config Conflict]
+| The editor is disabled because an ONLINE+ license key can only be configured for a self-hosted deployment.
+| The editor is disabled because an ONLINE+ license key can only be configured for a self-hosted deployment.
+a| * Trial (ONLINE+) keys are only valid for self-hosted deployments
+* If loading {productname} from {cloudname} or using a hybrid deployment, switch to a standard commercial license key
+* See the <<Deployment Types>> section for guidance on choosing the correct deployment type and key
+
+| xref:online-plus-services-not-configured[ONLINE+ Services Not Configured]
+| ONLINE+ license key detected without +online_license_services_opt_in: true+. Cloud-service premium plugins (e.g. linkchecker, spellchecker) will not be auto-configured. Set +online_license_services_opt_in: true+ to use the bundled cloud services, or configure each plugin's service URL manually.
+|
+a| * Add `online_license_services_opt_in: true` to your {productname} init configuration to enable automatic cloud service URL configuration
+* Alternatively, configure each cloud-service plugin's service URL manually
 |===
 
 === Detailed Error Descriptions
@@ -399,5 +439,29 @@ The API key validation failed due to an invalid key or inactive subscription. Th
 [[resource-load-error]]
 ==== Resource Load Error
 The TinyMCE Commercial License Key Manager plugin was unable to load additional required resources. This typically occurs when the `js/commerciallicensekeymanager.js` file is missing or not properly configured. For bundled applications, ensure you are using the `licensekeymanager/index.js` file that imports other required resources. For self-hosted installations, verify that a `js/commerciallicensekeymanager.js` file is present in the `plugins/licensekeymanager` folder. See the <<Setting up the Commercial License Key Manager>> section for implementation details.
+
+[[online-plus-exchange-error]]
+==== ONLINE+ Exchange Error
+This error applies to Trial (ONLINE+) license keys. See xref:self-hosted-trial.adoc[Self-hosted trial] for setup information.
+
+The trial license key could not be validated by the {cloudname} server. The editor will be disabled and will not recover until the configuration issue is resolved. Unlike the <<online-api-key-error-disable,Online API Key Error (4xx - Disable)>>, which applies to standard API key validation, this error is specific to the trial key exchange. Ensure your deployment is self-hosted, as trial keys are not supported in cloud or hybrid deployments. If the key and deployment type are correct, check that your server can reach the {cloudname} validation endpoint. Visit the link:https://support.tiny.cloud[Support Portal] if the issue persists.
+
+[[online-plus-insecure-context]]
+==== ONLINE+ Insecure Context
+This error applies to Trial (ONLINE+) license keys. See xref:self-hosted-trial.adoc[Self-hosted trial] for setup information.
+
+The trial license key requires a secure context to validate correctly, because validation involves a network call to {cloudname}. A secure context is a page served over HTTPS or accessed via `localhost`. Pages served over plain HTTP on a non-localhost domain will cause the editor to be disabled. Serve the application over HTTPS, or use `localhost` for local development.
+
+[[online-plus-config-conflict]]
+==== ONLINE+ Config Conflict
+This error applies to Trial (ONLINE+) license keys. See xref:self-hosted-trial.adoc[Self-hosted trial] for setup information.
+
+A trial license key was detected in a cloud or hybrid deployment configuration. Trial keys are only valid for self-hosted deployments. If you are loading {productname} from {cloudname} or using a hybrid deployment, switch to a standard commercial license key. If you intend to use a self-hosted deployment, ensure {productname} is not being loaded from {cloudname}, as doing so activates the cloud validation flow which is incompatible with trial keys. See the <<Deployment Types>> section for guidance on choosing the correct deployment type and key.
+
+[[online-plus-services-not-configured]]
+==== ONLINE+ Services Not Configured
+This advisory applies to Trial (ONLINE+) license keys. See xref:self-hosted-trial.adoc[Self-hosted trial] for setup information.
+
+A trial license key was accepted but `online_license_services_opt_in: true` was not set in the init configuration. Without this option, {productname} will not automatically configure the cloud service endpoints for premium plugins such as linkchecker and spellchecker. Those plugins will load but will display their own errors about missing service URLs. To enable automatic configuration, add `online_license_services_opt_in: true` to your `tinymce.init` configuration. Alternatively, configure each plugin's service URL manually.
 
 For additional assistance, visit our link:https://support.tiny.cloud[Support Portal] or contact your link:https://www.tiny.cloud/my-account[Tiny Cloud Account] manager.

@@ -2,8 +2,8 @@
 == Installation
 
 [NOTE]
-A valid license key is needed in order to install {pluginname} On-Premises.
-link:https://www.tiny.cloud/contact/[Contact us] for a trial license key.
+A valid service license key is required to run the {pluginname} on-premises service. This is separate from the {productname} editor license key. See xref:service-license-keys.adoc[Service license keys] for details.
+link:https://www.tiny.cloud/contact/[Contact us] for a trial service license key.
 
 === Supported technologies
 
@@ -46,14 +46,16 @@ Launch the Docker container:
 
 [source, sh, subs="attributes+"]
 ----
-docker run --init -p 8080:8080 -e LICENSE_KEY=[your_license_key] {dockerimageexporttopdf}:[version]
+docker run --init -p 8080:8080 -e LICENSE_KEY="$PDF_LICENSE_KEY" {dockerimageexporttopdf}:[version]
 ----
+
+Replace `+$PDF_LICENSE_KEY+` with the service license key, or set `+PDF_LICENSE_KEY+` as an environment variable. See xref:service-license-keys.adoc#using-service-specific-environment-variables[Using service-specific environment variables] for details.
 
 If using authorization provide the SECRET_KEY:
 
 [source, sh, subs="attributes+"]
 ----
-docker run --init -p 8080:8080 -e LICENSE_KEY=[your_license_key] -e SECRET_KEY=[your_secret_key] {dockerimageexporttopdf}:[version]
+docker run --init -p 8080:8080 -e LICENSE_KEY="$PDF_LICENSE_KEY" -e SECRET_KEY=[your_secret_key] {dockerimageexporttopdf}:[version]
 ----
 
 Read more about using authorization in the xref:individual-export-to-pdf-on-premises.adoc#authorization[authorization] section.
@@ -73,7 +75,7 @@ services:
     restart: always
     init: true
     environment:
-      LICENSE_KEY: "license_key"
+      LICENSE_KEY: "$\{PDF_LICENSE_KEY}"
       # Secret Key is optional
       SECRET_KEY: "secret_key"
       # Custom request origin is optional
@@ -91,7 +93,7 @@ docker compose up
 
 [NOTE]
 ====
-* Without a correct `LICENSE_KEY` the application will not start.
+* Without a correct `+LICENSE_KEY+` the application will not start. Set `+PDF_LICENSE_KEY+` in the `+.env+` file or shell environment with a valid service license key.
 ** If the license is invalid, a wrong license key error will display in the logs and the application will not run.
 * It is advisable to override the SECRET_KEY variable using a unique and hard to guess string for security reasons.
 * If the specific infrastructure has strict CORS enabled, then use the `CUSTOM_REQUEST_ORIGIN` variable to set the origin of requests made by the converter. The default value is `https://pdf-internal`.

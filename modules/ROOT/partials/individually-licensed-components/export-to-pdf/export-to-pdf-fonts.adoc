@@ -47,7 +47,7 @@ Launch the Docker container on Unix-like operating system example:
 
 [source, bash, subs="attributes+"]
 ----
-docker run --init -v ~/your_fonts_dir:/usr/share/fonts/your_fonts_dir -p 8080:8080 -e LICENSE_KEY=[your_license_key] {dockerimageexporttopdf}:[version]
+docker run --init -v ~/your_fonts_dir:/usr/share/fonts/your_fonts_dir -p 8080:8080 -e LICENSE_KEY="$PDF_LICENSE_KEY" {dockerimageexporttopdf}:[version]
 ----
 
 [[use-windows-fonts-in-pdf-converter]]
@@ -61,5 +61,5 @@ Launch the Docker container on Windows operating system example:
 
 [source, bash, subs="attributes+"]
 ----
-docker run -v C:\Windows\Fonts:C:\Windows\Fonts -p 8080:8080 --env LICENSE_KEY=[your_license_key] {dockerimageexporttopdfwindows}:[version]
+docker run -v C:\Windows\Fonts:C:\Windows\Fonts -p 8080:8080 --env LICENSE_KEY="$PDF_LICENSE_KEY" {dockerimageexporttopdfwindows}:[version]
 ----

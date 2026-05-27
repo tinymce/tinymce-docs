@@ -199,6 +199,8 @@ docker run --init -d -p 8000:8000 \
 
 NOTE: The AI service contacts `license.containers.tiny.cloud` on startup to validate the license key. Ensure this endpoint is reachable from the container. No customer data is sent during this check.
 
+TIP: If the container already exists from a previous attempt, remove it first with `docker rm -f ai-service`.
+
 TIP: The network name is typically `<foldername>_default` (e.g., `tinymceai-onpremise_default` for the folder created above). Run `docker network ls` to confirm the exact name — Docker Compose versions format it differently. For multiple LLM providers, extend the `PROVIDERS` JSON: `{"openai":{...},"anthropic":{...}}`.
 
 NOTE: The launch command above starts the AI service with basic conversation support. To enable *web search* in conversations, add `WEBSEARCH_ENABLED='true'` and `WEBSEARCH_ENDPOINT` (pointing to a search backend) to the `docker run` command. See xref:tinymceai-on-premises-mcp.adoc#web-scraping-and-search[Web scraping and web search] for the full configuration, endpoint contracts, and a SerpAPI example.
@@ -370,6 +372,8 @@ app.listen(PORT, () => {
 npm install
 npm start
 ----
+
+TIP: If port 3000 is already in use from a previous run, stop the existing process first: `lsof -ti :3000 | xargs kill`.
 
 === Open the demo
 

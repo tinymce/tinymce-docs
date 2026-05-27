@@ -32,7 +32,8 @@ Alphabetized. Required-ness is marked relative to a minimum working deployment.
 |`LICENSE_KEY` |Yes |- |AI service license key (long string from Tiny). The same key is shared across all replicas of a deployment — no per-pod licensing is required.
 |`LLM_TELEMETRY_ENABLED` |No |`false` |Primary OpenTelemetry switch.
 |`LLM_TIMEOUT_MS` |No |180000 |Per-request large language model (LLM) timeout in ms. Raise for large self-hosted models.
-|`MCP_SERVERS` |No |- |JSON object; Model Context Protocol (MCP) server configuration. See xref:tinymceai-on-premises-mcp.adoc#mcp-integration[MCP integration].
+|`MCP_OAUTH_CALLBACK_URL` |If using MCP OAuth |- |URL of the OAuth callback page hosted by the integrating web application. Used as the OAuth `redirect_uri` for all OAuth-enabled MCP servers (unless overridden per server). See xref:tinymceai-on-premises-mcp.adoc#mcp-oauth[OAuth 2.0 authentication].
+|`MCP_SERVERS` |No |- |JSON object; Model Context Protocol (MCP) server configuration. Supports static-token and OAuth 2.0 authentication per server. See xref:tinymceai-on-premises-mcp.adoc#mcp-integration[MCP integration].
 |`MODELS` |Yes (Azure, Bedrock, Vertex, openai-compatible); recommended for all providers |- |JSON array defining exposed models. Required for Azure, Bedrock, Vertex, and openai-compatible providers. Recommended for OpenAI, Anthropic, and Google direct. See xref:tinymceai-on-premises-providers.adoc[LLM providers].
 |`OTEL_DEBUG` |No |- |Verbose OpenTelemetry Protocol (OTLP) diagnostic logging.
 |`OTEL_EXPORTER_OTLP_TRACES_ENDPOINT` |If using OTEL |- |OTLP traces endpoint URL.
@@ -212,7 +213,7 @@ Error codes returned in HTTP 4xx responses and inside SSE `event: error` payload
 |Built-in rate limiting |None |Front the service with nginx `limit_req` or ALB rate-limit rules. See xref:tinymceai-on-premises-production.adoc#rate-limiting[Rate limiting].
 |File support (OpenAI-compatible providers) |Images only (`image/*`) |PDFs, text, and Office files are not forwarded to OpenAI-compatible providers. Use a non-OpenAI-compatible provider for non-image file attachments.
 |MCP tool availability |Conversations only |MCP tools are not available in reviews or quick actions.
-|MCP authentication |Single shared token per server |The `headers` field in `MCP_SERVERS` is fixed at deploy time. Per-user authentication is not supported.
+|MCP authentication |Static token or OAuth 2.0 per server |Static tokens use the `headers` field (fixed at deploy time). Per-user authentication is supported through OAuth 2.0 (Authorization Code with PKCE). See xref:tinymceai-on-premises-mcp.adoc#mcp-oauth[OAuth 2.0 authentication].
 |PostgreSQL default schema |`cs-on-premises` (with hyphen) |Pre-create with `CREATE SCHEMA "cs-on-premises";` or set `DATABASE_SCHEMA=public`.
 |`/v1/models/\{compatibilityVersion}` |Only accepts `1` |Values such as `v1`, `v2`, or `latest` return 500.
 |Environment creation through raw API |Not supported |Always create environments through the Management Panel UI.

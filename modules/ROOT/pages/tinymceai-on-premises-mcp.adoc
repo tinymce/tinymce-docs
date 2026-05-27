@@ -29,7 +29,7 @@ MCP allows the AI service to call external tools (internal wikis, API specificat
 
 Only Streamable HTTP transport is supported. Stdio-based MCP servers cannot connect directly to the AI service. Wrap them with the SDK's HTTP transport adapter (for example, `StreamableHTTPServerTransport` in the TypeScript SDK or `StreamableHTTPServer` in the Python SDK) before use.
 
-MCP tools are available in AI *conversations* only. Reviews and quick actions do not invoke MCP tools.
+MCP tools are available in AI *conversations* only. Reviews and quick actions do not invoke MCP tools. For <<mcp-oauth,OAuth-enabled>> MCP servers, each user must complete the authorization flow before the server's tools become available.
 
 === Configuration
 
@@ -49,9 +49,10 @@ Set the `MCP_SERVERS` environment variable to a JSON object. Each key is a serve
 |===
 |Field |Description
 |`url` |HTTP endpoint of the MCP server (Streamable HTTP transport).
-|`headers` |Authentication headers sent with every request. Single shared token per server. See <<mcp-shared-token>>.
+|`headers` |JSON object of HTTP headers sent with every request (for example, `{"Authorization": "Bearer token"}`). See <<mcp-shared-token>>.
 |`tools.disabled` |Array of tool names to exclude from LLM access.
 |`options.callToolTimeout` |Per-tool-call timeout in seconds (default 60).
+|`oauth` |OAuth 2.0 configuration block. Enables per-user authorization for MCP servers that require it. See <<mcp-oauth>>.
 |===
 
 `MCP_SERVERS` supports multiple server entries. Add additional keys to the same JSON object:
@@ -78,11 +79,107 @@ On Linux Docker, add `extra_hosts: ["host.docker.internal:host-gateway"]` to the
 WARNING: `host-gateway` resolves to the Docker bridge IP, not `127.0.0.1`. Host services bound to `127.0.0.1` only (common in Python MCP SDK examples and CLI-style servers) are unreachable from inside the container (`ECONNREFUSED`). Bind MCP servers to `0.0.0.0` or run them as sibling containers on the same Docker network.
 
 [[mcp-shared-token]]
-=== Authentication
+=== Static-token authentication
 
-The `headers` field is fixed at deploy time. Every MCP tool call uses the same credentials; there is no per-user MCP authentication path. If the MCP server requires per-user context, encode identity in the conversation prompt or in a header that the MCP server resolves to a per-user identity on its own side.
+The `headers` field sends a fixed set of HTTP headers with every request to the MCP server. Every tool call uses the same credentials regardless of which end user triggered the conversation.
 
-The AI service does not perform OAuth flows. MCP servers requiring OAuth must be fronted by a proxy that handles token exchange, or tokens must be rotated externally (requires a container restart to update `MCP_SERVERS`).
+[source,bash]
+----
+-e MCP_SERVERS='{
+  "knowledge-hub": {
+    "url": "http://host.docker.internal:3001/mcp",
+    "headers": {
+      "Authorization": "Bearer QUkgc2VydmljZQ==",
+      "X-Custom-Header": "custom-value"
+    }
+  }
+}'
+----
+
+If the MCP server requires per-user context without OAuth, encode identity in the conversation prompt or in a header that the MCP server resolves to a per-user identity on its own side.
+
+For MCP servers that require per-user authorization, use <<mcp-oauth,OAuth 2.0 authentication>> instead.
+
+[[mcp-oauth]]
+=== OAuth 2.0 authentication
+
+For MCP servers that require OAuth 2.0 authorization instead of a static access token in the `headers` field, the AI service can act as an OAuth client. The service implements the https://datatracker.ietf.org/doc/html/rfc7636[OAuth 2.0 Authorization Code flow with PKCE] and supports https://datatracker.ietf.org/doc/html/rfc7591[Dynamic Client Registration] (RFC 7591) for servers that allow it.
+
+End users authorize the connection through their browser. Each user authorizes independently, and the resulting access token is reused on subsequent requests. The AI service refreshes the access token automatically when it expires.
+
+==== Configuration
+
+Enabling OAuth for an MCP server requires two configuration changes:
+
+. Set `MCP_OAUTH_CALLBACK_URL` to the URL of the OAuth callback page hosted by the integrating web application. The AI service uses this URL as the OAuth `redirect_uri` parameter for all OAuth-enabled MCP servers (unless overridden per server with `oauth.callbackUrl`).
+. Add an `oauth` block inside the target server entry in `MCP_SERVERS`.
+
+[source,bash]
+----
+-e MCP_OAUTH_CALLBACK_URL='https://your-app.example.com/oauth/callback' \
+-e MCP_SERVERS='{
+  "my-server": {
+    "url": "http://host.docker.internal:3001/mcp",
+    "oauth": {
+      "clientId": "<oauth-client-id>",
+      "clientSecret": "<oauth-client-secret>",
+      "scopes": ["read", "write"]
+    }
+  }
+}'
+----
+
+[cols="1,3",options="header"]
+|===
+|Field |Description
+|`oauth.clientId` |OAuth 2.0 client identifier issued by the MCP server. Omit to perform <<mcp-oauth-dcr,Dynamic Client Registration>>.
+|`oauth.clientSecret` |OAuth 2.0 client secret. Used together with `clientId` for confidential clients.
+|`oauth.scopes` |Array of OAuth scopes to request from the authorization server. Omit to use default server scopes.
+|`oauth.callbackUrl` |Per-server override of `MCP_OAUTH_CALLBACK_URL`. Use when different MCP servers redirect to different pages in the web application.
+|===
+
+[[mcp-oauth-dcr]]
+==== Dynamic Client Registration
+
+If the MCP server supports https://datatracker.ietf.org/doc/html/rfc7591[RFC 7591 Dynamic Client Registration], `clientId` and `clientSecret` can be omitted from the `oauth` block. The AI service registers itself with the MCP server automatically on the first authorization attempt and reuses the resulting registration for subsequent flows.
+
+==== Authorization flow
+
+The OAuth flow is driven by the integrating web application. The AI service exposes REST endpoints (see <<mcp-oauth-endpoints>>); the application is responsible for orchestrating the redirects and forwarding the authorization code.
+
+. *Initialize.* The application calls `POST /v1/mcp/oauth/\{serverName}/initialize` for the signed-in user. The response contains either:
+** `{ "connected": true }` -- the user already has a valid access token; no further action is required.
+** `{ "connected": false, "authorizationUrl": "..." }` -- redirect the user's browser to `authorizationUrl`.
+. *User consents.* The MCP server's authorization page opens in the user's browser. After approval, the server redirects back to `MCP_OAUTH_CALLBACK_URL` (or `oauth.callbackUrl`) with `code` and `state` query parameters appended.
+. *Complete.* The callback page extracts `code` and `state` from the query string and forwards them to `POST /v1/mcp/oauth/\{serverName}/complete` with body `{ "code": "...", "state": "..." }`. On success, the user's connection becomes active and subsequent AI conversations can use the MCP server's tools.
+
+NOTE: The AI service does not host the callback page. Register `MCP_OAUTH_CALLBACK_URL` (or each per-server `oauth.callbackUrl`) as an authorized redirect URI with the MCP server -- either through the server's developer console or, with Dynamic Client Registration, automatically.
+
+IMPORTANT: The authorization session is valid for ten minutes after `initialize`. If the user takes longer to finish the authorization page, the `complete` call returns an `mcp-oauth-invalid-state` error and the flow must be restarted from `initialize`.
+
+[[mcp-oauth-endpoints]]
+==== REST endpoints
+
+All endpoints are authenticated with the same JWT used for other AI service endpoints. The acting user is identified by the token; each user has an independent connection state per MCP server.
+
+[cols="1,2,3",options="header"]
+|===
+|Method |Path |Description
+|`GET` |`/v1/mcp/oauth/status` |Returns the connection status for every OAuth-enabled MCP server, with `connected` and an optional `expiresAt` timestamp for the calling user.
+|`POST` |`/v1/mcp/oauth/\{serverName}/initialize` |Starts the OAuth flow. Returns `{ "connected": true }` or `{ "connected": false, "authorizationUrl": "..." }`.
+|`POST` |`/v1/mcp/oauth/\{serverName}/complete` |Finishes the OAuth flow. Body: `{ "code": "...", "state": "..." }`. On success, returns `{ "connected": true }`.
+|`DELETE` |`/v1/mcp/oauth/\{serverName}` |Removes the stored token and any in-progress authorization state for the calling user.
+|===
+
+These endpoints are available once OAuth is configured for at least one MCP server.
+
+==== Connection scope and revocation
+
+OAuth connections are established per user and do not carry over between users or environments.
+
+To revoke a user's connection, send `DELETE /v1/mcp/oauth/\{serverName}`.
+
+For OAuth-enabled MCP servers, the connection is established only after each user completes the authorization flow. Until then, the server's tools are not exposed to that user.
 
 [[mcp-tool-namespacing]]
 === Tool namespacing
@@ -429,6 +526,12 @@ For production clusters, the MCP server Deployments should have dedicated resour
 
 |`422 web-resource-download-error` from the web-resources endpoint
 |This single error code covers multiple failure modes: the scrape endpoint returned 5xx, returned non-JSON, returned an empty `data` field, or returned an unsupported `type` (anything other than `text/html` or `text/markdown`). Check AI service container logs for the underlying cause.
+
+|`mcp-oauth-invalid-state` error from the `complete` endpoint
+|The authorization session expired. Sessions are valid for ten minutes after calling `initialize`. Restart the flow from `POST /v1/mcp/oauth/\{serverName}/initialize`.
+
+|MCP tools not appearing for a user after OAuth is configured
+|The user has not completed the authorization flow. OAuth connections are per user -- each user must authorize independently through `initialize` and `complete`. Check the connection status with `GET /v1/mcp/oauth/status`.
 |===
 
 

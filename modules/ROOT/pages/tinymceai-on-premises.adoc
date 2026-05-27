@@ -58,7 +58,7 @@ The shared secret (API Secret) exists only in the application back end (token en
 |OpenAI, Anthropic, Google Gemini, Azure OpenAI, AWS Bedrock, Google Vertex AI, or any self-hosted OpenAI-compatible endpoint. Multiple providers can coexist.
 
 |Model Context Protocol (MCP) integration
-|Connect internal tools, databases, and knowledge bases through Model Context Protocol over Streamable HTTP transport.
+|Connect internal tools, databases, and knowledge bases through Model Context Protocol over Streamable HTTP transport. Supports static-token and OAuth 2.0 per-user authentication.
 
 |Web scraping and web search
 |Pluggable endpoints for fetching web pages and running searches.

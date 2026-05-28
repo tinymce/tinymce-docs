@@ -48,7 +48,7 @@ Set the `MCP_SERVERS` environment variable to a JSON object. Each key is a serve
 [cols="1,3",options="header"]
 |===
 |Field |Description
-|`url` |HTTP endpoint of the MCP server (Streamable HTTP transport).
+|`url` |HTTP endpoint of the MCP server (Streamable HTTP transport). For <<mcp-oauth,OAuth-enabled>> servers, this must be the endpoint that supports https://datatracker.ietf.org/doc/html/rfc9728[OAuth protected resource discovery] (RFC 9728). See <<mcp-oauth-url>>.
 |`headers` |JSON object of HTTP headers sent with every request (for example, `{"Authorization": "Bearer token"}`). See <<mcp-shared-token>>.
 |`tools.disabled` |Array of tool names to exclude from LLM access.
 |`options.callToolTimeout` |Per-tool-call timeout in seconds (default 60).
@@ -107,6 +107,15 @@ For MCP servers that require OAuth 2.0 authorization instead of a static access 
 
 End users authorize the connection through their browser. Each user authorizes independently, and the resulting access token is reused on subsequent requests. The AI service refreshes the access token automatically when it expires.
 
+[[mcp-oauth-url]]
+==== MCP server URL for OAuth
+
+When OAuth is enabled, the AI service discovers the authorization server by sending an unauthenticated request to the MCP server `url` and reading the `resource_metadata` link from the `WWW-Authenticate` header in the `401` response (per https://datatracker.ietf.org/doc/html/rfc9728[RFC 9728]).
+
+Some MCP servers expose separate endpoints for unauthenticated and OAuth-protected access. The `url` must point to the endpoint that returns this metadata. Using the wrong endpoint causes the `initialize` call to hang indefinitely (see <<mcp-troubleshooting>>).
+
+TIP: To verify the correct endpoint, send an unauthenticated request and inspect the `WWW-Authenticate` header. It should contain a `resource_metadata` URL: `curl -sI -X POST \https://mcp.example.com/v1/mcp/auth -H "Content-Type: application/json" | grep -i www-authenticate`
+
 ==== Configuration
 
 Enabling OAuth for an MCP server requires two configuration changes:
@@ -118,8 +127,12 @@ Enabling OAuth for an MCP server requires two configuration changes:
 ----
 -e MCP_OAUTH_CALLBACK_URL='https://your-app.example.com/oauth/callback' \
 -e MCP_SERVERS='{
-  "my-server": {
+  "knowledge-hub": {
     "url": "http://host.docker.internal:3001/mcp",
+    "headers": { "Authorization": "Bearer static-token" }
+  },
+  "external-tools": {
+    "url": "https://mcp.example.com/v1/mcp",
     "oauth": {
       "clientId": "<oauth-client-id>",
       "clientSecret": "<oauth-client-secret>",
@@ -128,6 +141,8 @@ Enabling OAuth for an MCP server requires two configuration changes:
   }
 }'
 ----
+
+Internal MCP servers can use static-token authentication (via `headers`) alongside external servers that require OAuth. Each server is configured independently within the same `MCP_SERVERS` object. `MCP_OAUTH_CALLBACK_URL` only applies to servers with an `oauth` block.
 
 [cols="1,3",options="header"]
 |===
@@ -156,6 +171,44 @@ The OAuth flow is driven by the integrating web application. The AI service expo
 NOTE: The AI service does not host the callback page. Register `MCP_OAUTH_CALLBACK_URL` (or each per-server `oauth.callbackUrl`) as an authorized redirect URI with the MCP server -- either through the server's developer console or, with Dynamic Client Registration, automatically.
 
 IMPORTANT: The authorization session is valid for ten minutes after `initialize`. If the user takes longer to finish the authorization page, the `complete` call returns an `mcp-oauth-invalid-state` error and the flow must be restarted from `initialize`.
+
+[[mcp-oauth-callback-page]]
+==== Callback page implementation
+
+The AI service does not host the callback page. The integrating web application must serve a page at the `MCP_OAUTH_CALLBACK_URL` that extracts the `code` and `state` query parameters from the redirect URL and forwards them to the AI service's `complete` endpoint.
+
+.Minimal callback page
+[source,html]
+----
+<script>
+  const params = new URLSearchParams(window.location.search);
+  fetch('/api/mcp/oauth/my-server/complete', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ code: params.get('code'), state: params.get('state') })
+  })
+    .then(r => r.json())
+    .then(data => document.body.textContent = data.connected ? 'Connected.' : 'Failed: ' + JSON.stringify(data));
+</script>
+----
+
+Replace `my-server` with the key from `MCP_SERVERS`. In production, add error handling, a loading indicator, and validation for missing `code` or `state` parameters.
+
+In the example above, the callback page calls `/api/mcp/oauth/{serverName}/complete` on the integrating application's own server rather than directly on the AI service. This is the proxy pattern described below.
+
+[[mcp-oauth-proxy]]
+==== Browser integration and proxy endpoints
+
+The <<mcp-oauth-endpoints,OAuth REST endpoints>> on the AI service require JWT authentication and may not be directly callable from the browser due to CORS restrictions. In browser-based integrations, proxy the OAuth calls through the application's own backend.
+
+The backend generates a JWT (the same token used for conversations), attaches it to the request, and forwards the call to the AI service. This keeps the JWT generation server-side and avoids CORS configuration on the AI service.
+
+A typical integration requires four proxy routes:
+
+* `GET /api/mcp/oauth/status` -> `GET {AI_SERVICE_URL}/v1/mcp/oauth/status`
+* `POST /api/mcp/oauth/{serverName}/initialize` -> `POST {AI_SERVICE_URL}/v1/mcp/oauth/{serverName}/initialize`
+* `POST /api/mcp/oauth/{serverName}/complete` -> `POST {AI_SERVICE_URL}/v1/mcp/oauth/{serverName}/complete`
+* `DELETE /api/mcp/oauth/{serverName}` -> `DELETE {AI_SERVICE_URL}/v1/mcp/oauth/{serverName}`
 
 [[mcp-oauth-endpoints]]
 ==== REST endpoints
@@ -284,8 +337,6 @@ app.listen(3001, () => console.log('Knowledge MCP server on http://0.0.0.0:3001/
 ====
 
 The example server binds to `0.0.0.0` so it is reachable from inside Docker containers. When the MCP server runs on the host machine, the AI service connects to it at `http://host.docker.internal:3001/mcp` (see <<mcp-docker-networking>>).
-
-
 
 [[web-search]]
 == Web search
@@ -551,6 +602,10 @@ For production clusters, the MCP server Deployments should have dedicated resour
 
 |MCP tools not appearing for a user after OAuth is configured
 |The user has not completed the authorization flow. OAuth connections are per user -- each user must authorize independently through `initialize` and `complete`. Check the connection status with `GET /v1/mcp/oauth/status`.
+
+[[mcp-troubleshooting]]
+|`initializeMcpOAuth` hangs for 60+ seconds with no response
+|The MCP server `url` in `MCP_SERVERS` does not return OAuth resource discovery metadata (https://datatracker.ietf.org/doc/html/rfc9728[RFC 9728]). The AI service sends an unauthenticated request to the URL and expects a `401` response with a `WWW-Authenticate` header containing a `resource_metadata` link. If the header is missing, the service hangs indefinitely. Verify the correct endpoint with: `curl -sI -X POST \https://mcp.example.com/endpoint -H "Content-Type: application/json"` and check for `resource_metadata` in the `WWW-Authenticate` header. Some MCP servers expose separate URLs for authenticated and OAuth-protected access. See <<mcp-oauth-url>>.
 |===
 
 

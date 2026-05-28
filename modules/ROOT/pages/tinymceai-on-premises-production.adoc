@@ -498,7 +498,7 @@ The AI service requires outbound HTTPS access to the following endpoints. Config
 |Forward AI requests to the configured providers
 |Yes
 
-|`license.container.tiny.cloud`
+|`license.containers.tiny.cloud`
 |License key validation (phone-home check on startup)
 |Yes — service will not start if this is blocked
 

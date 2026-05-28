@@ -254,14 +254,14 @@ The AI service isolates users into Environments. Each environment has its own ac
 . Click *Create Environment* and give it a name (for example "Development").
 . Note the *Environment ID* displayed (a short identifier like `viOu8BnjJHb0HGK091p`).
 . Inside the environment, click *Create a new access key*.
-. *Copy the Environment ID and Access Key*. The Management Panel shows the API Secret only once.
+. *Copy the Environment ID and Access Key*.
 
 Update `.env` with the new values:
 
 [source,bash]
 ----
-AI_ENV_ID='<paste-environment-id-here>'
-AI_API_SECRET='<paste-api-secret-here>'
+AI_ENV_ID='paste-environment-id-here'
+AI_API_SECRET='paste-api-secret-here'
 ----
 
 [IMPORTANT]
@@ -353,7 +353,7 @@ app.get('/', (req, res) => {
     tinymce.init({
       selector: '#editor',
       license_key: 'your-license-key',
-      plugins: 'tinymceai licensekeymanager',
+      plugins: 'tinymceai',
       toolbar: 'undo redo | blocks | bold italic | tinymceai-chat tinymceai-review tinymceai-quickactions',
       height: 500,
       tinymceai_service_url: '${AI_SERVICE_URL}',
@@ -388,7 +388,15 @@ The {pluginname} plugin must be present in the {productname} plugins directory b
 npm start
 ----
 
-TIP: If port 3000 is already in use from a previous run, stop the existing process first: `lsof -ti :3000 | xargs kill`.
+[TIP]
+====
+If port 3000 is already in use from a previous run, stop the existing process first:
+
+[source,bash]
+----
+lsof -ti :3000 | xargs kill
+----
+====
 
 === Open the demo
 

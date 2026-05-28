@@ -1,11 +1,11 @@
 = Getting started with TinyMCE AI on-premises
 :navtitle: Getting started
-:description: Five-minute Docker Compose quick start for TinyMCE AI on-premises service
-:description_short: Five-minute Docker Compose quick start.
+:description: Docker Compose quick start for TinyMCE AI on-premises service
+:description_short: Docker Compose quick start.
 :keywords: AI, on-premises, getting started, Docker, quick start, Docker Compose, installation, setup
 :pluginname: TinyMCE AI
 
-This guide sets up a fully working local stack in roughly five minutes on any machine with Docker:
+This guide sets up a fully working local stack on any machine with Docker:
 
 * *MySQL 8.0*: conversation history and metadata
 * *Redis*: caching and session state
@@ -31,7 +31,7 @@ Additionally, have the following credentials ready:
 * A {productname} license key and container registry credentials (from the Tiny account representative)
 * At least one LLM provider API key (OpenAI, Anthropic, or Google)
 
-== Five-minute demo with Docker Compose
+== Quick start with Docker Compose
 
 === Create the project folder
 

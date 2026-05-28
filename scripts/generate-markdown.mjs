@@ -226,7 +226,7 @@ const convertPage = async (htmlPath) => {
 
   const title = extractTitle(dom.window.document);
   const markdown = toMarkdown(articleEl, dom);
-  const tokens = encode(markdown).length;
+  const tokens = encode(markdown, { allowedSpecial: 'all' }).length;
   const content = buildFrontmatter(title, tokens) + markdown + '\n';
   const mdPath = htmlPath.replace(/\.html$/, '.md');
 

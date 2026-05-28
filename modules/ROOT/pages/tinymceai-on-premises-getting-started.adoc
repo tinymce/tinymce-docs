@@ -140,7 +140,12 @@ AI_ENV_ID='paste-environment-id-here'
 AI_API_SECRET='paste-api-secret-here'
 ----
 
-IMPORTANT: `AI_LICENCE_KEY` activates the AI service container. The `license_key` init option in `tinymce.init()` activates premium {productname} features in the self-hosted editor. These are different credentials from different sources — they are not interchangeable. See the xref:tinymceai-on-premises.adoc#_credentials[Credentials] section on the Overview page.
+[IMPORTANT]
+====
+ * `AI_LICENCE_KEY` activates the AI service container.
+ * The `license_key` init option in `tinymce.init()` activates premium {productname} features in the self-hosted editor. 
+ * These are different credentials from different sources — they are not interchangeable. See the xref:tinymceai-on-premises.adoc#_credentials[Credentials] section on the Overview page.
+====
 
 === Start MySQL and Redis
 

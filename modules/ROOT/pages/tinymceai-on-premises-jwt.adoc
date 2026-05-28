@@ -748,7 +748,7 @@ public class AiTokenController {
 
 
 
-== Editor-side token provider
+== Editor-side configuration
 
 Configure the {productname} editor to fetch a token from the application endpoint. The plugin calls the provider on demand and re-fetches when the token nears expiry.
 

@@ -49,6 +49,8 @@ image::tinymceai-on-premises/database-setup-fig-1.svg[Database setup decision tr
 [[postgresql-schema-prerequisite]]
 == PostgreSQL schema prerequisite
 
+NOTE: This section applies to PostgreSQL deployments only. MySQL deployments can skip to <<Version pinning>>.
+
 The AI service expects a schema named `cs-on-premises` (with hyphens). If that schema does not exist, the container crashes on first boot with:
 
 ....
@@ -101,7 +103,7 @@ Pin to `mysql:8.0` in every manifest: `docker run`, Docker Compose, Kubernetes, 
 [[database-user-privileges]]
 == Database user privileges
 
-On first boot the AI service runs schema migrations and creates roughly 32 tables across the following namespaces: `ai_assistant_*`, `environments__*`, `security__*`, `insights__*`, `blob_storage__*`, and `cs_migrations*`.
+On first boot the AI service runs schema migrations and creates roughly 32 tables across the following namespaces: `ai_assistant_*`, `environments_*`, `security_*`, `insights_*`, `blob_storage_*`, and `cs_migrations*`.
 
 The database user needs enough privilege to create, alter, and operate on these tables.
 

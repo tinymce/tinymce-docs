@@ -33,7 +33,7 @@ MCP tools are available in AI *conversations* only. Reviews and quick actions do
 
 === Configuration
 
-Set the `MCP_SERVERS` environment variable to a JSON object. Each key is a server identifier; each value describes the connection:
+Set the `MCP_SERVERS` environment variable to a JSON object. Each key is a server identifier; each value describes the connection. For OAuth-enabled servers, also set `MCP_OAUTH_CALLBACK_URL` (see <<mcp-oauth>>).
 
 [source,bash]
 ----
@@ -50,9 +50,9 @@ Set the `MCP_SERVERS` environment variable to a JSON object. Each key is a serve
 |Field |Description
 |`url` |HTTP endpoint of the MCP server (Streamable HTTP transport). For <<mcp-oauth,OAuth-enabled>> servers, this must be the endpoint that supports https://datatracker.ietf.org/doc/html/rfc9728[OAuth protected resource discovery] (RFC 9728). See <<mcp-oauth-url>>.
 |`headers` |JSON object of HTTP headers sent with every request (for example, `{"Authorization": "Bearer token"}`). See <<mcp-shared-token>>.
+|`oauth` |OAuth 2.0 configuration block. Enables per-user authorization for MCP servers that require it. See <<mcp-oauth>>.
 |`tools.disabled` |Array of tool names to exclude from LLM access.
 |`options.callToolTimeout` |Per-tool-call timeout in seconds (default 60).
-|`oauth` |OAuth 2.0 configuration block. Enables per-user authorization for MCP servers that require it. See <<mcp-oauth>>.
 |===
 
 `MCP_SERVERS` supports multiple server entries. Add additional keys to the same JSON object:
@@ -98,8 +98,6 @@ The `headers` field sends a fixed set of HTTP headers with every request to the 
 
 If the MCP server requires per-user context without OAuth, encode identity in the conversation prompt or in a header that the MCP server resolves to a per-user identity on its own side.
 
-For MCP servers that require per-user authorization, use <<mcp-oauth,OAuth 2.0 authentication>> instead.
-
 [[mcp-oauth]]
 === OAuth 2.0 authentication
 
@@ -118,7 +116,7 @@ TIP: To verify the correct endpoint, send an unauthenticated request and inspect
 
 ==== Configuration
 
-Enabling OAuth for an MCP server requires two configuration changes:
+Enabling OAuth for an MCP server requires two steps:
 
 . Set `MCP_OAUTH_CALLBACK_URL` to the URL of the OAuth callback page hosted by the integrating web application. The AI service uses this URL as the OAuth `redirect_uri` parameter for all OAuth-enabled MCP servers (unless overridden per server with `oauth.callbackUrl`).
 . Add an `oauth` block inside the target server entry in `MCP_SERVERS`.

@@ -393,34 +393,36 @@ The {pluginname} on-premises service is now running.
 
 == Verifying the installation
 
-After completing the quick start, exercise the pipeline end-to-end from the command line.
+After completing the quick start, run each check below from the command line to exercise the pipeline end-to-end.
 
 === Step 1: Health check
 
-Confirms the AI service container is running and connected to the database and Redis.
+*What this checks:* the AI service container is running and connected to the database and Redis.
 
 [source,bash]
 ----
 curl http://localhost:8000/health
 ----
 
-Expected:
+*Expected response:*
 
 [source,json]
 ----
 {"serviceName":"on-premises-http","uptime":12.345}
 ----
 
+A JSON response with `serviceName` and `uptime` confirms the container is healthy. If the request fails or times out, check `docker logs ai-service` for startup errors.
+
 === Step 2: Generate a token
 
-Confirms the token server can sign a valid JWT using the API Secret and Environment ID.
+*What this checks:* the token server can sign a valid JWT using the API Secret and Environment ID.
 
 [source,bash]
 ----
 curl -s -X POST http://localhost:3000/api/ai-token | python3 -m json.tool
 ----
 
-Expected:
+*Expected response:*
 
 [source,json]
 ----
@@ -429,9 +431,11 @@ Expected:
 }
 ----
 
+A JSON response containing a `token` field confirms the token server is running and can sign JWTs. If the server returns an error, verify that `AI_ENV_ID` and `AI_API_SECRET` are set in `.env`.
+
 === Step 3: Create a conversation and send a message
 
-Confirms the full chain: JWT verification, permissions, environment registration, LLM provider authentication, and SSE streaming.
+*What this checks:* the full chain — JWT verification, permissions, environment registration, LLM provider authentication, and SSE streaming.
 
 [source,bash]
 ----
@@ -453,7 +457,7 @@ curl -s -N -X POST http://localhost:8000/v1/conversations/verify-1/messages \
   -d '{"prompt":"Say hello in five words.","model":"agent-1"}'
 ----
 
-The message endpoint returns a Server-Sent Events stream:
+*Expected response:* a Server-Sent Events stream:
 
 [source,text]
 ----
@@ -473,9 +477,9 @@ event: done
 data: {}
 ----
 
-If the stream emits `event: error`, inspect the `data` payload. Provider errors (invalid API key, IAM denial, model unavailable) ride inside the Server-Sent Events (SSE) response. The HTTP status stays 200. See the xref:tinymceai-on-premises-troubleshooting.adoc[LLM provider errors] section in the Troubleshooting guide for details.
+A stream of `text-delta` events followed by `done` confirms the entire pipeline is working: container health, database connectivity, Redis connectivity, JWT signing and verification, permissions, environment registration, LLM provider authentication, and SSE streaming.
 
-A successful round-trip confirms: container health, database connectivity, Redis connectivity, JWT signing, JWT verification, permissions checking, environment registration, LLM provider authentication, and SSE streaming. If problems persist after these checks, focus on the editor configuration next.
+If the stream emits `event: error`, inspect the `data` payload. Provider errors (invalid API key, IAM denial, model unavailable) ride inside the Server-Sent Events (SSE) response. The HTTP status stays 200. See the xref:tinymceai-on-premises-troubleshooting.adoc[LLM provider errors] section in the Troubleshooting guide for details.
 
 == Updating configuration
 

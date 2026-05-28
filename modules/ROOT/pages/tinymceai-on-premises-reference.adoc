@@ -119,7 +119,13 @@ For PostgreSQL, change `DATABASE_DRIVER` to `'postgres'` and add `-e DATABASE_SC
 |DELETE |`/v1/conversations/\{id}` |JWT |Delete a conversation.
 |POST |`/v1/actions/\{actionId}` |JWT |Run a quick action. Body shape: `{"content":[{"type":"text","content":"..."}]}` (no `modelId`).
 |POST |`/v1/reviews/\{reviewId}` |JWT |Run a review.
+|GET |`/v1/mcp/oauth/status` |JWT |Connection status for all OAuth-enabled MCP servers. See xref:tinymceai-on-premises-mcp.adoc#mcp-oauth-endpoints[OAuth REST endpoints].
+|POST |`/v1/mcp/oauth/\{serverName}/initialize` |JWT |Start the OAuth authorization flow.
+|POST |`/v1/mcp/oauth/\{serverName}/complete` |JWT |Complete the OAuth flow with the authorization code.
+|DELETE |`/v1/mcp/oauth/\{serverName}` |JWT |Revoke the OAuth connection for the calling user.
 |===
+
+NOTE: The OAuth endpoints are available only when at least one MCP server has an `oauth` block configured. The interactive API documentation at `/docs/` may not include these endpoints; they are documented in the xref:tinymceai-on-premises-mcp.adoc#mcp-oauth[MCP OAuth section].
 
 NOTE: Environment management (create, read, update, delete) is handled through the Management Panel UI at `/panel/`.
 
@@ -213,7 +219,7 @@ Error codes returned in HTTP 4xx responses and inside SSE `event: error` payload
 |Built-in rate limiting |None |Front the service with nginx `limit_req` or ALB rate-limit rules. See xref:tinymceai-on-premises-production.adoc#rate-limiting[Rate limiting].
 |File support (OpenAI-compatible providers) |Images only (`image/*`) |PDFs, text, and Office files are not forwarded to OpenAI-compatible providers. Use a non-OpenAI-compatible provider for non-image file attachments.
 |MCP tool availability |Conversations only |MCP tools are not available in reviews or quick actions.
-|MCP authentication |Static token or OAuth 2.0 per server |Static tokens use the `headers` field (fixed at deploy time). Per-user authentication is supported through OAuth 2.0 (Authorization Code with PKCE). See xref:tinymceai-on-premises-mcp.adoc#mcp-oauth[OAuth 2.0 authentication].
+|MCP authentication |Static token or OAuth 2.0, configured independently for each server |Static tokens use the `headers` field (shared across all users, fixed at deploy time). Per-user authentication is supported through OAuth 2.0 (Authorization Code with PKCE). See xref:tinymceai-on-premises-mcp.adoc#mcp-oauth[OAuth 2.0 authentication].
 |PostgreSQL default schema |`cs-on-premises` (with hyphen) |Pre-create with `CREATE SCHEMA "cs-on-premises";` or set `DATABASE_SCHEMA=public`.
 |`/v1/models/\{compatibilityVersion}` |Only accepts `1` |Values such as `v1`, `v2`, or `latest` return 500.
 |Environment creation through raw API |Not supported |Always create environments through the Management Panel UI.

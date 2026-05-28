@@ -1,0 +1,993 @@
+= JWT authentication for the on-premises AI service
+:navtitle: JWT authentication
+:description: JWT authentication for the TinyMCE AI on-premises service using HS256 symmetric signing
+:description_short: HS256 JWT authentication and permissions.
+:keywords: AI, on-premises, JWT, authentication, HS256, multi-tenant, token, permissions, security
+:pluginname: TinyMCE AI
+
+This page covers *authentication between the application back end and the AI service*. Every request from the editor to the AI service carries a signed JWT — this is how the service identifies users, enforces permissions, and isolates conversations. The token endpoint runs in the application back end; the editor calls it automatically through the `tinymceai_token_provider` callback configured in xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration].
+
+Before configuring JWT, complete the xref:tinymceai-on-premises-database.adoc[data layer] and xref:tinymceai-on-premises-providers.adoc[LLM provider] setup. After JWT, proceed to xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration] to wire the editor to the token endpoint.
+
+The on-premises AI service uses *HS256* (HMAC-SHA256, symmetric shared secret) for JSON Web Token (JWT) authentication. This is different from the Tiny Cloud AI service, which uses RS256.
+
+[WARNING]
+--
+Do not follow the xref:tinymceai-jwt-authentication-intro.adoc[Cloud JWT guide] for on-premises deployments. The on-premises verifier silently rejects RS256-signed tokens with `invalid-jwt-signature` and no indication that the algorithm is wrong.
+--
+
+
+
+== End-to-end flow
+
+[.text-center]
+image::tinymceai-on-premises/jwt-authentication-fig-1.svg[alt="JWT token exchange sequence between user application back end and AI service with error branches",width=100%]
+
+The shared secret (API Secret) never leaves the application back end. The editor only ever sees signed tokens, and the AI service only ever sees signed tokens; neither has direct access to the secret.
+
+
+
+== Signing model
+
+[cols=",",options="header",]
+|===
+|Property |Value
+|Algorithm |`HS256` (HMAC-SHA256)
+|Key type |Symmetric shared secret
+|Key source |*API Secret* generated for an access key inside an environment through the Management Panel
+|Header format |`Authorization: Bearer <token>`
+|===
+
+Pin implementations to `HS256`.
+
+=== The API Secret
+
+The API Secret is generated when creating an access key inside an environment, in the Management Panel under *Environments → <env> → Access keys → New access key*.
+
+* It is shown *once* on the creation screen. Copy it immediately into a secret manager such as Vault, AWS Secrets Manager, Doppler, or a local `.env` file.
+* If the secret is lost, rotate: create a new access key, deploy the new secret, then revoke the old key.
+* This is *not* the `ENVIRONMENTS_MANAGEMENT_SECRET_KEY` environment variable; that one is used for Management Panel logins, not user-facing AI tokens. Mixing them up produces `invalid-jwt-signature`.
+
+=== API Secret compared with `ENVIRONMENTS_MANAGEMENT_SECRET_KEY`
+
+[cols=",,",options="header",]
+|===
+|Credential |Purpose |Used by
+|*API Secret* |Signs user-facing JWTs presented to the AI runtime endpoints. Created per access key inside an environment. |The application token endpoint. Never appears in any management call.
+|*`ENVIRONMENTS_MANAGEMENT_SECRET_KEY`* |Password to log in to the Management Panel. Set as an environment variable on the AI service container. |The Management Panel UI.
+|===
+
+These two credentials are unrelated. Using one in place of the other produces `invalid-jwt-signature`.
+
+
+
+== Required claims
+
+Every token MUST contain the following claims.
+
+[cols=",,",options="header",]
+|===
+|Claim |Type |Description
+|`aud` |string |The Environment ID, copied from the Management Panel (for example `viOu8BnjJHb0HGK091p`). Type *must be string*, not array; the verifier rejects array-shaped `aud` (the default in some JWT libraries) with `invalid-jwt-payload`.
+|`iat` |number |Issued-at, seconds since epoch (UTC).
+|`exp` |number |Expiry, seconds since epoch (UTC). Recommend `iat {plus} 3600` for demos, `iat {plus} 900` for production. The server applies 60 seconds of clock-skew leeway; tokens up to 60 seconds past `exp` still verify.
+|`sub` |string |Unique, stable user identifier. Conversation history is isolated per-`sub`; do not reuse one `sub` across users or conversations will leak between them.
+|`auth.ai.permissions` |`string[]` |Array of feature permission strings. See the permissions reference below. Wildcards (`+*+`) are accepted only in the documented positions; the bare string `"*"` is rejected.
+|===
+
+== Optional claims
+
+[cols=",,",options="header",]
+|===
+|Claim |Type |Description
+|`user.name` |string |Display name shown in the conversation history UI.
+|`user.email` |string |Email shown in the conversation history UI. Not used for authentication.
+|===
+
+The verifier ignores additional unknown claims. Standard JWT claims (`iss`, `nbf`, `jti`) cause no harm when included; the verifier does not validate them, but they pass through.
+
+
+
+== Permissions reference
+
+This is the canonical permission list for the AI service.
+
+=== Conversation and global features
+
+[cols=",",options="header",]
+|===
+|Permission |Grants
+|`ai:conversations:*` |All conversation operations: create, list, send message, delete, and web search
+|`ai:conversations:create` |Create new conversations
+|`ai:conversations:read` |List and read existing conversations
+|`ai:conversations:delete` |Delete conversations
+|`ai:conversations:webSearch` |Enable the web search toggle in conversations. Without this permission, `GET /v1/models/1` reports `capabilities.webSearch.allowed: false` even when `WEBSEARCH_ENABLED=true` and `capabilities.webSearch: true` is set on the model.
+|`ai:models:agent` |Access the built-in agent model (model ID `agent-1`)
+|`ai:models:<provider>:<model-id>` |Access a specific custom model configured through the `MODELS` env var
+|`ai:actions:system:*` |All built-in quick actions (rewrite, summarize, expand, translate, change tone, and related operations)
+|`ai:reviews:system:*` |All built-in review features (correctness, clarity, readability, tone, and related checks)
+|===
+
+=== Model permission syntax
+
+`ai:models:<provider>:<model-id>` selects a specific custom model. The parser is *not* a greedy colon-split; it understands that `<model-id>` may itself contain colons and dots.
+
+Examples:
+
+....
+ai:models:openai:gpt-5-mini
+ai:models:openai:gpt-4o
+ai:models:anthropic:claude-sonnet-4-5
+ai:models:bedrock:us.anthropic.claude-sonnet-4-20250514-v1:0
+ai:models:vertex:gemini-2.5-pro
+ai:models:azure:my-gpt5-deployment
+....
+
+For Azure, `<model-id>` is the *deployment name* configured in the Azure portal, not the underlying OpenAI model name.
+
+For Bedrock models with an inference profile prefix (`us.`, `eu.`, `apac.`) and embedded version colons (`v1:0`), include them verbatim; the parser handles them.
+
+=== What not to put in `auth.ai.permissions`
+
+[cols=",",options="header",]
+|===
+|Do not use |Reason
+|`ai:admin` |Appears in the *cloud* JWT doc. The on-premises service rejects this with `allowed: false` on every endpoint. There is no admin scope in on-premises deployments; admin actions go through the Management Panel.
+|`"*"` (the bare string) |Rejected. The verifier requires structured permission strings.
+|`useAllFeatures: true` |The on-premises service requires the explicit `auth.ai.permissions` array.
+|A single string instead of an array |Rejected. `auth.ai.permissions` must be ``string[]``.
+|===
+
+=== Full-access set
+
+For demos and admin-tier users, this is the standard grant:
+
+[source,json]
+----
+[
+  "ai:conversations:*",
+  "ai:models:agent",
+  "ai:actions:system:*",
+  "ai:reviews:system:*"
+]
+----
+
+When adding custom models through the `MODELS` environment variable, append one `ai:models:<provider>:<model-id>` entry for each custom model to expose in the selector.
+
+
+
+== Example payload
+
+A complete, decoded payload for a logged-in user with full access to a single OpenAI model:
+
+[source,json]
+----
+{
+  "aud": "5f1a2b3c-1234-5678-9abc-def012345678",
+  "iat": 1746950400,
+  "exp": 1746954000,
+  "sub": "user_8f3c9a12",
+  "user": {
+    "name": "Priya Patel",
+    "email": "priya.patel@example.com"
+  },
+  "auth": {
+    "ai": {
+      "permissions": [
+        "ai:conversations:*",
+        "ai:models:agent",
+        "ai:models:openai:gpt-5-mini",
+        "ai:actions:system:*",
+        "ai:reviews:system:*"
+      ]
+    }
+  }
+}
+----
+
+Signed with HS256 using the API Secret, then sent as:
+
+....
+Authorization: Bearer eyJhbGciOiJIUzI1NiIs...
+....
+
+=== Clock-skew leeway
+
+The service allows up to 60 seconds of clock skew on the `exp` claim. Keep the token server and the AI service synchronized with Network Time Protocol (NTP).
+
+
+
+== Production token endpoint examples
+
+Each example reads `AI_ENV_ID` and `AI_API_SECRET` from environment variables, authenticates the user through the framework's session/auth layer, signs an HS256 token, and returns `{"token": "..."}` as JSON. The endpoint runs in the application back end; the AI service never sees the API Secret directly.
+
+[cols="1,1",options="header"]
+|===
+|Language |Framework / Library
+
+|Node.js |Express + `jsonwebtoken`
+|Python |Django + `PyJWT`, Flask + `PyJWT`
+|PHP |Laravel + `firebase/php-jwt`
+|Ruby |Rails + `jwt`
+|C# |.NET + `System.IdentityModel.Tokens.Jwt`
+|Go |`golang-jwt/jwt/v5`
+|Java |Spring Boot + `jjwt`
+|===
+
+.Node.js (Express + jsonwebtoken)
+[%collapsible]
+====
+.Install dependencies
+[source,bash]
+----
+npm install express jsonwebtoken
+----
+
+.Token endpoint
+[source,javascript]
+----
+const express = require('express');
+const jwt = require('jsonwebtoken');
+
+const app = express();
+const ENV_ID = process.env.AI_ENV_ID;
+const API_SECRET = process.env.AI_API_SECRET;
+
+app.post('/api/ai-token', requireLogin, (req, res) => {
+  const user = req.user;
+  const now = Math.floor(Date.now() / 1000);
+
+  const payload = {
+    aud: ENV_ID,
+    iat: now,
+    exp: now + 3600,
+    sub: String(user.id),
+    user: {
+      name: user.displayName,
+      email: user.email,
+    },
+    auth: {
+      ai: {
+        permissions: [
+          'ai:conversations:*',
+          'ai:models:agent',
+          'ai:actions:system:*',
+          'ai:reviews:system:*',
+        ],
+      },
+    },
+  };
+
+  const token = jwt.sign(payload, API_SECRET, { algorithm: 'HS256' });
+  res.json({ token });
+});
+
+function requireLogin(req, res, next) {
+  if (!req.user) return res.status(401).json({ error: 'unauthenticated' });
+  next();
+}
+
+app.listen(3000);
+----
+====
+
+.Python (Django + PyJWT)
+[%collapsible]
+====
+.Install dependencies
+[source,bash]
+----
+pip install PyJWT
+----
+
+.Token endpoint
+[source,python]
+----
+import os
+import time
+import jwt
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
+
+ENV_ID = os.environ["AI_ENV_ID"]
+API_SECRET = os.environ["AI_API_SECRET"]
+
+
+@require_POST
+@login_required
+def ai_token(request):
+    user = request.user
+    now = int(time.time())
+
+    payload = {
+        "aud": ENV_ID,
+        "iat": now,
+        "exp": now + 3600,
+        "sub": str(user.pk),
+        "user": {
+            "name": user.get_full_name() or user.username,
+            "email": user.email,
+        },
+        "auth": {
+            "ai": {
+                "permissions": [
+                    "ai:conversations:*",
+                    "ai:models:agent",
+                    "ai:actions:system:*",
+                    "ai:reviews:system:*",
+                ],
+            },
+        },
+    }
+
+    token = jwt.encode(payload, API_SECRET, algorithm="HS256")
+    return JsonResponse({"token": token})
+----
+
+Register the view in `urls.py`:
+
+[source,python]
+----
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path("api/ai-token", views.ai_token, name="ai-token"),
+]
+----
+====
+
+.Python (Flask + PyJWT)
+[%collapsible]
+====
+.Install dependencies
+[source,bash]
+----
+pip install Flask PyJWT
+----
+
+.Token endpoint
+[source,python]
+----
+import os
+import time
+import jwt
+from flask import Flask, jsonify, abort, session
+
+app = Flask(__name__)
+ENV_ID = os.environ["AI_ENV_ID"]
+API_SECRET = os.environ["AI_API_SECRET"]
+
+
+@app.post("/api/ai-token")
+def ai_token():
+    user = session.get("user")
+    if not user:
+        abort(401)
+
+    now = int(time.time())
+    payload = {
+        "aud": ENV_ID,
+        "iat": now,
+        "exp": now + 3600,
+        "sub": str(user["id"]),
+        "user": {
+            "name": user["name"],
+            "email": user["email"],
+        },
+        "auth": {
+            "ai": {
+                "permissions": [
+                    "ai:conversations:*",
+                    "ai:models:agent",
+                    "ai:actions:system:*",
+                    "ai:reviews:system:*",
+                ],
+            },
+        },
+    }
+
+    token = jwt.encode(payload, API_SECRET, algorithm="HS256")
+    return jsonify({"token": token})
+----
+====
+
+.PHP (Laravel {plus} firebase/php-jwt)
+[%collapsible]
+====
+.Install dependencies
+[source,bash]
+----
+composer require firebase/php-jwt
+----
+
+.Token endpoint
+[source,php]
+----
+<?php
+
+namespace App\Http\Controllers;
+
+use Firebase\JWT\JWT;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Auth;
+
+class AiTokenController extends Controller
+{
+    public function issue(): JsonResponse
+    {
+        $user = Auth::user();
+        if (!$user) {
+            abort(401);
+        }
+
+        $envId = env('AI_ENV_ID');
+        $apiSecret = env('AI_API_SECRET');
+
+        $now = time();
+        $payload = [
+            'aud' => $envId,
+            'iat' => $now,
+            'exp' => $now + 3600,
+            'sub' => (string) $user->id,
+            'user' => [
+                'name' => $user->name,
+                'email' => $user->email,
+            ],
+            'auth' => [
+                'ai' => [
+                    'permissions' => [
+                        'ai:conversations:*',
+                        'ai:models:agent',
+                        'ai:actions:system:*',
+                        'ai:reviews:system:*',
+                    ],
+                ],
+            ],
+        ];
+
+        $token = JWT::encode($payload, $apiSecret, 'HS256');
+        return response()->json(['token' => $token]);
+    }
+}
+----
+
+Route (`routes/web.php` or `routes/api.php`):
+
+[source,php]
+----
+use App\Http\Controllers\AiTokenController;
+
+Route::post('/api/ai-token', [AiTokenController::class, 'issue'])
+    ->middleware('auth');
+----
+====
+
+.Ruby (Rails {plus} jwt)
+[%collapsible]
+====
+[source,ruby]
+----
+# Gemfile
+gem 'jwt'
+----
+
+[source,ruby]
+----
+class AiTokensController < ApplicationController
+  before_action :authenticate_user!
+
+  def create
+    env_id     = ENV.fetch('AI_ENV_ID')
+    api_secret = ENV.fetch('AI_API_SECRET')
+
+    now = Time.now.to_i
+    payload = {
+      aud: env_id,
+      iat: now,
+      exp: now + 3600,
+      sub: current_user.id.to_s,
+      user: {
+        name:  current_user.name,
+        email: current_user.email
+      },
+      auth: {
+        ai: {
+          permissions: [
+            'ai:conversations:*',
+            'ai:models:agent',
+            'ai:actions:system:*',
+            'ai:reviews:system:*'
+          ]
+        }
+      }
+    }
+
+    token = JWT.encode(payload, api_secret, 'HS256')
+    render json: { token: token }
+  end
+end
+----
+
+Route (`config/routes.rb`):
+
+[source,ruby]
+----
+post '/api/ai-token', to: 'ai_tokens#create'
+----
+====
+
+.C# (.NET {plus} System.IdentityModel.Tokens.Jwt)
+[%collapsible]
+====
+.Install dependencies
+[source,bash]
+----
+dotnet add package System.IdentityModel.Tokens.Jwt
+----
+
+.Token endpoint
+[source,c#]
+----
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using System.Text.Json;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+
+[ApiController]
+[Route("api/ai-token")]
+[Authorize]
+public class AiTokenController : ControllerBase
+{
+    [HttpPost]
+    public IActionResult Issue()
+    {
+        var envId     = Environment.GetEnvironmentVariable("AI_ENV_ID")!;
+        var apiSecret = Environment.GetEnvironmentVariable("AI_API_SECRET")!;
+
+        var userId    = User.FindFirst(ClaimTypes.NameIdentifier)!.Value;
+        var userName  = User.FindFirst(ClaimTypes.Name)?.Value ?? "";
+        var userEmail = User.FindFirst(ClaimTypes.Email)?.Value ?? "";
+
+        var now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+
+        var payload = new JwtPayload
+        {
+            { "aud", envId },
+            { "iat", now },
+            { "exp", now + 3600 },
+            { "sub", userId },
+            { "user", new { name = userName, email = userEmail } },
+            { "auth", new {
+                ai = new {
+                    permissions = new[] {
+                        "ai:conversations:*",
+                        "ai:models:agent",
+                        "ai:actions:system:*",
+                        "ai:reviews:system:*"
+                    }
+                }
+            }}
+        };
+
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(apiSecret));
+        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+        var header = new JwtHeader(creds);
+
+        var jwt = new JwtSecurityToken(header, payload);
+        var token = new JwtSecurityTokenHandler().WriteToken(jwt);
+
+        return Ok(new { token });
+    }
+}
+----
+====
+
+.Go (golang-jwt/jwt/v5)
+[%collapsible]
+====
+.Install dependencies
+[source,bash]
+----
+go get github.com/golang-jwt/jwt/v5
+----
+
+.Token endpoint
+[source,go]
+----
+package main
+
+import (
+    "encoding/json"
+    "net/http"
+    "os"
+    "time"
+
+    "github.com/golang-jwt/jwt/v5"
+)
+
+type tokenResponse struct {
+    Token string `json:"token"`
+}
+
+func aiTokenHandler(w http.ResponseWriter, r *http.Request) {
+    user, ok := userFromSession(r)
+    if !ok {
+        http.Error(w, "unauthenticated", http.StatusUnauthorized)
+        return
+    }
+
+    envID := os.Getenv("AI_ENV_ID")
+    apiSecret := os.Getenv("AI_API_SECRET")
+
+    now := time.Now().Unix()
+    claims := jwt.MapClaims{
+        "aud": envID,
+        "iat": now,
+        "exp": now + 3600,
+        "sub": user.ID,
+        "user": map[string]string{
+            "name":  user.Name,
+            "email": user.Email,
+        },
+        "auth": map[string]any{
+            "ai": map[string]any{
+                "permissions": []string{
+                    "ai:conversations:*",
+                    "ai:models:agent",
+                    "ai:actions:system:*",
+                    "ai:reviews:system:*",
+                },
+            },
+        },
+    }
+
+    token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+    signed, err := token.SignedString([]byte(apiSecret))
+    if err != nil {
+        http.Error(w, "sign failed", http.StatusInternalServerError)
+        return
+    }
+
+    w.Header().Set("Content-Type", "application/json")
+    json.NewEncoder(w).Encode(tokenResponse{Token: signed})
+}
+
+func main() {
+    http.HandleFunc("/api/ai-token", aiTokenHandler)
+    http.ListenAndServe(":3000", nil)
+}
+----
+====
+
+.Java (Spring Boot {plus} jjwt)
+[%collapsible]
+====
+[source,xml]
+----
+<!-- pom.xml -->
+<dependency>
+  <groupId>io.jsonwebtoken</groupId>
+  <artifactId>jjwt-api</artifactId>
+  <version>0.12.6</version>
+</dependency>
+<dependency>
+  <groupId>io.jsonwebtoken</groupId>
+  <artifactId>jjwt-impl</artifactId>
+  <version>0.12.6</version>
+  <scope>runtime</scope>
+</dependency>
+<dependency>
+  <groupId>io.jsonwebtoken</groupId>
+  <artifactId>jjwt-jackson</artifactId>
+  <version>0.12.6</version>
+  <scope>runtime</scope>
+</dependency>
+----
+
+[source,java]
+----
+package com.example.ai;
+
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.*;
+
+import javax.crypto.SecretKey;
+import java.nio.charset.StandardCharsets;
+import java.time.Instant;
+import java.util.List;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/ai-token")
+public class AiTokenController {
+
+    private final String envId     = System.getenv("AI_ENV_ID");
+    private final String apiSecret = System.getenv("AI_API_SECRET");
+
+    @PostMapping
+    public Map<String, String> issue(@AuthenticationPrincipal UserDetails user) {
+        SecretKey key = Keys.hmacShaKeyFor(apiSecret.getBytes(StandardCharsets.UTF_8));
+        Instant now = Instant.now();
+
+        String token = Jwts.builder()
+                .claim("aud", envId)
+                .issuedAt(java.util.Date.from(now))
+                .expiration(java.util.Date.from(now.plusSeconds(3600)))
+                .subject(user.getUsername())
+                .claim("user", Map.of(
+                        "name",  user.getUsername(),
+                        "email", ""
+                ))
+                .claim("auth", Map.of(
+                        "ai", Map.of(
+                                "permissions", List.of(
+                                        "ai:conversations:*",
+                                        "ai:models:agent",
+                                        "ai:actions:system:*",
+                                        "ai:reviews:system:*"
+                                )
+                        )
+                ))
+                .signWith(key, Jwts.SIG.HS256)
+                .compact();
+
+        return Map.of("token", token);
+    }
+}
+----
+====
+
+
+
+== Editor-side configuration
+
+Configure the {productname} editor to fetch a token from the application endpoint. The plugin calls the provider on demand and re-fetches when the token nears expiry.
+
+[source,javascript]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  toolbar: 'undo redo | bold italic | tinymceai-chat tinymceai-review tinymceai-quickactions',
+
+  tinymceai_service_url: 'https://ai.example.com',
+
+  tinymceai_token_provider: () =>
+    fetch('/api/ai-token', { method: 'POST', credentials: 'include' })
+      .then(r => r.json())
+      .then(d => ({ token: d.token })),
+});
+----
+
+IMPORTANT: Do not cache the JWT in application code. The plugin calls the provider on initialization and again as the token nears expiry; it manages refresh internally.
+
+The provider must return a Promise that resolves to `pass:c[{ token: '<jwt>' }]`. Returning the raw string fails silently. If the provider rejects or returns a non-OK response, the plugin surfaces an error in the editor UI.
+
+TIP: Set `credentials: 'include'` on the fetch when the token endpoint relies on session cookies. Without it, the browser does not send cookies on cross-origin requests. When the token endpoint is on the same origin as the editor, `credentials: 'include'` is harmless but unnecessary.
+
+For cross-origin setups, configure the back end server to respond with `Access-Control-Allow-Origin: <editor-origin>` (not `*`) and `Access-Control-Allow-Credentials: true`. Set the session cookie with `SameSite=None; Secure`.
+
+For framework-specific (React, Vue, Angular) integration, see xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration].
+
+
+
+== Permission gating patterns
+
+A common deployment shape: one AI service serving multiple subscription tiers. The token endpoint derives the permission set from role, plan, or tenant.
+
+=== Tiered permissions (basic / pro / enterprise)
+
+[source,javascript]
+----
+function permissionsFor(user) {
+  const base = [
+    'ai:conversations:*',
+    'ai:actions:system:*',
+  ];
+
+  switch (user.plan) {
+    case 'basic':
+      return [
+        ...base,
+        'ai:models:openai:gpt-5-mini',
+      ];
+
+    case 'pro':
+      return [
+        ...base,
+        'ai:reviews:system:*',
+        'ai:models:agent',
+        'ai:models:openai:gpt-5-mini',
+        'ai:models:openai:gpt-4o',
+      ];
+
+    case 'enterprise':
+      return [
+        ...base,
+        'ai:reviews:system:*',
+        'ai:models:agent',
+        'ai:models:openai:gpt-5-mini',
+        'ai:models:openai:gpt-4o',
+        'ai:models:anthropic:claude-sonnet-4-5',
+        'ai:models:bedrock:us.anthropic.claude-sonnet-4-20250514-v1:0',
+      ];
+
+    default:
+      return base;
+  }
+}
+----
+
+=== Read-only viewers
+
+For deployments that should expose history without allowing new conversations:
+
+[source,javascript]
+----
+[
+  'ai:conversations:read',
+]
+----
+
+=== Multi-tenant: separate environments
+
+If tenants require full isolation (separate conversation history, separate access keys, separate audit logs), assign each tenant its own Environment in the Management Panel and mint tokens with tenant-specific `aud` and API Secret values. See <<multi-tenant-deployment>> for implementation details.
+
+
+
+== Verification and troubleshooting
+
+=== Decode a token without verifying
+
+`jwt.io` accepts pasted tokens and shows the header and payload. Alternatively:
+
+[source,bash]
+----
+python3 -c "import jwt; print(jwt.decode('<token>', options={'verify_signature': False}))"
+----
+
+[source,bash]
+----
+node -e "console.log(JSON.parse(Buffer.from(process.argv[1].split('.')[1],'base64url')))" '<token>'
+----
+
+When debugging, start here. Most "auth failures" reflect wrong claim values rather than signing problems.
+
+=== Common failure modes
+
+[cols=",,",options="header",]
+|===
+|Symptom |Cause |Fix
+|`invalid-jwt-signature` |API Secret mismatch |Verify `AI_API_SECRET` matches the value displayed at access-key creation. If lost, create a new access key and rotate.
+|`invalid-jwt-signature` (after copying cloud guide) |Token signed with RS256 |Switch to HS256 with the API Secret. See top-of-page warning.
+|`invalid-jwt-payload` |`aud` does not match a real Environment ID |Confirm the Environment ID from the Management Panel matches `aud` exactly.
+|`invalid-jwt-payload` (env "exists") |Environment created through raw management API rather than the Management Panel UI |Recreate through the panel. See the Environment creation section below.
+|`invalid-jwt` (not `jwt-expired`) |Token is past `exp` by more than 60 seconds |Request a new token. The server allows 60-second clock-skew leeway; anything beyond is rejected with `invalid-jwt`.
+|`Environment not found` |Environment is in `environments__environment` / `security__environment` but not in `ai_assistant_environments` |Recreate through Management Panel UI.
+|`allowed: false` on every endpoint |Wrong shape for `auth.ai.permissions` |Must be ``string[]``. Not a single string. Not `useAllFeatures`. Not `ai:admin`.
+|`allowed: false` on specific endpoints only |Missing the specific permission |Decode token, check the `auth.ai.permissions` array against the table above.
+|Token silently rejected, no decoded error |RS256 signature |Re-sign with HS256.
+|`aud` claim type mismatch |`aud` issued as array instead of string |Some JWT libraries default to array `aud`. Force string.
+|Editor shows "Failed to authenticate" |Token endpoint returned non-JSON, returned `token` as nested object, or Cross-Origin Resource Sharing (CORS) blocked the request |Open browser devtools → Network → inspect the response from `/api/ai-token`.
+|===
+
+=== Sanity-check a token manually
+
+[source,bash]
+----
+TOKEN=$(curl -s -X POST http://localhost:3000/api/ai-token | jq -r .token)
+
+curl -i https://ai.example.com/v1/conversations \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{}'
+----
+
+A `201 Created` confirms the full chain works: secret, claims, permissions, environment registration.
+
+
+
+== Token lifetime guidance
+
+[cols=",",options="header",]
+|===
+|Scenario |Recommended `exp - iat`
+|Local development |1 hour (`3600`)
+|Demos |1 hour
+|Production |5–15 minutes (`300`–`900`)
+|High-security / regulated |5 minutes, plus short-lived sessions on the auth layer
+|===
+
+Short-lived tokens limit exposure if a token leaks through a browser extension, log capture, or error report. The editor re-requests a token as needed through `tinymceai_token_provider`, so long-lived tokens provide no practical benefit.
+
+
+
+[[multi-tenant-deployment]]
+== Multi-tenant deployment
+
+For SaaS platforms that serve multiple customers from a single AI service instance, Environments provide full tenant isolation.
+
+=== Architecture
+
+[.text-center]
+image::tinymceai-on-premises/advanced-scenarios-fig-2.svg[alt="Multi-tenant SaaS architecture with per-customer environments access keys and conversation isolation",width=100%]
+
+Each Environment provides:
+
+* Independent access keys with separate rotation schedules
+* Isolated conversation history (queries are partitioned by `sub` within an environment)
+* Separate usage tracking (through Langfuse or a custom metrics pipeline keyed by environment)
+
+=== Implementation
+
+. *Create one Environment per tenant through the Management Panel:*
++
+* Customer A -> Environment `env-customer-a`
+* Customer B -> Environment `env-customer-b`
+* Customer C -> Environment `env-customer-c`
+
+. *Route token generation to the correct Environment:*
++
+.Multi-tenant token endpoint
+[%collapsible]
+====
+[source,javascript]
+----
+app.post('/api/ai-token', requireAuth, (req, res) => {
+  const customer = getCustomerConfig(req.user.organizationId);
+
+  const token = jwt.sign({
+    aud: customer.envId,
+    sub: String(req.user.id),
+    user: { name: req.user.name, email: req.user.email },
+    auth: {
+      ai: {
+        permissions: getPermissionsForPlan(customer.plan)
+      }
+    }
+  }, customer.apiSecret, { algorithm: 'HS256', expiresIn: '1h' });
+
+  res.json({ token });
+});
+
+function getPermissionsForPlan(plan) {
+  switch (plan) {
+    case 'enterprise':
+      return ['ai:conversations:*', 'ai:models:agent', 'ai:actions:system:*', 'ai:reviews:system:*'];
+    case 'pro':
+      return ['ai:conversations:*', 'ai:actions:system:*'];
+    case 'basic':
+      return ['ai:actions:system:*'];
+  }
+}
+
+function getCustomerConfig(tenantId) {
+  return {
+    envId:     process.env[`AI_ENV_ID_${tenantId}`],
+    apiSecret: process.env[`AI_API_SECRET_${tenantId}`]
+  };
+}
+----
+====
+
+. *Result:* Full data isolation between tenants, with feature gating derived from subscription tier.
+
+CAUTION: Conversation history is isolated by the `sub` claim within each Environment. Reusing a single `sub` value for multiple users within one Environment causes those users to share conversation history. Always use a stable, unique-per-user identifier (such as an internal user ID) as the `sub` value.
+
+
+
+== See also
+
+* xref:tinymceai-on-premises-getting-started.adoc[Getting started]: end-to-end deployment, including a demo token server
+* xref:tinymceai-on-premises-providers.adoc[LLM providers]: configuring custom models through `MODELS` and the `ai:models:<provider>:<model-id>` permission syntax
+* xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting]: full troubleshooting catalog beyond JWT
+* xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration]: editor-side integration patterns for React, Vue, and Angular, including `tinymceai_token_provider` wrappers

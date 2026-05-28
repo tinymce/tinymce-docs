@@ -1,0 +1,230 @@
+= TinyMCE AI on-premises reference
+:navtitle: Reference
+:description: Environment variable, API endpoint, SSE, and error code reference for the TinyMCE AI on-premises service
+:description_short: Environment variables, API, SSE, and error codes.
+:keywords: AI, on-premises, reference, API, environment variables, error codes, SSE, Server-Sent Events, docker run
+:pluginname: TinyMCE AI
+
+== Environment variable reference
+
+Alphabetized. Required-ness is marked relative to a minimum working deployment.
+
+[cols=",,,",options="header",]
+|===
+|Variable |Required |Default |Description
+|`ALLOWED_ORIGINS` |Recommended |- |Comma-separated list of CORS-allowed editor origins. Required for cross-origin editor deployments. See xref:tinymceai-on-premises-frameworks.adoc#_cross_origin_requests_to_the_ai_service[Cross-origin requests] for format, wildcards, and verification.
+|`DATABASE_DATABASE` |Yes |- |Database name (`ai_service` is the convention).
+|`DATABASE_DRIVER` |Yes |- |`mysql` or `postgres`.
+|`DATABASE_HOST` |Yes |- |Database hostname or IP.
+|`DATABASE_PASSWORD` |Yes |- |Database password.
+|`DATABASE_PORT` |No |3306 (MySQL) / 5432 (PostgreSQL) |Database port.
+|`DATABASE_SCHEMA` |PostgreSQL only |`cs-on-premises` |PostgreSQL schema name. Pre-create or set to `public`.
+|`DATABASE_SSL_CA` |No |- |Path to CA cert for database Transport Layer Security (TLS).
+|`DATABASE_SSL_CERT` |No |- |Path to client cert.
+|`DATABASE_SSL_KEY` |No |- |Path to client key.
+|`DATABASE_USER` |Yes |- |Database user.
+|`ENABLE_METRIC_LOGS` |No |`false` |Emit JSON request logs to stdout.
+|`ENVIRONMENTS_MANAGEMENT_SECRET_KEY` |Yes |- |Management Panel login secret. *Not* used to sign user JSON Web Tokens (JWTs).
+|`LANGFUSE_BASE_URL` |No |`https://cloud.langfuse.com` |Self-hosted Langfuse URL.
+|`LANGFUSE_DEBUG` |No |- |Verbose Langfuse logging.
+|`LANGFUSE_PUBLIC_KEY` |If using Langfuse |- |Langfuse public key.
+|`LANGFUSE_SECRET_KEY` |If using Langfuse |- |Langfuse secret key.
+|`LICENSE_KEY` |Yes |- |AI service license key (long string from Tiny). The same key is shared across all replicas of a deployment — no per-pod licensing is required.
+|`LLM_TELEMETRY_ENABLED` |No |`false` |Primary OpenTelemetry switch.
+|`LLM_TIMEOUT_MS` |No |180000 |Per-request large language model (LLM) timeout in ms. Raise for large self-hosted models.
+|`MCP_OAUTH_CALLBACK_URL` |If using MCP OAuth |- |URL of the OAuth callback page hosted by the integrating web application. Used as the OAuth `redirect_uri` for all OAuth-enabled MCP servers (unless overridden per server). See xref:tinymceai-on-premises-mcp.adoc#mcp-oauth[OAuth 2.0 authentication].
+|`MCP_SERVERS` |No |- |JSON object; Model Context Protocol (MCP) server configuration. Supports static-token and OAuth 2.0 authentication per server. See xref:tinymceai-on-premises-mcp.adoc#mcp-integration[MCP integration].
+|`MODELS` |Yes (Azure, Bedrock, Vertex, openai-compatible); recommended for all providers |- |JSON array defining exposed models. Required for Azure, Bedrock, Vertex, and openai-compatible providers. Recommended for OpenAI, Anthropic, and Google direct. See xref:tinymceai-on-premises-providers.adoc[LLM providers].
+|`OTEL_DEBUG` |No |- |Verbose OpenTelemetry Protocol (OTLP) diagnostic logging.
+|`OTEL_EXPORTER_OTLP_TRACES_ENDPOINT` |If using OTEL |- |OTLP traces endpoint URL.
+|`OTEL_TRACES_SAMPLER_ARG` |No |`1.0` |OTLP sampling rate (0.0 to 1.0).
+|`PROVIDERS` |Yes |- |JSON object; LLM provider configuration. See xref:tinymceai-on-premises-providers.adoc[LLM providers].
+|`REDIS_CLUSTER_NODES` |No |- |Comma-separated `host:port[:password]` for Redis Cluster mode.
+|`REDIS_DB` |No |1 |Redis database number.
+|`REDIS_HOST` |Yes |- |Redis hostname.
+|`REDIS_IP_FAMILY` |No |- |Set to `6` for IPv6.
+|`REDIS_PASSWORD` |No |- |Redis password.
+|`REDIS_PORT` |No |6379 |Redis port.
+|`REDIS_TLS_CA` |No |- |Path to CA cert for Redis TLS.
+|`REDIS_TLS_CERT` |No |- |Path to Redis client cert.
+|`REDIS_TLS_ENABLE` |No |`false` |Enable Redis TLS.
+|`REDIS_TLS_KEY` |No |- |Path to Redis client key.
+|`REDIS_USER` |No |- |Redis username (ACL).
+|`STORAGE_ACCESS_KEY_ID` |If using S3 |- |S3 access key.
+|`STORAGE_ACCOUNT_KEY` |If using Azure Blob |- |Azure storage account key.
+|`STORAGE_ACCOUNT_NAME` |If using Azure Blob |- |Azure storage account name.
+|`STORAGE_BUCKET` |If using S3 |- |S3 bucket name.
+|`STORAGE_CONTAINER` |If using Azure Blob |- |Azure container name.
+|`STORAGE_DRIVER` |Yes |- |`database`, `filesystem`, `s3`, or `azure`.
+|`STORAGE_ENDPOINT` |No |- |Custom endpoint (S3-compatible or Azure-compatible).
+|`STORAGE_LOCATION` |If using filesystem |- |Mount point for filesystem storage. Must be writable by the container user.
+|`STORAGE_REGION` |If using S3 |- |S3 region.
+|`STORAGE_SECRET_ACCESS_KEY` |If using S3 |- |S3 secret access key.
+|`WEBRESOURCES_ENABLED` |No |`false` |Enable web scraping endpoint forwarding. See xref:tinymceai-on-premises-mcp.adoc#web-scraping-and-search[Web scraping and web search].
+|`WEBRESOURCES_ENDPOINT` |If web resources enabled |- |Scraper URL.
+|`WEBRESOURCES_REQUEST_TIMEOUT` |No |- |Scraper request timeout in ms.
+|`WEBSEARCH_ENABLED` |No |`false` |Enable web search forwarding. See xref:tinymceai-on-premises-mcp.adoc#web-scraping-and-search[Web scraping and web search].
+|`WEBSEARCH_ENDPOINT` |If web search enabled |- |Search URL.
+|`WEBSEARCH_HEADERS` |No |- |Colon-CSV format (`Header-Name: value, Another: value`). Extra headers sent to the search endpoint. Do not use JSON — see xref:tinymceai-on-premises-mcp.adoc#web-scraping-and-search[Web scraping and web search].
+|`WEBSEARCH_REQUEST_TIMEOUT` |No |- |Search request timeout in ms.
+|===
+
+== Complete `docker run` reference
+
+A single command with all required environment variables for a minimal production deployment (MySQL, OpenAI, S3 storage):
+
+[source,bash]
+----
+docker run --init -d -p 8000:8000 \
+  --name ai-service \
+  -e LICENSE_KEY='<license-key>' \
+  -e ENVIRONMENTS_MANAGEMENT_SECRET_KEY='<management-secret>' \
+  -e DATABASE_DRIVER='mysql' \
+  -e DATABASE_HOST='<database-host>' \
+  -e DATABASE_PORT='3306' \
+  -e DATABASE_USER='<database-user>' \
+  -e DATABASE_PASSWORD='<database-password>' \
+  -e DATABASE_DATABASE='ai_service' \
+  -e REDIS_HOST='<redis-host>' \
+  -e REDIS_PORT='6379' \
+  -e PROVIDERS='{"openai":{"type":"openai","apiKeys":["<openai-api-key>"]}}' \
+  -e MODELS='[{"id":"gpt-4.1","provider":"openai","name":"GPT-4.1","features":["conversations","reviews","actions"]}]' \
+  -e STORAGE_DRIVER='s3' \
+  -e STORAGE_BUCKET='<s3-bucket-name>' \
+  -e STORAGE_REGION='<aws-region>' \
+  -e STORAGE_ACCESS_KEY_ID='<s3-access-key>' \
+  -e STORAGE_SECRET_ACCESS_KEY='<s3-secret-key>' \
+  -e ALLOWED_ORIGINS='https://<your-app-domain>' \
+  -e ENABLE_METRIC_LOGS='true' \
+  registry.containers.tiny.cloud/ai-service-tiny:<version>
+----
+
+For PostgreSQL, change `DATABASE_DRIVER` to `'postgres'` and add `-e DATABASE_SCHEMA='cs-on-premises'` (or `'public'`). For Redis authentication, add `-e REDIS_PASSWORD='<redis-password>'`. For Redis TLS, add `-e REDIS_TLS_ENABLE='true'`.
+
+== API endpoint reference
+
+[cols=",,,",options="header",]
+|===
+|Method |Path |Auth |Description
+|GET |`/health` |None |Liveness probe. Returns `{"serviceName":"on-premises-http","uptime":<seconds>}`. Not metric-logged.
+|GET |`/docs/` |None |ReDoc-rendered API documentation.
+|GET |`/v1/api/doc.json` |None |OpenAPI 3 JSON spec.
+|GET |`/panel/` |Management secret (login form) |Management Panel UI. Sign in with `ENVIRONMENTS_MANAGEMENT_SECRET_KEY` through the browser login form.
+|GET |`/v1/models/1` |JWT |List available models for the current token. The compatibility version literal `1` is the only accepted value; `v1`, `v2`, `latest` all return 500.
+|POST |`/v1/conversations` |JWT |Create a conversation. Body *must* include client-supplied `id`.
+|GET |`/v1/conversations` |JWT |List conversations for the current `sub`.
+|GET |`/v1/conversations/\{id}` |JWT |Read one conversation.
+|POST |`/v1/conversations/\{id}/messages` |JWT |Send a message. Returns Server-Sent Events (SSE) stream.
+|POST |`/v1/conversations/\{id}/web-resources` |JWT |Fetch a web page through the configured scrape endpoint. Body: `{"url":"https://..."}`. Returns 201 on success, 422 on scrape failure. Requires `WEBRESOURCES_ENABLED='true'`. See xref:tinymceai-on-premises-mcp.adoc#web-scraping[Web scraping].
+|DELETE |`/v1/conversations/\{id}` |JWT |Delete a conversation.
+|POST |`/v1/actions/\{actionId}` |JWT |Run a quick action. Body shape: `{"content":[{"type":"text","content":"..."}]}` (no `modelId`).
+|POST |`/v1/reviews/\{reviewId}` |JWT |Run a review.
+|GET |`/v1/mcp/oauth/status` |JWT |Connection status for all OAuth-enabled MCP servers. See xref:tinymceai-on-premises-mcp.adoc#mcp-oauth-endpoints[OAuth REST endpoints].
+|POST |`/v1/mcp/oauth/\{serverName}/initialize` |JWT |Start the OAuth authorization flow.
+|POST |`/v1/mcp/oauth/\{serverName}/complete` |JWT |Complete the OAuth flow with the authorization code.
+|DELETE |`/v1/mcp/oauth/\{serverName}` |JWT |Revoke the OAuth connection for the calling user.
+|===
+
+NOTE: The OAuth endpoints are available only when at least one MCP server has an `oauth` block configured. The interactive API documentation at `/docs/` may not include these endpoints; they are documented in the xref:tinymceai-on-premises-mcp.adoc#mcp-oauth[MCP OAuth section].
+
+NOTE: Environment management (create, read, update, delete) is handled through the Management Panel UI at `/panel/`.
+
+== Server-Sent Events reference
+
+The message endpoint returns `Content-Type: text/event-stream`. Events use named types:
+
+[cols=",,",options="header",]
+|===
+|Event |Payload shape |Meaning
+|`message-metadata` |`{"messageId":"..."}` |Sent once at the start of each message.
+|`text-delta` |`{"textDelta":"..."}` |Incremental text fragment. The editor concatenates these.
+|`tool-call` |`{"toolName":"...","arguments":{...}}` |Emitted when the model invokes an MCP tool.
+|`tool-result` |`{"toolName":"...","result":{...}}` |Emitted when an MCP tool returns.
+|`error` |`{"message":"...","cause":{...}}` |Provider error. HTTP status remains 200; the error is in-stream.
+|`done` |`{}` |Sent once at the end of the stream.
+|===
+
+Healthy stream example:
+
+[source,text]
+----
+event: message-metadata
+data: {"messageId":"abc123"}
+
+event: text-delta
+data: {"textDelta":"Hello "}
+
+event: text-delta
+data: {"textDelta":"there!"}
+
+event: done
+data: {}
+----
+
+Error stream example:
+
+[source,text]
+----
+event: message-metadata
+data: {"messageId":"abc123"}
+
+event: error
+data: {"message":"Incorrect API key provided","cause":{"providerStatusCode":401}}
+----
+
+Browser client parsing notes:
+
+* Each event is two lines: `event: <name>` and `data: <json>`, separated from the next event by a blank line.
+* `data` is always valid JSON.
+* Unknown `event` types carry informational payloads and can be ignored for forward compatibility.
+* `text-delta` is the only event that contributes to the visible response body.
+
+== Error code reference
+
+Error codes returned in HTTP 4xx responses and inside SSE `event: error` payloads.
+
+[cols=",,,",options="header",]
+|===
+|Code |Origin |Likely cause |Fix
+|`invalid-jwt-signature` |JWT verifier |Wrong API Secret, or used `ENVIRONMENTS_MANAGEMENT_SECRET_KEY`, or signed with RS256 |Re-sign with HS256 using the correct API Secret
+|`invalid-jwt-payload` |JWT verifier |`aud` does not match a real Environment ID, OR environment created through raw API not Panel UI |Re-copy env ID from `/panel/`, or recreate the env through the Panel UI
+|`invalid-jwt` |JWT verifier |Token >60 s past `exp` |Issue tokens with shorter lifetime and refresh sooner
+|`Environment not found` |AI runtime |Same as `invalid-jwt-payload` second sub-cause |Recreate env through Panel UI
+|`missing-permissions` |Permission checker |`auth.ai.permissions` array does not cover the requested action |Add the missing permission string
+|`invalid-request-data` |Input validator |Field validation failed (most commonly the 100,000 char prompt cap) |Fix the request body. See error message
+|`environment-not-found` |AI runtime |Same as `Environment not found` |Recreate through Panel UI
+|`conversation in use` |Conversation runtime |Stream-abort left stale state |Start a new conversation
+|`conversation does not exist` |Conversation runtime |Follow-up to `conversation in use` |Start a new conversation
+|`NoValidApiKeysFoundError` |Bedrock / Vertex adapter |Inline credentials missing |Inline `credentials` in `PROVIDERS`
+|`AccessDeniedException` |Bedrock |Missing model access or IAM permissions |Enable Bedrock model access; attach the IAM policy from xref:tinymceai-on-premises-providers.adoc[LLM providers]
+|`INVALID_PAYMENT_INSTRUMENT` |Bedrock |Anthropic on Bedrock without Marketplace subscription |Subscribe through AWS Marketplace
+|`ValidationException` |Bedrock |Wrong model ID format (regional instead of cross-region) |Use the inference profile ID for Claude 4.x
+|`DeploymentNotFound` |Azure |``MODELS[].id`` does not match Azure deployment name |Set ``MODELS[].id`` to the exact deployment name
+|`invalid_grant` |Vertex |Mangled `private_key` newlines |Build `PROVIDERS` from `json.dumps()` of the SA key
+|`SERVICE_DISABLED` |Vertex |`aiplatform.googleapis.com` not enabled |`gcloud services enable aiplatform.googleapis.com`
+|`API_KEY_INVALID` |Vertex |Account-bound API key blocked by org policy |Grant policy exception
+|`Incorrect API key provided` |OpenAI / Anthropic / Google |Bad API key |Update `PROVIDERS` and `--force-recreate`
+|`Wrong license key.` |AI service startup |Truncated or whitespace-padded license key |Re-paste as a single line
+|===
+
+== Known limits
+
+[cols="1,1,3",options="header"]
+|===
+|Limit |Value |Notes
+
+|Maximum prompt length |100,000 characters |Hard limit enforced by the service. Requests exceeding this return `invalid-request-data`. Summarize or shorten source content before it exceeds this threshold.
+|Conversation create |Client-supplied `id` required |The plugin auto-generates `tiny-<uuid>`. Raw API callers must supply a unique `id` in the create body.
+|Stream-abort recovery |Stop button leaves stale state |The next message returns `409 conversation in use` then `404 conversation does not exist`. Recovery: start a new conversation or reload.
+|Built-in rate limiting |None |Front the service with nginx `limit_req` or ALB rate-limit rules. See xref:tinymceai-on-premises-production.adoc#rate-limiting[Rate limiting].
+|File support (OpenAI-compatible providers) |Images only (`image/*`) |PDFs, text, and Office files are not forwarded to OpenAI-compatible providers. Use a non-OpenAI-compatible provider for non-image file attachments.
+|MCP tool availability |Conversations only |MCP tools are not available in reviews or quick actions.
+|MCP authentication |Static token or OAuth 2.0, configured independently for each server |Static tokens use the `headers` field (shared across all users, fixed at deploy time). Per-user authentication is supported through OAuth 2.0 (Authorization Code with PKCE). See xref:tinymceai-on-premises-mcp.adoc#mcp-oauth[OAuth 2.0 authentication].
+|PostgreSQL default schema |`cs-on-premises` (with hyphen) |Pre-create with `CREATE SCHEMA "cs-on-premises";` or set `DATABASE_SCHEMA=public`.
+|`/v1/models/\{compatibilityVersion}` |Only accepts `1` |Values such as `v1`, `v2`, or `latest` return 500.
+|Environment creation through raw API |Not supported |Always create environments through the Management Panel UI.
+|Bedrock credentials |Inline only |The SDK default credential chain (IAM Roles for Service Accounts (IRSA), instance roles, `AWS_PROFILE`) is not used.
+|Vertex credentials |Inline only |Application Default Credentials, `GOOGLE_APPLICATION_CREDENTIALS`, and the metadata server are not used.
+|Azure `MODELS[].id` |Must equal deployment name |There is no separate `deploymentName` field. The ID is the deployment name.
+|OpenAI-compatible `baseUrl` |Must include `/v1` suffix |Omitting it produces a "Not Found" SSE error.
+|===

@@ -1,0 +1,29 @@
+sequenceDiagram
+    autonumber
+    actor User
+    participant Editor as TinyMCE editor<br>tinymceai plugin
+    participant App as Your backend<br>token endpoint
+    participant AI as AI service
+    participant LLM as LLM provider
+
+    User->>Editor: Triggers an AI feature
+    Editor->>App: POST /api/ai-token<br>session cookie or Bearer
+    App->>App: Authenticate the user
+    Note over App: Sign HS256 JWT with API Secret<br>aud = environment ID<br>sub = user ID<br>auth.ai.permissions = [...]
+    App-->>Editor: { token: eyJ... }
+    Editor->>AI: POST /v1/conversations/id/messages<br>Authorization: Bearer eyJ...
+    AI->>AI: Verify HS256 signature<br>check aud, exp, permissions
+
+    alt Token valid and permissions allow
+        AI->>LLM: Forward prompt
+        LLM-->>AI: Stream response chunks
+        AI-->>Editor: SSE text-delta events
+    else Signature does not match
+        AI-->>Editor: 401 invalid-jwt-signature
+    else aud not registered with AI runtime
+        AI-->>Editor: 401 invalid-jwt-payload
+    else Past expiry plus 60s leeway
+        AI-->>Editor: 401 invalid-jwt
+    else Permissions do not cover action
+        AI-->>Editor: 200 with allowed false
+    end

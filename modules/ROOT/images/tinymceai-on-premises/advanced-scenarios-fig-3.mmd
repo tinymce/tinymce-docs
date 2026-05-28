@@ -1,0 +1,8 @@
+flowchart LR
+    Lawyer[TinyMCE editor<br>used by lawyer] <--> AI[AI Service]
+    AI -->|tools/call| MCP1[MCP: contract-db]
+    AI -->|tools/call| MCP2[MCP: compliance-checker]
+    AI -->|tools/call| MCP3[MCP: precedent-search]
+    MCP1 --> ContractDB[(Contract clause<br>repository)]
+    MCP2 --> ComplianceRules[(Regulatory<br>rule sets)]
+    MCP3 --> PrecedentIdx[(Precedent<br>search index)]

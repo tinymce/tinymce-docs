@@ -1,0 +1,232 @@
+= TinyMCE AI on-premises
+:navtitle: Overview
+:description: Self-hosted AI writing assistance for TinyMCE; architecture, prerequisites, and topic guide
+:description_short: Self-hosted AI writing assistance for TinyMCE.
+:keywords: AI, on-premises, self-hosted, deployment, overview, architecture, prerequisites, container, LLM
+:pluginname: TinyMCE AI
+
+The {pluginname} on-premises service is a self-hosted back end that powers AI writing assistance. It can be used with the {productname} rich text editor, particularly the xref:tinymceai.adoc[TinyMCE AI plugin], or as a standalone service. It runs entirely within the host infrastructure. Document content, conversation history, file attachments, and user data stay within the host network and are not stored by Tiny. Data sent to a configured LLM provider is subject to that provider's data handling policies.
+
+The service ships as a single Open Container Initiative (OCI) container image (`registry.containers.tiny.cloud/ai-service-tiny`). It exposes a REST API, a Management Panel, Server-Sent Events streaming, and an OpenAPI spec.
+
+== Architecture
+
+The infrastructure consists of three layers:
+
+* The *browser* runs the {productname} editor with the `tinymceai` plugin.
+* The *application layer* runs the token endpoint (which signs JWTs), the AI service container, and a load balancer or reverse proxy. It may consist of one or more AI service instances behind the load balancer (round-robin recommended). Each instance runs the same stateless container image.
+* The *data layer* consists of a SQL database, a Redis instance, and file storage:
+** *SQL database*: stores persistent data such as configurations and conversations.
+** *Redis*: caching and coordination (SSE delivery, rate limits, pub/sub). Enables the AI service to remain stateless.
+** *File storage*: stores uploaded files and documents (S3, Azure Blob, filesystem, or the database itself).
+
+[.text-center]
+image::tinymceai-on-premises/overview-fig-2.svg[alt="Deployment architecture showing browser, application layer, data layer, and LLM provider connections",width=100%]
+
+=== Data flow
+
+Data flow for a single AI request:
+
+. The client application requests a JWT from the token endpoint.
+. The client sends a prompt with the JWT to the AI service over HTTPS.
+. The AI service verifies the token and forwards the prompt to the configured large language model (LLM).
+. The LLM streams its response back to the AI service.
+. The AI service relays the response to the client through Server-Sent Events (SSE).
+
+When used with {productname} `tinymceai`, the plugin handles steps 1, 2, and 5 automatically through the `tinymceai_token_provider` callback.
+
+NOTE: The browser connects directly to the AI service — requests do not pass through the application back end. The AI service must be network-reachable from the end-user browser, which means it must have a public URL (or be accessible through a VPN/internal network when deployed on an intranet). Configure xref:tinymceai-on-premises-frameworks.adoc#_cross_origin_requests_to_the_ai_service[CORS] and xref:tinymceai-on-premises-production.adoc#_tls_https[TLS] on the AI service accordingly.
+
+The shared secret (API Secret) exists only in the application back end (token endpoint) and the AI service container. The browser and the editor never see it — they only handle signed tokens.
+
+== Capabilities
+
+[cols="1,2",options="header"]
+|===
+|Capability |Details
+
+|Conversational AI assistant
+|Multi-turn AI chat with support for document and file context. Conversation history is isolated per user through the JWT `sub` claim.
+
+|Document review
+|Review a document for correctness, clarity, readability, tone, and more, or translate to another language.
+
+|Quick actions
+|Rewrite, summarize, expand, change tone, fix grammar, translate, continue, and improve writing.
+
+|LLM provider flexibility
+|OpenAI, Anthropic, Google Gemini, Azure OpenAI, AWS Bedrock, Google Vertex AI, or any self-hosted OpenAI-compatible endpoint. Multiple providers can coexist.
+
+|Model Context Protocol (MCP) integration
+|Connect internal tools, databases, and knowledge bases through Model Context Protocol over Streamable HTTP transport. Supports static-token and OAuth 2.0 per-user authentication.
+
+|Web scraping and web search
+|Pluggable endpoints for fetching web pages and running searches.
+
+|Multi-tenant environments
+|Isolated conversation history and per-tenant access keys through Environments.
+
+|License validation
+|The AI service validates its license key against `license.containers.tiny.cloud` on every container start. This check confirms the license is active and valid. No customer data, conversation content, or usage telemetry is transmitted during this check. The service will not start if this endpoint is unreachable.
+
+|Per-user, per-feature permissions
+|Fine-grained control through the `auth.ai.permissions` JWT claim.
+
+|Streaming responses
+|Server-Sent Events from the LLM back to the browser.
+
+|File attachments
+|Use additional files as context for AI conversations. Storage options include database, filesystem, Amazon S3, or Azure Blob Storage.
+
+|Observability
+|Structured request logs, OpenTelemetry, and Langfuse. All three run as independent simultaneous pipelines.
+
+|Horizontal scaling
+|The service is stateless; add replicas behind a load balancer without shared local state.
+
+|OpenAPI specification
+|Published at `/v1/api/doc.json` with interactive documentation at `/docs/`. Auto-generate clients in any language.
+|===
+
+== Credentials
+
+Three credentials are involved in an on-premises deployment. They are distinct and serve different purposes.
+
+[cols="1,1,2,1",options="header"]
+|===
+|Credential |Where it lives |What it does |Required?
+
+|`LICENSE_KEY`
+|AI service container (environment variable)
+|Activates the AI service. A long string provided by the Tiny account representative.
+|Yes — the service refuses to start without it.
+
+|`TINYMCE_API_KEY`
+|Editor page (CDN script URL) or build configuration
+|Authenticates against `cdn.tiny.cloud` when loading {productname} from the CDN. This is the short string from the tiny.cloud dashboard.
+|Only when loading {productname} from the CDN. Omit for self-hosted editor bundles.
+
+|`license_key` (init option)
+|`tinymce.init({ license_key: 'T8LK:...' })`
+|Activates premium {productname} features when using a self-hosted editor bundle (not the CDN).
+|Only for self-hosted editor deployments. Provided by the Tiny account representative.
+|===
+
+NOTE: `LICENSE_KEY` (the AI service license) and `TINYMCE_API_KEY` / `license_key` (the editor license) are different credentials from different sources. They are not interchangeable.
+
+== Prerequisites
+
+[cols="1,3",options="header"]
+|===
+|Requirement |Details
+
+|Container runtime
+|Docker 20.10{plus}, Podman 4{plus}, or any OCI-compatible runtime. Kubernetes, AWS ECS, or Azure Container Apps are also supported.
+
+|SQL database
+|MySQL 8.0 or PostgreSQL 13{plus} (16 recommended).
+
+|Redis
+|3.2.6{plus} (7.x recommended). Single node or Cluster mode supported. Sentinel not supported.
+
+|LLM access
+|At least one provider. Multiple providers can coexist.
+
+|License key and registry credentials
+|Provided by a Tiny account representative.
+
+|Token endpoint
+|A back end that signs HS256 JWTs.
+
+|Reverse proxy (recommended)
+|The AI service does not terminate Transport Layer Security (TLS). A reverse proxy such as nginx, HAProxy, or a cloud load balancer is recommended for TLS termination in production.
+|===
+
+== Choosing a setup path
+
+For evaluation, start with the xref:tinymceai-on-premises-getting-started.adoc[Getting started] guide (Docker Compose on a single machine). For production, work through each topic guide in order — the same components apply regardless of deployment target (Kubernetes, ECS, or standalone Docker).
+
+[.text-center]
+image::tinymceai-on-premises/complete-guide-fig-2.svg[Setup path decision tree,width=100%]
+
+== Topic guides
+
+For a first-time deployment, progress through the guides in order. Each guide can also be used independently as a reference for a specific topic.
+
+[cols="1,3",options="header"]
+|===
+|Guide |Scope
+
+|xref:tinymceai-on-premises-getting-started.adoc[Getting started]
+|Five-minute Docker Compose quick start. Stand up the AI service, database, Redis, token server, and a browser editor.
+
+|xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage]
+|Data layer setup: MySQL and PostgreSQL configuration, Redis connectivity, file storage options (S3, Azure Blob, filesystem, database), and host-local database connectivity.
+
+|xref:tinymceai-on-premises-providers.adoc[LLM providers]
+|Connect to OpenAI, Anthropic, Google Gemini, Azure OpenAI, AWS Bedrock, Google Vertex AI, or any OpenAI-compatible endpoint (Ollama, vLLM, LM Studio). Custom model catalog and API key rotation.
+
+|xref:tinymceai-on-premises-jwt.adoc[JWT authentication]
+|HS256 signing model, required and optional claims, permissions reference, token endpoint examples in 8 languages, and multi-tenant deployment patterns.
+
+|xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration]
+|Editor-side configuration: plugin options, token provider, authentication patterns, Cross-Origin Resource Sharing (CORS), and deployment checklists.
+
+|xref:tinymceai-on-premises-production.adoc[Production deployment]
+|Kubernetes manifests, AWS ECS task definitions, horizontal scaling, security hardening, rate limiting, observability, backup and recovery, and upgrades.
+
+|xref:tinymceai-on-premises-mcp.adoc[MCP and web integrations (optional)]
+|Model Context Protocol (MCP) tool integration, web scraping endpoints, and web search endpoints. Not required for initial setup.
+
+|xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting]
+|Quick triage, container startup failures, JWT errors, LLM provider errors, editor issues, performance, and diagnostic recipes.
+
+|xref:tinymceai-on-premises-reference.adoc[Reference]
+|Environment variable reference, API endpoint reference, Server-Sent Events reference, and error code reference.
+|===
+
+== Support
+
+* *Technical support:* https://support.tiny.cloud[Submit a support request] (available to customers with an active commercial license).
+* *Account and licensing:* https://www.tiny.cloud/contact/[Contact Tiny].
+
+When submitting a support request, include:
+
+Container logs::
++
+[source,console]
+----
+docker logs ai-service --tail 200
+----
+
+Health check::
++
+[source,console]
+----
+curl -fsS http://localhost:8000/health
+----
++
+Expected response:
++
+[source,json]
+----
+{"serviceName":"on-premises-http","uptime":1234}
+----
+
+Decoded JWT payload::
+Strip the signature and decode with a JWT library.
+
+Environment variables::
+Redact secrets before submitting.
++
+[source,console]
+----
+docker inspect ai-service | jq '.[0].Config.Env'
+----
+
+Image version::
++
+[source,console]
+----
+docker inspect ai-service | jq '.[0].Config.Image'
+----

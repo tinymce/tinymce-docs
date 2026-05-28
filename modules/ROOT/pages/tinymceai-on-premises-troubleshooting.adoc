@@ -1,0 +1,309 @@
+= Troubleshooting
+:navtitle: Troubleshooting
+:description: Troubleshooting guide for the TinyMCE AI on-premises service
+:description_short: Troubleshooting and diagnostic recipes.
+:keywords: AI, on-premises, troubleshooting, errors, debugging, diagnostics, JWT, container, LLM
+:pluginname: TinyMCE AI
+
+Match the symptom to the fix below. If the symptom does not fit any section, escalate to `support@tiny.cloud` with the output of `docker logs ai-service --tail 200` and a redacted copy of the `PROVIDERS` value.
+
+== Quick triage
+
+Work through this list to identify the symptom area:
+
+. *Is the container running?* Run `docker ps` to check. If the container has exited or will not pull, see <<container-startup-failures>>.
+. *Does `/health` return 200?* Run `curl -fsS \http://localhost:8000/health`. If it times out or returns 5xx, see <<container-startup-failures>>.
+. *Does the API return an auth error?* If the response is 401, `allowed:false`, or `invalid-jwt-*`, see <<api-and-jwt-authentication>>.
+. *Does the SSE stream carry an `event: error` from the LLM?* If yes, see <<llm-provider-errors>>.
+. *Is the editor side broken?* Missing toolbar, token 401, or hanging stream? See <<editor-and-front-end>>.
+. *Slow, timing out, or failing under load?* See <<performance>>.
+. *Scaling, upgrades, or deployment questions?* See xref:tinymceai-on-premises-production.adoc[Production deployment].
+
+If none of the above match, see <<diagnostic-recipes>> and then escalate to `support@tiny.cloud`.
+
+
+[[container-startup-failures]]
+== Container startup failures
+
+Run `docker logs ai-service` first. All entries below assume the log output is available.
+
+[cols="2,2,3",options="header"]
+|===
+|Error / symptom |Cause |Fix
+
+|`Wrong license key.`
+|Key was truncated, contains a line break, or has surrounding whitespace
+|Paste the key as a single unbroken line. Verify the first and last eight characters against the original.
+
+|`EACCES: permission denied, mkdir '/var/storage'`
+|`STORAGE_LOCATION` points to a path the container user cannot write
+|Switch to `STORAGE_DRIVER=database`, or mount a writable volume and point `STORAGE_LOCATION` at it (for example `/tmp/ai-storage`).
+
+|`Not enough permissions to access database.`
+|MySQL user lacks required privileges
+|Grant the privileges listed in the error. See xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage] for the GRANT statement.
+
+|`schema "cs-on-premises" does not exist`
+|Postgres schema not pre-created
+|Run `CREATE SCHEMA "cs-on-premises";` (double quotes required), or set `DATABASE_SCHEMA=public`. See xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage].
+
+|`[MY-000067] unknown variable 'default-authentication-plugin'`
+|`mysql:8` tag now points to the latest MySQL, which removed that variable
+|Pin `mysql:8.0` in the compose file and run `docker compose up -d --force-recreate mysql`.
+
+|Container exits with no useful log
+|Missing required env var, or malformed JSON in `PROVIDERS` / `MODELS`
+|Run `docker inspect ai-service {vbar} jq '.[0].Config.Env'` and compare against the xref:tinymceai-on-premises-reference.adoc[environment variable reference]. Validate JSON with `echo "$PROVIDERS" {vbar} jq .`
+
+|`/health` times out despite successful boot
+|Port mapping missing
+|Add `-p 8000:8000` to `docker run`, or `ports: ["8000:8000"]` in compose. Confirm with `docker port ai-service`.
+
+|`getaddrinfo EAI_AGAIN mysql` or `getaddrinfo ENOTFOUND redis`
+|AI service is on a different Docker network from the data layer
+|Use `docker compose` (shared network), or set `DATABASE_HOST=host.docker.internal`. On Linux, add `extra_hosts: ["host.docker.internal:host-gateway"]` to the AI service.
+|===
+
+
+[[api-and-jwt-authentication]]
+== API and JSON Web Token (JWT) authentication
+
+These assume the container is running and `/health` returns OK.
+
+[cols="2,3,3",options="header"]
+|===
+|Error / symptom |Cause |Fix
+
+|`invalid-jwt-signature`
+|Token signed with the wrong key. Most commonly, signed with `ENVIRONMENTS_MANAGEMENT_SECRET_KEY` instead of the per-access-key *API Secret*
+|Re-copy the API Secret from the Management Panel at `/panel/` and re-sign the token.
+
+|`invalid-jwt-payload`
+|`aud` claim does not match a known Environment ID, or `aud` is an array instead of a string
+|Copy the Environment ID from `/panel/`. Set `aud` to a string, not an array. Recreate environments through the Panel UI only.
+
+|`invalid-jwt` (expired)
+|Token is past its `exp` claim
+|Issue tokens with a reasonable lifetime (for example `exp = now {plus} 3600`) and refresh before expiry. Synchronize clocks with Network Time Protocol (NTP).
+
+|`Environment not found`
+|Environment was not created through the Management Panel UI
+|Delete and recreate the environment through `/panel/`. Update `AI_ENV_ID` in `.env`.
+
+|JWT silently rejected
+|Token signed with RS256 instead of HS256
+|Re-sign with `algorithm: 'HS256'` and the API Secret. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication].
+
+|`409 conversation in use` then `404 conversation does not exist`
+|Stream abort left temporary state blocking the conversation
+|Start a new conversation or reload the page. Custom UIs should create a fresh conversation after cancel.
+
+|`allowed: false` on every endpoint
+|`auth.ai.permissions` is a string, shorthand, or wrong shape
+a|Use the explicit array form:
+
+[source,json]
+----
+{
+  "auth": {
+    "ai": {
+      "permissions": [
+        "ai:conversations:*",
+        "ai:models:agent",
+        "ai:actions:system:*",
+        "ai:reviews:system:*"
+      ]
+    }
+  }
+}
+----
+
+Common mistakes: `"permissions": "ai:admin"` (string shorthand), `"permissions": "*"`, `"useAllFeatures": true`, or a single permission as a string instead of an array. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication] for the full permission catalog.
+|===
+
+
+[[llm-provider-errors]]
+== Large language model (LLM) provider errors
+
+These appear as `event: error` inside the SSE stream. The HTTP response is still 200.
+
+=== Cloud providers (OpenAI, Anthropic, Google)
+
+[cols="2,3",options="header"]
+|===
+|Error |Fix
+|`Incorrect API key provided` |Update the key in `PROVIDERS`, then `docker compose up -d --force-recreate ai-service`.
+|===
+
+=== AWS Bedrock
+
+[cols="2,3",options="header"]
+|===
+|Error |Fix
+|`NoValidApiKeysFoundError` |Inline `accessKeyId` and `secretAccessKey` inside `credentials` in `PROVIDERS`. The AWS SDK default credential chain is not used. See xref:tinymceai-on-premises-providers.adoc[LLM providers].
+|`AccessDeniedException` |Enable model access in *Bedrock console -> Model access*. Attach an IAM policy with `bedrock:InvokeModel`, `bedrock:Converse`, and `bedrock:ConverseStream`.
+|`INVALID_PAYMENT_INSTRUMENT` |Complete the AWS Marketplace subscription for Anthropic in *Bedrock console -> Model access -> Anthropic*.
+|`ValidationException` (model invocation not supported) |Use the region-prefixed inference profile ID (for example `us.anthropic.claude-sonnet-4-...`). See xref:tinymceai-on-premises-providers.adoc[LLM providers].
+|===
+
+=== Google Vertex AI
+
+[cols="2,3",options="header"]
+|===
+|Error |Fix
+|`NoValidApiKeysFoundError` |Inline `clientEmail` and `privateKey` inside `credentials` in `PROVIDERS`. Google Application Default Credentials (ADC) is not used. See xref:tinymceai-on-premises-providers.adoc[LLM providers].
+|Auth errors with a valid service account |`private_key` newlines were mangled during copy-paste. Build `PROVIDERS` with a script (`json.dumps()` on the SA JSON file) rather than hand-editing.
+|`SERVICE_DISABLED` |Run `gcloud services enable aiplatform.googleapis.com --project=<PROJECT_ID>`.
+|Blocked by GCP org policy |Check `iam.disableServiceAccountCreation`, `iam.disableServiceAccountKeyCreation`, and account-bound API key policies. Exempt the AI service project from all three.
+|===
+
+=== Azure OpenAI
+
+[cols="2,3",options="header"]
+|===
+|Error |Fix
+|Model not found / `DeploymentNotFound` |`MODELS[].id` must match the Azure deployment name exactly.
+|API errors with no provider message |Set `apiVersion` explicitly. See https://learn.microsoft.com/azure/ai-services/openai/reference[Microsoft's API version matrix].
+|===
+
+=== OpenAI-compatible (Ollama, vLLM, LM Studio)
+
+[cols="2,3",options="header"]
+|===
+|Error |Fix
+|"Not Found" in SSE error |`baseUrl` is missing the `/v1` suffix. Ollama default: `\http://host.docker.internal:11434/v1`.
+|`ECONNREFUSED` on Linux |Start Ollama with `OLLAMA_HOST=0.0.0.0:11434 ollama serve`. Add `extra_hosts: ["host.docker.internal:host-gateway"]` to the AI service compose entry.
+|"does not support tools" |Use an official model (`ollama pull qwen3:0.6b`) rather than a bare GGUF. Custom models need a Modelfile with `TEMPLATE` and tool support. See xref:tinymceai-on-premises-providers.adoc[LLM providers].
+|`createMessage` hangs ~180s then times out |Model is too slow for the default timeout. Set `LLM_TIMEOUT_MS` higher, use a lighter quantization, or use a smaller model.
+|===
+
+
+[[editor-and-front-end]]
+== Editor and front end
+
+Confirm `/health` is OK and a direct `curl` to `/v1/conversations` works before investigating the editor.
+
+[cols="2,3",options="header"]
+|===
+|Symptom |Fix
+
+|No AI buttons in the toolbar
+|Ensure {productname} 8{plus} is loaded, `plugins: 'tinymceai'` is set, and the toolbar string includes `tinymceai`. Verify the API key has the AI feature enabled.
+
+|Token fetch returns 401
+|The token endpoint's own authentication middleware is rejecting the request. Check session cookies, Cross-Origin Resource Sharing (CORS) credentials, and bearer tokens in the browser network tab.
+
+|Token returned but rejected by the AI service
+|See <<api-and-jwt-authentication>> above: wrong secret, wrong `aud`, wrong algorithm (RS256 instead of HS256), or wrong permissions shape.
+
+|AI responses hang in the browser
+|The reverse proxy is buffering the SSE stream. Set `proxy_buffering off;` and `proxy_cache off;` in nginx (or the equivalent for the load balancer).
+
+|CORS error on `/v1/conversations`
+|Add the editor's origin (scheme {plus} host {plus} port) to the `ALLOWED_ORIGINS` environment variable.
+
+|Editor renders then disappears (Next.js / Nuxt / SvelteKit)
+|{productname} references `window` at load time. Load the editor client-only: `dynamic(() => import('./Editor'), { ssr: false })` in Next.js, `<ClientOnly>` in Nuxt, `onMount` in SvelteKit. See xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration].
+
+|`tinymceai_token_provider` called in a tight loop
+|Token endpoint is returning an invalid JWT or non-JSON response. Test with `curl -X POST http://localhost:3000/api/ai-token` and verify the response is `pass:c[{"token":"eyJ..."}]`.
+|===
+
+
+[[performance]]
+== Performance
+
+[cols="2,3",options="header"]
+|===
+|Symptom |Fix
+|Self-hosted model is slow through the AI service compared with raw `curl` |Co-locate the inference server with the AI service. Use a smaller or more quantized model. Disable telemetry during development (`LLM_TELEMETRY_ENABLED=false`).
+|Containers OOM or MySQL takes 60{plus} seconds to start (Colima) |Default Colima VM is too small. Run `colima stop && colima start --cpu 4 --memory 8 --disk 100`.
+|===
+
+
+[[diagnostic-recipes]]
+== Diagnostic recipes
+
+.Expand for copy-ready diagnostic commands
+[%collapsible]
+====
+*Tail logs:*
+
+[source,bash]
+----
+docker logs ai-service --tail 200 -f
+----
+
+*Liveness check:*
+
+[source,bash]
+----
+curl -fsS http://localhost:8000/health
+----
+
+*Decode a JWT (inspect payload without verifying):*
+
+[source,bash]
+----
+python3 -c "import jwt,sys,json; print(json.dumps(jwt.decode(sys.argv[1], options={'verify_signature': False}), indent=2))" <token>
+----
+
+*Recreate after an env change:*
+
+[source,bash]
+----
+docker compose up -d --force-recreate ai-service
+----
+
+*Inspect effective environment:*
+
+[source,bash]
+----
+docker inspect ai-service | jq '.[0].Config.Env'
+----
+
+*Validate PROVIDERS JSON:*
+
+[source,bash]
+----
+echo "$PROVIDERS" | jq .
+----
+
+*Test data layer connectivity from inside the container:*
+
+[source,bash]
+----
+docker exec ai-service /bin/sh -c "nc -zv mysql 3306"
+docker exec ai-service /bin/sh -c "nc -zv redis 6379"
+----
+
+Replace `mysql` and `redis` with the actual hostnames configured in `DATABASE_HOST` and `REDIS_HOST`. If the AI service was started with `docker compose` rather than standalone `docker run`, use `docker compose exec ai-service` instead.
+
+*End-to-end smoke test (token mint through streamed response):*
+
+[source,bash]
+----
+TOKEN=$(curl -s -X POST http://localhost:3000/api/ai-token | jq -r '.token')
+
+curl -s -X POST http://localhost:8000/v1/conversations \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"id":"smoke-1","title":"Smoke test"}'
+
+# Replace 'agent-1' with a model ID from MODELS if explicitly configured
+curl -N -X POST http://localhost:8000/v1/conversations/smoke-1/messages \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"prompt":"Say hi in five words.","model":"agent-1"}'
+----
+====
+
+
+== Related pages
+
+* xref:tinymceai-on-premises-getting-started.adoc[Getting started]
+* xref:tinymceai-on-premises-jwt.adoc[JWT authentication]
+* xref:tinymceai-on-premises-providers.adoc[LLM providers]
+* xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage]
+* xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration]
+* xref:tinymceai-on-premises-production.adoc[Production deployment]

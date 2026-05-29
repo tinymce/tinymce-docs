@@ -1,9 +1,9 @@
 [[overview]]
 == Overview
 
-The On-Premises version of link:https://www.tiny.cloud/docs/tinymce/latest/editimage/[{pluginname}] is an application that can be installed and run on the customer’s in-house servers and computing infrastructure, including a private cloud.
+The Image Proxy service is a server-side component that processes and serves images for the {productname} editor. It runs on-premises within the host infrastructure and provides the back-end capabilities used by the link:https://www.tiny.cloud/docs/tinymce/latest/editimage/[{pluginname}] plugin.
 
-The only requirement to run this service On-Premises is a container runtime or orchestration tool e.g. Docker, Kubernetes, Podman.
+The only requirement to run the Image Proxy service on-premises is a container runtime or orchestration tool, such as Docker, Kubernetes, or Podman.
 
 A valid access token is required to access the {companyname} Cloud Docker registry and pull the Docker image. Contact link:https://www.tiny.cloud/contact/[{companyname} Support^] to request the access token.
 

@@ -2,8 +2,14 @@
 == Installation
 
 [NOTE]
-A valid service license key is required to run the {pluginname} on-premises service. This is separate from the {productname} editor license key. See xref:service-license-keys.adoc[Service license keys] for details.
-link:https://www.tiny.cloud/contact/[Contact us] for a trial service license key.
+====
+Running the {pluginname} on-premises service requires two separate credentials:
+
+* A *Docker registry access token* to authenticate with the {companyname} Docker registry and pull the service image.
+* A *service license key* to enable the service at runtime. This is separate from the {productname} editor license key.
+
+See xref:service-license-keys.adoc[Service license keys] for details. link:https://www.tiny.cloud/contact/[Contact us] for a trial service license key.
+====
 
 === Supported technologies
 
@@ -15,7 +21,7 @@ Refer to the xref:individual-import-from-word-and-export-to-word-on-premises.ado
 
 === Setting up the application using a Docker container
 
-. The username and password credentials supplied by Tiny are utilized for logging into the Docker registry and retrieving the Docker image.
+. Log into the Docker registry and retrieve the Docker image using the provided access token.
 . Containerize the application using `docker` or `docker-compose`.
 . Use a demo page to verify if the application works properly.
 

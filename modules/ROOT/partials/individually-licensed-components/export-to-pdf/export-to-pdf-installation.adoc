@@ -2,8 +2,14 @@
 == Installation
 
 [NOTE]
-A valid service license key is required to run the {pluginname} on-premises service. This is separate from the {productname} editor license key. See xref:service-license-keys.adoc[Service license keys] for details.
-link:https://www.tiny.cloud/contact/[Contact us] for a trial service license key.
+====
+Running the {pluginname} on-premises service requires two separate credentials:
+
+* A *Docker registry access token* to authenticate with the {companyname} Docker registry and pull the service image.
+* A *service license key* to enable the service at runtime. This is separate from the {productname} editor license key.
+
+See xref:service-license-keys.adoc[Service license keys] for details. link:https://www.tiny.cloud/contact/[Contact us] for a trial service license key.
+====
 
 === Supported technologies
 

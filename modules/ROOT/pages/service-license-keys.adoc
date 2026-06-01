@@ -33,10 +33,19 @@ Other containerized services such as Spell Checker, Enhanced Media Embed, and Im
 [[how-service-license-keys-work]]
 == How service license keys work
 
-Service license keys are used in two contexts when deploying on-premises services:
+Deploying a {companyname} on-premises service can involve two separate credentials. These are different values and cannot be substituted for one another:
 
-. **Docker registry authentication** -- an access token (provided separately by {companyname}) is used with `+docker login+` to pull service images from the {companyname} Docker registry.
-. **Container runtime licensing** -- the service license key is passed to the Docker container as the `+LICENSE_KEY+` environment variable to enable the service at runtime. Without a valid service license key, the container will not start.
+. **Docker registry access token** -- used with `+docker login+` to authenticate with the {companyname} Docker registry and pull the service image. *All* {companyname} on-premises services require an access token to pull images. An access token is not a service license key.
+. **Service license key** -- passed to the running Docker container as the `+LICENSE_KEY+` environment variable to enable the service at runtime. *Only* the services listed in <<services-requiring-a-service-license-key>> require a service license key. Without a valid service license key, those containers will not start.
+
+[TIP]
+====
+Three separate credentials can be involved when running {companyname} on-premises services. Do not confuse them:
+
+* **{productname} editor license key** -- configures the license mode for the {productname} editor (GPL or commercial). See xref:license-key.adoc[License key].
+* **Docker registry access token** -- authenticates with the {companyname} Docker registry to pull service images. Required by all on-premises services.
+* **Service license key** -- enables a licensed on-premises service at runtime. Required by some services only.
+====
 
 [[obtaining-a-service-license-key]]
 === Obtaining a service license key
@@ -46,7 +55,9 @@ Service license keys are provisioned through the link:{accountpageurl}[{companyn
 [[using-service-specific-environment-variables]]
 === Using service-specific environment variables
 
-When running multiple on-premises services, use service-specific environment variable names to store each service license key. This prevents collisions when consolidating services into a single `+.env+` file or Docker Compose project.
+When running multiple on-premises services and storing their environment variables in a shared location, use service-specific environment variable names for each service license key. This prevents collisions when consolidating services into a single `+.env+` file or Docker Compose project.
+
+Each Docker container expects the `+LICENSE_KEY+` environment variable internally. The service-specific variable names (such as `+AI_LICENSE_KEY+`, `+PDF_LICENSE_KEY+`, and `+DOCX_LICENSE_KEY+`) are host-side conventions that map to `+LICENSE_KEY+` when launching the container. These names are the conventions used in the documentation for each service rather than a fixed requirement.
 
 [cols="1,1,1", options="header"]
 |===
@@ -65,15 +76,13 @@ When running multiple on-premises services, use service-specific environment var
 | `+-e LICENSE_KEY="$DOCX_LICENSE_KEY"+`
 |===
 
-Each Docker container expects the `+LICENSE_KEY+` environment variable internally. The service-specific variable names (such as `+AI_LICENSE_KEY+`, `+PDF_LICENSE_KEY+`, and `+DOCX_LICENSE_KEY+`) are host-side conventions that map to `+LICENSE_KEY+` when launching the container.
-
-For example, in a `+.env+` file used with Docker Compose:
+Each service license key is a distinct value. For example, in a `+.env+` file used with Docker Compose:
 
 [source,env]
 ----
-AI_LICENSE_KEY=[your license key]
-PDF_LICENSE_KEY=[your license key]
-DOCX_LICENSE_KEY=[your license key]
+AI_LICENSE_KEY=[your AI license key]
+PDF_LICENSE_KEY=[your PDF converter license key]
+DOCX_LICENSE_KEY=[your DOCX converter license key]
 ----
 
 [[deployment-guides]]

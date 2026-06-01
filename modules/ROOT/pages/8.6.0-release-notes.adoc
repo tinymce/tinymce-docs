@@ -13,7 +13,43 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, May 27^th^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
+* xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
+* xref:improvements[Improvements]
 * xref:additions[Additions]
+
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium plugin changes
+
+The following premium plugin updates were released alongside {productname} {release-version}.
+
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Quick actions threw an error when the selection was within a single table cell
+// #TINY-14434
+
+Previously, running a TinyMCE AI quick action, such as Translate, on text selected within a single table cell threw an error in the console and prevented the action from completing. A text selection inside one cell was incorrectly treated as a multi-cell table selection, so the plugin used the table-specific code path instead of the standard selection path.
+
+In {productname} {release-version}, the plugin now confirms that a genuine multi-cell table selection is present before using the table code path, and otherwise falls back to the standard selection handling. Quick actions such as Translate now run as expected on content selected inside a single cell, while multi-cell table selection behavior is preserved.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
+
+[[improvements]]
+== Improvements
+
+{productname} {release-version} also includes the following improvement:
+
+=== Updated the bundled DOMPurify dependency to the latest version
+// #TINY-14430
+
+Previously, {productname} bundled an older version of the DOMPurify sanitization library. Although {productname} was not affected by the published DOMPurify advisories, because they relate to DOMPurify options that {productname} does not use, the outdated version could be flagged by automated security scanners.
+
+In {productname} {release-version}, DOMPurify has been updated to the latest version. This resolves the scanner warnings without changing {productname}'s sanitization behavior.
 
 
 [[additions]]

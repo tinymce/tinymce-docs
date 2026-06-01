@@ -1,10 +1,10 @@
 [[overview]]
 == Overview
 
-The On-Premises version of the link:https://www.tiny.cloud/tinymce/features/spell-checker/[{pluginname}^] is an application that can be installed and run on the customer’s in-house servers and computing infrastructure, including a private cloud.
+The Spelling service is a server-side component that provides spell checking and language processing capabilities. It runs on-premises within the host infrastructure and powers the link:https://www.tiny.cloud/tinymce/features/spell-checker/[{pluginname}^] plugin in the {productname} editor.
 
-The only requirement to run these services On-Premises is a container runtime or orchestration tool e.g. Docker, Kubernetes, Podman.
+The only requirement to run the Spelling service on-premises is a container runtime or orchestration tool, such as Docker, Kubernetes, or Podman.
 
-A valid access token is required to access the {companyname} Cloud Docker registry and pull the Docker image. Contact link:https://www.tiny.cloud/contact/[{companyname} Support^] to request the access token. 
+A valid access token is required to access the {companyname} Cloud Docker registry and pull the Docker image. Contact link:https://www.tiny.cloud/contact/[{companyname} Support^] to request the access token.
 
 include::partial$misc/admon-dont-push-docker-images.adoc[]

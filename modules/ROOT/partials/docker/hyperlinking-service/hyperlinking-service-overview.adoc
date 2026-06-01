@@ -1,10 +1,10 @@
 [[overview]]
 == Overview
 
-The On-Premises version of the link:https://www.tiny.cloud/tinymce/features/link-checker/[{linkcheckerplugin}^] and link:https://www.tiny.cloud/tinymce/features/enhanced-media-embed/[{mediaembedplugin}^] is an application that can be installed and run on the customer’s in-house servers and computing infrastructure, including a private cloud.
+The Hyperlinking service is a server-side component that provides link validation and rich media resolution capabilities. It runs on-premises within the host infrastructure and powers the link:https://www.tiny.cloud/tinymce/features/link-checker/[{linkcheckerplugin}^] and link:https://www.tiny.cloud/tinymce/features/enhanced-media-embed/[{mediaembedplugin}^] plugins in the {productname} editor. Once deployed, each plugin must be configured separately to connect to this service.
 
-The only requirement to run these services On-Premises is a container runtime or orchestration tool e.g. Docker, Kubernetes, Podman. 
+The only requirement to run the Hyperlinking service on-premises is a container runtime or orchestration tool, such as Docker, Kubernetes, or Podman.
 
-A valid access token is required to access the Tiny Cloud Docker registry and pull the Docker image. Contact link:https://www.tiny.cloud/contact/[{companyname} Support^] to request the access token. 
+A valid access token is required to access the {companyname} Cloud Docker registry and pull the Docker image. Contact link:https://www.tiny.cloud/contact/[{companyname} Support^] to request the access token.
 
 include::partial$misc/admon-dont-push-docker-images.adoc[]

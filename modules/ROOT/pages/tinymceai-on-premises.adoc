@@ -99,15 +99,15 @@ Two license keys are involved in an on-premises deployment. They are distinct, c
 |Service license key (`LICENSE_KEY`)
 |AI service container (environment variable)
 |Activates the on-premises AI service at runtime. A long string provisioned through the {companyname} customer portal.
-|Yes — the service refuses to start without it.
+|Yes — required to run the service.
 
 |{productname} editor license key (`license_key`)
 |`tinymce.init({ license_key: 'T8LK:...' })`
 |Configures the license mode for the {productname} editor and activates premium {productname} features.
-|Yes — required to run the {productname} editor.
+|Yes — required for the premium {productname} AI features.
 |===
 
-NOTE: The service license key (`LICENSE_KEY`) and the {productname} editor license key (`license_key`) are different credentials from different sources, and they are not interchangeable. For more information, see xref:service-license-keys.adoc[Service license keys] and xref:license-key.adoc[License key].
+NOTE: The service license key (`LICENSE_KEY`) and the {productname} editor license key (`license_key`) are not interchangeable. For more information, see xref:service-license-keys.adoc[Service license keys] and xref:license-key.adoc[License key].
 
 == Prerequisites
 

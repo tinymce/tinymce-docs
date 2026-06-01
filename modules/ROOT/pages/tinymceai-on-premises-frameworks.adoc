@@ -1,0 +1,372 @@
+= TinyMCE AI on-premises: editor-side integration
+:navtitle: TinyMCE integration
+:description: Connecting the TinyMCE editor to the on-premises AI service from React, Vue, Angular, Svelte, or vanilla JavaScript.
+:description_short: Editor-side AI service integration.
+:keywords: AI, on-premises, React, Vue, Angular, Svelte, token provider, CORS, integration, JavaScript
+:pluginname: TinyMCE AI
+
+
+This page covers the *editor-side* configuration — the final step that connects the browser-based {productname} editor to the running AI service. At this point in the deployment process, the xref:tinymceai-on-premises-database.adoc[data layer], xref:tinymceai-on-premises-providers.adoc[LLM providers], and xref:tinymceai-on-premises-jwt.adoc[JWT token endpoint] are already operational. This page wires the editor to that infrastructure.
+
+It assumes:
+
+* The AI service is already running and reachable from the browser (see xref:tinymceai-on-premises-getting-started.adoc[Getting started]).
+* A token endpoint exists that signs HS256 JWTs (see xref:tinymceai-on-premises-jwt.adoc[JWT authentication]).
+* A valid {productname} license key or API key with the AI feature enabled.
+
+For general framework setup (installing wrappers, component structure), see the existing integration guides:
+
+* xref:react-cloud.adoc[React]
+* xref:vue-cloud.adoc[Vue.js]
+* xref:angular-cloud.adoc[Angular]
+* xref:svelte-cloud.adoc[Svelte]
+
+The on-premises AI integration adds the options documented below to the standard {productname} `init` configuration.
+
+== Token flow
+
+[.text-center]
+image::tinymceai-on-premises/framework-integration-fig-1.svg[alt="Sequence diagram showing editor calling token provider which fetches a JWT from the application backend then passes it to the AI service",width=100%]
+
+The plugin calls the token provider on initialization and again before the cached token expires. The application back end authenticates the browser request through its own session layer, signs an HS256 JWT with the API Secret, and returns it. The plugin then sends the JWT to the AI service with every request.
+
+
+
+== Required editor options
+
+[cols="1,3",options="header"]
+|===
+|Option |Description
+
+|`plugins`
+|`tinymceai`.
+
+|`toolbar`
+|Include one or more of `tinymceai-chat`, `tinymceai-review`, `tinymceai-quickactions`.
+
+|`tinymceai_service_url`
+|The origin of the AI service (no trailing slash, no path), for example `\https://ai.yourcompany.com`.
+
+|`tinymceai_token_provider`
+|A function returning `Promise<{ token: string }>`. See <<token-provider>> below.
+|===
+
+
+
+== Minimal example
+
+The following vanilla JavaScript example contains every on-premises-specific option. The same `init` options apply identically inside the React, Vue, Angular, and Svelte wrapper components.
+
+[source,html]
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="/path/to/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+</head>
+<body>
+  <textarea id="editor"><p>Hello world.</p></textarea>
+  <script>
+    tinymce.init({
+      selector: '#editor',
+      license_key: 'T8LK:...',
+      plugins: 'tinymceai',
+      toolbar: 'undo redo | bold italic | tinymceai-chat tinymceai-review tinymceai-quickactions',
+      height: 500,
+      tinymceai_service_url: 'https://ai.yourcompany.com',
+      tinymceai_token_provider: () => {
+        return fetch('/api/ai-token', {
+          method: 'POST',
+          credentials: 'include'
+        })
+          .then((r) => r.json())
+          .then((data) => ({ token: data.token }));
+      }
+    });
+  </script>
+</body>
+</html>
+----
+
+Replace `/path/to/tinymce/` with the location of the self-hosted {productname} assets. See xref:installation.adoc[Self-hosted installation] for download and setup instructions.
+
+
+
+[[token-provider]]
+== `tinymceai_token_provider`
+
+A function that returns a `Promise` resolving to an object with a `token` property containing the JWT string.
+
+.Expected return shape
+[source,javascript]
+----
+{ token: 'eyJhbGciOiJIUzI1NiIs...' }
+----
+
+.Example provider
+[source,javascript]
+----
+tinymceai_token_provider: () => {
+  return fetch('/api/ai-token', { method: 'POST' })
+    .then((r) => r.json())
+    .then((data) => ({ token: data.token }));
+}
+----
+
+[cols="1,3",options="header"]
+|===
+|Behavior |Detail
+
+|Automatic refresh
+|The plugin calls the provider on initialization and again when the cached token nears expiry (60-second safety margin). Do not cache the JWT inside the provider.
+
+|Error handling
+|If the function rejects or the endpoint returns a non-OK response, the plugin surfaces an error in the editor UI.
+
+|Token lifetime
+|Tokens should be short-lived (5-15 minutes recommended). See xref:tinymceai-on-premises-jwt.adoc[JWT authentication] for signing key, payload structure, and lifetime guidance.
+|===
+
+
+
+== Framework-specific examples
+
+The examples below show the minimum configuration needed to connect the {pluginname} plugin to the on-premises service. Each uses the framework wrapper's `init` prop to pass the same options documented above.
+
+=== React
+
+[source,jsx]
+----
+import { Editor } from '@tinymce/tinymce-react';
+
+function MyEditor() {
+  return (
+    <Editor
+      licenseKey="T8LK:..."
+      init={{
+        plugins: 'tinymceai',
+        toolbar: 'undo redo | bold italic | tinymceai-chat tinymceai-review tinymceai-quickactions',
+        height: 500,
+        tinymceai_service_url: 'https://ai.yourcompany.com',
+        tinymceai_token_provider: () =>
+          fetch('/api/ai-token', { method: 'POST', credentials: 'include' })
+            .then((r) => r.json())
+            .then((data) => ({ token: data.token }))
+      }}
+    />
+  );
+}
+----
+
+=== Vue.js
+
+[source,html]
+----
+<template>
+  <Editor
+    license-key="T8LK:..."
+    :init="editorInit"
+  />
+</template>
+
+<script setup>
+import Editor from '@tinymce/tinymce-vue';
+
+const editorInit = {
+  plugins: 'tinymceai',
+  toolbar: 'undo redo | bold italic | tinymceai-chat tinymceai-review tinymceai-quickactions',
+  height: 500,
+  tinymceai_service_url: 'https://ai.yourcompany.com',
+  tinymceai_token_provider: () =>
+    fetch('/api/ai-token', { method: 'POST', credentials: 'include' })
+      .then((r) => r.json())
+      .then((data) => ({ token: data.token }))
+};
+</script>
+----
+
+=== Angular
+
+[source,html]
+----
+<!-- app.component.html -->
+<editor
+  [licenseKey]="'T8LK:...'"
+  [init]="editorInit"
+></editor>
+----
+
+[source,typescript]
+----
+// app.component.ts
+import { Component } from '@angular/core';
+
+@Component({ selector: 'app-root', templateUrl: './app.component.html' })
+export class AppComponent {
+  editorInit = {
+    plugins: 'tinymceai',
+    toolbar: 'undo redo | bold italic | tinymceai-chat tinymceai-review tinymceai-quickactions',
+    height: 500,
+    tinymceai_service_url: 'https://ai.yourcompany.com',
+    tinymceai_token_provider: () =>
+      fetch('/api/ai-token', { method: 'POST', credentials: 'include' })
+        .then((r: Response) => r.json())
+        .then((data: { token: string }) => ({ token: data.token }))
+  };
+}
+----
+
+For general framework setup (installing wrappers, SSR configuration, bundler setup), refer to the framework integration guides linked at the top of this page. Replace `T8LK:...` with the license key from the Tiny account representative.
+
+
+
+== Authenticating the token request
+
+The `tinymceai_token_provider` fetches a JWT from the application back end. How that back end authenticates the browser request depends on the application architecture.
+
+=== Session cookie
+
+If the page and the token endpoint share an origin (or a parent domain), the browser sends session cookies automatically:
+
+[source,javascript]
+----
+fetch('/api/ai-token', { method: 'POST', credentials: 'include' })
+----
+
+For cross-origin token endpoints, the back end must respond with `Access-Control-Allow-Origin: <editor-origin>` (not `*`) and `Access-Control-Allow-Credentials: true`, and the session cookie must be set with `SameSite=None; Secure`.
+
+=== Bearer header
+
+If the application already holds a session JWT (injected at render time, or from an auth library), forward it as a header:
+
+[source,javascript]
+----
+fetch('/api/ai-token', {
+  method: 'POST',
+  headers: { 'Authorization': `Bearer ${sessionJwt}` }
+})
+----
+
+This pattern avoids cookies entirely and works well for cross-origin setups.
+
+
+
+== Cross-origin requests to the AI service
+
+In production the editor page and the AI service typically run on different origins (`\https://app.yourcompany.com` and `\https://ai.yourcompany.com`). The AI service must respond with CORS headers that permit the editor origin; otherwise the browser blocks every request.
+
+=== Configuring `ALLOWED_ORIGINS`
+
+Set the `ALLOWED_ORIGINS` environment variable on the AI service container to a comma-separated list of permitted editor origins (scheme + host + port):
+
+[source,bash]
+----
+-e ALLOWED_ORIGINS='https://app.yourcompany.com,https://staging.yourcompany.com'
+----
+
+[cols="1,3",options="header"]
+|===
+|Behavior |Detail
+
+|Format
+|Comma-separated origins. Each entry must include the scheme (`https://`). Do not include paths or trailing slashes.
+
+|Default when unset
+|The service rejects cross-origin requests (no `Access-Control-Allow-Origin` header). Set this variable for any deployment where the editor is on a different origin.
+
+|Wildcard
+|`*` is accepted but not recommended for production. It allows any origin to call the AI service endpoints.
+
+|Preflight (OPTIONS)
+|The service handles `OPTIONS` preflight requests internally and responds with the appropriate `Access-Control-Allow-Methods` and `Access-Control-Allow-Headers`. No reverse proxy configuration is required for OPTIONS.
+
+|Credentials
+|The service responds with `Access-Control-Allow-Credentials: true` when the requesting origin matches an entry in `ALLOWED_ORIGINS`.
+|===
+
+=== Verifying CORS
+
+[source,bash]
+----
+curl -i -X OPTIONS https://ai.yourcompany.com/v1/conversations \
+  -H 'Origin: https://app.yourcompany.com' \
+  -H 'Access-Control-Request-Method: POST' \
+  -H 'Access-Control-Request-Headers: authorization,content-type'
+----
+
+The response should include `Access-Control-Allow-Origin: \https://app.yourcompany.com`. If it shows `*` or no CORS header, update `ALLOWED_ORIGINS` on the AI service container and restart.
+
+=== Common CORS mistakes
+
+[cols="1,2",options="header"]
+|===
+|Mistake |Fix
+
+|Trailing slash in origin (`\https://app.example.com/`)
+|Remove the trailing slash.
+
+|Missing port for non-standard ports (`\https://app.example.com:3000`)
+|Include the port in `ALLOWED_ORIGINS`.
+
+|`ALLOWED_ORIGINS` not set at all
+|All cross-origin requests fail silently. Add the editor origin.
+
+|Reverse proxy stripping `Origin` header
+|Configure the proxy to pass the `Origin` header to the AI service.
+|===
+
+
+
+== Content Security Policy (CSP)
+
+If the application sets a `Content-Security-Policy` header, allow the AI service origin in `connect-src`:
+
+....
+Content-Security-Policy:
+  connect-src 'self' https://ai.yourcompany.com;
+  script-src 'self';
+....
+
+If using the Tiny CDN instead of self-hosted assets, also add `\https://cdn.tiny.cloud` to `script-src`.
+
+
+
+
+== Common integration errors
+
+[cols="1,1,2",options="header"]
+|===
+|Symptom |Likely cause |Fix
+
+|Editor loads but no AI buttons appear
+|`plugins` does not include `tinymceai`, or {productname} is version 7.x or earlier
+|Add `tinymceai` to the `plugins` list and confirm the script URL uses `/tinymce/8/`. Verify the API key has the AI feature enabled.
+
+|`POST /api/ai-token` returns 401
+|The token endpoint rejects the fetch
+|Confirm the fetch sends the session cookie (`credentials: 'include'`) or `Authorization` header that the back end expects.
+
+|AI responses hang then time out
+|Reverse proxy is buffering Server-Sent Events (SSE)
+|Disable proxy buffering. See xref:tinymceai-on-premises-production.adoc[Production deployment].
+
+|Browser console shows a CORS error on `/v1/conversations`
+|`ALLOWED_ORIGINS` does not include the editor origin
+|Update `ALLOWED_ORIGINS` and restart the AI service.
+
+|`tinymceai_token_provider` called in a tight loop
+|Token endpoint returns invalid JSON or non-200
+|Validate: `curl -X POST http://localhost:3000/api/ai-token` should return `pass:c[{"token":"eyJ..."}]` with HTTP 200.
+|===
+
+For other issues, see xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting].
+
+
+
+== See also
+
+* xref:tinymceai-on-premises-getting-started.adoc[Getting started]
+* xref:tinymceai-on-premises-jwt.adoc[JWT authentication]
+* xref:tinymceai-on-premises-providers.adoc[large language model (LLM) providers]
+* xref:tinymceai-on-premises-production.adoc[Production deployment]
+* xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting]

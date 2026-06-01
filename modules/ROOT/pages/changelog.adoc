@@ -14,6 +14,17 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Updated the bundled DOMPurify dependency to the latest version.
 // #TINY-14430
 
+== xref:8.5.1-release-notes.adoc[8.5.1 - 2026-05-20]
+
+=== Security
+
+* Fixed stored XSS vulnerability using media plugin `data-mce-object` injection.
+// #TINY-14357
+* Fixed stored XSS vulnerability through `mce:protected` comments.
+// #TINY-14353
+* Fixed stored XSS vulnerability through `data-mce-` prefixed `src`, `href`, `style` attributes.
+// #TINY-14333
+
 == xref:8.5.0-release-notes.adoc[8.5.0 - 2026-04-29]
 
 ### Added

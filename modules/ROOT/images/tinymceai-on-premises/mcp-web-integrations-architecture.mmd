@@ -1,0 +1,23 @@
+flowchart LR
+    Editor["TinyMCE editor"] <-->|"conversations (SSE)\nHTTP / HTTPS"| AI["AI Service\n(on-premises)"]
+
+    AI <-->|"inference\nHTTPS"| LLM["LLM Provider\nOpenAI · Anthropic · Google"]
+
+    AI <-->|"MCP tools/call\nHTTP"| MCP["MCP Server(s)\nStreamable HTTP"]
+    MCP <-->|"read"| KB["Confluence ·\nNotion · GitBook ·\ninternal wiki"]
+
+    AI <-->|"search query\nHTTP"| WS["Web Search\nWEBSEARCH_ENDPOINT"]
+    WS <-->|"HTTPS"| SearchAPI["Search API\nSerpAPI · Brave · etc."]
+
+    AI <-->|"scrape request\nHTTP"| WR["Web Scrape\nWEBRESOURCES_ENDPOINT"]
+    WR <-->|"HTTP/S"| Pages["Web pages"]
+
+    style AI fill:#E3F2FD,stroke:#1976D2,stroke-width:2px
+    style Editor fill:#ECECFF,stroke:#9370DB
+    style MCP fill:#ECECFF,stroke:#9370DB
+    style WS fill:#ECECFF,stroke:#9370DB
+    style WR fill:#ECECFF,stroke:#9370DB
+    style LLM fill:#F1F8E9,stroke:#8BC34A
+    style KB fill:#F1F8E9,stroke:#8BC34A
+    style SearchAPI fill:#F1F8E9,stroke:#8BC34A
+    style Pages fill:#F1F8E9,stroke:#8BC34A

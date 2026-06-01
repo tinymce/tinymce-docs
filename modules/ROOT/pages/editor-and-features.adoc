@@ -54,17 +54,17 @@ include::partial$misc/premium-plugin-list.adoc[]
 
 include::partial$misc/admon-cloud-configured-options.adoc[]
 
-=== Step 4: Forward proxy configuration
+=== Step 4: Forward proxy and firewall configuration
 
-Ensure that the following URLs are accessible via this proxy if the network has a forward proxy that controls access to the internet.
+If the network has a firewall or forward proxy that controls access to the internet, ensure that the following URLs are accessible:
 
 * All URLs where the editor is deployed.
 * All URLs where the plugins are deployed.
-* +https://imageproxy.tiny.cloud+
-* +https://hyperlinking.tiny.cloud+
-* +https://spelling.tiny.cloud+
+* `+*.tiny.cloud+` — covers all {cloudname} services, including the image proxy, link checker, spell checker, AI API, and document converters.
 
-Ensure the `+tiny-api-key+` and `+tinymce-api-key+` headers are retained while requesting the list of above URLs.
+Ensure the `+tiny-api-key+` and `+tinymce-api-key+` headers are retained while requesting the above URLs.
+
+For the full list of {cloudname} service domains and required headers, see xref:tinymce-and-csp.adoc#firewall-and-proxy-allowlisting[Firewall and proxy allowlisting].
 
 === Step 5: Specifying a translation
 

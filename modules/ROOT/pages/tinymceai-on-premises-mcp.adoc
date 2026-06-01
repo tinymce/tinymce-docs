@@ -1,0 +1,615 @@
+= MCP and web integrations
+:navtitle: MCP and web integrations (optional)
+:description: Model Context Protocol (MCP) server integration and web scraping/search configuration for TinyMCE AI on-premises
+:description_short: MCP, web search, and web scraping setup.
+:keywords: AI, on-premises, MCP, Model Context Protocol, web search, web scraping, tool calling, Streamable HTTP
+:pluginname: TinyMCE AI
+
+The AI service extends model capabilities through two integration points: the https://modelcontextprotocol.io/[Model Context Protocol] (MCP) for tool calling, and pluggable web endpoints for page fetching and search. Both features operate within AI conversations only. Web search and scraping allow the AI to reference live internet content during conversations, and for most deployments, enabling at least web search improves response quality.
+
+These features are configured entirely through environment variables on the AI service container. No additional infrastructure is required beyond a search endpoint.
+
+[.text-center]
+image::tinymceai-on-premises/mcp-web-integrations-architecture.svg[MCP and web integrations architecture: TinyMCE editor connects to AI Service through SSE conversations. AI Service connects to LLM provider for inference and to MCP servers and web search and scrape endpoints for tool calling and live web content.,width=100%]
+
+== Prerequisites
+
+This page assumes the following are already configured:
+
+* A running AI service container with database and Redis (see xref:tinymceai-on-premises-database.adoc[Database and Redis]).
+* At least one LLM provider configured in `PROVIDERS` and `MODELS` (see xref:tinymceai-on-premises-providers.adoc[LLM providers]).
+* A JWT token endpoint deployed and signing tokens with the correct API Secret (see xref:tinymceai-on-premises-jwt.adoc[JWT authentication]).
+
+
+
+[[mcp-integration]]
+== Model Context Protocol (MCP)
+
+MCP allows the AI service to call external tools (internal wikis, API specifications, runbooks, contract databases, and compliance checkers) during conversations. The service connects to MCP servers over *Streamable HTTP transport*.
+
+Only Streamable HTTP transport is supported. Stdio-based MCP servers cannot connect directly to the AI service. Wrap them with the SDK's HTTP transport adapter (for example, `StreamableHTTPServerTransport` in the TypeScript SDK or `StreamableHTTPServer` in the Python SDK) before use.
+
+MCP tools are available in AI *conversations* only. Reviews and quick actions do not invoke MCP tools. For <<mcp-oauth,OAuth-enabled>> MCP servers, each user must complete the authorization flow before the server's tools become available.
+
+=== Configuration
+
+Set the `MCP_SERVERS` environment variable to a JSON object. Each key is a server identifier; each value describes the connection. For OAuth-enabled servers, also set `MCP_OAUTH_CALLBACK_URL` (see <<mcp-oauth>>).
+
+[source,bash]
+----
+-e MCP_SERVERS='{
+  "knowledge-hub": {
+    "url": "http://host.docker.internal:3001/mcp",
+    "options": { "callToolTimeout": 30 }
+  }
+}'
+----
+
+[cols="1,3",options="header"]
+|===
+|Field |Description
+|`url` |HTTP endpoint of the MCP server (Streamable HTTP transport). For <<mcp-oauth,OAuth-enabled>> servers, this must be the endpoint that supports https://datatracker.ietf.org/doc/html/rfc9728[OAuth protected resource discovery] (RFC 9728). See <<mcp-oauth-url>>.
+|`headers` |JSON object of HTTP headers sent with every request (for example, `{"Authorization": "Bearer token"}`). See <<mcp-shared-token>>.
+|`oauth` |OAuth 2.0 configuration block. Enables per-user authorization for MCP servers that require it. See <<mcp-oauth>>.
+|`tools.disabled` |Array of tool names to exclude from LLM access.
+|`options.callToolTimeout` |Per-tool-call timeout in seconds (default 60).
+|===
+
+`MCP_SERVERS` supports multiple server entries. Add additional keys to the same JSON object:
+
+[source,bash]
+----
+-e MCP_SERVERS='{
+  "knowledge-hub": {
+    "url": "http://host.docker.internal:3001/mcp"
+  },
+  "compliance-checker": {
+    "url": "http://host.docker.internal:3002/mcp"
+  }
+}'
+----
+
+Each server's tools are namespaced independently (for example, `knowledge-hub-search_docs` and `compliance-checker-run_check`).
+
+[[mcp-docker-networking]]
+=== Docker networking
+
+On Linux Docker, add `extra_hosts: ["host.docker.internal:host-gateway"]` to the AI service compose entry to reach MCP servers running on the host machine.
+
+WARNING: `host-gateway` resolves to the Docker bridge IP, not `127.0.0.1`. Host services bound to `127.0.0.1` only (common in Python MCP SDK examples and CLI-style servers) are unreachable from inside the container (`ECONNREFUSED`). Bind MCP servers to `0.0.0.0` or run them as sibling containers on the same Docker network.
+
+[[mcp-shared-token]]
+=== Static-token authentication
+
+The `headers` field sends a fixed set of HTTP headers with every request to the MCP server. Every tool call uses the same credentials regardless of which end user triggered the conversation.
+
+[source,bash]
+----
+-e MCP_SERVERS='{
+  "knowledge-hub": {
+    "url": "http://host.docker.internal:3001/mcp",
+    "headers": {
+      "Authorization": "Bearer QUkgc2VydmljZQ==",
+      "X-Custom-Header": "custom-value"
+    }
+  }
+}'
+----
+
+If the MCP server requires per-user context without OAuth, encode identity in the conversation prompt or in a header that the MCP server resolves to a per-user identity on its own side.
+
+[[mcp-oauth]]
+=== OAuth 2.0 authentication
+
+For MCP servers that require OAuth 2.0 authorization instead of a static access token in the `headers` field, the AI service can act as an OAuth client. The service implements the https://datatracker.ietf.org/doc/html/rfc7636[OAuth 2.0 Authorization Code flow with PKCE] and supports https://datatracker.ietf.org/doc/html/rfc7591[Dynamic Client Registration] (RFC 7591) for servers that allow it.
+
+End users authorize the connection through their browser. Each user authorizes independently, and the resulting access token is reused on subsequent requests. The AI service refreshes the access token automatically when it expires.
+
+[[mcp-oauth-url]]
+==== MCP server URL for OAuth
+
+When OAuth is enabled, the AI service discovers the authorization server by sending an unauthenticated request to the MCP server `url` and reading the `resource_metadata` link from the `WWW-Authenticate` header in the `401` response (per https://datatracker.ietf.org/doc/html/rfc9728[RFC 9728]).
+
+Some MCP servers expose separate endpoints for unauthenticated and OAuth-protected access. The `url` must point to the endpoint that returns this metadata. Using the wrong endpoint causes the `initialize` call to hang indefinitely (see <<mcp-troubleshooting>>).
+
+TIP: To verify the correct endpoint, send an unauthenticated request and inspect the `WWW-Authenticate` header. It should contain a `resource_metadata` URL: `curl -sI -X POST \https://mcp.example.com/v1/mcp/auth -H "Content-Type: application/json" | grep -i www-authenticate`
+
+==== Configuration
+
+Enabling OAuth for an MCP server requires two steps:
+
+. Set `MCP_OAUTH_CALLBACK_URL` to the URL of the OAuth callback page hosted by the integrating web application. The AI service uses this URL as the OAuth `redirect_uri` parameter for all OAuth-enabled MCP servers (unless overridden per server with `oauth.callbackUrl`).
+. Add an `oauth` block inside the target server entry in `MCP_SERVERS`.
+
+[source,bash]
+----
+-e MCP_OAUTH_CALLBACK_URL='https://your-app.example.com/oauth/callback' \
+-e MCP_SERVERS='{
+  "knowledge-hub": {
+    "url": "http://host.docker.internal:3001/mcp",
+    "headers": { "Authorization": "Bearer static-token" }
+  },
+  "external-tools": {
+    "url": "https://mcp.example.com/v1/mcp",
+    "oauth": {
+      "clientId": "<oauth-client-id>",
+      "clientSecret": "<oauth-client-secret>",
+      "scopes": ["read", "write"]
+    }
+  }
+}'
+----
+
+Internal MCP servers can use static-token authentication (via `headers`) alongside external servers that require OAuth. Each server is configured independently within the same `MCP_SERVERS` object. `MCP_OAUTH_CALLBACK_URL` only applies to servers with an `oauth` block.
+
+[cols="1,3",options="header"]
+|===
+|Field |Description
+|`oauth.clientId` |OAuth 2.0 client identifier issued by the MCP server. Omit to perform <<mcp-oauth-dcr,Dynamic Client Registration>>.
+|`oauth.clientSecret` |OAuth 2.0 client secret. Used together with `clientId` for confidential clients.
+|`oauth.scopes` |Array of OAuth scopes to request from the authorization server. Omit to use default server scopes.
+|`oauth.callbackUrl` |Per-server override of `MCP_OAUTH_CALLBACK_URL`. Use when different MCP servers redirect to different pages in the web application.
+|===
+
+[[mcp-oauth-dcr]]
+==== Dynamic Client Registration
+
+If the MCP server supports https://datatracker.ietf.org/doc/html/rfc7591[RFC 7591 Dynamic Client Registration], `clientId` and `clientSecret` can be omitted from the `oauth` block. The AI service registers itself with the MCP server automatically on the first authorization attempt and reuses the resulting registration for subsequent flows.
+
+==== Authorization flow
+
+The OAuth flow is driven by the integrating web application. The AI service exposes REST endpoints (see <<mcp-oauth-endpoints>>); the application is responsible for orchestrating the redirects and forwarding the authorization code.
+
+. *Initialize.* The application calls `POST /v1/mcp/oauth/\{serverName}/initialize` for the signed-in user. The response contains either:
+** `{ "connected": true }` -- the user already has a valid access token; no further action is required.
+** `{ "connected": false, "authorizationUrl": "..." }` -- redirect the user's browser to `authorizationUrl`.
+. *User consents.* The MCP server's authorization page opens in the user's browser. After approval, the server redirects back to `MCP_OAUTH_CALLBACK_URL` (or `oauth.callbackUrl`) with `code` and `state` query parameters appended.
+. *Complete.* The callback page extracts `code` and `state` from the query string and forwards them to `POST /v1/mcp/oauth/\{serverName}/complete` with body `{ "code": "...", "state": "..." }`. On success, the user's connection becomes active and subsequent AI conversations can use the MCP server's tools.
+
+NOTE: The AI service does not host the callback page. Register `MCP_OAUTH_CALLBACK_URL` (or each per-server `oauth.callbackUrl`) as an authorized redirect URI with the MCP server -- either through the server's developer console or, with Dynamic Client Registration, automatically.
+
+IMPORTANT: The authorization session is valid for ten minutes after `initialize`. If the user takes longer to finish the authorization page, the `complete` call returns an `mcp-oauth-invalid-state` error and the flow must be restarted from `initialize`.
+
+[[mcp-oauth-callback-page]]
+==== Callback page implementation
+
+The AI service does not host the callback page. The integrating web application must serve a page at the `MCP_OAUTH_CALLBACK_URL` that extracts the `code` and `state` query parameters from the redirect URL and forwards them to the AI service's `complete` endpoint.
+
+.Minimal callback page
+[source,html]
+----
+<script>
+  const params = new URLSearchParams(window.location.search);
+  fetch('/api/mcp/oauth/my-server/complete', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ code: params.get('code'), state: params.get('state') })
+  })
+    .then(r => r.json())
+    .then(data => document.body.textContent = data.connected ? 'Connected.' : 'Failed: ' + JSON.stringify(data));
+</script>
+----
+
+Replace `my-server` with the key from `MCP_SERVERS`. In production, add error handling, a loading indicator, and validation for missing `code` or `state` parameters.
+
+In the example above, the callback page calls `/api/mcp/oauth/{serverName}/complete` on the integrating application's own server rather than directly on the AI service. This is the proxy pattern described below.
+
+[[mcp-oauth-proxy]]
+==== Browser integration and proxy endpoints
+
+The <<mcp-oauth-endpoints,OAuth REST endpoints>> on the AI service require JWT authentication and may not be directly callable from the browser due to CORS restrictions. In browser-based integrations, proxy the OAuth calls through the application's own backend.
+
+The backend generates a JWT (the same token used for conversations), attaches it to the request, and forwards the call to the AI service. This keeps the JWT generation server-side and avoids CORS configuration on the AI service.
+
+A typical integration requires four proxy routes:
+
+* `GET /api/mcp/oauth/status` -> `GET {AI_SERVICE_URL}/v1/mcp/oauth/status`
+* `POST /api/mcp/oauth/{serverName}/initialize` -> `POST {AI_SERVICE_URL}/v1/mcp/oauth/{serverName}/initialize`
+* `POST /api/mcp/oauth/{serverName}/complete` -> `POST {AI_SERVICE_URL}/v1/mcp/oauth/{serverName}/complete`
+* `DELETE /api/mcp/oauth/{serverName}` -> `DELETE {AI_SERVICE_URL}/v1/mcp/oauth/{serverName}`
+
+[[mcp-oauth-endpoints]]
+==== REST endpoints
+
+All endpoints are authenticated with the same JWT used for other AI service endpoints. The acting user is identified by the token; each user has an independent connection state per MCP server.
+
+[cols="1,2,3",options="header"]
+|===
+|Method |Path |Description
+|`GET` |`/v1/mcp/oauth/status` |Returns the connection status for every OAuth-enabled MCP server, with `connected` and an optional `expiresAt` timestamp for the calling user.
+|`POST` |`/v1/mcp/oauth/\{serverName}/initialize` |Starts the OAuth flow. Returns `{ "connected": true }` or `{ "connected": false, "authorizationUrl": "..." }`.
+|`POST` |`/v1/mcp/oauth/\{serverName}/complete` |Finishes the OAuth flow. Body: `{ "code": "...", "state": "..." }`. On success, returns `{ "connected": true }`.
+|`DELETE` |`/v1/mcp/oauth/\{serverName}` |Removes the stored token and any in-progress authorization state for the calling user.
+|===
+
+These endpoints are available once OAuth is configured for at least one MCP server.
+
+==== Connection scope and revocation
+
+OAuth connections are established per user and do not carry over between users or environments.
+
+To revoke a user's connection, send `DELETE /v1/mcp/oauth/\{serverName}`.
+
+For OAuth-enabled MCP servers, the connection is established only after each user completes the authorization flow. Until then, the server's tools are not exposed to that user.
+
+[[mcp-tool-namespacing]]
+=== Tool namespacing
+
+MCP tools are exposed to the LLM with a namespaced identifier: `<server_id>-<tool_name>` (for example, `knowledge-hub-search_knowledge_base`). The `tools.disabled` array accepts the *bare tool name* only (for example, `"search_knowledge_base"`, not the namespaced form).
+
+=== MCP server example
+
+The following example uses the official https://github.com/modelcontextprotocol/typescript-sdk[MCP TypeScript SDK] (`@modelcontextprotocol/sdk`) with `StreamableHTTPServerTransport`, which handles session management, SSE framing, and the full https://modelcontextprotocol.io/specification/2025-11-25/basic/transports#streamable-http[Streamable HTTP transport] specification.
+
+.Knowledge-base MCP server
+[%collapsible]
+====
+Create `package.json`:
+
+[source,json]
+----
+{
+  "name": "knowledge-mcp-server",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "express": "^4.18.0",
+    "zod": "^3.23.0"
+  }
+}
+----
+
+Install dependencies:
+
+[source,bash]
+----
+npm install
+----
+
+Create `knowledge-mcp-server.js`:
+
+[source,javascript]
+----
+// knowledge-mcp-server.js
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
+import express from 'express';
+import { z } from 'zod';
+
+const KNOWLEDGE_BASE = {
+  'api-guidelines': 'All REST APIs must use JSON, include pagination through Link headers, and return 4xx for client errors with a machine-readable error code.',
+  'deployment-process': 'Deployments require: 1) PR approval, 2) passing CI, 3) staging verification, 4) production canary (5% traffic for 30min), 5) full rollout.',
+  'security-policy': 'All user data must be encrypted at rest (AES-256) and in transit (TLS 1.3). PII requires additional field-level encryption.',
+};
+
+function createServer() {
+  const server = new McpServer({
+    name: 'knowledge-hub',
+    version: '1.0.0'
+  });
+
+  server.tool(
+    'search_knowledge_base',
+    'Search the company knowledge base for policies, guidelines, and procedures',
+    { query: z.string().describe('Search query') },
+    async ({ query }) => {
+      const q = query.toLowerCase();
+      const results = Object.entries(KNOWLEDGE_BASE)
+        .filter(([key]) => key.includes(q) || q.includes(key.split('-')[0]))
+        .map(([key, value]) => `## ${key}\n${value}`)
+        .join('\n\n');
+      return {
+        content: [{ type: 'text', text: results || 'No results found.' }]
+      };
+    }
+  );
+
+  server.tool(
+    'get_api_spec',
+    'Get the OpenAPI spec for an internal service',
+    { service: z.string().describe('Service name (for example user-service, billing-api)') },
+    async ({ service }) => {
+      return {
+        content: [{ type: 'text', text: `Spec not found for: ${service}` }]
+      };
+    }
+  );
+
+  return server;
+}
+
+const app = express();
+app.use(express.json());
+
+app.all('/mcp', async (req, res) => {
+  const server = createServer();
+  const transport = new StreamableHTTPServerTransport({ sessionIdGenerator: undefined });
+  await server.connect(transport);
+  await transport.handleRequest(req, res, req.body);
+  await server.close();
+});
+
+app.listen(3001, () => console.log('Knowledge MCP server on http://0.0.0.0:3001/mcp'));
+----
+====
+
+The example server binds to `0.0.0.0` so it is reachable from inside Docker containers. When the MCP server runs on the host machine, the AI service connects to it at `http://host.docker.internal:3001/mcp` (see <<mcp-docker-networking>>).
+
+[[web-search]]
+== Web search
+
+The AI service can forward search queries to an external endpoint, enabling AI conversations to reference live web content.
+
+=== Enabling web search
+
+Web search requires three components configured together:
+
+[cols="1,3",options="header"]
+|===
+|Component |Configuration
+
+|Environment variables
+|Set `WEBSEARCH_ENABLED='true'` and `WEBSEARCH_ENDPOINT` on the AI service container. Optionally set `WEBSEARCH_REQUEST_TIMEOUT` (default 10000ms) and `WEBSEARCH_HEADERS` for authenticated search backends.
+
+|MODELS entry
+|The model's `MODELS` entry must include `capabilities.webSearch: true` (boolean) for the web search toggle to appear in the editor. See xref:tinymceai-on-premises-providers.adoc#models-required[MODELS configuration].
+
+|JWT permission
+|The JWT must include `ai:conversations:webSearch` in the `auth.ai.permissions` array. See xref:tinymceai-on-premises-jwt.adoc#permissions-reference[JWT permissions]. Without this permission, the toggle remains grayed out even when the environment variables and MODELS entry are correct.
+|===
+
+[source,bash]
+----
+-e WEBSEARCH_ENABLED='true' \
+-e WEBSEARCH_ENDPOINT='http://host.docker.internal:4001/search' \
+-e WEBSEARCH_REQUEST_TIMEOUT='10000' \
+-e WEBSEARCH_HEADERS='Authorization: Bearer search-api-key, X-Source: tinymce'
+----
+
+IMPORTANT: `WEBSEARCH_HEADERS` uses **colon-CSV format** (`Header-Name: value, Another: value`), not JSON. Passing a JSON object produces `ERR_INVALID_HTTP_TOKEN` and silently prevents all outbound search requests.
+
+[[websearch-per-message]]
+=== Per-message activation (custom integrations)
+
+The {productname} editor sends the web search activation flag when the user toggles web search on. Custom integrations that call the AI service API directly must include the following in each message request body where web search should be active:
+
+[source,json]
+----
+{
+  "capabilities": { "webSearch": {} }
+}
+----
+
+The value *must* be an empty object (`{}`). This is the documented API contract (see https://ckeditor.com/docs/cs/latest/guides/ckeditor-ai/models.html#capability-configuration[CKEditor AI Models: Capability Configuration]). The service rejects other shapes:
+
+* `"webSearch": true` : rejected (schema expects an object, not a boolean).
+* `"webSearch": {"enabled": true}` : rejected (unrecognized key).
+* Omitted entirely: web search is not surfaced to the model, even when all server-side configuration is correct.
+
+Without this field, the environment variables, JWT permission, and MODELS configuration are insufficient. The model never receives the web search tool.
+
+=== Endpoint contract
+
+[cols="1,2",options="header"]
+|===
+|Direction |Payload
+|Request |JSON object with a `query` field (search string).
+|Response |JSON object with a `results` array; each item includes `url`, `text`, `title`, and optional `author`, `publishedAt`, and `favicon`.
+|===
+
+.Request body
+[source,json]
+----
+{ "query": "search string" }
+----
+
+.Response body
+[source,json]
+----
+{
+  "results": [
+    {
+      "url": "https://example.com/article",
+      "text": "Content snippet",
+      "title": "Article Title",
+      "author": "Author",
+      "publishedAt": "2026-04-30T10:00:00Z",
+      "favicon": "https://example.com/favicon.ico"
+    }
+  ]
+}
+----
+
+=== Implementation example (SerpAPI)
+
+[source,javascript]
+----
+// search-service.js
+const express = require('express');
+const app = express();
+app.use(express.json());
+
+app.post('/search', async (req, res) => {
+  const response = await fetch(
+    `https://serpapi.com/search.json?q=${encodeURIComponent(req.body.query)}&api_key=${process.env.SERP_API_KEY}`
+  );
+  const data = await response.json();
+  const results = (data.organic_results || []).slice(0, 5).map(r => ({
+    url: r.link,
+    title: r.title,
+    text: r.snippet
+  }));
+  res.json({ results });
+});
+
+app.listen(4001);
+----
+
+
+
+[[web-scraping]]
+== Web scraping
+
+The AI service can forward web page fetches to an external endpoint, enabling AI conversations to reference specific pages.
+
+=== Enabling web scraping
+
+Set `WEBRESOURCES_ENABLED='true'` and `WEBRESOURCES_ENDPOINT` on the AI service container. Optionally set `WEBRESOURCES_REQUEST_TIMEOUT` (default 10000ms).
+
+[source,bash]
+----
+-e WEBRESOURCES_ENABLED='true' \
+-e WEBRESOURCES_ENDPOINT='http://host.docker.internal:4000/scrape' \
+-e WEBRESOURCES_REQUEST_TIMEOUT='10000'
+----
+
+[[web-scraping-trigger]]
+=== Trigger mechanism
+
+The AI service calls the scrape endpoint (`WEBRESOURCES_ENDPOINT`) when it receives a request on:
+
+[source]
+----
+POST /v1/conversations/{id}/web-resources
+Content-Type: application/json
+
+{ "url": "https://example.com/page-to-fetch" }
+----
+
+The {productname} editor sends this request when a user pastes or references a URL in conversation. Custom integrations must call this endpoint explicitly to trigger a page fetch.
+
+The response is stored against the conversation. The `type` field in the scrape response must be `text/html` or `text/markdown`. Other MIME types (for example, `application/pdf`) are rejected with a `422 web-resource-download-error`.
+
+=== Endpoint contract
+
+[cols="1,2",options="header"]
+|===
+|Direction |Payload
+|Request |JSON object with a `url` field (page to fetch).
+|Response |JSON object with `type` (`text/html` or `text/markdown`) and `data` (body content).
+|===
+
+.Request body
+[source,json]
+----
+{ "url": "https://example.com/article" }
+----
+
+.Response body
+[source,json]
+----
+{ "type": "text/html", "data": "<html><body><p>Example page body</p></body></html>" }
+----
+
+=== Implementation example (Playwright)
+
+[source,javascript]
+----
+// scraper-service.js
+const { chromium } = require('playwright');
+const express = require('express');
+const app = express();
+app.use(express.json());
+
+app.post('/scrape', async (req, res) => {
+  const browser = await chromium.launch();
+  const page = await browser.newPage();
+  await page.goto(req.body.url, { waitUntil: 'networkidle' });
+  const content = await page.content();
+  await browser.close();
+  res.json({ type: 'text/html', data: content });
+});
+
+app.listen(4000);
+----
+
+
+
+[[sse-events]]
+== SSE events
+
+Custom streaming UI integrations can use the following Server-Sent Events (SSE) to render tool call progress and search results. The AI service emits these events during conversations:
+
+[cols="1,3",options="header"]
+|===
+|Event name |Description
+|`mcp-tool-result` |Emitted when an MCP tool call completes. Contains the tool result. There is no pre-call event; clients receive no signal until the tool call finishes.
+|`web-search` |Emitted when a web search returns results (or fails without emitting an error event; see <<web-search-troubleshooting,Troubleshooting>>).
+|`source` |Emitted with source citations from the model response.
+|===
+
+
+
+[[mcp-kubernetes]]
+== Kubernetes deployment
+
+In Kubernetes, the `extra_hosts: host-gateway` Docker pattern does not apply. Deploy MCP servers and web integration endpoints as sibling Deployments with ClusterIP Services in the same namespace as the AI service. Reference them using cluster DNS:
+
+[source,bash]
+----
+-e MCP_SERVERS='{
+  "knowledge-hub": {
+    "url": "http://mcp-knowledge.tinymce-ai.svc.cluster.local:3001/mcp",
+    "options": { "callToolTimeout": 30 }
+  }
+}'
+-e WEBRESOURCES_ENDPOINT='http://web-scrape.tinymce-ai.svc.cluster.local:4000/scrape'
+-e WEBSEARCH_ENDPOINT='http://web-search.tinymce-ai.svc.cluster.local:4001/search'
+----
+
+Store `MCP_SERVERS` and `WEBSEARCH_HEADERS` in a Kubernetes Secret and mount them as environment variables in the AI service Deployment. This avoids exposing credentials in the Deployment manifest and allows rotation without redeploying.
+
+For production clusters, the MCP server Deployments should have dedicated resource requests, liveness probes, and replica counts independent of the AI service. See xref:tinymceai-on-premises-production.adoc[Production deployment] for general Kubernetes patterns.
+
+
+
+[[web-search-troubleshooting]]
+== Troubleshooting
+
+[cols="1,2",options="header"]
+|===
+|Symptom |Resolution
+
+|Web search or web scraping features do not appear at all
+|`WEBSEARCH_ENABLED` and `WEBRESOURCES_ENABLED` both default to `false`. Set them to `true` in the AI service environment and provide the corresponding `_ENDPOINT` values. Without these flags enabled, the AI service disables all web integration features regardless of JWT permissions or MODELS configuration.
+
+|Web search toggle is grayed out in the editor
+|The JWT is missing the `ai:conversations:webSearch` permission. Add it to the `auth.ai.permissions` array in the token (or use the wildcard `ai:conversations:*`). See xref:tinymceai-on-premises-jwt.adoc#permissions-reference[JWT permissions].
+
+|Web search is toggled on but the model never uses it
+|The per-message request body is missing `"capabilities": {"webSearch": {}}`. The {productname} editor sends this when the toggle is active. Custom integrations must include it in each request body. See <<websearch-per-message>>.
+
+|`ERR_INVALID_HTTP_TOKEN` in AI service logs related to web search
+|`WEBSEARCH_HEADERS` is set as a JSON object. The service expects colon-CSV format: `Header-Name: value, Another: value`.
+
+|`ECONNREFUSED` when connecting to MCP server
+|The MCP server is bound to `127.0.0.1`. Bind to `0.0.0.0` instead, or run the MCP server as a sibling container on the same Docker network (or Kubernetes namespace).
+
+|`[WARN] MCP client health check ping failed, evicting` every ~60 seconds
+|Non-functional. The AI service re-handshakes with the MCP server after each eviction. Tool calls continue to work. This log volume is expected in steady state and does not indicate a problem.
+
+|Web search returns "no results" but the search back end is running
+|Check AI service container logs for `[WARN] Web search request failed`. When the `WEBSEARCH_ENDPOINT` returns a 5xx error, the service logs a warning but emits an empty `event: web-search` to the client with no error payload. The model proceeds as if zero results were returned.
+
+|`422 web-resource-download-error` from the web-resources endpoint
+|This single error code covers multiple failure modes: the scrape endpoint returned 5xx, returned non-JSON, returned an empty `data` field, or returned an unsupported `type` (anything other than `text/html` or `text/markdown`). Check AI service container logs for the underlying cause.
+
+|`mcp-oauth-invalid-state` error from the `complete` endpoint
+|The authorization session expired. Sessions are valid for ten minutes after calling `initialize`. Restart the flow from `POST /v1/mcp/oauth/\{serverName}/initialize`.
+
+|MCP tools not appearing for a user after OAuth is configured
+|The user has not completed the authorization flow. OAuth connections are per user -- each user must authorize independently through `initialize` and `complete`. Check the connection status with `GET /v1/mcp/oauth/status`.
+
+[[mcp-troubleshooting]]
+|`initializeMcpOAuth` hangs for 60+ seconds with no response
+|The MCP server `url` in `MCP_SERVERS` does not return OAuth resource discovery metadata (https://datatracker.ietf.org/doc/html/rfc9728[RFC 9728]). The AI service sends an unauthenticated request to the URL and expects a `401` response with a `WWW-Authenticate` header containing a `resource_metadata` link. If the header is missing, the service hangs indefinitely. Verify the correct endpoint with: `curl -sI -X POST \https://mcp.example.com/endpoint -H "Content-Type: application/json"` and check for `resource_metadata` in the `WWW-Authenticate` header. Some MCP servers expose separate URLs for authenticated and OAuth-protected access. See <<mcp-oauth-url>>.
+|===
+
+
+
+== See also
+
+* xref:tinymceai-on-premises-providers.adoc[LLM providers]: provider configuration and the `MODELS` catalog
+* xref:tinymceai-on-premises-reference.adoc[Reference]: full environment variable reference including `MCP_SERVERS`, `WEBRESOURCES_*`, and `WEBSEARCH_*`
+* xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting]: general troubleshooting

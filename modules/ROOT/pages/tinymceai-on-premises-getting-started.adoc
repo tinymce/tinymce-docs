@@ -1,0 +1,547 @@
+= Getting started with TinyMCE AI on-premises
+:navtitle: Getting started
+:description: Docker Compose quick start for TinyMCE AI on-premises service
+:description_short: Docker Compose quick start.
+:keywords: AI, on-premises, getting started, Docker, quick start, Docker Compose, installation, setup
+:pluginname: TinyMCE AI
+
+This guide sets up a fully working local stack on any machine with Docker:
+
+* *MySQL 8.0*: conversation history and metadata
+* *Redis*: caching and session state
+* *{pluginname} service*: the on-premises AI back end
+* *A minimal token server* (Node.js): signs JWTs for the editor
+* *A browser page with {productname}*: validates the end-to-end flow
+
+The quick start is designed to validate the stack components before moving to a production deployment. Production engineers can review this section to understand the conceptual flow before continuing to xref:tinymceai-on-premises-production.adoc[Production deployment].
+
+== Before you begin
+
+Verify the following are installed and accessible:
+
+[source,bash]
+----
+docker --version   # 20.10+ required (or podman --version for Podman 4+)
+node --version     # 18+ required
+npm --version
+----
+
+Additionally, have the following credentials ready:
+
+* A {productname} license key and container registry credentials (from the Tiny account representative)
+* At least one LLM provider API key (OpenAI, Anthropic, or Google)
+
+== Quick start with Docker Compose
+
+=== Create the project folder
+
+[source,bash]
+----
+mkdir tinymceai-onpremise && cd tinymceai-onpremise
+----
+
+=== Authenticate with the container registry
+
+The service image lives at `registry.containers.tiny.cloud/ai-service-tiny`.
+
+For Docker:
+
+[source,bash]
+----
+docker login -u '<registry-username>' https://registry.containers.tiny.cloud
+# Docker prompts for the password; this avoids leaking it in shell history.
+----
+
+For Podman:
+
+[source,bash]
+----
+podman login -u '<registry-username>' registry.containers.tiny.cloud
+----
+
+Replace `<registry-username>` with the username supplied by the Tiny account representative. If credentials have not been received, contact `support@tiny.cloud`.
+
+=== Pull the AI service image
+
+[source,bash]
+----
+docker pull registry.containers.tiny.cloud/ai-service-tiny:latest
+----
+
+For Podman, substitute `podman pull`. For production, pin a specific version tag (for example `:5.1.0`) rather than `:latest` for repeatable deployments and to avoid unexpected breaking changes.
+
+=== Create `docker-compose.yml` (data layer)
+
+This compose file starts the data layer services (MySQL and Redis) that the AI service depends on. The AI service itself is started separately in the next step, which allows upgrading or reconfiguring it independently.
+
+Create the file with exactly the contents below. Indentation is two spaces, never tabs.
+
+[source,yaml]
+----
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-changeme}
+      MYSQL_DATABASE: ai_service
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mysql_data:
+----
+
+TIP: Pin `mysql:8.0`, not `mysql:8`. The `:8` tag resolves to the latest MySQL minor version, which may use authentication plugins or SQL modes incompatible with the AI service schema migrations. See xref:tinymceai-on-premises-database.adoc#mysql-version-pinning[MySQL version pinning] for details.
+
+PostgreSQL is equally supported. See xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage] for an equivalent compose file. Review the xref:tinymceai-on-premises-database.adoc#postgresql-schema-prerequisite[PostgreSQL schema prerequisite] before switching.
+
+[NOTE]
+--
+If the AI service needs to reach the host machine (for example a self-hosted Ollama running on the host), add `--add-host=host.docker.internal:host-gateway` to the `docker run` command in the Launch section below. Docker Desktop (macOS, Windows) and Podman 4{plus} auto-inject this alias; native Linux Docker does not.
+--
+
+=== Create the `.env` file
+
+[source,bash]
+----
+# --- Required: AI service license key provided by Tiny ---
+AI_LICENCE_KEY='paste-ai-licence-key-here'
+
+# --- Required: strong secret used to log into the Management Panel ---
+MANAGEMENT_SECRET='replace-with-strong-secret'
+
+# --- Required: database password (must match docker-compose.yml) ---
+DB_PASSWORD='replace-with-db-password'
+
+# --- Required: at least one LLM provider key ---
+OPENAI_API_KEY='paste-openai-key-here'
+# ANTHROPIC_API_KEY='paste-anthropic-key-here'
+# GOOGLE_API_KEY='paste-google-key-here'
+
+# --- Filled in after creating an environment (see "Create an environment and access key" below). Used by the token server, not the AI service. ---
+AI_ENV_ID='paste-environment-id-here'
+AI_API_SECRET='paste-api-secret-here'
+----
+
+[IMPORTANT]
+====
+ * `AI_LICENCE_KEY` activates the AI service container.
+ * The `license_key` init option in `tinymce.init()` activates premium {productname} features in the self-hosted editor. 
+ * These are different credentials from different sources — they are not interchangeable. See the xref:tinymceai-on-premises.adoc#_credentials[Credentials] section on the Overview page.
+====
+
+=== Start MySQL and Redis
+
+[source,bash]
+----
+docker compose up -d
+----
+
+Wait ~15 seconds for MySQL to initialize, then verify:
+
+[source,bash]
+----
+docker compose ps
+----
+
+Both data layer containers (MySQL and Redis) should report `healthy` in the STATUS column. If MySQL still shows `starting`, wait another 10 seconds and re-run.
+
+=== Launch the AI service
+
+The AI service runs as a standalone container outside of the Docker Compose stack. This separation allows upgrading or reconfiguring the AI service without restarting the database and Redis.
+
+First, find the Docker Compose network name (Docker creates it from the folder name):
+
+[source,bash]
+----
+docker network ls --format '{{.Name}}' | grep default
+----
+
+Use the matching network name in `--network` below. First, load the `.env` file:
+
+[source,bash]
+----
+set -a && source .env && set +a
+----
+
+Then start the AI service container:
+
+[source,bash]
+----
+docker run --init -d -p 8000:8000 \
+  --network <compose-network-name> \
+  --name ai-service \
+  -e LICENSE_KEY="$AI_LICENCE_KEY" \
+  -e ENVIRONMENTS_MANAGEMENT_SECRET_KEY="$MANAGEMENT_SECRET" \
+  -e DATABASE_DRIVER='mysql' \
+  -e DATABASE_HOST='mysql' \
+  -e DATABASE_USER='root' \
+  -e DATABASE_PASSWORD="$DB_PASSWORD" \
+  -e DATABASE_DATABASE='ai_service' \
+  -e REDIS_HOST='redis' \
+  -e PROVIDERS='{"openai":{"type":"openai","apiKeys":["'"$OPENAI_API_KEY"'"]}}' \
+  -e STORAGE_DRIVER='database' \
+  -e ALLOWED_ORIGINS='http://localhost:3000' \
+  -e ENABLE_METRIC_LOGS='true' \
+  registry.containers.tiny.cloud/ai-service-tiny:latest
+----
+
+NOTE: The AI service contacts `license.containers.tiny.cloud` on startup to validate the license key. Ensure this endpoint is reachable from the container. No customer data is sent during this check.
+
+TIP: If the container already exists from a previous attempt, remove it first with `docker rm -f ai-service`.
+
+TIP: The network name returned by `docker network ls` already includes the `_default` suffix (e.g., `tinymceai-onpremise_default`). Use the full name as-is in `--network`. For multiple LLM providers, extend the `PROVIDERS` JSON: `{"openai":{...},"anthropic":{...}}`.
+
+NOTE: The launch command above starts the AI service with basic conversation support. To enable *web search* in conversations, add `WEBSEARCH_ENABLED='true'` and `WEBSEARCH_ENDPOINT` (pointing to a search backend) to the `docker run` command. See xref:tinymceai-on-premises-mcp.adoc#web-scraping-and-search[Web scraping and web search] for the full configuration, endpoint contracts, and a SerpAPI example.
+
+For Podman, replace `docker run` with `podman run` and use a Podman pod instead of a compose network. See xref:tinymceai-on-premises-production.adoc[Production deployment] for Podman-specific guidance. See xref:tinymceai-on-premises-production.adoc#_podman_deployment[Podman deployment] for a full example.
+
+For native databases (the database runs on the host or in a managed service rather than in Docker), drop the `--network` flag and set `DATABASE_HOST=host.docker.internal` (Docker Desktop and Podman 4{plus}). On native Linux Docker, additionally pass `--add-host=host.docker.internal:host-gateway`.
+
+Wait five seconds, then verify:
+
+[source,bash]
+----
+curl http://localhost:8000/health
+----
+
+Expected response:
+
+[source,json]
+----
+{"serviceName":"on-premises-http","uptime":5.123}
+----
+
+.Successful boot log (`docker logs ai-service`)
+[source,text]
+----
+Connecting to database (driver=mysql host=mysql)
+Running migrations...
+Migrations complete: 32 tables ready
+Connecting to Redis (host=redis:6379)
+Redis connected
+Server is listening on port 8000.
+----
+
+[WARNING]
+--
+If the container exits immediately, run `docker logs ai-service`. The most common causes are documented in the xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting] guide. The top three are: malformed `AI_LICENCE_KEY` (line breaks from word wrap), missing PostgreSQL schema, and JSON syntax error in `PROVIDERS`.
+--
+
+=== Create an environment and access key
+
+The AI service isolates users into Environments. Each environment has its own access keys.
+
+. Open the Management Panel: *http://localhost:8000/panel/*
+. Sign in using the `MANAGEMENT_SECRET` from `.env`.
+. Click *Create Environment* and give it a name (for example "Development").
+. Note the *Environment ID* displayed (a short identifier like `viOu8BnjJHb0HGK091p`).
+. Inside the environment, click *Create a new access key*.
+. *Copy the Environment ID and Access Key*.
+
+Update `.env` with the new values:
+
+[source,bash]
+----
+AI_ENV_ID='paste-environment-id-here'
+AI_API_SECRET='paste-api-secret-here'
+----
+
+[IMPORTANT]
+--
+Always create environments through the Management Panel UI. See the xref:tinymceai-on-premises-jwt.adoc[JWT authentication] guide for details on environment and access key management.
+--
+
+=== Create the token server
+
+The token server signs JSON Web Tokens (JWTs) for the editor. The Node.js example below is for the demo only; the xref:tinymceai-on-premises-jwt.adoc[JWT authentication] guide contains production-ready endpoints in 8 languages (Node, Django, Flask, Laravel, Rails, .NET, Go, Spring Boot).
+
+Create `package.json`:
+
+[source,json]
+----
+{
+  "name": "tinymceai-onpremise-demo",
+  "private": true,
+  "scripts": {
+    "start": "node token-server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.18.0",
+    "jsonwebtoken": "^9.0.0",
+    "tinymce": "^8.5.0"
+  }
+}
+----
+
+Create `token-server.js`:
+
+[source,javascript]
+.token-server.js
+----
+require('dotenv').config({ override: true });
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const path = require('path');
+
+const PORT = process.env.PORT || 3000;
+const AI_ENV_ID = process.env.AI_ENV_ID;
+const AI_API_SECRET = process.env.AI_API_SECRET;
+const AI_SERVICE_URL = process.env.AI_SERVICE_URL || 'http://localhost:8000';
+
+if (!AI_ENV_ID || !AI_API_SECRET) {
+  console.error('ERROR: AI_ENV_ID and AI_API_SECRET must be set in .env');
+  console.error('Create an environment first: visit http://localhost:8000/panel/');
+  process.exit(1);
+}
+
+const app = express();
+app.use(express.json());
+
+app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
+
+app.post('/api/ai-token', (req, res) => {
+  const token = jwt.sign({
+    aud: AI_ENV_ID,
+    sub: 'demo-user-001',
+    user: { name: 'Demo User', email: 'demo@example.com' },
+    auth: {
+      ai: {
+        permissions: [
+          'ai:conversations:*',
+          'ai:models:agent',
+          'ai:actions:system:*',
+          'ai:reviews:system:*'
+        ]
+      }
+    }
+  }, AI_API_SECRET, { algorithm: 'HS256', expiresIn: '1h' });
+
+  res.json({ token });
+});
+
+app.get('/', (req, res) => {
+  res.send(`<!DOCTYPE html>
+<html>
+<head>
+  <title>TinyMCE AI on-premises Demo</title>
+  <script src="/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+</head>
+<body style="max-width: 900px; margin: 40px auto; font-family: system-ui;">
+  <h1>TinyMCE AI on-premises Demo</h1>
+  <p>Select text and use the AI toolbar, or open the AI chat sidebar.</p>
+  <textarea id="editor"><p>Select this text and try the AI features above. Ask the AI to rewrite it, summarize it, or change the tone.</p></textarea>
+  <script>
+    tinymce.init({
+      selector: '#editor',
+      license_key: 'your-license-key',
+      plugins: 'tinymceai',
+      toolbar: 'undo redo | blocks | bold italic | tinymceai-chat tinymceai-review tinymceai-quickactions',
+      height: 500,
+      tinymceai_service_url: '${AI_SERVICE_URL}',
+      tinymceai_token_provider: () =>
+        fetch('/api/ai-token', { method: 'POST' })
+          .then(r => r.json())
+          .then(data => ({ token: data.token }))
+    });
+  </script>
+</body>
+</html>`);
+});
+
+app.listen(PORT, () => {
+  console.log('Editor:     http://localhost:' + PORT);
+  console.log('Token API:  http://localhost:' + PORT + '/api/ai-token');
+  console.log('AI Service: ' + AI_SERVICE_URL);
+});
+----
+
+=== Install and run
+
+[source,bash]
+----
+npm install
+----
+
+The {pluginname} plugin must be present in the {productname} plugins directory before starting the demo. Copy the `tinymceai` folder into `node_modules/tinymce/plugins/`, or use the xref:editor-important-options.adoc#external_plugins[`external_plugins`] option to load it from a separate path.
+
+[source,bash]
+----
+npm start
+----
+
+[TIP]
+====
+If port 3000 is already in use from a previous run, stop the existing process first:
+
+[source,bash]
+----
+lsof -ti :3000 | xargs kill
+----
+====
+
+=== Open the demo
+
+Open *http://localhost:3000* in a browser. The editor loads with the AI toolbar. Select text and try the AI features. Responses stream in real time from the chosen large language model (LLM) provider, processed entirely within the local infrastructure.
+
+The {pluginname} on-premises service is now running.
+
+== Verifying the installation
+
+After completing the quick start, run each check below from the command line to exercise the pipeline end-to-end.
+
+=== Step 1: Health check
+
+*What this checks:* the AI service container is running and connected to the database and Redis.
+
+[source,bash]
+----
+curl http://localhost:8000/health
+----
+
+*Expected response:*
+
+[source,json]
+----
+{"serviceName":"on-premises-http","uptime":12.345}
+----
+
+A JSON response with `serviceName` and `uptime` confirms the container is healthy. If the request fails or times out, check `docker logs ai-service` for startup errors.
+
+=== Step 2: Generate a token
+
+*What this checks:* the token server can sign a valid JWT using the API Secret and Environment ID.
+
+[source,bash]
+----
+curl -s -X POST http://localhost:3000/api/ai-token | python3 -m json.tool
+----
+
+*Expected response:*
+
+[source,json]
+----
+{
+  "token": "eyJhbGciOiJIUzI1NiIs..."
+}
+----
+
+A JSON response containing a `token` field confirms the token server is running and can sign JWTs. If the server returns an error, verify that `AI_ENV_ID` and `AI_API_SECRET` are set in `.env`.
+
+=== Step 3: Create a conversation and send a message
+
+*What this checks:* the full chain — JWT verification, permissions, environment registration, LLM provider authentication, and SSE streaming.
+
+[source,bash]
+----
+TOKEN=$(curl -s -X POST http://localhost:3000/api/ai-token | python3 -c "import sys,json;print(json.load(sys.stdin)['token'])")
+
+curl -s -X POST http://localhost:8000/v1/conversations \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"id":"verify-1","title":"Verification"}'
+----
+
+NOTE: The command below uses the built-in `agent-1` model. If `MODELS` has been explicitly configured, replace `agent-1` with the `id` of one of the configured models. See xref:tinymceai-on-premises-providers.adoc#models-required[Defining the model list].
+
+[source,bash]
+----
+curl -s -N -X POST http://localhost:8000/v1/conversations/verify-1/messages \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"prompt":"Say hello in five words.","model":"agent-1"}'
+----
+
+*Expected response:* a Server-Sent Events stream:
+
+[source,text]
+----
+event: message-metadata
+data: {"messageId":"abc123"}
+
+event: text-delta
+data: {"textDelta":"Hello "}
+
+event: text-delta
+data: {"textDelta":"there, "}
+
+event: text-delta
+data: {"textDelta":"friend!"}
+
+event: done
+data: {}
+----
+
+A stream of `text-delta` events followed by `done` confirms the entire pipeline is working: container health, database connectivity, Redis connectivity, JWT signing and verification, permissions, environment registration, LLM provider authentication, and SSE streaming.
+
+If the stream emits `event: error`, inspect the `data` payload. Provider errors (invalid API key, IAM denial, model unavailable) ride inside the Server-Sent Events (SSE) response. The HTTP status stays 200. See the xref:tinymceai-on-premises-troubleshooting.adoc[LLM provider errors] section in the Troubleshooting guide for details.
+
+== Updating configuration
+
+IMPORTANT: After changing `.env` values, containers must be recreated to pick up new environment variables. A simple restart (`docker restart` or `docker compose restart`) preserves the old values.
+
+[source,bash]
+----
+# Recreate the data layer (MySQL, Redis):
+docker compose up -d --force-recreate
+
+# Recreate the standalone AI service:
+docker stop ai-service && docker rm ai-service
+# Then re-run the launch script from "Launch the AI service" above.
+----
+
+For Kubernetes, update the Secret and trigger a rollout restart:
+
+[source,bash]
+----
+kubectl rollout restart deployment/ai-service -n tinymce-ai
+----
+
+== Stopping and cleaning up
+
+[source,bash]
+----
+# Stop the AI service (standalone Docker)
+docker stop ai-service && docker rm ai-service
+
+# Stop the Docker Compose stack
+docker compose down
+
+# Remove all data including volumes (destructive)
+docker compose down -v
+----
+
+For Kubernetes, scale the deployment to zero or delete it. Persistent volumes for the database are retained unless explicitly deleted.
+
+[source,bash]
+----
+kubectl delete deployment ai-service -n tinymce-ai
+----
+
+== Next steps
+
+The quick start validates the stack end-to-end on a single machine. To deploy for production, work through each guide in order:
+
+. xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage]: provision managed databases, configure TLS, and set up production-grade file storage.
+. xref:tinymceai-on-premises-providers.adoc[LLM providers]: configure explicit model catalogs and multi-provider routing.
+. xref:tinymceai-on-premises-jwt.adoc[JWT authentication]: build the production token endpoint with proper permissions and multi-tenant isolation.
+. xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration]: wire the editor to the production AI service with CORS and CSP.
+. xref:tinymceai-on-premises-production.adoc[Production deployment]: deploy to Kubernetes or ECS with TLS, scaling, and observability.

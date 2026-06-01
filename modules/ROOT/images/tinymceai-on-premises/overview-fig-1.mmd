@@ -1,0 +1,10 @@
+flowchart LR
+    Client["Client<br>application"]
+
+    Client -->|"1. fetch JWT"| Token["Token<br>endpoint"]
+    Client -->|"2. prompt + JWT"| AI["AI service<br>(container)"]
+    AI -->|"3. forward prompt"| LLM["LLM<br>provider"]
+    AI --- DB[("Database<br>+ Redis")]
+
+    LLM -.->|"4. stream response"| AI
+    AI -.->|"5. SSE stream"| Client

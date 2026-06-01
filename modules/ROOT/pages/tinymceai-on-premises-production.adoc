@@ -1,0 +1,676 @@
+= TinyMCE AI on-premises: Production deployment guide
+:navtitle: Production deployment
+:description: Production deployment guide for the TinyMCE AI on-premises service
+:description_short: Production deployment and scaling guide.
+:keywords: AI, on-premises, production, Kubernetes, ECS, scaling, TLS, security, observability, Docker, Podman
+:pluginname: TinyMCE AI
+
+This guide assumes a running Kubernetes cluster, ECS cluster, or Docker/Podman host with the relevant CLI tools (`kubectl`, `aws`, `docker`) configured. For cluster setup, refer to the platform documentation.
+
+== Production readiness checklist
+
+Before deploying to production, confirm each item:
+
+. xref:tinymceai-on-premises-database.adoc[Database and Redis]: provisioned, accessible from the AI service, schema created (PostgreSQL).
+. xref:tinymceai-on-premises-providers.adoc[LLM providers]: `PROVIDERS` configured and verified; `MODELS` defined for the target provider(s).
+. xref:tinymceai-on-premises-jwt.adoc[JWT authentication]: token endpoint deployed, signing with HS256 and the correct API Secret.
+. xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration]: `tinymceai_service_url` and `tinymceai_token_provider` configured; `ALLOWED_ORIGINS` set on the AI service.
+. Container image pulled and registry credentials stored as a secret.
+. Reverse proxy with TLS termination and `proxy_buffering off` for SSE.
+. Environment and access key created through the Management Panel.
+. (Optional) xref:tinymceai-on-premises-mcp.adoc#mcp-kubernetes[MCP and web integrations]: MCP servers and web endpoints deployed as sibling Services if using tool calling or web search.
+
+== Architecture overview
+
+[.text-center]
+image::tinymceai-on-premises/complete-guide-fig-1.svg[alt="Enterprise architecture showing browser with TinyMCE token endpoint AI service replicas database Redis LLM providers and observability",width=100%]
+
+The AI service is stateless, persists all state to MySQL/PostgreSQL and Redis, and scales horizontally behind a load balancer.
+
+
+
+== TLS / HTTPS
+
+The AI service does not terminate Transport Layer Security (TLS). Place a reverse proxy in front.
+
+=== Nginx example
+
+[source,nginx]
+----
+server {
+    listen 443 ssl;
+    server_name ai.example.com;
+
+    ssl_certificate     /etc/ssl/certs/ai.example.com.pem;
+    ssl_certificate_key /etc/ssl/private/ai.example.com.key;
+
+    location / {
+        proxy_pass http://ai-service:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        # SSE streaming support
+        proxy_buffering off;
+        proxy_cache off;
+        proxy_read_timeout 300s;
+    }
+}
+----
+
+[IMPORTANT]
+--
+Server-Sent Events (SSE) streaming requires https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffering[`proxy_buffering off`]. Without it, AI responses appear to hang until the entire response is generated.
+--
+
+=== AWS ALB
+
+* Target group: HTTP on port 8000
+* Health check path: `/health`
+* Idle timeout: 300 seconds (for long AI responses)
+* Stickiness: not required (service is stateless)
+
+
+
+== Horizontal scaling
+
+The AI service is stateless. All persistent state lives in the SQL database, Redis, and the file-storage back end. Any number of replicas can run behind a load balancer. All replicas must share identical environment variable configuration. On first boot or after an image upgrade, start a single replica and wait for it to become healthy before scaling up (see <<upgrade-process>>).
+
+=== Scaling considerations
+
+[cols=",",options="header",]
+|===
+|Component |Scaling approach
+|AI service |Add more containers (stateless)
+|MySQL / PostgreSQL |Read replicas or managed DB (RDS, Cloud SQL, Azure Database)
+|Redis |Redis Cluster or managed Redis with built-in replication (ElastiCache, Memorystore, Azure Cache). Redis Sentinel is not supported.
+|File storage |S3 / Azure Blob recommended for production. The `database` storage driver is intended for development only.
+|===
+
+[IMPORTANT]
+--
+When deploying for the first time or upgrading to a new version, start a single instance and wait for it to become healthy before scaling up. Subsequent scale events do not require this precaution.
+--
+
+
+
+
+== Podman deployment
+
+NOTE: This example uses `STORAGE_DRIVER='database'` for simplicity. For production workloads, use S3 or Azure Blob storage. See xref:tinymceai-on-premises-database.adoc#_file_storage[File storage] for options.
+
+The AI service works with Podman as an alternative to Docker. In Podman, containers within a pod share a network namespace, so use `127.0.0.1` instead of container names for hostnames.
+
+[source,bash]
+----
+podman login -u '<registry-username>' registry.containers.tiny.cloud
+
+podman pull registry.containers.tiny.cloud/ai-service-tiny:latest
+
+podman pod create --name ai-pod -p 8000:8000 -p 3306:3306 -p 6379:6379
+
+podman run -d --pod ai-pod --name mysql \
+  -e MYSQL_ROOT_PASSWORD=<root-password> \
+  -e MYSQL_DATABASE=ai_service \
+  mysql:8.0
+
+podman run -d --pod ai-pod --name redis redis:7
+
+podman run --init -d --pod ai-pod --name ai-service \
+  -e LICENSE_KEY='T8LK:...' \
+  -e ENVIRONMENTS_MANAGEMENT_SECRET_KEY='<management-secret>' \
+  -e DATABASE_DRIVER='mysql' \
+  -e DATABASE_HOST='127.0.0.1' \
+  -e DATABASE_USER='root' \
+  -e DATABASE_PASSWORD='<root-password>' \
+  -e DATABASE_DATABASE='ai_service' \
+  -e REDIS_HOST='127.0.0.1' \
+  -e PROVIDERS='{"openai":{"type":"openai","apiKeys":["sk-proj-..."]}}' \
+  -e STORAGE_DRIVER='database' \
+  registry.containers.tiny.cloud/ai-service-tiny:latest
+----
+
+IMPORTANT: Pin to `mysql:8.0`. The `mysql:8` tag floats to the latest MySQL, which removes the `default-authentication-plugin` flag and causes a crash loop. See xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage] for details.
+
+== Kubernetes deployment
+
+Deploy the AI service to Kubernetes in five steps: create a namespace, store secrets, apply the Deployment, expose as a Service, and verify.
+
+=== Step 1: Namespace and image pull secret
+
+[source,bash]
+----
+kubectl create namespace tinymce-ai
+
+kubectl create secret docker-registry tiny-registry \
+  --namespace tinymce-ai \
+  --docker-server=registry.containers.tiny.cloud \
+  --docker-username=<registry-username> \
+  --docker-password='<registry-access-token>'
+----
+
+=== Step 2: Application secrets
+
+[source,yaml]
+----
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ai-service-secrets
+  namespace: tinymce-ai
+type: Opaque
+stringData:
+  license-key: "<license-key>"
+  management-secret: "<management-secret>"
+  db-password: "<database-password>"
+  redis-password: "<redis-password>"
+  storage-access-key: "<s3-access-key>"
+  storage-secret-key: "<s3-secret-key>"
+  providers: |
+    {
+      "openai": {
+        "type": "openai",
+        "apiKeys": ["<openai-api-key>"]
+      }
+    }
+----
+
+In production, use https://sealed-secrets.netlify.app/[Sealed Secrets], https://external-secrets.io/[External Secrets Operator], or https://www.vaultproject.io/[HashiCorp Vault] rather than committing raw secret manifests. For the Kubernetes Secret resource itself, see the https://kubernetes.io/docs/concepts/configuration/secret/[Kubernetes Secrets documentation].
+
+=== Step 3: Deployment
+
+[source,yaml]
+.Kubernetes Deployment manifest
+----
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-service
+  namespace: tinymce-ai
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ai-service
+  template:
+    metadata:
+      labels:
+        app: ai-service
+    spec:
+      terminationGracePeriodSeconds: 300
+      imagePullSecrets:
+        - name: tiny-registry
+      containers:
+        - name: ai-service
+          image: registry.containers.tiny.cloud/ai-service-tiny:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: LICENSE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: ai-service-secrets
+                  key: license-key
+            - name: ENVIRONMENTS_MANAGEMENT_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: ai-service-secrets
+                  key: management-secret
+            - name: DATABASE_DRIVER
+              value: "mysql"
+            - name: DATABASE_HOST
+              value: "mysql.tinymce-ai.svc.cluster.local"
+            - name: DATABASE_USER
+              value: "ai_service"
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ai-service-secrets
+                  key: db-password
+            - name: DATABASE_DATABASE
+              value: "ai_service"
+            # For PostgreSQL: set to "public" or ensure the cs-on-premises schema exists
+            # - name: DATABASE_SCHEMA
+            #   value: "public"
+            - name: REDIS_HOST
+              value: "redis.tinymce-ai.svc.cluster.local"
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ai-service-secrets
+                  key: redis-password
+            - name: PROVIDERS
+              valueFrom:
+                secretKeyRef:
+                  name: ai-service-secrets
+                  key: providers
+            - name: STORAGE_DRIVER
+              value: "s3"
+            - name: STORAGE_REGION
+              value: "us-east-1"
+            - name: STORAGE_BUCKET
+              value: "example-ai-storage-bucket"
+            - name: STORAGE_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: ai-service-secrets
+                  key: storage-access-key
+            - name: STORAGE_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: ai-service-secrets
+                  key: storage-secret-key
+            - name: ALLOWED_ORIGINS
+              value: "https://app.example.com"
+            - name: ENABLE_METRIC_LOGS
+              value: "true"
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "500m"
+            limits:
+              memory: "2Gi"
+              cpu: "2000m"
+----
+
+TIP: For PostgreSQL, change `DATABASE_DRIVER` to `"postgres"`, update `DATABASE_HOST` to the PostgreSQL endpoint, and add `DATABASE_SCHEMA` set to `"public"` (or ensure the `cs-on-premises` schema exists). See xref:tinymceai-on-premises-database.adoc#postgresql-schema-prerequisite[PostgreSQL schema prerequisite].
+
+NOTE: `terminationGracePeriodSeconds` is set to 300 to match the maximum SSE stream duration. On SIGTERM, the service finishes in-flight SSE streams before shutting down. Set this value equal to or greater than the longest expected AI response time. These resource values are evaluation defaults; adjust for production workload.
+
+IMPORTANT: The workload is *network-I/O bound* (waiting on LLM provider streams), not CPU-bound. CPU-based HPA scaling is a safe starting point but may not trigger under high concurrency. For production, consider supplementing with custom metrics (concurrent SSE streams, request queue depth) through KEDA or Prometheus Adapter.
+
+=== High-availability primitives
+
+Any multi-replica deployment should include the following Kubernetes primitives — configure them in line with the platform team's standards:
+
+* *`PodDisruptionBudget`*: prevents all replicas being evicted simultaneously during node maintenance (`minAvailable: 1` or a percentage at scale).
+* *`podAntiAffinity`*: distributes replicas across nodes to avoid single-node failures.
+* *`topologySpreadConstraints`*: spreads replicas across availability zones for zone-level resilience.
+
+The canonical Deployment example above does not include these — they are site-specific. Without them, the scheduler may bin-pack all replicas onto a single node in a single availability zone.
+
+=== Step 4: Service
+
+[source,yaml]
+----
+apiVersion: v1
+kind: Service
+metadata:
+  name: ai-service
+  namespace: tinymce-ai
+spec:
+  selector:
+    app: ai-service
+  ports:
+    - port: 8000
+      targetPort: 8000
+----
+
+=== Step 5: Bootstrap the environment
+
+After the first pod reaches Ready status, create an environment and access key through the Management Panel:
+
+. Access the Management Panel at `\https://<ingress-host>/panel/`.
+. Sign in using the `ENVIRONMENTS_MANAGEMENT_SECRET_KEY`.
+. Create an environment and note the Environment ID.
+. Create an access key and copy the API Secret immediately (shown only once).
+
+These values are required by the token endpoint. See xref:tinymceai-on-premises-getting-started.adoc#_create_an_environment_and_access_key[Getting started — Create an environment and access key] for details.
+
+[IMPORTANT]
+--
+Always create environments through the Management Panel UI.
+--
+
+=== https://kubernetes.io/docs/concepts/services-networking/ingress/[Ingress]
+
+[source,yaml]
+----
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ai-service
+  namespace: tinymce-ai
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-buffering: "off"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "300"
+spec:
+  tls:
+    - hosts:
+        - ai.example.com
+      secretName: ai-tls-cert
+  rules:
+    - host: ai.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ai-service
+                port:
+                  number: 8000
+----
+
+=== Horizontal pod autoscaler
+
+[source,yaml]
+----
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: ai-service-hpa
+  namespace: tinymce-ai
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: ai-service
+  minReplicas: 2
+  maxReplicas: 20
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
+----
+
+NOTE: The AI service is I/O-bound (waiting on LLM provider responses). CPU-based autoscaling is a safe starting point but may not trigger under high concurrency if CPU remains low. For production, consider supplementing with custom metrics (concurrent SSE streams, request queue depth) through https://keda.sh/[KEDA] or the https://github.com/kubernetes-sigs/prometheus-adapter[Prometheus Adapter]. For HPA configuration, see the https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/[Kubernetes HPA documentation].
+
+== AWS ECS / Fargate
+
+=== Task definition
+
+.Full ECS Fargate task definition
+[%collapsible]
+====
+[source,json]
+----
+{
+  "family": "ai-service",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "1024",
+  "memory": "2048",
+  "containerDefinitions": [
+    {
+      "name": "ai-service",
+      "image": "registry.containers.tiny.cloud/ai-service-tiny:latest",
+      "portMappings": [{ "containerPort": 8000 }],
+      "healthCheck": {
+        "command": ["CMD-SHELL", "wget -q --spider http://localhost:8000/health || exit 1"],
+        "interval": 30,
+        "timeout": 5,
+        "retries": 3,
+        "startPeriod": 60
+      },
+      "secrets": [
+        { "name": "LICENSE_KEY", "valueFrom": "arn:aws:secretsmanager:us-east-1:111122223333:secret:ai-license" },
+        { "name": "ENVIRONMENTS_MANAGEMENT_SECRET_KEY", "valueFrom": "arn:aws:secretsmanager:us-east-1:111122223333:secret:ai-mgmt-secret" },
+        { "name": "DATABASE_PASSWORD", "valueFrom": "arn:aws:secretsmanager:us-east-1:111122223333:secret:ai-db" },
+        { "name": "PROVIDERS", "valueFrom": "arn:aws:secretsmanager:us-east-1:111122223333:secret:ai-providers" },
+        { "name": "MODELS", "valueFrom": "arn:aws:secretsmanager:us-east-1:111122223333:secret:ai-models" }
+      ],
+      "environment": [
+        { "name": "DATABASE_DRIVER", "value": "mysql" },
+        { "name": "DATABASE_HOST", "value": "example-rds-endpoint.region.rds.amazonaws.com" },
+        { "name": "DATABASE_USER", "value": "ai_service" },
+        { "name": "DATABASE_DATABASE", "value": "ai_service" },
+        { "name": "REDIS_HOST", "value": "example-elasticache-endpoint.region.cache.amazonaws.com" },
+        { "name": "STORAGE_DRIVER", "value": "s3" },
+        { "name": "STORAGE_BUCKET", "value": "example-ai-storage-bucket" },
+        { "name": "STORAGE_REGION", "value": "us-east-1" },
+        { "name": "ALLOWED_ORIGINS", "value": "https://app.example.com" },
+        { "name": "ENABLE_METRIC_LOGS", "value": "true" }
+      ]
+    }
+  ]
+}
+----
+====
+
+NOTE: The AI service does not use ECS task role credentials for S3 access. Add `STORAGE_ACCESS_KEY_ID` and `STORAGE_SECRET_ACCESS_KEY` as secrets entries from AWS Secrets Manager.
+
+[IMPORTANT]
+--
+The AI service does not use platform-native credential chains. AWS IRSA, EC2 instance profiles, GCP Workload Identity, and Azure Managed Identity are all ignored. All provider credentials (LLM keys, S3 access keys, Vertex service accounts) must be supplied explicitly as environment variables. This is a known limitation that applies across all deployment targets.
+--
+
+=== Infrastructure recommendations
+
+[cols=",",options="header",]
+|===
+|Service |AWS recommendation
+|Database |RDS for MySQL 8.0 (Multi-AZ for high availability (HA))
+|Redis |ElastiCache for Redis 7 (cluster-mode-disabled with Multi-AZ replication, or cluster-mode-enabled with `REDIS_CLUSTER_NODES`)
+|Storage |Same-region S3 bucket
+|Load balancer |ALB with `/health` target health check, 300 s idle timeout
+|Secrets |AWS Secrets Manager
+|Registry pull credentials |Secrets Manager {plus} ECR pull-through cache, or a private repository mirroring `registry.containers.tiny.cloud`
+|===
+
+=== Azure (AKS)
+
+Deploy on Azure Kubernetes Service with Azure Database for PostgreSQL Flexible Server, Azure Cache for Redis, and Azure Blob Storage. Service-shape considerations:
+
+* `STORAGE_DRIVER=azure` is the recommended storage backend on Azure.
+* PostgreSQL Flexible Server defaults to enforcing TLS — see the xref:tinymceai-on-premises-database.adoc#_postgresql[known TLS error surface].
+* The AI service does not use Workload Identity or managed identity for LLM credentials — inline Azure OpenAI credentials in `PROVIDERS` (see xref:tinymceai-on-premises-providers.adoc#_azure_openai[Azure OpenAI]).
+
+For AKS cluster setup, node pools, and networking, refer to the https://learn.microsoft.com/en-us/azure/aks/[Azure Kubernetes Service documentation].
+
+=== GCP (GKE)
+
+Deploy on Google Kubernetes Engine (Standard mode — not Autopilot) with Cloud SQL for PostgreSQL, Memorystore for Redis, and GCS for file storage. Service-shape considerations:
+
+* No native GCS driver exists. Use GCS via S3-interop (`STORAGE_DRIVER=s3` with HMAC credentials). The bucket must have `uniform_bucket_level_access` disabled (the SDK sends `x-amz-acl` headers).
+* The AI service does not use GKE Workload Identity or Application Default Credentials — inline Vertex SA credentials in `PROVIDERS` (see xref:tinymceai-on-premises-providers.adoc#_google_vertex_ai[Google Vertex AI]).
+* Cloud SQL for PostgreSQL defaults to enforcing TLS — see the xref:tinymceai-on-premises-database.adoc#_postgresql[known TLS error surface].
+
+For GKE cluster creation and node pool configuration, refer to the https://cloud.google.com/kubernetes-engine/docs[Google Kubernetes Engine documentation].
+
+== Network requirements
+
+The AI service requires outbound HTTPS access to the following endpoints. Configure firewall rules and security groups to allow this traffic:
+
+[cols="1,2,2",options="header"]
+|===
+|Endpoint |Purpose |Required
+
+|LLM provider APIs (e.g. `api.openai.com`, `bedrock-runtime.*.amazonaws.com`)
+|Forward AI requests to the configured providers
+|Yes
+
+|`license.containers.tiny.cloud`
+|License key validation (phone-home check on startup)
+|Yes — service will not start if this is blocked
+
+|`registry.containers.tiny.cloud`
+|Pull container image updates
+|Yes (at deploy time)
+|===
+
+TIP: If the deployment environment blocks all outbound traffic by default, add these to the egress allowlist before starting the service.
+
+The license validation request transmits only the license key and a service identifier. No conversation content, user data, or usage metrics are included. The check occurs on every container start; the service will not start if `license.containers.tiny.cloud` is unreachable.
+
+== Security hardening
+
+[cols=",",options="header",]
+|===
+|Practice |Implementation
+|Network isolation |Place the AI service in a private subnet; expose only through a load balancer. Restrict database and Redis to the AI service security group.
+|Block panel from the public internet |Restrict `/panel/` to an admin VPN or IP allowlist. The panel manages secrets and access keys.
+|TLS everywhere |Terminate TLS 1.3 at the reverse proxy. Use internal mutual TLS (mTLS) between the AI service and the data layer where supported.
+|Secrets management |Use Vault, AWS Secrets Manager, Azure Key Vault, or GCP Secret Manager. Never store secrets directly in orchestration manifests or commit them to source control.
+|Database encryption at rest |Turn on encryption at rest in the cloud provider console. RDS, Cloud SQL, and Azure Database enable this by default.
+|Redis authentication |Always set `REDIS_PASSWORD` (or use a managed Redis instance with authentication enabled).
+|Container security |Run as non-root, use a read-only filesystem where possible, and drop unnecessary Linux capabilities.
+|Image scanning |Scan `registry.containers.tiny.cloud/ai-service-tiny` with Trivy, Snyk, or the registry's built-in scanner.
+|Least-privilege JSON Web Tokens (JWTs) |Grant only the permissions each user role requires. Avoid full-access tokens in production.
+|API secret rotation |Periodically create a new access key, add the new key to the configuration, then revoke the old key. The token endpoint reads the secret at request time.
+|Audit logging |Enable `ENABLE_METRIC_LOGS=true` and ship logs to a Security Information and Event Management (SIEM).
+|Large language model (LLM) API key rotation |Add the new key to the `PROVIDERS` array, restart the service, then revoke the old key after confirming the new one works.
+|===
+
+NOTE: The secrets management, encryption, and observability recommendations above apply across all cloud providers including Azure (AKS, Azure Database, Azure Cache) and GCP (GKE, Cloud SQL, Memorystore).
+
+== Rate limiting
+
+The AI service has no built-in rate limiting. Place rate-limit rules (keyed on the `Authorization` header or the JWT `sub` claim) in front of the service using the reverse proxy, WAF, or CDN. For per-tenant rate limiting, key on the `aud` claim by parsing it in the reverse proxy, or gate token issuance per tenant per minute at the token endpoint. Refer to the platform documentation for implementation details (nginx `limit_req_zone`, AWS WAF rate-based rules, Cloudflare Rate Limiting).
+
+
+== Observability
+
+=== Health monitoring
+
+Poll `/health` on each instance to confirm it is running. A healthy instance responds with HTTP 200.
+
+[source,bash]
+----
+curl -f http://ai-service:8000/health
+----
+
+=== Structured metric logs
+
+Set the `ENABLE_METRIC_LOGS` environment variable to enable request-level JSON logs to stdout:
+
+[source,bash]
+----
+-e ENABLE_METRIC_LOGS='true'
+----
+
+When enabled, the service writes a structured JSON entry for each request. Key fields include the request duration and HTTP status code. These entries are suitable for ingestion into any log aggregator that supports JSON parsing.
+
+.Example metric log entry
+[source,json]
+----
+{"timestamp":"2026-05-19T10:30:00.123Z","method":"POST","path":"/v1/conversations/abc123/messages","statusCode":200,"durationMs":3421}
+----
+
+TIP: Inspect the first few entries with `docker logs ai-service --tail 5 | jq .` to discover all available fields for the current service version.
+
+=== OpenTelemetry
+
+[source,bash]
+----
+-e LLM_TELEMETRY_ENABLED='true' \
+-e OTEL_EXPORTER_OTLP_TRACES_ENDPOINT='http://otel-collector:4318/v1/traces' \
+-e OTEL_TRACES_SAMPLER_ARG='1.0' \
+-e OTEL_DEBUG='true'
+----
+
+[cols="1,1,1,3",options="header"]
+|===
+|Variable |Required |Default |Description
+|`LLM_TELEMETRY_ENABLED` |Yes |`false` |Primary telemetry switch
+|`OTEL_EXPORTER_OTLP_TRACES_ENDPOINT` |Yes |- |OpenTelemetry Protocol (OTLP) endpoint URL
+|`OTEL_TRACES_SAMPLER_ARG` |No |`1.0` |Sampling rate (0.0 to 1.0)
+|`OTEL_DEBUG` |No |- |Verbose OTLP diagnostic logging
+|===
+
+Compatible with Jaeger, Grafana Tempo, Datadog, New Relic, Honeycomb, and any https://opentelemetry.io/docs/specs/otlp/[OTLP-compatible] back end.
+
+=== Langfuse
+
+Langfuse provides AI-specific observability: token usage, latency per LLM call, prompt quality scores, and cost tracking.
+
+[source,bash]
+----
+-e LANGFUSE_PUBLIC_KEY='pk-lf-...' \
+-e LANGFUSE_SECRET_KEY='sk-lf-...' \
+-e LANGFUSE_BASE_URL='https://cloud.langfuse.com' \
+-e LANGFUSE_DEBUG='true'
+----
+
+[cols="1,1,1,3",options="header"]
+|===
+|Variable |Required |Default |Description
+|`LANGFUSE_PUBLIC_KEY` |Yes (if used) |- |Langfuse public key
+|`LANGFUSE_SECRET_KEY` |Yes (if used) |- |Langfuse secret key
+|`LANGFUSE_BASE_URL` |No |`https://cloud.langfuse.com` |Self-hosted Langfuse URL
+|`LANGFUSE_DEBUG` |No |- |Verbose Langfuse logging
+|===
+
+Langfuse also requires `LLM_TELEMETRY_ENABLED=true`. If the service version uses the OTLP pipeline for Langfuse export, a valid `OTEL_EXPORTER_OTLP_TRACES_ENDPOINT` is also required; check the release notes for the deployed version.
+
+OpenTelemetry and Langfuse can run at the same time. The service emits to both without conflict.
+
+=== Distributed logging
+
+For production multi-instance deployments, ship container logs to the existing log aggregator. The metric logs produced by the `ENABLE_METRIC_LOGS` option are already structured JSON and parse cleanly in any pipeline. Refer to the platform documentation for the appropriate log driver or DaemonSet configuration (CloudWatch, Fluent Bit, Promtail, Filebeat, or the Docker fluentd log driver).
+
+=== Recommended monitoring
+
+The following checks help catch common issues early:
+
+* *Health endpoint*: poll `/health` on each instance; alert if any instance returns a non-200 response for more than 60 seconds.
+* *Error rate*: monitor the HTTP 5xx rate in the metric logs or traces; a sustained increase may indicate an LLM provider outage or a misconfigured environment.
+* *Latency*: track request duration; a sudden increase typically points to LLM provider throttling or network issues.
+* *Container restarts*: alert on repeated container restarts, which may indicate a missing environment variable or a database connectivity problem.
+
+For troubleshooting specific error patterns, see xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting].
+
+
+
+== Backup and recovery
+
+=== Database
+
+The database contains environments, access keys, conversations, messages, and file metadata. Back up the database using standard production practices:
+
+* *MySQL:* `mysqldump` or managed snapshots (RDS automated backups).
+* *PostgreSQL:* `pg_dump` or managed snapshots.
+
+Enable point-in-time recovery.
+
+=== File storage
+
+[cols=",",options="header",]
+|===
+|Back end |Backup approach
+|`database` |The SQL database stores file blobs; database backups include them.
+|`filesystem` |Back up the mounted volume.
+|`s3` |Enable versioning on the bucket for point-in-time recovery.
+|`azure` |Enable Blob versioning.
+|===
+
+=== Redis
+
+Redis holds ephemeral state. Losing Redis data does not affect persistent data. No backup is required.
+
+
+
+== Upgrade process
+
+. Pull the new image:
++
+[source,bash]
+----
+docker pull registry.containers.tiny.cloud/ai-service-tiny:NEW_VERSION
+----
+. For rolling deploys across version boundaries: start *one* instance at the new version and wait for it to become healthy before rolling the rest.
+. For Kubernetes: update the image tag in the Deployment. Set `strategy.rollingUpdate.maxSurge: 1` and `maxUnavailable: 0` to ensure at least one old pod remains available during migrations. The default `RollingUpdate` strategy handles zero-downtime upgrades, provided the first new pod becomes Ready before the rollout continues.
+. Verify `/health` on every replica before declaring the upgrade complete.
+
+Review the release notes for the target version and take a database backup before upgrading.
+
+License keys are per-deployment, not per-replica. One key covers any number of replicas of a single deployment.
+

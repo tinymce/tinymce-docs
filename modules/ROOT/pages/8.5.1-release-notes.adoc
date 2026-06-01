@@ -1,0 +1,55 @@
+= {productname} {release-version}
+:release-version: 8.5.1
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, May 20^th^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+* xref:security-fixes[Security fixes]
+
+
+[[security-fixes]]
+== Security fixes
+
+{productname} {release-version} includes fixes for the following security issues:
+
+=== Fixed stored XSS vulnerability using media plugin `data-mce-object` injection
+// #TINY-14357
+
+A stored cross-site scripting (XSS) vulnerability was identified in the media plugin. Malicious scripts could be injected through crafted `data-mce-object` and `data-mce-p-*` attributes, which were executed when content was rendered. {productname} {release-version} ensures that content with `data-mce-object` and `data-mce-p-*` attributes is properly sanitized when the media plugin is in use.
+
+CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-47761[CVE-2026-47761]
+
+GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-vg35-5wq7-3x7w[GitHub Advisories].
+
+NOTE: Tiny Technologies would like to thank https://github.com/UncleJ4ck[Aymane MAZGUITI] and https://github.com/ange-primiterra[Ange Primiterra] for discovering this vulnerability.
+
+=== Fixed stored XSS vulnerability through `mce:protected` comments
+// #TINY-14353
+
+A stored cross-site scripting (XSS) vulnerability was identified through forged `mce:protected` comments. Attackers could bypass sanitization and inject scripts that executed when content was restored. This issue affected configurations using the `protect` option. {productname} {release-version} validates decoded `mce:protected` content against configured `protect` regex rules before restoring.
+
+CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-47762[CVE-2026-47762]
+
+GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-v98h-vmpc-fpqv[GitHub Advisories].
+
+NOTE: Tiny Technologies would like to thank https://github.com/he1d3n[Ivan Babenko (he1d3n)] for discovering this vulnerability.
+
+=== Fixed stored XSS vulnerability through `data-mce-` prefixed `src`, `href`, `style` attributes
+// #TINY-14333
+
+A stored cross-site scripting (XSS) vulnerability was identified through unsanitized `data-mce-href`, `data-mce-src`, and `data-mce-style` attributes. Malicious values in these attributes could override safe attributes during serialization, bypassing validation. {productname} {release-version} strips unsafe `data-mce-*` attributes during parsing.
+
+CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-47759[CVE-2026-47759]
+
+GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-q742-qvgc-gc2f[GitHub Advisories].
+
+NOTE: Tiny Technologies would like to thank https://github.com/mtrill47[Tadi Kadango] (https://tadiwakadango.com/[website]) and https://github.com/he1d3n[Ivan Babenko (he1d3n)] for discovering this vulnerability.

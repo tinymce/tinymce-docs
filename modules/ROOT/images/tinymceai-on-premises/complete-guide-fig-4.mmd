@@ -1,0 +1,25 @@
+flowchart LR
+    subgraph PR[PROVIDERS env var]
+        P1["my-openai-key<br>type: openai<br>apiKeys: [sk-...]"]
+        P2["my-bedrock<br>type: bedrock<br>credentials: {...}"]
+        P3["my-ollama<br>type: openai-compatible<br>baseUrl: .../v1"]
+    end
+    subgraph MD[MODELS env var]
+        M1["id: gpt-4.1<br>provider: my-openai-key<br>features: [...]"]
+        M2["id: us.anthropic.claude-sonnet-4-...<br>provider: my-bedrock<br>features: [...]"]
+        M3["id: qwen3:0.6b<br>provider: my-ollama<br>features: [...]"]
+    end
+    subgraph JWT[JWT auth.ai.permissions]
+        K1["ai:models:my-openai-key:gpt-4.1"]
+        K2["ai:models:my-bedrock:us.anthropic.claude-sonnet-4-..."]
+        K3["ai:models:my-ollama:qwen3:0.6b"]
+    end
+    M1 -.provider key.-> P1
+    M2 -.provider key.-> P2
+    M3 -.provider key.-> P3
+    K1 -.gates access.-> M1
+    K2 -.gates access.-> M2
+    K3 -.gates access.-> M3
+    M1 ==>|forwarded| LLM1[OpenAI API]
+    M2 ==>|forwarded| LLM2[AWS Bedrock]
+    M3 ==>|forwarded| LLM3[Local Ollama]

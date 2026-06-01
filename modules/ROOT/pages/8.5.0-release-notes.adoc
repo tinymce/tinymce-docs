@@ -125,6 +125,15 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following fixes, improvements, and additions.
 
+==== Custom reviews with user-defined prompts and model selection
+// #TINY-14171
+
+Previously, the Review sidebar only offered a fixed set of built-in review types such as Proofread, Improve clarity, and Adjust tone and style. There was no way for users to define their own review criteria or select a specific AI model for a review pass.
+
+In {productname} {release-version}, the Review sidebar includes a new **Custom review** category. A natural-language prompt can be entered and, when xref:tinymceai.adoc#tinymceai_allow_model_selection[`+tinymceai_allow_model_selection+`] permits it, an AI model can be selected. The review runs the same streaming suggestion and apply flow as built-in reviews. Custom reviews can range from checking for specific words or phrases to applying a full company style guide. To hide Custom review from the Review sidebar, omit `+'ai-reviews-custom'+` from xref:tinymceai.adoc#tinymceai_reviews[`+tinymceai_reviews+`].
+
+For information on Custom reviews, see: xref:tinymceai-review.adoc#custom-review-choose-review[Custom review].
+
 ==== A long list of fetched sources could overflow the submenu in the AI chat without a way to scroll
 // #TINY-14064
 

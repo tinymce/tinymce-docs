@@ -1,0 +1,26 @@
+flowchart TB
+    Browser["Browser<br>TinyMCE editor + tinymceai plugin"]
+    TokenEP["Your token endpoint<br>signs HS256 JWTs"]
+    Browser -->|"HTTPS"| TokenEP
+    Browser -->|"HTTPS + Bearer JWT"| LB
+
+    subgraph App["Application layer (stateless, +N replicas)"]
+        LB["Reverse proxy / Load balancer<br>nginx · ALB · K8s Ingress<br>TLS termination · SSE pass-through"]
+        AI1["ai-service"]
+        LB -->|"HTTP"| AI1
+    end
+
+    subgraph Data["Shared data layer"]
+        DB[("SQL database<br>MySQL 8.0+ / PostgreSQL 13+")]
+        Cache[("Redis 3.2.6+")]
+        Storage[("File storage<br>S3 · Azure Blob · filesystem")]
+    end
+
+    AI1 <-->|"read/write"| DB
+    AI1 <-->|"read/write"| Cache
+    AI1 <-->|"read/write"| Storage
+
+    AI1 -->|"HTTPS"| LLM["LLM provider<br>OpenAI · Anthropic · Google ·<br>Azure · Bedrock · Vertex ·<br>self-hosted"]
+
+    AI1 -.->|"telemetry"| Obs["OpenTelemetry · Langfuse"]
+    AI1 -.->|"tool calls"| MCP["MCP servers"]

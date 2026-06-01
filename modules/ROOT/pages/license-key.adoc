@@ -6,6 +6,11 @@
 == Overview
 {productname} 8 uses an enhanced license key system to ensure compliance with {productname} licensing terms.
 
+[NOTE]
+====
+This page covers **{productname} editor license keys** only. For information about license keys used with on-premises Docker-based services (such as TinyMCE AI, Export to PDF, and Import from Word / Export to Word), see xref:service-license-keys.adoc[Service license keys].
+====
+
 [IMPORTANT]
 ====
 {productname} is licensed under the GNU General Public License Version 2 or later. A configuration option called `+'license_key'+` introduced in {productname} 7 requires developers to make a conscious decision to use {productname} with the GPLv2+ license or with a commercial license.

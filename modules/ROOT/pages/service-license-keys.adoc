@@ -1,0 +1,97 @@
+= Service license keys
+:navtitle: Service license keys
+:description: Service license keys for on-premises Docker-based services, including TinyMCE AI, Export to PDF, Import from Word, and Export to Word.
+:keywords: service license key, on-premises, Docker, license, docker login, registry, TinyMCE AI
+
+[[overview]]
+== Overview
+
+Service license keys authenticate and enable {companyname} on-premises services that run as Docker containers. These keys are separate from {productname} editor license keys.
+
+[IMPORTANT]
+====
+Service license keys and {productname} editor license keys serve different purposes:
+
+* **{productname} editor license keys** configure the license mode for the {productname} editor (GPL or commercial). See xref:license-key.adoc[License key] for details.
+* **Service license keys** authenticate on-premises Docker-based services such as TinyMCE AI, Export to PDF, and the Import from Word / Export to Word converters. They are provisioned separately and managed through the link:{accountpageurl}[{companyname} customer portal].
+====
+
+[[services-requiring-a-service-license-key]]
+== Services requiring a service license key
+
+The following on-premises services require a service license key:
+
+* **xref:tinymceai-on-premises.adoc[TinyMCE AI]** -- the on-premises AI service.
+* **xref:individual-export-to-pdf-on-premises.adoc[Export to PDF]** -- the PDF converter service.
+* **xref:individual-import-from-word-and-export-to-word-on-premises.adoc[Import from Word and Export to Word]** -- the DOCX converter service.
+
+[NOTE]
+====
+Other containerized services such as Spell Checker, Enhanced Media Embed, and Image Proxy do not currently require service license keys. These services use access tokens for Docker registry authentication only.
+====
+
+[[how-service-license-keys-work]]
+== How service license keys work
+
+Deploying a {companyname} on-premises service can involve two separate credentials. These are different values and cannot be substituted for one another:
+
+. **Docker registry access token** -- used with `+docker login+` to authenticate with the {companyname} Docker registry and pull the service image. *All* {companyname} on-premises services require an access token to pull images. An access token is not a service license key.
+. **Service license key** -- passed to the running Docker container as the `+LICENSE_KEY+` environment variable to enable the service at runtime. *Only* the services listed in <<services-requiring-a-service-license-key>> require a service license key. Without a valid service license key, those containers will not start.
+
+[TIP]
+====
+Three separate credentials can be involved when running {companyname} on-premises services. Do not confuse them:
+
+* **{productname} editor license key** -- configures the license mode for the {productname} editor (GPL or commercial). See xref:license-key.adoc[License key].
+* **Docker registry access token** -- authenticates with the {companyname} Docker registry to pull service images. Required by all on-premises services.
+* **Service license key** -- enables a licensed on-premises service at runtime. Required by some services only.
+====
+
+[[obtaining-a-service-license-key]]
+=== Obtaining a service license key
+
+Service license keys are provisioned through the link:{accountpageurl}[{companyname} customer portal]. link:https://www.tiny.cloud/contact/[Contact {companyname}] to request a trial or to discuss service licensing.
+
+[[using-service-specific-environment-variables]]
+=== Using service-specific environment variables
+
+When running multiple on-premises services and storing their environment variables in a shared location, use service-specific environment variable names for each service license key. This prevents collisions when consolidating services into a single `+.env+` file or Docker Compose project.
+
+Each Docker container expects the `+LICENSE_KEY+` environment variable internally. The service-specific variable names (such as `+AI_LICENSE_KEY+`, `+PDF_LICENSE_KEY+`, and `+DOCX_LICENSE_KEY+`) are host-side conventions that map to `+LICENSE_KEY+` when launching the container. These names are the conventions used in the documentation for each service rather than a fixed requirement.
+
+[cols="1,1,1", options="header"]
+|===
+| Service | Environment variable name | Docker container mapping
+
+| TinyMCE AI
+| `+AI_LICENSE_KEY+`
+| `+-e LICENSE_KEY="$AI_LICENSE_KEY"+`
+
+| Export to PDF
+| `+PDF_LICENSE_KEY+`
+| `+-e LICENSE_KEY="$PDF_LICENSE_KEY"+`
+
+| Import from Word / Export to Word
+| `+DOCX_LICENSE_KEY+`
+| `+-e LICENSE_KEY="$DOCX_LICENSE_KEY"+`
+|===
+
+Each service license key is a distinct value. For example, in a `+.env+` file used with Docker Compose:
+
+[source,env]
+----
+AI_LICENSE_KEY=[your AI license key]
+PDF_LICENSE_KEY=[your PDF converter license key]
+DOCX_LICENSE_KEY=[your DOCX converter license key]
+----
+
+[[deployment-guides]]
+== Deployment guides
+
+See the deployment guides for each service for complete setup instructions:
+
+* xref:tinymceai-on-premises-getting-started.adoc[Getting started with TinyMCE AI on-premises]
+* xref:individual-export-to-pdf-on-premises.adoc[Deploy the Export to PDF service using Docker]
+* xref:individual-import-from-word-and-export-to-word-on-premises.adoc[Deploy the Import from Word and Export to Word service using Docker]
+
+For an overview of containerized server-side services, see xref:bundle-intro-setup.adoc[Introduction and initial setup for containerized server-side services].

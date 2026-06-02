@@ -17,7 +17,7 @@ Only new customers can start a self-hosted trial. For trial duration and entitle
 == Prerequisites
 
 * A {productname} trial account with "self-hosted" selected as the deployment option. Sign up at link:https://www.tiny.cloud/get-tiny/[Get {productname}].
-* A trial license key, issued after sign-up.
+* A trial license key, issued from the 'Self-hosted' tab of the Customer Portal
 * https://nodejs.org/[Node.js (and npm)] installed.
 * A project directory with a `+package.json+` file. Initialize one by running `+npm init+` if needed.
 * A secure context: the page must be served over HTTPS or from `+localhost+`. Trial license keys require a secure context to complete key validation.

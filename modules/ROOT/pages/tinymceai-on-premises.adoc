@@ -97,12 +97,12 @@ Two license keys are involved in an on-premises deployment. They are distinct, c
 |Credential |Where it lives |What it does |Required?
 
 |Service license key (`LICENSE_KEY`)
-|AI service container (environment variable)
+|Passed to the AI service container as an environment variable (for example, in the `docker run` command or Compose file)
 |Activates the on-premises AI service at runtime. A long string provisioned through the {companyname} customer portal.
 |Yes — required to run the service.
 
 |{productname} editor license key (`license_key`)
-|`tinymce.init({ license_key: 'T8LK:...' })`
+|Added to the editor configuration: `tinymce.init({ license_key: 'T8LK:...' })`
 |Configures the license mode for the {productname} editor and activates premium {productname} features.
 |Yes — required for the premium {productname} AI features.
 |===

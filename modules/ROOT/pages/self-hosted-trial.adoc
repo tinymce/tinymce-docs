@@ -35,7 +35,7 @@ npm install tinymce@^{productmajorversion} tinymce-premium@^{productmajorversion
 
 === Step 2: Configure the editor with the trial license key
 
-Add the trial license key to the {productname} configuration using the `+license_key+` option:
+Add the trial license key to the {productname} configuration using the `+license_key+` option. Setting `+online_license_services_opt_in+` to `+true+` connects the editor to {cloudname} services, so that cloud-dependent premium plugins are auto-configured for the duration of the trial:
 
 [source,js]
 ----
@@ -50,24 +50,31 @@ tinymce.init({
     'linkchecker', 'mediaembed', 'editimage', 'autocorrect', 'tinymceai'
   ],
   toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | help',
-  online_license_services_opt_in: true
+  online_license_services_opt_in: true,
+  tinymceai_token_provider: async () => {
+    await fetch(`https://demo.api.tiny.cloud/1/your-trial-api-key/auth/random`, { method: 'POST', credentials: 'include' });
+    return await fetch(`https://demo.api.tiny.cloud/1/your-trial-api-key/jwt/tinymceai`, { credentials: 'include' })
+      .then(resp => resp.text())
+      .then(token => ({ token }));
+  }
 });
 ----
 
-Replace the `+'your-trial-license-key'+` placeholder with the trial license key provided during sign-up.
+Replace the `+'your-trial-license-key'+` placeholder with the trial license key issued from the *Self-hosted* tab of the Customer Portal.
 
-=== Step 3: Enable cloud services
-
-Set the `+online_license_services_opt_in+` option to `+true+` in the editor configuration. This option enables automatic configuration of cloud service URLs for all cloud-dependent premium plugins during the trial.
-
-Without this option, the trial license key still validates and the editor is fully functional, but cloud-dependent plugins (such as Spell Checker Pro, Link Checker, and Export to PDF) are not auto-configured and will report that their service URL is not set.
+Without `+online_license_services_opt_in+`, the trial license key still validates and the editor remains fully functional, but cloud-dependent plugins (such as Spell Checker Pro, Link Checker, and Export to PDF) are not auto-configured and report that their service URL is not set.
 
 [IMPORTANT]
 ====
-Setting `+online_license_services_opt_in+` to `+true+` enables a network connection from the editor to {cloudname}. Remove or set this option to `+false+` to disable the cloud connection at any time.
+Setting `+online_license_services_opt_in+` to `+true+` enables a network connection from the editor to {cloudname}. Remove this option or set it to `+false+` to disable the cloud connection at any time.
 ====
 
-=== Step 4: Ensure the license key manager is available
+[NOTE]
+====
+Most cloud-powered plugins work automatically once `+online_license_services_opt_in+` is set to `+true+`. Some plugins require additional configuration. For example, TinyMCE AI requires a `+tinymceai_token_provider+` function, shown above using the trial demo identity service. Replace `+your-trial-api-key+` with the trial API key from the link:https://www.tiny.cloud/my-account[Customer Portal]. For details, see xref:tinymceai-jwt-authentication-intro.adoc#trial-demo-identity-service[TinyMCE AI trial demo identity service]. Check the documentation for each plugin in use for any additional setup it requires.
+====
+
+=== Step 3: Ensure the license key manager is available
 
 The `+tinymce-premium+` NPM package includes the license key manager. If bundling {productname}, ensure the license key manager is imported:
 

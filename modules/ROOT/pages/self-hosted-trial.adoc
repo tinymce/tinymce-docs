@@ -5,7 +5,7 @@
 
 == Overview
 
-A self-hosted trial provides access to {productname} premium plugins in a self-hosted environment. Integrators can optionally connect to {cloudname} services during the trial to evaluate cloud-powered features such as Spell Checker Pro, Export to PDF, and TinyMCE AI, without requiring a separate cloud deployment or additional scripts. Connecting to cloud services is opt-in. Setting the `+online_license_services_opt_in+` option to `+true+` enables the connection. Without this option, the editor is licensed and operational but cloud-dependent premium plugins are not auto-configured.
+A self-hosted trial provides access to {productname} premium plugins in a self-hosted environment. Integrators can optionally connect to {cloudname} services during the trial to evaluate server-side features such as Spell Checker Pro, Export to PDF, and TinyMCE AI, without requiring a separate server-side deployment or additional scripts. Connecting to cloud services is opt-in. Setting the `+online_license_services_opt_in+` option to `+true+` enables the connection. Without this option, the editor is licensed and operational but cloud-dependent premium plugins are not auto-configured.
 
 [NOTE]
 ====

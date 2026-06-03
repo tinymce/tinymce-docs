@@ -5,9 +5,7 @@
 
 == Overview
 
-A self-hosted trial provides access to {productname} premium plugins in a self-hosted environment. Integrators can optionally connect to {cloudname} services during the trial to evaluate cloud-powered features such as Spell Checker Pro, Export to PDF, and TinyMCE AI, without requiring a separate cloud deployment or additional scripts.
-
-Connecting to cloud services is opt-in. Setting the `+online_license_services_opt_in+` option to `+true+` enables the connection. Without this option, the editor is licensed and operational but cloud-dependent premium plugins are not auto-configured. No separate API key is required.
+A self-hosted trial provides access to {productname} premium plugins in a self-hosted environment. Integrators can optionally connect to {cloudname} services during the trial to evaluate cloud-powered features such as Spell Checker Pro, Export to PDF, and TinyMCE AI, without requiring a separate cloud deployment or additional scripts. Connecting to cloud services is opt-in. Setting the `+online_license_services_opt_in+` option to `+true+` enables the connection. Without this option, the editor is licensed and operational but cloud-dependent premium plugins are not auto-configured.
 
 [NOTE]
 ====
@@ -17,7 +15,7 @@ Only new customers can start a self-hosted trial. For trial duration and entitle
 == Prerequisites
 
 * A {productname} account with an active trial. Sign up at link:https://www.tiny.cloud/get-tiny/[Get {productname}].
-* A trial license key, issued from the 'Self-hosted' tab of the Customer Portal
+* A trial license key, issued from the 'Self-hosted' tab of the Customer Portal.
 * https://nodejs.org/[Node.js (and npm)] installed.
 * A project directory with a `+package.json+` file. Initialize one by running `+npm init+` if needed.
 * A secure context: the page must be served over HTTPS or from `+localhost+`. Trial license keys require a secure context to complete key validation.
@@ -41,7 +39,7 @@ Add the trial license key to the {productname} configuration using the `+license
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to the HTML
-  license_key: 'your-trial-license-key',
+  license_key: 'your-trial-license-key',  // trial license key from the Self-hosted tab
   plugins: [
     'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
     'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
@@ -51,16 +49,16 @@ tinymce.init({
   ],
   toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | help',
   online_license_services_opt_in: true,
-  tinymceai_token_provider: async () => {
-    await fetch(`https://demo.api.tiny.cloud/1/your-trial-api-key/auth/random`, { method: 'POST', credentials: 'include' });
-    return await fetch(`https://demo.api.tiny.cloud/1/your-trial-api-key/jwt/tinymceai`, { credentials: 'include' })
+  tinymceai_token_provider: async () => {  // 'no-api-key' is replaced with the Cloud API key once the account is created
+    await fetch(`https://demo.api.tiny.cloud/1/no-api-key/auth/random`, { method: 'POST', credentials: 'include' });
+    return await fetch(`https://demo.api.tiny.cloud/1/no-api-key/jwt/tinymceai`, { credentials: 'include' })
       .then(resp => resp.text())
       .then(token => ({ token }));
   }
 });
 ----
 
-Replace the `+'your-trial-license-key'+` placeholder with the trial license key issued from the *Self-hosted* tab of the Customer Portal.
+Replace the `+'your-trial-license-key'+` placeholder with the trial license key issued from the *Self-hosted* tab of the Customer Portal. The token provider URL uses `+no-api-key+`, a placeholder that is automatically replaced with the Cloud API key once the account is created. The Cloud API key is only visible on the *Cloud* tab of the Customer Portal after the account exists.
 
 Without `+online_license_services_opt_in+`, the trial license key still validates and the editor remains fully functional, but cloud-dependent plugins (such as Spell Checker Pro, Link Checker, and Export to PDF) are not auto-configured and report that their service URL is not set.
 
@@ -71,7 +69,7 @@ Setting `+online_license_services_opt_in+` to `+true+` enables a network connect
 
 [NOTE]
 ====
-Most cloud-powered plugins work automatically once `+online_license_services_opt_in+` is set to `+true+`. Some plugins require additional configuration. For example, TinyMCE AI requires a `+tinymceai_token_provider+` function, shown above using the trial demo identity service. Replace `+your-trial-api-key+` with the trial API key from the link:https://www.tiny.cloud/my-account[Customer Portal]. For details, see xref:tinymceai-jwt-authentication-intro.adoc#trial-demo-identity-service[TinyMCE AI trial demo identity service]. Check the documentation for each plugin in use for any additional setup it requires.
+Most cloud-powered plugins work automatically once `+online_license_services_opt_in+` is set to `+true+`. Some plugins require additional configuration. For example, TinyMCE AI requires a `+tinymceai_token_provider+` function, shown above using the trial demo identity service. The token provider URL uses `+no-api-key+`, which is automatically replaced with the trial API key from the *Cloud* tab of the link:https://www.tiny.cloud/my-account[Customer Portal] once the account is created. This is a separate key from the trial license key. For details, see xref:tinymceai-jwt-authentication-intro.adoc#trial-demo-identity-service[TinyMCE AI trial demo identity service]. Check the documentation for each plugin in use for any additional setup it requires.
 ====
 
 === Step 3: Ensure the license key manager is available
@@ -162,7 +160,7 @@ To continue using {productname} after the trial period:
 | Question | Answer
 
 | Does the trial require an API key?
-| No. The trial license key is the only key required. There is no need to configure a separate API key for cloud services during the trial.
+| The trial license key is all that is required for the editor and for most cloud-powered plugins. A separate Cloud API key is needed only to authenticate TinyMCE AI through the demo identity service.
 
 | Can the cloud connection be disabled?
 | Yes. Remove the `+online_license_services_opt_in+` option or set it to `+false+`. Cloud-powered features will not be auto-configured, but the editor and all self-hosted plugins will continue to operate.

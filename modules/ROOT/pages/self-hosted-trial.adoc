@@ -58,7 +58,7 @@ tinymce.init({
 });
 ----
 
-Replace the `+'your-trial-license-key'+` placeholder with the trial license key issued from the *Self-hosted* tab of the Customer Portal. The token provider URL uses `+no-api-key+`, a placeholder that is automatically replaced with the Cloud API key once the account is created. The Cloud API key is only visible on the *Cloud* tab of the Customer Portal after the account exists.
+Replace the `+'your-trial-license-key'+` placeholder with the trial license key issued from the *Self-hosted* tab of the Customer Portal. The token provider URL uses `+no-api-key+`, a Cloud API key visible on the *Cloud* tab of the Customer Portal. The placeholder is automatically replaced with the Cloud API key by visiting the Customer Portal.
 
 Without `+online_license_services_opt_in+`, the trial license key still validates and the editor remains fully functional, but cloud-dependent plugins (such as Spell Checker Pro, Link Checker, and Export to PDF) are not auto-configured and report that their service URL is not set.
 

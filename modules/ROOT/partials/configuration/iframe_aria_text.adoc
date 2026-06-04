@@ -1,17 +1,16 @@
 [[iframe_aria_text]]
 == `+iframe_aria_text+`
 
-This option is used to update the `+aria-label+` applied to the editor content inside the {product name} `+iframe+`.
+This option sets the accessible name for the editable content area inside the {productname} `+iframe+`. The value is read by screen readers to help users identify the editor.
 
-The value is set as an `aria-label` on the `<body>` element inside the {product name} iframe document. For example:
+On most browsers, the value is applied as an `+aria-label+` on the `+<body>+` element inside the iframe document. For example:
 
 [source,html]
 ----
 <body aria-label="Rich Text Area. Press ALT-0 for help."></body>
 ----
 
-Note:
-The iframe `+title+` attribute is not modified by this option and remains a fixed value ("Rich Text Area").
+This option only applies to {productname} classic (iframe) mode and has no effect on xref:inline-editor-options.adoc#inline[`+inline+` editors].
 
 *Type:* `+String+`
 

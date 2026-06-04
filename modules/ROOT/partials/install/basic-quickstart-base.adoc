@@ -91,14 +91,14 @@ To add {productname} to a .NET project, run the following on a command line:
 
 * Using the NuGet package manager console, run the following:
 +
-[source,sh]
+[source,sh,subs="attributes+"]
 ----
 Install-Package {productname}
 ----
 
 * Using the `+dotnet+` CLI, run the following:
 +
-[source,sh]
+[source,sh,subs="attributes+"]
 ----
 dotnet add package {productname}
 ----

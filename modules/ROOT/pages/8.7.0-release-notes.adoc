@@ -39,6 +39,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Two tooltips were shown at the same time when hovering over context sources or conversation titles that were shortened with an ellipsis in Safari
+// #TINY-14032
+
+Previously, in Safari, hovering over text that was shortened with an ellipsis, such as AI Chat conversation titles or context sources, could display two tooltips at once: the browser's native tooltip and the plugin's custom tooltip.
+
+In {productname} {release-version}, only the native tooltip is shown for these elements in Safari. A single tooltip now appears on hover as expected.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[improvements]]
 == Improvements

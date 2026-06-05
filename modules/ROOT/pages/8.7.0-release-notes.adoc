@@ -39,6 +39,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following improvement.
+
+==== AI response HTML is now filtered through the editor's content pipeline before being displayed in preview
+// #TINY-14344
+
+Previously, content shown in the AI preview was not filtered by the editor's content rules until it was applied. With a strict schema configuration, a change could appear in the preview, be accepted, and then be removed when applied to the editor, so the final result did not match the preview.
+
+In {productname} {release-version}, AI response HTML is filtered through the editor's content pipeline before it is shown in the preview. The preview now reflects what will be added to the editor, and if filtering removes all of the content the user is notified.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[improvements]]
 == Improvements

@@ -94,6 +94,13 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // CCFR here.
 
+=== Some annotated text was hidden when printed even though it should have been visible
+// #TINY-14296
+
+Previously, text marked by annotation features, such as spelling indicators, could be hidden when a page was printed. The annotations were wrapped in internal placeholder elements that were hidden during printing, which also hid the text inside them.
+
+In {productname} {release-version}, placeholder elements that act only as wrappers now hide their styling rather than their contents when printing. Annotation highlights remain hidden in the printed output, while the underlying text is printed as expected.
+
 
 [[security-fixes]]
 == Security fixes

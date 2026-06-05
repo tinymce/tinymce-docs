@@ -45,12 +45,12 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following fix.
 
-==== AI state was lost if the AI chat was closed before the AI started responding to a prompt
+==== AI Chat state was lost if the sidebar was closed before the model started responding
 // #TINY-14222
 
-Previously, the AI conversation state could be lost if the AI sidebar was closed before the AI began responding to a prompt. The plugin recorded which sidebar started the response only after the response began, so closing the sidebar beforehand left no record, and reopening it reset the conversation.
+Previously, the state of an AI Chat conversation could be lost if the Chat sidebar was closed before the model began responding to a prompt. The plugin recorded which sidebar started a response only once the response began, so closing the sidebar beforehand left no record. Reopening the sidebar then reset the conversation and any pending preview.
 
-In {productname} {release-version}, the sidebar is recorded as soon as the prompt is sent. Toggling the sidebar before the AI responds no longer resets the conversation state.
+In {productname} {release-version}, the sidebar is recorded as soon as the prompt is sent. Closing and reopening the Chat sidebar before the response is ready no longer resets the conversation.
 
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 

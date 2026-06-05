@@ -94,6 +94,13 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // CCFR here.
 
+=== Using the undo keyboard shortcut did not restore editor selection correctly
+// #TINY-14255
+
+Previously, pressing the undo keyboard shortcut (Ctrl+Z, or Cmd+Z on macOS) after deleting a selection could leave the cursor in the wrong position. An earlier change registered an extra undo step whenever Ctrl or Cmd was pressed, so the step was recorded before the deleted content was restored.
+
+In {productname} {release-version}, the undo step is registered only when Ctrl or Cmd is pressed together with Backspace or Delete. Undoing the deletion of a selection now restores both the content and the original selection correctly.
+
 
 [[security-fixes]]
 == Security fixes

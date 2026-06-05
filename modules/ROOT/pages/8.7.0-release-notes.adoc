@@ -39,6 +39,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following improvement.
+
+==== Keyboard navigation in the preview footer now focuses the currently active view mode instead of always the first one
+// #TINY-14272
+
+Previously, moving keyboard focus to the preview footer in the AI Chat always landed on the first view mode option rather than the one that was currently active. This made keyboard navigation between the Diff mode and Preview tabs less predictable.
+
+In {productname} {release-version}, focus moves to the currently active view mode in the preview footer. Keyboard navigation now reflects the active selection.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[improvements]]
 == Improvements

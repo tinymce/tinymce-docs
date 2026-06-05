@@ -39,6 +39,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following addition.
+
+==== A confirmation dialog now appears before navigating away from unresolved suggestions, such as when switching to another sidebar or opening a sidebar during quick actions
+// #TINY-14236
+
+Previously, switching between the AI Chat and Review sidebars, or opening a sidebar during quick actions, while AI suggestions were still unresolved discarded those suggestions and any applied changes permanently. A single accidental click could cause lost progress.
+
+In {productname} {release-version}, a confirmation dialog appears before navigating away from unresolved suggestions. The action proceeds only after it is confirmed, which prevents the accidental loss of in-progress changes.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[improvements]]
 == Improvements

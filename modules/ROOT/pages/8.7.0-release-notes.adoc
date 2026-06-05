@@ -39,6 +39,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== AI state was lost if the AI chat was closed before the AI started responding to a prompt
+// #TINY-14222
+
+Previously, the AI conversation state could be lost if the AI sidebar was closed before the AI began responding to a prompt. The plugin recorded which sidebar started the response only after the response began, so closing the sidebar beforehand left no record, and reopening it reset the conversation.
+
+In {productname} {release-version}, the sidebar is recorded as soon as the prompt is sent. Toggling the sidebar before the AI responds no longer resets the conversation state.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[improvements]]
 == Improvements

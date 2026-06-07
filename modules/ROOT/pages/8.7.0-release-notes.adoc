@@ -39,6 +39,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following improvement.
+
+==== Reduced the spacing in the AI review suggestion cards
+// #TINY-14279
+
+Previously, the review suggestion cards in the AI Review sidebar used more padding than intended, which made the card layout look inconsistent with the design.
+
+In {productname} {release-version}, the spacing between the card header and body has been reduced to match the design. The review suggestion cards now have a more compact and consistent appearance.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[improvements]]
 == Improvements

@@ -39,6 +39,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== The AI suggestions diff overlay did not always maintain alignment when resizing the browser window
+// #TINY-14366
+
+Previously, after the AI Chat generated new content, resizing the browser window could leave the AI suggestions diff overlay misaligned with the underlying text. On some layouts the highlights became detached from the content they marked, which made the suggestions preview look broken.
+
+In {productname} {release-version}, the preview overlay tracks a wider set of size changes when the window is resized. The diff overlay now stays aligned with the generated content, which keeps the AI suggestions preview accurate.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[improvements]]
 == Improvements

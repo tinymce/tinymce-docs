@@ -39,6 +39,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following improvement.
+
+==== Replaced the icon-only buttons in the AI suggestion preview with labeled Apply and Skip buttons
+// #TINY-14369
+
+Previously, the AI suggestion preview used icon-only accept and reject buttons, so the meaning of each action relied on the icon and its tooltip. This made the actions ambiguous and harder to discover.
+
+In {productname} {release-version}, the AI suggestion preview uses labeled buttons: a primary **Apply** button to accept a suggestion and a secondary **Skip** button to reject it. The clearer labels make each action obvious and improve accessibility.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[improvements]]
 == Improvements

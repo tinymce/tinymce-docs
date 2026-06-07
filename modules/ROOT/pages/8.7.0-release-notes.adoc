@@ -39,6 +39,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Editor content was visible through the AI suggestions preview when using the premium snow skin
+// #TINY-14189
+
+Previously, when using the premium Snow skin, the AI suggestions preview overlay had a transparent background. The underlying editor content showed through the preview, which made it difficult to read and evaluate AI-generated suggestions.
+
+In {productname} {release-version}, the AI suggestions preview uses a solid white background in the Snow skin. Suggestions now appear on a clean, unobstructed background.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[improvements]]
 == Improvements

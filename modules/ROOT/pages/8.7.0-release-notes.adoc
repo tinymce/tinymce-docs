@@ -94,6 +94,13 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // CCFR here.
 
+=== Focused links in dark mode had the same text color as the background
+// #TINY-14264
+
+Previously, in dark mode, a focused or selected link was displayed with the same text color as the background. This made the link text impossible to read while it was selected.
+
+In {productname} {release-version}, selected link text in dark mode is displayed in white. Links remain readable when focused, which improves accessibility in dark mode.
+
 
 [[security-fixes]]
 == Security fixes

@@ -94,6 +94,13 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // CCFR here.
 
+=== CSS custom property names and color values in the style attribute were lowercased when parsed
+// #TINY-11524
+
+Previously, the {productname} style parser converted CSS custom property names and color values in the `style` attribute to lowercase. Values that relied on their original casing, such as CSS custom properties referenced with mixed-case names, could be altered, which in some cases changed how the content was rendered.
+
+In {productname} {release-version}, the style parser retains the original case of CSS custom property names and color values in the `style` attribute. Styles that depend on case are now preserved as authored.
+
 
 [[security-fixes]]
 == Security fixes

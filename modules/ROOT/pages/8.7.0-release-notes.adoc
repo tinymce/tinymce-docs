@@ -39,6 +39,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following improvement.
+
+==== The AI suggestions preview no longer shows deleted text when content has been replaced
+// #TINY-14364
+
+Previously, when reviewing AI suggestions, the preview displayed both the deleted text and the inserted text side by side for replacements. This made the preview cluttered and harder to read, because the original and new content had to be parsed at the same time, especially when a document contained multiple replacements.
+
+In {productname} {release-version}, the preview hides the deleted text for replacements and shows only the new content. When a replacement is selected, the inserted content is shown and highlighted while the removed text stays hidden. Standalone deletions continue to show the removed text when selected, so pure deletions remain fully visible. This makes the preview cleaner and easier to read when reviewing AI-generated changes.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[improvements]]
 == Improvements

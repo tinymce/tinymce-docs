@@ -97,9 +97,9 @@ The following premium plugin updates were released alongside {productname} {rele
 === CSS custom property names and color values in the style attribute were lowercased when parsed
 // #TINY-11524
 
-Previously, the {productname} style parser converted CSS custom property names and color values in the `style` attribute to lowercase. Values that relied on their original casing, such as CSS custom properties referenced with mixed-case names, could be altered, which in some cases changed how the content was rendered.
+Previously, the {productname} style parser lowercased CSS custom property names (such as `--MyColor`) and `color` and `background-color` values when reading the `style` attribute. This altered case-sensitive values, including CSS custom properties, template placeholders such as `{{FooBar}}`, and hex colors such as `#AABBCC`, so the affected styling sometimes did not render as authored.
 
-In {productname} {release-version}, the style parser retains the original case of CSS custom property names and color values in the `style` attribute. Styles that depend on case are now preserved as authored.
+In {productname} {release-version}, the style parser preserves the original case of CSS custom property names and `color` and `background-color` values. Standard property names are still lowercased, and other processing, such as RGB-to-hex conversion, shorthand merging, and security filtering, is unchanged. Case-sensitive colors and custom properties now stay exactly as authored.
 
 
 [[security-fixes]]

@@ -39,6 +39,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following improvement.
+
+==== Some tooltips now appear only when the content is too long to display
+// #TINY-14072
+
+Previously, some tooltips in the TinyMCE AI interface were shown whenever their trigger condition was met, even when the content was already fully visible. This added unnecessary visual clutter.
+
+In {productname} {release-version}, these tooltips appear only when the content is truncated because it is too long to display in full. This reduces unnecessary tooltips and keeps the interface less cluttered.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[improvements]]
 == Improvements

@@ -50,6 +50,13 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // CCFR here.
 
+=== Removed the 300-item limit on the emoticons dialog All tab
+// #TINY-7552
+
+Previously, the emoticons dialog limited the **All** tab to 300 items. This limit was a workaround, because rendering all of the available emoticons (over 1,200) caused performance issues and a laggy experience.
+
+In {productname} {release-version}, the render performance of the emoticons dialog has been optimized and the 300-item limit on the **All** tab has been removed. All available emoticons are now displayed.
+
 
 [[additions]]
 == Additions

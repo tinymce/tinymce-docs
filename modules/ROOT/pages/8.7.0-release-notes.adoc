@@ -39,6 +39,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following improvement.
+
+==== Bulk action buttons when reviewing AI suggestions now reflect the current progress
+// #TINY-14228
+
+Previously, when reviewing AI suggestions, the bulk action buttons always showed **Skip remaining** and **Apply remaining**, even before any suggestion had been applied or skipped. This was confusing because no decisions had been made yet.
+
+In {productname} {release-version}, the bulk action buttons reflect the current progress. They show **Skip all** and **Apply all** before the first decision, then switch to **Skip remaining** and **Apply remaining** after at least one suggestion has been applied or skipped. This behavior is consistent across the Chat and Quick Actions flows.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[improvements]]
 == Improvements

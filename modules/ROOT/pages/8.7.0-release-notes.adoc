@@ -28,6 +28,19 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Switching back to an earlier conversation now continues that conversation
+// #TINY-14487
+
+Previously, a regression prevented earlier conversations from loading correctly in the Chat sidebar. After starting a new chat, returning to an earlier conversation and sending a prompt began a disconnected exchange instead of continuing the original thread. Switching to an existing conversation now restores its conversation ID, so later prompts continue the selected conversation.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 // === <Premium plugin name 1> <Premium plugin name 1 version>
 
 // The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

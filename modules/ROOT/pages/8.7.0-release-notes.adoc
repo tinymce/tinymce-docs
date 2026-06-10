@@ -39,6 +39,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following addition.
+
+==== Integrators can now add custom AI reviews using the `+tinymceai_reviews+` option
+// #TINY-14200
+
+Previously, the Review sidebar supported only a fixed set of built-in reviews, selected by ID through the `+tinymceai_reviews+` option. There was no supported way for integrators to add named reviews, parameterized prompts, or menus that mixed built-in and custom reviews. Integrators had to rely on generic flows, such as Custom review, instead of dedicated review actions in the Review sidebar.
+
+In {productname} {release-version}, the `+tinymceai_reviews+` option also accepts integrator-defined review objects alongside the existing built-in string IDs. Integrators can define `+simple+`, `+list+`, and `+input+` review types, each with a custom name, description, and prompt. For the full schema and examples, see the xref:tinymceai.adoc#tinymceai_reviews[`+tinymceai_reviews+`] option.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[improvements]]
 == Improvements

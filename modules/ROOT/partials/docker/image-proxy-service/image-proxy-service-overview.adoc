@@ -1,7 +1,7 @@
 [[overview]]
 == Overview
 
-The Image Proxy service is a server-side component that processes and serves images for the {productname} editor. It runs on-premises within the host infrastructure and provides the back-end capabilities used by the link:https://www.tiny.cloud/docs/tinymce/latest/editimage/[{pluginname}] plugin.
+The Image Proxy service is a server-side component that fetches and serves image content for the {productname} editor. It runs on-premises within the host infrastructure and provides the back-end capabilities used by the link:https://www.tiny.cloud/docs/tinymce/latest/editimage/[{pluginname}] plugin. The service only retrieves image content; image editing is performed in the browser, and the service does not resolve media embeds.
 
 The only requirement to run the Image Proxy service on-premises is a container runtime or orchestration tool, such as Docker, Kubernetes, or Podman.
 

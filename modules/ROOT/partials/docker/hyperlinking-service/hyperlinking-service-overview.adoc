@@ -1,7 +1,7 @@
 [[overview]]
 == Overview
 
-The Hyperlinking service is a server-side component that provides link validation and rich media resolution capabilities. It runs on-premises within the host infrastructure and powers the link:https://www.tiny.cloud/tinymce/features/link-checker/[{linkcheckerplugin}^] and link:https://www.tiny.cloud/tinymce/features/enhanced-media-embed/[{mediaembedplugin}^] plugins in the {productname} editor. Once deployed, each plugin must be configured separately to connect to this service.
+The Hyperlinking service is a server-side component that provides both link validation and media embed resolution. It runs on-premises within the host infrastructure and powers the link:https://www.tiny.cloud/tinymce/features/link-checker/[{linkcheckerplugin}^] plugin, which validates links, and the link:https://www.tiny.cloud/tinymce/features/enhanced-media-embed/[{mediaembedplugin}^] plugin, which resolves media URLs into embeddable content, in the {productname} editor. Once deployed, each plugin must be configured separately to connect to this service.
 
 The only requirement to run the Hyperlinking service on-premises is a container runtime or orchestration tool, such as Docker, Kubernetes, or Podman.
 

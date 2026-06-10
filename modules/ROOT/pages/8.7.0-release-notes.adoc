@@ -28,6 +28,19 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Image edits now target the correct image in content with multiple images
+// #TINY-14454
+
+Previously, images sent to the model were not uniquely identified, so a prompt referencing a specific image could mistake one image for another and apply changes, such as alt text updates, to the wrong image. **TinyMCE AI** now tags each `+img+` element with a `+data-id+` attribute when content is sent to the model and removes the attribute before the response is inserted. Image edits now apply to the intended image, even when the content contains multiple images.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 // === <Premium plugin name 1> <Premium plugin name 1 version>
 
 // The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

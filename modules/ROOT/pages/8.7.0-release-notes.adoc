@@ -89,6 +89,11 @@ The following premium plugin updates were released alongside {productname} {rele
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== Tooltips no longer get cut off when the editor is in a web component
+// #TINY-14384
+
+Previously, tooltips could be cut off when the editor was embedded in a web component, because they were clipped at the bounds of the component. Tooltips now reposition to remain within the editor container.
+
 // === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 

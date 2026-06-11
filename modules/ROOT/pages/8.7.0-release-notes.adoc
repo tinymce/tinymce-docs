@@ -28,6 +28,19 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Page Embed
+
+The {productname} {release-version} release includes an accompanying release of the **Page Embed** premium plugin.
+
+**Page Embed** includes the following fix.
+
+==== Alignment buttons now work on iframes inserted with Page Embed
+// #TINY-14458
+
+Previously, the alignment toolbar buttons had no effect on iframes inserted with the **Page Embed** plugin, because the alignment formats did not recognize the Page Embed wrapper element. {productname} now applies left, center, and right alignment to Page Embed iframes.
+
+For information on the **Page Embed** plugin, see: xref:pageembed.adoc[Page Embed].
+
 // === <Premium plugin name 1> <Premium plugin name 1 version>
 
 // The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

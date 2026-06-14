@@ -28,6 +28,19 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following addition.
+
+==== New `tinymceai_reviews_change_tone_menu` option to control the Change Tone review menu
+// #TINY-14274
+
+{productname} {release-version} adds the `+tinymceai_reviews_change_tone_menu+` option for **TinyMCE AI**, which controls the tone options shown in the Change Tone review menu. Only preset tone IDs are supported, the configured order is reflected in the menu, and duplicate values are removed. An invalid configuration falls back to the default tones, and an empty array (`+[]+`) hides the Change Tone review.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 // === <Premium plugin name 1> <Premium plugin name 1 version>
 
 // The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

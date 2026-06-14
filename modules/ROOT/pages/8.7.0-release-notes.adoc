@@ -28,6 +28,19 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following improvement.
+
+==== Review mode keyboard navigation now matches the Chat sidebar
+// #TINY-14275
+
+Keyboard navigation in review mode now matches the Chat sidebar. A `+Ctrl+Alt+S+` shortcut opens and focuses the Review sidebar, `+Tab+` and `+Shift+Tab+` move through the suggestion cards and their buttons, and `+Esc+` moves focus instead of rejecting pending changes. Review suggestions are now fully keyboard-navigable, with no accidental loss of pending changes.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 // === <Premium plugin name 1> <Premium plugin name 1 version>
 
 // The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

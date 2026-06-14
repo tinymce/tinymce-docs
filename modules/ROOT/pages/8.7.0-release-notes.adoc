@@ -89,6 +89,11 @@ The following premium plugin updates were released alongside {productname} {rele
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== Block formatting now targets the correct element across a table cell selection
+// #TINY-14385
+
+Previously, when multiple table cells were selected, the check for whether a block could be renamed did not inspect nested elements. For example, with a blockquote containing a heading, applying a new heading format changed the blockquote instead of the heading. {productname} now inspects nested elements, so block formatting is applied to the correct element.
+
 // === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 

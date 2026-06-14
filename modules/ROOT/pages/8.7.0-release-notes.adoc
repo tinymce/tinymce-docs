@@ -28,6 +28,19 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== The Review sidebar no longer shows "No improvements found" after a review is applied
+// #TINY-14198
+
+Previously, hiding the Review sidebar and applying or skipping suggestions with the preview footer buttons did not reset the review state. Reopening the sidebar showed "No improvements found" instead of the available review options, requiring the editor to be reloaded. The review state now resets correctly, so the sidebar can be hidden and reopened to run new reviews.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 // === <Premium plugin name 1> <Premium plugin name 1 version>
 
 // The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

@@ -92,7 +92,9 @@ The following premium plugin updates were released alongside {productname} {rele
 === Indentation is now applied to all selected table cells
 // #TINY-14370
 
-Previously, applying indentation with multiple table cells selected affected only the cell where the pointer was released, because the action used the browser's native selection rather than the editor's cell selection. {productname} now applies indentation to every cell in the selection.
+Previously, applying indentation with multiple table cells selected affected only the cell where the pointer was released. The action used the browser's native selection rather than the editor's cell selection, so the remaining selected cells were left unchanged.
+
+In {productname} {release-version}, indentation is applied to every cell in the selection.
 
 // === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1

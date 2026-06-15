@@ -48,18 +48,18 @@ For Docker:
 
 [source,bash]
 ----
-docker login -u tiny https://registry.containers.tiny.cloud
-# Docker prompts for the password; this avoids leaking it in shell history.
+docker login -u tiny -p [access-token] registry.containers.tiny.cloud
 ----
 
 For Podman:
 
 [source,bash]
 ----
-podman login -u tiny registry.containers.tiny.cloud
+podman login -u tiny -p [access-token] registry.containers.tiny.cloud
 ----
 
-All accounts authenticate with the username `tiny`. When prompted, enter the access token supplied by the Tiny account representative. If credentials have not been received, contact `support@tiny.cloud`.
+[NOTE]
+All accounts authenticate with the username `tiny`. Replace `[access-token]` with the access token supplied by the Tiny account representative. If credentials have not been received, contact link:{supporturl}/[{supportname}].
 
 === Pull the AI service image
 

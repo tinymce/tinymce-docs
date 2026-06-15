@@ -37,7 +37,7 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== New `tinymceai_reviews_change_tone_menu` option to control the Change Tone review menu
 // #TINY-14274
 
-{productname} {release-version} adds the `+tinymceai_reviews_change_tone_menu+` option for **TinyMCE AI**, which controls the tone options shown in the Change Tone review menu. Only preset tone IDs are supported, the configured order is reflected in the menu, and duplicate values are removed. An invalid configuration falls back to the default tones, and an empty array (`+[]+`) hides the Change Tone review.
+{productname} {release-version} adds the `+tinymceai_reviews_change_tone_menu+` option for **TinyMCE AI**, which controls the tone options shown in the Change Tone review and their order. Only preset tone IDs are supported, the configured order is reflected in the menu, and duplicate values are removed. An invalid configuration falls back to the default tones. For the full list of tone IDs and behavior, see the xref:tinymceai.adoc#tinymceai_reviews_change_tone_menu[`+tinymceai_reviews_change_tone_menu+`] option.
 
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 

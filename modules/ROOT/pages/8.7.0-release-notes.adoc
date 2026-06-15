@@ -37,9 +37,9 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== Chat can now update an empty document
 // #TINY-14393
 
-Previously, submitting a Chat prompt with empty editor content updated only the chat response and not the document.
+Previously, Chat did not update an empty document when generating content. Chat displayed the generated content only in the Chat sidebar, because the AI service could not apply edits when the document had no content.
 
-In {productname} {release-version}, the editor sends an empty paragraph to the model when the content is empty, so changes are applied directly to the document.
+In {productname} {release-version}, Chat handles an empty document the same way as the Review sidebar. When the editor is empty, Chat now inserts the generated content directly into the document instead of displaying it only in the Chat sidebar.
 
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 

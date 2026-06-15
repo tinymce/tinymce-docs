@@ -37,7 +37,9 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== Chat can now update an empty document
 // #TINY-14393
 
-Previously, submitting a Chat prompt with empty editor content updated only the chat response and not the document. The editor now sends an empty paragraph to the model when the content is empty, so changes are applied directly to the document.
+Previously, submitting a Chat prompt with empty editor content updated only the chat response and not the document.
+
+In {productname} {release-version}, the editor sends an empty paragraph to the model when the content is empty, so changes are applied directly to the document.
 
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 

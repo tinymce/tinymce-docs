@@ -28,6 +28,21 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following improvement.
+
+==== The TinyMCE AI plugin now adds an `ai` property to the `SetContent` and `BeforeSetContent` event payloads
+// #TINYMCE-14302
+
+Previously, the **TinyMCE AI** plugin set content into the editor without marking it as AI-generated. Integrations that listen to the `+BeforeSetContent+` and `+SetContent+` events had no reliable way to distinguish this content from content set by other sources, and could not apply origin-specific processing, tracking, or analytics.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin adds an `+ai+` property to the `+BeforeSetContent+` and `+SetContent+` event payloads when it sets content. Event handlers can check this property to detect **TinyMCE AI**-generated content and respond based on its origin.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 // === <Premium plugin name 1> <Premium plugin name 1 version>
 
 // The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

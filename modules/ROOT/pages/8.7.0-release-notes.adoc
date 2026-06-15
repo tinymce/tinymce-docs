@@ -37,7 +37,9 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== The Review sidebar no longer shows "No improvements found" after a review is applied
 // #TINY-14198
 
-Previously, hiding the Review sidebar and applying or skipping suggestions with the preview footer buttons did not reset the review state. Reopening the sidebar showed "No improvements found" instead of the available review options, requiring the editor to be reloaded. The review state now resets correctly, so the sidebar can be hidden and reopened to run new reviews.
+Previously, if the Review sidebar was hidden while the model was still responding and the resulting suggestions were then applied or skipped from the Preview footer, the review state was not reset. Reopening the Review sidebar showed "Review complete — no improvements found" instead of the review list, even though the review had finished. The only way to recover the review options was to reload the editor.
+
+In {productname} {release-version}, the review state now resets correctly after suggestions are applied or skipped from the Preview footer while the sidebar is hidden. Reopening the Review sidebar shows the review list again, so further reviews can be run without reloading the editor.
 
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 

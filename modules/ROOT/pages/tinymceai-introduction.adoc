@@ -9,10 +9,7 @@
 
 Integrate real-time AI writing assistance into your application with TinyMCE AI, with ready-to-go editor features available via the TinyMCE plugin, and custom functionality available via the API -- even outside the editor. Speed up content creation and enhance editorial workflows across a wide range of use cases, from productivity boosts and proof-reading to content quality and consistency. All with your choice of LLM -- including your own.
 
-[NOTE]
-====
-{pluginname} requires {productname} 8.4 or later.
-====
+include::partial$misc/admon-tinymceai-min-version.adoc[]
 
 [[demo]]
 == Demo

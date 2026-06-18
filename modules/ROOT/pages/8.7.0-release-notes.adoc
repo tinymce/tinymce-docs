@@ -39,6 +39,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following improvement.
+
+==== Highlighted suggestions in Chat and Actions preview mode no longer appear selected when clicked, since no follow up action is available on them.
+// #TINYMCE-14310
+
+Previously, clicking a highlighted suggestion in preview mode in TinyMCE AI Chat and TinyMCE AI Quick Actions showed a selected state, even though preview mode offers no action for highlighted suggestions. The selected state made the suggestions appear interactive and led users to expect a follow-up action that preview mode does not provide.
+
+In {productname} {release-version}, highlighted suggestions in preview mode in TinyMCE AI Chat and TinyMCE AI Quick Actions do not respond to clicks and no longer show a selected state. The highlights remain visible for reference, so preview mode presents a read-only view of the final text.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[improvements]]
 == Improvements

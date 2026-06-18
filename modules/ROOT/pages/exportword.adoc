@@ -80,6 +80,33 @@ The `exportword_service_url` option automatically appends `/v2/convert/html-docx
 
 include::partial$misc/pagebreak-export-note.adoc[]
 
+[[export-specific-content-filtering]]
+== Export-specific content filtering
+
+When the {pluginname} plugin generates content for export, it calls the `tinymce.editor.getContent()` method with an `export` property set to `word`. {productname} passes this `export` property to the xref:events.adoc#editor-core-events[`+GetContent+` event] and to serializer node filters. As a result, an integrator can apply content filtering that targets a {pluginname} export without affecting regular `tinymce.editor.getContent()` calls.
+
+The following example shows how to remove `footer` elements from the content only during a {pluginname} export:
+
+[source,js]
+----
+editor.serializer.addNodeFilter('footer', (nodes, name, args) => {
+  if (args.export === 'word') {
+    nodes.forEach((node) => node.remove());
+  }
+});
+----
+
+The `GetContent` event also receives the `export` property:
+
+[source,js]
+----
+editor.on('GetContent', (e) => {
+  if (e.export === 'word') {
+    e.content = removeFooterFromHtml(e.content);
+  }
+});
+----
+
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.

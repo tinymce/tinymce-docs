@@ -39,6 +39,34 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Export to PDF
+
+The {productname} {release-version} release includes an accompanying release of the **Export to PDF** premium plugin.
+
+**Export to PDF** includes the following addition.
+
+[[exportpdf-getcontent-export-property]]
+==== It is now possible to have the kind of `export` in getContent's events and nodeFilter.
+// #TINYMCE-14323
+
+The **Export to PDF** plugin now calls `tinymce.editor.getContent()` with an `export` property set to `pdf`. {productname} passes this property to the `GetContent` event and to serializer node filters, so an integrator can apply content filtering that targets a PDF export without affecting regular content retrieval.
+
+For information on filtering content during an export, see: xref:exportpdf.adoc#export-specific-content-filtering[Export-specific content filtering]. For information on the **Export to PDF** plugin, see: xref:exportpdf.adoc[Export to PDF].
+
+=== Export to Word
+
+The {productname} {release-version} release includes an accompanying release of the **Export to Word** premium plugin.
+
+**Export to Word** includes the following addition.
+
+[[exportword-getcontent-export-property]]
+==== It is now possible to have the kind of `export` in getContent's events and nodeFilter.
+// #TINYMCE-14323
+
+The **Export to Word** plugin now calls `tinymce.editor.getContent()` with an `export` property set to `word`. {productname} passes this property to the `GetContent` event and to serializer node filters, so an integrator can apply content filtering that targets a Word export without affecting regular content retrieval.
+
+For information on filtering content during an export, see: xref:exportword.adoc#export-specific-content-filtering[Export-specific content filtering]. For information on the **Export to Word** plugin, see: xref:exportword.adoc[Export to Word].
+
 
 [[improvements]]
 == Improvements

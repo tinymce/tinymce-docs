@@ -39,6 +39,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following fix.
+
+==== Suggested Edits API should not be tied to the existence of the suggested edits toolbar button
+// #TINYMCE-13256
+
+Previously, the `SuggestedEditsHasChangesUpdate` event only fired alongside other editor events, such as typing, selecting, or focusing. Completing a review did not fire the event on its own, so the value returned by the `hasChanges` API could become outdated. An integration that used the API through a custom button, rather than the built-in `suggestededits` toolbar button, did not receive an update when a review finished.
+
+In {productname} {release-version}, the `SuggestedEditsHasChangesUpdate` event fires whenever the value returned by the `hasChanges` API changes, including when a review completes. The `hasChanges` API no longer depends on the presence of the `suggestededits` toolbar button, so a custom integration stays in sync with the document state.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+
 
 [[improvements]]
 == Improvements

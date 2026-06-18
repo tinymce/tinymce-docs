@@ -48,9 +48,9 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== Iframes inserted with the pageembed plugin could not be aligned using the align left, center, and right toolbar buttons.
 // #TINYMCE-14458
 
-Previously, the align left, center, and right toolbar buttons could not align an iframe inserted with the Page Embed plugin. The Page Embed plugin wraps the iframe in a `tiny-pageembed` container that the default alignment format rules did not recognize, so selecting the iframe and choosing align left, center, or right on the toolbar had no effect. By contrast, an iframe inserted with the Media plugin uses a wrapper that the alignment rules already recognized.
+Previously, the align left, center, and right toolbar buttons had no effect on an iframe inserted with the Page Embed plugin. Selecting the embedded iframe and choosing an alignment did not change its position.
 
-In {productname} {release-version}, the alignment format rules recognize the `tiny-pageembed` container. The align left, center, and right toolbar buttons now apply alignment to a selected Page Embed iframe, matching the behavior of iframes inserted with the Media plugin.
+In {productname} {release-version}, the align left, center, and right toolbar buttons align an iframe inserted with the Page Embed plugin.
 
 For information on the **Page Embed** plugin, see: xref:pageembed.adoc[Page Embed].
 

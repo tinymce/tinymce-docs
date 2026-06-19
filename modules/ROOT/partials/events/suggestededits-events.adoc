@@ -7,4 +7,5 @@ The following events are provided by the xref:{plugincode}.adoc[{pluginname} plu
 |SuggestedEditsReviewComplete |N/A |A review in the Suggested Edits view has been completed.
 |SuggestedEditsReviewCancelled |N/A |A review in the Suggested Edits view was cancelled.
 |SuggestedEditsHasChangesUpdate |`+hasChanges+` |The Suggested Edits model is updated. The `+hasChanges+` data is a boolean value indicating whether there are suggestions to review.
+|SuggestedEditsTrackingToggle |`+tracking+` |The tracking state of suggested edits has changed. The `+tracking+` data is a boolean value indicating whether edits are being tracked.
 |===

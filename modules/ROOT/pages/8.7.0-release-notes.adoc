@@ -94,6 +94,13 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // CCFR here.
 
+=== Dragging and dropping or copying and pasting an image didn't add `width` and `height` to the tag.
+// #TINYMCE-14411
+
+Previously, {productname} inserted an `img` tag without `width` and `height` attributes when a user dragged and dropped or copied and pasted an image into the editor. The inserted `img` tag lacked the dimension attributes that the image dialog adds.
+
+In {productname} {release-version}, the editor reads the dimensions of a dropped or pasted image and adds the `width` and `height` attributes to the `img` tag. A dropped or pasted image now includes the same `width` and `height` attributes that the image dialog adds.
+
 
 [[security-fixes]]
 == Security fixes

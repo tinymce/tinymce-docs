@@ -8,7 +8,7 @@ When set to:
 * `false`: All edits require manual approval before being applied.
 * `true`: All new edits are automatically approved and applied.
 
-NOTE: In {productname} 8.7, this option controls the default state of the `suggestededits-tracking` toolbar button and menu item. When set to `false`, the `suggestededits-tracking` button will be active by default, allowing edits to be automatically approved. When set to `true`, the button will be inactive by default, requiring manual approval for edits. Toggling the button or menu item will override the default state set by this option for the current session.
+NOTE: In {productname} 8.7, this option controls the default state of the `suggestededits-tracking` toolbar button and menu item. When set to `false`, the `suggestededits-tracking` button will be active by default and edits will appear in the review. When set to `true`, the button will be inactive by default, meaning edits will not appear in the review. Toggling the button or menu item will override the default state set by this option for the current session.
 
 *Type:* `+Boolean+`
 

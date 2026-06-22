@@ -7,7 +7,7 @@ tinymce.init({
   selector: 'textarea#suggestededits',
   height: 500,
   plugins: 'suggestededits advlist anchor autolink code charmap emoticons fullscreen help image link lists media preview searchreplace table',
-  toolbar: 'undo redo | suggestededits | styles fontsizeinput | bold italic | align bullist numlist | table link image | code',
+  toolbar: 'undo redo | suggestededits suggestededits-tracking | styles fontsizeinput | bold italic | align bullist numlist | table link image | code',
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
   
   suggestededits_model: model,

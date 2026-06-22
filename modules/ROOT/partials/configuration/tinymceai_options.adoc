@@ -298,6 +298,8 @@ The function receives a single `+event+` argument, which is one of the following
 ** `+level+` (`+String+`): The severity of the notification. One of `+'error'+`, `+'info'+`, `+'debug'+`, `+'notice'+`, `+'warning'+`, `+'critical'+`, `+'alert'+`, or `+'emergency'+`.
 ** `+data+`: The data included with the notification.
 
+A common use is to map each tool name to a human-readable message. For example, the callback can display `+Accessing Atlassian resources...+` while the `+atlassian-getAccessibleAtlassianResources+` tool runs.
+
 .Example
 [source,js]
 ----
@@ -306,8 +308,12 @@ tinymce.init({
   plugins: 'tinymceai',
   toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
   tinymceai_tool_data_callback: (event) => {
+    // Map tool names to human-readable status messages
+    const statusMessages = {
+      'atlassian-getAccessibleAtlassianResources': 'Accessing Atlassian resources...'
+    };
     if (event.type === 'mcp-tool-result') {
-      return `Tool ${event.toolName}: ${event.success ? 'completed' : 'failed'}`;
+      return statusMessages[event.toolName] || `Running ${event.toolName}...`;
     }
     // Use the default status message for other events
     return undefined;

@@ -276,6 +276,49 @@ tinymce.init({
 });
 ----
 
+[[tinymceai_tool_data_callback]]
+=== `+tinymceai_tool_data_callback+`
+
+Customizes the status message shown in the Chat sidebar while the AI model calls a Model Context Protocol (MCP) tool. The function runs when the MCP server sends an `+mcp-tool-result+` or `+mcp-tool-notification+` event during a streaming response. The function returns a string to display as the status message, or returns `+undefined+` to fall back to the default status message.
+
+*Type:* `+Function+` (`+(event: MCPToolEvent) => string | undefined+`)
+
+*Default value:* `+undefined+`
+
+The function receives a single `+event+` argument, which is one of the following objects:
+
+* An `+mcp-tool-result+` event, sent when a tool returns a result:
+** `+type+`: `+'mcp-tool-result'+`
+** `+toolName+` (`+String+`): The name of the tool that ran.
+** `+result+` (`+String+`): The result the tool returns.
+** `+success+` (`+Boolean+`): Whether the tool call succeeded.
+* An `+mcp-tool-notification+` event, sent when a tool reports progress or a log message:
+** `+type+`: `+'mcp-tool-notification'+`
+** `+toolName+` (`+String+`): The name of the tool that sent the notification.
+** `+level+` (`+String+`): The severity of the notification. One of `+'error'+`, `+'info'+`, `+'debug'+`, `+'notice'+`, `+'warning'+`, `+'critical'+`, `+'alert'+`, or `+'emergency'+`.
+** `+data+`: The data included with the notification.
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_tool_data_callback: (event) => {
+    if (event.type === 'mcp-tool-result') {
+      return `Tool ${event.toolName}: ${event.success ? 'completed' : 'failed'}`;
+    }
+    // Use the default status message for other events
+    return undefined;
+  },
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  }
+});
+----
+
 [[options-quickactions]]
 == Options for Quick Actions
 

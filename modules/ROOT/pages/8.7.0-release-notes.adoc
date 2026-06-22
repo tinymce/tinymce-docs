@@ -39,6 +39,19 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following addition.
+
+==== New `tinymceai_tool_data_callback` option to customize the Model Context Protocol (MCP) tool status message
+// #TINYMCE-14474
+
+The **TinyMCE AI** plugin now supports the xref:tinymceai.adoc#tinymceai_tool_data_callback[`+tinymceai_tool_data_callback+`] option. This function runs when an MCP server sends an `+mcp-tool-result+` or `+mcp-tool-notification+` event during a streaming response, and returns the status message shown in the Chat sidebar while the AI model calls an MCP tool.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[improvements]]
 == Improvements

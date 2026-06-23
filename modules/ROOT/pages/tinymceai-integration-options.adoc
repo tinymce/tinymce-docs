@@ -15,7 +15,7 @@
 [.lead]
 xref:tinymceai.adoc[**Plugin Configuration**]
 
-Integrate {pluginname} features directly into the {productname} editor interface out of the box. Works with the {cloudname} CDN or self-hosted {productname}; both use the hosted AI service with JWT authentication.
+Integrate {pluginname} features directly into the {productname} editor interface out of the box. Works with the {cloudname} CDN or a self-hosted {productname} editor; from {productname} 8.7.0, the plugin can be installed from the `+tinymce-premium+` NPM package or as an addon `.zip`. The plugin connects to either the hosted {cloudname} AI service or a xref:tinymceai-on-premises.adoc[self-hosted AI service], with JWT authentication in both cases.
 
 |
 [.lead]

@@ -200,6 +200,13 @@ Previously, clicking to the right of the content in a list item could place the 
 
 In {productname} {release-version}, a targeted workaround detects this case and corrects the caret position. Clicking to the right of a list item now places the cursor where expected.
 
+=== Using the undo keyboard shortcut did not restore editor selection correctly
+// #TINY-14255
+
+Previously, pressing the undo keyboard shortcut (Ctrl+Z, or Cmd+Z on macOS) after deleting a selection could leave the cursor in the wrong position. An earlier change registered an extra undo step whenever Ctrl or Cmd was pressed, so the step was recorded before the deleted content was restored.
+
+In {productname} {release-version}, {productname} registers that undo step only when Ctrl or Cmd is pressed together with Backspace or Delete, rather than on every Ctrl or Cmd key press. Undoing the deletion of a selection now restores both the content and the original selection correctly.
+
 
 [[security-fixes]]
 == Security fixes

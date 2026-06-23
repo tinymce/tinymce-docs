@@ -112,14 +112,11 @@ The metadata is an `+Object+` that holds additional information about a revision
 | `+source+` | `+string+` | optional  | The origin of the revision's content. A value of `+'ai'+` marks the revision as AI-assisted and, when xref:revisionhistory_ai_attribution[`+revisionhistory_ai_attribution+`] is enabled, displays an AI badge on the revision card.
 |===
 
-For details on populating this field for content produced by the xref:tinymceai.adoc[{productname} AI] plugin, see xref:#attributing-ai-assisted-revisions[Attributing AI-assisted revisions].
-
-
 == Attributing AI-assisted revisions
 
 A revision is identified as AI-assisted through the `+source+` field of its xref:#metadata[`+metadata+`] object. When `+metadata.source+` is `+'ai'+` and the xref:revisionhistory_ai_attribution[`+revisionhistory_ai_attribution+`] option is enabled, an AI badge appears on that revision card.
 
-The {pluginname} plugin does not set this marker automatically. The xref:tinymceai.adoc[{productname} AI] plugin sets `+ai+` to `+true+` on the `+SetContent+` event for any content it inserts, and the integration uses that signal to attribute the revisions it saves. There are three steps to keep attribution accurate:
+The {pluginname} plugin does not set this marker automatically. The xref:tinymceai.adoc[{productname} AI] plugin sets `+ai+` to `+true+` on the `+SetContent+` event for any content it inserts. Detecting that signal and recording it as `+metadata.source+` when saving a revision is the responsibility of the application. There are three steps to keep attribution accurate:
 
 . **Detect**: Listen for the `+SetContent+` event and record when its `+ai+` property is `+true+`.
 . **Save**: When saving a revision, set `+metadata.source+` to `+'ai'+` if AI contributed since the last save.
@@ -130,7 +127,7 @@ The AI badge appears only on `+saved+` revisions. The `+draft+` and `+initial+` 
 
 === Saving an AI-assisted revision
 
-Revisions are saved by the integration and returned from the xref:revisionhistory_fetch[`+revisionhistory_fetch+`] option. The following example tracks AI involvement from the `+SetContent+` event and attaches the `+metadata+` marker when saving a snapshot:
+The application is responsible for saving revisions and returns them through the xref:revisionhistory_fetch[`+revisionhistory_fetch+`] option. The following example tracks AI involvement from the `+SetContent+` event and attaches the `+metadata+` marker when saving a snapshot:
 
 [source,js]
 ----
@@ -154,7 +151,7 @@ const saveRevision = () => {
   };
 
   saveToStorage(revision); // Replace with your storage call
-  aiAssisted = false;
+  aiAssisted = false; // Reset state of AI assistance for new content
 };
 ----
 

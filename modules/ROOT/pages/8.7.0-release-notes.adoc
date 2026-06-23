@@ -73,6 +73,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following improvements and fixes and additions.
 
+==== Keyboard navigation in the preview footer now focuses the currently active view mode instead of always the first one
+// #TINY-14272
+
+Previously, moving keyboard focus to the preview footer in the AI Chat always landed on the first view mode option rather than the one that was currently active. This made keyboard navigation between the Diff mode and Preview tabs less predictable.
+
+In {productname} {release-version}, focus moves to the currently active view mode in the preview footer. Keyboard navigation now reflects the active selection.
+
 ==== A confirmation dialog now appears before navigating away from unresolved suggestions, such as when switching to another sidebar or opening a sidebar during quick actions
 // #TINY-14236
 

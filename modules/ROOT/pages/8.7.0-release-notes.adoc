@@ -193,6 +193,13 @@ In {productname} {release-version}, indentation is applied to every cell in the 
 
 // CCFR here.
 
+=== Context toolbar with position 'line' was not repositioning to the opposite side when overflowing the viewport
+// #TINY-14376
+
+Previously, a context toolbar configured with `position: 'line'`, such as a quickbar, was not repositioned when it overflowed the edge of the viewport. Under these conditions the toolbar could be cut off, which prevented users from clicking its buttons.
+
+In {productname} {release-version}, a context toolbar that uses `position: 'line'` now flips to the opposite side when there is not enough space. The toolbar remains fully visible and usable in constrained layouts.
+
 === Some annotated text was hidden when printed even though it should have been visible
 // #TINY-14296
 

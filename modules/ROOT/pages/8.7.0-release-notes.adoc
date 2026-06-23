@@ -115,6 +115,13 @@ Previously, pressing Tab or Shift+Tab inside an open dropdown menu cycled focus 
 
 In {productname} {release-version}, pressing Tab or Shift+Tab on an open menu now closes the menu and moves focus to the next or previous focusable element in the tab order. This makes keyboard navigation more predictable and aligns dropdown menu behavior with accessibility guidelines.
 
+=== The editor resize handle now uses browser pointer events for more reliable behavior across different integration environments
+// #TINY-14241
+
+Previously, the editor resize handle relied on an overlay element to capture pointer movement, which required raising the editor's stacking order. This caused the editor to appear on top of the floating sidebar used by the TinyMCE AI plugin while the editor was being resized.
+
+In {productname} {release-version}, the resize handle uses modern browser pointer events instead. This removes the need for the overlay element and the raised stacking order, providing more reliable resizing across different integration environments and resolving the overlap with the floating sidebar.
+
 
 [[additions]]
 == Additions

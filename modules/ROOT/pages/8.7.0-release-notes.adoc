@@ -50,6 +50,13 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // CCFR here.
 
+=== Pressing Tab or Shift+Tab on an open menu now closes it and moves focus to the next or previous focusable element
+// #TINY-13341
+
+Previously, pressing Tab or Shift+Tab inside an open dropdown menu cycled focus through the menu items instead of closing the menu. This behavior did not align with accessibility guidelines, which recommend that the Tab key close the menu and move focus to the next or previous element in the tab order. As a result, keyboard navigation through menus was less predictable for users who rely on the keyboard or assistive technologies.
+
+In {productname} {release-version}, pressing Tab or Shift+Tab on an open menu now closes the menu and moves focus to the next or previous focusable element in the tab order. This makes keyboard navigation more predictable and aligns dropdown menu behavior with accessibility guidelines.
+
 
 [[additions]]
 == Additions
@@ -100,6 +107,13 @@ The following premium plugin updates were released alongside {productname} {rele
 Previously, text marked by annotation features, such as spelling indicators, could be hidden when a page was printed. The annotations were wrapped in internal placeholder elements that were hidden during printing, which also hid the text inside them.
 
 In {productname} {release-version}, placeholder elements that act only as wrappers now hide their styling rather than their contents when printing. Annotation highlights remain hidden in the printed output, while the underlying text is printed as expected.
+
+=== Worked around a Chromium bug where clicking on the right of an `li` could fail
+// #TINY-13886
+
+Previously, clicking to the right of the content in a list item could place the cursor at the start of the item instead of at the location that was clicked. This was caused by a Chromium browser bug that moved the caret to an incorrect position.
+
+In {productname} {release-version}, a targeted workaround detects this case and corrects the caret position. Clicking to the right of a list item now places the cursor where expected.
 
 
 [[security-fixes]]

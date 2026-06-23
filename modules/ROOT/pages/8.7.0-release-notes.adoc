@@ -73,6 +73,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following improvements and fixes and additions.
 
+==== Editor content was visible through the AI suggestions preview when using the premium snow skin
+// #TINY-14189
+
+Previously, when using the premium Snow skin, the AI suggestions preview overlay had a transparent background. The underlying editor content showed through the preview, which made it difficult to read and evaluate AI-generated suggestions.
+
+In {productname} {release-version}, the AI suggestions preview uses a solid white background in the Snow skin. Suggestions now appear on a clean, unobstructed background.
+
 ==== Keyboard navigation in the preview footer now focuses the currently active view mode instead of always the first one
 // #TINY-14272
 

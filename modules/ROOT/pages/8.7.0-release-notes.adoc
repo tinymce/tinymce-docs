@@ -39,6 +39,50 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Inline CSS
+
+The {productname} {release-version} release includes an accompanying release of the **Inline CSS** premium plugin.
+
+**Inline CSS** includes the following fix.
+
+==== The fullpage header and footer were not included when getting HTML content with inline CSS
+// #TINY-14410
+
+Previously, the **Inline CSS** plugin's `getContent` API did not return a complete HTML document when the **Full Page HTML** plugin was enabled. The surrounding document header and footer were omitted, which made the output unsuitable for use cases such as generating email-ready documents.
+
+In {productname} {release-version}, the **Inline CSS** plugin detects when the **Full Page HTML** plugin is enabled and includes the document header and footer in its output. The `getContent` API now returns a full HTML document as expected.
+
+For information on the **Inline CSS** plugin, see: xref:inline-css.adoc[Inline CSS].
+
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following improvement and fixes.
+
+==== An error could be reported when aborting and starting a new conversation
+// #TINY-14381
+
+Previously, aborting a streamed AI response and starting a new conversation could report an error. Aborting the response triggered a document delete operation that sometimes failed.
+
+In {productname} {release-version}, the document is no longer deleted when an AI request is aborted. Aborting a response and starting a new conversation no longer reports this error.
+
+==== AI response HTML is now filtered through the editor's content pipeline before being displayed in preview
+// #TINY-14344
+
+Previously, content shown in the AI preview was not filtered by the editor's content rules until it was applied. With a strict schema configuration, a change could appear in the preview, be accepted, and then be removed when applied to the editor, so the final result did not match the preview.
+
+In {productname} {release-version}, AI response HTML is filtered through the editor's content pipeline before it is shown in the preview. The preview now reflects what will be added to the editor, and if filtering removes all of the content the user is notified.
+
+==== AI Chat state was lost if the sidebar was closed before the model started responding
+// #TINY-14222
+
+Previously, the state of an AI Chat conversation could be lost if the Chat sidebar was closed before the model began responding to a prompt. The plugin recorded which sidebar started a response only once the response began, so closing the sidebar beforehand left no record. Reopening the sidebar then reset the conversation and any pending preview.
+
+In {productname} {release-version}, the sidebar is recorded as soon as the prompt is sent. Closing and reopening the Chat sidebar before the response is ready no longer resets the conversation.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[improvements]]
 == Improvements
@@ -49,6 +93,13 @@ The following premium plugin updates were released alongside {productname} {rele
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== Pressing Tab or Shift+Tab on an open menu now closes it and moves focus to the next or previous focusable element
+// #TINY-13341
+
+Previously, pressing Tab or Shift+Tab inside an open dropdown menu cycled focus through the menu items instead of closing the menu. This behavior did not align with accessibility guidelines, which recommend that the Tab key close the menu and move focus to the next or previous element in the tab order. As a result, keyboard navigation through menus was less predictable for users who rely on the keyboard or assistive technologies.
+
+In {productname} {release-version}, pressing Tab or Shift+Tab on an open menu now closes the menu and moves focus to the next or previous focusable element in the tab order. This makes keyboard navigation more predictable and aligns dropdown menu behavior with accessibility guidelines.
 
 === The editor resize handle now uses browser pointer events for more reliable behavior across different integration environments
 // #TINY-14241
@@ -100,6 +151,20 @@ In {productname} {release-version}, the resize handle uses modern browser pointe
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== Some annotated text was hidden when printed even though it should have been visible
+// #TINY-14296
+
+Previously, text marked by annotation features, such as spelling indicators, could be hidden when a page was printed. The annotations were wrapped in internal placeholder elements that were hidden during printing, which also hid the text inside them.
+
+In {productname} {release-version}, placeholder elements that act only as wrappers now hide their styling rather than their contents when printing. Annotation highlights remain hidden in the printed output, while the underlying text is printed as expected.
+
+=== Worked around a Chromium bug where clicking on the right of an `li` could fail
+// #TINY-13886
+
+Previously, clicking to the right of the content in a list item could place the cursor at the start of the item instead of at the location that was clicked. This was caused by a Chromium browser bug that moved the caret to an incorrect position.
+
+In {productname} {release-version}, a targeted workaround detects this case and corrects the caret position. Clicking to the right of a list item now places the cursor where expected.
 
 
 [[security-fixes]]

@@ -39,6 +39,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Inline CSS
+
+The {productname} {release-version} release includes an accompanying release of the **Inline CSS** premium plugin.
+
+**Inline CSS** includes the following fix.
+
+==== The fullpage header and footer were not included when getting HTML content with inline CSS
+// #TINY-14410
+
+Previously, the **Inline CSS** plugin's `getContent` API did not return a complete HTML document when the **Full Page HTML** plugin was enabled. The surrounding document header and footer were omitted, which made the output unsuitable for use cases such as generating email-ready documents.
+
+In {productname} {release-version}, the **Inline CSS** plugin detects when the **Full Page HTML** plugin is enabled and includes the document header and footer in its output. The `getContent` API now returns a full HTML document as expected.
+
+For information on the **Inline CSS** plugin, see: xref:inline-css.adoc[Inline CSS].
+
 === TinyMCE AI
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.

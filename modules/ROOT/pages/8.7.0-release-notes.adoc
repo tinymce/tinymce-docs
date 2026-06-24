@@ -28,6 +28,14 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== TinyMCE AI
+
+Starting with {productname} {release-version}, the **TinyMCE AI** plugin is available to self-hosted customers for the first time. Previously, the plugin could only be loaded from the {cloudname} CDN.
+
+From this release, the `+tinymceai+` plugin is included in the `+tinymce-premium+` NPM package and is available as a standalone addon `.zip` download from the link:{accountpageurl}[{accountpage}]. The plugin is distributed only as an addon and is not included in any {productname} ZIP bundle.
+
+A self-hosted plugin still connects to an AI service. Point it at the hosted {cloudname} AI service, or deploy the xref:tinymceai-on-premises.adoc[self-hosted AI service] to keep content within the host network. For installation steps, see: xref:npm-projects.adoc#install-premium-plugins[Quick start: {productname} from NPM or Yarn]. For plugin configuration, see: xref:tinymceai.adoc[TinyMCE AI].
+
 // === <Premium plugin name 1> <Premium plugin name 1 version>
 
 // The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

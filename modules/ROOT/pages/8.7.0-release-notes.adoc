@@ -73,6 +73,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following improvements and fixes and additions.
 
+==== Some tooltips now appear only when the content is too long to display
+// #TINY-14072
+
+Previously, some tooltips in the TinyMCE AI interface were shown whenever their trigger condition was met, even when the content was already fully visible. This added unnecessary visual clutter.
+
+In {productname} {release-version}, these tooltips appear only when the content is truncated because it is too long to display in full. This reduces unnecessary tooltips and keeps the interface less cluttered.
+
 ==== White space in user prompts was not rendered correctly in the AI Chat history
 // #TINY-14448
 

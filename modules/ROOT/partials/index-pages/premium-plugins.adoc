@@ -1,4 +1,8 @@
-This section lists the premium plugins provided by {productname}.
+This section lists the premium plugins available for {productname}. These plugins extend the core editor with advanced capabilities for enterprise use cases, enhanced workflows, and additional functionality beyond the open source set.
+
+=== AI & Writing Assistance
+
+This plugin category includes features that use AI to assist with writing, editing, and content generation. 
 
 include::partial$misc/admon-plugins-tinymce-ai-feature.adoc[]
 
@@ -7,206 +11,244 @@ include::partial$misc/admon-plugins-tinymce-ai-feature.adoc[]
 
 a|
 [.lead]
-xref:a11ychecker.adoc[Accessibility Checker]
-
-Checks the contents of the editor for WCAG & Section 508 accessibility problems.
-
-a|
-[.lead]
-xref:advanced-typography.adoc[Advanced Typography]
-
-Replace common typewriter-style characters with their professional typesetter equivalents.
-
-a|
-[.lead]
-xref:ai.adoc[AI Assistant (legacy)]
+xref:ai.adoc[AI Assistant (legacy)] _(Premium)_
 
 Earlier plugin for sending queries to registered AI APIs and inserting results into the document. New integrations are documented under xref:tinymceai-introduction.adoc[TinyMCE AI].
 
 a|
 [.lead]
-xref:casechange.adoc[Case Change]
-
-Change the case of text.
-
-a|
-[.lead]
-xref:checklist.adoc[Checklist]
-
-Add checklists to your content.
-
-a|
-[.lead]
-xref:introduction-to-tiny-comments.adoc[Comments]
-
-The {productname} Comments plugin.
-
-a|
-[.lead]
-xref:advcode.adoc[Enhanced Code Editor]
-
-How to setup {productname}’s Enhanced Code Editor plugin.
-
-a|
-[.lead]
-xref:introduction-to-mediaembed.adoc[Enhanced Media Embed]
-
-Add rich media previews inside {productname}.
-
-a|
-[.lead]
-xref:advtable.adoc[Enhanced Tables]
-
-Add enhanced functionality to tables.
-
-a|
-[.lead]
-xref:exportword.adoc[Export to Word]
-
-Exports editor content into `.docx` file format and saves to local disk.
-
-a|
-[.lead]
-xref:exportpdf.adoc[Export to PDF]
-
-Export and generate content from {productname} into `document.pdf` format.
-
-a|
-[.lead]
-xref:fullpagehtml.adoc[Full Page HTML]
-
-Edit document metadata and properties including title, keywords, and description via dialog interface.
-
-a|
-[.lead]
-xref:footnotes.adoc[Footnotes]
-
-Insert intext footnotes and add footnote entries.
-
-a|
-[.lead]
-xref:formatpainter.adoc[Format Painter]
-
-Apply formats to multiple pieces of text.
-
-a|
-[.lead]
-xref:inline-css.adoc[Inline CSS]
-
-Turn {productname} documents into single files with inline CSS, ready, in particular, for sending as HTML-formatted emails.
-
-a|
-[.lead]
-xref:importword.adoc[Import from Word]
-
-Import `.docx` (Word documents) or `.dotx` (Word templates) files into the editor.
-
-a|
-[.lead]
-xref:editimage.adoc[Image Editing]
-
-Image Editing features for {productname}.
-a|
-[.lead]
-xref:linkchecker.adoc[Link Checker]
-
-Validate links, as they are typed.
-
-a|
-[.lead]
-xref:math.adoc[Math]
-
-Enable insertion of math formulas using Latex or MathML markup.
-
-a|
-[.lead]
-xref:markdown.adoc[Markdown]
-
-Enable conversion of pure markdown on paste.
-
-a|
-[.lead]
-xref:uploadcare.adoc[Media Optimizer Powered by Uploadcare]
-
-Image and video optimization features for {productname}.
-
-a|
-[.lead]
-xref:mentions.adoc[Mentions]
-
-Enable @mention functionality.
-
-a|
-[.lead]
-xref:mergetags.adoc[Merge Tags]
-
-Enable adding Merge Tags to content.
-
-a|
-[.lead]
-xref:moxiemanager.adoc[MoxieManager]
-
-File and image management plugin and service
-
-a|
-[.lead]
-xref:pageembed.adoc[Page Embed]
-
-Insert iframe into the content.
-
-a|
-[.lead]
-xref:permanentpen.adoc[Permanent Pen]
-
-Apply formats while typing.
-
-a|
-[.lead]
-xref:introduction-to-powerpaste.adoc[PowerPaste]
-
-Copy and paste content from Microsoft Word, Microsoft Excel, Google Docs, and HTML.
-
-a|
-[.lead]
-xref:revisionhistory.adoc[Revision History]
-
-Easily view document changes and restore previous versions.
-
-a|
-[.lead]
-xref:introduction-to-tiny-spellchecker.adoc[Spell Checker]
-
-Check spelling as-you-type in {productname}.
-
-a|
-[.lead]
-xref:autocorrect.adoc[Spelling Autocorrect]
+xref:autocorrect.adoc[Spelling Autocorrect] _(Premium)_
 
 Add autocorrection of common typos and spelling errors as well as capitalization correction to {productname}.
 
 a|
 [.lead]
-xref:suggestededits.adoc[Suggested Edits]
+xref:introduction-to-tiny-spellchecker.adoc[Spell Checker] _(Premium)_
+
+Check spelling as-you-type in {productname}.
+
+|===
+
+=== Collaboration & Workflow
+
+Tools that support team-based editing, feedback, and content management 
+
+[cols="1,1"]
+|===
+
+a|
+[.lead]
+xref:introduction-to-tiny-comments.adoc[Comments] _(Premium)_
+
+The {productname} Comments plugin allows users to add and manage comments directly within the content.
+
+a|
+[.lead]
+xref:mentions.adoc[Mentions] _(Premium)_
+
+Enables @mention functionality within the content.
+
+a|
+[.lead]
+xref:mergetags.adoc[Merge Tags] _(Premium)_
+
+Facilitates the insertion of dynamic content through Merge Tags.
+
+a|
+[.lead]
+xref:revisionhistory.adoc[Revision History] _(Premium)_
+
+Tracks document changes over time and allows users to view and restore previous versions.
+
+a|
+[.lead]
+xref:suggestededits.adoc[Suggested Edits] _(Premium)_
 
 Collaborate with multiple users on a document by drafting edits, providing feedback, and reviewing suggestions.
 
-a|
-[.lead]
-xref:advanced-templates.adoc[Templates]
+|===
 
-Create and edit complex templates in {productname}.
+=== Content Creation & Formatting
 
-a|
-[.lead]
-xref:tableofcontents.adoc[Table of Contents]
+Tools for creating, structuring, and styling content to improve readability, consistency, and overall document presentation.
 
-Insert a simple Table of Contents into the {productname} editor.
+[cols="1,1"]
+|===
 
 a|
 [.lead]
-xref:tinydrive-introduction.adoc[Tiny Drive]
+xref:advanced-typography.adoc[Advanced Typography] _(Premium)_
 
-Cloud-based file and image management for {productname}.
+Replace common typewriter-style characters with their professional typesetter equivalents for improved typography.
+
+a|
+[.lead]
+xref:casechange.adoc[Case Change] _(Premium)_
+
+Change the capitalization of selected text.
+
+a|
+[.lead]
+xref:checklist.adoc[Checklist] _(Premium)_
+
+Add interactive checklists to {productname} for task management and to-do lists.
+
+a|
+[.lead]
+xref:footnotes.adoc[Footnotes] _(Premium)_
+
+Enables insertion and management of in-text footnotes within documents.
+
+a|
+[.lead]
+xref:formatpainter.adoc[Format Painter] _(Premium)_
+
+Copies formatting from one selection and applies it to another.
+
+a|
+[.lead]
+xref:math.adoc[Math] _(Premium)_
+
+Enable insertion of math formulas using LaTeX or MathML markup.
+
+a|
+[.lead]
+xref:markdown.adoc[Markdown] _(Premium)_
+
+Enables support for pasting and converting Markdown content into formatted output.
+
+a|
+[.lead]
+xref:tableofcontents.adoc[Table of Contents] _(Premium)_
+
+Inserts an automatically generated Table of Contents into the {productname} editor.
+
+a|
+[.lead]
+xref:permanentpen.adoc[Permanent Pen] _(Premium)_
+
+Applies formatting continuously while typing without needing re-selection.
+
+a|
+[.lead]
+xref:introduction-to-powerpaste.adoc[PowerPaste] _(Premium)_
+
+Pastes content from external sources such as Microsoft Word, Excel, and Google Docs while preserving or cleaning formatting.
+
+|===
+
+=== Media, Links & Embeds
+
+Tools for inserting and managing external content such as images, videos, links, and embedded media to enrich documents and connect information sources.
+
+[cols="1,1"]
+|===
+
+a|
+[.lead]
+xref:introduction-to-mediaembed.adoc[Enhanced Media Embed] _(Premium)_
+
+Adds rich media previews inside {productname} for embedded content such as videos.
+
+a|
+[.lead]
+xref:editimage.adoc[Image Editing] _(Premium)_
+
+Provides in-editor image editing capabilities such as cropping, resizing, and applying filters.
+
+a|
+[.lead]
+xref:linkchecker.adoc[Link Checker] _(Premium)_
+
+Automatically validates links as they are added or edited to ensure they are functional.
+
+a|
+[.lead]
+xref:uploadcare.adoc[Media Optimizer Powered by Uploadcare] _(Premium)_
+
+Optimizes uploaded images and videos for performance and delivery.
+
+a|
+[.lead]
+xref:moxiemanager.adoc[MoxieManager] _(Premium)_
+
+Provides file and image management capabilities within the editor.
+
+a|
+[.lead]
+xref:pageembed.adoc[Page Embed] _(Premium)_
+
+Allows embedding external web pages or iframes directly into content.
+
+a|
+[.lead]
+xref:tinydrive-introduction.adoc[Tiny Drive] _(Premium)_
+
+Provides cloud-based file and image management for {productname}.
+
+|===
+
+=== Import, Export & Document Control
+
+Features for handling document exchange, format conversion, and maintaining structure and consistency across different systems and workflows.
+
+[cols="1,1"]
+|===
+
+a|
+[.lead]
+xref:a11ychecker.adoc[Accessibility Checker] _(Premium)_
+
+Checks the contents of the editor for WCAG & Section 508 accessibility problems.
+
+a|
+[.lead]
+xref:advcode.adoc[Enhanced Code Editor] _(Premium)_
+
+Provides an improved code editing experience within the editor for working with source content.
+
+a|
+[.lead]
+xref:advtable.adoc[Enhanced Tables] _(Premium)_
+
+Adds advanced table features such as sorting, filtering, and cell formatting.
+
+a|
+[.lead]
+xref:exportpdf.adoc[Export to PDF] _(Premium)_
+
+Export and generate content from {productname} into `.pdf` format.
+
+a|
+[.lead]
+xref:exportword.adoc[Export to Word] _(Premium)_
+
+Exports editor content into `.docx` file format.
+
+a|
+[.lead]
+xref:fullpagehtml.adoc[Full Page HTML] _(Premium)_
+
+Edit document metadata and properties including title, keywords, and description via dialog interface.
+
+a|
+[.lead]
+xref:importword.adoc[Import from Word] _(Premium)_
+
+Import `.docx` (Word documents) or `.dotx` (Word templates) files into the editor.
+
+a|
+[.lead]
+xref:inline-css.adoc[Inline CSS] _(Premium)_
+
+Converts content into a single HTML file with inline styles, optimized for email and portability.
+
+a|
+[.lead]
+xref:advanced-templates.adoc[Templates] _(Premium)_
+
+Provides the ability to create and edit structured document templates in {productname}.
+|===
 
 // Dummy table cell.
 // 1. Remove the inline comment markup pre-pending this
@@ -214,5 +256,6 @@ Cloud-based file and image management for {productname}.
 //    odd.
 // 2. Prepend the inline comment markup to this element
 //    when the number of cells in the table is even.
-a|
-|===
+
+
+

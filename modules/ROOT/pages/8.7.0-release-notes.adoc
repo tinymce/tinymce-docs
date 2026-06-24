@@ -73,6 +73,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following improvements and fixes and additions.
 
+==== Reduced the spacing in the AI review suggestion cards
+// #TINY-14279
+
+Previously, the review suggestion cards in the AI Review sidebar used more padding than intended, which made the card layout look inconsistent with the design.
+
+In {productname} {release-version}, the spacing between the card header and body has been reduced to match the design. The review suggestion cards now have a more compact and consistent appearance.
+
 ==== Editor content was visible through the AI suggestions preview when using the premium snow skin
 // #TINY-14189
 

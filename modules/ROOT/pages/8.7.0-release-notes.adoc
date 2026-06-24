@@ -232,6 +232,13 @@ In {productname} {release-version}, indentation is applied to every cell in the 
 
 // CCFR here.
 
+=== CSS custom property names and color values in the style attribute were lowercased when parsed
+// #TINY-11524
+
+Previously, the {productname} style parser lowercased CSS custom property names (such as `--MyColor`) and `color` and `background-color` values when reading the `style` attribute. This altered case-sensitive values, including CSS custom properties, template placeholders such as `{{FooBar}}`, and hex colors such as `#AABBCC`, so the affected styling sometimes did not render as authored.
+
+In {productname} {release-version}, the style parser preserves the original case of CSS custom property names and `color` and `background-color` values. Standard property names are still lowercased, and other processing, such as RGB-to-hex conversion, shorthand merging, and security filtering, is unchanged. Case-sensitive colors and custom properties now stay exactly as authored.
+
 === Focused links in dark mode had the same text color as the background
 // #TINY-14264
 

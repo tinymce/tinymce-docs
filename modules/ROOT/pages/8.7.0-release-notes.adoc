@@ -28,19 +28,6 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== TinyMCE AI
-
-The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
-
-**TinyMCE AI** includes the following fix.
-
-==== Prompts that unwrap nested list items now preserve content
-// #TINY-14488
-
-Previously, when the model unwrapped nested blocks into top-level blocks, such as converting `+<li>+` items into `+<p>+` paragraphs, it reused the original element IDs. The diffing logic treated the reused IDs as updates to the nested elements, so some prompts intermittently removed the content instead of unwrapping it. A reused ID is now treated as an existing block only when it points to a top-level element; otherwise it is processed as a new element. Edits that unwrap nested elements now apply reliably and preserve content.
-
-For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
-
 // === <Premium plugin name 1> <Premium plugin name 1 version>
 
 // The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
@@ -72,6 +59,18 @@ For information on the **Inline CSS** plugin, see: xref:inline-css.adoc[Inline C
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
 **TinyMCE AI** includes the following improvements and fixes and additions.
+
+==== The Review sidebar no longer shows "No improvements found" after a review is applied
+// #TINY-14198
+
+Previously, if the Review sidebar was hidden while the model was still responding and the resulting suggestions were then applied or skipped from the Preview footer, the review state was not reset. Reopening the Review sidebar showed "Review complete — no improvements found" instead of the review list, even though the review had finished. The only way to recover the review options was to reload the editor.
+
+In {productname} {release-version}, the review state now resets correctly after suggestions are applied or skipped from the Preview footer while the sidebar is hidden. Reopening the Review sidebar shows the review list again, so further reviews can be run without reloading the editor.
+
+==== Prompts that unwrap nested list items now preserve content
+// #TINY-14488
+
+Previously, when the model unwrapped nested blocks into top-level blocks, such as converting `+<li>+` items into `+<p>+` paragraphs, it reused the original element IDs. The diffing logic treated the reused IDs as updates to the nested elements, so some prompts intermittently removed the content instead of unwrapping it. A reused ID is now treated as an existing block only when it points to a top-level element; otherwise it is processed as a new element. Edits that unwrap nested elements now apply reliably and preserve content.
 
 ==== Switching back to an earlier conversation now continues that conversation
 // #TINY-14487

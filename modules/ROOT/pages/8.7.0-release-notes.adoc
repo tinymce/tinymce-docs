@@ -43,7 +43,16 @@ The following premium plugin updates were released alongside {productname} {rele
 
 The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
 
-**Suggested Edits** includes the following fix.
+**Suggested Edits** includes the following improvements and additions.
+
+==== AI-assisted suggestions can display an AI badge
+// #TINY-14303
+// #TINY-14304
+// #TINY-14479
+
+Suggested Edits now records edits made with the xref:tinymceai.adoc[{productname} AI] plugin as AI-assisted. When the new xref:suggestededits.adoc#suggestededits_ai_attribution[`+suggestededits_ai_attribution+`] option is enabled, an AI badge appears on the cards of those edits.
+
+The `+suggestededits_model+` schema is now version 2. Models saved with version 1 are migrated automatically when loaded.
 
 ==== Suggested Edits API should not be tied to the existence of the suggested edits toolbar button
 // #TINYMCE-13256

@@ -73,6 +73,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following improvements and fixes and additions.
 
+==== The AI preview did not match the editor content structure, causing style rendering differences
+// #TINY-14328
+
+Previously, the AI suggestions preview rendered content inside a wrapper element within the preview iframe body, rather than directly into the iframe body as the editor does. Because the preview and editor had different structures, injected styles could render differently. Absolutely positioned elements and body-level CSS rules did not always apply the same way, which could cause glitches such as misaligned table headers and footers.
+
+In {productname} {release-version}, the preview inserts content directly into the iframe body so that its structure mirrors the editor. Injected styles now produce the same visual result in both, and the preview renders consistently with the editor.
+
 ==== Bulk action buttons when reviewing AI suggestions now reflect the current progress
 // #TINY-14228
 

@@ -45,7 +45,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following addition.
 
-==== New `tinymceai_tool_data_callback` option to customize the Model Context Protocol (MCP) tool status message
+==== New `tinymceai_tool_data_callback` option to customize the status message shown while a Model Context Protocol (MCP) tool runs
 // #TINYMCE-14474
 
 The **TinyMCE AI** plugin now supports the xref:tinymceai.adoc#tinymceai_tool_data_callback[`+tinymceai_tool_data_callback+`] option. This function runs when an MCP server sends an `+mcp-tool-result+` or `+mcp-tool-notification+` event during a streaming response. The function should return a string that would be displayed as the status message shown in the Chat sidebar while the AI model calls an MCP tool.

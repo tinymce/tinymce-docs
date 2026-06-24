@@ -73,6 +73,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following improvements and fixes and additions.
 
+==== Replaced the icon-only buttons in the AI suggestion preview with labeled Apply and Skip buttons
+// #TINY-14369
+
+Previously, the AI suggestion preview used icon-only accept and reject buttons, so the meaning of each action relied on the icon and its tooltip. This made the actions ambiguous and harder to discover.
+
+In {productname} {release-version}, the AI suggestion preview uses labeled buttons: a primary **Apply** button to accept a suggestion and a secondary **Skip** button to reject it. The clearer labels make each action obvious and improve accessibility.
+
 ==== The AI suggestions diff overlay did not always maintain alignment when resizing the browser window
 // #TINY-14366
 

@@ -169,6 +169,17 @@ In {productname} {release-version}, the resize handle uses modern browser pointe
 
 {productname} {release-version} also includes the following addition<s>:
 
+=== New `tinymce.dom.AriaAnnouncer` API for screen reader announcements
+// #TINY-12791
+
+{productname} {release-version} adds the `+tinymce.dom.AriaAnnouncer+` API for sending messages to screen readers through an `+aria-live+` region without shifting focus. The `+announce+` method accepts a message and an optional `+{ assertive }+` setting. Integrators can use it to announce formatting changes, for example by listening to the `+FormatApply+` and `+FormatRemove+` events.
+
+[source,js]
+----
+tinymce.dom.AriaAnnouncer.announce('Bold on');
+tinymce.dom.AriaAnnouncer.announce('Error occurred', { assertive: true });
+----
+
 // === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 

@@ -73,6 +73,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following improvements and fixes and additions.
 
+==== Bulk action buttons when reviewing AI suggestions now reflect the current progress
+// #TINY-14228
+
+Previously, when reviewing AI suggestions, the bulk action buttons always showed **Skip remaining** and **Apply remaining**, even before any suggestion had been applied or skipped. This was confusing because no decisions had been made yet.
+
+In {productname} {release-version}, the bulk action buttons reflect the current progress. They show **Skip all** and **Apply all** before the first decision, then switch to **Skip remaining** and **Apply remaining** after at least one suggestion has been applied or skipped. This behavior is consistent across the Chat and Quick Actions flows.
+
 ==== Some tooltips now appear only when the content is too long to display
 // #TINY-14072
 

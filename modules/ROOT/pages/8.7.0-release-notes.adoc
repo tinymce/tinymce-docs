@@ -28,6 +28,19 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Prompts that unwrap nested list items now preserve content
+// #TINY-14488
+
+Previously, when the model unwrapped nested blocks into top-level blocks, such as converting `+<li>+` items into `+<p>+` paragraphs, it reused the original element IDs. The diffing logic treated the reused IDs as updates to the nested elements, so some prompts intermittently removed the content instead of unwrapping it. A reused ID is now treated as an existing block only when it points to a top-level element; otherwise it is processed as a new element. Edits that unwrap nested elements now apply reliably and preserve content.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 // === <Premium plugin name 1> <Premium plugin name 1 version>
 
 // The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

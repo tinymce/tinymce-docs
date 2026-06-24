@@ -28,6 +28,19 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Image edits now target the correct image in content with multiple images
+// #TINY-14454
+
+Previously, images sent to the model were not uniquely identified, so a prompt referencing a specific image could mistake one image for another and apply changes, such as alt text updates, to the wrong image. **TinyMCE AI** now uniquely tags each `+img+` elements so they are less likely to be mistaken. Image edits now apply to the intended image, even when the content contains multiple images.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 // === <Premium plugin name 1> <Premium plugin name 1 version>
 
 // The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
@@ -39,11 +52,26 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Inline CSS
+
+The {productname} {release-version} release includes an accompanying release of the **Inline CSS** premium plugin.
+
+**Inline CSS** includes the following fix.
+
+==== The fullpage header and footer were not included when getting HTML content with inline CSS
+// #TINY-14410
+
+Previously, the **Inline CSS** plugin's `getContent` API did not return a complete HTML document when the **Full Page HTML** plugin was enabled. The surrounding document header and footer were omitted, which made the output unsuitable for use cases such as generating email-ready documents.
+
+In {productname} {release-version}, the **Inline CSS** plugin detects when the **Full Page HTML** plugin is enabled and includes the document header and footer in its output. The `getContent` API now returns a full HTML document as expected.
+
+For information on the **Inline CSS** plugin, see: xref:inline-css.adoc[Inline CSS].
+
 === TinyMCE AI
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following improvement.
+**TinyMCE AI** includes the following improvements and fixes and additions.
 
 ==== Replaced the icon-only buttons in the AI suggestion preview with labeled Apply and Skip buttons
 // #TINY-14369
@@ -51,6 +79,69 @@ The {productname} {release-version} release includes an accompanying release of 
 Previously, the AI suggestion preview used icon-only accept and reject buttons, so the meaning of each action relied on the icon and its tooltip. This made the actions ambiguous and harder to discover.
 
 In {productname} {release-version}, the AI suggestion preview uses labeled buttons: a primary **Apply** button to accept a suggestion and a secondary **Skip** button to reject it. The clearer labels make each action obvious and improve accessibility.
+
+==== The AI suggestions diff overlay did not always maintain alignment when resizing the browser window
+// #TINY-14366
+
+Previously, after the AI Chat generated new content, resizing the browser window could leave the AI suggestions diff overlay misaligned with the underlying text. On some layouts the highlights became detached from the content they marked, which made the suggestions preview look broken.
+
+In {productname} {release-version}, the preview overlay tracks a wider set of size changes when the window is resized. The diff overlay now stays aligned with the generated content, which keeps the AI suggestions preview accurate.
+
+==== Reduced the spacing in the AI review suggestion cards
+// #TINY-14279
+
+Previously, the review suggestion cards in the AI Review sidebar used more padding than intended, which made the card layout look inconsistent with the design.
+
+In {productname} {release-version}, the spacing between the card header and body has been reduced to match the design. The review suggestion cards now have a more compact and consistent appearance.
+
+==== Editor content was visible through the AI suggestions preview when using the premium snow skin
+// #TINY-14189
+
+Previously, when using the premium Snow skin, the AI suggestions preview overlay had a transparent background. The underlying editor content showed through the preview, which made it difficult to read and evaluate AI-generated suggestions.
+
+In {productname} {release-version}, the AI suggestions preview uses a solid white background in the Snow skin. Suggestions now appear on a clean, unobstructed background.
+
+==== Keyboard navigation in the preview footer now focuses the currently active view mode instead of always the first one
+// #TINY-14272
+
+Previously, moving keyboard focus to the preview footer in the AI Chat always landed on the first view mode option rather than the one that was currently active. This made keyboard navigation between the Diff mode and Preview tabs less predictable.
+
+In {productname} {release-version}, focus moves to the currently active view mode in the preview footer. Keyboard navigation now reflects the active selection.
+
+==== A confirmation dialog now appears before navigating away from unresolved suggestions, such as when switching to another sidebar or opening a sidebar during quick actions
+// #TINY-14236
+
+Previously, switching between the AI Chat and Review sidebars, or opening a sidebar during quick actions, while AI suggestions were still unresolved discarded those suggestions and any applied changes permanently. A single accidental click could cause lost progress.
+
+In {productname} {release-version}, a confirmation dialog appears before navigating away from unresolved suggestions. The action proceeds only after it is confirmed, which prevents the accidental loss of in-progress changes.
+
+==== Two tooltips were shown at the same time when hovering over context sources or conversation titles that were shortened with an ellipsis in Safari
+// #TINY-14032
+
+Previously, in Safari, hovering over text that was shortened with an ellipsis, such as AI Chat conversation titles or context sources, could display two tooltips at once: the browser's native tooltip and the plugin's custom tooltip.
+
+In {productname} {release-version}, only the native tooltip is shown for these elements in Safari. A single tooltip now appears on hover as expected.
+
+==== An error could be reported when aborting and starting a new conversation
+// #TINY-14381
+
+Previously, aborting a streamed AI response and starting a new conversation could report an error. Aborting the response triggered a document delete operation that sometimes failed.
+
+In {productname} {release-version}, the document is no longer deleted when an AI request is aborted. Aborting a response and starting a new conversation no longer reports this error.
+
+==== AI response HTML is now filtered through the editor's content pipeline before being displayed in preview
+// #TINY-14344
+
+Previously, content shown in the AI preview was not filtered by the editor's content rules until it was applied. With a strict schema configuration, a change could appear in the preview, be accepted, and then be removed when applied to the editor, so the final result did not match the preview.
+
+In {productname} {release-version}, AI response HTML is filtered through the editor's content pipeline before it is shown in the preview. The preview now reflects what will be added to the editor, and if filtering removes all of the content the user is notified.
+
+==== AI Chat state was lost if the sidebar was closed before the model started responding
+// #TINY-14222
+
+Previously, the state of an AI Chat conversation could be lost if the Chat sidebar was closed before the model began responding to a prompt. The plugin recorded which sidebar started a response only once the response began, so closing the sidebar beforehand left no record. Reopening the sidebar then reset the conversation and any pending preview.
+
+In {productname} {release-version}, the sidebar is recorded as soon as the prompt is sent. Closing and reopening the Chat sidebar before the response is ready no longer resets the conversation.
 
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 
@@ -64,6 +155,20 @@ For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE A
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== Pressing Tab or Shift+Tab on an open menu now closes it and moves focus to the next or previous focusable element
+// #TINY-13341
+
+Previously, pressing Tab or Shift+Tab inside an open dropdown menu cycled focus through the menu items instead of closing the menu. This behavior did not align with accessibility guidelines, which recommend that the Tab key close the menu and move focus to the next or previous element in the tab order. As a result, keyboard navigation through menus was less predictable for users who rely on the keyboard or assistive technologies.
+
+In {productname} {release-version}, pressing Tab or Shift+Tab on an open menu now closes the menu and moves focus to the next or previous focusable element in the tab order. This makes keyboard navigation more predictable and aligns dropdown menu behavior with accessibility guidelines.
+
+=== The editor resize handle now uses browser pointer events for more reliable behavior across different integration environments
+// #TINY-14241
+
+Previously, the editor resize handle relied on an overlay element to capture pointer movement, which required raising the editor's stacking order. This caused the editor to appear on top of the floating sidebar used by the TinyMCE AI plugin while the editor was being resized.
+
+In {productname} {release-version}, the resize handle uses modern browser pointer events instead. This removes the need for the overlay element and the raised stacking order, providing more reliable resizing across different integration environments and resolving the overlap with the floating sidebar.
 
 
 [[additions]]
@@ -104,11 +209,52 @@ For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE A
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== Indentation is now applied to all selected table cells
+// #TINY-14370
+
+Previously, applying indentation with multiple table cells selected affected only the cell where the pointer was released. The action used the browser's native selection rather than the editor's cell selection, so the remaining selected cells were left unchanged.
+
+In {productname} {release-version}, indentation is applied to every cell in the selection.
+
 // === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 
 // CCFR here.
 
+=== Focused links in dark mode had the same text color as the background
+// #TINY-14264
+
+Previously, in dark mode, a focused or selected link was displayed with the same text color as the background. This made the link text impossible to read while it was selected.
+
+In {productname} {release-version}, selected link text in dark mode is displayed in white. Links remain readable when focused, which improves accessibility in dark mode.
+
+=== Context toolbar with position 'line' was not repositioning to the opposite side when overflowing the viewport
+// #TINY-14376
+
+Previously, a context toolbar configured with `position: 'line'`, such as a quickbar, was not repositioned when it overflowed the edge of the viewport. Under these conditions the toolbar could be cut off, which prevented users from clicking its buttons.
+
+In {productname} {release-version}, a context toolbar that uses `position: 'line'` now flips to the opposite side when there is not enough space. The toolbar remains fully visible and usable in constrained layouts.
+
+=== Some annotated text was hidden when printed even though it should have been visible
+// #TINY-14296
+
+Previously, text marked by annotation features, such as spelling indicators, could be hidden when a page was printed. The annotations were wrapped in internal placeholder elements that were hidden during printing, which also hid the text inside them.
+
+In {productname} {release-version}, placeholder elements that act only as wrappers now hide their styling rather than their contents when printing. Annotation highlights remain hidden in the printed output, while the underlying text is printed as expected.
+
+=== Worked around a Chromium bug where clicking on the right of an `li` could fail
+// #TINY-13886
+
+Previously, clicking to the right of the content in a list item could place the cursor at the start of the item instead of at the location that was clicked. This was caused by a Chromium browser bug that moved the caret to an incorrect position.
+
+In {productname} {release-version}, a targeted workaround detects this case and corrects the caret position. Clicking to the right of a list item now places the cursor where expected.
+
+=== Using the undo keyboard shortcut did not restore editor selection correctly
+// #TINY-14255
+
+Previously, pressing the undo keyboard shortcut (Ctrl+Z, or Cmd+Z on macOS) after deleting a selection could leave the cursor in the wrong position. An earlier change registered an extra undo step whenever Ctrl or Cmd was pressed, so the step was recorded before the deleted content was restored.
+
+In {productname} {release-version}, {productname} registers that undo step only when Ctrl or Cmd is pressed together with Backspace or Delete, rather than on every Ctrl or Cmd key press. Undoing the deletion of a selection now restores both the content and the original selection correctly.
 
 [[security-fixes]]
 == Security fixes

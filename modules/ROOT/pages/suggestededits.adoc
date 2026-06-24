@@ -27,7 +27,7 @@ The {pluginname} plugin keeps track of every edit made to the document by the cu
 
 The {pluginname} model is a JSON object representing the document along with all unreviewed edits and feedback. The model must be kept in sync with the editor content and loaded into the editor at the same time as the content.
 
-The structure of the model is not documented and should not be relied upon.
+The structure of the model is not documented and should not be relied upon. Models saved by earlier versions of the plugin continue to load and are upgraded automatically.
 
 The model can be retrieved from the plugin using the xref:#get_model[`+getModel+`] API, saved externally alongside the document, and loaded into the editor with the xref:#suggestededits_model[`+suggestededits_model+`] option. This ensures that the document and the model are in sync and every user's contributions are tracked correctly. If the model and content are out of sync when the editor loads, the difference between them will be included in the next edit by the current user. If a model is not provided in the editor configuration or is set to `+undefined+`, the plugin will generate a new model from the initial content.
 
@@ -58,6 +58,8 @@ Replaced content is represented as both added and removed content, and indicates
 === Sidebar
 
 Each suggested edit is listed as a card in the sidebar and color coded by the type of change. Each card shows a contextual description of the content, along with the user who made the suggestion, when the edit was made, and any feedback provided on that suggestion.
+
+Edits made with the xref:tinymceai.adoc[{productname} AI] plugin are recorded as AI-assisted. When the xref:#suggestededits_ai_attribution[`+suggestededits_ai_attribution+`] option is enabled, an AI badge appears on their cards.
 
 When selected, a suggestion can be handled in the following ways:
 
@@ -128,6 +130,8 @@ include::partial$configuration/suggestededits_content.adoc[leveloffset=+1]
 include::partial$configuration/suggestededits_access.adoc[leveloffset=+1]
 
 include::partial$configuration/suggestededits_auto_approve.adoc[leveloffset=+1]
+
+include::partial$configuration/suggestededits_ai_attribution.adoc[leveloffset=+1]
 
 include::partial$plugins/suggestededits-open-view.adoc[leveloffset=+1]
 

@@ -1,6 +1,7 @@
 = {pluginname} plugin
 :plugincode: exportword
 :pluginname: Export to Word
+:export-type: word
 :pluginfilename: export-to-word
 :navtitle: {pluginname}
 :description: The {pluginname} feature lets you generate a .docx (Microsoft Word document) file directly from the editor.
@@ -79,6 +80,8 @@ The `exportword_service_url` option automatically appends `/v2/convert/html-docx
 == Additional Configuration
 
 include::partial$misc/pagebreak-export-note.adoc[]
+
+include::partial$misc/export-specific-content-filtering.adoc[]
 
 == Options
 

@@ -516,9 +516,9 @@ These options configure the AI Review sidebar, which provides content quality an
 [[tinymceai_reviews]]
 === `+tinymceai_reviews+`
 
-Array of review command IDs that define which review types appear in the Review sidebar and their order. Only the listed reviews are available to users.
+Array that defines which reviews appear in the Review sidebar and their order. Only the listed reviews are available to users. Each item is either a built-in review command ID (a string) or an xref:#integrator-defined-reviews[integrator-defined review] (an object).
 
-*Type:* `+Array+` of `+String+`
+*Type:* `+Array+` of `+String+` or `+Object+`
 
 *Valid values:*
 
@@ -561,5 +561,147 @@ tinymce.init({
     return fetch('/api/token').then(r => r.json());
   }
 });
+----
+
+[[tinymceai_reviews_change_tone_menu]]
+=== `+tinymceai_reviews_change_tone_menu+`
+
+Array of tone IDs that define which tone options appear in the Change Tone review and their order. Only the listed tones appear in the menu.
+
+This option applies only when `+'ai-reviews-change-tone'+` is included in the xref:tinymceai.adoc#tinymceai_reviews[`+tinymceai_reviews+`] option.
+
+*Type:* `+Array+` of `+String+`
+
+*Valid values:*
+
+* `+'ai-reviews-tone-casual'+`: Casual tone
+* `+'ai-reviews-tone-direct'+`: Direct tone
+* `+'ai-reviews-tone-friendly'+`: Friendly tone
+* `+'ai-reviews-tone-confident'+`: Confident tone
+* `+'ai-reviews-tone-professional'+`: Professional tone
+
+Duplicate IDs are removed, and the menu displays tones in the configured order. If the option includes an invalid tone ID, the configuration is rejected and the default tones are used. An empty array (`+[]+`) is accepted, but {productname} logs a console warning. To remove the Change Tone review entirely, omit `+'ai-reviews-change-tone'+` from the xref:tinymceai.adoc#tinymceai_reviews[`+tinymceai_reviews+`] option.
+
+*Default value:*
+[source,js]
+----
+[
+  'ai-reviews-tone-casual',
+  'ai-reviews-tone-direct',
+  'ai-reviews-tone-friendly',
+  'ai-reviews-tone-confident',
+  'ai-reviews-tone-professional'
+]
+----
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_reviews_change_tone_menu: [
+    'ai-reviews-tone-professional',
+    'ai-reviews-tone-friendly'
+  ],
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  }
+});
+
+[[integrator-defined-reviews]]
+==== Integrator-defined reviews
+
+In addition to the built-in review command IDs, the `+tinymceai_reviews+` option accepts integrator-defined review objects. These objects can be interleaved with the built-in string IDs, allowing integrators to add named reviews to the Review sidebar.
+
+Each integrator-defined review object has a `+type+` of `+'simple'+`, `+'list'+`, or `+'input'+`, and shares the following properties:
+
+* `+type+`: The review type. One of `+'simple'+`, `+'list'+`, or `+'input'+`.
+* `+id+`: A unique identifier for the review. It must not reuse a built-in review command ID.
+* `+name+`: The review name shown in the Review sidebar.
+* `+description+`: A short description shown beneath the name.
+* `+prompt+`: The prompt sent to the model when the review runs.
+* `+model+` (optional): The model used for the review. The value must be a model ID that the configured AI service exposes (see xref:tinymceai-models.adoc[AI Models]). When omitted, the editor default model set by xref:tinymceai.adoc#tinymceai_default_model[`+tinymceai_default_model+`] is used.
+
+A `+list+` review adds an `+options+` array, and an `+input+` review adds an optional `+inputPlaceholder+`:
+
+* `+options+` (`+list+` only): An array of `+{ label, value }+` objects. The selected `+value+` is substituted into the prompt wherever `+{value}+` appears.
+* `+inputPlaceholder+` (`+input+`, optional): Placeholder text for the input field. {productname} substitutes the text entered by the end user into the prompt wherever `+{input}+` appears.
+
+If an integrator-defined review is invalid, for example, if it reuses a built-in review command ID or does not match the expected schema, {productname} falls back to the default reviews list in the Review sidebar.
+
+NOTE: The `+model+` ID used in the following examples (`+agent-1+`) selects the recommended automatic model. The available model IDs depend on the configured AI service. See xref:tinymceai-models.adoc[AI Models] for the supported models and how to confirm which are available in an environment.
+
+.Simple integrator-defined review
+[source,js]
+----
+tinymceai_reviews: [
+  {
+    type: 'simple',
+    id: 'integrator-simple-review',
+    name: 'Simple Integrator Review',
+    description: 'This is a simple integrator review',
+    prompt: 'Review this document',
+    model: 'agent-1'
+  }
+]
+----
+
+.List integrator-defined review
+[source,js]
+----
+tinymceai_reviews: [
+  {
+    type: 'list',
+    id: 'integrator-list-review',
+    name: 'Translate Document',
+    description: 'Translate the document to a selected language.',
+    prompt: 'Translate this document to {value}',
+    model: 'agent-1',
+    options: [
+      { label: 'English', value: 'english' },
+      { label: 'Swedish', value: 'swedish' }
+    ]
+  }
+]
+----
+
+.Input integrator-defined review
+[source,js]
+----
+tinymceai_reviews: [
+  {
+    type: 'input',
+    id: 'integrator-input-review',
+    name: 'Custom Instruction',
+    description: 'Apply a custom instruction.',
+    prompt: 'Apply the following instruction {input}',
+    model: 'agent-1',
+    inputPlaceholder: 'Enter an instruction here...'
+  }
+]
+----
+
+.Built-in and integrator-defined reviews combined
+[source,js]
+----
+tinymceai_reviews: [
+  // Built-in reviews
+  'ai-reviews-proofread',
+  'ai-reviews-improve-clarity',
+  'ai-reviews-change-tone',
+  'ai-reviews-custom',
+  // Integrator-defined review
+  {
+    type: 'simple',
+    id: 'integrator-simple-review',
+    name: 'Simple Integrator Review',
+    description: 'This is a simple integrator review',
+    prompt: 'Review this document',
+    model: 'agent-1'
+  }
+]
 ----
 

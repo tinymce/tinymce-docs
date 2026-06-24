@@ -563,6 +563,54 @@ tinymce.init({
 });
 ----
 
+[[tinymceai_reviews_change_tone_menu]]
+=== `+tinymceai_reviews_change_tone_menu+`
+
+Array of tone IDs that define which tone options appear in the Change Tone review and their order. Only the listed tones appear in the menu.
+
+This option applies only when `+'ai-reviews-change-tone'+` is included in the xref:tinymceai.adoc#tinymceai_reviews[`+tinymceai_reviews+`] option.
+
+*Type:* `+Array+` of `+String+`
+
+*Valid values:*
+
+* `+'ai-reviews-tone-casual'+`: Casual tone
+* `+'ai-reviews-tone-direct'+`: Direct tone
+* `+'ai-reviews-tone-friendly'+`: Friendly tone
+* `+'ai-reviews-tone-confident'+`: Confident tone
+* `+'ai-reviews-tone-professional'+`: Professional tone
+
+Duplicate IDs are removed, and the menu displays tones in the configured order. If the option includes an invalid tone ID, the configuration is rejected and the default tones are used. An empty array (`+[]+`) is accepted, but {productname} logs a console warning. To remove the Change Tone review entirely, omit `+'ai-reviews-change-tone'+` from the xref:tinymceai.adoc#tinymceai_reviews[`+tinymceai_reviews+`] option.
+
+*Default value:*
+[source,js]
+----
+[
+  'ai-reviews-tone-casual',
+  'ai-reviews-tone-direct',
+  'ai-reviews-tone-friendly',
+  'ai-reviews-tone-confident',
+  'ai-reviews-tone-professional'
+]
+----
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_reviews_change_tone_menu: [
+    'ai-reviews-tone-professional',
+    'ai-reviews-tone-friendly'
+  ],
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  }
+});
+
 [[integrator-defined-reviews]]
 ==== Integrator-defined reviews
 

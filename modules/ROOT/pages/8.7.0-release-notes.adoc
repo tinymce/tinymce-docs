@@ -337,6 +337,13 @@ In {productname} {release-version}, indentation is applied to every cell in the 
 
 // CCFR here.
 
+=== Deleting a newline within a list item would delete the list item.
+// #TINYMCE-13292
+
+Previously, pressing `Backspace` to delete a newline (`<br>`) inside an otherwise empty list item removed the entire list item instead of only the newline. The issue affected lists created with `Shift + Enter`, including nested lists, and deleted content without warning.
+
+In {productname} {release-version}, `Backspace` removes only the newline and leaves the empty list item in place.
+
 === CSS custom property names and color values in the style attribute were lowercased when parsed
 // #TINY-11524
 

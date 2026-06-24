@@ -279,6 +279,13 @@ tinymce.dom.AriaAnnouncer.announce('Error occurred', { assertive: true });
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== Block formats can now be applied when a non-editable inline element is selected
+// #TINY-13333
+
+Previously, selecting an inline `+contenteditable="false"+` element, such as an iframe wrapped by the Media plugin, and applying a block-level format, such as a custom class or heading style, failed silently and had no effect.
+
+In {productname} {release-version}, block formats are applied to the nearest editable parent block in this case, including adding classes and styles and changing block tags.
+
 === Indentation is now applied to all selected table cells
 // #TINY-14370
 

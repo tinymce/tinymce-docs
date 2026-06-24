@@ -290,6 +290,13 @@ tinymce.dom.AriaAnnouncer.announce('Error occurred', { assertive: true });
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== Block formatting now targets the correct element across a table cell selection
+// #TINY-14385
+
+Previously, when multiple table cells were selected, the check for whether a block could be renamed did not inspect nested elements. For example, with a blockquote containing a heading, applying a new heading format changed the blockquote instead of the heading.
+
+In {productname} {release-version}, the check inspects nested elements, so block formatting is applied to the correct element.
+
 === Block formats can now be applied when a non-editable inline element is selected
 // #TINY-13333
 

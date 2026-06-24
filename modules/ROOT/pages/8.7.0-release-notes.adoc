@@ -200,6 +200,13 @@ In {productname} {release-version}, indentation is applied to every cell in the 
 
 // CCFR here.
 
+=== Focused links in dark mode had the same text color as the background
+// #TINY-14264
+
+Previously, in dark mode, a focused or selected link was displayed with the same text color as the background. This made the link text impossible to read while it was selected.
+
+In {productname} {release-version}, selected link text in dark mode is displayed in white. Links remain readable when focused, which improves accessibility in dark mode.
+
 === Context toolbar with position 'line' was not repositioning to the opposite side when overflowing the viewport
 // #TINY-14376
 
@@ -227,7 +234,6 @@ In {productname} {release-version}, a targeted workaround detects this case and 
 Previously, pressing the undo keyboard shortcut (Ctrl+Z, or Cmd+Z on macOS) after deleting a selection could leave the cursor in the wrong position. An earlier change registered an extra undo step whenever Ctrl or Cmd was pressed, so the step was recorded before the deleted content was restored.
 
 In {productname} {release-version}, {productname} registers that undo step only when Ctrl or Cmd is pressed together with Backspace or Delete, rather than on every Ctrl or Cmd key press. Undoing the deletion of a selection now restores both the content and the original selection correctly.
-
 
 [[security-fixes]]
 == Security fixes

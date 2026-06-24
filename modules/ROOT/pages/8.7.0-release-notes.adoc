@@ -39,6 +39,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Page Embed
+
+The {productname} {release-version} release includes an accompanying release of the **Page Embed** premium plugin.
+
+**Page Embed** includes the following fix.
+
+==== Iframes inserted with the pageembed plugin could not be aligned using the align left, center, and right toolbar buttons.
+// #TINYMCE-14458
+
+Previously, the align left, center, and right toolbar buttons had no effect on an iframe inserted with the Page Embed plugin. Selecting the embedded iframe and choosing an alignment did not change its position.
+
+In {productname} {release-version}, the align left, center, and right toolbar buttons align an iframe inserted with the Page Embed plugin.
+
+For information on the **Page Embed** plugin, see: xref:pageembed.adoc[Page Embed].
+
 === Inline CSS
 
 The {productname} {release-version} release includes an accompanying release of the **Inline CSS** premium plugin.

@@ -1,0 +1,23 @@
+[[revisionhistory_ai_attribution]]
+== `revisionhistory_ai_attribution`
+
+This option controls the display of the AI badge on revision cards. When set to `+true+`, an AI badge appears on each revision whose xref:revisionhistory.adoc#metadata[`+metadata+`] has `+source+` set to `+'ai'+`. For details on attributing revisions to AI, see xref:revisionhistory.adoc#attributing-ai-assisted-revisions[Attributing AI-assisted revisions].
+
+*Type:* `+Boolean+`
+
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
+
+=== Example: using `revisionhistory_ai_attribution`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // Change this value according to your HTML
+  plugins: 'revisionhistory',
+  toolbar: 'revisionhistory',
+  revisionhistory_fetch: () => Promise.resolve([]),
+  revisionhistory_ai_attribution: true
+});
+----

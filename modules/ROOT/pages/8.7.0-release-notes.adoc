@@ -39,6 +39,23 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following additions.
+
+==== Revisions can be attributed to AI and display an AI badge
+// #TINY-14305
+// #TINY-14306
+// #TINY-14480
+
+Revisions now support an optional `+metadata+` property. Setting its `+source+` field to `+'ai'+` marks a revision as AI-assisted, allowing integrators to track content produced by the xref:tinymceai.adoc[{productname} AI] plugin. When the new xref:revisionhistory.adoc#revisionhistory_ai_attribution[`+revisionhistory_ai_attribution+`] option is enabled, an AI badge is rendered on the cards of AI-assisted revisions.
+
+For details on attributing revisions to AI, see xref:revisionhistory.adoc#attributing-ai-assisted-revisions[Attributing AI-assisted revisions].
+
+For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
+
 === Suggested Edits
 
 The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.

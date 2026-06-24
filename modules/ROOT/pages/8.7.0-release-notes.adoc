@@ -402,6 +402,13 @@ In {productname} {release-version}, indentation is applied to every cell in the 
 
 // CCFR here.
 
+=== Tooltips were clipped when the editor was hosted in a shadow DOM and its parent element had `overflow:scroll`.
+// #TINYMCE-14384
+
+Previously, when {productname} ran in a shadow DOM, such as a web component, and a parent element of the host used `overflow: scroll`, that element clipped a tooltip that extended past the host element boundary. The clipped tooltip could become unreadable.
+
+{productname} {release-version} restricts tooltip positioning to the bounds of the host element. A tooltip now repositions to stay within the host element and remains visible when {productname} runs in a shadow DOM.
+
 === Deleting a newline within a list item would delete the list item.
 // #TINYMCE-13292
 

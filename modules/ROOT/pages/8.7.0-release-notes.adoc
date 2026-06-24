@@ -73,6 +73,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following improvements and fixes and additions.
 
+==== White space in user prompts was not rendered correctly in the AI Chat history
+// #TINY-14448
+
+Previously, user prompts shown in the AI Chat history collapsed consecutive spaces and line breaks. A multi-line prompt was displayed as a single run-on line, so the message in the chat thread did not match what was typed.
+
+In {productname} {release-version}, user prompts in the AI Chat history preserve their original line breaks and spacing, while long lines still wrap within the message. Prompts now display as they were typed.
+
 ==== Replaced the icon-only buttons in the AI suggestion preview with labeled Apply and Skip buttons
 // #TINY-14369
 

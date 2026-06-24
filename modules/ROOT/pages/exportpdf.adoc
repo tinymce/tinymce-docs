@@ -1,6 +1,7 @@
 = {pluginname} plugin
 :plugincode: exportpdf
 :pluginname: Export to PDF
+:export-type: pdf
 :page-aliases: export.adoc
 :pluginfilename: export-to-pdf
 :navtitle: Export to PDF
@@ -80,6 +81,8 @@ The `exportpdf_service_url` option automatically appends `/v2/convert/html-pdf` 
 == Additional Configuration
 
 include::partial$misc/pagebreak-export-note.adoc[]
+
+include::partial$misc/export-specific-content-filtering.adoc[]
 
 == Options
 

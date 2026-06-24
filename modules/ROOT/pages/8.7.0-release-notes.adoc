@@ -118,6 +118,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following improvements and fixes and additions.
 
+==== The plugin no longer shows a console warning when `tinymceai_default_model` is not provided.
+// #TINYMCE-14223
+
+Previously, the **TinyMCE AI** plugin logged a console warning when the xref:tinymceai.adoc#tinymceai_default_model[`+tinymceai_default_model+`] option was not set, even though omitting the option is valid. The warning suggested a misconfiguration and caused confusion.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin no longer logs a console warning when the `tinymceai_default_model` option is not provided.
+
 ==== Highlighted suggestions in Chat and Actions preview mode no longer appear selected when clicked, since no follow up action is available on them.
 // #TINYMCE-14310
 

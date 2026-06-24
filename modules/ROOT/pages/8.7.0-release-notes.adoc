@@ -28,21 +28,6 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== TinyMCE AI
-
-The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
-
-**TinyMCE AI** includes the following fix.
-
-==== Chat can now update an empty document
-// #TINY-14393
-
-Previously, Chat did not update an empty document when generating content. Chat displayed the generated content only in the Chat sidebar, because the AI service could not apply edits when the document had no content.
-
-In {productname} {release-version}, AI Chat can now handle updating an empty document. When the editor is empty, the generated content is now directly inserted into the document rather than only being displayed in the sidebar.
-
-For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
-
 // === <Premium plugin name 1> <Premium plugin name 1 version>
 
 // The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
@@ -74,6 +59,20 @@ For information on the **Inline CSS** plugin, see: xref:inline-css.adoc[Inline C
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
 **TinyMCE AI** includes the following improvements and fixes and additions.
+
+==== The TinyMCE AI plugin now adds an `ai` property to the `SetContent` and `BeforeSetContent` event payloads
+// #TINYMCE-14302
+
+Previously, the **TinyMCE AI** plugin set content into the editor without marking it as AI-generated. Integrations that listen to the `+BeforeSetContent+` and `+SetContent+` events had no reliable way to distinguish this content from content set by other sources, and could not apply origin-specific processing, tracking, or analytics.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin adds an `+ai+` property to the `+BeforeSetContent+` and `+SetContent+` event payloads when it sets content. Event handlers can check this property to detect **TinyMCE AI**-generated content and respond based on its origin.
+
+==== Chat can now update an empty document
+// #TINY-14393
+
+Previously, Chat did not update an empty document when generating content. Chat displayed the generated content only in the Chat sidebar, because the AI service could not apply edits when the document had no content.
+
+In {productname} {release-version}, AI Chat can now handle updating an empty document. When the editor is empty, the generated content is now directly inserted into the document rather than only being displayed in the sidebar.
 
 ==== Review mode keyboard navigation now matches the Chat sidebar
 // #TINY-14275

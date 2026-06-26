@@ -13,6 +13,7 @@ tinymce.init({
   suggestededits_model: model,
   suggestededits_access: 'full',
   suggestededits_content: 'html',
+  suggestededits_ai_attribution: true,
   view_show: 'suggestededits',
   user_id: 'kai-nakamura',
   fetch_users: (userIds) => Promise.all(userIds

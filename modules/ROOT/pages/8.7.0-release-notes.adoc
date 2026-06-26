@@ -86,7 +86,13 @@ Suggested Edits now records edits made with the xref:tinymceai.adoc[{productname
 
 The `+suggestededits_model+` schema is now version 2. Models saved with version 1 are migrated automatically when loaded.
 
-==== Suggested Edits API should not be tied to the existence of the suggested edits toolbar button
+==== Tracking suggestions can now be toggled
+
+Suggested Edits now supports toggling suggestion tracking while editing. The new `+suggestededits-tracking+` xref:suggestededits.adoc#toolbar-buttons[toolbar button] and xref:suggestededits.adoc#menu-items[menu item], along with the `+SuggestedEditsToggleTracking+` xref:suggestededits.adoc#commands[command], let users switch between tracking edits as suggestions or applying them directly to the content. The xref:suggestededits.adoc#suggestededits_auto_approve[`+suggestededits_auto_approve+`] configuration option now also controls their default state.
+
+Because toggling tracking fundamentally changes the Suggested Edits experience, the button and menu item are not included by default. They must be explicitly added to the toolbar or menu in the editor configuration.
+
+==== Suggested Edits `hasChanges` event now also fires when a review completes
 // #TINYMCE-13256
 
 Previously, the `SuggestedEditsHasChangesUpdate` event only fired alongside other editor events, such as typing, selecting, or focusing. Completing a review did not fire the event on its own, so the value returned by the `hasChanges` API could become outdated. As a result, any integration that relied upon the API would not receive an update when a review finished.

@@ -11,6 +11,7 @@ const revisions = [
       name: 'James Wilson',
       avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
     },
+    metadata: { source: 'ai' },
     content: `
       <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/tinymce/latest/_images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
       <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
@@ -150,6 +151,7 @@ tinymce.init({
   revisionhistory_fetch,
   revisionhistory_fetch_revision,
   revisionhistory_display_author: true,
+  revisionhistory_ai_attribution: true,
   user_id: 'kai-nakamura',
   fetch_users: (userIds) => Promise.all(userIds
     .map((userId) =>

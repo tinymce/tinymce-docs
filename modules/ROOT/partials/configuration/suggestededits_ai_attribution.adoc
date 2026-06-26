@@ -1,0 +1,22 @@
+[[suggestededits_ai_attribution]]
+== `suggestededits_ai_attribution`
+
+This option controls the display of the AI badge on suggestion cards. When set to `+true+`, an AI badge appears on the cards of edits made with the xref:tinymceai.adoc[{productname} AI] plugin.
+
+NOTE: AI-assisted suggestions are always recorded in the model. This option controls only whether the AI badge is displayed.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+false+`
+
+=== Example: using `suggestededits_ai_attribution`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // Change this value according to your HTML
+  plugins: 'suggestededits',
+  toolbar: 'suggestededits',
+  suggestededits_ai_attribution: true
+});
+----

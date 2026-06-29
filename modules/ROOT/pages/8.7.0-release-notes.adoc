@@ -28,21 +28,6 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== TinyMCE AI
-
-The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
-
-**TinyMCE AI** includes the following fix.
-
-==== The diff overlay could be misaligned when the body element used `+position: relative+` in a custom `+content_style+`
-// #TINYMCE-14327
-
-Previously, previewing a quick action such as Translate showed a misaligned diff overlay when the editor body element used `+position: relative+` in a custom `+content_style+`. The overlay used the body element as its containing block instead of the viewport, but the positioning logic still used the viewport. As a result, the highlight cutouts appeared offset from the translated text. Print-style layouts and document templates that positioned the body element could make the preview difficult to use.
-
-In {productname} {release-version}, the diff overlay renders independently of the editor content styles. The overlay aligns with the translated text regardless of custom body positioning, and the cutouts highlight the active translated content as expected.
-
-For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
-
 // === <Premium plugin name 1> <Premium plugin name 1 version>
 
 // The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
@@ -164,6 +149,22 @@ For information on the **Inline CSS** plugin, see: xref:inline-css.adoc[Inline C
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
 **TinyMCE AI** includes the following improvements and fixes and additions.
+
+==== Add **TinyMCE AI** plugin to npm-premium + ZIP downloads.
+// TINYMCE-11453
+
+Starting with {productname} {release-version}, the **TinyMCE AI** plugin is available to self-hosted customers for the first time. Previously, the plugin could only be loaded from the {cloudname} CDN.
+
+From this release, the `+tinymceai+` plugin is included in the `+tinymce-premium+` NPM package and is available as a standalone addon `.zip` download from the link:{accountpageurl}[{accountpage}]. The plugin is distributed only as an addon and is not included in any {productname} ZIP bundle.
+
+A self-hosted plugin must still connect to an instance of the AI service. Point it at the hosted {cloudname} AI service, or deploy the xref:tinymceai-on-premises.adoc[self-hosted AI service] to keep content within the host network. For installation steps, see: xref:npm-projects.adoc#install-premium-plugins[Quick start: {productname} from NPM or Yarn]. For plugin configuration, see: xref:tinymceai.adoc[TinyMCE AI].
+
+==== The diff overlay could be misaligned when the body element used `+position: relative+` in a custom `+content_style+`
+// #TINYMCE-14327
+
+Previously, previewing a quick action such as Translate showed a misaligned diff overlay when the editor body element used `+position: relative+` in a custom `+content_style+`. The overlay used the body element as its containing block instead of the viewport, but the positioning logic still used the viewport. As a result, the highlight cutouts appeared offset from the translated text. Print-style layouts and document templates that positioned the body element could make the preview difficult to use.
+
+In {productname} {release-version}, the diff overlay renders independently of the editor content styles. The overlay aligns with the translated text regardless of custom body positioning, and the cutouts highlight the active translated content as expected.
 
 ==== New `tinymceai_tool_data_callback` option to customize the status message shown while a Model Context Protocol (MCP) tool runs
 // #TINYMCE-14474

@@ -20,6 +20,23 @@ The {pluginname} plugin integrates AI-assisted authoring with rich-text editing.
 
 liveDemo::{plugincode}[]
 
+[[availability]]
+== Availability
+
+The {pluginname} plugin can be deployed with either a {cloudname} or a self-hosted {productname} editor:
+
+* *{cloudname}*: load the plugin from the {cloudname} CDN.
+* *Self-hosted*: from {productname} 8.7.0, install the plugin from the `+tinymce-premium+` NPM package, or as a standalone addon `.zip` download from the link:{accountpageurl}[{accountpage}].
+
+The `+tinymceai+` plugin is distributed only as a standalone addon. It is not included in any {productname} ZIP bundle.
+
+For self-hosted installation steps, see xref:npm-projects.adoc#install-premium-plugins[Install premium plugins from NPM] or xref:installation-zip.adoc[Installing {productname} using a .zip file].
+
+[NOTE]
+====
+The plugin requires an AI service to operate. Use the hosted {cloudname} AI service, or deploy the xref:tinymceai-on-premises.adoc[self-hosted AI service] to keep content within the host network. In both cases, a xref:tinymceai-jwt-authentication-intro.adoc[JWT token endpoint] handles authentication.
+====
+
 [[basic-setup]]
 == Basic setup
 

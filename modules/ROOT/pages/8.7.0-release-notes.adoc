@@ -426,6 +426,13 @@ tinymce.dom.AriaAnnouncer.announce('Error occurred', { assertive: true });
 
 // CCFR here.
 
+=== Changed LESS math mode from always to parens-division.
+// #TINYMCE-13317
+
+Previously, the Oxide Less compiler ran with `math: 'always'`, which treated every `/` character as a division operator. With modern CSS color syntax, the Oxide Less compiler could compile functions such as `rgb(10 10 10 / 10%)` or `hsl(from var(--color) h s l / 10%)` incorrectly. In some cases, the compiler silently produced incorrect values without warning, such as `rgb(10 10 10 / 10%)` becoming `rgb(10, 10, 1)` instead of preserving the alpha channel.
+
+In {productname} {release-version}, the Oxide Less compiler uses `parens-division` math mode. The compiler evaluates division only when the operation is wrapped in parentheses and preserves `/` in CSS color syntax. {productname} updated existing division expressions in Oxide Less files to wrap division in parentheses. Custom skin authors who compile Oxide Less must wrap division operations in parentheses.
+
 
 [[removed]]
 == Removed

@@ -151,7 +151,6 @@ tinymce.init({
   revisionhistory_fetch,
   revisionhistory_fetch_revision,
   revisionhistory_display_author: true,
-  revisionhistory_ai_attribution: true,
   user_id: 'kai-nakamura',
   fetch_users: (userIds) => Promise.all(userIds
     .map((userId) =>

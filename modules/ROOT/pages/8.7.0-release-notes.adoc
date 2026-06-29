@@ -36,7 +36,7 @@ The {productname} {release-version} release includes an accompanying release of 
 // #TINY-14306
 // #TINY-14480
 
-Revisions now support an optional `+metadata+` property. Setting its `+source+` field to `+'ai'+` marks a revision as AI-assisted, allowing integrators to track content produced by the xref:tinymceai.adoc[{productname} AI] plugin. When the new xref:revisionhistory.adoc#revisionhistory_ai_attribution[`+revisionhistory_ai_attribution+`] option is enabled, an AI badge is rendered on the cards of AI-assisted revisions.
+Revisions now support an optional `+metadata+` property. Setting its `+source+` field to `+'ai'+` marks a revision as AI-assisted, allowing integrators to track content produced by the xref:tinymceai.adoc[{productname} AI] plugin. An AI badge is rendered on the cards of AI-assisted revisions by default. Set the new xref:revisionhistory.adoc#revisionhistory_ai_attribution[`+revisionhistory_ai_attribution+`] option to `+false+` to hide the badge.
 
 For details on attributing revisions to AI, see xref:revisionhistory.adoc#attributing-ai-assisted-revisions[Attributing AI-assisted revisions].
 
@@ -53,7 +53,7 @@ The {productname} {release-version} release includes an accompanying release of 
 // #TINY-14304
 // #TINY-14479
 
-Suggested Edits now records edits made with the xref:tinymceai.adoc[{productname} AI] plugin as AI-assisted. When the new xref:suggestededits.adoc#suggestededits_ai_attribution[`+suggestededits_ai_attribution+`] option is enabled, an AI badge appears on the cards of those edits.
+Suggested Edits now records edits made with the xref:tinymceai.adoc[{productname} AI] plugin as AI-assisted. An AI badge appears on the cards of those edits by default. Set the new xref:suggestededits.adoc#suggestededits_ai_attribution[`+suggestededits_ai_attribution+`] option to `+false+` to hide the badge.
 
 The `+suggestededits_model+` schema is now version 2. Models saved with version 1 are migrated automatically when loaded.
 

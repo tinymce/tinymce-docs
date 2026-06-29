@@ -59,7 +59,7 @@ Replaced content is represented as both added and removed content, and indicates
 
 Each suggested edit is listed as a card in the sidebar and color coded by the type of change. Each card shows a contextual description of the content, along with the user who made the suggestion, when the edit was made, and any feedback provided on that suggestion.
 
-Edits made with the xref:tinymceai.adoc[{productname} AI] plugin are recorded as AI-assisted. When the xref:#suggestededits_ai_attribution[`+suggestededits_ai_attribution+`] option is enabled, an AI badge appears on their cards.
+Edits made with the xref:tinymceai.adoc[{productname} AI] plugin are recorded as AI-assisted. An AI badge appears on their cards by default. Set xref:#suggestededits_ai_attribution[`+suggestededits_ai_attribution+`] to `+false+` to hide the badge.
 
 When selected, a suggestion can be handled in the following ways:
 

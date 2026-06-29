@@ -1,0 +1,26 @@
+[[export-specific-content-filtering]]
+== Export-specific content filtering
+
+To generate content for export, the {pluginname} plugin calls the `tinymce.editor.getContent()` method with an `export` property set to `{export-type}`. {productname} adds this `export` property to the data for the xref:events.adoc#editor-core-events[`+GetContent+` event] and for serializer node filters. A serializer node filter or a `GetContent` event handler can read the `export` property to filter content during a {pluginname} export only, without changing the result of a standard `tinymce.editor.getContent()` call.
+
+The following serializer node filter removes `footer` elements during a {pluginname} export:
+
+[source,js,subs="+attributes"]
+----
+editor.serializer.addNodeFilter('footer', (nodes, name, args) => {
+  if (args.export === '{export-type}') {
+    nodes.forEach((node) => node.remove());
+  }
+});
+----
+
+A `GetContent` event handler can read the same `export` property:
+
+[source,js,subs="+attributes"]
+----
+editor.on('GetContent', (e) => {
+  if (e.export === '{export-type}') {
+    e.content = removeFooterFromHtml(e.content);
+  }
+});
+----

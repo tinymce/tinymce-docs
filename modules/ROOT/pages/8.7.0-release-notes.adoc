@@ -18,26 +18,12 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:additions[Additions]
 * xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
-* xref:deprecated[Deprecated]
-* xref:known-issues[Known issues]
 
 
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium plugin changes
 
 The following premium plugin updates were released alongside {productname} {release-version}.
-
-// === <Premium plugin name 1> <Premium plugin name 1 version>
-
-// The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
-
-// **<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
-
-// ==== <Premium plugin name 1 change 1>
-// CCFR here.
-
-// For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
 === Revision History
 
@@ -365,12 +351,7 @@ For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE A
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+{productname} {release-version} also includes the following improvements:
 
 === Removed the 300-item limit on the emoticons dialog All tab
 // #TINY-7552
@@ -397,7 +378,7 @@ In {productname} {release-version}, the resize handle uses modern browser pointe
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition<s>:
+{productname} {release-version} also includes the following addition:
 
 === New `tinymce.dom.AriaAnnouncer` API for screen reader announcements
 // #TINY-12791
@@ -410,21 +391,11 @@ tinymce.dom.AriaAnnouncer.announce('Bold on');
 tinymce.dom.AriaAnnouncer.announce('Error occurred', { assertive: true });
 ----
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
 
 [[changes]]
 == Changes
 
-{productname} {release-version} also includes the following change<s>:
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+{productname} {release-version} also includes the following change:
 
 === Changed LESS math mode from always to parens-division.
 // #TINYMCE-13317
@@ -434,21 +405,10 @@ Previously, the Oxide Less compiler ran with `math: 'always'`, which treated eve
 In {productname} {release-version}, the Oxide Less compiler uses `parens-division` math mode. The compiler evaluates division only when the operation is wrapped in parentheses and preserves `/` in CSS color syntax. {productname} updated existing division expressions in Oxide Less files to wrap division in parentheses. Custom skin authors who compile Oxide Less must wrap division operations in parentheses.
 
 
-[[removed]]
-== Removed
-
-{productname} {release-version} also includes the following removal<s>:
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
 === Block formatting now targets the correct element across a table cell selection
 // #TINY-14385
@@ -470,11 +430,6 @@ In {productname} {release-version}, block formats are applied to the nearest edi
 Previously, applying indentation with multiple table cells selected affected only the cell where the pointer was released. The action used the browser's native selection rather than the editor's cell selection, so the remaining selected cells were left unchanged.
 
 In {productname} {release-version}, indentation is applied to every cell in the selection.
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
 
 === Dragging and dropping or copying and pasting an image didn't add `width` and `height` to the tag.
 // #TINYMCE-14411
@@ -538,36 +493,3 @@ In {productname} {release-version}, a targeted workaround detects this case and 
 Previously, pressing the undo keyboard shortcut (Ctrl+Z, or Cmd+Z on macOS) after deleting a selection could leave the cursor in the wrong position. An earlier change registered an extra undo step whenever Ctrl or Cmd was pressed, so the step was recorded before the deleted content was restored.
 
 In {productname} {release-version}, {productname} registers that undo step only when Ctrl or Cmd is pressed together with Backspace or Delete, rather than on every Ctrl or Cmd key press. Undoing the deletion of a selection now restores both the content and the original selection correctly.
-
-[[security-fixes]]
-== Security fixes
-
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[deprecated]]
-== Deprecated
-
-{productname} {release-version} includes the following deprecation<s>:
-
-// === The `<plugin>` configuration property, `<name>`, has been deprecated
-
-// placeholder here.
-
-
-[[known-issues]]
-== Known issues
-
-This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
-
-There <is one | are <number> known issue<s> in {productname} {release-version}.
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.

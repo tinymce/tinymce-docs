@@ -2,10 +2,14 @@
 |===
 |Command |Description
 |suggestededits |Toggles the Suggested Edits view.
+|suggestededitsToggleTracking |Toggles the tracking of suggested edits.
 |===
 
 .Example
 [source,js]
 ----
 tinymce.activeEditor.execCommand('suggestededits');
+tinymce.activeEditor.execCommand('suggestededitsToggleTracking');
+
+tinymce.activeEditor.queryCommandState('suggestededitsToggleTracking'); // Returns true if tracking of suggested edits is enabled, otherwise false.
 ----

@@ -181,7 +181,7 @@ Use the matching network name in `--network` below. First, load the `.env` file:
 set -a && source .env && set +a
 ----
 
-Then start the AI service container:
+Then start the AI service container. The `docker run` command maps the friendly `.env` names onto the service's own environment variables — for example, `AI_LICENCE_KEY` is passed to the container as `LICENSE_KEY`, and `MANAGEMENT_SECRET` as `ENVIRONMENTS_MANAGEMENT_SECRET_KEY`:
 
 [source,bash]
 ----
@@ -202,6 +202,13 @@ docker run --init -d -p 8000:8000 \
   -e ENABLE_METRIC_LOGS='true' \
   registry.containers.tiny.cloud/ai-service-tiny:latest
 ----
+
+[IMPORTANT]
+====
+This launch command configures a single OpenAI provider, through the `PROVIDERS` value and `$OPENAI_API_KEY`. The AI service only receives the environment variables explicitly passed in the `docker run` command, so adding `PROVIDERS`, `MODELS`, or other provider settings to the `.env` file alone has no effect.
+
+To use any other provider — `openai-compatible` (for example Databricks, Ollama, or vLLM), Azure, Amazon Bedrock, or Google Vertex — edit the `docker run` command directly: replace the `PROVIDERS` value and add a `MODELS` array. The `MODELS` variable is required for every provider except direct OpenAI, Anthropic, and Google, which have built-in model routing. See xref:tinymceai-on-premises-providers.adoc[LLM providers] for the full `PROVIDERS` and `MODELS` configuration.
+====
 
 NOTE: The AI service contacts `license.containers.tiny.cloud` on startup to validate the license key. Ensure this endpoint is reachable from the container. No customer data is sent during this check.
 

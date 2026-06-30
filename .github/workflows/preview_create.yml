@@ -35,7 +35,7 @@ jobs:
       uses: actions/setup-node@v5
       with:
         cache: 'yarn'
-        node-version: 24
+        node-version: 22
 
     - name: Install dependencies
       run: yarn install
@@ -55,7 +55,7 @@ jobs:
         mv ./build/docs/sitemap.xml ./build/docs/antora-sitemap.xml
 
     - name: configure aws credentials
-      uses: aws-actions/configure-aws-credentials@v5.0.0
+      uses: aws-actions/configure-aws-credentials@v6
       with:
         role-to-assume: arn:aws:iam::327995277200:role/staging-tinymce-docs-update
         role-session-name: tinymce-docs-update

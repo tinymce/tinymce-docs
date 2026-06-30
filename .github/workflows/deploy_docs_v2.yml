@@ -65,7 +65,7 @@ jobs:
         mv ./build/docs/sitemap.xml ./build/docs/antora-sitemap.xml
 
     - name: configure aws credentials
-      uses: aws-actions/configure-aws-credentials@v5.0.0
+      uses: aws-actions/configure-aws-credentials@v6
       with:
         role-to-assume: 'arn:aws:iam::${{ env.ACCT }}:role/${{ env.TARGET }}-tinymce-docs-update'
         role-session-name: tinymce-docs-${{ env.TARGET }}-release

@@ -5,7 +5,7 @@
 :keywords: AI, on-premises, troubleshooting, errors, debugging, diagnostics, JWT, container, LLM
 :pluginname: TinyMCE AI
 
-Match the symptom to the fix below. If the symptom does not fit any section, escalate to `support@tiny.cloud` with the output of `docker logs ai-service --tail 200` and a redacted copy of the `PROVIDERS` value.
+Match the symptom to the fix below. If the symptom does not fit any section, escalate to link:{supporturl}/[{supportname}] with the output of `docker logs ai-service --tail 200` and a redacted copy of the `PROVIDERS` value.
 
 == Quick triage
 
@@ -19,7 +19,7 @@ Work through this list to identify the symptom area:
 . *Slow, timing out, or failing under load?* See <<performance>>.
 . *Scaling, upgrades, or deployment questions?* See xref:tinymceai-on-premises-production.adoc[Production deployment].
 
-If none of the above match, see <<diagnostic-recipes>> and then escalate to `support@tiny.cloud`.
+If none of the above match, see <<diagnostic-recipes>> and then escalate to link:{supporturl}/[{supportname}].
 
 
 [[container-startup-failures]]

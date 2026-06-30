@@ -105,7 +105,7 @@ The AI service works with Podman as an alternative to Docker. In Podman, contain
 
 [source,bash]
 ----
-podman login -u '<registry-username>' registry.containers.tiny.cloud
+podman login -u tiny -p [access-token] registry.containers.tiny.cloud
 
 podman pull registry.containers.tiny.cloud/ai-service-tiny:latest
 
@@ -147,7 +147,7 @@ kubectl create namespace tinymce-ai
 kubectl create secret docker-registry tiny-registry \
   --namespace tinymce-ai \
   --docker-server=registry.containers.tiny.cloud \
-  --docker-username=<registry-username> \
+  --docker-username=tiny \
   --docker-password='<registry-access-token>'
 ----
 

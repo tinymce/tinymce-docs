@@ -49,3 +49,21 @@ The following demonstration is using four {productname} editors in inline mode, 
 liveDemo::inline[]
 
 For information on inline mode and the `+inline+` setting, see: xref:inline-editor-options.adoc#inline[User interface options - inline].
+
+== Styling content in inline mode
+
+In inline mode, {productname}’s editor content area is not contained within an iframe sandbox, unlike in the classic editor mode.
+
+When using:
+* `+content_css+`
+* `+content_style+`
+
+the styles are loaded into and applied within the host page. In inline mode, this means they can affect other page elements depending on CSS selectors and scoping.
+
+=== Recommended approaches for styling content in inline mode
+
+*Preferred:* Add content styles directly to the host page's stylesheet, scoped to the editable element (e.g., using a CSS class on the editable element).
+
+*Alternative:* Use body_class to scope editor styles to a specific class, preventing them from applying globally.
+
+*Avoid:* Using content_css or content_style for content styling in inline mode — reserve them only for editor UI component adjustments if needed.

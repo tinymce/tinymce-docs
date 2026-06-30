@@ -9,6 +9,11 @@
 
 {pluginname} requires JWT (JSON Web Token) authentication when using the {cloudname} service. JWT authentication provides secure, user-specific access to {pluginname} features. Each JWT token contains claims that identify the user and specify which AI features they can access.
 
+[NOTE]
+====
+This page covers JWT authentication for the *{cloudname}-hosted* AI service, where the `aud` claim is set to the Tiny Cloud API key and tokens are signed with RS256. For on-premises deployments, the `aud` claim is the Environment ID from the Management Panel and tokens are signed with HS256. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication for the on-premises AI service].
+====
+
 {productname} recommends using the libraries listed on link:https://www.jwt.io/libraries[jwt.io/libraries] to create JWT tokens. These libraries support the algorithms required by {pluginname}. For details on supported algorithms, see xref:#supported-algorithms[Supported Algorithms].
 
 [[trial-demo-identity-service]]

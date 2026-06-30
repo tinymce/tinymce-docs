@@ -90,29 +90,24 @@ The shared secret (API Secret) exists only in the application back end (token en
 
 == Credentials
 
-Three credentials are involved in an on-premises deployment. They are distinct and serve different purposes.
+Two license keys are involved in an on-premises deployment. They are distinct, come from different sources, and serve different purposes.
 
 [cols="1,1,2,1",options="header"]
 |===
 |Credential |Where it lives |What it does |Required?
 
-|`LICENSE_KEY`
-|AI service container (environment variable)
-|Activates the AI service. A long string provided by the Tiny account representative.
-|Yes — the service refuses to start without it.
+|Service license key (`LICENSE_KEY`)
+|Passed to the AI service container as an environment variable (for example, in the `docker run` command or Compose file)
+|Activates the on-premises AI service at runtime. A long string provisioned through the {companyname} customer portal.
+|Yes — required to run the service.
 
-|`TINYMCE_API_KEY`
-|Editor page (CDN script URL) or build configuration
-|Authenticates against `cdn.tiny.cloud` when loading {productname} from the CDN. This is the short string from the tiny.cloud dashboard.
-|Only when loading {productname} from the CDN. Omit for self-hosted editor bundles.
-
-|`license_key` (init option)
-|`tinymce.init({ license_key: 'T8LK:...' })`
-|Activates premium {productname} features when using a self-hosted editor bundle (not the CDN).
-|Only for self-hosted editor deployments. Provided by the Tiny account representative.
+|{productname} editor license key (`license_key`)
+|Added to the editor configuration: `tinymce.init({ license_key: 'T8LK:...' })`
+|Configures the license mode for the {productname} editor and activates premium {productname} features.
+|Yes — required for the premium {productname} AI features.
 |===
 
-NOTE: `LICENSE_KEY` (the AI service license) and `TINYMCE_API_KEY` / `license_key` (the editor license) are different credentials from different sources. They are not interchangeable.
+NOTE: The service license key (`LICENSE_KEY`) and the {productname} editor license key (`license_key`) are not interchangeable. For more information, see xref:service-license-keys.adoc[Service license keys] and xref:license-key.adoc[License key].
 
 == Prerequisites
 

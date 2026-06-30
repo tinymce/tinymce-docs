@@ -20,6 +20,10 @@ The following sections assist with containerizing the {productname} services for
 ** Using a Unix-like operating system, such as Linux or macOS.
 ** Using Windows and has access to unix command line tools using link:https://gitforwindows.org/[Git for Windows^], link:https://www.cygwin.com/[Cygwin^], or the link:https://docs.microsoft.com/en-us/windows/wsl/install-win10[Windows Subsystem for Linux^].
 
+=== Service license keys
+
+Some on-premises services require a service license key in addition to the Docker registry access token. Service license keys are separate from {productname} editor license keys. See xref:service-license-keys.adoc[Service license keys] for details on which services require them and how to configure them.
+
 === Next steps
 
 Proceed to setting up and deploying the containerized services for:

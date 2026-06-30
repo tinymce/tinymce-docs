@@ -5,13 +5,16 @@
 :keywords: AI, artificial intelligence, chat, review, quick actions, tinymceai
 :pluginname: TinyMCE AI
 :plugincode: tinymceai
-:pluginminimumplan: enterpriseplan
 :plugincategory: premium
 :page-role: -toc
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
+include::partial$misc/admon-inline-not-supported.adoc[]
+
 The {pluginname} plugin integrates AI-assisted authoring with rich-text editing. Users can interact through Actions, Reviews, or Conversations that can use relevant context from multiple sources.
+
+include::partial$misc/admon-tinymceai-min-version.adoc[]
 
 [[interactive-example]]
 == Interactive example

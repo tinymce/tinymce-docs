@@ -5,7 +5,7 @@ The `+content_css+` option loads the specified CSS files into the editable area.
 
 *Type:* `+String+`, `+Array+`
 
-NOTE: This option is intended for use with {productname}'s classic mode, as the editable area is sandboxed within an iframe. For inline mode editors, relevant CSS stylesheets should be loaded as part of the webpage {productname} is rendered in, not using the `+content_css+` option.
+NOTE: This option is intended for use with {productname}'s xref:use-tinymce-classic.adoc[classic mode], as the editable area is sandboxed within an iframe. For xref:use-tinymce-inline.adoc[inline mode] editors, relevant CSS stylesheets should be loaded as part of the webpage {productname} is rendered in, not using the content_css option. Applying these iframe-targeted styles in inline mode can lead to unexpected style leakage, layout shifts, or overflow issues (e.g., content spilling outside its container) because editor styles interact directly with the surrounding page.
 
 include::partial$misc/shipped-content-css.adoc[]
 

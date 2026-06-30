@@ -11,8 +11,8 @@ These services can be used in two ways:
 * As the back end for the xref:importword.adoc[Import from Word] and xref:exportword.adoc[Export to Word] plugins in the {productname} editor.
 * Directly via the REST API, independent of the editor.
 
-A valid license key is required to install the {pluginname} service on-premises. An access token is also needed to access the {companyname} Cloud Docker registry and pull the Docker image.
+A valid service license key is required to run the {pluginname} on-premises service. This key is separate from the {productname} editor license key. An access token is also required to access the {companyname} Cloud Docker registry and pull the Docker image. See xref:service-license-keys.adoc[Service license keys] for more information.
 
-To get started, link:https://www.tiny.cloud/contact/[Contact Tiny Support] for a trial license key and Docker access token.
+To get started, link:https://www.tiny.cloud/contact/[Contact Tiny Support] for a trial service license key and Docker access token.
 
 The only requirement to run the {pluginname} service on-premises is a container runtime or orchestration tool, such as Docker, Kubernetes, or Podman.

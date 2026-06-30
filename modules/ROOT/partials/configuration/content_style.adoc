@@ -3,6 +3,8 @@
 
 This option allows custom CSS styles to be set as a string. The styles are injected into the `+head+` of the page containing the editable area. In {productname}'s classic mode, it is injected into the `+head+` of {productname}'s iframe. In inline mode, it is injected into the `+head+` of the page {productname} is rendered in.
 
+NOTE: In xref:use-tinymce-classic.adoc[classic mode], styles are scoped to {productname}’s iframe. In xref:use-tinymce-inline.adoc[inline mode], content_style is injected into the host page, so styles may affect other elements if not properly scoped, potentially causing style conflicts, overflow risk or layout issues.
+
 *Type:* `+String+`
 
 NOTE: `+content_style+` styles are not saved within {productname}'s content. If they are needed for display purposes, ensure the styles are also included in the page the content will be displayed on.

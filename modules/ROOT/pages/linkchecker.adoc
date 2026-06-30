@@ -4,7 +4,6 @@
 :keywords: url, urls, link, linkchecker_service_url, linkchecker_content_css
 :pluginname: Link Checker
 :plugincode: linkchecker
-:pluginminimumplan: tierthree
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
@@ -15,8 +14,6 @@ The Link Checker plugin relies on HTTP response status codes to determine if a l
 == Interactive example
 
 liveDemo::linkchecker[]
-
-// include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Cloud Instructions
 

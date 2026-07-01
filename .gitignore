@@ -13,3 +13,15 @@ vendor
 
 # Antora tmp files
 _site/
+
+# Cursor setup (local only, do not push)
+.cursor/
+AGENTS.md
+.cursorignore
+
+# Claude setup (local only, do not push)
+.claude/
+.claudeignore
+
+# .mcp.json
+.mcp.json

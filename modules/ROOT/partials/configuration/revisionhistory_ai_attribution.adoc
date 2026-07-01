@@ -1,7 +1,7 @@
 [[revisionhistory_ai_attribution]]
 == `revisionhistory_ai_attribution`
 
-This option controls the display of the AI badge on revision cards. An AI badge appears on each revision whose xref:revisionhistory.adoc#metadata[`+metadata+`] has `+source+` set to `+'ai'+` by default. Set to `+false+` to hide the badge. For details on attributing revisions to AI, see xref:revisionhistory.adoc#attributing-ai-assisted-revisions[Attributing AI-assisted revisions].
+This option controls the display of the AI badge on revision cards. An AI badge appears on each revision whose xref:revisionhistory.adoc#metadata[`+metadata+`] has `+source+` set to `+'ai'+` by default. Set this option to `+false+` to hide the badge. For details on attributing revisions to AI, see xref:revisionhistory.adoc#attributing-ai-assisted-revisions[Attributing AI-assisted revisions].
 
 *Type:* `+Boolean+`
 

@@ -1,0 +1,44 @@
+= tinymce.dom.AriaAnnouncer
+:navtitle: tinymce.dom.AriaAnnouncer
+:description: Page-wide aria-live announcer used to send messages to screen readers without shifting focus.  Messages are appended as child divs to one of two persistent live regions, polite or assertive (both aria-atomic&#x3D;&quot;false&quot;, aria-relevant&#x3D;&quot;additions&quot;), so each child is announced independently as it is added. Earlier messages remain in the DOM and are not re-read. Each message is removed after a delay long enough for screen readers to have picked up the mutation, keeping the regions bounded over long sessions.  The polite and assertive regions differ only in their aria-live politeness: assertive announcements interrupt the screen reader&#x27;s current speech, while polite ones wait for it to finish.
+:keywords: announce
+:moxie-type: api
+
+Page-wide aria-live announcer used to send messages to screen readers without shifting focus.  Messages are appended as child divs to one of two persistent live regions, polite or assertive (both aria-atomic="false", aria-relevant="additions"), so each child is announced independently as it is added. Earlier messages remain in the DOM and are not re-read. Each message is removed after a delay long enough for screen readers to have picked up the mutation, keeping the regions bounded over long sessions.  The polite and assertive regions differ only in their aria-live politeness: assertive announcements interrupt the screen reader's current speech, while polite ones wait for it to finish.
+
+[[summary]]
+== Summary
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#announce[announce()]|Announces a message to screen readers via an aria-live region, without shifting focus.|`xref:apis/tinymce.dom.ariaannouncer.adoc[AriaAnnouncer]`
+|===
+
+[[methods]]
+== Methods
+
+[[announce]]
+=== announce()
+[source, javascript]
+----
+announce(message: String, options: Object, options.assertive: Boolean)
+----
+Announces a message to screen readers via an aria-live region, without shifting focus.
+
+==== Examples
+[source, javascript]
+----
+tinymce.dom.AriaAnnouncer.announce('Bold on');
+tinymce.dom.AriaAnnouncer.announce('Error occurred', { assertive: true });
+----
+
+==== Parameters
+
+* `message (String)` - The message to announce to screen readers.
+* `options (Object)` - Optional settings.
+* `options.assertive (Boolean)` - If true, uses aria-live="assertive" instead of polite.
+
+'''

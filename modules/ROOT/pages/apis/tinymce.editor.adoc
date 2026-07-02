@@ -1,7 +1,7 @@
 = tinymce.Editor
 :navtitle: tinymce.Editor
 :description: This class contains the core logic for a TinyMCE editor.
-:keywords: Editor, addCommand, addCommandCallback, addQueryStateHandler, addQueryStateHandlerCallback, addQueryValueHandler, addQueryValueHandlerCallback, addShortcut, addVisual, baseURI, contentCSS, contentStyles, convertURL, destroy, dispatch, documentBaseURI, dom, editorUid, editorUpload, execCommand, fire, focus, formatter, getBody, getContainer, getContent, getContentAreaContainer, getDoc, getElement, getParam, getWin, hasEditableRoot, hasEventListeners, hasFocus, hasPlugin, hide, id, initialized, insertContent, isDirty, isHidden, load, mode, nodeChanged, notificationManager, off, on, once, options, parser, plugins, queryCommandState, queryCommandSupported, queryCommandValue, remove, render, resetContent, save, schema, selection, serializer, setContent, setDirty, setEditableRoot, setProgressState, show, theme, translate, ui, undoManager, uploadImages, userLookup, windowManager
+:keywords: Editor, addCommand, addCommandCallback, addQueryStateHandler, addQueryStateHandlerCallback, addQueryValueHandler, addQueryValueHandlerCallback, addShortcut, addVisual, announce, baseURI, contentCSS, contentStyles, convertURL, destroy, dispatch, documentBaseURI, dom, editorUid, editorUpload, execCommand, fire, focus, formatter, getBody, getContainer, getContent, getContentAreaContainer, getDoc, getElement, getParam, getWin, hasEditableRoot, hasEventListeners, hasFocus, hasPlugin, hide, id, initialized, insertContent, isDirty, isHidden, load, mode, nodeChanged, notificationManager, off, on, once, options, parser, plugins, queryCommandState, queryCommandSupported, queryCommandValue, remove, render, resetContent, save, schema, selection, serializer, setContent, setDirty, setEditableRoot, setProgressState, show, theme, translate, ui, undoManager, uploadImages, userLookup, windowManager
 :moxie-type: api
 
 This class contains the core logic for a TinyMCE editor.
@@ -78,6 +78,8 @@ The command that you add can be executed with queryCommandState function.|`xref:
 The command that you add can be executed with queryCommandValue function.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#addShortcut[addShortcut()]|Adds a keyboard shortcut for some command or function.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#addVisual[addVisual()]|Adds visual aids for tables, anchors, etc so they can be more easily edited inside the editor.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#announce[announce()]|Announces a message to screen readers via the page-wide aria-live region, without shifting focus.
+Delegates to {@link tinymce.dom.AriaAnnouncer#announce}.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#convertURL[convertURL()]|URL converter function this gets executed each time a user adds an img, a or
 any other element that has a URL in it. This will be called both by the DOM and HTML
 manipulation functions.|`xref:apis/tinymce.editor.adoc[Editor]`
@@ -296,6 +298,30 @@ Adds visual aids for tables, anchors, etc so they can be more easily edited insi
 ==== Parameters
 
 * `elm (Element)` - Optional root element to loop though to find tables, etc that needs the visual aid.
+
+'''
+
+[[announce]]
+=== announce()
+[source, javascript]
+----
+announce(message: String, options: Object, options.assertive: Boolean)
+----
+Announces a message to screen readers via the page-wide aria-live region, without shifting focus.
+Delegates to {@link tinymce.dom.AriaAnnouncer#announce}.
+
+==== Examples
+[source, javascript]
+----
+tinymce.activeEditor.announce('Bold on');
+tinymce.activeEditor.announce('Error occurred', { assertive: true });
+----
+
+==== Parameters
+
+* `message (String)` - The message to announce to screen readers.
+* `options (Object)` - Optional settings.
+* `options.assertive (Boolean)` - If true, uses aria-live="assertive" (role="alert") instead of polite.
 
 '''
 

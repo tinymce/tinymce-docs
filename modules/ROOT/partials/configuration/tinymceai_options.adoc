@@ -659,6 +659,7 @@ tinymce.init({
     return fetch('/api/token').then(r => r.json());
   }
 });
+----
 
 [[integrator-defined-reviews]]
 ==== Integrator-defined reviews

@@ -71,6 +71,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Spell Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Spell Checker** premium plugin.
+
+**Spell Checker** includes the following fix.
+
+==== The misspelled word highlight disappeared when pressing Enter to create a new line
+// #TINYMCE-12934
+
+Previously, deleting the last letter of a misspelled word with the *Backspace* key and then pressing *Enter* to start a new line removed the red highlight from the word, even though the word remained misspelled. The Spell Checker plugin did not re-check the affected line after the new block was created, so the word appeared as though it were spelled correctly.
+
+In {productname} {release-version}, the Spell Checker plugin re-checks both the new line and the previous line after a new block is created. Words that remain misspelled keep their highlighting.
+
+For information on the **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

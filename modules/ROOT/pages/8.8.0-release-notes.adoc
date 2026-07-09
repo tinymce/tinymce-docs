@@ -119,9 +119,9 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Added the `+aria-valuenow+`, `+aria-valuemin+`, and `+aria-valuemax+` attributes to the editor resize handle when resizing vertically
 // #TINYMCE-14493
 
-Previously, the editor resize handle did not expose the Accessible Rich Internet Applications (ARIA) value attributes recommended for the `+separator+` role. Automated accessibility scanners reported this as a specification violation on the resize handle.
+Previously, the editor resize handle did not expose the Accessible Rich Internet Applications (ARIA) value attributes recommended for the link:https://www.w3.org/TR/wai-aria/#separator[`+separator+` role]. Automated accessibility scanners reported this as a specification violation on the resize handle.
 
-In {productname} {release-version}, the resize handle exposes the `+aria-valuenow+`, `+aria-valuemin+`, and `+aria-valuemax+` attributes when the editor is configured for vertical resizing, which is the default `+resize: true+` behavior. `+aria-valuenow+` reports the current editor height, `+aria-valuemin+` reflects the `+min_height+` option, and `+aria-valuemax+` reflects the `+max_height+` option when it is set. Editors configured for two-dimensional resizing with `+resize: 'both'+` are unchanged, because no recommended accessible pattern currently exists for two-dimensional resize handles.
+In {productname} {release-version}, the resize handle exposes the `+aria-valuenow+`, `+aria-valuemin+`, and `+aria-valuemax+` attributes when the editor is configured for vertical resizing, which is the default `+resize: true+` behavior. `+aria-valuenow+` reports the current editor height, `+aria-valuemin+` reflects the `+min_height+` option, and `+aria-valuemax+` reflects the `+max_height+` option, or the current height plus the 20px keyboard resize step when `+max_height+` is not set. Editors configured for two-dimensional resizing with `+resize: 'both'+` are unchanged, because no recommended accessible pattern currently exists for two-dimensional resize handles.
 
 
 [[additions]]

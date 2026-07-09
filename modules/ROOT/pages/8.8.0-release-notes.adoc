@@ -163,9 +163,9 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Clicking anchor links with special characters could throw a `+querySelectorAll+` error
 // #TINYMCE-8784
 
-Previously, clicking an anchor link whose href contained special characters such as semicolons, common in Google Web Toolkit (GWT) place tokens like `+#!placetoken;param1=value1+`, threw a `+querySelectorAll+` syntax error. This occurred both in read-only mode and when using the Link plugin *Open link* feature through the toolbar button, the context menu, and the Alt+Enter keyboard shortcut, leaving a console error and preventing navigation to the target bookmark.
+Previously, clicking an anchor link whose href contained special characters, such as the semicolons common in Google Web Toolkit (GWT) place tokens like `+#!placetoken;param1=value1;param2=value2+`, threw a `+querySelectorAll+` syntax error: `+Uncaught SyntaxError: Failed to execute 'querySelectorAll' on 'Document': '...' is not a valid selector+`. This occurred both in read-only mode and when using the Link plugin *Open link* feature through the toolbar button, the context menu, and the Alt+Enter keyboard shortcut. The error appeared in the console and prevented navigation to the target bookmark.
 
-In {productname} {release-version}, anchor href values are escaped with `+CSS.escape+` before they are used as selectors. Clicking anchor links with special characters no longer throws an error, and the editor scrolls to the target bookmark as expected.
+In {productname} {release-version}, anchor href values are escaped with `+CSS.escape+` before they are used as `+querySelectorAll+` selectors, so all ASCII special characters in an href are handled. Clicking anchor links with special characters no longer throws an error, and the editor scrolls to the target bookmark across different URL fragment formats.
 
 
 [[security-fixes]]

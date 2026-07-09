@@ -290,9 +290,11 @@ Each item in the array is one of the following:
 * A `+String+`, or an object with a `+text+` property (`+{ text: 'string' }+`), shown as descriptive text.
 * An action object, shown as a clickable button, with the following properties:
 ** `+title+` (`+String+`): The label shown on the button.
-** `+command+` (`+String+`): The editor command run when the button is selected. Selecting the button runs `+editor.execCommand(command, false, value)+`. Use one of the Quick Actions and Chat commands, or the core `+ToggleSidebar+` command, listed in xref:editor-command-identifiers.adoc#tinymceai[TinyMCE AI].
-** `+value+` (optional): The argument passed to the command. The accepted value matches the command, for example a language label for `+TinyMCEAIQuickActionTranslate+` or a `+{ prompt }+` object for `+TinyMCEAIChatPrompt+`.
-** `+icon+` (optional `+String+`): The name of the icon shown on the button. When omitted, an icon is selected based on the command.
+** `+command+` (`+String+`): The editor command run when the button is selected, using `+editor.execCommand(command, false, value)+`. This can be a Quick Action or Chat command, the core `+ToggleSidebar+` command, or any other registered editor command, such as `+Bold+`. For the AI command names, see xref:editor-command-identifiers.adoc#tinymceai[TinyMCE AI].
+** `+value+` (optional): The argument passed to the command. The accepted value matches the command, for example a language label for `+TinyMCEAIQuickActionTranslate+`, a `+{ prompt, displayedPrompt }+` object for `+TinyMCEAIChatPrompt+`, or a sidebar name such as `+'tinymceai-review'+` for `+ToggleSidebar+`.
+** `+icon+` (optional `+String+`): The name of the icon shown on the button, using any editor icon identifier. When omitted, an icon is selected automatically based on the command.
+
+Text items and action buttons can be interleaved to group related actions under short headings.
 
 .Example
 [source,js]
@@ -302,11 +304,18 @@ tinymce.init({
   plugins: 'tinymceai',
   toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
   tinymceai_chat_welcome_actions: [
-    'Try one of these to get started:',
+    { text: 'Here are some actions to get started:' },
     { title: 'Summarize the document', command: 'TinyMCEAIQuickActionsSummarize' },
     { title: 'Continue writing', command: 'TinyMCEAIQuickActionContinueWriting' },
-    { title: 'Translate to Swedish', command: 'TinyMCEAIQuickActionTranslate', value: 'swedish' },
-    { title: 'Draft a reply', command: 'TinyMCEAIChatPrompt', value: { prompt: 'Draft a reply to this message.' } }
+    { title: 'Translate to Spanish', command: 'TinyMCEAIQuickActionTranslate', value: 'spanish' },
+    {
+      title: 'Draft a reply',
+      command: 'TinyMCEAIChatPrompt',
+      value: { prompt: 'Draft a reply to this message in a professional tone.', displayedPrompt: 'Draft a reply' }
+    },
+    { title: 'Review my document', command: 'ToggleSidebar', value: 'tinymceai-review' },
+    { text: 'Other editor commands are also supported:' },
+    { title: 'Bold', command: 'Bold', icon: 'bold' }
   ],
   // Required for authentication
   tinymceai_token_provider: () => {

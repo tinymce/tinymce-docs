@@ -127,6 +127,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Added configurable welcome actions to the TinyMCE AI Chat empty state
+// #TINYMCE-14508
+
+In {productname} {release-version}, the TinyMCE AI Chat sidebar can display a configurable set of welcome actions in its empty state, giving users suggested starting points instead of a blank prompt. Each item can show descriptive text or a button that runs a Quick Action, sends a chat prompt, or runs another editor command. Welcome actions appear before the first request is sent and are hidden once a conversation begins.
+
+Welcome actions are configured with the new xref:tinymceai.adoc#tinymceai_chat_welcome_actions[`+tinymceai_chat_welcome_actions+`] option and are disabled by default.
+
 
 [[changes]]
 == Changes

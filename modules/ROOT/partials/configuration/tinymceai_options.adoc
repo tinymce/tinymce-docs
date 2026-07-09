@@ -276,6 +276,45 @@ tinymce.init({
 });
 ----
 
+[[tinymceai_chat_welcome_actions]]
+=== `+tinymceai_chat_welcome_actions+`
+
+Adds a set of suggested welcome actions to the Chat sidebar empty state, shown below the xref:tinymceai.adoc#tinymceai_chat_welcome_message[`+tinymceai_chat_welcome_message+`] when a conversation is empty. Welcome actions give users a set of starting points instead of a blank prompt. The actions are shown only before the first request is sent. They are hidden after the first request and shown again when a new conversation is started.
+
+*Type:* `+Array+`
+
+*Default value:* `+[]+` (no welcome actions)
+
+Each item in the array is one of the following:
+
+* A `+String+`, or an object with a `+text+` property (`+{ text: 'string' }+`), shown as descriptive text.
+* An action object, shown as a clickable button, with the following properties:
+** `+title+` (`+String+`): The label shown on the button.
+** `+command+` (`+String+`): The editor command run when the button is selected. Selecting the button runs `+editor.execCommand(command, false, value)+`. Use one of the Quick Actions and Chat commands, or the core `+ToggleSidebar+` command, listed in xref:editor-command-identifiers.adoc#tinymceai[TinyMCE AI].
+** `+value+` (optional): The argument passed to the command. The accepted value matches the command, for example a language label for `+TinyMCEAIQuickActionTranslate+` or a `+{ prompt }+` object for `+TinyMCEAIChatPrompt+`.
+** `+icon+` (optional `+String+`): The name of the icon shown on the button. When omitted, an icon is selected based on the command.
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_chat_welcome_actions: [
+    'Try one of these to get started:',
+    { title: 'Summarize the document', command: 'TinyMCEAIQuickActionsSummarize' },
+    { title: 'Continue writing', command: 'TinyMCEAIQuickActionContinueWriting' },
+    { title: 'Translate to Swedish', command: 'TinyMCEAIQuickActionTranslate', value: 'swedish' },
+    { title: 'Draft a reply', command: 'TinyMCEAIChatPrompt', value: { prompt: 'Draft a reply to this message.' } }
+  ],
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  }
+});
+----
+
 [[tinymceai_tool_data_callback]]
 === `+tinymceai_tool_data_callback+`
 

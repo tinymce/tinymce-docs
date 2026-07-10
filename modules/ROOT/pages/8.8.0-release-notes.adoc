@@ -116,6 +116,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== The {productname} AI chat sidebar now shows only one tooltip at a time
+// #TINYMCE-14507
+
+Previously, each button in the {productname} AI chat sidebar managed its tooltip independently, with no coordination between them. Opening one tooltip did not close a tooltip that was already visible, so more than one tooltip could remain on screen at the same time.
+
+In {productname} {release-version}, opening a tooltip in the {productname} AI chat sidebar closes any other open tooltip, so the chat sidebar shows only one tooltip at a time. This keeps the interface clear and consistent.
+
 
 [[additions]]
 == Additions

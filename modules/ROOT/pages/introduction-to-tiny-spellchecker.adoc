@@ -36,6 +36,8 @@ To enable the {productname} Enterprise Spellchecking plugin, add `+tinymcespellc
 
 For information on installing the server-side component for spell checking, please see the xref:individual-spelling-container.adoc[Deploy the {productname} spelling service server-side component using Docker].
 
+NOTE: Custom dictionaries, which add words that are recognized as correctly spelled across a deployment, are available only with a xref:individual-spelling-container.adoc[self-hosted spelling service]. They cannot be configured on {cloudname}. For details, see xref:custom-dictionaries-for-tiny-spellchecker.adoc[Adding custom dictionaries].
+
 === Example: TinyMCE Self-hosted Installation
 
 [source,js]

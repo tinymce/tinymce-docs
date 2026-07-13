@@ -71,6 +71,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== The TinyMCE AI plugin now ignores non-string values returned by `tinymceai_tool_data_callback`
+// #TINYMCE-14525
+
+Previously, the xref:tinymceai.adoc#tinymceai_tool_data_callback[`+tinymceai_tool_data_callback+`] callback could return a value that was not a string, such as a number. The **TinyMCE AI** plugin then displayed that value directly in the Chat sidebar status message, even though the option documents a return type of `+string | undefined+`. As a result, the status message shown while a Model Context Protocol (MCP) tool ran did not make sense.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin validates the value returned by the callback. When the callback returns a value that is not a string, the plugin ignores that value, treats the result as `+undefined+`, and shows the default status message instead.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

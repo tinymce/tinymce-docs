@@ -153,6 +153,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Updated the bundled DOMPurify dependency to the latest version
+// #TINYMCE-14556
+
+Previously, {productname} bundled an older version of the DOMPurify sanitization library. Although {productname} was not affected by the published DOMPurify advisories, because they relate to DOMPurify options that {productname} does not use, the outdated version could be flagged by automated security scanners.
+
+In {productname} {release-version}, DOMPurify has been updated to the latest version. This resolves the scanner warnings without changing {productname}'s sanitization behavior.
+
 === Added the `+aria-valuenow+`, `+aria-valuemin+`, and `+aria-valuemax+` attributes to the editor resize handle when resizing vertically
 // #TINYMCE-14493
 

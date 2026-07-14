@@ -163,9 +163,9 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === The cursor could be placed at the start of a list item instead of the clicked position
 // #TINYMCE-14490
 
-Previously, in Chromium-based browsers such as Chrome and Edge, clicking to the right of a line inside certain list items could place the cursor at the start of the item rather than at the clicked position. This edge case affected list items that contained a nested list, along with any list items created from them, making it difficult to position the cursor accurately. This behavior originates from a known link:https://issues.chromium.org/issues/40767343[Chromium browser issue].
+Previously, in Chromium-based browsers such as Chrome and Edge, clicking within a list item after the end of its text — for example, in the empty space to the right of the line — could place the cursor at the start of the item instead of at the end of the line. Clicking directly within a list item's text was not affected. This behavior originates from a known link:https://issues.chromium.org/issues/40767343[Chromium browser issue].
 
-In {productname} {release-version}, {productname} detects this browser behavior and corrects the cursor position. Clicking within these list items now places the cursor at the clicked position.
+In {productname} {release-version}, {productname} detects this browser behavior and corrects the cursor position. Clicking within these list items now places the cursor at the expected position.
 
 
 [[security-fixes]]

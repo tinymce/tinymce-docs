@@ -90,7 +90,14 @@ For information on the **Comments** plugin, see: xref:introduction-to-tiny-comme
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following fix.
+**TinyMCE AI** includes the following fixes.
+
+==== Double tooltips appeared on tags in the prompt context in Safari
+// #TINYMCE-14485
+
+Previously, in Safari, hovering over the context source tags in the AI Chat prompt could display duplicated tooltips, and a tooltip could appear even when the tag text was not truncated. The tags were missing the attribute that prevents tooltip duplication in Safari.
+
+In {productname} {release-version}, the context source tags include the attribute that resolves Safari tooltip duplication. Each tag now shows a single tooltip, and only when its text is truncated.
 
 ==== The TinyMCE AI plugin now ignores non-string values returned by `tinymceai_tool_data_callback`
 // #TINYMCE-14525

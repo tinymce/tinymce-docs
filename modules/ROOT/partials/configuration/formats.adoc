@@ -358,7 +358,7 @@ tinymce.init({
 [[expand]]
 ==== `+expand+`
 
-Controls whether the selection is expanded to include the entire matching element before a format is applied or removed. This applies to `+selector+` formats that are not also `+inline+` formats. When enabled, if the selection only partially covers a matching element, the range is expanded to cover the whole element. Setting `+expand+` to `+false+` restricts the operation to the current selection.
+Controls whether the selection is expanded to the enclosing matching selector element before a format is applied or removed. This applies to `+selector+` formats that are not also `+inline+` formats. When enabled, if the selection only partially covers a matching element, the range is expanded to cover the whole element. Setting `+expand+` to `+false+` restricts the operation to the current selection.
 
 *Type:* `+Boolean+`
 

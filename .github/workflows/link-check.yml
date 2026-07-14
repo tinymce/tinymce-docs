@@ -1,0 +1,60 @@
+name: Scheduled Link Check
+
+# Weekly crawl of the full published documentation for dead external links.
+# The production playbook (antora-playbook.yml) builds every published version
+# (tinymce/5, /6, /7, /8) into build/site, so this single job covers all
+# versions. Scheduled workflows only run from the default branch, so this file
+# lives on main by design.
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # every Monday 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check-links:
+    name: Check external links
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    - name: Checkout branch
+      uses: actions/checkout@v5
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v5
+      with:
+        cache: 'yarn'
+        node-version: 22
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Build Website
+      run: yarn antora ./antora-playbook.yml
+
+    - name: Check links in built site
+      id: lychee
+      uses: lycheeverse/lychee-action@v2
+      with:
+        args: --config .lychee.toml --no-progress './build/site/**/*.html'
+        format: markdown
+        output: lychee/results.md
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fail: false
+        jobSummary: true
+
+    - name: Create issue on broken links
+      if: steps.lychee.outputs.exit_code != 0
+      uses: peter-evans/create-issue-from-file@v5
+      with:
+        title: 'Link check — broken links detected in published documentation'
+        content-filepath: lychee/results.md
+        labels: link-rot

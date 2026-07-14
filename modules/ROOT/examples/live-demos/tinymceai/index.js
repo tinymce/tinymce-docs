@@ -27,6 +27,14 @@ tinymce.init({
   toolbar: 'undo redo | tinymceai-chat tinymceai-review ai-quickactions-translate spellchecker | styles | bold italic underline forecolor backcolor casechange | link uploadcare table addcomment | align bullist numlist checklist removeformat | code fullscreen help',
   quickbars_selection_toolbar: 'tinymceai-quickactions addcomment',
   sidebar_show: 'tinymceai-chat',
+  tinymceai_chat_welcome_message: '<p>Welcome to TinyMCE AI. Pick an action below or type your own prompt.</p>',
+  tinymceai_chat_welcome_actions: [
+    { text: 'Here are some actions to get started:' },
+    { title: 'Summarize the document', command: 'TinyMCEAIQuickActionsSummarize' },
+    { title: 'Continue writing', command: 'TinyMCEAIQuickActionContinueWriting' },
+    { title: 'Translate to Spanish', command: 'TinyMCEAIQuickActionTranslate', value: 'spanish' },
+    { title: 'Review my document', command: 'ToggleSidebar', value: 'tinymceai-review' }
+  ],
   toolbar_mode: 'sliding',
   visual: false,
   images_file_types: 'jpeg,jpg,jpe,jfi,jif,jfif,png,gif,bmp,webp,svg',

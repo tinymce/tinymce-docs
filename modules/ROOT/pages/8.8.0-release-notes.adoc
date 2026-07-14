@@ -71,6 +71,43 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** includes the following fix.
+
+==== Clicking the reply button triggered an editor blur event
+// #TINYMCE-12236
+
+Previously, selecting the reply button on a comment thread, such as *1 reply*, could cause the editor to fire a `+blur+` event, even though the user was still working within the editor. Expanding the replies re-rendered the comment, and because the focused element was removed during the re-render, focus fell back to the document body instead of remaining within the editor. The editor interpreted this loss of focus as the user leaving the editor entirely. Applications that rely on the `+blur+` event to detect when editing has finished could behave incorrectly.
+
+In {productname} {release-version}, the Comments plugin preserves editor focus when expanding replies. The editor no longer fires an unexpected `+blur+` event when the reply button is selected.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
+
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fixes.
+
+==== Double tooltips appeared on tags in the prompt context in Safari
+// #TINYMCE-14485
+
+Previously, in Safari, hovering over the context source tags in the AI Chat prompt could display duplicated tooltips, and a tooltip could appear even when the tag text was not truncated. The tags were missing the attribute that prevents tooltip duplication in Safari.
+
+In {productname} {release-version}, the context source tags include the attribute that resolves Safari tooltip duplication. Each tag now shows a single tooltip, and only when its text is truncated.
+
+==== The TinyMCE AI plugin now ignores non-string values returned by `tinymceai_tool_data_callback`
+// #TINYMCE-14525
+
+Previously, the xref:tinymceai.adoc#tinymceai_tool_data_callback[`+tinymceai_tool_data_callback+`] callback could return a value that was not a string, such as a number. The **TinyMCE AI** plugin then displayed that value directly in the Chat sidebar status message, even though the option documents a return type of `+string | undefined+`. As a result, the status message shown while a Model Context Protocol (MCP) tool ran did not make sense.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin validates the value returned by the callback. When the callback returns a value that is not a string, the plugin ignores that value, treats the result as `+undefined+`, and shows the default status message instead.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
@@ -123,6 +160,20 @@ Previously, {productname} bundled an older version of the DOMPurify sanitization
 
 In {productname} {release-version}, DOMPurify has been updated to the latest version. This resolves the scanner warnings without changing {productname}'s sanitization behavior.
 
+=== Added the `+aria-valuenow+`, `+aria-valuemin+`, and `+aria-valuemax+` attributes to the editor resize handle when resizing vertically
+// #TINYMCE-14493
+
+Previously, the editor resize handle did not expose the Accessible Rich Internet Applications (ARIA) value attributes recommended for the link:https://www.w3.org/TR/wai-aria/#separator[`+separator+` role]. Automated accessibility scanners reported this as a specification violation on the resize handle.
+
+In {productname} {release-version}, the resize handle exposes the `+aria-valuenow+`, `+aria-valuemin+`, and `+aria-valuemax+` attributes when the editor is configured for vertical resizing, which is the default `+resize: true+` behavior. `+aria-valuenow+` reports the current editor height, `+aria-valuemin+` reflects the `+min_height+` option, and `+aria-valuemax+` reflects the `+max_height+` option, or the current height plus the 20px keyboard resize step when `+max_height+` is not set. Editors configured for two-dimensional resizing with `+resize: 'both'+` are unchanged, because no recommended accessible pattern currently exists for two-dimensional resize handles.
+
+=== The {productname} AI chat sidebar now shows only one tooltip at a time
+// #TINYMCE-14507
+
+Previously, each button in the {productname} AI chat sidebar managed its tooltip independently, with no coordination between them. Opening one tooltip did not close a tooltip that was already visible, so more than one tooltip could remain on screen at the same time.
+
+In {productname} {release-version}, opening a tooltip in the {productname} AI chat sidebar closes any other open tooltip, so the chat sidebar shows only one tooltip at a time. This keeps the interface clear and consistent.
+
 
 [[additions]]
 == Additions
@@ -133,6 +184,13 @@ In {productname} {release-version}, DOMPurify has been updated to the latest ver
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== Added configurable welcome actions to the TinyMCE AI Chat empty state
+// #TINYMCE-14508
+
+In {productname} {release-version}, the TinyMCE AI Chat sidebar can display a configurable set of welcome actions in its empty state, giving users suggested starting points instead of a blank prompt. Each item can show descriptive text or a button that runs a Quick Action, sends a chat prompt, or runs another editor command. Welcome actions appear before the first request is sent and are hidden once a conversation begins.
+
+Welcome actions are configured with the new xref:tinymceai.adoc#tinymceai_chat_welcome_actions[`+tinymceai_chat_welcome_actions+`] option and are disabled by default.
 
 
 [[changes]]
@@ -166,6 +224,27 @@ In {productname} {release-version}, DOMPurify has been updated to the latest ver
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== Opening table properties on a nested table could edit the wrong table
+// #TINYMCE-13767
+
+Previously, when a table was nested inside another table, opening the table properties dialog for the outer table could display and edit the properties of the inner table instead. In Chrome and Edge, right-clicking near the left edge of a cell and selecting *Table properties* resolved to the nested table, so the settings shown did not match the selected table. This made nested tables confusing and error prone to edit.
+
+In {productname} {release-version}, the table properties dialog determines the target table by starting from the selected cell and finding the table that directly contains it. The dialog now reliably targets the table currently being edited, and property changes apply to the intended table.
+
+=== Clicking anchor links with special characters could throw a `+querySelectorAll+` error
+// #TINYMCE-8784
+
+Previously, clicking an anchor link whose href contained special characters, such as the semicolons common in Google Web Toolkit (GWT) place tokens like `+#!placetoken;param1=value1;param2=value2+`, threw a `+querySelectorAll+` syntax error: `+Uncaught SyntaxError: Failed to execute 'querySelectorAll' on 'Document': '...' is not a valid selector+`. This occurred both in read-only mode and when using the Link plugin *Open link* feature through the toolbar button, the context menu, and the Alt+Enter keyboard shortcut. The error appeared in the console and prevented navigation to the target bookmark.
+
+In {productname} {release-version}, anchor href values are escaped with `+CSS.escape+` before they are used as `+querySelectorAll+` selectors, so all ASCII special characters in an href are handled. Clicking anchor links with special characters no longer throws an error, and the editor scrolls to the target bookmark across different URL fragment formats.
+
+=== The cursor could be placed at the start of a list item instead of the clicked position
+// #TINYMCE-14490
+
+Previously, in Chromium-based browsers such as Chrome and Edge, clicking within a list item after the end of its text — for example, in the empty space to the right of the line — could place the cursor at the start of the item instead of at the end of the line. Clicking directly within a list item's text was not affected. This behavior originates from a known link:https://issues.chromium.org/issues/40767343[Chromium browser issue].
+
+In {productname} {release-version}, {productname} detects this browser behavior and corrects the cursor position. Clicking within these list items now places the cursor at the expected position.
 
 
 [[security-fixes]]

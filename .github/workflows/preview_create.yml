@@ -30,6 +30,9 @@ jobs:
     steps:
     - name: Checkout branch
       uses: actions/checkout@v5
+      with:
+        # Full history so the PR-time link check can diff against the base branch.
+        fetch-depth: 0
 
     - name: Setup Node.js
       uses: actions/setup-node@v5
@@ -74,3 +77,31 @@ jobs:
     - name: Update pointer to current run output
       run: |
         aws s3api put-object --bucket tiny-cloud-antora-docs-preview --key ${PR}/index.html --body .github/workflows/resources/empty.html --content-type text/html --metadata pointer=${RUN}
+
+    # Link check runs last so it never blocks the preview deployment. It
+    # validates only the external links this PR adds or changes in .adoc source
+    # (pages or partials) — the changed link is checked once, regardless of how
+    # many pages include it. Non-blocking at rollout (fail: false); flip to
+    # fail: true once the baseline is clean.
+    - name: Extract external links changed in this PR
+      id: changed_links
+      run: |
+        base="origin/${{ github.event.pull_request.base.ref }}"
+        git fetch --no-tags origin "${{ github.event.pull_request.base.ref }}"
+        git diff "$base...HEAD" -- 'modules/**/*.adoc' \
+          | awk '/^\+[^+]/' \
+          | grep -oE 'https?://[^][<>"^ '"'"']+' \
+          | sed -E 's/[.,;:]+$//' | sort -u > changed-links.txt || true
+        echo "count=$(grep -c . changed-links.txt || echo 0)" >> "$GITHUB_OUTPUT"
+        echo "Changed external links to validate:"; cat changed-links.txt
+
+    - name: Check changed links
+      if: steps.changed_links.outputs.count != '0'
+      uses: lycheeverse/lychee-action@v2
+      with:
+        args: --config .lychee.toml --no-progress changed-links.txt
+        format: markdown
+        output: lychee/results.md
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fail: false
+        jobSummary: true

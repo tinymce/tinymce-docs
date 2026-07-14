@@ -10,6 +10,7 @@
   "scripts": {
     "build": "./-scripts/api-reference.sh",
     "build-local-ref": "./-scripts/api-reference-local.sh",
+    "check-links": "lychee --config .lychee.toml --no-progress './build/site/**/*.html'",
     "clean": "rm -rf ./build",
     "generate-llm-files": "node ./-scripts/generate-llm-files.js",
     "generate-llm-files-from-url": "node ./-scripts/generate-llm-files.js https://www.tiny.cloud/docs/antora-sitemap.xml",

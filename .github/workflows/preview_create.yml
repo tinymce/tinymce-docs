@@ -92,8 +92,9 @@ jobs:
           | awk '/^\+[^+]/' \
           | grep -oE 'https?://[^][<>"^ '"'"']+' \
           | sed -E 's/[.,;:]+$//' | sort -u > changed-links.txt || true
-        echo "count=$(grep -c . changed-links.txt || echo 0)" >> "$GITHUB_OUTPUT"
-        echo "Changed external links to validate:"; cat changed-links.txt
+        count=$(wc -l < changed-links.txt | tr -d '[:space:]')
+        echo "count=${count:-0}" >> "$GITHUB_OUTPUT"
+        echo "Changed external links to validate ($count):"; cat changed-links.txt
 
     - name: Check changed links
       if: steps.changed_links.outputs.count != '0'

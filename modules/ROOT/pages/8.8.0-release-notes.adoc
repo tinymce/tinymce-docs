@@ -80,7 +80,7 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== Clicking the reply button triggered an editor blur event
 // #TINYMCE-12236
 
-Previously, selecting the reply button on a comment thread, such as *1 reply*, could cause the editor to fire a `+blur+` event, even though focus remained within the editor. Expanding the replies re-rendered the comment and moved focus to the editor content, which the editor interpreted as focus leaving the editor. Applications that rely on the `+blur+` event to detect when editing has finished could behave incorrectly.
+Previously, selecting the reply button on a comment thread, such as *1 reply*, could cause the editor to fire a `+blur+` event, even though the user was still working within the editor. Expanding the replies re-rendered the comment, and because the focused element was removed during the re-render, focus fell back to the document body instead of remaining within the editor. The editor interpreted this loss of focus as the user leaving the editor entirely. Applications that rely on the `+blur+` event to detect when editing has finished could behave incorrectly.
 
 In {productname} {release-version}, the Comments plugin preserves editor focus when expanding replies. The editor no longer fires an unexpected `+blur+` event when the reply button is selected.
 

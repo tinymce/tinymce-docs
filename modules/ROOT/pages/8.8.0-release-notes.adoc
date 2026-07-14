@@ -218,6 +218,13 @@ Welcome actions are configured with the new xref:tinymceai.adoc#tinymceai_chat_w
 
 // CCFR here.
 
+=== Opening table properties on a nested table could edit the wrong table
+// #TINYMCE-13767
+
+Previously, when a table was nested inside another table, opening the table properties dialog for the outer table could display and edit the properties of the inner table instead. In Chrome and Edge, right-clicking near the left edge of a cell and selecting *Table properties* resolved to the nested table, so the settings shown did not match the selected table. This made nested tables confusing and error prone to edit.
+
+In {productname} {release-version}, the table properties dialog determines the target table by starting from the selected cell and finding the table that directly contains it. The dialog now reliably targets the table currently being edited, and property changes apply to the intended table.
+
 === Clicking anchor links with special characters could throw a `+querySelectorAll+` error
 // #TINYMCE-8784
 

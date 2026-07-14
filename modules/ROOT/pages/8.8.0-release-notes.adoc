@@ -71,11 +71,26 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** includes the following fix.
+
+==== Clicking the reply button triggered an editor blur event
+// #TINYMCE-12236
+
+Previously, selecting the reply button on a comment thread, such as *1 reply*, could cause the editor to fire a `+blur+` event, even though the user was still working within the editor. Expanding the replies re-rendered the comment, and because the focused element was removed during the re-render, focus fell back to the document body instead of remaining within the editor. The editor interpreted this loss of focus as the user leaving the editor entirely. Applications that rely on the `+blur+` event to detect when editing has finished could behave incorrectly.
+
+In {productname} {release-version}, the Comments plugin preserves editor focus when expanding replies. The editor no longer fires an unexpected `+blur+` event when the reply button is selected.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
+
 === TinyMCE AI
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following fix.
+**TinyMCE AI** includes the following fixes.
 
 ==== Double tooltips appeared on tags in the prompt context in Safari
 // #TINYMCE-14485
@@ -84,7 +99,14 @@ Previously, in Safari, hovering over the context source tags in the AI Chat prom
 
 In {productname} {release-version}, the context source tags include the attribute that resolves Safari tooltip duplication. Each tag now shows a single tooltip, and only when its text is truncated.
 
-For information on the **TinyMCE AI** plugin, see: xref:tinymceai-introduction.adoc[TinyMCE AI].
+==== The TinyMCE AI plugin now ignores non-string values returned by `tinymceai_tool_data_callback`
+// #TINYMCE-14525
+
+Previously, the xref:tinymceai.adoc#tinymceai_tool_data_callback[`+tinymceai_tool_data_callback+`] callback could return a value that was not a string, such as a number. The **TinyMCE AI** plugin then displayed that value directly in the Chat sidebar status message, even though the option documents a return type of `+string | undefined+`. As a result, the status message shown while a Model Context Protocol (MCP) tool ran did not make sense.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin validates the value returned by the callback. When the callback returns a value that is not a string, the plugin ignores that value, treats the result as `+undefined+`, and shows the default status message instead.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
@@ -131,6 +153,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== The {productname} AI chat sidebar now shows only one tooltip at a time
+// #TINYMCE-14507
+
+Previously, each button in the {productname} AI chat sidebar managed its tooltip independently, with no coordination between them. Opening one tooltip did not close a tooltip that was already visible, so more than one tooltip could remain on screen at the same time.
+
+In {productname} {release-version}, opening a tooltip in the {productname} AI chat sidebar closes any other open tooltip, so the chat sidebar shows only one tooltip at a time. This keeps the interface clear and consistent.
+
 
 [[additions]]
 == Additions
@@ -141,6 +170,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== Added configurable welcome actions to the TinyMCE AI Chat empty state
+// #TINYMCE-14508
+
+In {productname} {release-version}, the TinyMCE AI Chat sidebar can display a configurable set of welcome actions in its empty state, giving users suggested starting points instead of a blank prompt. Each item can show descriptive text or a button that runs a Quick Action, sends a chat prompt, or runs another editor command. Welcome actions appear before the first request is sent and are hidden once a conversation begins.
+
+Welcome actions are configured with the new xref:tinymceai.adoc#tinymceai_chat_welcome_actions[`+tinymceai_chat_welcome_actions+`] option and are disabled by default.
 
 
 [[changes]]

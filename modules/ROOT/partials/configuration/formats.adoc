@@ -321,7 +321,7 @@ So if the selection is from _a_ to _b_ in this html contents `+<h1><b>[a</b></h1
 
 *Type:* `+Boolean+`
 
-+Default value:* `+false+`
+*Default value:* `+false+`
 
 *Possible values:* `+true+`, `+false+`
 
@@ -350,6 +350,58 @@ tinymce.init({
       },
       { selector: 'span', attributes: ['style', 'class'], remove: 'empty', split: true, expand: false, deep: true },
       { selector: '*', attributes: ['style', 'class'], split: false, expand: false, deep: true }
+    ]
+  }
+});
+----
+
+[[expand]]
+==== `+expand+`
+
+Controls whether the selection is expanded to the enclosing matching selector element before a format is applied or removed. This applies to `+selector+` formats that are not also `+inline+` formats. When enabled, if the selection only partially covers a matching element, the range is expanded to cover the whole element. Setting `+expand+` to `+false+` restricts the operation to the current selection.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+true+` for `+selector+` formats that are not also `+inline+` formats
+
+*Possible values:* `+true+`, `+false+`
+
+===== Example: using `+expand+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  formats: {
+    removeformat: [
+      // Restrict removal to the current selection instead of expanding to the whole matching element
+      { selector: 'h1,h2,h3,h4,h5,h6', remove: 'all', expand: false, deep: true }
+    ]
+  }
+});
+----
+
+[[split]]
+==== `+split+`
+
+Used when removing a format. Controls whether the element wrapping the selection is split at the selection boundaries so that the format is removed only from the selected text. When set to `+false+`, the wrapping element is not split, so the format is not removed from a partial selection.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+true+` for `+inline+` formats and non-`+selector+` formats; `+false+` for `+selector+` (block) formats.
+
+*Possible values:* `+true+`, `+false+`
+
+===== Example: using `+split+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  formats: {
+    removeformat: [
+      // Remove the format without splitting the wrapping element at the selection boundaries
+      { selector: 'span', attributes: ['style', 'class'], remove: 'empty', split: false, deep: true }
     ]
   }
 });

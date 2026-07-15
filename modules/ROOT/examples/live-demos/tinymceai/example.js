@@ -6,6 +6,14 @@ tinymce.init({
   plugins: ['tinymceai', 'advlist', 'lists', 'link', 'autolink', 'table', 'wordcount'],
   toolbar: 'undo redo | tinymceai-chat ai-quickactions-translate tinymceai-review | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link',
   sidebar_show: 'tinymceai-chat',
+  tinymceai_chat_welcome_message: '<p>Welcome to TinyMCE AI. Pick an action below or type your own prompt.</p>',
+  tinymceai_chat_welcome_actions: [
+    { text: 'Here are some actions to get started:' },
+    { title: 'Summarize the document', command: 'TinyMCEAIQuickActionsSummarize' },
+    { title: 'Continue writing', command: 'TinyMCEAIQuickActionContinueWriting' },
+    { title: 'Translate to Spanish', command: 'TinyMCEAIQuickActionTranslate', value: 'spanish' },
+    { title: 'Review my document', command: 'ToggleSidebar', value: 'tinymceai-review' }
+  ],
   tinymceai_token_provider: async () => {
     return fetch('/api/tinymceai-token', { credentials: 'include' })
       .then(resp => resp.text())

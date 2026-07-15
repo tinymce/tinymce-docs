@@ -94,6 +94,45 @@ Reasoning in Chat models turns on the ability to think through problems, draw lo
 
 Some models use reasoning automatically, while others may require manual activation. Whether the "Enable reasoning" button image:icons-premium/reasoning.svg[Reasoning icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support reasoning, use the toggle button to enable it.
 
+[[welcome-chat-actions]]
+== Welcome chat actions
+
+Welcome chat actions customize the empty state of the Chat sidebar, replacing a blank prompt with a welcome message and a set of suggested starting points. When a user opens Chat before sending any messages, the sidebar can present an introductory message alongside clickable buttons that run common tasks, helping users understand what the AI can do and begin a conversation with a single click.
+
+The welcome actions are shown only before the first request is sent in a conversation. They are hidden once the first message is sent and shown again when a new conversation is started.
+
+Each suggested action is a button that runs an editor command when selected. Commands can be Quick Actions, Chat commands, the core `+ToggleSidebar+` command, or any other registered editor command. Descriptive text items and action buttons can be interleaved to group related actions under short headings.
+
+[[welcome-chat-actions-configuration]]
+=== Configuration
+
+Welcome chat actions are configured using two options:
+
+* `tinymceai_chat_welcome_message`: Sets the welcome message displayed at the top of the Chat sidebar empty state.
+* `tinymceai_chat_welcome_actions`: Defines the descriptive text and suggested action buttons shown below the welcome message.
+
+Full schemas, supported item types, and command examples are documented under xref:tinymceai.adoc#tinymceai_chat_welcome_message[`+tinymceai_chat_welcome_message+`] and xref:tinymceai.adoc#tinymceai_chat_welcome_actions[`+tinymceai_chat_welcome_actions+`].
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_chat_welcome_message: '<p>Welcome! How can I help you today?</p>',
+  tinymceai_chat_welcome_actions: [
+    { text: 'Here are some actions to get started:' },
+    { title: 'Summarize the document', command: 'TinyMCEAIQuickActionsSummarize' },
+    { title: 'Continue writing', command: 'TinyMCEAIQuickActionContinueWriting' },
+    { title: 'Review my document', command: 'ToggleSidebar', value: 'tinymceai-review' }
+  ],
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
+  }
+});
+----
+
 [[adding-context-to-conversations]]
 == Adding context to conversations
 

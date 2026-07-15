@@ -55,7 +55,6 @@ import { EditorComponent } from '@tinymce/tinymce-angular';
   <h1>{productname} {productmajorversion} Angular Demo</h1>
   <editor
     [init]="init"
-    licenseKey="gpl"
     apiKey="no-api-key"
   />
   `
@@ -101,7 +100,9 @@ ifeval::["{productSource}" == "zip"]
 . Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+src+` folder.
 endif::[]
 
+ifeval::["{productSource}" != "cloud"]
 include::partial$integrations/angular-load-tinymce-independently.adoc[]
+endif::[]
 
 . Run the Angular a development server
 +

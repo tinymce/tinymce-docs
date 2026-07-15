@@ -15,7 +15,6 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:improvements[Improvements]
-* xref:additions[Additions]
 * xref:bug-fixes[Bug fixes]
 
 
@@ -58,7 +57,14 @@ For information on the **Comments** plugin, see: xref:introduction-to-tiny-comme
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following fixes.
+**TinyMCE AI** includes the following addition and fixes.
+
+=== Added configurable welcome actions to the TinyMCE AI Chat empty state
+// #TINYMCE-14508
+
+In {productname} {release-version}, the TinyMCE AI Chat sidebar can display a configurable set of welcome actions in its empty state, giving users suggested starting points instead of a blank prompt. Each item can show descriptive text or a button that runs a Quick Action, sends a chat prompt, or runs another editor command. Welcome actions appear before the first request is sent and are hidden once a conversation begins.
+
+Welcome actions are configured with the new xref:tinymceai.adoc#tinymceai_chat_welcome_actions[`+tinymceai_chat_welcome_actions+`] option and are disabled by default.
 
 ==== Double tooltips appeared on tags in the prompt context in Safari
 // #TINYMCE-14485
@@ -102,19 +108,6 @@ In {productname} {release-version}, DOMPurify has been updated to the latest ver
 Previously, the editor resize handle did not expose the Accessible Rich Internet Applications (ARIA) value attributes recommended for the link:https://www.w3.org/TR/wai-aria/#separator[`+separator+` role]. Automated accessibility scanners reported this as a specification violation on the resize handle.
 
 In {productname} {release-version}, the resize handle exposes the `+aria-valuenow+`, `+aria-valuemin+`, and `+aria-valuemax+` attributes when the editor is configured for vertical resizing, which is the default `+resize: true+` behavior. `+aria-valuenow+` reports the current editor height, `+aria-valuemin+` reflects the `+min_height+` option, and `+aria-valuemax+` reflects the `+max_height+` option, or the current height plus the 20px keyboard resize step when `+max_height+` is not set. Editors configured for two-dimensional resizing with `+resize: 'both'+` are unchanged, because no recommended accessible pattern currently exists for two-dimensional resize handles.
-
-
-[[additions]]
-== Additions
-
-{productname} {release-version} also includes the following addition:
-
-=== Added configurable welcome actions to the TinyMCE AI Chat empty state
-// #TINYMCE-14508
-
-In {productname} {release-version}, the TinyMCE AI Chat sidebar can display a configurable set of welcome actions in its empty state, giving users suggested starting points instead of a blank prompt. Each item can show descriptive text or a button that runs a Quick Action, sends a chat prompt, or runs another editor command. Welcome actions appear before the first request is sent and are hidden once a conversation begins.
-
-Welcome actions are configured with the new xref:tinymceai.adoc#tinymceai_chat_welcome_actions[`+tinymceai_chat_welcome_actions+`] option and are disabled by default.
 
 
 [[bug-fixes]]

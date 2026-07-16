@@ -1,6 +1,8 @@
 This section lists the open source plugins included with {productname}. These plugins provide the core editing and formatting functionality needed to build and extend the editor.
 
-== Core Writing & Formatting
+=== Core Editing
+
+Core tools for creating, formatting, and inserting everyday content.
 
 [cols="1,1"]
 |===
@@ -43,18 +45,6 @@ Adds and edits hyperlinks within content.
 
 a|
 [.lead]
-xref:lists.adoc[Lists]
-
-Enables numbered and bulleted lists and normalizes list behavior across browsers.
-
-a|
-[.lead]
-xref:advlist.adoc[List Styles]
-
-Creates styled ordered and unordered lists.
-
-a|
-[.lead]
 xref:media.adoc[Media]
 
 Inserts and manages embedded media, including video, audio, and iframe embeds.
@@ -67,58 +57,9 @@ Inserts non-breaking spaces.
 
 a|
 [.lead]
-xref:pagebreak.adoc[Page Break]
-
-Inserts a page break into content.
-
-a|
-[.lead]
-xref:table.adoc[Table]
-
-Creates and edits tables, including structure and cell formatting.
-
-|===
-
-== Content Structure & Layout
-
-[cols="1,1"]
-|===
-
-a|
-[.lead]
-xref:accordion.adoc[Accordion]
-
-Creates expandable and collapsible content sections.
-
-a|
-[.lead]
-xref:anchor.adoc[Anchor]
-
-Inserts anchors (bookmarks) that link directly to content.
-
-a|
-[.lead]
-xref:fullscreen.adoc[Full Screen]
-
-Expands the editor to full-screen mode.
-
-a|
-[.lead]
 xref:importcss.adoc[Import CSS]
 
 Imports CSS class names into the Formats menu for styling content.
-
-a|
-[.lead]
-xref:preview.adoc[Preview]
-
-Displays a read-only preview of the current content.
-
-a|
-[.lead]
-xref:quickbars.adoc[Quick Toolbars]
-
-Adds context toolbars for text selections, images, and inserting content on empty lines.
 
 a|
 [.lead]
@@ -131,14 +72,6 @@ a|
 xref:visualchars.adoc[Visual Characters]
 
 Displays nonbreaking spaces and soft hyphens as visible characters.
-
-|===
-
-
-== Code & Technical Editing
-
-[cols="1,1"]
-|===
 
 a|
 [.lead]
@@ -153,21 +86,40 @@ xref:codesample.adoc[Code Sample]
 Inserts syntax-highlighted code snippets.
 
 a|
+// Dummy cell to even out the two-column grid (odd number of plugins).
+
+|===
+
+=== Productivity
+
+Tools that speed up common editing tasks and enhance day-to-day workflows.
+
+[cols="1,1"]
+|===
+
+a|
 [.lead]
 xref:searchreplace.adoc[Search and Replace]
 
 Finds and replaces text across content.
 
 a|
-// Dummy cell to even out the two-column grid (odd number of plugins).
+[.lead]
+xref:fullscreen.adoc[Full Screen]
 
-|===
+Expands the editor to full-screen mode.
 
-== Productivity & Automation
+a|
+[.lead]
+xref:preview.adoc[Preview]
 
-[cols="1,1"]
-|===
+Displays a read-only preview of the current content.
 
+a|
+[.lead]
+xref:quickbars.adoc[Quick Toolbars]
+
+Adds context toolbars for text selections, images, and inserting content on empty lines.
 
 a|
 [.lead]
@@ -189,6 +141,12 @@ Saves content in the local browser to prevent data loss.
 
 a|
 [.lead]
+xref:wordcount.adoc[Word Count]
+
+Displays real-time word and character counts in the status bar.
+
+a|
+[.lead]
 xref:help.adoc[Help]
 
 Displays a help dialog with documentation and guidance.
@@ -199,20 +157,49 @@ xref:save.adoc[Save]
 
 Adds a button for manually saving content.
 
-a|
-[.lead]
-xref:wordcount.adoc[Word Count]
-
-Displays real-time word and character counts in the status bar.
-
 |===
 
-// Dummy table cell.
-// 1. Remove the inline comment markup pre-pending this
-//    element when the number of cells in the table is
-//    odd.
-// 2. Prepend the inline comment markup to this element
-//    when the number of cells in the table is even.
+=== Document Organization
 
+Tools for structuring documents with tables, lists, and navigational elements.
 
+[cols="1,1"]
+|===
 
+a|
+[.lead]
+xref:table.adoc[Table]
+
+Creates and edits tables, including structure and cell formatting.
+
+a|
+[.lead]
+xref:lists.adoc[Lists]
+
+Enables numbered and bulleted lists and normalizes list behavior across browsers.
+
+a|
+[.lead]
+xref:advlist.adoc[List Styles]
+
+Creates styled ordered and unordered lists.
+
+a|
+[.lead]
+xref:accordion.adoc[Accordion]
+
+Creates expandable and collapsible content sections.
+
+a|
+[.lead]
+xref:anchor.adoc[Anchor]
+
+Inserts anchors (bookmarks) that link directly to content.
+
+a|
+[.lead]
+xref:pagebreak.adoc[Page Break]
+
+Inserts a page break into content.
+
+|===

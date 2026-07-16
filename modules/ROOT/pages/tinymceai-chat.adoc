@@ -99,6 +99,8 @@ Some models use reasoning automatically, while others may require manual activat
 
 When a user opens Chat before sending any messages, the sidebar can present an introductory message alongside clickable buttons that run common tasks, helping users understand what the AI can do and begin a conversation with a single click.
 
+image::tinymceai/tinymce-ai-chat-welcome-message.png[{pluginname} Chat welcome message,width=80%]
+
 The welcome actions are shown only before the first request is sent in a conversation. They are hidden once the first message is sent and shown again when a new conversation is started.
 
 Each suggested action is a button that runs an editor command when selected. Commands can be Quick Actions, Chat commands, the core `+ToggleSidebar+` command, or any other registered editor command. Descriptive text items and action buttons can be interleaved to group related actions under short headings.

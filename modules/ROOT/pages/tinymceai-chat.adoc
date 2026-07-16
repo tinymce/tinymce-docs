@@ -95,9 +95,9 @@ Reasoning in Chat models turns on the ability to think through problems, draw lo
 Some models use reasoning automatically, while others may require manual activation. Whether the "Enable reasoning" button image:icons-premium/reasoning.svg[Reasoning icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support reasoning, use the toggle button to enable it.
 
 [[welcome-chat-actions]]
-== Welcome chat actions
+== Customizing the welcome message
 
-Welcome chat actions customize the empty state of the Chat sidebar, replacing a blank prompt with a welcome message and a set of suggested starting points. When a user opens Chat before sending any messages, the sidebar can present an introductory message alongside clickable buttons that run common tasks, helping users understand what the AI can do and begin a conversation with a single click.
+When a user opens Chat before sending any messages, the sidebar can present an introductory message alongside clickable buttons that run common tasks, helping users understand what the AI can do and begin a conversation with a single click.
 
 The welcome actions are shown only before the first request is sent in a conversation. They are hidden once the first message is sent and shown again when a new conversation is started.
 

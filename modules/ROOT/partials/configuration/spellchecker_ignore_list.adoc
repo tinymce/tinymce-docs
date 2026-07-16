@@ -7,6 +7,11 @@ NOTE: Languages specified as keys in the `+spellchecker_ignore_list+` object mus
 
 *Type:* `+Array+` or `+Object+`
 
+[[persisting-ignored-words]]
+=== Persisting ignored words
+
+Words ignored during an editing session — through the *Ignore* or *Ignore All* menu items, or the `+addIgnoredWords+` API — apply only to the current session and are not retained after the editor is reloaded. To persist ignored words across sessions, store them in the host application (for example, when handling the `+SpellcheckerIgnore+` and `+SpellcheckerIgnoreAll+` events) and reapply them through the `+spellchecker_ignore_list+` option each time the editor is initialized.
+
 === Example: using `+spellchecker_ignore_list+` to ignore words in all languages
 
 [source,js]

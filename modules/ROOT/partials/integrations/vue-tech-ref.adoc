@@ -477,39 +477,7 @@ export default {
 </script>
 ----
 
-==== Updating content without `+v-model+`
-
-The content watcher is only active when `+v-model+` or an `+@update:modelValue+` listener is bound. When content is supplied as a one-way prop without `+v-model+`, reassigning that prop does not update the editor.
-
-In that case, obtain the editor instance from the `+init+` event and call `+editor.setContent()+` directly:
-
-[source,html]
-----
-<template>
-  <editor :init="{ /* your other settings */ }" @init="storeEditor" />
-</template>
-
-<script>
-import Editor from '@tinymce/tinymce-vue';
-
-export default {
-  components: { editor: Editor },
-  data() {
-    return { editorRef: null };
-  },
-  methods: {
-    storeEditor(event, editor) {
-      this.editorRef = editor;
-    },
-    updateContent(html) {
-      if (this.editorRef) {
-        this.editorRef.setContent(html);
-      }
-    }
-  }
-};
-</script>
-----
+This watcher is only active when `+v-model+` or an `+@update:modelValue+` listener is bound. Without it, reassigning a one-way content prop does not update the editor; use xref:event-binding[the `+init+` event] to obtain the editor instance and call its content APIs directly.
 
 [[event-binding]]
 == Event binding

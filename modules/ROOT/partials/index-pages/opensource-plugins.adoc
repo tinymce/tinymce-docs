@@ -15,6 +15,18 @@ Inserts special characters into {productname}.
 
 a|
 [.lead]
+xref:code.adoc[Code]
+
+Edits the HTML source code of the content directly.
+
+a|
+[.lead]
+xref:codesample.adoc[Code Sample]
+
+Inserts syntax-highlighted code snippets.
+
+a|
+[.lead]
 xref:directionality.adoc[Directionality]
 
 Sets text direction to left-to-right or right-to-left.
@@ -30,6 +42,12 @@ a|
 xref:image.adoc[Image]
 
 Inserts and manages images in {productname}.
+
+a|
+[.lead]
+xref:importcss.adoc[Import CSS]
+
+Imports CSS class names into the Formats menu for styling content.
 
 a|
 [.lead]
@@ -57,12 +75,6 @@ Inserts non-breaking spaces.
 
 a|
 [.lead]
-xref:importcss.adoc[Import CSS]
-
-Imports CSS class names into the Formats menu for styling content.
-
-a|
-[.lead]
 xref:visualblocks.adoc[Visual Blocks]
 
 Shows visual outlines of block-level elements.
@@ -72,18 +84,6 @@ a|
 xref:visualchars.adoc[Visual Characters]
 
 Displays nonbreaking spaces and soft hyphens as visible characters.
-
-a|
-[.lead]
-xref:code.adoc[Code]
-
-Edits the HTML source code of the content directly.
-
-a|
-[.lead]
-xref:codesample.adoc[Code Sample]
-
-Inserts syntax-highlighted code snippets.
 
 a|
 // Dummy cell to even out the two-column grid (odd number of plugins).
@@ -96,30 +96,6 @@ Tools that speed up common editing tasks and enhance day-to-day workflows.
 
 [cols="1,1"]
 |===
-
-a|
-[.lead]
-xref:searchreplace.adoc[Search and Replace]
-
-Finds and replaces text across content.
-
-a|
-[.lead]
-xref:fullscreen.adoc[Full Screen]
-
-Expands the editor to full-screen mode.
-
-a|
-[.lead]
-xref:preview.adoc[Preview]
-
-Displays a read-only preview of the current content.
-
-a|
-[.lead]
-xref:quickbars.adoc[Quick Toolbars]
-
-Adds context toolbars for text selections, images, and inserting content on empty lines.
 
 a|
 [.lead]
@@ -141,9 +117,9 @@ Saves content in the local browser to prevent data loss.
 
 a|
 [.lead]
-xref:wordcount.adoc[Word Count]
+xref:fullscreen.adoc[Full Screen]
 
-Displays real-time word and character counts in the status bar.
+Expands the editor to full-screen mode.
 
 a|
 [.lead]
@@ -153,9 +129,33 @@ Displays a help dialog with documentation and guidance.
 
 a|
 [.lead]
+xref:preview.adoc[Preview]
+
+Displays a read-only preview of the current content.
+
+a|
+[.lead]
+xref:quickbars.adoc[Quick Toolbars]
+
+Adds context toolbars for text selections, images, and inserting content on empty lines.
+
+a|
+[.lead]
 xref:save.adoc[Save]
 
 Adds a button for manually saving content.
+
+a|
+[.lead]
+xref:searchreplace.adoc[Search and Replace]
+
+Finds and replaces text across content.
+
+a|
+[.lead]
+xref:wordcount.adoc[Word Count]
+
+Displays real-time word and character counts in the status bar.
 
 |===
 
@@ -165,24 +165,6 @@ Tools for structuring documents with tables, lists, and navigational elements.
 
 [cols="1,1"]
 |===
-
-a|
-[.lead]
-xref:table.adoc[Table]
-
-Creates and edits tables, including structure and cell formatting.
-
-a|
-[.lead]
-xref:lists.adoc[Lists]
-
-Enables numbered and bulleted lists and normalizes list behavior across browsers.
-
-a|
-[.lead]
-xref:advlist.adoc[List Styles]
-
-Creates styled ordered and unordered lists.
 
 a|
 [.lead]
@@ -198,8 +180,26 @@ Inserts anchors (bookmarks) that link directly to content.
 
 a|
 [.lead]
+xref:advlist.adoc[List Styles]
+
+Creates styled ordered and unordered lists.
+
+a|
+[.lead]
+xref:lists.adoc[Lists]
+
+Enables numbered and bulleted lists and normalizes list behavior across browsers.
+
+a|
+[.lead]
 xref:pagebreak.adoc[Page Break]
 
 Inserts a page break into content.
+
+a|
+[.lead]
+xref:table.adoc[Table]
+
+Creates and edits tables, including structure and cell formatting.
 
 |===

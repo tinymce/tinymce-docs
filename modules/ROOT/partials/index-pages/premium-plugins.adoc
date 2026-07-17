@@ -4,6 +4,7 @@ This section lists the premium plugins available for {productname}. These plugin
 
 AI-powered features that bring content generation, transformation, and quality review directly into the editor.
 
+// TinyMCE AI is pinned first as the umbrella entry; the remaining AI plugins follow alphabetically.
 [cols="1,1"]
 |===
 
@@ -75,33 +76,9 @@ Tools for converting content between formats and embedding external media and pa
 
 a|
 [.lead]
-xref:markdown.adoc[Markdown]
-
-Converts pasted Markdown content into formatted output.
-
-a|
-[.lead]
 xref:introduction-to-mediaembed.adoc[Enhanced Media Embed]
 
 Adds rich media previews inside {productname} for embedded content such as videos.
-
-a|
-[.lead]
-xref:pageembed.adoc[Page Embed]
-
-Embeds external web pages or iframes directly into content.
-
-a|
-[.lead]
-xref:inline-css.adoc[Inline CSS]
-
-Converts content into a single HTML file with inline styles, optimized for email and portability.
-
-a|
-[.lead]
-xref:exportword.adoc[Export to Word]
-
-Exports editor content to `.docx` (Microsoft Word) format.
 
 a|
 [.lead]
@@ -111,9 +88,33 @@ Generates a `.pdf` file from {productname} content.
 
 a|
 [.lead]
+xref:exportword.adoc[Export to Word]
+
+Exports editor content to `.docx` (Microsoft Word) format.
+
+a|
+[.lead]
 xref:importword.adoc[Import from Word]
 
 Imports Microsoft Word documents (`.doc`, `.docx`) and Word XML (`.xml`) files into the editor.
+
+a|
+[.lead]
+xref:inline-css.adoc[Inline CSS]
+
+Converts content into a single HTML file with inline styles, optimized for email and portability.
+
+a|
+[.lead]
+xref:markdown.adoc[Markdown]
+
+Converts pasted Markdown content into formatted output.
+
+a|
+[.lead]
+xref:pageembed.adoc[Page Embed]
+
+Embeds external web pages or iframes directly into content.
 
 a|
 // Dummy cell to even out the two-column grid (odd number of plugins).
@@ -135,15 +136,15 @@ Checks editor content against WCAG accessibility guidelines (levels A, AA, and A
 
 a|
 [.lead]
-xref:linkchecker.adoc[Link Checker]
-
-Validates links automatically as they are added or edited.
-
-a|
-[.lead]
 xref:advanced-typography.adoc[Advanced Typography]
 
 Replaces typewriter-style characters with their professional typesetter equivalents.
+
+a|
+[.lead]
+xref:linkchecker.adoc[Link Checker]
+
+Validates links automatically as they are added or edited.
 
 a|
 [.lead]
@@ -177,9 +178,57 @@ Changes the capitalization of selected text.
 
 a|
 [.lead]
+xref:advcode.adoc[Enhanced Code Editor]
+
+Provides an improved code editing experience with IDE-like features for source content.
+
+a|
+[.lead]
+xref:advtable.adoc[Enhanced Tables]
+
+Adds advanced table features such as sorting and row numbering.
+
+a|
+[.lead]
 xref:formatpainter.adoc[Format Painter]
 
 Copies formatting from one selection and applies it to another.
+
+a|
+[.lead]
+xref:fullpagehtml.adoc[Full Page HTML]
+
+Edits complete HTML documents, preserving the head and doctype, and edits metadata such as title, keywords, and description.
+
+a|
+[.lead]
+xref:editimage.adoc[Image Editing]
+
+Crops, resizes, and applies filters to images within the editor.
+
+a|
+[.lead]
+xref:math.adoc[Math]
+
+Inserts math formulas using LaTeX or MathML markup.
+
+a|
+[.lead]
+xref:uploadcare.adoc[Media Optimizer Powered by Uploadcare]
+
+Optimizes uploaded images and videos for performance and delivery.
+
+a|
+[.lead]
+xref:mergetags.adoc[Merge Tags]
+
+Inserts dynamic content through Merge Tags.
+
+a|
+[.lead]
+xref:moxiemanager.adoc[MoxieManager]
+
+Manages files and images within the editor.
 
 a|
 [.lead]
@@ -195,57 +244,9 @@ Pastes content from external sources such as Microsoft Word, Excel, and Google D
 
 a|
 [.lead]
-xref:math.adoc[Math]
-
-Inserts math formulas using LaTeX or MathML markup.
-
-a|
-[.lead]
-xref:editimage.adoc[Image Editing]
-
-Crops, resizes, and applies filters to images within the editor.
-
-a|
-[.lead]
-xref:uploadcare.adoc[Media Optimizer Powered by Uploadcare]
-
-Optimizes uploaded images and videos for performance and delivery.
-
-a|
-[.lead]
-xref:advcode.adoc[Enhanced Code Editor]
-
-Provides an improved code editing experience with IDE-like features for source content.
-
-a|
-[.lead]
-xref:advtable.adoc[Enhanced Tables]
-
-Adds advanced table features such as sorting and row numbering.
-
-a|
-[.lead]
-xref:fullpagehtml.adoc[Full Page HTML]
-
-Edits complete HTML documents, preserving the head and doctype, and edits metadata such as title, keywords, and description.
-
-a|
-[.lead]
 xref:advanced-templates.adoc[Templates]
 
 Creates and edits structured document templates in {productname}.
-
-a|
-[.lead]
-xref:mergetags.adoc[Merge Tags]
-
-Inserts dynamic content through Merge Tags.
-
-a|
-[.lead]
-xref:moxiemanager.adoc[MoxieManager]
-
-Manages files and images within the editor.
 
 a|
 [.lead]

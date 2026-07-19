@@ -4,15 +4,14 @@ This section lists the premium plugins available for {productname}. These plugin
 
 AI-powered features that bring content generation, transformation, and quality review directly into the editor.
 
-// TinyMCE AI is pinned first as the umbrella entry; the remaining AI plugins follow alphabetically.
-[cols="1,1"]
-|===
-
-a|
+// TinyMCE AI is presented as the top-level umbrella entry, with its individual features listed in the grid below.
 [.lead]
 xref:tinymceai-introduction.adoc[TinyMCE AI]
 
-Integrates real-time AI writing assistance into {productname}, with ready-to-use editor features and an API for custom functionality with the LLM of your choice.
+Integrates real-time AI writing assistance into {productname}, with ready-to-use editor features and an API for custom functionality with the LLM of your choice. {productname} AI includes the following features:
+
+[cols="1,1"]
+|===
 
 a|
 [.lead]
@@ -31,6 +30,9 @@ a|
 xref:tinymceai-review.adoc[AI Review]
 
 Checks content for grammar, clarity, style, and tone, and reviews AI-suggested edits inline before accepting them.
+
+a|
+// Dummy cell to even out the two-column grid (odd number of plugins).
 
 |===
 

@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Applying or removing formatting on a multi-cell table selection incorrectly styled list items in cells that were not selected.
+// #TINYMCE-13235
+
+Previously, applying or removing inline formatting, such as bold, font color, or font size, across a multi-cell table selection incorrectly styled list items in cells that were not part of the selection. {productname} resolved the affected list items from the overall selection range rather than from the selected cells, so list items in neighboring cells received the formatting.
+
+In {productname} {release-version}, {productname} resolves the affected list items from the selected table cells directly. Only the list items within the selected cells now receive the formatting, and list items in unselected cells remain unchanged.
+
 
 [[security-fixes]]
 == Security fixes

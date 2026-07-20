@@ -71,6 +71,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following fix.
+
+==== Suggestion cards remained dimmed when selected with Show edits turned off
+// #TINYMCE-14675
+
+Previously, in the Suggested Edits plugin, selecting a suggestion card while the **Show edits** toggle was turned off left the card dimmed rather than showing it as active. This regression, introduced in {productname} 8.1, made it difficult to identify which card was active when reviewing the completed version of the document.
+
+In {productname} {release-version}, {productname} dims a suggestion card only when it is not the active card. Selecting a card now restores its full appearance even when **Show edits** is turned off, so the active card remains distinguishable during review.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

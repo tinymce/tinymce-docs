@@ -1,14 +1,16 @@
 [[iframe_aria_text]]
 == `+iframe_aria_text+`
 
-This option is used to customize the `+title+` attribute on the {productname} `+iframe+` element. For example:
+This option sets the accessible name for the editable content area inside the {productname} `+iframe+`. The value is read by screen readers to help users identify the editor.
+
+On most browsers, the value is applied as an `+aria-label+` on the `+<body>+` element inside the iframe document. For example:
 
 [source,html]
 ----
-<iframe title="Rich Text Area. Press ALT-0 for help."></iframe>
+<body aria-label="Rich Text Area. Press ALT-0 for help."></body>
 ----
 
-The `+title+` attribute is read by screen-readers to help users identify the editor. This option only applies to {productname} classic (iframe) mode and has no effect on xref:inline-editor-options.adoc#inline[`+inline+` editors].
+This option only applies to {productname} classic (iframe) mode and has no effect on xref:inline-editor-options.adoc#inline[`+inline+` editors].
 
 *Type:* `+String+`
 

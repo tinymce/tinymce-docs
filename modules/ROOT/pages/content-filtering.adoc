@@ -11,13 +11,13 @@ Use `+valid_elements+` to define which elements and attributes are allowed, `+in
 
 {productname} validates and cleans content against a schema whenever content is set, pasted, or retrieved. The schema defines which elements and attributes are allowed, and any element or attribute outside the schema is removed when the content is parsed. The content filtering options on this page configure that schema:
 
-* `+valid_elements+` replaces the set of allowed elements and attributes.
-* `+extended_valid_elements+` adds to the existing set rather than replacing it.
-* `+invalid_elements+` removes specific elements from the content, keeping their text.
+* xref:#valid_elements[`+valid_elements+`] replaces the set of allowed elements and attributes.
+* xref:#extended_valid_elements[`+extended_valid_elements+`] adds to the existing set rather than replacing it.
+* xref:#invalid_elements[`+invalid_elements+`] removes specific elements from the content, keeping their text.
 
 For a reference of the underlying validation and parsing mechanism, see the xref:apis/tinymce.html.schema.adoc[Schema] and xref:apis/tinymce.html.domparser.adoc[DomParser] API documentation.
 
-To restrict content to a limited subset of formatting, set `+valid_elements+` to only the elements and attributes that should be kept. Any element outside the list is removed and its text content is preserved.
+To restrict content to a limited subset of formatting, set xref:#valid_elements[`+valid_elements+`] to only the elements and attributes that should be kept. Any element outside the list is removed and its text content is preserved.
 
 [source,js]
 ----
@@ -29,7 +29,7 @@ tinymce.init({
 
 This configuration keeps paragraphs, line breaks, links (with their `+href+` attribute), and bold and italic text, converting `+b+` to `+strong+` and `+i+` to `+em+`. All other elements, such as headings, tables, and inline styles, are stripped and their text is retained.
 
-To remove only specific formatting while keeping everything else, use `+invalid_elements+`.
+To remove only specific formatting while keeping everything else, use xref:#invalid_elements[`+invalid_elements+`].
 
 [source,js]
 ----
@@ -49,7 +49,7 @@ tinymce.init({
 });
 ----
 
-For a complete reference of the element and attribute syntax used by `+valid_elements+`, `+extended_valid_elements+`, and `+invalid_elements+`, see the option descriptions below. To customize how content is styled and defined rather than restricted, see xref:content-formatting.adoc[Content formats].
+For a complete reference of the element and attribute syntax used by xref:#valid_elements[`+valid_elements+`], xref:#extended_valid_elements[`+extended_valid_elements+`], and xref:#invalid_elements[`+invalid_elements+`], see the option descriptions below. To customize how content is styled and defined rather than restricted, see xref:content-formatting.adoc[Content formats].
 
 include::partial$configuration/allow_conditional_comments.adoc[]
 

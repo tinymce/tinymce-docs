@@ -16,3 +16,33 @@ tinymce.init({
   custom_undo_redo_levels: 10
 });
 ----
+
+=== How typing is grouped into undo levels
+
+{productname} groups consecutive typing into a single undo level. A new undo level begins only when a boundary event occurs, such as pressing a navigation key (arrow keys, `+Home+`, `+End+`, `+Page Up+`, or `+Page Down+`), clicking in the content, moving focus away from the editor, or running an editor command. Until a boundary event occurs, all text typed since the previous level is merged into one level. As a result, a single undo can remove everything typed since the last boundary event.
+
+This grouping applies regardless of the language or input method. It is more noticeable when typing with an Input Method Editor (IME), for example when entering Chinese, Japanese, or Korean, because a whole composed phrase or sentence can be added without a boundary event. In that case, a single undo can remove a large block of text.
+
+The `+custom_undo_redo_levels+` option controls the depth of the undo stack, which is the number of levels retained. It does not change how typing is grouped into a level. There is no built-in option to create a separate undo level for each keystroke.
+
+=== Creating finer-grained undo levels
+
+To add undo levels at chosen points, call the xref:apis/tinymce.undomanager.adoc#add[UndoManager `+add()+`] method. Because continuous typing is otherwise merged into one level, a timer can be used to add periodic checkpoints while the editor has focus. A new level is only recorded when the content has changed since the previous level.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  setup: (editor) => {
+    let checkpoint;
+
+    editor.on('focus', () => {
+      checkpoint = window.setInterval(() => editor.undoManager.add(), 5000);
+    });
+
+    editor.on('blur', () => {
+      window.clearInterval(checkpoint);
+    });
+  }
+});
+----

@@ -1,0 +1,58 @@
+= {productname} {release-version}
+:release-version: 8.8.1
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, July 22^nd^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+* xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
+* xref:bug-fixes[Bug fixes]
+
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium plugin changes
+
+The following premium plugin updates were released alongside {productname} {release-version}.
+
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following fix.
+
+==== Suggestion cards remained dimmed when selected with Show edits turned off
+// #TINYMCE-14675
+
+Previously, in the Suggested Edits plugin, selecting a suggestion card while the **Show edits** toggle was turned off left the card dimmed rather than showing it as active. This regression, introduced in {productname} 8.1, made it difficult to identify which card was active when reviewing the completed version of the document.
+
+In {productname} {release-version}, {productname} dims a suggestion card only when it is not the active card. Selecting a card now restores its full appearance even when **Show edits** is turned off, so the active card remains distinguishable during review.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+
+
+[[bug-fixes]]
+== Bug fixes
+
+{productname} {release-version} also includes the following bug fixes:
+
+=== The menubar could wrap over multiple rows on narrow viewports, such as at high browser zoom levels, leaving little or no visible space for the editable area. The menubar now scrolls horizontally instead.
+// #TINYMCE-14233
+
+Previously, on narrow viewports, such as at high browser zoom levels, the menubar could wrap across multiple rows. In fullscreen mode, this left little or no visible space for the editable area, which made the editor difficult to use at high zoom levels.
+
+In {productname} {release-version}, the menubar scrolls horizontally on narrow viewports instead of wrapping. The editable area keeps its visible space, and all menus remain reachable by scrolling the menubar.
+
+=== Applying or removing formatting on a multi-cell table selection incorrectly styled list items in cells that were not selected.
+// #TINYMCE-13235
+
+Previously, applying or removing inline formatting, such as bold, font color, or font size, across a multi-cell table selection incorrectly styled list items in cells that were not part of the selection. {productname} resolved the affected list items from the overall selection range rather than from the selected cells, so list items in neighboring cells received the formatting.
+
+In {productname} {release-version}, {productname} resolves the affected list items from the selected table cells directly. Only the list items within the selected cells now receive the formatting, and list items in unselected cells remain unchanged.

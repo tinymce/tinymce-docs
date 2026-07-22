@@ -27,22 +27,17 @@ The `+custom_undo_redo_levels+` option controls the depth of the undo stack, whi
 
 === Creating finer-grained undo levels
 
-To add undo levels at chosen points, call the xref:apis/tinymce.undomanager.adoc#add[UndoManager `+add()+`] method. Because continuous typing is otherwise merged into one level, a timer can be used to add periodic checkpoints while the editor has focus. A new level is only recorded when the content has changed since the previous level.
+To add undo levels at chosen points, call the xref:apis/tinymce.undomanager.adoc#add[UndoManager `+add()+`] method. Because continuous typing is otherwise merged into one level, periodic checkpoints can be added with xref:apis/tinymce.util.delay.adoc#setEditorInterval[`+tinymce.util.Delay.setEditorInterval+`], which behaves like the browser `+setInterval+` but stops automatically when the editor is removed. A new level is only recorded when the content has changed since the previous level.
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   setup: (editor) => {
-    let checkpoint;
-
-    editor.on('focus', () => {
-      checkpoint = window.setInterval(() => editor.undoManager.add(), 5000);
-    });
-
-    editor.on('blur', () => {
-      window.clearInterval(checkpoint);
-    });
+    // Add an undo checkpoint every five seconds.
+    tinymce.util.Delay.setEditorInterval(editor, () => {
+      editor.undoManager.add();
+    }, 5000);
   }
 });
 ----

@@ -192,7 +192,7 @@ The AI service does not host the callback page. The integrating web application 
 
 Replace `my-server` with the key from `MCP_SERVERS`. In production, add error handling, a loading indicator, and validation for missing `code` or `state` parameters.
 
-In the example above, the callback page calls `/api/mcp/oauth/{serverName}/complete` on the integrating application's own server rather than directly on the AI service. This is the proxy pattern described below.
+In the example above, the callback page calls `/api/mcp/oauth/\{serverName}/complete` on the integrating application's own server rather than directly on the AI service. This is the proxy pattern described below.
 
 [[mcp-oauth-proxy]]
 ==== Browser integration and proxy endpoints
@@ -203,10 +203,10 @@ The backend generates a JWT (the same token used for conversations), attaches it
 
 A typical integration requires four proxy routes:
 
-* `GET /api/mcp/oauth/status` -> `GET {AI_SERVICE_URL}/v1/mcp/oauth/status`
-* `POST /api/mcp/oauth/{serverName}/initialize` -> `POST {AI_SERVICE_URL}/v1/mcp/oauth/{serverName}/initialize`
-* `POST /api/mcp/oauth/{serverName}/complete` -> `POST {AI_SERVICE_URL}/v1/mcp/oauth/{serverName}/complete`
-* `DELETE /api/mcp/oauth/{serverName}` -> `DELETE {AI_SERVICE_URL}/v1/mcp/oauth/{serverName}`
+* `GET /api/mcp/oauth/status` -> `GET \{AI_SERVICE_URL}/v1/mcp/oauth/status`
+* `POST /api/mcp/oauth/\{serverName}/initialize` -> `POST \{AI_SERVICE_URL}/v1/mcp/oauth/\{serverName}/initialize`
+* `POST /api/mcp/oauth/\{serverName}/complete` -> `POST \{AI_SERVICE_URL}/v1/mcp/oauth/\{serverName}/complete`
+* `DELETE /api/mcp/oauth/\{serverName}` -> `DELETE \{AI_SERVICE_URL}/v1/mcp/oauth/\{serverName}`
 
 [[mcp-oauth-endpoints]]
 ==== REST endpoints

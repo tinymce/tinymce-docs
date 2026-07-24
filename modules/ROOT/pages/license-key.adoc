@@ -302,14 +302,14 @@ a| * Verify that the license key is correctly copied from your link:https://www.
 * Ensure there are no extra spaces or characters in the key
 * Check if the key matches your deployment type (Cloud vs Self-hosted)
 
-| xref:load-error[Load error (Cloud)]
+| xref:#load-error-cloud[Load error (Cloud)]
 | The editor is disabled because the TinyMCE API key could not be validated. The TinyMCE Commercial License Key Manager plugin is required for the provided API key to be validated but could not be loaded.
 | The editor is disabled because the TinyMCE API key could not be validated.
 a| * Verify that your API key is valid
 * Check if your subscription is active
 * Visit the link:https://support.tiny.cloud[Support Portal] if the issue persists
 
-| xref:load-error[Load error (Self-Hosted)]
+| xref:#load-error-selfhosted[Load error (Self-Hosted)]
 | The editor is disabled because the license key provided is invalid. The TinyMCE Commercial License Key Manager plugin is required for the provided license key to be validated but could not be loaded.
 | The editor is disabled because the TinyMCE license key could not be validated.
 a| * Check if the license key matches your deployment type: GPL or commercial, Cloud or Self-hosted

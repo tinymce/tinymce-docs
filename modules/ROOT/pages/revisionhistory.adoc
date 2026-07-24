@@ -155,6 +155,45 @@ const saveRevision = () => {
 };
 ----
 
+==== Capturing content before and after an AI edit
+
+The previous example marks the next saved revision as AI-assisted, but that revision can combine human edits made since the last save with the AI-generated change. To keep the two apart, save a revision on the `+BeforeSetContent+` event as well. Both events carry an `+ai+` property that is `+true+` when the xref:tinymceai.adoc[{productname} AI] plugin inserts content:
+
+* `+BeforeSetContent+` fires immediately before the AI content is inserted. Calling `+editor.getContent()+` at this point captures the latest non-AI content, which can be saved as a revision that reflects the human-authored state.
+* `+SetContent+` fires immediately after the AI content is inserted. Calling `+editor.getContent()+` at this point captures the AI-generated result, which can be saved as an AI-assisted revision.
+
+Listening for both events produces a finer-grained history that distinguishes purely AI-generated content from the human content that preceded it:
+
+[source,js]
+----
+// Save the pre-AI (human) content before the TinyMCE AI plugin inserts its edit.
+editor.on('BeforeSetContent', (e) => {
+  if (e.ai) {
+    const revision = {
+      revisionId: createRevisionId(), // Replace with your ID generation
+      createdAt: new Date().toISOString(),
+      content: editor.getContent()
+    };
+    saveToStorage(revision); // Replace with your storage call
+  }
+});
+
+// Save the post-AI content and mark it as AI-assisted.
+editor.on('SetContent', (e) => {
+  if (e.ai) {
+    const revision = {
+      revisionId: createRevisionId(), // Replace with your ID generation
+      createdAt: new Date().toISOString(),
+      content: editor.getContent(),
+      metadata: { source: 'ai' }
+    };
+    saveToStorage(revision); // Replace with your storage call
+  }
+});
+----
+
+Listening for `+BeforeSetContent+` is optional. Use `+SetContent+` alone to record only the AI-assisted result, or pair it with `+BeforeSetContent+` when the revision history should also preserve the content as it was before each AI edit. Choose the approach that suits the application's use case.
+
 === Restoring an AI-assisted revision
 
 Restoring a revision sets its content back into the editor and fires the `+VersionRestored+` event. The restored content is not flagged as AI-assisted, so look up the restored revision and carry its marker forward to the next save:

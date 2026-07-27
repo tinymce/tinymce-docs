@@ -172,7 +172,7 @@ Plugin configuration, API parameters, and per-feature options do not grant acces
 
 [NOTE]
 ====
-The set of models and capabilities can change between major {productname} releases. That kind of change is not treated as a breaking change for the editor. Use the plugin's model selection dropdown or `GET /v1/models/{version}` to see what the environment offers and the model limitations.
+The set of models and capabilities can change between major {productname} releases. That kind of change is not treated as a breaking change for the editor. Use the plugin's model selection dropdown or `GET /v1/models/\{version}` to see what the environment offers and the model limitations.
 ====
 
 .Example: Set default model in plugin configuration
@@ -204,7 +204,7 @@ Compatibility versions allow {pluginname} to introduce new models and capabiliti
 To see available models for a compatibility version:
 
 * **Through the plugin**: Available models are shown in the model selection dropdown when `tinymceai_allow_model_selection` is enabled. See xref:tinymceai.adoc#tinymceai_allow_model_selection[`tinymceai_allow_model_selection`] for configuration.
-* **Through the API**: Check the `GET /v1/models/{version}` endpoint. The API response includes model capabilities, limits, and availability. See xref:tinymceai-models.adoc#model-information[Model Information] for an example.
+* **Through the API**: Check the `GET /v1/models/\{version}` endpoint. The API response includes model capabilities, limits, and availability. See xref:tinymceai-models.adoc#model-information[Model Information] for an example.
 
 [[verifying-model-limits-for-integration]]
 === Verifying limits for a configured model
@@ -214,7 +214,7 @@ Follow these steps to read limits and capabilities for the model the integration
 * *Align base URL and credentials*
 ** Call the same HTTP base URL the editor uses for {pluginname} requests. If the base URL and JWT do not belong to the same environment, the response is an authorization error rather than model metadata.
 * *List models for the compatibility version*
-** Request `GET /v1/models/{version}` with the compatibility version the integration targets (often `1`). Use the https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API] OpenAPI definition to confirm `{version}` when unsure.
+** Request `GET /v1/models/\{version}` with the compatibility version the integration targets (often `1`). Use the https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API] OpenAPI definition to confirm `\{version}` when unsure.
 * *Pick the matching `items[]` entry*
 ** In the JSON `items` array, select the object whose `id` matches the model in configuration (`tinymceai_default_model`) or in API bodies (`model`).
 * *Read `limits` and `capabilities`*
@@ -259,14 +259,14 @@ Web scraping extracts and processes content from web pages so the AI can analyze
 [[model-limitations]]
 == Model Limitations
 
-Per-model caps (context length, attachment sizes, PDF page totals, and similar) are returned in the `limits` object for each entry in `GET /v1/models/{version}`. Those values are **the limits the service applies at runtime** and can differ by model (for example stricter `maxImageSize` than `maxFileSize` for some providers). See xref:tinymceai-models.adoc#verifying-model-limits-for-integration[Verifying limits for a configured model] for how to match the integration’s model id to the correct `items[]` entry.
+Per-model caps (context length, attachment sizes, PDF page totals, and similar) are returned in the `limits` object for each entry in `GET /v1/models/\{version}`. Those values are **the limits the service applies at runtime** and can differ by model (for example stricter `maxImageSize` than `maxFileSize` for some providers). See xref:tinymceai-models.adoc#verifying-model-limits-for-integration[Verifying limits for a configured model] for how to match the integration’s model id to the correct `items[]` entry.
 
 The sections below cover moderation, descriptions, and deprecation. Attachment limits are documented only under xref:tinymceai-models.adoc#file-processing-limits[File processing limits], using the live models API so values stay aligned with the service.
 
 [[file-processing-limits]]
 === File Processing Limits
 
-{pluginname} supports common attachment types in Chat conversations, including PDF, DOCX, images, Markdown, HTML, and plain text. Per-file and per-conversation ceilings—including maximum sizes, attachment counts, and PDF page totals—are returned per model in the `limits` object from `GET /v1/models/{version}`. Those numbers are **the current limits the service applies**; they can change with the service and vary by model, so read the `limits` object from that response at runtime for each model the integration uses. Field names, units, and schema updates are defined in the https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API] OpenAPI documentation.
+{pluginname} supports common attachment types in Chat conversations, including PDF, DOCX, images, Markdown, HTML, and plain text. Per-file and per-conversation ceilings—including maximum sizes, attachment counts, and PDF page totals—are returned per model in the `limits` object from `GET /v1/models/\{version}`. Those numbers are **the current limits the service applies**; they can change with the service and vary by model, so read the `limits` object from that response at runtime for each model the integration uses. Field names, units, and schema updates are defined in the https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API] OpenAPI documentation.
 
 For the request flow and how to match a configured model id to the correct `items[]` entry, see xref:tinymceai-models.adoc#verifying-model-limits-for-integration[Verifying limits for a configured model]. Typical `limits` keys include `maxFileSize`, `maxImageSize`, `maxFiles`, `maxTotalFileSize`, and `maxTotalPdfFilePages`.
 

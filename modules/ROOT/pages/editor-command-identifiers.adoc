@@ -214,7 +214,7 @@ include::partial$commands/core-table-cmds.adoc[]
 Commands are available for the following plugins:
 
 * xref:advancedlists[Advanced Lists]
-* xref:Enhanced Tables[Enhanced Tables]
+* xref:enhanced-tables[Enhanced Tables]
 * xref:anchor[Anchor]
 * xref:tinymceai[TinyMCE AI]
 * xref:autoresize[Autoresize]
@@ -226,14 +226,14 @@ Commands are available for the following plugins:
 * xref:directionality[Directionality]
 * xref:enhancedcodeeditor[Enhanced Code Editor]
 * xref:emoticons[Emoticons]
-* xref:exportpdf[Export to PDF]
-* xref:exportword[Export to Word]
+* xref:export-pdf[Export to PDF]
+* xref:export-word[Export to Word]
 * xref:footnotes[Footnotes]
 * xref:formatpainter[Format Painter]
 * xref:fullscreen[Full Screen]
 * xref:help[Help]
 * xref:image[Image]
-* xref:importword[Import from Word]
+* xref:import-word[Import from Word]
 * xref:editimage[Image Editing]
 * xref:insertdatetime[Insert Date/Time]
 * xref:link[Link]
@@ -266,7 +266,7 @@ The following commands require the xref:advlist.adoc[Advanced Lists (`+advlist+`
 
 include::partial$commands/advlist-cmds.adoc[leveloffset=+3]
 
-[[Enhanced Tables]]
+[[enhanced-tables]]
 ==== Enhanced Tables
 
 The following commands require the xref:advtable.adoc[Enhanced Tables (`+advtable+`)] plugin.

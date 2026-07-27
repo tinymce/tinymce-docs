@@ -167,6 +167,13 @@ Previously, {productname} could throw an error while sanitizing editor content t
 
 In {productname} {release-version}, {productname} bundles version 3.4.12 of DOMPurify, which resolves the underlying issue. The editor now sanitizes content that contains malformed HTML without throwing an error.
 
+=== The caret could be positioned incorrectly in some cases when scrolling while a context toolbar was open.
+// #TINYMCE-14415
+
+Previously, the caret could move to an unexpected position while a context toolbar was open, such as a toolbar from the xref:quickbars.adoc[Quick Toolbars] plugin. To position a context toolbar relative to the selection, {productname} measured the caret position. When that selection had no measurable dimensions, such as a collapsed selection in an empty paragraph, {productname} altered it while taking the measurement. The caret then appeared to jump, and subsequent edits took effect at the wrong position.
+
+In {productname} {release-version}, {productname} restores the selection after measuring the caret position. The caret now stays where it was placed, including when the page scrolls with a context toolbar open.
+
 
 [[security-fixes]]
 == Security fixes

@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Formatting could not be applied to and removed from editable child elements when a noneditable element was selected
+// #TINYMCE-9142
+
+Previously, applying an inline format to a directly selected non-editable element had no effect, even when that element contained editable descendant elements. {productname} applied the format only for a range selection that spanned the same content, not when the non-editable element was selected on its own. Removing an inline format behaved the same way.
+
+In {productname} {release-version}, {productname} applies an inline format once to each editable descendant element within the selected non-editable element. Removing and toggling an inline format work the same way, and {productname} now detects a format that is already applied within an editable descendant element. A non-editable element without editable descendant elements remains unchanged, and {productname} does not apply the format beyond the enclosing non-editable element.
+
 
 [[security-fixes]]
 == Security fixes

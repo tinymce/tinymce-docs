@@ -9,7 +9,7 @@ Wrappable formats include block formats that have the `wrapper` parameter set to
 
 Selector formats are not supported.
 
-NOTE: Elements with `contenteditable="false"` attributes that contain descendant elements with `contenteditable="true"` attributes are not wrappable.
+NOTE: Elements with `contenteditable="false"` attributes that contain descendant elements with `contenteditable="true"` attributes are not wrappable. From {productname} 8.8.2, selecting such an element and applying an inline format applies that format to each of its editable descendant elements instead of wrapping the element. Removing and toggling an inline format behave the same way.
 
 *Type:* `+String+`
 

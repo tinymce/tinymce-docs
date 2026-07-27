@@ -1,0 +1,43 @@
+= {productname} {release-version}
+:release-version: 8.8.2
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
+:keywords: releasenotes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Monday, July 27^th^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+* xref:bug-fixes[Bug fixes]
+
+
+[[bug-fixes]]
+== Bug fixes
+
+{productname} {release-version} also includes the following bug fixes:
+
+=== Formatting could not be applied to and removed from editable child elements when a noneditable element was selected
+// #TINYMCE-9142
+
+Previously, applying an inline format to a directly selected non-editable element had no effect, even when that element contained editable descendant elements. {productname} applied the format only for a range selection that spanned the same content, not when the non-editable element was selected on its own. Removing an inline format behaved the same way.
+
+In {productname} {release-version}, {productname} applies an inline format once to each editable descendant element within the selected non-editable element. Removing and toggling an inline format work the same way, and {productname} now detects a format that is already applied within an editable descendant element. A non-editable element without editable descendant elements remains unchanged, and {productname} does not apply the format beyond the enclosing non-editable element.
+
+=== Sanitizing malformed HTML in the editor content could throw an error
+// #TINYMCE-14701
+
+Previously, {productname} could throw an error while sanitizing editor content that contained malformed HTML, and the browser console reported `+TypeError: a node selected for removal could not be detached from its tree and cannot be safely returned; refusing to sanitize in place+`. The error occurred in {productname} 8.8.0 and 8.8.1, which bundled version 3.4.11 of the DOMPurify sanitization library.
+
+In {productname} {release-version}, {productname} bundles version 3.4.12 of DOMPurify, which resolves the underlying issue. The editor now sanitizes content that contains malformed HTML without throwing an error.
+
+=== The caret could be positioned incorrectly in some cases when scrolling while a context toolbar was open.
+// #TINYMCE-14415
+
+Previously, the caret could move to an unexpected position while a context toolbar was open, such as a toolbar from the xref:quickbars.adoc[Quick Toolbars] plugin. To position a context toolbar relative to the selection, {productname} measured the caret position. When that selection had no measurable dimensions, such as a collapsed selection in an empty paragraph, {productname} altered it while taking the measurement. The caret then appeared to jump, and subsequent edits took effect at the wrong position.
+
+In {productname} {release-version}, {productname} restores the selection after measuring the caret position. The caret now stays where it was placed, including when the page scrolls with a context toolbar open.

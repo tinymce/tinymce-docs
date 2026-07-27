@@ -4,6 +4,14 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== xref:8.8.2-release-notes.adoc[8.8.2 - 2026-07-27]
+
+### Fixed
+* The caret could be positioned incorrectly in some cases when scrolling while a context toolbar was open.
+// #TINYMCE-14415
+* Formatting could not be applied to and removed from editable child elements when a noneditable element was selected.
+// #TINYMCE-9142
+
 == xref:8.8.1-release-notes.adoc[8.8.1 - 2026-07-22]
 
 ### Fixed

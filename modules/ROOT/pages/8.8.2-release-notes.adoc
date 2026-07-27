@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Sanitizing malformed HTML in the editor content could throw an error
+// #TINYMCE-14701
+
+Previously, {productname} could throw an error while sanitizing editor content that contained malformed HTML, and the browser console reported `+TypeError: a node selected for removal could not be detached from its tree and cannot be safely returned; refusing to sanitize in place+`. The error occurred in {productname} 8.8.0 and 8.8.1, which bundled version 3.4.11 of the DOMPurify sanitization library.
+
+In {productname} {release-version}, {productname} bundles version 3.4.12 of DOMPurify, which resolves the underlying issue. The editor now sanitizes content that contains malformed HTML without throwing an error.
+
 
 [[security-fixes]]
 == Security fixes

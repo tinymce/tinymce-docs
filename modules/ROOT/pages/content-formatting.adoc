@@ -2,6 +2,8 @@
 :navtitle: Content formats
 :description: These options change the way the editor handles the input and output of content. This will help you to create clean, maintainable and readable content.
 
+The options on this page define and customize the text formats available in the editor. To restrict, disable, or strip HTML formatting from content, such as limiting the allowed elements or removing formatting from pasted text, see xref:content-filtering.adoc#disabling-or-stripping-html-formatting[Disabling or stripping HTML formatting].
+
 include::partial$configuration/formats.adoc[]
 
 include::partial$configuration/format_empty_lines.adoc[]

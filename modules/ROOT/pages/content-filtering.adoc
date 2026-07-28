@@ -6,6 +6,55 @@
 
 Use `+valid_elements+` to define which elements and attributes are allowed, `+invalid_elements+` to block specific elements, and `+extended_valid_elements+` to add or modify rules. For paste-time filtering, use the `+PastePreProcess+` and `+PastePostProcess+` events or the xref:introduction-to-powerpaste.adoc[PowerPaste] plugin options.
 
+[[disabling-or-stripping-html-formatting]]
+== Disabling or stripping HTML formatting
+
+{productname} validates and cleans content against a schema whenever content is set, pasted, or retrieved. The schema defines which elements and attributes are allowed, and any element or attribute outside the schema is removed when the content is parsed. The content filtering options on this page configure that schema:
+
+* xref:#valid_elements[`+valid_elements+`] replaces the set of allowed elements and attributes.
+* xref:#extended_valid_elements[`+extended_valid_elements+`] adds to the existing set rather than replacing it.
+* xref:#invalid_elements[`+invalid_elements+`] removes specific elements from the content, keeping their text.
+
+Of these options, only xref:#valid_elements[`+valid_elements+`] and xref:#invalid_elements[`+invalid_elements+`] restrict content. xref:#extended_valid_elements[`+extended_valid_elements+`] widens the default schema, so it is used to permit additional elements rather than to strip them. For its syntax and examples, see the option description below.
+
+For a reference of the underlying validation and parsing mechanism, see the xref:apis/tinymce.html.schema.adoc[Schema] and xref:apis/tinymce.html.domparser.adoc[DomParser] API documentation.
+
+To restrict content to a limited subset of formatting, set xref:#valid_elements[`+valid_elements+`] to only the elements and attributes that should be kept. Any element outside the list is removed and its text content is preserved.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  valid_elements: 'p,br,a[href],strong/b,em/i'
+});
+----
+
+This configuration keeps paragraphs, line breaks, links (with their `+href+` attribute), and bold and italic text, converting `+b+` to `+strong+` and `+i+` to `+em+`. All other elements, such as headings, tables, and inline styles, are stripped and their text is retained.
+
+When a stripped element is a block element, such as a heading, the text it contained is left without a parent block and is rewrapped in the block element set by xref:#forced_root_block[`+forced_root_block+`], which is `+p+` by default. For example, an `+<h1>+` removed by the configuration above is returned as a `+<p>+` containing the original heading text.
+
+To remove only specific formatting while keeping everything else, use xref:#invalid_elements[`+invalid_elements+`].
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  invalid_elements: 'strong,b,em,i,u,span'
+});
+----
+
+To remove all formatting from pasted content so that only plain text is inserted, set xref:copy-and-paste.adoc#paste_as_text[paste_as_text] to `+true+`.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  paste_as_text: true
+});
+----
+
+For a complete reference of the element and attribute syntax used by xref:#valid_elements[`+valid_elements+`], xref:#extended_valid_elements[`+extended_valid_elements+`], and xref:#invalid_elements[`+invalid_elements+`], see the option descriptions below. To customize how content is styled and defined rather than restricted, see xref:content-formatting.adoc[Content formats].
+
 include::partial$configuration/allow_conditional_comments.adoc[]
 
 include::partial$configuration/allow_html_in_comments.adoc[]

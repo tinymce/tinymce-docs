@@ -1,6 +1,6 @@
 const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
 
-const tinymceElement = document.querySelector('textarea#suggestededits-access-feedback');
+const tinymceElement = document.querySelector('textarea#suggestededits-access-read');
 const model = JSON.parse(tinymceElement.getAttribute('suggestededits-model'));
 
 tinymce.init({

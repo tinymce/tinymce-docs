@@ -116,9 +116,14 @@ The metadata is an `+Object+` that holds additional information about a revision
 
 A revision is identified as AI-assisted through the `+source+` field of its xref:#metadata[`+metadata+`] object. When `+metadata.source+` is `+'ai'+`, an AI badge appears on that revision card by default. Set xref:revisionhistory_ai_attribution[`+revisionhistory_ai_attribution+`] to `+false+` to hide the badge.
 
-The {pluginname} plugin does not set this marker automatically. The xref:tinymceai.adoc[{productname} AI] plugin sets `+ai+` to `+true+` on the `+SetContent+` event for any content it inserts. Detecting that signal and recording it as `+metadata.source+` when saving a revision is the responsibility of the application. There are three steps to keep attribution accurate:
+The {pluginname} plugin does not set this marker automatically. The xref:tinymceai.adoc[{productname} AI] plugin sets `+ai+` to `+true+` on both the `+BeforeSetContent+` and `+SetContent+` events for any content it inserts, so either event can signal AI involvement:
 
-. **Detect**: Listen for the `+SetContent+` event and record when its `+ai+` property is `+true+`.
+* `+BeforeSetContent+` fires immediately before the AI content is inserted. Calling `+editor.getContent()+` at this point returns the content as it stood before the AI edit.
+* `+SetContent+` fires immediately after the AI content is inserted. Calling `+editor.getContent()+` at this point returns the AI-generated result.
+
+Either event can drive attribution, and both can be used together. Listening for `+SetContent+` alone records the AI-assisted result; listening for both also preserves the content that preceded each AI edit as its own revision. Detecting the signal and recording it as `+metadata.source+` when saving a revision is the responsibility of the application. There are three steps to keep attribution accurate:
+
+. **Detect**: Listen for `+BeforeSetContent+`, `+SetContent+`, or both, and record when the `+ai+` property is `+true+`.
 . **Save**: When saving a revision, set `+metadata.source+` to `+'ai'+` if AI contributed since the last save.
 . **Restore**: When a revision is restored, carry its marker forward so later revisions remain correctly attributed.
 
@@ -155,14 +160,7 @@ const saveRevision = () => {
 };
 ----
 
-==== Capturing content before and after an AI edit
-
-The previous example marks the next saved revision as AI-assisted, but that revision can combine human edits made since the last save with the AI-generated change. To keep the two apart, save a revision on the `+BeforeSetContent+` event as well. Both events carry an `+ai+` property that is `+true+` when the xref:tinymceai.adoc[{productname} AI] plugin inserts content:
-
-* `+BeforeSetContent+` fires immediately before the AI content is inserted. Calling `+editor.getContent()+` at this point captures the latest non-AI content, which can be saved as a revision that reflects the human-authored state.
-* `+SetContent+` fires immediately after the AI content is inserted. Calling `+editor.getContent()+` at this point captures the AI-generated result, which can be saved as an AI-assisted revision.
-
-Listening for both events produces a finer-grained history that distinguishes purely AI-generated content from the human content that preceded it:
+A revision saved this way can combine human edits made since the last save with the AI-generated change. To keep the two apart, save a revision from `+BeforeSetContent+` as well. This records the content that preceded each AI edit as its own revision, producing a finer-grained history:
 
 [source,js]
 ----
@@ -191,8 +189,6 @@ editor.on('SetContent', (e) => {
   }
 });
 ----
-
-Listening for `+BeforeSetContent+` is optional. Use `+SetContent+` alone to record only the AI-assisted result, or pair it with `+BeforeSetContent+` when the revision history should also preserve the content as it was before each AI edit. Choose the approach that suits the application's use case.
 
 === Restoring an AI-assisted revision
 

@@ -116,7 +116,7 @@ The metadata is an `+Object+` that holds additional information about a revision
 
 A revision is identified as AI-assisted through the `+source+` field of its xref:#metadata[`+metadata+`] object. When `+metadata.source+` is `+'ai'+`, an AI badge appears on that revision card by default. Set xref:revisionhistory_ai_attribution[`+revisionhistory_ai_attribution+`] to `+false+` to hide the badge.
 
-The {pluginname} plugin does not set this marker automatically. Listening for the relevant content events and saving revisions with the marker attached is the responsibility of the application. The xref:tinymceai.adoc[{productname} AI] plugin sets `+ai+` to `+true+` on both the `+BeforeSetContent+` and `+SetContent+` events for any content it inserts, so either event can signal AI involvement:
+The {pluginname} plugin does not set this marker automatically. Instead, the application must listen for content events and save each revision with the marker attached. The xref:tinymceai.adoc[{productname} AI] plugin sets `+ai+` to `+true+` on both the `+BeforeSetContent+` and `+SetContent+` events for any content it inserts, so either event can signal AI involvement:
 
 * `+BeforeSetContent+` fires immediately before the AI content is inserted. Calling `+editor.getContent()+` at this point returns the content as it stood before the AI edit.
 * `+SetContent+` fires immediately after the AI content is inserted. Calling `+editor.getContent()+` at this point returns the AI-generated result.

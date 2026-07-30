@@ -121,85 +121,82 @@ The {pluginname} plugin does not set this marker automatically. The xref:tinymce
 * `+BeforeSetContent+` fires immediately before the AI content is inserted. Calling `+editor.getContent()+` at this point returns the content as it stood before the AI edit.
 * `+SetContent+` fires immediately after the AI content is inserted. Calling `+editor.getContent()+` at this point returns the AI-generated result.
 
-Either event can drive attribution, and both can be used together. Listening for `+SetContent+` alone records the AI-assisted result; listening for both also preserves the content that preceded each AI edit as its own revision. Detecting the signal and recording it as `+metadata.source+` when saving a revision is the responsibility of the application. There are three steps to keep attribution accurate:
+Either event can drive attribution, and both can be used together. Which to listen for depends on the granularity the application requires. A revision covers everything that changed since the previous revision, so listening for a single event produces revisions that can hold both AI-generated and human content:
 
-. **Detect**: Listen for `+BeforeSetContent+`, `+SetContent+`, or both, and record when the `+ai+` property is `+true+`.
-. **Save**: When saving a revision, set `+metadata.source+` to `+'ai'+` if AI contributed since the last save.
-. **Restore**: When a revision is restored, carry its marker forward so later revisions remain correctly attributed.
+* Listening for `+BeforeSetContent+` alone saves the human edits made since the last revision, together with the AI edit that preceded them.
+* Listening for `+SetContent+` alone saves the AI edit, together with the human edits that preceded it.
+* Listening for both separates the two, saving the content as it stood before each AI edit and the AI-generated result as distinct revisions.
+
+Where the aim is to save a revision whenever content changes, either event is suitable. Where AI-generated and human content must be distinguished, listen for both. Detecting the signal and recording it as `+metadata.source+` when saving a revision is the responsibility of the application. There are three steps to keep attribution accurate:
+
+. **Detect**: Listen for `+BeforeSetContent+`, `+SetContent+`, or both, and check whether the `+ai+` property is `+true+`. Both events also fire for content changes that the AI plugin did not make, so this check keeps unrelated changes out of the attributed revisions.
+. **Save**: When the check passes, save a revision, setting `+metadata.source+` to `+'ai'+` for the AI-generated content.
+. **Restore**: When a revision is restored, save it with its marker preserved so the restored content remains correctly attributed.
 
 [NOTE]
 The AI badge appears only on `+saved+` revisions. The `+draft+` and `+initial+` revisions are generated from the editor's current content and do not carry `+metadata+`, so they never display the badge, even when that content was AI-assisted. See xref:#understanding-revision-types[Understanding revision types].
 
 === Saving an AI-assisted revision
 
-The application is responsible for saving revisions and returns them through the xref:revisionhistory_fetch[`+revisionhistory_fetch+`] option. The following example tracks AI involvement from the `+SetContent+` event and attaches the `+metadata+` marker when saving a snapshot:
+The application is responsible for saving revisions and returns them through the xref:revisionhistory_fetch[`+revisionhistory_fetch+`] option. The following examples share a single helper that snapshots the current content and marks the revision as AI-assisted when its `+aiAssisted+` parameter is `+true+`, so the same function can save both AI-assisted and human revisions:
 
 [source,js]
 ----
-let aiAssisted = false;
-
-// The TinyMCE AI plugin sets `ai: true` on the SetContent event for content it inserts.
-editor.on('SetContent', (e) => {
-  if (e.ai) {
-    aiAssisted = true;
-  }
-});
-
 // Call this when saving a snapshot of the current content as a revision.
-const saveRevision = () => {
+const saveRevision = (aiAssisted) => {
   const revision = {
     revisionId: createRevisionId(), // Replace with your ID generation
     createdAt: new Date().toISOString(),
     content: editor.getContent(),
-    // Mark the revision as AI-assisted if AI contributed since the last save.
+    // Mark the revision as AI-assisted when the content came from the AI plugin.
     ...(aiAssisted ? { metadata: { source: 'ai' } } : {})
   };
 
   saveToStorage(revision); // Replace with your storage call
-  aiAssisted = false; // Reset state of AI assistance for new content
 };
 ----
 
-A revision saved this way can combine human edits made since the last save with the AI-generated change. To keep the two apart, save a revision from `+BeforeSetContent+` as well. This records the content that preceded each AI edit as its own revision, producing a finer-grained history:
+Listening for `+SetContent+` alone saves the AI-generated result. Because the snapshot covers everything changed since the previous revision, it can also include human edits made before the AI edit:
+
+[source,js]
+----
+// The TinyMCE AI plugin sets `ai: true` on the SetContent event for content it inserts.
+editor.on('SetContent', (e) => {
+  if (e.ai) {
+    saveRevision(true);
+  }
+});
+----
+
+To keep AI-generated and human content apart, listen for both events. `+BeforeSetContent+` saves the content that preceded each AI edit as its own revision, and `+SetContent+` saves the AI-generated result, producing a finer-grained history:
 
 [source,js]
 ----
 // Save the pre-AI (human) content before the TinyMCE AI plugin inserts its edit.
 editor.on('BeforeSetContent', (e) => {
   if (e.ai) {
-    const revision = {
-      revisionId: createRevisionId(), // Replace with your ID generation
-      createdAt: new Date().toISOString(),
-      content: editor.getContent()
-    };
-    saveToStorage(revision); // Replace with your storage call
+    saveRevision(false);
   }
 });
 
 // Save the post-AI content and mark it as AI-assisted.
 editor.on('SetContent', (e) => {
   if (e.ai) {
-    const revision = {
-      revisionId: createRevisionId(), // Replace with your ID generation
-      createdAt: new Date().toISOString(),
-      content: editor.getContent(),
-      metadata: { source: 'ai' }
-    };
-    saveToStorage(revision); // Replace with your storage call
+    saveRevision(true);
   }
 });
 ----
 
 === Restoring an AI-assisted revision
 
-Restoring a revision sets its content back into the editor and fires the `+VersionRestored+` event. The restored content is not flagged as AI-assisted, so look up the restored revision and carry its marker forward to the next save:
+Restoring a revision sets its content back into the editor and fires the `+VersionRestored+` event. The restored content is not flagged as AI-assisted, so look up the revision that was restored and save it with its marker preserved, using the `+saveRevision()+` helper shown in xref:#saving-an-ai-assisted-revision[Saving an AI-assisted revision]:
 
 [source,js]
 ----
 editor.on('VersionRestored', (e) => {
   const restored = getFromStorage(e.revisionId); // Replace with your storage lookup
-  // Preserve attribution so the next saved revision reflects the restored content.
-  aiAssisted = restored?.metadata?.source === 'ai';
+  // Preserve attribution so the restored content keeps its marker.
+  saveRevision(restored?.metadata?.source === 'ai');
 });
 ----
 

@@ -25,6 +25,9 @@ asciidoc:
     exportpdf_service_url: exportpdf_service_url placeholder
     # TinyMCE AI demo API key
     tinymceai_demo_api_key: qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc
+    # TinyMCE AI MCP demo API key - only for MCP live demos, which require additional service access
+    tinymceai_mcp_demo_api_key: 3ibmjj7hijc8a4pgc2er8hgq781a2q2r81aj5dbj0wzq9a6c
+    tinymceai_mcp_live_demo_url: https://cdn.tiny.cloud/1/3ibmjj7hijc8a4pgc2er8hgq781a2q2r81aj5dbj0wzq9a6c/tinymce/8/tinymce.min.js
     # product variables
     productname: TinyMCE
     productmajorversion: 8

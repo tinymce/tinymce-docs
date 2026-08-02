@@ -12,6 +12,15 @@ These features are configured entirely through environment variables on the AI s
 [.text-center]
 image::tinymceai-on-premises/mcp-web-integrations-architecture.svg[MCP and web integrations architecture: TinyMCE editor connects to AI Service through SSE conversations. AI Service connects to LLM provider for inference and to MCP servers and web search and scrape endpoints for tool calling and live web content.,width=100%]
 
+[[demo]]
+== Demo
+
+The following demo shows the editor experience that <<mcp-integration,MCP configuration>> enables. The AI service backing the demo has an MCP server connected to a sample database of acquisition deals and company records. Choosing one of the suggested actions in the Chat sidebar prompts the model to call the MCP server's tools, then either fill in the document placeholders or answer in Chat.
+
+The editor configuration shown in the *JS* tab applies to on-premises deployments without change. MCP servers are declared on the AI service through <<mcp-integration,`+MCP_SERVERS+`>>; the editor requires only the `+tinymceai+` plugin and a token provider.
+
+liveDemo::tinymceai-mcp[script_url_override="{tinymceai_mcp_live_demo_url}"]
+
 == Prerequisites
 
 This page assumes the following are already configured:

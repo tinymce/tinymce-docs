@@ -4,7 +4,6 @@
 :description_short: MCP, web search, and web scraping setup.
 :keywords: AI, on-premises, MCP, Model Context Protocol, web search, web scraping, tool calling, Streamable HTTP
 :pluginname: TinyMCE AI
-:page-role: -toc
 
 The AI service extends model capabilities through two integration points: the https://modelcontextprotocol.io/[Model Context Protocol] (MCP) for tool calling, and pluggable web endpoints for page fetching and search. Both features operate within AI conversations only. Web search and scraping allow the AI to reference live internet content during conversations, and for most deployments, enabling at least web search improves response quality.
 

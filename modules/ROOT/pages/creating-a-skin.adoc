@@ -11,7 +11,7 @@ This guide explains how to manually create a new skin to customize the appearanc
 Before beginning, ensure that:
 
 * Familiarity with the command line and basic commands is established.
-* link:https://nodejs.org/en/[Node.js^] and link:https://yarnpkg.com/[Yarn^] are already installed.
+* link:https://nodejs.org/en/[Node.js^] and link:https://bun.sh/[Bun^] are already installed.
 * A basic understanding of link:http://lesscss.org[Less^], the CSS preprocessor used to build skins, is required. Specifically, review the link:http://lesscss.org/features/#variables-feature[section on variables^].
 
 == Preparation
@@ -29,22 +29,22 @@ Follow these steps to set up the skin development environment:
 +
 [source,sh]
 ----
-yarn && yarn dev && yarn build
+bun install && bun run dev && bun run build
 ----
 . Start the development server to preview skins:
 +
 [source,sh]
 ----
-yarn oxide-start
+bun oxide-start
 ----
-. Once the server starts, open a browser and navigate to the displayed URL, typically `+http://localhost:3000+`.
+. Once the server starts, open a browser and navigate to the displayed URL, typically `+http://localhost:4000+`.
 
 The development environment is now setup and should look similar to the following:
 
 image::SDK-for-silver.png[{productname} skin SDK for Silver theme]
 
 [NOTE]
-If required to modify the skin without launching a web server, run **`+yarn oxide-build+`** instead of **`+yarn oxide-start+`**.
+If required to modify the skin without launching a web server, run **`+bun oxide-build+`** instead of **`+bun oxide-start+`**.
 
 == Creating or Editing a Skin
 
@@ -82,13 +82,13 @@ Skins **only** affect the visual appearance of the UI. Element positioning is ma
 +
 [source,sh]
 ----
-yarn build
+bun run build
 ----
 . Start the development server by running:
 +
 [source,sh]
 ----
-yarn oxide-start
+bun oxide-start
 ----
 +
 [TIP]
@@ -135,13 +135,13 @@ To modify the appearance of content inside the editor (e.g., headings, lists, qu
 +
 [source,sh]
 ----
-yarn build
+bun run build
 ----
 . Start the development server:
 +
 [source,sh]
 ----
-yarn oxide-start
+bun oxide-start
 ----
 +
 [TIP]

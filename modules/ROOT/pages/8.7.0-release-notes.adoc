@@ -395,7 +395,7 @@ tinymce.dom.AriaAnnouncer.announce('Error occurred', { assertive: true });
 [[changes]]
 == Changes
 
-{productname} {release-version} also includes the following change:
+{productname} {release-version} also includes the following changes:
 
 === Changed LESS math mode from always to parens-division.
 // #TINYMCE-13317
@@ -403,6 +403,13 @@ tinymce.dom.AriaAnnouncer.announce('Error occurred', { assertive: true });
 Previously, the Oxide Less compiler ran with `math: 'always'`, which treated every `/` character as a division operator. With modern CSS color syntax, the Oxide Less compiler could compile functions such as `rgb(10 10 10 / 10%)` or `hsl(from var(--color) h s l / 10%)` incorrectly. In some cases, the compiler silently produced incorrect values without warning, such as `rgb(10 10 10 / 10%)` becoming `rgb(10, 10, 1)` instead of preserving the alpha channel.
 
 In {productname} {release-version}, the Oxide Less compiler uses `parens-division` math mode. The compiler evaluates division only when the operation is wrapped in parentheses and preserves `/` in CSS color syntax. {productname} updated existing division expressions in Oxide Less files to wrap division in parentheses. Custom skin authors who compile Oxide Less must wrap division operations in parentheses.
+
+=== Building {productname} from source now uses Bun instead of Yarn
+// #TINYMCE-12819
+
+Previously, building {productname} from source required Yarn, and the repository provided a `+yarn.lock+` file to lock dependency versions. Contributors and custom skin authors ran commands such as `+yarn+`, `+yarn build+`, and `+yarn oxide-start+`.
+
+In {productname} {release-version}, the repository uses link:https://bun.sh/[Bun^] for package management and build scripts and provides a `+bun.lock+` file in place of `+yarn.lock+`. The equivalent commands are `+bun install+`, `+bun run build+`, and `+bun oxide-start+`. Yarn no longer resolves the repository dependencies. This change does not affect integrators who install {productname} from npm or load it from a content delivery network (CDN). For the updated skin build steps, see xref:creating-a-skin.adoc[Create a skin].
 
 
 [[bug-fixes]]
@@ -493,3 +500,17 @@ In {productname} {release-version}, a targeted workaround detects this case and 
 Previously, pressing the undo keyboard shortcut (Ctrl+Z, or Cmd+Z on macOS) after deleting a selection could leave the cursor in the wrong position. An earlier change registered an extra undo step whenever Ctrl or Cmd was pressed, so the step was recorded before the deleted content was restored.
 
 In {productname} {release-version}, {productname} registers that undo step only when Ctrl or Cmd is pressed together with Backspace or Delete, rather than on every Ctrl or Cmd key press. Undoing the deletion of a selection now restores both the content and the original selection correctly.
+
+=== Starting the Oxide skin demo without a local build failed with an unclear error
+// #TINYMCE-14348
+
+Previously, starting the Oxide skin demo before building {productname} from the repository root failed with the error `+chalk.red is not a function+`. The demo build task attempted to report the missing local build and then substitute a cloud-hosted copy of {productname}. The reporting step raised the error instead. Custom skin authors could not run the demo to test skin changes, and the error message did not identify the missing local build as the cause.
+
+In {productname} {release-version}, the demo build task stops with a message that names the required step:
+
+[source,text]
+----
+Local TinyMCE build not found. Run `bun run build` in the repository root to build TinyMCE before starting the skin demo.
+----
+
+The demo build task no longer substitutes a cloud-hosted copy of {productname}, so the demo always runs against the local build. Custom skin authors can now resolve the failure by building {productname} before starting the demo.

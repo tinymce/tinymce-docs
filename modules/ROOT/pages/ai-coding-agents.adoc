@@ -4,7 +4,7 @@
 :description_short: Connect {productname} to AI coding agents.
 :keywords: ai, skill, agent skills, mcp, model context protocol, coding agent, claude code, cursor, codex, copilot, visual studio code, llms.txt, markdown
 
-AI coding agents produce better {productname} integrations when they work from the current documentation instead of relying on training data. The official *{productname} skill* teaches an agent how to add {productname} to a project: it selects an installation method, wires up the editor, configures plugins and the toolbar, and sets the credential for the chosen distribution channel. Install it with one command:
+The official *{productname} skill* teaches an AI coding agent how to add {productname} to a project: it selects an installation method, wires up the editor, configures plugins and the toolbar, loads the content styles, and sets the API key or license key. Install it with one command:
 
 [source,bash]
 ----
@@ -54,7 +54,7 @@ Copy the `+skills/tinymce/+` directory from the https://github.com/tinymce/skill
 [[connect-the-documentation-mcp-server]]
 == Connect the documentation MCP server
 
-The skill works on its own, but is more effective when the agent can also search the live documentation. The hosted {productname} documentation MCP server exposes semantic search across the published documentation, returning relevant extracts with links to their source pages. Any client that supports the https://modelcontextprotocol.io/[Model Context Protocol] (MCP) over streamable HTTP can connect to it.
+The skill works on its own, but is more effective when the agent can also search the live documentation. The hosted {productname} documentation https://modelcontextprotocol.io/[Model Context Protocol] (MCP) server exposes semantic search across the published documentation, returning relevant extracts with links to their source pages. Any client that supports MCP over streamable HTTP can connect to it.
 
 [NOTE]
 ====

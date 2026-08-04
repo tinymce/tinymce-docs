@@ -14,11 +14,16 @@ This page describes how to give an AI coding agent access to the {productname} d
 [[connect-the-documentation-mcp-server]]
 == Connect the documentation MCP server
 
-The hosted {productname} documentation MCP server exposes semantic search across the published documentation, returning relevant extracts with links to their source pages. Any client that supports the https://modelcontextprotocol.io/[Model Context Protocol] (MCP) over HTTP can connect to it.
+The hosted {productname} documentation MCP server exposes semantic search across the published documentation, returning relevant extracts with links to their source pages. Any client that supports the https://modelcontextprotocol.io/[Model Context Protocol] (MCP) over streamable HTTP can connect to it.
+
+[NOTE]
+====
+This server provides documentation to an external coding agent. It is not related to the MCP tool calling available to the {productname} AI service, which is described in xref:tinymceai-on-premises-mcp.adoc[MCP and web integrations].
+====
 
 *Endpoint:* `+https://tinymcedocs.mcp.kapa.ai+`
 
-*Authentication:* The server is protected by OAuth. On the first connection the agent opens a browser window to complete sign-in, then stores the resulting token.
+*Authentication:* The server is protected by OAuth and requires a one-time sign-in. The first time the agent calls the server, a browser window opens to complete sign-in, after which the agent stores the resulting token. In Claude Code, if no sign-in prompt appears, run `+/mcp+`, select the server, and then select *Authenticate*.
 
 [[install-from-the-documentation-site]]
 === Install from the documentation site
@@ -123,7 +128,7 @@ Add the server to `+opencode.json+`:
 [[other-agents]]
 === Other agents
 
-Agents that accept a remote MCP server without a dedicated configuration file — such as Claude and ChatGPT — can connect using the endpoint directly:
+For any other agent, point its MCP client at the streamable HTTP endpoint and complete the sign-in described above. Agents that accept a remote MCP server without a dedicated configuration file, such as Claude and ChatGPT, can connect using the endpoint directly:
 
 [source,text]
 ----
@@ -133,11 +138,18 @@ https://tinymcedocs.mcp.kapa.ai
 [[read-the-documentation-as-markdown]]
 == Read the documentation as markdown
 
-Every documentation page is also published as markdown, which is more token-efficient than the rendered HTML page. Append `+index.md+` to any documentation page URL to retrieve it:
+Agents can read the documentation efficiently without the MCP server. Every documentation page is also published as markdown, which is more token-efficient than the rendered HTML page. Append `+index.md+` to any documentation page URL to retrieve it:
 
 [source,text]
 ----
 https://www.tiny.cloud/docs/tinymce/latest/basic-setup/index.md
+----
+
+Markdown is available for every documented version of {productname}, not only the latest release. Replace `+latest+` with a version segment to retrieve the markdown for an earlier version:
+
+[source,text]
+----
+https://www.tiny.cloud/docs/tinymce/7/basic-setup/index.md
 ----
 
 Each page also includes a *Copy Markdown* button next to the page title, which copies the markdown URL of the current page to the clipboard for pasting into an agent prompt.
@@ -145,7 +157,7 @@ Each page also includes a *Copy Markdown* button next to the page title, which c
 [[llms-txt-files]]
 == llms.txt files
 
-Two plain text files summarize the documentation set for agents that accept a single bulk reference:
+Two plain text files summarize the documentation set for agents that accept a single bulk reference. Both files index the latest release:
 
 [cols="1,3",options="header"]
 |===

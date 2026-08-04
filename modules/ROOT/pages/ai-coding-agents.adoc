@@ -54,12 +54,7 @@ Copy the `+skills/tinymce/+` directory from the https://github.com/tinymce/skill
 [[connect-the-documentation-mcp-server]]
 == Connect the documentation MCP server
 
-The skill works on its own, but is more effective when the agent can also search the live documentation. The hosted {productname} documentation https://modelcontextprotocol.io/[Model Context Protocol] (MCP) server exposes semantic search across the published documentation, returning relevant extracts with links to their source pages. Any client that supports MCP over streamable HTTP can connect to it.
-
-[NOTE]
-====
-This server provides documentation to an external coding agent. It is not related to the MCP tool calling available to the {productname} AI service, which is described in xref:tinymceai-on-premises-mcp.adoc[MCP and web integrations].
-====
+The skill works on its own, but is more effective when the agent can also search the live documentation. The hosted {productname} documentation https://modelcontextprotocol.io/[Model Context Protocol] (MCP) server exposes semantic search across the published documentation, returning relevant extracts with links to their source pages. Any client that supports MCP over streamable HTTP can connect to it. This server supplies documentation to an external coding agent, and is separate from the MCP tool calling available to the {productname} AI service, described in xref:tinymceai-on-premises-mcp.adoc[MCP and web integrations].
 
 *Endpoint:* `+https://tinymcedocs.mcp.kapa.ai+`
 

@@ -25,6 +25,11 @@ This server provides documentation to an external coding agent. It is not relate
 
 *Authentication:* The server is protected by OAuth and requires a one-time sign-in. The first time the agent calls the server, a browser window opens to complete sign-in, after which the agent stores the resulting token. In Claude Code, if no sign-in prompt appears, run `+/mcp+`, select the server, and then select *Authenticate*.
 
+[IMPORTANT]
+====
+Each agent reads its own configuration file, and the files are not interchangeable. Claude Code reads `+.mcp.json+` and expects an `+mcpServers+` object, while Visual Studio Code reads `+.vscode/mcp.json+` and expects a `+servers+` object. An agent given another agent's file or key name reports no error and exposes no tools from the server. Use the section below that matches the agent in use.
+====
+
 [[install-from-the-documentation-site]]
 === Install from the documentation site
 

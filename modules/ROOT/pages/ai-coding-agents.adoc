@@ -1,0 +1,164 @@
+= Using {productname} with AI coding agents
+:navtitle: AI coding agents
+:description: Connect the {productname} documentation to AI coding agents using the hosted documentation MCP server, markdown pages, and llms.txt files.
+:description_short: Connect the documentation to AI coding agents.
+:keywords: ai, mcp, model context protocol, coding agent, claude code, cursor, codex, copilot, visual studio code, llms.txt, markdown
+
+AI coding agents produce better {productname} integrations when they read the current documentation instead of relying on training data. The {productname} documentation is published in three agent-readable forms: a hosted documentation MCP server for semantic search, a markdown version of every page, and `+llms.txt+` files that index the documentation set.
+
+[NOTE]
+====
+This page describes how to give an AI coding agent access to the {productname} documentation. It does not describe the in-editor AI features. For content generation inside the editor, see xref:tinymceai-introduction.adoc[{productname} AI].
+====
+
+[[connect-the-documentation-mcp-server]]
+== Connect the documentation MCP server
+
+The hosted {productname} documentation MCP server exposes semantic search across the published documentation, returning relevant extracts with links to their source pages. Any client that supports the https://modelcontextprotocol.io/[Model Context Protocol] (MCP) over HTTP can connect to it.
+
+*Endpoint:* `+https://tinymcedocs.mcp.kapa.ai+`
+
+*Authentication:* The server is protected by OAuth. On the first connection the agent opens a browser window to complete sign-in, then stores the resulting token.
+
+[[install-from-the-documentation-site]]
+=== Install from the documentation site
+
+Every page of this documentation includes an *Ask AI* widget. Open the widget and select *Use MCP* in the modal header to open the *Connect to AI Tools* menu, which provides copy-to-clipboard install commands, one-click installs for supported editors, and the raw server URL.
+
+The remaining sections describe the equivalent manual configuration.
+
+[[claude-code]]
+=== Claude Code
+
+[source,bash]
+----
+claude mcp add --transport http --scope project tinymce-docs https://tinymcedocs.mcp.kapa.ai
+----
+
+To configure the server manually, add it to `+.mcp.json+`:
+
+[source,json]
+----
+{
+  "mcpServers": {
+    "tinymce-docs": {
+      "type": "http",
+      "url": "https://tinymcedocs.mcp.kapa.ai"
+    }
+  }
+}
+----
+
+[[cursor]]
+=== Cursor
+
+Add the server to `+.cursor/mcp.json+`:
+
+[source,json]
+----
+{
+  "mcpServers": {
+    "tinymce-docs": {
+      "url": "https://tinymcedocs.mcp.kapa.ai"
+    }
+  }
+}
+----
+
+[[codex]]
+=== Codex
+
+[source,bash]
+----
+codex mcp add tinymce-docs --url https://tinymcedocs.mcp.kapa.ai
+----
+
+To configure the server manually, add it to `+~/.codex/config.toml+`:
+
+[source,toml]
+----
+[mcp_servers.tinymce-docs]
+url = "https://tinymcedocs.mcp.kapa.ai"
+startup_timeout_sec = 20
+tool_timeout_sec = 60
+enabled = true
+----
+
+[[visual-studio-code]]
+=== Visual Studio Code
+
+Add the server to `+.vscode/mcp.json+`:
+
+[source,json]
+----
+{
+  "servers": {
+    "tinymce-docs": {
+      "type": "http",
+      "url": "https://tinymcedocs.mcp.kapa.ai"
+    }
+  }
+}
+----
+
+[[opencode]]
+=== OpenCode
+
+Add the server to `+opencode.json+`:
+
+[source,json]
+----
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "tinymce-docs": {
+      "type": "remote",
+      "url": "https://tinymcedocs.mcp.kapa.ai",
+      "enabled": true
+    }
+  }
+}
+----
+
+[[other-agents]]
+=== Other agents
+
+Agents that accept a remote MCP server without a dedicated configuration file — such as Claude and ChatGPT — can connect using the endpoint directly:
+
+[source,text]
+----
+https://tinymcedocs.mcp.kapa.ai
+----
+
+[[read-the-documentation-as-markdown]]
+== Read the documentation as markdown
+
+Every documentation page is also published as markdown, which is more token-efficient than the rendered HTML page. Append `+index.md+` to any documentation page URL to retrieve it:
+
+[source,text]
+----
+https://www.tiny.cloud/docs/tinymce/latest/basic-setup/index.md
+----
+
+Each page also includes a *Copy Markdown* button next to the page title, which copies the markdown URL of the current page to the clipboard for pasting into an agent prompt.
+
+[[llms-txt-files]]
+== llms.txt files
+
+Two plain text files summarize the documentation set for agents that accept a single bulk reference:
+
+[cols="1,3",options="header"]
+|===
+|File |Contents
+
+|https://www.tiny.cloud/docs/llms.txt[`+llms.txt+`]
+|A concise overview of {productname}, with key links and code examples.
+
+|https://www.tiny.cloud/docs/llms-full.txt[`+llms-full.txt+`]
+|A full index of the documentation pages and their URLs.
+|===
+
+[[feedback]]
+== Feedback
+
+Report inaccurate or outdated documentation by opening an issue in the https://github.com/tinymce/tinymce-docs/issues[`+tinymce-docs+`] repository.

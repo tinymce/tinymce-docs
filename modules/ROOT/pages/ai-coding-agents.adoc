@@ -1,20 +1,60 @@
 = Using {productname} with AI coding agents
 :navtitle: AI coding agents
-:description: Connect the {productname} documentation to AI coding agents using the hosted documentation MCP server, markdown pages, and llms.txt files.
-:description_short: Connect the documentation to AI coding agents.
-:keywords: ai, mcp, model context protocol, coding agent, claude code, cursor, codex, copilot, visual studio code, llms.txt, markdown
+:description: Teach AI coding agents to integrate {productname} using the official skill, the documentation MCP server, markdown pages, and llms.txt files.
+:description_short: Connect {productname} to AI coding agents.
+:keywords: ai, skill, agent skills, mcp, model context protocol, coding agent, claude code, cursor, codex, copilot, visual studio code, llms.txt, markdown
 
-AI coding agents produce better {productname} integrations when they read the current documentation instead of relying on training data. The {productname} documentation is published in three agent-readable forms: a hosted documentation MCP server for semantic search, a markdown version of every page, and `+llms.txt+` files that index the documentation set.
+AI coding agents produce better {productname} integrations when they work from the current documentation instead of relying on training data. The official *{productname} skill* teaches an agent how to add {productname} to a project: it selects an installation method, wires up the editor, configures plugins and the toolbar, and sets the credential for the chosen distribution channel. Install it with one command:
+
+[source,bash]
+----
+npx skills add tinymce/skills
+----
 
 [NOTE]
 ====
-This page describes how to give an AI coding agent access to the {productname} documentation. It does not describe the in-editor AI features. For content generation inside the editor, see xref:tinymceai-introduction.adoc[{productname} AI].
+This page covers agent skills that help integrate {productname} into an application. It does not describe the in-editor AI features. For content generation inside the editor, see xref:tinymceai-introduction.adoc[{productname} AI].
 ====
+
+[[what-the-skill-does]]
+== What the skill does
+
+The skill loads when an agent is asked to install, set up, configure, or troubleshoot {productname}. It will:
+
+* Choose an installation method — {cloudname}, a package manager, or a `+.zip+` package.
+* Wire up the editor in vanilla JavaScript or an official React, Vue, Angular, Svelte, jQuery, web component, or Blazor wrapper.
+* Configure plugins, the toolbar, the menu bar, and content styles.
+* Set the API key or license key correctly for the chosen distribution channel.
+* Send version-specific questions to the live documentation instead of guessing.
+
+The skill deliberately excludes authoring custom plugins, upgrading between major versions, and {productname} 4. For those tasks, see the xref:migration-guides.adoc[migration guides].
+
+[[supported-agents]]
+== Supported agents
+
+The skill uses the open https://agentskills.io/home[Agent Skills] format, so it works in any agent that supports it, including Claude Code, Cursor, Codex, OpenCode, GitHub Copilot, Windsurf, Gemini, Cline, AMP, and Zed. The installer detects the agents present in a project and writes the skill to each.
+
+[[other-ways-to-install]]
+== Other ways to install
+
+[[claude-code-plugin-marketplace]]
+=== Claude Code plugin marketplace
+
+[source,text]
+----
+/plugin marketplace add tinymce/skills
+/plugin install tinymce@tinymce
+----
+
+[[manual-installation]]
+=== Manual installation
+
+Copy the `+skills/tinymce/+` directory from the https://github.com/tinymce/skills[`+tinymce/skills+`] repository into the agent's skills directory, for example `+.claude/skills/tinymce/+`.
 
 [[connect-the-documentation-mcp-server]]
 == Connect the documentation MCP server
 
-The hosted {productname} documentation MCP server exposes semantic search across the published documentation, returning relevant extracts with links to their source pages. Any client that supports the https://modelcontextprotocol.io/[Model Context Protocol] (MCP) over streamable HTTP can connect to it.
+The skill works on its own, but is more effective when the agent can also search the live documentation. The hosted {productname} documentation MCP server exposes semantic search across the published documentation, returning relevant extracts with links to their source pages. Any client that supports the https://modelcontextprotocol.io/[Model Context Protocol] (MCP) over streamable HTTP can connect to it.
 
 [NOTE]
 ====
@@ -177,5 +217,7 @@ Two plain text files summarize the documentation set for agents that accept a si
 
 [[feedback]]
 == Feedback
+
+Report guidance that is wrong, outdated, or missing from the skill by https://github.com/tinymce/skills/issues/new?template=skill-feedback.yml[opening an issue] in the https://github.com/tinymce/skills[`+tinymce/skills+`] repository, using the skill feedback template. Agents are encouraged to file these when the skill contradicts what actually worked.
 
 Report inaccurate or outdated documentation by opening an issue in the https://github.com/tinymce/tinymce-docs/issues[`+tinymce-docs+`] repository.

@@ -237,7 +237,6 @@ const tinycomments_fetch = (conversationUids, done) => {
 
 tinymce.init({
   selector: 'textarea#comments-callback-with-mentions',
-  license_key: 'gpl',
   toolbar: 'addcomment showcomments code | bold italic underline',
   menubar: 'file edit view insert format tools tc help',
   menu: {

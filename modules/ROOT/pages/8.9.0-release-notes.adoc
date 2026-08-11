@@ -127,6 +127,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== New options for configuring the width of resizable sidebars
+// #TINYMCE-14528
+
+Previously, the content styles of a sidebar determined the width of that sidebar, and no editor option set that width.
+
+In {productname} {release-version}, three new options configure the width of any sidebar registered with the `+resizable+` property set to `+true+`. The xref:customsidebar.adoc#sidebar_width[`+sidebar_width+`] option sets the width the sidebar opens at and defaults to `+440+`. The xref:customsidebar.adoc#sidebar_min_width[`+sidebar_min_width+`] and xref:customsidebar.adoc#sidebar_max_width[`+sidebar_max_width+`] options set the smallest and largest widths a user can drag the sidebar to and default to `+300+` and `+800+`. All three options set widths in pixels. To keep the editable area usable, {productname} does not allow the editable area to shrink below 280 pixels, and this limit takes precedence over all three options.
+
 
 [[changes]]
 == Changes

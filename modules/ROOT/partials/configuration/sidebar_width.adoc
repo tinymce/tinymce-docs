@@ -1,0 +1,42 @@
+[[sidebar_width]]
+== `+sidebar_width+`
+
+This option sets the width, in pixels, that the sidebar opens at on editor initialization.
+
+The option applies only to sidebars registered with the `+resizable+` property set to `+true+`. A sidebar registered without that property keeps the width defined by the content styles of that sidebar, and {productname} ignores this option.
+
+The xref:customsidebar.adoc#sidebar_min_width[`+sidebar_min_width+`] and xref:customsidebar.adoc#sidebar_max_width[`+sidebar_max_width+`] options do not restrict the width set by this option. Those options restrict only the widths a user can drag the sidebar to. The minimum width of the editable area does restrict this width. For information on this restriction, see: xref:customsidebar.adoc#limitations-of-the-sidebar-width-option[Limitations of the `+sidebar_width+` option].
+
+include::partial$misc/admon-iframe-only.adoc[]
+
+*Type:* `+Number+`
+
+*Default value:* `+440+`
+
+=== Example: using `+sidebar_width+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  sidebar_show: 'mysidebar',
+  sidebar_width: 500,
+  setup: (editor) => {
+    editor.ui.registry.addSidebar('mysidebar', {
+      tooltip: 'My sidebar',
+      icon: 'comment',
+      resizable: true,
+      onShow: (api) => {
+        api.element().innerHTML = 'Hello world!';
+      },
+    });
+  }
+});
+----
+
+[[limitations-of-the-sidebar-width-option]]
+=== Limitations of the `+sidebar_width+` option
+
+The editable area and the sidebar share the same container. To keep the editable area usable, {productname} does not allow the editable area to shrink below 280 pixels. This limit is fixed and takes precedence over `+sidebar_width+`, xref:customsidebar.adoc#sidebar_min_width[`+sidebar_min_width+`], and xref:customsidebar.adoc#sidebar_max_width[`+sidebar_max_width+`].
+
+When the editor is too narrow to provide the requested width alongside a 280-pixel editable area, {productname} reduces the sidebar to the width that remains. For example, in an editor 1000 pixels wide, a `+sidebar_width+` of 2000 results in a sidebar approximately 716 pixels wide, because the editable area reserves 280 pixels and the editor border occupies the remaining pixels.

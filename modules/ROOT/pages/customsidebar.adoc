@@ -64,7 +64,13 @@ The `+element():HTMLElement+` function returns the root element of the sidebar p
 
 == Options
 
+include::partial$configuration/sidebar_max_width.adoc[leveloffset=+1]
+
+include::partial$configuration/sidebar_min_width.adoc[leveloffset=+1]
+
 include::partial$configuration/sidebar_show.adoc[leveloffset=+1]
+
+include::partial$configuration/sidebar_width.adoc[leveloffset=+1]
 
 [[example-inside-the-tinymceinit]]
 == Example inside the tinymce.init

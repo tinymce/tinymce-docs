@@ -110,7 +110,7 @@ End users authorize the connection through their browser. Each user authorizes i
 
 When OAuth is enabled, the AI service discovers the authorization server by sending an unauthenticated request to the MCP server `url` and reading the `resource_metadata` link from the `WWW-Authenticate` header in the `401` response (per https://datatracker.ietf.org/doc/html/rfc9728[RFC 9728]).
 
-Some MCP servers expose separate endpoints for unauthenticated and OAuth-protected access. The `url` must point to the endpoint that returns this metadata. Using the wrong endpoint causes the `initialize` call to hang indefinitely (see <<mcp-troubleshooting>>).
+Some MCP servers expose separate endpoints for unauthenticated and OAuth-protected access. The `url` must point to the endpoint that returns this metadata. Using the wrong endpoint causes the `initialize` call to hang indefinitely (see xref:#mcp-troubleshooting[Troubleshooting]).
 
 TIP: To verify the correct endpoint, send an unauthenticated request and inspect the `WWW-Authenticate` header. It should contain a `resource_metadata` URL: `curl -sI -X POST \https://mcp.example.com/v1/mcp/auth -H "Content-Type: application/json" | grep -i www-authenticate`
 
@@ -601,8 +601,7 @@ For production clusters, the MCP server Deployments should have dedicated resour
 |MCP tools not appearing for a user after OAuth is configured
 |The user has not completed the authorization flow. OAuth connections are per user -- each user must authorize independently through `initialize` and `complete`. Check the connection status with `GET /v1/mcp/oauth/status`.
 
-[[mcp-troubleshooting]]
-|`initializeMcpOAuth` hangs for 60+ seconds with no response
+|[[mcp-troubleshooting]]`initializeMcpOAuth` hangs for 60+ seconds with no response
 |The MCP server `url` in `MCP_SERVERS` does not return OAuth resource discovery metadata (https://datatracker.ietf.org/doc/html/rfc9728[RFC 9728]). The AI service sends an unauthenticated request to the URL and expects a `401` response with a `WWW-Authenticate` header containing a `resource_metadata` link. If the header is missing, the service hangs indefinitely. Verify the correct endpoint with: `curl -sI -X POST \https://mcp.example.com/endpoint -H "Content-Type: application/json"` and check for `resource_metadata` in the `WWW-Authenticate` header. Some MCP servers expose separate URLs for authenticated and OAuth-protected access. See <<mcp-oauth-url>>.
 |===
 

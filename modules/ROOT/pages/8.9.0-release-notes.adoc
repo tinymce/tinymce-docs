@@ -71,6 +71,23 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following addition.
+
+==== New option `tinymceai_chat_default_sources` to allow specifying predefined sources as chat default context.
+// #TINYMCE-14703
+
+Previously, the **TinyMCE AI** plugin applied only the current document to the context of a new AI Chat conversation. Users had to add every other context source, such as a style guide or a reference document, to each new conversation by hand.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin supports the xref:tinymceai.adoc#tinymceai_chat_default_sources[`+tinymceai_chat_default_sources+`] option. The option accepts an array of source identifiers taken from the list supplied by xref:tinymceai.adoc#tinymceai_chat_fetch_sources[`+tinymceai_chat_fetch_sources+`], and the plugin applies those sources to the context of every new conversation. Users can remove a default source from a conversation and add it again from the sources menu.
+
+For details on configuring conversation context, see xref:tinymceai-chat.adoc#context-configuration[Adding custom context sources].
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

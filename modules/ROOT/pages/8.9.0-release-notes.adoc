@@ -116,6 +116,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Sidebars can now be resized by dragging their edge, and their width can be configured with the new `sidebar_width` option.
+// #TINYMCE-14527
+// #TINYMCE-14530
+
+Previously, the styles applied to the content of a sidebar fixed the width of that sidebar. A user working in a wide editor could not give a sidebar more room, and a user working in a narrow editor could not reclaim space for the editable area.
+
+In {productname} {release-version}, {productname} renders a resize handle on sidebars registered with the xref:customsidebar.adoc#resizable[`+resizable+`] property set to `+true+`, and a user can drag that handle to resize the sidebar. The sidebars registered by the xref:introduction-to-tiny-comments.adoc[Comments] and xref:tinymceai.adoc[{productname} AI] plugins are resizable by default. To keep the editable area usable, {productname} does not allow the editable area to shrink below 280 pixels, whatever width a user requests.
+
 
 [[additions]]
 == Additions
@@ -132,7 +140,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 Previously, the content styles of a sidebar determined the width of that sidebar, and no editor option set that width.
 
-In {productname} {release-version}, three new options configure the width of any sidebar registered with the `+resizable+` property set to `+true+`. The xref:customsidebar.adoc#sidebar_width[`+sidebar_width+`] option sets the width the sidebar opens at and defaults to `+440+`. The xref:customsidebar.adoc#sidebar_min_width[`+sidebar_min_width+`] and xref:customsidebar.adoc#sidebar_max_width[`+sidebar_max_width+`] options set the smallest and largest widths a user can drag the sidebar to and default to `+300+` and `+800+`. All three options set widths in pixels. To keep the editable area usable, {productname} does not allow the editable area to shrink below 280 pixels, and this limit takes precedence over all three options.
+In {productname} {release-version}, three new options configure the width of any sidebar registered with the xref:customsidebar.adoc#resizable[`+resizable+`] property set to `+true+`. The xref:customsidebar.adoc#sidebar_width[`+sidebar_width+`] option sets the width the sidebar opens at and defaults to `+440+`. The xref:customsidebar.adoc#sidebar_min_width[`+sidebar_min_width+`] and xref:customsidebar.adoc#sidebar_max_width[`+sidebar_max_width+`] options set the smallest and largest widths a user can drag the sidebar to and default to `+300+` and `+800+`. All three options set widths in pixels. To keep the editable area usable, {productname} does not allow the editable area to shrink below 280 pixels, and this limit takes precedence over all three options.
+
+=== New `SidebarResizeStart` and `SidebarResized` events for tracking sidebar resizing
+// #TINYMCE-14529
+
+In {productname} {release-version}, two new events report when a user resizes a sidebar. {productname} fires xref:events.adoc[`+SidebarResizeStart+`] when a user starts dragging the resize handle, and xref:events.adoc[`+SidebarResized+`] when a user stops dragging. The `+SidebarResized+` event carries a `+{ width: number }+` payload holding the width of the sidebar, in pixels, after the resize.
+
+Together with the xref:customsidebar.adoc#sidebar_width[`+sidebar_width+`] option, these events allow an integration to store the width a user chooses and restore it the next time the editor loads. For an example, see: xref:customsidebar.adoc#persisting-the-sidebar-width[Persisting the sidebar width].
 
 
 [[changes]]
@@ -144,6 +159,16 @@ In {productname} {release-version}, three new options configure the width of any
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== The new `resizable` property controls whether a custom sidebar can be resized
+// #TINYMCE-14678
+// #TINYMCE-14683
+
+Previously, the styles applied to the content of a sidebar registered through `+addSidebar+` controlled the width of that sidebar. Resizable sidebars require {productname} to control that width instead, and that change of control would alter how every existing custom sidebar renders.
+
+In {productname} {release-version}, the `+addSidebar+` specification object accepts a new optional xref:customsidebar.adoc#resizable[`+resizable+`] property that defaults to `+false+`. A custom sidebar registered without the property renders as it did in earlier versions and is not resizable, so existing integrations are unaffected. Setting the property to `+true+` makes the sidebar resizable and requires the content of the sidebar to follow the width of the parent element. For information, see: xref:customsidebar.adoc#styling-a-resizable-sidebar[Styling a resizable sidebar].
+
+The sidebars registered by the xref:introduction-to-tiny-comments.adoc[Comments] and xref:tinymceai.adoc[{productname} AI] plugins set `+resizable+` to `+true+` and are resizable by default.
 
 
 [[removed]]

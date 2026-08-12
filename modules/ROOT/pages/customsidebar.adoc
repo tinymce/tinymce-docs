@@ -32,6 +32,17 @@ The `+icon+` specifies an icon for the sidebar toggle button. The icon should be
 
 *Type:* `+String+`
 
+[[resizable]]
+==== `+resizable+`
+
+The `+resizable+` specifies whether a user can resize the sidebar by dragging the edge of the sidebar. The default is `+false+`.
+
+When set to `+true+`, {productname} renders a resize handle and controls the width of the sidebar using the xref:customsidebar.adoc#sidebar_width[`+sidebar_width+`], xref:customsidebar.adoc#sidebar_min_width[`+sidebar_min_width+`], and xref:customsidebar.adoc#sidebar_max_width[`+sidebar_max_width+`] options. The content of a sidebar registered with `+resizable+` set to `+true+` needs to follow the width of the parent element. For information, see: xref:customsidebar.adoc#styling-a-resizable-sidebar[Styling a resizable sidebar].
+
+When `+resizable+` is omitted or set to `+false+`, {productname} does not render a resize handle, ignores the three sidebar width options, and renders the sidebar at the width defined by the content styles of that sidebar.
+
+*Type:* `+Boolean+`
+
 [[onSetup]]
 ==== `+onSetup+`
 
@@ -61,6 +72,96 @@ The `+onHide+` specifies a function to be called when the panel is hidden. It pa
 ==== `+element():HTMLElement+`
 
 The `+element():HTMLElement+` function returns the root element of the sidebar panel.
+
+[[resizable-sidebars]]
+== Resizable sidebars
+
+From {productname} 8.9, a user can resize a sidebar by dragging the edge of the sidebar toward or away from the editable area. {productname} renders a resize handle only for sidebars registered with the xref:customsidebar.adoc#resizable[`+resizable+`] property set to `+true+`.
+
+The sidebars registered by the xref:introduction-to-tiny-comments.adoc[Comments] and xref:tinymceai.adoc[{productname} AI] plugins are resizable by default. Sidebars registered through `+addSidebar+` are not resizable by default, so a custom sidebar created before {productname} 8.9 renders as it did previously.
+
+The xref:customsidebar.adoc#sidebar_width[`+sidebar_width+`], xref:customsidebar.adoc#sidebar_min_width[`+sidebar_min_width+`], and xref:customsidebar.adoc#sidebar_max_width[`+sidebar_max_width+`] options apply to every resizable sidebar in an editor. {productname} cannot set a separate width for an individual sidebar.
+
+[[styling-a-resizable-sidebar]]
+=== Styling a resizable sidebar
+
+The content styles of a sidebar that is not resizable determine how wide the sidebar renders.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  sidebar_show: 'mysidebar',
+  setup: (editor) => {
+    editor.ui.registry.addSidebar('mysidebar', {
+      tooltip: 'My sidebar',
+      icon: 'comment',
+      onShow: (api) => {
+        const container = document.createElement('div');
+        container.style.width = '600px';
+        api.element().appendChild(container);
+      },
+    });
+  }
+});
+----
+
+{productname} sets the width of a resizable sidebar, so the content styles need to follow the width of the parent element rather than set a width. Set the width of the content to `+100%+` so that the content inherits the width from `+api.element()+`.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  sidebar_show: 'mysidebar',
+  sidebar_width: 500,
+  setup: (editor) => {
+    editor.ui.registry.addSidebar('mysidebar', {
+      tooltip: 'My sidebar',
+      icon: 'comment',
+      resizable: true,
+      onShow: (api) => {
+        const container = document.createElement('div');
+        container.style.width = '100%';
+        api.element().appendChild(container);
+      },
+    });
+  }
+});
+----
+
+IMPORTANT: A sidebar whose content styles set a fixed width does not render correctly when `+resizable+` is set to `+true+`. Update the content styles to `+100%+` before enabling the property.
+
+[[persisting-the-sidebar-width]]
+=== Persisting the sidebar width
+
+{productname} does not store the width a user drags a sidebar to. To keep a width between editor loads, store the width reported by the xref:events.adoc#editor-core-events[`+SidebarResized+`] event and pass the stored value to xref:customsidebar.adoc#sidebar_width[`+sidebar_width+`] when the editor is next created.
+
+[source,js]
+----
+const storedWidth = window.localStorage.getItem('sidebar-width');
+
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  sidebar_show: 'mysidebar',
+  sidebar_width: storedWidth ? parseInt(storedWidth, 10) : 440,
+  setup: (editor) => {
+    editor.ui.registry.addSidebar('mysidebar', {
+      tooltip: 'My sidebar',
+      icon: 'comment',
+      resizable: true,
+      onShow: (api) => {
+        const container = document.createElement('div');
+        container.style.width = '100%';
+        api.element().appendChild(container);
+      },
+    });
+
+    editor.on('SidebarResized', (e) => {
+      window.localStorage.setItem('sidebar-width', e.width);
+    });
+  }
+});
+----
 
 == Options
 

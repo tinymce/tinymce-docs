@@ -1,0 +1,26 @@
+[[tinycomments_always_show_highlights]]
+== `+tinycomments_always_show_highlights+`
+
+_Optional_: The {pluginname} plugin offers the `+tinycomments_always_show_highlights+` option to keep the highlighting on commented content visible while the {pluginname} sidebar is closed. By default, {productname} highlights commented content only while the sidebar is open, and removes the highlighting from the editor content once the sidebar is closed.
+
+When this option is set to `+true+`, {productname} highlights commented content whether the sidebar is open or closed, and selecting highlighted content reopens the closed {pluginname} sidebar.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
+
+=== Example: using `+tinycomments_always_show_highlights+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'tinycomments',
+  toolbar: 'addcomment showcomments',
+  tinycomments_mode: 'embedded',
+  user_id: 'embedded_journalist',
+  tinycomments_always_show_highlights: true
+});
+----

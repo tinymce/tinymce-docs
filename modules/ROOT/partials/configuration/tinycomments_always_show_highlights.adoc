@@ -20,7 +20,7 @@ tinymce.init({
   plugins: 'tinycomments',
   toolbar: 'addcomment showcomments',
   tinycomments_mode: 'embedded',
-  user_id: 'embedded_journalist',
+  user_id: 'author',
   tinycomments_always_show_highlights: true
 });
 ----

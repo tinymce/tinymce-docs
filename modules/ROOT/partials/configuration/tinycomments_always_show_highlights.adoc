@@ -15,12 +15,14 @@ When this option is set to `+true+`, {productname} highlights commented content 
 
 [source,js]
 ----
+const currentAuthor = 'embedded_journalist';
+
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'tinycomments',
   toolbar: 'addcomment showcomments',
   tinycomments_mode: 'embedded',
-  user_id: 'author',
+  user_id: currentAuthor,
   tinycomments_always_show_highlights: true
 });
 ----

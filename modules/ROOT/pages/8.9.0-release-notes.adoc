@@ -71,6 +71,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Chat welcome actions moved focus into the editor and reset the content scroll position
+// #TINYMCE-14749
+
+Previously, selecting a welcome action in the AI Chat sidebar moved focus into the editor before running the action's command. Focusing the editor scrolls the content to the current selection, and when no selection had been made, that position was the start of the content. Users who had scrolled through a document lost that scroll position as soon as a welcome action was selected.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin runs welcome action commands without moving focus into the editor. Selecting a welcome action leaves the editor scroll position and focus unchanged. Welcome actions are configured with the xref:tinymceai.adoc#tinymceai_chat_welcome_actions[`+tinymceai_chat_welcome_actions+`] option.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

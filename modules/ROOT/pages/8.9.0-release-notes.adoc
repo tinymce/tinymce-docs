@@ -71,6 +71,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Changes to text alongside a nested list or table did not render as diffs in Review mode
+// #TINYMCE-14519
+
+Previously, text that sat directly alongside a nested list or table within the same container was not tracked as a block-level change, so the comparison that produces suggestions skipped it. Review mode showed that text as unchanged even when the review returned suggestions for it. Reviewers could not see or act on those suggestions, and the suggested edits were lost once the review was completed.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin treats text alongside a nested list or table as a block-level change when preparing the document for comparison. Suggestions for that text now appear in the Review sidebar and in the document with the rest of the suggestions, and each one can be accepted or rejected as usual.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

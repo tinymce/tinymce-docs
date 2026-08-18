@@ -1,60 +1,22 @@
-= Using {productname} with AI coding agents
-:navtitle: Build with AI
-:description: Teach AI coding agents to integrate {productname} using the official skill, the documentation MCP server, markdown pages, and llms.txt files.
-:description_short: Connect {productname} to AI coding agents.
-:keywords: ai, skill, agent skills, mcp, model context protocol, coding agent, claude code, cursor, codex, copilot, visual studio code, llms.txt, markdown
+= Connecting AI coding agents to the {productname} documentation
+:navtitle: Documentation for AI agents
+:description: Give AI coding agents access to the {productname} documentation through the documentation MCP server, Context7, markdown pages, and llms.txt files.
+:description_short: Give AI coding agents access to the {productname} documentation.
+:keywords: ai, mcp, model context protocol, coding agent, claude code, cursor, codex, copilot, visual studio code, context7, llms.txt, markdown
 
-The official *{productname} skill* teaches an AI coding agent how to add {productname} to a project: it selects an installation method, wires up the editor, configures plugins and the toolbar, loads the content styles, and sets the API key or license key. Install it with one command:
+An AI coding agent works from its training data unless it is given something better. This page describes the ways to put the current {productname} documentation in front of an agent: a documentation https://modelcontextprotocol.io/[Model Context Protocol] (MCP) server, markdown versions of every page, and the `+llms.txt+` summaries. Each method applies to any {productname} installation, whether it is served from the {cloudname} or self-hosted.
 
-[source,bash]
-----
-npx skills add tinymce/skills
-----
+TIP: To add {productname} to a project with an AI coding agent, see the xref:cloud-quick-start-ai.adoc[{cloudname} AI quick start guide].
 
 [NOTE]
 ====
-This page covers agent skills that help integrate {productname} into an application. It does not describe the in-editor AI features. For content generation inside the editor, see xref:tinymceai-introduction.adoc[{productname} AI].
+This page covers giving external coding agents access to this documentation. It does not describe the in-editor AI features. For content generation inside the editor, see xref:tinymceai-introduction.adoc[{productname} AI].
 ====
-
-[[what-the-skill-does]]
-== What the skill does
-
-The skill loads when an agent is asked to install, set up, configure, or troubleshoot {productname}. It will:
-
-* Choose an installation method — {cloudname}, a package manager, or a `+.zip+` package.
-* Wire up the editor in vanilla JavaScript or an official React, Vue, Angular, Svelte, jQuery, web component, or Blazor wrapper.
-* Configure plugins, the toolbar, the menu bar, and content styles.
-* Set the API key or license key correctly for the chosen distribution channel.
-* Send version-specific questions to the live documentation instead of guessing.
-
-The skill deliberately excludes authoring custom plugins, upgrading between major versions, and {productname} 4. For those tasks, see the xref:migration-guides.adoc[migration guides].
-
-[[supported-agents]]
-== Supported agents
-
-The skill uses the open https://agentskills.io/home[Agent Skills] format, so it works in any agent that supports it, including Claude Code, Cursor, Codex, OpenCode, GitHub Copilot, Windsurf, Gemini, Cline, AMP, and Zed. The installer detects the agents present in a project and writes the skill to each.
-
-[[other-ways-to-install]]
-== Other ways to install
-
-[[claude-code-plugin-marketplace]]
-=== Claude Code plugin marketplace
-
-[source,text]
-----
-/plugin marketplace add tinymce/skills
-/plugin install tinymce@tinymce
-----
-
-[[manual-installation]]
-=== Manual installation
-
-Copy the `+skills/tinymce/+` directory from the https://github.com/tinymce/skills[`+tinymce/skills+`] repository into the agent's skills directory, for example `+.claude/skills/tinymce/+`.
 
 [[connect-the-documentation-mcp-server]]
 == Connect the documentation MCP server
 
-The skill works on its own, but is more effective when the agent can also search the live documentation. The hosted {productname} documentation https://modelcontextprotocol.io/[Model Context Protocol] (MCP) server exposes semantic search across the published documentation, returning relevant extracts with links to their source pages. Any client that supports MCP over streamable HTTP can connect to it. This server supplies documentation to an external coding agent, and is separate from the MCP tool calling available to the {productname} AI service, described in xref:tinymceai-on-premises-mcp.adoc[MCP and web integrations].
+The hosted {productname} documentation MCP server exposes semantic search across the published documentation, returning relevant extracts with links to their source pages. Any client that supports MCP over streamable HTTP can connect to it. This server supplies documentation to an external coding agent, and is separate from the MCP tool calling available to the {productname} AI service, described in xref:tinymceai-on-premises-mcp.adoc[MCP and web integrations].
 
 *Endpoint:* `+https://tinymcedocs.mcp.kapa.ai+`
 
@@ -62,7 +24,7 @@ The skill works on its own, but is more effective when the agent can also search
 
 [IMPORTANT]
 ====
-Each agent reads its own configuration file, and the files are not interchangeable. Claude Code reads `+.mcp.json+` and expects an `+mcpServers+` object, while Visual Studio Code reads `+.vscode/mcp.json+` and expects a `+servers+` object. An agent given another agent's file or key name reports no error and exposes no tools from the server. Use the section below that matches the agent in use.
+Each agent reads its own configuration file, and the files are not interchangeable. Claude Code reads `+.mcp.json+` and expects an `+mcpServers+` object, while Visual Studio Code reads `+.vscode/mcp.json+` and expects a `+servers+` object. An agent given another agent's file or key name reports no error and exposes no tools from the server. Expand the entry below that matches the agent in use.
 ====
 
 [[install-from-the-documentation-site]]
@@ -70,11 +32,17 @@ Each agent reads its own configuration file, and the files are not interchangeab
 
 Every page of this documentation includes an *Ask AI* widget. Open the widget and select *Use MCP* in the modal header to open the *Connect to AI Tools* menu, which provides copy-to-clipboard install commands, one-click installs for supported editors, and the raw server URL.
 
-The remaining sections describe the equivalent manual configuration.
+The entries below describe the equivalent manual configuration.
+
+[[manual-mcp-configuration]]
+=== Manual configuration by agent
+
+Each agent below is configured independently. Expand the entry for the agent in use.
 
 [[claude-code]]
-=== Claude Code
-
+.Claude Code
+[%collapsible]
+====
 [source,bash]
 ----
 claude mcp add --transport http --scope project tinymce-docs https://tinymcedocs.mcp.kapa.ai
@@ -93,10 +61,12 @@ To configure the server manually, add it to `+.mcp.json+`:
   }
 }
 ----
+====
 
 [[cursor]]
-=== Cursor
-
+.Cursor
+[%collapsible]
+====
 Add the server to `+.cursor/mcp.json+`:
 
 [source,json]
@@ -109,10 +79,12 @@ Add the server to `+.cursor/mcp.json+`:
   }
 }
 ----
+====
 
 [[codex]]
-=== Codex
-
+.Codex
+[%collapsible]
+====
 [source,bash]
 ----
 codex mcp add tinymce-docs --url https://tinymcedocs.mcp.kapa.ai
@@ -128,10 +100,12 @@ startup_timeout_sec = 20
 tool_timeout_sec = 60
 enabled = true
 ----
+====
 
 [[visual-studio-code]]
-=== Visual Studio Code
-
+.Visual Studio Code
+[%collapsible]
+====
 Add the server to `+.vscode/mcp.json+`:
 
 [source,json]
@@ -145,10 +119,12 @@ Add the server to `+.vscode/mcp.json+`:
   }
 }
 ----
+====
 
 [[opencode]]
-=== OpenCode
-
+.OpenCode
+[%collapsible]
+====
 Add the server to `+opencode.json+`:
 
 [source,json]
@@ -164,16 +140,28 @@ Add the server to `+opencode.json+`:
   }
 }
 ----
+====
 
 [[other-agents]]
-=== Other agents
-
+.Other agents
+[%collapsible]
+====
 For any other agent, point its MCP client at the streamable HTTP endpoint and complete the sign-in described above. Agents that accept a remote MCP server without a dedicated configuration file, such as Claude and ChatGPT, can connect using the endpoint directly:
 
 [source,text]
 ----
 https://tinymcedocs.mcp.kapa.ai
 ----
+====
+
+[[context7]]
+== Connect Context7
+
+https://context7.com/[Context7] is a general-purpose documentation MCP server that also indexes the {productname} documentation. Where the {productname} documentation MCP server returns extracts from the published site, Context7 serves version-specific library documentation across many projects from a single server, which suits an agent already using it for other libraries.
+
+*Library:* `+tinymce/docs+` at https://context7.com/tinymce/tinymce-docs[`+context7.com/tinymce/tinymce-docs+`]
+
+Configure Context7 following its own installation instructions, then reference the `+tinymce/docs+` library in prompts so the agent resolves {productname} questions against it.
 
 [[read-the-documentation-as-markdown]]
 == Read the documentation as markdown
@@ -213,6 +201,4 @@ Two plain text files summarize the documentation set for agents that accept a si
 [[feedback]]
 == Feedback
 
-Report guidance that is wrong, outdated, or missing from the skill by https://github.com/tinymce/skills/issues/new?template=skill-feedback.yml[opening an issue] in the https://github.com/tinymce/skills[`+tinymce/skills+`] repository, using the skill feedback template. Agents are encouraged to file these when the skill contradicts what actually worked.
-
-Report inaccurate or outdated documentation by opening an issue in the https://github.com/tinymce/tinymce-docs/issues[`+tinymce-docs+`] repository.
+Report inaccurate or outdated documentation by opening an issue in the https://github.com/tinymce/tinymce-docs/issues[`+tinymce-docs+`] repository. Agents are encouraged to file these when the documentation contradicts what actually worked.

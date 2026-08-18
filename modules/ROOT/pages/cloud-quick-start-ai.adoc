@@ -1,0 +1,162 @@
+= Quick start: {productname} from {cloudname} with an AI coding agent
+:navtitle: AI quick start guide
+:description_short: Add {productname} {productmajorversion} from the {cloudname} using the official agent skill.
+:description: Add a {productname} {productmajorversion} editor to an application by installing the official agent skill and asking an AI coding agent to do the setup, then connect a documentation MCP server to configure the editor further.
+:keywords: quick start, ai, agent skill, agent skills, coding agent, mcp, model context protocol, claude code, cursor, codex, copilot, context7, kapa, cloud
+:productSource: cloud
+
+{productname} {productmajorversion} is a powerful and flexible rich text editor that can be embedded in web applications. This quick start covers how to add a {productname} editor to an application by installing the official https://github.com/tinymce/tinymce-ai-skills[{productname} agent skill] and letting an AI coding agent perform the setup.
+
+TIP: For the equivalent step-by-step setup without an AI coding agent, see the xref:cloud-quick-start.adoc[{cloudname} quick start guide].
+
+include::partial$misc/admon-account-creation-and-social-option.adoc[]
+
+[[install-the-skill]]
+== Install the {productname} skill
+
+The official {productname} skill teaches an AI coding agent how to add {productname} to a project. Install it into the agent (Claude Code, Codex, Cursor, GitHub Copilot, and others) with a single command:
+
+[source,bash]
+----
+npx skills add tinymce/tinymce-ai-skills
+----
+
+The installer detects the agents present in the project and writes the skill to each. The skill uses the open https://agentskills.io/[Agent Skills] format, so it works in any agent that supports that format.
+
+Once installed, the skill loads on its own whenever the agent is asked to install, set up, configure, or troubleshoot {productname}. No extra prompting is required.
+
+To install without the command-line interface, follow the per-agent instructions under *Manual installation* in the https://github.com/tinymce/tinymce-ai-skills[`+tinymce/tinymce-ai-skills+`] README. Report guidance that is wrong, outdated, or missing from the skill by https://github.com/tinymce/tinymce-ai-skills/issues[opening an issue] in the same repository.
+
+[[add-the-editor]]
+== Add {productname} to an application
+
+Ask the agent to add {productname} wherever a rich text editor is needed, for example:
+
+[quote]
+____
+Add a {productname} editor to the comment box on my post page.
+____
+
+The skill guides the agent through the whole setup: detecting the environment (vanilla JavaScript or a framework such as React, Next.js, Vue, or Angular), generating the integration code, recommending plugins for the use case, and wiring in the API key. During setup the agent prompts for a {cloudname} API key, which is created when signing up to the link:{accountsignup}/[{cloudname}]. Signing up also provides a trial of the xref:plugins.adoc#premium-plugins[Premium Plugins].
+
+The result is a working, correctly configured editor. For a vanilla JavaScript project using the full set of {cloudname} plugins, the generated page resembles the following:
+
+[source,html,subs="attributes+"]
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <textarea id="mytextarea">Hello, World!</textarea>
+    <script>
+      tinymce.init({
+        selector: '#mytextarea',
+        plugins: [
+          // Core editing features
+          'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'link', 'lists',
+          'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
+          // Premium features
+          'checklist', 'mediaembed', 'casechange', 'formatpainter', 'pageembed',
+          'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable',
+          'advcode', 'advtemplate', 'tinymceai', 'uploadcare', 'mentions', 'tinycomments',
+          'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography',
+          'inlinecss', 'markdown', 'importword', 'exportword', 'exportpdf'
+        ],
+        toolbar: 'undo redo | tinymceai-chat tinymceai-quickactions tinymceai-review | blocks fontfamily fontsize | bold italic underline strikethrough | link media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography uploadcare | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+
+        // Comments: 'embedded' stores comments in the content, with no server required
+        tinycomments_mode: 'embedded',
+
+        // Merge Tags: without a list, the toolbar button and menu item are hidden
+        mergetags_list: [
+          { value: 'Person.Name.First', title: 'First name' },
+          { value: 'Person.Name.Last', title: 'Last name' },
+          { value: 'Person.Email', title: 'Email' }
+        ],
+
+        // Advanced Templates: returns the template categories to offer
+        advtemplate_list: () => Promise.resolve([
+          {
+            id: 'general',
+            title: 'General',
+            items: [
+              { id: 'signoff', title: 'Sign-off', content: '<p>Kind regards,</p>' }
+            ]
+          }
+        ]),
+
+        // Mentions: replace with a request to a user directory
+        mentions_fetch: (query, success) => success([
+          { id: 'ada', name: 'Ada Lovelace' },
+          { id: 'alan', name: 'Alan Turing' }
+        ].filter((user) => user.name.toLowerCase().includes(query.term.toLowerCase()))),
+
+        // TinyMCE AI: the trial demo identity service issues tokens during evaluation
+        tinymceai_token_provider: async () => {
+          await fetch('https://demo.api.tiny.cloud/1/no-api-key/auth/random', { method: 'POST', credentials: 'include' });
+          return await fetch('https://demo.api.tiny.cloud/1/no-api-key/jwt/tinymceai', { credentials: 'include' })
+            .then((resp) => resp.text())
+            .then((token) => ({ token }));
+        },
+
+        // Media Optimizer: replace with an Uploadcare public key
+        uploadcare_public_key: 'your-uploadcare-public-key'
+      });
+    </script>
+  </body>
+</html>
+----
+
+Replace the `+no-api-key+` placeholder in the script URL with the API key. The premium plugins above require a {cloudname} plan or trial that includes them.
+
+Two options in this configuration need values that are specific to the account before the plugin they belong to will work:
+
+* `+uploadcare_public_key+` requires an Uploadcare public key, available from the link:{accountpageurl}/media-optimizer/[{accountpage}]. See xref:uploadcare.adoc[Media Optimizer].
+* `+tinymceai_token_provider+` uses the trial demo identity service above, which is intended for evaluation only. For production, return a token from an application endpoint. See xref:tinymceai-jwt-authentication-intro.adoc[{productname} AI JWT authentication].
+
+The remaining options are mandatory for their plugins and are shown with working values that can be replaced with real data: `+tinycomments_mode+`, `+mergetags_list+`, `+advtemplate_list+`, and `+mentions_fetch+`.
+
+[[approve-the-domain]]
+== Approve the application domain
+
+An application served from any origin other than `+localhost+` requires its domain to be added to the approved domains stored against the API key. Add the domain on the link:{accountpageurl}/domains/[{accountpage}] to clear the following notice on the editor:
+
+[WARNING]
+====
+**This domain is not registered with {cloudname}. Please see the quick start guide or create an account.**
+====
+
+Local development on `+localhost+` works without this step, so it can be deferred until the application is deployed or served from a custom host. For the diagnostic steps when the notice persists, see xref:cloud-troubleshooting.adoc#domain-not-registered[Domain not registered].
+
+[[connect-live-documentation]]
+== Configure further using live documentation
+
+Taking the configuration deeper, by adding plugins, tailoring toolbars and menus, or refining behavior against the current API, is more reliable when the agent reads the published documentation instead of relying on its training data. Connect one of the following https://modelcontextprotocol.io/[Model Context Protocol] (MCP) servers:
+
+[cols="1,3",options="header"]
+|===
+|Server |Description
+
+|https://tinymcedocs.mcp.kapa.ai[{productname} documentation MCP]
+|Semantic search across the published {productname} documentation, returning relevant extracts with links to their source pages. For the endpoint, authentication, and per-agent configuration, see xref:ai-coding-agents.adoc#connect-the-documentation-mcp-server[Connect the documentation MCP server].
+
+|https://context7.com/tinymce/tinymce-docs[Context7]
+|A general-purpose documentation MCP server. Point it at the `+tinymce/docs+` library to serve version-specific {productname} documentation to the agent. The skill checks for Context7 before generating code, so this is the server it uses when both are available.
+|===
+
+With a server connected, ask the agent for the change required and it applies the change using current guidance, for example:
+
+[quote]
+____
+Add the Table and Word Count plugins, and put a word counter in the status bar.
+____
+
+Agents that do not support MCP can read the documentation as markdown or from the `+llms.txt+` files instead. See xref:ai-coding-agents.adoc#read-the-documentation-as-markdown[Read the documentation as markdown].
+
+include::partial$misc/quickstart-next-steps.adoc[]

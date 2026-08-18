@@ -8,6 +8,9 @@ endif::[]
 ifeval::["{productSource}" == "package-manager"]
 * Installing premium plugins, see: xref:npm-projects.adoc#install-premium-plugins[Installing premium plugins from NPM].
 endif::[]
+ifeval::["{productSource}" == "cloud"]
+* Getting and setting the editor content, see: xref:apis/tinymce.editor.adoc#getContent[`+getContent+`] and xref:apis/tinymce.editor.adoc#setContent[`+setContent+`].
+endif::[]
 * Customizing {productname}, see: xref:basic-setup.adoc[Basic Setup].
 * The three editor modes, see:
 ** xref:use-tinymce-classic.adoc[{productname} classic editing mode].

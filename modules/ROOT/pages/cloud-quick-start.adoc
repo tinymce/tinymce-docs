@@ -1,46 +1,55 @@
 = Quick start: {productname} from {cloudname}
 :navtitle: Quick start: Cloud
 :page-aliases: quick-start.adoc
-:description_short: Setup a basic {productname} {productmajorversion} editor using the {cloudname}.
-:description: Get an instance of {productname} {productmajorversion} up and running using the {cloudname}. Initialize the editor on a textarea element using its ID with tinymce.init and the selector option.
-:keywords: tinymce, script, textarea, selector, id, #mytextarea, tinymce.init, initialize, quick start
+:description_short: Add a {productname} {productmajorversion} editor to a web page using the {cloudname}.
+:description: Add a {productname} {productmajorversion} editor to a web page using the {cloudname}. Load the script from the content delivery network, set the API key, and initialize the editor on a textarea element with tinymce.init.
+:keywords: quick start, cloud, cdn, script, textarea, selector, tinymce.init, api key, approved domains
 :productSource: cloud
-
 
 {productname} {productmajorversion} is a powerful and flexible rich text editor that can be embedded in web applications. This quick start covers how to add a {productname} editor to a web page using the {cloudname}.
 
+TIP: To have an AI coding agent perform this setup instead, see the xref:cloud-quick-start-ai.adoc[AI quick start guide].
+
 include::partial$misc/admon-account-creation-and-social-option.adoc[]
 
-== Include the {productname} script
+[[add-the-script]]
+== Add the {productname} script
 
-Include the following script tag in the `+<head>+` of a HTML file:
+Add the following script tag to the `+<head>+` of an HTML file. It loads {productname} from the {cloudname} content delivery network (CDN):
 
 [source,html,subs="attributes+"]
 ----
 <script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 
-== Initialize {productname}
+[[add-the-api-key]]
+== Add the API key
 
-include::partial$install/initialize-editor-cloud.adoc[]
+The script URL contains a `+no-api-key+` placeholder. Replace it with the {cloudname} API key, which is created when signing up to the link:{accountsignup}/[{cloudname}]. Signing up also provides a trial of the xref:plugins.adoc#premium-plugins[Premium Plugins].
 
-Adding this content to the HTML file and opening it in a web browser will load a {productname} editor, such as:
-
-liveDemo::default[]
-
-== Update the "no-api-key" placeholder
-
-Update the `+no-api-key+` placeholder in the source script URL (`+<script src=https://.../no-api-key/tinymce/{productmajorversion}/tinymce.min.js+/>`) with your {cloudname} API key, which is created when signing up to the link:{accountsignup}/[{cloudname}].
-
-Providing a valid API key also removes the notice:
+Until a valid API key is in place, the editor displays the following notice:
 
 [WARNING]
 ====
 **This domain is not registered with {cloudname}. Please see the quick start guide or create an account.**
 ====
 
-Signing up for a {cloudname} API key will also provide a trial of the xref:plugins.adoc#premium-plugins[Premium Plugins].
+[[initialize-the-editor]]
+== Initialize the editor
 
-include::partial$install/save-content.adoc[]
+include::partial$install/initialize-editor-cloud.adoc[]
+
+Opening the page in a web browser loads a {productname} editor:
+
+liveDemo::cloud-quick-start[]
+
+The demo above runs the same configuration as the example. For an editor with every premium plugin enabled, see the xref:full-featured-premium-demo.adoc[full featured demo].
+
+[[approve-the-domain]]
+== Approve the application domain
+
+An application served from any origin other than `+localhost+` requires its domain to be added to the approved domains stored against the API key. Add the domain on the link:{accountpageurl}/domains/[{accountpage}] to clear the domain registration notice.
+
+Local development on `+localhost+` works without this step, so it can be deferred until the application is deployed or served from a custom host. For the diagnostic steps when the notice persists, see xref:cloud-troubleshooting.adoc#domain-not-registered[Domain not registered].
 
 include::partial$misc/quickstart-next-steps.adoc[]

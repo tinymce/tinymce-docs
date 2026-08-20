@@ -51,10 +51,33 @@ jobs:
         fail: false
         jobSummary: true
 
-    - name: Create issue on broken links
+    # A single rolling issue is kept for link rot: the body is refreshed with the
+    # latest results each run and a comment records the run. Opening a fresh issue
+    # every Monday would accumulate duplicates for as long as the rot persists.
+    - name: Report broken links
       if: steps.lychee.outputs.exit_code != 0
-      uses: peter-evans/create-issue-from-file@v5
-      with:
-        title: 'Link check — broken links detected in published documentation'
-        content-filepath: lychee/results.md
-        labels: link-rot
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        TITLE: 'Link check — broken links detected in published documentation'
+        RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      run: |
+        existing=$(gh issue list --label link-rot --state open --limit 1 --json number --jq '.[0].number // empty')
+        if [ -n "$existing" ]; then
+          gh issue edit "$existing" --body-file lychee/results.md
+          gh issue comment "$existing" --body "Link check re-run: results updated from ${RUN_URL}"
+          echo "Updated existing issue #${existing}"
+        else
+          gh issue create --title "$TITLE" --label link-rot --body-file lychee/results.md
+        fi
+
+    # Close the rolling issue automatically once a clean run confirms the rot is gone.
+    - name: Close link-rot issue when clean
+      if: steps.lychee.outputs.exit_code == 0
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      run: |
+        existing=$(gh issue list --label link-rot --state open --limit 1 --json number --jq '.[0].number // empty')
+        if [ -n "$existing" ]; then
+          gh issue close "$existing" --comment "All external links resolved successfully in ${RUN_URL}"
+        fi

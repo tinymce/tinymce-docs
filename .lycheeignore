@@ -35,3 +35,11 @@ https://malavkhatri.com/
 # https://www.facebook.com/
 # https://twitter.com/
 # https://x.com/
+
+# Verified by a full-site scan (2026-08-20): reachable in a browser, but the
+# automated checker is refused.
+# Bot detection -> 403:
+https://stackoverflow.com/
+https://www.graylog.org/
+# MCP endpoint: rejects HEAD/GET with 405 by design, it is not a web page.
+https://tinymcedocs.mcp.kapa.ai/

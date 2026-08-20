@@ -77,12 +77,16 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following addition.
 
-==== New option `tinymceai_chat_default_sources` to allow specifying predefined sources as chat default context.
-// #TINYMCE-14703
+==== The `tinymceai_chat_fetch_sources` option can now nominate default sources for chat conversations.
+// #TINYMCE-14777
 
 Previously, the **TinyMCE AI** plugin applied only the current document to the context of a new AI Chat conversation. Users had to add every other context source, such as a style guide or a reference document, to each new conversation by hand.
 
-In {productname} {release-version}, the **TinyMCE AI** plugin supports the xref:tinymceai.adoc#tinymceai_chat_default_sources[`+tinymceai_chat_default_sources+`] option. The option accepts an array of source identifiers taken from the list supplied by xref:tinymceai.adoc#tinymceai_chat_fetch_sources[`+tinymceai_chat_fetch_sources+`], and the plugin applies those sources to the context of every new conversation. Users can remove a default source from a conversation and add it again from the sources menu.
+In {productname} {release-version}, the function supplied to xref:tinymceai.adoc#tinymceai_chat_fetch_sources[`+tinymceai_chat_fetch_sources+`] can resolve to an object with a `+menu+` property, holding the source groups shown in the sources menu, and a `+defaults+` property, holding an array of source identifiers. The plugin adds each source listed in `+defaults+` to the context of every new conversation, and shows it as selected in the sources menu. Users can remove a default source from a conversation and add it again from the sources menu.
+
+Identifiers listed in `+defaults+` without a matching source in `+menu.sources+` are not added to the context, and the plugin reports them as an error in the browser console.
+
+The option continues to accept a function that resolves to an array of source groups, so existing configurations are unaffected.
 
 For details on configuring conversation context, see xref:tinymceai-chat.adoc#context-configuration[Adding custom context sources].
 

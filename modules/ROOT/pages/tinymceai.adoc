@@ -98,7 +98,6 @@ tinymce.init({
     const filename = `\$\{id\}.pdf`;
     return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
   },
-  tinymceai_chat_default_sources: [ 'doc-1' ],
   tinymceai_quickactions_custom: [
     { title: 'Explain like I am five', prompt: 'Explain the following text in simple terms.', type: 'chat' }
   ]

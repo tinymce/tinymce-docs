@@ -178,17 +178,28 @@ These options configure the AI Chat sidebar, where users have interactive conver
 [[tinymceai_chat_fetch_sources]]
 === `+tinymceai_chat_fetch_sources+`
 
-Populates the sources menu with submenus of files and web resources. Users can select these sources as additional context for chat conversations.
+Populates the sources menu with submenus of files and web resources. Users can select these sources as additional context for chat conversations. The option can also nominate default sources, which the {pluginname} plugin adds to the context of every new conversation.
 
-Takes a function that returns a Promise resolving to an array of additional context source groups. Each group has `+label+`, optional `+icon+`, and `+sources+` array. Each source has `+id+`, `+label+`, and `+type+` (`+'web-resource'+` or `+'file'+`). A source's `+id+` is used to fetch its content through xref:tinymceai.adoc#tinymceai_chat_fetch_source[`tinymceai_chat_fetch_source`].
+Takes a function that returns a Promise resolving to either of the following:
 
-*Type:* `+Function+` (`+() => Promise<Array>+`)
+* An array of source groups.
+* An object with a `+menu+` property, holding the array of source groups as `+menu.sources+`, and a `+defaults+` property, holding an array of source identifiers.
+
+Each source group has `+label+`, optional `+icon+`, and `+sources+` array. Each source has `+id+`, `+label+`, and `+type+` (`+'web-resource'+` or `+'file'+`). A source's `+id+` is used to fetch its content through xref:tinymceai.adoc#tinymceai_chat_fetch_source[`tinymceai_chat_fetch_source`].
+
+Both shapes are supported. Returning an array populates the sources menu without nominating any default sources.
+
+Each identifier listed in `+defaults+` must match the `+id+` of a source listed in `+menu.sources+`. The plugin adds each matching source to the context of every new conversation, and shows it as selected in the sources menu. Identifiers without a matching source are not added to the context, and the plugin reports them as an error in the browser console. Users can remove a default source from a conversation and add it again from the sources menu.
+
+If `+menu.sources+` is missing or empty, the plugin reports an error in the browser console and populates no sources.
+
+*Type:* `+Function+` (`+() => Promise<Array | Object>+`)
 
 *Possible Values:* For source `+type+` property: `+'web-resource'+`, `+'file'+`
 
 *Default value:* `+() => Promise.resolve([])+`
 
-.Example
+.Example: populating the sources menu
 [source,js]
 ----
 tinymce.init({
@@ -205,6 +216,41 @@ tinymce.init({
       ]
     }
   ],
+  tinymceai_chat_fetch_source: async (id) => {
+    const res = await fetch(`/api/documents/\$\{id\}`);
+    const blob = await res.blob();
+    const filename = `\$\{id\}.pdf`;
+    return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
+  },
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  }
+});
+----
+
+.Example: nominating default sources
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_chat_fetch_sources: async () => ({
+    defaults: [ 'doc-1' ],
+    menu: {
+      sources: [
+        {
+          label: 'My Documents',
+          icon: 'folder',
+          sources: [
+            { id: 'doc-1', label: 'Style guide', type: 'file' },
+            { id: 'url-1', label: 'Web Page', type: 'web-resource' }
+          ]
+        }
+      ]
+    }
+  }),
   tinymceai_chat_fetch_source: async (id) => {
     const res = await fetch(`/api/documents/\$\{id\}`);
     const blob = await res.blob();
@@ -245,50 +291,6 @@ tinymce.init({
     const filename = `\$\{id\}.pdf`;
     return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
   },
-  // Required for authentication
-  tinymceai_token_provider: () => {
-    return fetch('/api/token').then(r => r.json());
-  }
-});
-----
-
-[[tinymceai_chat_default_sources]]
-=== `+tinymceai_chat_default_sources+`
-
-Adds one or more sources to the context of every new chat conversation, alongside the current document. Without this option, users add each source to a conversation themselves.
-
-Takes an array of source identifiers. Each identifier is the `+id+` of a source supplied by xref:tinymceai.adoc#tinymceai_chat_fetch_sources[`tinymceai_chat_fetch_sources`], and the content of each source is loaded through xref:tinymceai.adoc#tinymceai_chat_fetch_source[`tinymceai_chat_fetch_source`]. Identifiers that do not match a supplied source are ignored.
-
-Users can remove a default source from a conversation and add it again from the sources menu.
-
-*Type:* `+Array+` (`+string[]+`)
-
-*Default value:* `+[]+`
-
-.Example
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'tinymceai',
-  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
-  tinymceai_chat_fetch_sources: async () => [
-    {
-      label: 'My Documents',
-      icon: 'folder',
-      sources: [
-        { id: 'doc-1', label: 'Style guide', type: 'file' },
-        { id: 'doc-2', label: 'Document 2', type: 'file' }
-      ]
-    }
-  ],
-  tinymceai_chat_fetch_source: async (id) => {
-    const res = await fetch(`/api/documents/\$\{id\}`);
-    const blob = await res.blob();
-    const filename = `\$\{id\}.pdf`;
-    return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
-  },
-  tinymceai_chat_default_sources: [ 'doc-1' ],
   // Required for authentication
   tinymceai_token_provider: () => {
     return fetch('/api/token').then(r => r.json());

@@ -160,7 +160,7 @@ To add custom external sources for users to select from, configure:
 
 Full schemas, return types, and examples are documented under xref:tinymceai.adoc#tinymceai_chat_fetch_sources[Chat configuration options].
 
-To apply a custom source to every new conversation without requiring users to select it, list its ID in xref:tinymceai.adoc#tinymceai_chat_default_sources[`tinymceai_chat_default_sources`].
+To apply a custom source to every new conversation without requiring users to select it, return an object from xref:tinymceai.adoc#tinymceai_chat_fetch_sources[`+tinymceai_chat_fetch_sources+`] and list the source ID in its `+defaults+` property.
 
 [source,js]
 ----

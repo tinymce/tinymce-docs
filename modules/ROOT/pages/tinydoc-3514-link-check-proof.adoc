@@ -1,0 +1,42 @@
+= Link check proof page
+:navtitle: Link check proof
+:description: Temporary page used to verify the automated external-link check. Not for merge.
+:keywords: linkcheck
+
+This page exists only to exercise the automated external-link check. It is not
+part of the documentation and must not be merged.
+
+== Links that should be reported as broken
+
+A dead page on a live host: https://developer.mozilla.org/en-US/docs/Web/API/TinyDoc3514DoesNotExist[a page that does not exist].
+
+== Links that should pass
+
+A live specification: https://www.w3.org/TR/wai-aria-1.2/
+
+A live page in macro form: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage[postMessage].
+
+== Links that should be ignored
+
+An internal cross-reference: xref:events.adoc[Events].
+
+A link to this site: https://www.tiny.cloud/docs/tinymce/latest/
+
+A host that refuses automated checkers: https://www.npmjs.com/package/tinymce[the npm package].
+
+== Links that must never reach the checker
+
+Every URL below sits inside a code sample. None of them is a real anchor, so
+none should be checked or reported.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  ai_request_url: 'http://ai-service:8000/v1/chat/completions',
+  fallback_url: 'https://ai.yourcompany.com/v1/conversations',
+  cdn_url: 'https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/tinymce.min.js',
+  docker_url: 'http://host.docker.internal:11434/v1',
+  dead_url: 'https://developer.mozilla.org/en-US/docs/Web/API/AlsoDoesNotExistTinyDoc3514'
+});
+----

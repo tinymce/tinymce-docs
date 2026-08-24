@@ -116,6 +116,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== The Help dialog lists plugins with invalid metadata as plain text
+// #TINYMCE-14730
+
+Previously, the _Plugins_ tab of the xref:help.adoc[Help] dialog used the metadata returned by a plugin without checking that the expected fields were present and of the expected type. A plugin that supplied a name but no URL was still rendered as a link, and selecting that link navigated to `+/undefined+`.
+
+In {productname} {release-version}, the Help dialog checks the metadata a plugin supplies before rendering it. A plugin whose metadata is missing or of an unexpected type is listed as plain text rather than as a link, using the plugin name where one is supplied, and the plugin identifier where one is not.
+
 
 [[additions]]
 == Additions

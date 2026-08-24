@@ -80,7 +80,7 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== Improved error message shown when a chat message exceeds the AI context limit
 // #TINYMCE-13661
 
-Previously, when a chat message and the conversation history together exceeded the context limit of the AI service, the Chat sidebar reported the failure with the general message `+An error occurred while processing the AI response.+` That message did not identify the size of the request as the cause, so users could not tell whether to shorten the message, start a new conversation, or try again unchanged.
+Previously, when a chat message combined with the conversation history together exceeded the context limit of the AI service, the Chat sidebar reported the failure with the general message `+An error occurred while processing the AI response.+` That message did not identify the size of the request as the cause, so users could not tell whether to shorten the message, start a new conversation, or try again unchanged.
 
 In {productname} {release-version}, the **TinyMCE AI** plugin shows `+This message is too long for the AI to process. Try a shorter message, or start a new chat.+` when the AI service reports that a chat request exceeds the context limit. The message names the cause and describes the two ways to continue.
 

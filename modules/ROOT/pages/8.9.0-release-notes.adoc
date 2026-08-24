@@ -160,6 +160,15 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Opening or closing a sidebar from the toolbar scrolled the editor to the selection
+// #TINYMCE-14765
+
+Previously, opening or closing a sidebar from a toolbar button scrolled the editor content to the current selection when the editor was not focused. Toggling a sidebar is not a content operation, so the viewport moved away from the part of the document the user was reading.
+
+In {productname} {release-version}, toggling a sidebar from the toolbar no longer scrolls the selection into view. This applies to every sidebar registered through `+editor.ui.registry.addSidebar+`. Commands that change content, such as _Bold_, continue to focus the editor and scroll to the selection as before.
+
+The xref:apis/tinymce.editor.adoc#focus[`+editor.focus()+`] method also accepts an object argument, so callers can focus the editor without scrolling the selection into view, as in `+editor.focus({ scrollToSelection: false })+`. The `+scrollToSelection+` property defaults to `+true+`, and passing a boolean continues to behave as before.
+
 
 [[security-fixes]]
 == Security fixes

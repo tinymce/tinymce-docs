@@ -77,7 +77,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following addition.
 
-==== The `tinymceai_chat_fetch_sources` option can now nominate default sources for chat conversations.
+==== The `tinymceai_chat_fetch_sources` option can now specify default sources for chat conversations.
 // #TINYMCE-14777
 
 Previously, the **TinyMCE AI** plugin applied only the current document to the context of a new AI Chat conversation. Users had to manually add every other context source, such as a style guide or reference document, to each new conversation.

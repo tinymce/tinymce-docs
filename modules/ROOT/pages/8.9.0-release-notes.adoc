@@ -82,7 +82,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 Previously, the tooltips shown in the **TinyMCE AI** sidebars did not respond to `+Esc+`. These sidebars use their own tooltips, which were not connected to the editor keyboard shortcut that closes tooltips, so an open tooltip remained on screen until the pointer or focus moved elsewhere. Keyboard users could not dismiss a tooltip that obscured the interface.
 
-In {productname} {release-version}, pressing `+Esc+` closes an open tooltip in the **TinyMCE AI** sidebars. When a tooltip is closed this way, `+Esc+` performs no other action, so focus stays where it was instead of returning to the editor content.
+In {productname} {release-version}, pressing `+Esc+` closes an open tooltip in the **TinyMCE AI** sidebars.
 
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 

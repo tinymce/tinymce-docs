@@ -217,9 +217,9 @@ tinymce.init({
     }
   ],
   tinymceai_chat_fetch_source: async (id) => {
-    const res = await fetch(`/api/documents/\$\{id\}`);
+    const res = await fetch(`/api/documents/${id}`);
     const blob = await res.blob();
-    const filename = `\$\{id\}.pdf`;
+    const filename = `${id}.pdf`;
     return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
   },
   // Required for authentication
@@ -250,9 +250,9 @@ tinymce.init({
     ]
   }),
   tinymceai_chat_fetch_source: async (id) => {
-    const res = await fetch(`/api/documents/\$\{id\}`);
+    const res = await fetch(`/api/documents/${id}`);
     const blob = await res.blob();
-    const filename = `\$\{id\}.pdf`;
+    const filename = `${id}.pdf`;
     return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
   },
   // Required for authentication
@@ -284,9 +284,9 @@ tinymce.init({
     { label: 'Docs', sources: [{ id: 'doc-1', label: 'Document 1', type: 'file' }] }
   ],
   tinymceai_chat_fetch_source: async (id) => {
-    const res = await fetch(`/api/documents/\$\{id\}`);
+    const res = await fetch(`/api/documents/${id}`);
     const blob = await res.blob();
-    const filename = `\$\{id\}.pdf`;
+    const filename = `${id}.pdf`;
     return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
   },
   // Required for authentication

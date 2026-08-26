@@ -1,0 +1,41 @@
+[[sidebar_min_width]]
+== `+sidebar_min_width+`
+
+This option sets the smallest width, in pixels, that a user can drag the sidebar to.
+
+The option applies only to sidebars registered with the `+resizable+` property set to `+true+`. A user cannot resize a sidebar registered without that property, and {productname} ignores this option.
+
+This option restricts dragging only. This option does not restrict the width set by xref:customsidebar.adoc#sidebar_width[`+sidebar_width+`], so a sidebar can open narrower than the value set here.
+
+include::partial$misc/admon-iframe-only.adoc[]
+
+*Type:* `+Number+`
+
+*Default value:* `+300+`
+
+=== Example: using `+sidebar_min_width+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  sidebar_show: 'mysidebar',
+  sidebar_min_width: 400,
+  setup: (editor) => {
+    editor.ui.registry.addSidebar('mysidebar', {
+      tooltip: 'My sidebar',
+      icon: 'comment',
+      resizable: true,
+      onShow: (api) => {
+        api.element().innerHTML = 'Hello world!';
+      },
+    });
+  }
+});
+----
+
+=== Limitations of the `+sidebar_min_width+` option
+
+The editable area cannot shrink below 280 pixels, and this limit takes precedence over `+sidebar_min_width+`. For information on this restriction, see: xref:customsidebar.adoc#limitations-of-the-sidebar-width-option[Limitations of the `+sidebar_width+` option].
+
+When the editor is too narrow to provide the width set by `+sidebar_min_width+` alongside a 280-pixel editable area, {productname} does not resize the sidebar on drag, and the sidebar keeps the current width.

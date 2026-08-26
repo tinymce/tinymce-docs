@@ -100,6 +100,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following fix, addition and improvements.
 
+==== Improved error message shown when the document is too long for a quick action or review
+// #TINYMCE-13662
+
+Previously, when the document content exceeded the context limit of the AI service, a quick action or review failed and reported the general message `+An error occurred while processing the AI response.+` That message did not identify the length of the document as the cause.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin shows `+This document is too long for the AI to process at once.+` when a quick action or review fails for this reason. The message states the limit without suggesting a corrective action, because the full document is always sent to the AI service.
+
 ==== Improved error message shown when an invalid URL is added as a context source
 // #TINYMCE-13715
 

@@ -82,7 +82,7 @@ include::partial$misc/admon-requires-8.9v.adoc[]
 
 A user can resize a sidebar by dragging the edge of the sidebar toward or away from the editable area. {productname} renders a resize handle only for sidebars registered with the xref:customsidebar.adoc#resizable[`+resizable+`] property set to `+true+`.
 
-The sidebars registered by the xref:introduction-to-tiny-comments.adoc[Comments] and xref:tinymceai.adoc[{productname} AI] plugins are resizable by default. Sidebars registered through `+addSidebar+` are not resizable by default, so a custom sidebar created before {productname} 8.9 renders as it did previously.
+The sidebars registered by the xref:introduction-to-tiny-comments.adoc[Comments] and xref:tinymceai.adoc[{productname} AI] plugins are resizable by default. The {productname} AI sidebars are not resizable when xref:tinymceai.adoc#tinymceai_sidebar_type[`+tinymceai_sidebar_type+`] is set to `+'floating'+`. Sidebars registered through `+addSidebar+` are not resizable by default, so a custom sidebar created before {productname} 8.9 renders as it did previously.
 
 The xref:customsidebar.adoc#sidebar_width[`+sidebar_width+`], xref:customsidebar.adoc#sidebar_min_width[`+sidebar_min_width+`], and xref:customsidebar.adoc#sidebar_max_width[`+sidebar_max_width+`] options apply to every resizable sidebar in an editor. {productname} cannot set a separate width for an individual sidebar.
 
@@ -211,6 +211,8 @@ tinymce.init({
 ----
 
 == Example inside a TinyMCE plugin
+
+For information on creating a sidebar that a user can resize, see: xref:customsidebar.adoc#resizable-sidebars[Resizable sidebars].
 
 [source,js]
 ----

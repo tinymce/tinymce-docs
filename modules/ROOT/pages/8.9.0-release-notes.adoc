@@ -202,6 +202,13 @@ In {productname} {release-version}, the Help dialog checks the metadata a plugin
 
 // CCFR here.
 
+=== Image with empty alt text would add `+role="presentation"+` instead of adding alt text when updated
+// #TINYMCE-13738
+
+Previously, the xref:image.adoc[Image] plugin treated any image with an empty `+alt+` attribute as decorative. When xref:image.adoc#a11y_advanced_options[`+a11y_advanced_options+`] was disabled, the _Insert/Edit Image_ dialog did not show the *Image is decorative* option, so the dialog offered no way to change that state. Entering alternative text for such an image and saving the dialog applied `+role="presentation"+` and left the `+alt+` attribute empty, discarding the text that had been entered.
+
+In {productname} {release-version}, the Image plugin marks an image as decorative only when the _Insert/Edit Image_ dialog presents the accessibility options. Entering alternative text for an image with an empty `+alt+` attribute now applies that text to the image.
+
 === Opening or closing a sidebar from the toolbar scrolled the editor to the selection
 // #TINYMCE-14765
 

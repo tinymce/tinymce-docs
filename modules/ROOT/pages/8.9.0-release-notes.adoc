@@ -196,6 +196,13 @@ Previously, the scroll position was not carried between the editor content and t
 
 In {productname} {release-version}, the **TinyMCE AI** plugin records the content block nearest to the current scroll position and restores the view to that block. The position is preserved when opening the preview, running a review, and applying a quick action, and it is restored to the same block even when the content is a different height in the editor and in the preview.
 
+==== Restored the icon-only buttons in the AI suggestion preview
+// #TINYMCE-14814
+
+In {productname} xref:8.7.0-release-notes.adoc#replaced-the-icon-only-buttons-in-the-ai-suggestion-preview-with-labeled-apply-and-skip-buttons[8.7.0], the icon-only buttons in the AI suggestion preview were replaced with labeled **Apply** and **Skip** buttons.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin restores the icon-only buttons used before {productname} 8.7.0. A checkmark button applies the suggestion and a close button skips it, and each button shows a tooltip that names its action, _Apply suggestion_ and _Skip suggestion_. The apply button remains the primary action, and the spacing of the preview toolbar is unchanged from {productname} 8.7.0.
+
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 
 

@@ -75,7 +75,7 @@ For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following addition.
+**TinyMCE AI** includes the following addition and improvements.
 
 ==== New commands for running reviews
 // #TINYMCE-14747
@@ -83,6 +83,33 @@ The {productname} {release-version} release includes an accompanying release of 
 In {productname} {release-version}, the **TinyMCE AI** plugin registers an editor command for each built-in review, such as `+TinyMCEAIReviewProofread+` and `+TinyMCEAIReviewToneProfessional+`. The plugin also registers the `+TinyMCEAIReviewCustom+` command, which runs a review from a custom prompt or runs an integrator-defined review by identifier. Each command opens the Review sidebar and runs the review, with the same result as selecting that review in the sidebar. Previously, a review could only be started from the Review sidebar, so integrations could not start one from their own interface.
 
 For the command identifiers and the values accepted by `+TinyMCEAIReviewCustom+`, see xref:editor-command-identifiers.adoc#tinymceai-plugin-commands[TinyMCE AI plugin commands].
+
+==== Improved error message shown when the chat prompt exceeds the maximum length
+// #TINYMCE-13659
+
+Previously, when the text typed into the Chat sidebar exceeded the maximum length that the AI service accepts for a single message, the request failed and the Chat sidebar reported it with the general message `+An error occurred while processing the AI response.+` That message did not identify the length of the typed text as the cause, so users could not tell that shortening the message would resolve the failure.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin shows `+This prompt is too long. Try a shorter one.+` when the typed text exceeds that limit. This message applies to the typed message on its own, and is distinct from the message shown when a message and the conversation history together exceed the context limit of the AI service.
+
+==== The `tinymceai_chat_fetch_sources` option can now specify default sources for chat conversations.
+// #TINYMCE-14777
+
+Previously, the **TinyMCE AI** plugin applied only the current document to the context of a new AI Chat conversation. Users had to manually add every other context source, such as a style guide or reference document, to each new conversation.
+
+In {productname} {release-version}, the function supplied to xref:tinymceai.adoc#tinymceai_chat_fetch_sources[`+tinymceai_chat_fetch_sources+`] can resolve to an object with a `+menu+` property, holding the source groups shown in the sources menu, and a `+defaults+` property, holding an array of source identifiers. The plugin adds each source listed in `+defaults+` to the context of every new conversation, and shows it as selected in the sources menu. Users can remove a default source from a conversation and add it again from the sources menu.
+
+Identifiers listed in `+defaults+` without a matching source in `+sources+` are not added to the context, and the plugin logs an error in the browser console.
+
+The option continues to accept a function that resolves to an array of source groups, so existing configurations are unaffected.
+
+For details on configuring conversation context, see xref:tinymceai-chat.adoc#context-configuration[Adding custom context sources].
+
+==== Scroll position is preserved between the editor content and the AI preview
+// #TINYMCE-14769
+
+Previously, the scroll position was not carried between the editor content and the AI preview. Opening the preview, running a review, or applying a quick action could move the viewport away from the part of the document being worked on, so users lost their place.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin records the content block nearest to the current scroll position and restores the view to that block. The position is preserved when opening the preview, running a review, and applying a quick action, and it is restored to the same block even when the content is a different height in the editor and in the preview.
 
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 
@@ -131,6 +158,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== The Help dialog lists plugins with invalid metadata as plain text
+// #TINYMCE-14730
+
+Previously, the _Plugins_ tab of the xref:help.adoc[Help] dialog used the metadata returned by a plugin without checking that the expected fields were present and of the expected type. A plugin that supplied a name but no URL was still rendered as a link, and selecting that link navigated to `+/undefined+`.
+
+In {productname} {release-version}, the Help dialog checks the metadata a plugin supplies before rendering it. A plugin whose metadata is missing or of an unexpected type is listed as plain text rather than as a link, using the plugin name where one is supplied, and the plugin identifier where one is not.
+
 
 [[additions]]
 == Additions
@@ -174,6 +208,22 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== Image with empty alt text would add `+role="presentation"+` instead of adding alt text when updated
+// #TINYMCE-13738
+
+Previously, the xref:image.adoc[Image] plugin treated any image with an empty `+alt+` attribute as decorative. When xref:image.adoc#a11y_advanced_options[`+a11y_advanced_options+`] was disabled, the _Insert/Edit Image_ dialog did not show the *Image is decorative* option, so the dialog offered no way to change that state. Entering alternative text for such an image and saving the dialog applied `+role="presentation"+` and left the `+alt+` attribute empty, discarding the text that had been entered.
+
+In {productname} {release-version}, the Image plugin marks an image as decorative only when the _Insert/Edit Image_ dialog presents the accessibility options. Entering alternative text for an image with an empty `+alt+` attribute now applies that text to the image.
+
+=== Opening or closing a sidebar from the toolbar scrolled the editor to the selection
+// #TINYMCE-14765
+
+Previously, opening or closing a sidebar from a toolbar button scrolled the editor content to the current selection when the editor was not focused. Toggling a sidebar is not a content operation, so the viewport moved away from the part of the document the user was reading.
+
+In {productname} {release-version}, toggling a sidebar from the toolbar no longer scrolls the selection into view. This applies to every sidebar registered through `+editor.ui.registry.addSidebar+`. Commands that change content, such as _Bold_, continue to focus the editor and scroll to the selection as before.
+
+The xref:apis/tinymce.editor.adoc#focus[`+editor.focus()+`] method also accepts an object argument, so callers can focus the editor without scrolling the selection into view, as in `+editor.focus({ scrollToSelection: false })+`. The `+scrollToSelection+` property defaults to `+true+`, and passing a boolean continues to behave as before.
 
 
 [[security-fixes]]

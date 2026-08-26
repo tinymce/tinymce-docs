@@ -178,17 +178,28 @@ These options configure the AI Chat sidebar, where users have interactive conver
 [[tinymceai_chat_fetch_sources]]
 === `+tinymceai_chat_fetch_sources+`
 
-Populates the sources menu with submenus of files and web resources. Users can select these sources as additional context for chat conversations.
+Populates the sources menu with submenus of files and web resources. Users can select these sources as additional context for chat conversations. The option can also nominate default sources, which the {pluginname} plugin adds to the context of every new conversation.
 
-Takes a function that returns a Promise resolving to an array of additional context source groups. Each group has `+label+`, optional `+icon+`, and `+sources+` array. Each source has `+id+`, `+label+`, and `+type+` (`+'web-resource'+` or `+'file'+`). A source's `+id+` is used to fetch its content through xref:tinymceai.adoc#tinymceai_chat_fetch_source[`tinymceai_chat_fetch_source`].
+Takes a function that returns a Promise resolving to either of the following:
 
-*Type:* `+Function+` (`+() => Promise<Array>+`)
+* An array of source groups.
+* An object with a `+menu+` property, holding the array of source groups, and a `+defaults+` property, holding an array of source identifiers.
+
+Each source group has `+label+`, optional `+icon+`, and `+sources+` array. Each source has `+id+`, `+label+`, and `+type+` (`+'web-resource'+` or `+'file'+`). A source's `+id+` is used to fetch its content through xref:tinymceai.adoc#tinymceai_chat_fetch_source[`tinymceai_chat_fetch_source`].
+
+Both shapes are supported. Returning an array populates the sources menu without nominating any default sources.
+
+Each identifier listed in `+defaults+` must match the `+id+` of a source listed in `+sources+`. The plugin adds each matching source to the context of every new conversation, and shows it as selected in the sources menu. Identifiers without a matching source are not added to the context, and the plugin logs an error in the browser console. Users can remove a default source from a conversation and add it again from the sources menu.
+
+If `+menu+` is missing or empty, the plugin logs an error in the browser console and populates no sources.
+
+*Type:* `+Function+` (`+() => Promise<Array | Object>+`)
 
 *Possible Values:* For source `+type+` property: `+'web-resource'+`, `+'file'+`
 
 *Default value:* `+() => Promise.resolve([])+`
 
-.Example
+.Example: populating the sources menu
 [source,js]
 ----
 tinymce.init({
@@ -206,9 +217,42 @@ tinymce.init({
     }
   ],
   tinymceai_chat_fetch_source: async (id) => {
-    const res = await fetch(`/api/documents/\$\{id\}`);
+    const res = await fetch(`/api/documents/${id}`);
     const blob = await res.blob();
-    const filename = `\$\{id\}.pdf`;
+    const filename = `${id}.pdf`;
+    return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
+  },
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  }
+});
+----
+
+.Example: nominating default sources
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_chat_fetch_sources: async () => ({
+    defaults: [ 'doc-1' ],
+    menu: [
+      {
+        label: 'My Documents',
+        icon: 'folder',
+        sources: [
+          { id: 'doc-1', label: 'Style guide', type: 'file' },
+          { id: 'url-1', label: 'Web Page', type: 'web-resource' }
+        ]
+      }
+    ]
+  }),
+  tinymceai_chat_fetch_source: async (id) => {
+    const res = await fetch(`/api/documents/${id}`);
+    const blob = await res.blob();
+    const filename = `${id}.pdf`;
     return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
   },
   // Required for authentication
@@ -227,7 +271,7 @@ A function that fetches the content for an additional source by ID. Receives the
 
 *Possible Values:* For return object `+type+` property: `+'file'+`, `+'web-resource'+`
 
-*Default value:* `+(id) => Promise.resolve(\`Should fetch additional source with given \$\{id\}\`)+`
+*Default value:* `+++(id) => Promise.resolve(`Should fetch additional source with given ${id}`)+++`
 
 .Example
 [source,js]
@@ -240,9 +284,9 @@ tinymce.init({
     { label: 'Docs', sources: [{ id: 'doc-1', label: 'Document 1', type: 'file' }] }
   ],
   tinymceai_chat_fetch_source: async (id) => {
-    const res = await fetch(`/api/documents/\$\{id\}`);
+    const res = await fetch(`/api/documents/${id}`);
     const blob = await res.blob();
-    const filename = `\$\{id\}.pdf`;
+    const filename = `${id}.pdf`;
     return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
   },
   // Required for authentication

@@ -71,6 +71,28 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** includes the following additions.
+
+==== New option `+tinycomments_always_show_highlights+` to keep comment highlights visible while the sidebar is closed
+// #TINYMCE-14726
+
+Previously, the Comments plugin highlighted commented content only while the Comments sidebar was open. Closing the sidebar removed the highlighting from the editor content, so commented content was easy to overlook and users could overwrite it without warning.
+
+In {productname} {release-version}, the Comments plugin offers the xref:comments-embedded-mode.adoc#tinycomments_always_show_highlights[`+tinycomments_always_show_highlights+`] option. When this option is set to `+true+`, commented content remains highlighted whether the Comments sidebar is open or closed. This option defaults to `+false+`, which preserves the existing behavior.
+
+==== Selecting a comment highlight opens the Comments sidebar
+// #TINYMCE-14726
+
+Previously, the Comments plugin removed the highlighting while the Comments sidebar was closed, so users could not reopen a conversation from the editor content.
+
+In {productname} {release-version}, when the xref:comments-embedded-mode.adoc#tinycomments_always_show_highlights[`+tinycomments_always_show_highlights+`] option is set to `+true+`, selecting highlighted content reopens the closed Comments sidebar.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
+
 === TinyMCE AI
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.

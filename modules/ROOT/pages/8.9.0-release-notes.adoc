@@ -77,6 +77,19 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following addition and improvements.
 
+==== Improved error messages shown when adding a file context source fails
+// #TINYMCE-13660
+
+Previously, when the AI service rejected a file added as a context source in the Chat sidebar, the sidebar reported the failure using the message returned by the service, such as `+Content too large+`. Those messages described the service response rather than the file, so users could not tell which property of the file caused the failure, or what to try instead.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin shows a message for each file failure it can identify:
+
+* A file that is too large reports `+This file is too large to add. Try a smaller one.+`
+* A file with too many pages reports `+This file has too many pages to process. Try one with fewer pages.+`
+* A file of an unsupported type reports `+This file type isn't supported. Try a different file.+`
+
+When the cause cannot be identified, the plugin shows `+This file can't be added. Try a smaller file, or a different file type.+`
+
 ==== Improved error message shown when the chat prompt exceeds the maximum length
 // #TINYMCE-13659
 

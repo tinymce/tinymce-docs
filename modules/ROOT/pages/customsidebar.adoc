@@ -180,6 +180,8 @@ include::partial$configuration/sidebar_width.adoc[leveloffset=+1]
 [[example-inside-the-tinymceinit]]
 == Example inside the tinymce.init
 
+For information on creating a sidebar that a user can resize, see: xref:customsidebar.adoc#resizable-sidebars[Resizable sidebars].
+
 [source,js]
 ----
 tinymce.init({
@@ -189,6 +191,7 @@ tinymce.init({
     editor.ui.registry.addSidebar('mysidebar', {
       tooltip: 'My sidebar',
       icon: 'comment',
+      resizable: true,
       onSetup: (api) => {
         console.log('Render panel', api.element());
         return () => {
@@ -215,6 +218,7 @@ tinymce.PluginManager.add('myplugin', (editor) => {
   editor.ui.registry.addSidebar('mysidebar', {
     tooltip: 'My sidebar',
     icon: 'comment',
+    resizable: true,
     onSetup: (api) => {
       console.log('Render panel', api.element());
       return () => {

@@ -160,6 +160,8 @@ To add custom external sources for users to select from, configure:
 
 Full schemas, return types, and examples are documented under xref:tinymceai.adoc#tinymceai_chat_fetch_sources[Chat configuration options].
 
+To apply a custom source to every new conversation without requiring users to select it, return an object from xref:tinymceai.adoc#tinymceai_chat_fetch_sources[`+tinymceai_chat_fetch_sources+`] and list the source ID in its `+defaults+` property.
+
 [source,js]
 ----
 tinymce.init({
@@ -176,9 +178,9 @@ tinymce.init({
     }
   ],
   tinymceai_chat_fetch_source: async (id) => {
-    const res = await fetch(`/api/documents/\$\{id\}`);
+    const res = await fetch(`/api/documents/${id}`);
     const blob = await res.blob();
-    const filename = `\$\{id\}.pdf`;
+    const filename = `${id}.pdf`;
     return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
   },
   // Required for authentication

@@ -24,7 +24,7 @@ NOTE: These commands work regardless of xref:tinymceai.adoc#tinymceai_sidebar_ty
 [[tinymceai-plugin-commands]]
 == TinyMCE AI plugin commands
 
-The xref:tinymceai.adoc[`tinymceai`] plugin registers the following editor commands. They mirror the Quick Actions and related UI: each invocation returns immediately while the plugin performs any network and UI work asynchronously.
+The xref:tinymceai.adoc[`tinymceai`] plugin registers the following editor commands. They mirror the Quick Actions, Chat, and Review user interface: each invocation returns immediately while the plugin performs any network and UI work asynchronously.
 
 [cols="2,2,3",options="header"]
 |===
@@ -46,7 +46,20 @@ The xref:tinymceai.adoc[`tinymceai`] plugin registers the following editor comma
 |`+TinyMCEAIQuickActionsSummarize+` | |Opens Chat with the built-in **Summarize** prompt.
 |`+TinyMCEAIQuickActionsHighlightKeyPoints+` | |Opens Chat with the built-in **Highlight key points** prompt.
 |`+TinyMCEAIChatPrompt+` |`+{ prompt, displayedPrompt? }+` |Opens the Chat sidebar if needed, then sends `+prompt+` to the back end. Optional `+displayedPrompt+` controls the label shown in the chat UI when it differs from the text sent to the model.
+|`+TinyMCEAIReviewProofread+` | |Runs the **Proofread** review.
+|`+TinyMCEAIReviewClarity+` | |Runs the **Improve clarity** review.
+|`+TinyMCEAIReviewReadability+` | |Runs the **Improve readability** review.
+|`+TinyMCEAIReviewMakeLonger+` | |Runs the **Change length** review with the **Longer** option.
+|`+TinyMCEAIReviewMakeShorter+` | |Runs the **Change length** review with the **Shorter** option.
+|`+TinyMCEAIReviewToneCasual+` | |Runs the **Adjust tone and style** review with the **Casual** tone.
+|`+TinyMCEAIReviewToneDirect+` | |Runs the **Adjust tone and style** review with the **Direct** tone.
+|`+TinyMCEAIReviewToneFriendly+` | |Runs the **Adjust tone and style** review with the **Friendly** tone.
+|`+TinyMCEAIReviewToneConfident+` | |Runs the **Adjust tone and style** review with the **Confident** tone.
+|`+TinyMCEAIReviewToneProfessional+` | |Runs the **Adjust tone and style** review with the **Professional** tone.
+|`+TinyMCEAIReviewCustom+` |`+String+`, `+{ prompt, model, name }+`, or `+{ id, value }+` |Runs a review from a custom prompt, or runs an xref:tinymceai.adoc#integrator-defined-reviews[integrator-defined review] by identifier. See <<tinymceai-review-custom-values,Values for `+TinyMCEAIReviewCustom+`>>.
 |===
+
+Each `+TinyMCEAIReview…+` command opens the Review sidebar and runs the review, with the same result as selecting that review in the sidebar. Running a review command while another review is in progress stops the earlier review and starts the requested one.
 
 [NOTE]
 ====
@@ -72,3 +85,53 @@ tinymce.activeEditor.execCommand('TinyMCEAIChatPrompt', false, {
   displayedPrompt: 'Explain'
 });
 ----
+
+.Example: running built-in reviews
+[source,js]
+----
+tinymce.activeEditor.execCommand('TinyMCEAIReviewProofread');
+
+tinymce.activeEditor.execCommand('TinyMCEAIReviewToneProfessional');
+----
+
+[[tinymceai-review-custom-values]]
+=== Values for `+TinyMCEAIReviewCustom+`
+
+The `+TinyMCEAIReviewCustom+` command accepts three forms of third argument.
+
+A `+String+` runs a review from that prompt on the default model, titled **Custom review**:
+
+[source,js]
+----
+tinymce.activeEditor.execCommand('TinyMCEAIReviewCustom', false, 'Check for passive voice');
+----
+
+An object with a `+prompt+` property runs a review from a custom prompt:
+
+* `+prompt+` (`+String+`): The prompt sent to the model. This property is required.
+* `+model+` (optional `+String+`): The model that runs the review. When omitted, the review runs on the model set by xref:tinymceai.adoc#tinymceai_default_model[`+tinymceai_default_model+`]. For the available model identifiers, see xref:tinymceai-models.adoc[AI Models].
+* `+name+` (optional `+String+`): The title shown above the review. When omitted, the title is **Custom review**.
+
+[source,js]
+----
+tinymce.activeEditor.execCommand('TinyMCEAIReviewCustom', false, {
+  prompt: 'Check the document for passive voice',
+  model: 'agent-1',
+  name: 'Passive voice'
+});
+----
+
+An object with an `+id+` property runs an xref:tinymceai.adoc#integrator-defined-reviews[integrator-defined review] configured in xref:tinymceai.adoc#tinymceai_reviews[`+tinymceai_reviews+`]:
+
+* `+id+` (`+String+`): The `+id+` of the integrator-defined review. This property is required.
+* `+value+` (optional `+String+`): The value passed to the review. A `+simple+` review takes no value. For a `+list+` review, the value must match one of the review's `+options+` values; when omitted, the first option is used. For an `+input+` review, the value is the text substituted into the prompt, and it is required.
+
+[source,js]
+----
+tinymce.activeEditor.execCommand('TinyMCEAIReviewCustom', false, {
+  id: 'integrator-list-review',
+  value: 'swedish'
+});
+----
+
+When the value does not match any of these forms, {productname} logs an error to the browser console and runs no review. This also applies when the prompt or identifier is blank, when no integrator-defined review matches the identifier, when a `+list+` review value is not one of its options, and when an `+input+` review is run without a value.

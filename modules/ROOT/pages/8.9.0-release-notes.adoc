@@ -77,6 +77,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following addition and improvements.
 
+==== New commands for running reviews
+// #TINYMCE-14747
+
+In {productname} {release-version}, the **TinyMCE AI** plugin registers an editor command for each built-in review, such as `+TinyMCEAIReviewProofread+` and `+TinyMCEAIReviewToneProfessional+`. The plugin also registers the `+TinyMCEAIReviewCustom+` command, which runs a review from a custom prompt or runs an integrator-defined review by identifier. Each command opens the Review sidebar and runs the review, with the same result as selecting that review in the sidebar. Previously, a review could only be started from the Review sidebar, so integrations could not start one from their own interface.
+
+For the command identifiers and the values accepted by `+TinyMCEAIReviewCustom+`, see xref:editor-command-identifiers.adoc#tinymceai-plugin-commands[TinyMCE AI plugin commands].
+
 ==== Improved error messages shown when adding a file context source fails
 // #TINYMCE-13660
 

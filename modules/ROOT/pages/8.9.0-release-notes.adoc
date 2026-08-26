@@ -93,11 +93,19 @@ In {productname} {release-version}, when the xref:comments-embedded-mode.adoc#ti
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
 
+
 === TinyMCE AI
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
 **TinyMCE AI** includes the following fix, addition and improvements.
+
+==== Improved error message shown when an invalid URL is added as a context source
+// #TINYMCE-13715
+
+Previously, adding a malformed URL as a context source in the Chat sidebar reported `+Provided URL is not valid.+` That message did not indicate what part of the address to correct.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin shows `+This URL isn't valid. Check the full, correct web address and try again.+` in the same situation. The message applies to the format of the address. A well-formed address that points to a page that cannot be reached is still accepted and sent for processing.
 
 ==== Chat welcome actions moved focus into the editor and reset the content scroll position
 // #TINYMCE-14749

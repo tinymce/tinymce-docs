@@ -77,6 +77,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following fix, addition and improvements.
 
+==== Tooltips could not be closed using `+Esc+`
+// #TINYMCE-14506
+
+Previously, the tooltips shown in the **TinyMCE AI** sidebars did not respond to `+Esc+`. These sidebars use their own tooltips, which were not connected to the editor keyboard shortcut that closes tooltips, so an open tooltip remained on screen until the pointer or focus moved elsewhere. Keyboard users could not dismiss a tooltip that obscured the interface.
+
+In {productname} {release-version}, pressing `+Esc+` closes an open tooltip in the **TinyMCE AI** sidebars.
+
 ==== Changes to text alongside a nested list or table did not render as diffs in Review mode
 // #TINYMCE-14519
 

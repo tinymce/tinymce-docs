@@ -71,6 +71,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following improvement.
+
+==== Scroll position is preserved between the editor content and the AI preview
+// #TINYMCE-14769
+
+Previously, the scroll position was not carried between the editor content and the AI preview. Opening the preview, running a review, or applying a quick action could move the viewport away from the part of the document being worked on, so users lost their place.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin records the content block nearest to the current scroll position and restores the view to that block. The position is preserved when opening the preview, running a review, and applying a quick action, and it is restored to the same block even when the content is a different height in the editor and in the preview.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

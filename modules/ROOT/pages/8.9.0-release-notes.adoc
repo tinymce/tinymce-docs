@@ -75,7 +75,7 @@ For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following addition.
+**TinyMCE AI** includes the following addition and improvement.
 
 ==== The `tinymceai_chat_fetch_sources` option can now specify default sources for chat conversations.
 // #TINYMCE-14777
@@ -89,6 +89,13 @@ Identifiers listed in `+defaults+` without a matching source in `+sources+` are 
 The option continues to accept a function that resolves to an array of source groups, so existing configurations are unaffected.
 
 For details on configuring conversation context, see xref:tinymceai-chat.adoc#context-configuration[Adding custom context sources].
+
+==== Scroll position is preserved between the editor content and the AI preview
+// #TINYMCE-14769
+
+Previously, the scroll position was not carried between the editor content and the AI preview. Opening the preview, running a review, or applying a quick action could move the viewport away from the part of the document being worked on, so users lost their place.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin records the content block nearest to the current scroll position and restores the view to that block. The position is preserved when opening the preview, running a review, and applying a quick action, and it is restored to the same block even when the content is a different height in the editor and in the preview.
 
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 
@@ -137,6 +144,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== The Help dialog lists plugins with invalid metadata as plain text
+// #TINYMCE-14730
+
+Previously, the _Plugins_ tab of the xref:help.adoc[Help] dialog used the metadata returned by a plugin without checking that the expected fields were present and of the expected type. A plugin that supplied a name but no URL was still rendered as a link, and selecting that link navigated to `+/undefined+`.
+
+In {productname} {release-version}, the Help dialog checks the metadata a plugin supplies before rendering it. A plugin whose metadata is missing or of an unexpected type is listed as plain text rather than as a link, using the plugin name where one is supplied, and the plugin identifier where one is not.
+
 
 [[additions]]
 == Additions
@@ -180,6 +194,15 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== Opening or closing a sidebar from the toolbar scrolled the editor to the selection
+// #TINYMCE-14765
+
+Previously, opening or closing a sidebar from a toolbar button scrolled the editor content to the current selection when the editor was not focused. Toggling a sidebar is not a content operation, so the viewport moved away from the part of the document the user was reading.
+
+In {productname} {release-version}, toggling a sidebar from the toolbar no longer scrolls the selection into view. This applies to every sidebar registered through `+editor.ui.registry.addSidebar+`. Commands that change content, such as _Bold_, continue to focus the editor and scroll to the selection as before.
+
+The xref:apis/tinymce.editor.adoc#focus[`+editor.focus()+`] method also accepts an object argument, so callers can focus the editor without scrolling the selection into view, as in `+editor.focus({ scrollToSelection: false })+`. The `+scrollToSelection+` property defaults to `+true+`, and passing a boolean continues to behave as before.
 
 
 [[security-fixes]]

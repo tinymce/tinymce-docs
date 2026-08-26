@@ -77,6 +77,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following fix, addition and improvements.
 
+==== Chat welcome actions moved focus into the editor and reset the content scroll position
+// #TINYMCE-14749
+
+Previously, selecting a welcome action in the AI Chat sidebar moved focus into the editor before running the action's command. Focusing the editor scrolls the content to the current selection, and when no selection had been made, that position was the start of the content. Users who had scrolled through a document lost that scroll position as soon as a welcome action was selected.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin runs welcome action commands without moving focus into the editor. Selecting a welcome action leaves the editor scroll position and focus unchanged. Welcome actions are configured with the xref:tinymceai.adoc#tinymceai_chat_welcome_actions[`+tinymceai_chat_welcome_actions+`] option.
+
 ==== Tooltips could not be closed using `+Esc+`
 // #TINYMCE-14506
 

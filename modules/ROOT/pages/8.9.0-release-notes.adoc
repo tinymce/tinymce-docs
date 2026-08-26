@@ -75,7 +75,14 @@ For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following addition and improvement.
+**TinyMCE AI** includes the following addition and improvements.
+
+==== Improved error message shown when the chat prompt exceeds the maximum length
+// #TINYMCE-13659
+
+Previously, when the text typed into the Chat sidebar exceeded the maximum length that the AI service accepts for a single message, the request failed and the Chat sidebar reported it with the general message `+An error occurred while processing the AI response.+` That message did not identify the length of the typed text as the cause, so users could not tell that shortening the message would resolve the failure.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin shows `+This prompt is too long. Try a shorter one.+` when the typed text exceeds that limit. This message applies to the typed message on its own, and is distinct from the message shown when a message and the conversation history together exceed the context limit of the AI service.
 
 ==== The `tinymceai_chat_fetch_sources` option can now specify default sources for chat conversations.
 // #TINYMCE-14777

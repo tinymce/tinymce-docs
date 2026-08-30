@@ -80,7 +80,7 @@ jobs:
 
     # Link check runs last so it can never block the preview deployment.
     #
-    # Links are extracted from the BUILT HTML, not from the .adoc diff. lychee's
+    # Links are checked from the BUILT HTML, not from the .adoc diff. lychee's
     # HTML parser sees only real <a href> anchors, so URLs that appear inside
     # [source] code samples (container hostnames, placeholder domains, shell and
     # template literals) and Antora attributes that are substituted at build time
@@ -88,15 +88,78 @@ jobs:
     # extracting from raw .adoc text produced a 16% false-failure rate, none of
     # which was genuine link rot.
     #
-    # The diff is still used, but only to scope the *result* to links this PR
-    # touched. Because it filters rendered anchors rather than feeding the
-    # checker, an over-broad or malformed match simply fails to intersect a real
-    # anchor — it cannot manufacture a failure.
-    - name: Check links in the built site
-      id: lychee
+    # Only the links this pull request touched are checked over the network.
+    # `--dump` runs lychee's own extractor with no requests at all, which is what
+    # keeps the built-HTML guarantee above while reducing a ~410-URL crawl to the
+    # handful a PR actually changed. Everything else in the site is covered by the
+    # weekly scheduled scan.
+    - name: Collect links added or changed by this PR
+      id: touched
+      env:
+        BASE: ${{ github.event.pull_request.base.ref }}
+      run: |
+        git fetch --no-tags --quiet origin "$BASE"
+
+        # Candidate URLs from the diff. Permissive on purpose: this only narrows
+        # what gets checked, and every candidate must still be confirmed as a
+        # rendered anchor below, so a bad match is inert rather than a false
+        # failure.
+        git diff "origin/${BASE}...HEAD" -- '*.adoc' \
+          | grep '^+' | grep -v '^+++' \
+          | grep -oE "https?://[^][<>\"^\`)+,|' ]+" \
+          | sed -E 's/[.,;:]+$//' | sed -E 's#/+$##' \
+          | LC_ALL=C sort -u > touched-urls.txt || true
+
+        count=$(wc -l < touched-urls.txt | tr -d '[:space:]')
+        echo "count=${count}" >> "$GITHUB_OUTPUT"
+        echo "This pull request changed ${count} candidate link(s)."
+
+    # Restores lychee's on-disk request cache. Without this the cache settings in
+    # .lychee.toml have no effect in CI, because each run starts on a clean runner.
+    - name: Restore link checker cache
+      if: steps.touched.outputs.count != '0'
+      uses: actions/cache@v4
+      with:
+        path: .lycheecache
+        key: lychee-${{ github.run_id }}
+        restore-keys: lychee-
+
+    # No network requests: this only lists the links lychee would check.
+    - name: List links rendered in the built site
+      if: steps.touched.outputs.count != '0'
       uses: lycheeverse/lychee-action@v2
       with:
-        args: --config .lychee.toml --no-progress './build/docs/tinymce/latest/**/*.html'
+        args: --config .lychee.toml --dump --no-progress './build/docs/tinymce/latest/**/*.html'
+        output: lychee/rendered.txt
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fail: false
+        jobSummary: false
+
+    - name: Narrow to links this PR touched
+      id: narrow
+      run: |
+        mkdir -p lychee
+        : > to-check.txt
+        if [ -s lychee/rendered.txt ]; then
+          # Trailing-slash tolerant on both sides so a cosmetic difference does
+          # not drop a genuine match.
+          sed -E 's#/+$##' lychee/rendered.txt | LC_ALL=C sort -u > rendered-normalised.txt
+          LC_ALL=C sort -u touched-urls.txt > touched-normalised.txt
+          LC_ALL=C comm -12 rendered-normalised.txt touched-normalised.txt > to-check.txt
+        fi
+        count=$(wc -l < to-check.txt | tr -d '[:space:]')
+        echo "count=${count}" >> "$GITHUB_OUTPUT"
+        echo "${count} of the PR's link(s) render as anchors and will be checked."
+
+    # The only step that touches the network. Timeout and retry budget are
+    # tightened here rather than in .lychee.toml, so the shared config stays
+    # identical to the scheduled scan, which keeps the more patient settings.
+    - name: Check links this PR touched
+      id: lychee
+      if: steps.narrow.outputs.count != '0'
+      uses: lycheeverse/lychee-action@v2
+      with:
+        args: --config .lychee.toml --no-progress --timeout 15 --max-retries 1 to-check.txt
         format: json
         output: lychee/results.json
         token: ${{ secrets.GITHUB_TOKEN }}
@@ -106,63 +169,50 @@ jobs:
     - name: Report links added or changed by this PR
       continue-on-error: true
       env:
-        BASE: ${{ github.event.pull_request.base.ref }}
+        TOUCHED: ${{ steps.touched.outputs.count }}
+        CHECKED: ${{ steps.narrow.outputs.count }}
       run: |
-        git fetch --no-tags --quiet origin "$BASE"
+        {
+          echo "## External link check"
+          echo
+          echo "Links changed by this pull request: ${TOUCHED}"
+          echo "Links checked (those that render as anchors): ${CHECKED}"
+          echo
+        } >> "$GITHUB_STEP_SUMMARY"
 
-        # Candidate URLs from the diff. Permissive on purpose: this only scopes
-        # the report, so a bad match is inert rather than a false failure.
-        git diff "origin/${BASE}...HEAD" -- '*.adoc' \
-          | grep '^+' | grep -v '^+++' \
-          | grep -oE "https?://[^][<>\"^\`)+,|' ]+" \
-          | sed -E 's/[.,;:]+$//' | sort -u > touched-urls.txt || true
+        if [ "${CHECKED}" -eq 0 ]; then
+          echo "No changed links needed checking." >> "$GITHUB_STEP_SUMMARY"
+          exit 0
+        fi
 
-        # Broken links found in the rendered site, as page + url + reason.
         if [ ! -f lychee/results.json ]; then
           echo "Link checker produced no report; skipping." >> "$GITHUB_STEP_SUMMARY"
           exit 0
         fi
+
         # Trim any trailing content after the JSON object: the root object is the
         # only one closing at column 0, so this is an exact cut.
         sed -n '1,/^}$/p' lychee/results.json > lychee/results.clean.json
 
-        jq -r '.error_map // {} | to_entries[] | .key as $page | .value[]
-               | [$page, .url, (.status.text // "unknown")] | @tsv' \
-          lychee/results.clean.json > broken-all.tsv
+        jq -r '.error_map // {} | to_entries[] | .value[]
+               | [.url, (.status.text // "unknown")] | @tsv' \
+          lychee/results.clean.json | sort -u > broken.tsv
 
-        # Keep only the broken links this PR touched (trailing-slash tolerant).
-        awk -F'\t' '
-          function norm(u){ sub(/\/+$/,"",u); return u }
-          NR==FNR { touched[norm($0)]=1; next }
-          norm($2) in touched { print }
-        ' touched-urls.txt broken-all.tsv > broken-mine.tsv
+        broken=$(wc -l < broken.tsv | tr -d '[:space:]')
 
-        mine=$(wc -l < broken-mine.tsv | tr -d '[:space:]')
-        all=$(wc -l < broken-all.tsv | tr -d '[:space:]')
+        if [ "${broken}" -eq 0 ]; then
+          echo "No broken links were introduced by this pull request." >> "$GITHUB_STEP_SUMMARY"
+          exit 0
+        fi
 
         {
-          echo "## External link check"
+          echo "### Broken links introduced by this pull request"
           echo
-          echo "Links changed by this pull request: $(wc -l < touched-urls.txt | tr -d '[:space:]')"
-          echo
-          if [ "$mine" -eq 0 ]; then
-            echo "No broken links were introduced by this pull request."
-          else
-            echo "### Broken links introduced by this pull request"
-            echo
-            echo "| Page | Link | Reason |"
-            echo "|------|------|--------|"
-            sed -E 's#^[^\t]*/docs/tinymce/latest/##' broken-mine.tsv \
-              | awk -F'\t' '{ printf "| %s | %s | %s |\n", $1, $2, $3 }'
-          fi
-          if [ "$all" -gt "$mine" ]; then
-            echo
-            echo "_$((all - mine)) further broken link(s) already present elsewhere in the site; these are tracked by the weekly scheduled scan._"
-          fi
+          echo "| Link | Reason |"
+          echo "|------|--------|"
+          awk -F'\t' '{ printf "| %s | %s |\n", $1, $2 }' broken.tsv
         } >> "$GITHUB_STEP_SUMMARY"
 
         # Non-blocking at rollout. Change to `exit 1` to make this a merge gate
         # once the baseline recorded in the scheduled scan is clean.
-        if [ "$mine" -gt 0 ]; then
-          echo "::warning::${mine} broken link(s) introduced by this pull request. See the job summary."
-        fi
+        echo "::warning::${broken} broken link(s) introduced by this pull request. See the job summary."

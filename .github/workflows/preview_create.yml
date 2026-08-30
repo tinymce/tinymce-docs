@@ -125,11 +125,14 @@ jobs:
         restore-keys: lychee-
 
     # No network requests: this only lists the links lychee would check.
+    # lychee-action@v2 is a floating major tag, so its default checker version can
+    # move without a change here. Both steps pin the checker explicitly.
     - name: List links rendered in the built site
       if: steps.touched.outputs.count != '0'
       uses: lycheeverse/lychee-action@v2
       with:
         args: --config .lychee.toml --dump --no-progress './build/docs/tinymce/latest/**/*.html'
+        lycheeVersion: v0.24.2
         output: lychee/rendered.txt
         token: ${{ secrets.GITHUB_TOKEN }}
         fail: false
@@ -160,6 +163,7 @@ jobs:
       uses: lycheeverse/lychee-action@v2
       with:
         args: --config .lychee.toml --no-progress --timeout 15 --max-retries 1 to-check.txt
+        lycheeVersion: v0.24.2
         format: json
         output: lychee/results.json
         token: ${{ secrets.GITHUB_TOKEN }}

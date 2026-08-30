@@ -22,6 +22,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
   link-check:
@@ -141,9 +142,11 @@ jobs:
         fail: false
         jobSummary: false
 
-    # Fails the job, and so the check, when this pull request introduces a broken
-    # link. This step is intentionally NOT continue-on-error.
-    - name: Report and fail on broken links
+    # Reporting, labelling and failing are separate steps so that the label is
+    # kept accurate even on the run that fails: a single step that exits non-zero
+    # would skip its own labelling.
+    - name: Report broken links
+      id: report
       env:
         TOUCHED: ${{ steps.touched.outputs.count }}
         CHECKED: ${{ steps.narrow.outputs.count }}
@@ -158,15 +161,19 @@ jobs:
 
         if [ "${CHECKED}" -eq 0 ]; then
           echo "No changed links needed checking." >> "$GITHUB_STEP_SUMMARY"
+          echo "verified=true" >> "$GITHUB_OUTPUT"
+          echo "broken=0" >> "$GITHUB_OUTPUT"
           exit 0
         fi
 
-        # A missing report means the checker did not run to completion. Fail
-        # closed: silently passing would defeat the point of a required check.
+        # A missing report means the checker did not run to completion. Nothing
+        # was verified either way, so report that plainly and leave any existing
+        # label alone rather than asserting a state that was never established.
         if [ ! -f lychee/results.json ]; then
           echo "The link checker produced no report, so this pull request could not be verified." >> "$GITHUB_STEP_SUMMARY"
-          echo "::error::Link checker produced no report; failing closed."
-          exit 1
+          echo "verified=false" >> "$GITHUB_OUTPUT"
+          echo "broken=0" >> "$GITHUB_OUTPUT"
+          exit 0
         fi
 
         # Trim any trailing content after the JSON object: the root object is the
@@ -178,6 +185,8 @@ jobs:
           lychee/results.clean.json | LC_ALL=C sort -u > broken.tsv
 
         broken=$(wc -l < broken.tsv | tr -d '[:space:]')
+        echo "verified=true" >> "$GITHUB_OUTPUT"
+        echo "broken=${broken}" >> "$GITHUB_OUTPUT"
 
         if [ "${broken}" -eq 0 ]; then
           echo "No broken links were introduced by this pull request." >> "$GITHUB_STEP_SUMMARY"
@@ -193,6 +202,49 @@ jobs:
           echo
           echo "Fix the link, or add it to \`.lycheeignore\` if the host blocks automated checkers but the page is reachable in a browser."
         } >> "$GITHUB_STEP_SUMMARY"
+
+    # The label tracks the current state of the pull request: applied when this
+    # run finds broken links, removed as soon as a later run comes back clean, so
+    # it clears itself once the author pushes a fix.
+    #
+    # Nothing is changed when the checker could not verify the links, because the
+    # absence of a result is not evidence that the links are healthy.
+    #
+    # Labelling is best-effort: a pull request from a fork gets a read-only token,
+    # and losing the label there must not turn into a failed check that hides the
+    # real result.
+    - name: Update link-rot label
+      if: always() && steps.report.outputs.verified == 'true'
+      continue-on-error: true
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BROKEN: ${{ steps.report.outputs.broken }}
+        PR: ${{ github.event.pull_request.number }}
+        LABEL: link-rot
+      run: |
+        if [ "${BROKEN}" -gt 0 ]; then
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/issues/${PR}/labels" \
+            -f "labels[]=${LABEL}" > /dev/null
+          echo "Applied the ${LABEL} label."
+        else
+          # 404 simply means the label was not present, which is the desired state.
+          if gh api -X DELETE "repos/${GITHUB_REPOSITORY}/issues/${PR}/labels/${LABEL}" > /dev/null 2>&1; then
+            echo "Removed the ${LABEL} label."
+          else
+            echo "No ${LABEL} label to remove."
+          fi
+        fi
+
+    # Surfaces the failure on the check itself. This does not block merging: the
+    # check is not a required status check, so the red cross is a signal to the
+    # author rather than a gate.
+    - name: Fail when this PR introduces broken links
+      if: steps.report.outputs.broken != '0' || steps.report.outputs.verified != 'true'
+      run: |
+        if [ "${{ steps.report.outputs.verified }}" != "true" ]; then
+          echo "::error::The link checker produced no report, so this pull request could not be verified."
+          exit 1
+        fi
 
         while IFS=$'\t' read -r url reason; do
           echo "::error::Broken link: ${url} (${reason})"

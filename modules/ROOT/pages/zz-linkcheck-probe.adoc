@@ -1,0 +1,20 @@
+= Link check probe
+:navtitle: Link check probe
+:description: Temporary page used to verify the pull request link check. Not for merge.
+:keywords: probe
+
+Temporary probe page. This must not be merged.
+
+A live link that should pass: https://github.com/tinymce/tinymce[TinyMCE repository].
+
+A dead link that should be reported: https://archive.tinymce.com[archived site].
+
+The URL below sits inside a code sample and must NOT be checked:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  content_css: 'https://archive.tinymce.com/broken-in-code-sample.css'
+});
+----

@@ -40,11 +40,27 @@ jobs:
     - name: Build Website
       run: yarn antora ./antora-playbook.yml
 
+    # Restores lychee's on-disk request cache. Without this the cache settings in
+    # .lychee.toml have no effect, because each run starts on a clean runner. At
+    # the weekly cadence most entries will have aged past max_cache_age, which is
+    # intended — a rot scan wants fresh results. The saving lands on back-to-back
+    # manual dispatches, where re-checking every URL is pure waste.
+    - name: Restore link checker cache
+      uses: actions/cache@v4
+      with:
+        path: .lycheecache
+        key: lychee-${{ github.run_id }}
+        restore-keys: lychee-
+
+    # lychee-action@v2 is a floating major tag, so its default checker version can
+    # move without a change here. Pin the checker explicitly to keep results
+    # reproducible between runs.
     - name: Check links in built site
       id: lychee
       uses: lycheeverse/lychee-action@v2
       with:
         args: --config .lychee.toml --no-progress './build/site/**/*.html'
+        lycheeVersion: v0.24.2
         format: markdown
         output: lychee/results.md
         token: ${{ secrets.GITHUB_TOKEN }}

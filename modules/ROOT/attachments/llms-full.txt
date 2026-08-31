@@ -219,7 +219,7 @@ export default {
 
 ## Complete Documentation Index
 
-This section provides a complete list of all 411 documentation pages available in TinyMCE 8, organized by category. This comprehensive index ensures LLMs have access to every documentation page, reducing the risk of hallucinations or missing important details.
+This section provides a complete list of all 431 documentation pages available in TinyMCE 8, organized by category. This comprehensive index ensures LLMs have access to every documentation page, reducing the risk of hallucinations or missing important details.
 
 ### Getting Started & Installation
 
@@ -289,6 +289,7 @@ This section provides a complete list of all 411 documentation pages available i
 - **WordPress integration**: https://www.tiny.cloud/docs/tinymce/latest/wordpress/index.md
 
 #### Technical References
+- **TinyMCE AI on-premises reference**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-on-premises-reference/index.md
 - **TinyMCE Angular integration technical reference**: https://www.tiny.cloud/docs/tinymce/latest/angular-ref/index.md
 - **TinyMCE Blazor integration technical reference**: https://www.tiny.cloud/docs/tinymce/latest/blazor-ref/index.md
 - **TinyMCE React integration technical reference**: https://www.tiny.cloud/docs/tinymce/latest/react-ref/index.md
@@ -332,8 +333,8 @@ This section provides a complete list of all 411 documentation pages available i
 - **Options for customizing the editor’s toolbars**: https://www.tiny.cloud/docs/tinymce/latest/toolbar-configuration-options/index.md
 - **Options for customizing the editor’s UI mode**: https://www.tiny.cloud/docs/tinymce/latest/ui-mode-configuration-options/index.md
 - **Specify Editor Version & Plugins**: https://www.tiny.cloud/docs/tinymce/latest/editor-plugin-version/index.md
-- **The TinyMCE Content Security Policy guide**: https://www.tiny.cloud/docs/tinymce/latest/tinymce-and-csp/index.md
 - **The TinyMCE Cross-Origin Resource Sharing guide**: https://www.tiny.cloud/docs/tinymce/latest/tinymce-and-cors/index.md
+- **TinyMCE Content Security Policy and allowed domains**: https://www.tiny.cloud/docs/tinymce/latest/tinymce-and-csp/index.md
 - **TinyMCE Icon options**: https://www.tiny.cloud/docs/tinymce/latest/editor-icons/index.md
 - **TinyMCE Model options**: https://www.tiny.cloud/docs/tinymce/latest/editor-model/index.md
 - **TinyMCE Skin options**: https://www.tiny.cloud/docs/tinymce/latest/editor-skin/index.md
@@ -417,7 +418,7 @@ This section provides a complete list of all 411 documentation pages available i
 #### Spell Checking
 - **Add Hunspell dictionaries to Spell Checker**: https://www.tiny.cloud/docs/tinymce/latest/self-hosting-hunspell/index.md
 - **Adding custom dictionaries**: https://www.tiny.cloud/docs/tinymce/latest/custom-dictionaries-for-tiny-spellchecker/index.md
-- **Deploy the TinyMCE Spelling server-side component using Docker**: https://www.tiny.cloud/docs/tinymce/latest/individual-spelling-container/index.md
+- **Deploy the TinyMCE Spelling server-side service using Docker**: https://www.tiny.cloud/docs/tinymce/latest/individual-spelling-container/index.md
 - **Spell Checker plugin**: https://www.tiny.cloud/docs/tinymce/latest/introduction-to-tiny-spellchecker/index.md
 - **Spelling Autocorrect plugin**: https://www.tiny.cloud/docs/tinymce/latest/autocorrect/index.md
 - **Spelling options**: https://www.tiny.cloud/docs/tinymce/latest/spelling/index.md
@@ -431,7 +432,12 @@ This section provides a complete list of all 411 documentation pages available i
 - **AI proxy server reference guide**: https://www.tiny.cloud/docs/tinymce/latest/ai-proxy/index.md
 - **Amazon Bedrock integration guide**: https://www.tiny.cloud/docs/tinymce/latest/ai-bedrock/index.md
 - **Azure AI integration guide**: https://www.tiny.cloud/docs/tinymce/latest/ai-azure/index.md
+- **base, Redis, and infrastructure setup**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-on-premises-database/index.md
+- **Getting started with TinyMCE AI on-premises**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-on-premises-getting-started/index.md
 - **Google Gemini integration guide**: https://www.tiny.cloud/docs/tinymce/latest/ai-gemini/index.md
+- **JWT authentication for the on-premises AI service**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-on-premises-jwt/index.md
+- **LLM provider configuration**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-on-premises-providers/index.md
+- **MCP and web integrations**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-on-premises-mcp/index.md
 - **OpenAI ChatGPT integration guide**: https://www.tiny.cloud/docs/tinymce/latest/ai-openai/index.md
 - **TinyMCE AI API Overview**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-api-overview/index.md
 - **TinyMCE AI API Quick Start**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-api-quick-start/index.md
@@ -442,12 +448,16 @@ This section provides a complete list of all 411 documentation pages available i
 - **TinyMCE AI JWT Permissions**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-permissions/index.md
 - **TinyMCE AI Limits**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-limits/index.md
 - **TinyMCE AI Models**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-models/index.md
+- **TinyMCE AI on-premises**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-on-premises/index.md
+- **TinyMCE AI on-premises: editor-side integration**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-on-premises-frameworks/index.md
+- **TinyMCE AI on-premises: Production deployment guide**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-on-premises-production/index.md
 - **TinyMCE AI Plugin**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai/index.md
 - **TinyMCE AI Quick Actions**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-actions/index.md
 - **TinyMCE AI Review**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-review/index.md
 - **TinyMCE AI Streaming**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-streaming/index.md
 - **TinyMCE AI with JWT authentication (Node.js) Guide**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-with-jwt-authentication-nodejs/index.md
 - **TinyMCE AI with JWT authentication (PHP) Guide**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-with-jwt-authentication-php/index.md
+- **Troubleshooting**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-on-premises-troubleshooting/index.md
 
 #### Comments & Collaboration
 - **Commands, Events and APIs for the Comments plugin**: https://www.tiny.cloud/docs/tinymce/latest/comments-commands-events-apis/index.md
@@ -517,10 +527,10 @@ This section provides a complete list of all 411 documentation pages available i
 - **Common server-side component settings**: https://www.tiny.cloud/docs/tinymce/latest/configure-common-settings-services/index.md
 - **Configure Enhanced Media Embed Server**: https://www.tiny.cloud/docs/tinymce/latest/mediaembed-server-config/index.md
 - **Creating a private/public key pair for Tiny Cloud**: https://www.tiny.cloud/docs/tinymce/latest/generate-rsa-key-pairs/index.md
-- **Deploy the TinyMCE Export to PDF service server-side component using Docker (individually licensed)**: https://www.tiny.cloud/docs/tinymce/latest/individual-export-to-pdf-on-premises/index.md
-- **Deploy the TinyMCE Hyperlinking server-side component using Docker**: https://www.tiny.cloud/docs/tinymce/latest/individual-hyperlinking-container/index.md
-- **Deploy the TinyMCE Image Proxy service server-side component using Docker**: https://www.tiny.cloud/docs/tinymce/latest/individual-image-proxy-container/index.md
-- **Deploy the TinyMCE Import from Word and Export to Word service server-side component using Docker (individually licensed)**: https://www.tiny.cloud/docs/tinymce/latest/individual-import-from-word-and-export-to-word-on-premises/index.md
+- **Deploy the TinyMCE Export to PDF server-side service using Docker (individually licensed)**: https://www.tiny.cloud/docs/tinymce/latest/individual-export-to-pdf-on-premises/index.md
+- **Deploy the TinyMCE Hyperlinking server-side service using Docker**: https://www.tiny.cloud/docs/tinymce/latest/individual-hyperlinking-container/index.md
+- **Deploy the TinyMCE Image Proxy server-side service using Docker**: https://www.tiny.cloud/docs/tinymce/latest/individual-image-proxy-container/index.md
+- **Deploy the TinyMCE Import from Word and Export to Word server-side service using Docker (individually licensed)**: https://www.tiny.cloud/docs/tinymce/latest/individual-import-from-word-and-export-to-word-on-premises/index.md
 - **Hyperlinking service settings**: https://www.tiny.cloud/docs/tinymce/latest/configure-hyperlink-service/index.md
 - **Image Proxy service settings**: https://www.tiny.cloud/docs/tinymce/latest/configure-imageproxy-service/index.md
 - **Integrate Enhanced Media Embed Server**: https://www.tiny.cloud/docs/tinymce/latest/mediaembed-server-integration/index.md
@@ -542,7 +552,7 @@ This section provides a complete list of all 411 documentation pages available i
 - **Creating custom menu items**: https://www.tiny.cloud/docs/tinymce/latest/creating-custom-menu-items/index.md
 - **Creating custom Menu toolbar buttons**: https://www.tiny.cloud/docs/tinymce/latest/custom-menu-toolbar-button/index.md
 - **Creating custom Split toolbar buttons**: https://www.tiny.cloud/docs/tinymce/latest/custom-split-toolbar-button/index.md
-- **Creating custom Toggle toolbar buttons**: https://www.tiny.cloud/docs/tinymce/latest/custom-toggle-toolbar-button/index.md
+- **Creating custom toggle toolbar buttons**: https://www.tiny.cloud/docs/tinymce/latest/custom-toggle-toolbar-button/index.md
 - **Custom Basic menu items**: https://www.tiny.cloud/docs/tinymce/latest/custom-basic-menu-items/index.md
 - **Custom Icon Pack Demo**: https://www.tiny.cloud/docs/tinymce/latest/custom-icon-pack-demo/index.md
 - **Custom Nested menu items**: https://www.tiny.cloud/docs/tinymce/latest/custom-nested-menu-items/index.md
@@ -615,6 +625,7 @@ This section provides a complete list of all 411 documentation pages available i
 - **tinymce.util.URI**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.util.uri/index.md
 
 #### DOM APIs
+- **tinymce.dom.AriaAnnouncer**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.dom.ariaannouncer/index.md
 - **tinymce.dom.BookmarkManager**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.dom.bookmarkmanager/index.md
 - **tinymce.dom.DOMUtils**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.dom.domutils/index.md
 - **tinymce.dom.EventUtils**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.dom.eventutils/index.md
@@ -689,6 +700,14 @@ This section provides a complete list of all 411 documentation pages available i
 - **TinyMCE 8.3.1**: https://www.tiny.cloud/docs/tinymce/latest/8.3.1-release-notes/index.md
 - **TinyMCE 8.3.2**: https://www.tiny.cloud/docs/tinymce/latest/8.3.2-release-notes/index.md
 - **TinyMCE 8.4.0**: https://www.tiny.cloud/docs/tinymce/latest/8.4.0-release-notes/index.md
+- **TinyMCE 8.5.0**: https://www.tiny.cloud/docs/tinymce/latest/8.5.0-release-notes/index.md
+- **TinyMCE 8.5.1**: https://www.tiny.cloud/docs/tinymce/latest/8.5.1-release-notes/index.md
+- **TinyMCE 8.6.0**: https://www.tiny.cloud/docs/tinymce/latest/8.6.0-release-notes/index.md
+- **TinyMCE 8.7.0**: https://www.tiny.cloud/docs/tinymce/latest/8.7.0-release-notes/index.md
+- **TinyMCE 8.8.0**: https://www.tiny.cloud/docs/tinymce/latest/8.8.0-release-notes/index.md
+- **TinyMCE 8.8.1**: https://www.tiny.cloud/docs/tinymce/latest/8.8.1-release-notes/index.md
+- **TinyMCE 8.8.2**: https://www.tiny.cloud/docs/tinymce/latest/8.8.2-release-notes/index.md
+- **TinyMCE 8.9.0**: https://www.tiny.cloud/docs/tinymce/latest/8.9.0-release-notes/index.md
 
 
 ### Accessibility & Security
@@ -724,6 +743,8 @@ This section provides a complete list of all 411 documentation pages available i
 - **Inline CSS plugin**: https://www.tiny.cloud/docs/tinymce/latest/inline-css/index.md
 - **Localization options**: https://www.tiny.cloud/docs/tinymce/latest/ui-localization/index.md
 - **Non-editable content**: https://www.tiny.cloud/docs/tinymce/latest/non-editable-content-options/index.md
+- **Self-hosted trial with cloud services**: https://www.tiny.cloud/docs/tinymce/latest/self-hosted-trial/index.md
+- **Service license keys**: https://www.tiny.cloud/docs/tinymce/latest/service-license-keys/index.md
 - **TinyMCE 8 Documentation**: https://www.tiny.cloud/docs/tinymce/latest/index.md
 - **User Lookup API**: https://www.tiny.cloud/docs/tinymce/latest/userlookup/index.md
 

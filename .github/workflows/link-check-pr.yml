@@ -73,9 +73,15 @@ jobs:
       run: yarn install
 
     # The local playbook builds only this branch, which is all a PR link check
-    # needs. The production playbook additionally pulls tinymce/5, /6 and /7 from
-    # the remote, and checking those is the deploy pipeline's concern, not this
-    # check's.
+    # needs. The production playbook additionally pulls the other published
+    # versions from the remote, and checking those is the deploy pipeline's
+    # concern, not this check's.
+    #
+    # The output segment differs per branch: only the playbooks that set
+    # latest_version_segment produce build/site/tinymce/latest, and the others
+    # produce build/site/tinymce/<version>. The glob below therefore must not name
+    # a segment — a glob that matches nothing is only a lychee [WARN], so the check
+    # would pass silently while verifying nothing.
     - name: Build this branch
       if: steps.touched.outputs.count != '0'
       run: yarn antora ./antora-playbook-local.yml
@@ -103,7 +109,7 @@ jobs:
       if: steps.touched.outputs.count != '0'
       uses: lycheeverse/lychee-action@v2
       with:
-        args: --config .lychee.toml --dump --no-progress './build/site/tinymce/latest/**/*.html'
+        args: --config .lychee.toml --dump --no-progress './build/site/tinymce/**/*.html'
         lycheeVersion: v0.24.2
         output: lychee/rendered.txt
         token: ${{ secrets.GITHUB_TOKEN }}

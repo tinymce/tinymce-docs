@@ -1,0 +1,45 @@
+# .lycheeignore — curated allow-list of URLs/patterns lychee should skip.
+# Works like .gitignore, but for links. One URL or regex per line.
+#
+# Add an entry here ONLY after manually confirming the link works in a browser.
+# This is the escape hatch for hosts that return 403/429 to automated checkers
+# but are perfectly valid for readers (LinkedIn, Instagram, some CDNs, etc.).
+#
+# Seed entries below are commented out; uncomment / extend as the baseline crawl
+# surfaces real false positives. Keep this list minimal — genuinely dead links
+# must NOT be parked here.
+
+# Verified alive in a browser but rejected by the automated checker
+# (bot detection / rate limiting):
+https://www.stylemanual.gov.au/
+# Footer "join our Slack" link: tinyurl -> join.slack.com invite. Valid, but
+# tinyurl/Slack return 403 to bots. Appears on every page.
+https://www.tinyurl.com/tinyslack
+
+# Hosts that serve a JS/WAF challenge or 403/999 to automated checkers but load
+# fine in a browser. Verified reachable manually; cannot be checked by any bot,
+# so checking them only produces false failures.
+https://www.npmjs.com/
+https://codepen.io/
+https://dotnet.microsoft.com/
+https://platform.openai.com/
+https://help.openai.com/
+https://www.researchgate.net/
+https://researchgate.net/
+https://benmarshall.me/
+https://malavkhatri.com/
+
+# Common social hosts that block automated checkers — uncomment if they surface:
+# https://www.linkedin.com/
+# https://www.instagram.com/
+# https://www.facebook.com/
+# https://twitter.com/
+# https://x.com/
+
+# Verified by a full-site scan (2026-08-20): reachable in a browser, but the
+# automated checker is refused.
+# Bot detection -> 403:
+https://stackoverflow.com/
+https://www.graylog.org/
+# MCP endpoint: rejects HEAD/GET with 405 by design, it is not a web page.
+https://tinymcedocs.mcp.kapa.ai/

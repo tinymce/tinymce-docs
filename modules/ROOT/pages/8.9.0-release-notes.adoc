@@ -11,47 +11,13 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} {release-version} was released for {enterpriseversion} and {cloudname} on <weekday>, <month> <DD>^<st|nd|rd|th>^, <YYYY>. These release notes provide an overview of the changes for {productname} {release-version}, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Monday, August 31^st^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-// Remove sections and section boilerplates as necessary.
-// Pluralise as necessary or remove the placeholder plural marker.
-* xref:new-premium-plugin<s>[New Premium plugin<s>]
-* xref:new-open-source-plugin<s>[New Open Source plugin<s>]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
-* xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
-* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
-* xref:deprecated[Deprecated]
-* xref:known-issues[Known issues]
-
-
-[[new-premium-plugin<s>]]
-== New Premium plugin<s>
-
-The following new Premium plugin was released alongside {productname} {release-version}.
-
-=== <Premium plugin name>
-
-The new Premium plugin, **<Premium plugin name>** // description here.
-
-For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
-
-
-[[new-open-source-plugin]]
-== New Open Source plugin
-
-The following new Open Source plugin was released alongside {productname} {release-version}.
-
-=== <Open source plugin name>
-
-The new open source plugin, **<Open source plugin name>** // description here.
-
-For information on the **<Open source plugin name>** plugin, see xref:<plugincode>.adoc[<Open source plugin name>].
 
 
 [[accompanying-premium-plugin-changes]]
@@ -59,137 +25,215 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Comments
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Comments** includes the following additions and improvement.
 
-==== <Premium plugin name 1 change 1>
+==== New option `+tinycomments_always_show_highlights+` to keep comment highlights visible while the sidebar is closed
+// #TINYMCE-14726
 
-// CCFR here.
+Previously, the Comments plugin highlighted commented content only while the Comments sidebar was open. Closing the sidebar removed the highlighting from the editor content, so commented content was easy to overlook and users could overwrite it without warning.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+In {productname} {release-version}, the Comments plugin offers the xref:comments-embedded-mode.adoc#tinycomments_always_show_highlights[`+tinycomments_always_show_highlights+`] option. When this option is set to `+true+`, commented content remains highlighted whether the Comments sidebar is open or closed. This option defaults to `+false+`, which preserves the existing behavior.
 
+==== Selecting a comment highlight opens the Comments sidebar
+// #TINYMCE-14726
 
-[[accompanying-premium-plugin-end-of-life-announcement]]
-== Accompanying Premium plugin end-of-life announcement
+Previously, the Comments plugin removed the highlighting while the Comments sidebar was closed, so users could not reopen a conversation from the editor content.
 
-The following Premium plugin has been announced as reaching its end-of-life:
+In {productname} {release-version}, when the xref:comments-embedded-mode.adoc#tinycomments_always_show_highlights[`+tinycomments_always_show_highlights+`] option is set to `+true+`, selecting highlighted content reopens the closed Comments sidebar.
 
-=== <Premium plugin name eol>
+==== The Comments sidebar can be resized and is wider by default
+// #TINYMCE-14683
 
-{productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+Previously, the content styles of the **Comments** plugin fixed the Comments sidebar at 300 pixels wide, and a user could not change that width.
 
+In {productname} {release-version}, the Comments sidebar is registered with the xref:customsidebar.adoc#resizable[`+resizable+`] property set to `+true+`, so a user can resize it by dragging its edge. The sidebar opens at the width set by the xref:customsidebar.adoc#sidebar_width[`+sidebar_width+`] option, which defaults to 440 pixels, so the Comments sidebar is wider by default than in earlier versions. Setting `+sidebar_width+` to `+300+` restores the previous width, and applies that width to every resizable sidebar in the editor.
 
-[[accompanying-open-source-plugin-end-of-life-announcement]]
-== Accompanying open source plugin end-of-life announcement
-
-The following open source plugin has been announced as reaching its end-of-life:
-
-=== <Open source plugin name eol>
-
-{productname}’s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
 
 
-[[accompanying-enhanced-skins-and-icon-packs-changes]]
-== Accompanying Enhanced Skins & Icon Packs changes
+=== TinyMCE AI
 
-The {productname} {release-version} release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-=== Enhanced Skins & Icon Packs
+**TinyMCE AI** includes the following fix, addition and improvements.
 
-The **Enhanced Skins & Icon Packs** release includes the following updates:
+==== Improved error message shown when the document is too long for a quick action or review
+// #TINYMCE-13662
 
-The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} {release-version} skin, Oxide.
+Previously, when the document content exceeded the context limit of the AI service, a quick action or review failed and reported the general message `+An error occurred while processing the AI response.+` That message did not identify the length of the document as the cause.
 
-For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
+In {productname} {release-version}, the **TinyMCE AI** plugin shows `+This document is too long for the AI to process at once.+` when a quick action or review fails for this reason. The message states the limit without suggesting a corrective action, because the full document is always sent to the AI service.
+
+==== Improved error message shown when an invalid URL is added as a context source
+// #TINYMCE-13715
+
+Previously, adding a malformed URL as a context source in the Chat sidebar reported `+Provided URL is not valid.+` That message did not indicate what part of the address to correct.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin shows `+This URL isn't valid. Check the full, correct web address and try again.+` in the same situation. The message applies to the format of the address. A well-formed address that points to a page that cannot be reached is still accepted and sent for processing.
+
+==== Chat welcome actions moved focus into the editor and reset the content scroll position
+// #TINYMCE-14749
+
+Previously, selecting a welcome action in the AI Chat sidebar moved focus into the editor before running the action's command. Focusing the editor scrolls the content to the current selection, and when no selection had been made, that position was the start of the content. Users who had scrolled through a document lost that scroll position as soon as a welcome action was selected.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin runs welcome action commands without moving focus into the editor. Selecting a welcome action leaves the editor scroll position and focus unchanged. Welcome actions are configured with the xref:tinymceai.adoc#tinymceai_chat_welcome_actions[`+tinymceai_chat_welcome_actions+`] option.
+
+==== Tooltips could not be closed using `+Esc+`
+// #TINYMCE-14506
+
+Previously, the tooltips shown in the **TinyMCE AI** sidebars did not respond to `+Esc+`. These sidebars use their own tooltips, which were not connected to the editor keyboard shortcut that closes tooltips, so an open tooltip remained on screen until the pointer or focus moved elsewhere. Keyboard users could not dismiss a tooltip that obscured the interface.
+
+In {productname} {release-version}, pressing `+Esc+` closes an open tooltip in the **TinyMCE AI** sidebars.
+
+==== Changes to text alongside a nested list or table did not render as diffs in Review mode
+// #TINYMCE-14519
+
+Previously, text that sat directly alongside a nested list or table within the same container was not tracked as a block-level change, so the comparison that produces suggestions skipped it. Review mode showed that text as unchanged even when the review returned suggestions for it. Reviewers could not see or act on those suggestions, and the suggested edits were lost once the review was completed.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin treats text alongside a nested list or table as a block-level change when preparing the document for comparison. Suggestions for that text now appear in the Review sidebar and in the document with the rest of the suggestions, and each one can be accepted or rejected as usual.
+
+==== New commands for running reviews
+// #TINYMCE-14747
+
+In {productname} {release-version}, the **TinyMCE AI** plugin registers an editor command for each built-in review, such as `+TinyMCEAIReviewProofread+` and `+TinyMCEAIReviewToneProfessional+`. The plugin also registers the `+TinyMCEAIReviewCustom+` command, which runs a review from a custom prompt or runs an integrator-defined review by identifier. Each command opens the Review sidebar and runs the review, with the same result as selecting that review in the sidebar. Previously, a review could only be started from the Review sidebar, so integrations could not start one from their own interface.
+
+For the command identifiers and the values accepted by `+TinyMCEAIReviewCustom+`, see xref:editor-command-identifiers.adoc#tinymceai-plugin-commands[TinyMCE AI plugin commands].
+
+==== Improved error messages shown when adding a file context source fails
+// #TINYMCE-13660
+
+Previously, when the AI service rejected a file added as a context source in the Chat sidebar, the sidebar reported the failure using the message returned by the service, such as `+Content too large+`. Those messages described the service response rather than the file, so users could not tell which property of the file caused the failure, or what to try instead.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin shows a message for each file failure it can identify:
+
+* A file that is too large reports `+This file is too large to add. Try a smaller one.+`
+* A file with too many pages reports `+This file has too many pages to process. Try one with fewer pages.+`
+* A file of an unsupported type reports `+This file type isn't supported. Try a different file.+`
+
+When the cause cannot be identified, the plugin shows `+This file can't be added. Try a smaller file, or a different file type.+`
+
+==== Improved error message shown when a chat message exceeds the AI context limit
+// #TINYMCE-13661
+
+Previously, when a chat message combined with the conversation history together exceeded the context limit of the AI service, the Chat sidebar reported the failure with the general message `+An error occurred while processing the AI response.+` That message did not identify the size of the request as the cause, so users could not tell whether to shorten the message, start a new conversation, or try again unchanged.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin shows `+This message is too long for the AI to process. Try a shorter message, or start a new chat.+` when the AI service reports that a chat request exceeds the context limit. The message names the cause and describes the two ways to continue.
+
+==== Improved error message shown when the chat prompt exceeds the maximum length
+// #TINYMCE-13659
+
+Previously, when the text typed into the Chat sidebar exceeded the maximum length that the AI service accepts for a single message, the request failed and the Chat sidebar reported it with the general message `+An error occurred while processing the AI response.+` That message did not identify the length of the typed text as the cause, so users could not tell that shortening the message would resolve the failure.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin shows `+This prompt is too long. Try a shorter one.+` when the typed text exceeds that limit. This message applies to the typed message on its own, and is distinct from the message shown when a message and the conversation history together exceed the context limit of the AI service.
+
+==== The `tinymceai_chat_fetch_sources` option can now specify default sources for chat conversations.
+// #TINYMCE-14777
+
+Previously, the **TinyMCE AI** plugin applied only the current document to the context of a new AI Chat conversation. Users had to manually add every other context source, such as a style guide or reference document, to each new conversation.
+
+In {productname} {release-version}, the function supplied to xref:tinymceai.adoc#tinymceai_chat_fetch_sources[`+tinymceai_chat_fetch_sources+`] can resolve to an object with a `+menu+` property, holding the source groups shown in the sources menu, and a `+defaults+` property, holding an array of source identifiers. The plugin adds each source listed in `+defaults+` to the context of every new conversation, and shows it as selected in the sources menu. Users can remove a default source from a conversation and add it again from the sources menu.
+
+Identifiers listed in `+defaults+` without a matching source in `+sources+` are not added to the context, and the plugin logs an error in the browser console.
+
+The option continues to accept a function that resolves to an array of source groups, so existing configurations are unaffected.
+
+For details on configuring conversation context, see xref:tinymceai-chat.adoc#context-configuration[Adding custom context sources].
+
+==== Scroll position is preserved between the editor content and the AI preview
+// #TINYMCE-14769
+
+Previously, the scroll position was not carried between the editor content and the AI preview. Opening the preview, running a review, or applying a quick action could move the viewport away from the part of the document being worked on, so users lost their place.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin records the content block nearest to the current scroll position and restores the view to that block. The position is preserved when opening the preview, running a review, and applying a quick action, and it is restored to the same block even when the content is a different height in the editor and in the preview.
+
+==== Restored the icon-only buttons in the AI suggestion preview
+// #TINYMCE-14814
+
+In {productname} xref:8.7.0-release-notes.adoc#replaced-the-icon-only-buttons-in-the-ai-suggestion-preview-with-labeled-apply-and-skip-buttons[8.7.0], the icon-only buttons in the AI suggestion preview were replaced with labeled **Apply** and **Skip** buttons.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin restores the icon-only buttons used before {productname} 8.7.0. A checkmark button applies the suggestion and a close button skips it, and each button shows a tooltip that names its action, _Apply suggestion_ and _Skip suggestion_. The apply button remains the primary action, and the spacing of the preview toolbar is unchanged from {productname} 8.7.0.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 
 
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvements:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Sidebars can now be resized by dragging their edge, and their width can be configured with the new `sidebar_width` option.
+// #TINYMCE-14527
+// #TINYMCE-14530
 
-// CCFR here.
+Previously, the styles applied to the content of a sidebar fixed the width of that sidebar. A user working in a wide editor could not give a sidebar more room, and a user working in a narrow editor could not reclaim space for the editable area.
+
+In {productname} {release-version}, {productname} renders a resize handle on sidebars registered with the xref:customsidebar.adoc#resizable[`+resizable+`] property set to `+true+`, and a user can drag that handle to resize the sidebar. The sidebars registered by the xref:introduction-to-tiny-comments.adoc[Comments] and xref:tinymceai.adoc[{productname} AI] plugins are resizable by default. The {productname} AI sidebars are not resizable when xref:tinymceai.adoc#tinymceai_sidebar_type[`+tinymceai_sidebar_type+`] is set to `+'floating'+`. To keep the editable area usable, {productname} does not allow the editable area to shrink below 280 pixels, whatever width a user requests.
+
+=== The Help dialog lists plugins with invalid metadata as plain text
+// #TINYMCE-14730
+
+Previously, the _Plugins_ tab of the xref:help.adoc[Help] dialog used the metadata returned by a plugin without checking that the expected fields were present and of the expected type. A plugin that supplied a name but no URL was still rendered as a link, and selecting that link navigated to `+/undefined+`.
+
+In {productname} {release-version}, the Help dialog checks the metadata a plugin supplies before rendering it. A plugin whose metadata is missing or of an unexpected type is listed as plain text rather than as a link, using the plugin name where one is supplied, and the plugin identifier where one is not.
 
 
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition<s>:
+{productname} {release-version} also includes the following addition:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== New options for configuring the width of resizable sidebars
+// #TINYMCE-14528
 
-// CCFR here.
+Previously, the content styles of a sidebar determined the width of that sidebar, and no editor option set that width.
+
+In {productname} {release-version}, three new options configure the width of any sidebar registered with the xref:customsidebar.adoc#resizable[`+resizable+`] property set to `+true+`. The xref:customsidebar.adoc#sidebar_width[`+sidebar_width+`] option sets the width the sidebar opens at and defaults to `+440+`. The xref:customsidebar.adoc#sidebar_min_width[`+sidebar_min_width+`] and xref:customsidebar.adoc#sidebar_max_width[`+sidebar_max_width+`] options set the smallest and largest widths a user can drag the sidebar to and default to `+300+` and `+800+`. All three options set widths in pixels. To keep the editable area usable, {productname} does not allow the editable area to shrink below 280 pixels, and this limit takes precedence over all three options.
+
+=== New `SidebarResizeStart` and `SidebarResized` events for tracking sidebar resizing
+// #TINYMCE-14529
+
+In {productname} {release-version}, two new events report when a user resizes a sidebar. {productname} fires xref:events.adoc#editor-core-events[`+SidebarResizeStart+`] when a user starts dragging the resize handle, and xref:events.adoc#editor-core-events[`+SidebarResized+`] when a user stops dragging. The `+SidebarResized+` event carries a `+{ width: number }+` payload holding the width of the sidebar, in pixels, after the resize.
+
+Together with the xref:customsidebar.adoc#sidebar_width[`+sidebar_width+`] option, these events allow an integration to store the width a user chooses and restore it the next time the editor loads. For an example, see: xref:customsidebar.adoc#persisting-the-sidebar-width[Persisting the sidebar width].
 
 
 [[changes]]
 == Changes
 
-{productname} {release-version} also includes the following change<s>:
+{productname} {release-version} also includes the following change:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== The new `resizable` property controls whether a custom sidebar can be resized
+// #TINYMCE-14678
+// #TINYMCE-14683
 
-// CCFR here.
+Previously, the styles applied to the content of a sidebar registered through `+addSidebar+` controlled the width of that sidebar. Resizable sidebars require {productname} to control that width instead, and that change of control would alter how every existing custom sidebar renders.
 
+In {productname} {release-version}, the `+addSidebar+` specification object accepts a new optional xref:customsidebar.adoc#resizable[`+resizable+`] property that defaults to `+false+`. A custom sidebar registered without the property renders as it did in earlier versions and is not resizable, so existing integrations are unaffected. Setting the property to `+true+` makes the sidebar resizable and requires the content of the sidebar to follow the width of the parent element. For information, see: xref:customsidebar.adoc#styling-a-resizable-sidebar[Styling a resizable sidebar].
 
-[[removed]]
-== Removed
-
-{productname} {release-version} also includes the following removal<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+The sidebars registered by the xref:introduction-to-tiny-comments.adoc[Comments] and xref:tinymceai.adoc[{productname} AI] plugins set `+resizable+` to `+true+` and are resizable by default.
 
 
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Image with empty alt text would add `+role="presentation"+` instead of adding alt text when updated
+// #TINYMCE-13738
 
-// CCFR here.
+Previously, the xref:image.adoc[Image] plugin treated any image with an empty `+alt+` attribute as decorative. When xref:image.adoc#a11y_advanced_options[`+a11y_advanced_options+`] was disabled, the _Insert/Edit Image_ dialog did not show the *Image is decorative* option, so the dialog offered no way to change that state. Entering alternative text for such an image and saving the dialog applied `+role="presentation"+` and left the `+alt+` attribute empty, discarding the text that had been entered.
 
+In {productname} {release-version}, the Image plugin marks an image as decorative only when the _Insert/Edit Image_ dialog presents the accessibility options. Entering alternative text for an image with an empty `+alt+` attribute now applies that text to the image.
 
-[[security-fixes]]
-== Security fixes
+=== Opening or closing a sidebar from the toolbar scrolled the editor to the selection
+// #TINYMCE-14765
 
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
+Previously, opening or closing a sidebar from a toolbar button scrolled the editor content to the current selection when the editor was not focused. Toggling a sidebar is not a content operation, so the viewport moved away from the part of the document the user was reading.
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+In {productname} {release-version}, toggling a sidebar from the toolbar no longer scrolls the selection into view. This applies to every sidebar registered through `+editor.ui.registry.addSidebar+`. Commands that change content, such as _Bold_, continue to focus the editor and scroll to the selection as before.
 
-// CCFR here.
-
-
-[[deprecated]]
-== Deprecated
-
-{productname} {release-version} includes the following deprecation<s>:
-
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
-
-// placeholder here.
-
-
-[[known-issues]]
-== Known issues
-
-This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
-
-There <is one | are <number> known issue<s> in {productname} {release-version}.
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+The xref:apis/tinymce.editor.adoc#focus[`+editor.focus()+`] method also accepts an object argument, so callers can focus the editor without scrolling the selection into view, as in `+editor.focus({ scrollToSelection: false })+`. The `+scrollToSelection+` property defaults to `+true+`, and passing a boolean continues to behave as before.

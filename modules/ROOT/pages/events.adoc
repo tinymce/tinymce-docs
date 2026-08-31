@@ -229,6 +229,8 @@ The following events are provided by the {productname} editor.
 |LanguageLoadError |`+{ message: string }+` |Fired when the editor language pack fails to load.
 |BeforeRenderUI |N/A |Fired before the theme UI is rendered.
 |ToggleSidebar |N/A |Fired when a sidebar is toggled opened/closed.
+|SidebarResizeStart |N/A |Fired when a user starts dragging the resize handle of a sidebar. This event requires the sidebar to be registered with the xref:customsidebar.adoc#resizable[`+resizable+`] property set to `+true+`.
+|SidebarResized |`+{ width: number }+` |Fired when a user stops dragging the resize handle of a sidebar. The `+width+` is the width of the sidebar, in pixels, after the resize. This event requires the sidebar to be registered with the xref:customsidebar.adoc#resizable[`+resizable+`] property set to `+true+`.
 |longpress |(Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Element/touchstart_event[touchstart event]) |Fired when a long press occurs on a touch device inside the editor.
 |tap |(Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Document/touchend_event[touchend event]) |Fired when a tap occurs on a touch device inside the editor (simulated event similar to click).
 |ScrollContent |(Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event[scroll event]) |(iframe mode only) Fired when the content inside an iframe window has been scrolled.

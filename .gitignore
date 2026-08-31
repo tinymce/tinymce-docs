@@ -14,6 +14,10 @@ vendor
 # Antora tmp files
 _site/
 
+# lychee link checker (local cache + CI report output)
+.lycheecache
+lychee/
+
 # Cursor setup (local only, do not push)
 .cursor/
 AGENTS.md

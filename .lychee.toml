@@ -39,14 +39,28 @@ max_cache_age = "2d"
 # --- Structural excludes (not link rot) ---
 include_mail = false    # skip mailto: links
 exclude = [
-  # The site's own domains: self-referential links, UI-bundle chrome (CSS,
-  # favicons, footer images) and canonical URLs. base_url resolves root-relative
-  # links to these, and this filter then drops them. They are validated by the
-  # build/deploy pipeline; HTTP-checking them here would hammer our own
-  # production site (a rate-limit storm that fails thousands of links) and 404 on
-  # pages that a PR has added but not yet deployed. Internal .adoc cross-links are
-  # still verified locally (relative links resolve on disk) and by Antora at build.
-  '^https?://([a-z0-9-]+\.)*tiny\.cloud',
+  # Self-referential documentation links, plus the UI-bundle chrome (CSS,
+  # favicons, footer images) and canonical URLs that base_url resolves under the
+  # same path. A pull request routinely adds a page and links to it before that
+  # page is published, so checking these would 404 on content that is about to
+  # exist. They are not left unverified: Antora resolves internal cross-links at
+  # build time, and the deploy pipeline covers the published site.
+  #
+  # Scoped to the /docs path, not the whole domain. A domain-wide pattern also
+  # swallows the marketing and product pages (/pricing, /contact, /signup,
+  # /my-account, /legal ...), where a 404 is genuine link rot that nothing else
+  # in the pipeline catches.
+  '^https?://(www\.)?tiny\.cloud/docs(/|$)',
+  # The TinyMCE AI API base URL. Documented as a base URL in prose, where
+  # Asciidoctor auto-links it into a real anchor, so the checker does see it. It
+  # answers authenticated requests on its sub-paths and 404s on the root by
+  # design; those sub-paths (/docs, /v1 ...) are still checked.
+  '^https?://tinymceai\.api\.tiny\.cloud/?$',
+  # JWT claim names, not links. RFC 7519 namespaces private claims as URIs, so
+  # these are identifiers that are never fetched and the host does not resolve
+  # by design. Asciidoctor auto-links them out of the inline code they appear
+  # in, which is the only reason the checker sees them at all.
+  '^https?://claims\.tiny\.cloud',
   # Loopback / local addresses that only exist during a build or in examples
   '^https?://localhost',
   '^https?://127\.0\.0\.1',

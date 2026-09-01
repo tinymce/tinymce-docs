@@ -27,58 +27,49 @@ const DEFAULT_BUILD_DIR = path.join(__dirname, '../build/site');
 //   generate-llm-files https://.../sitemap.xml  -> writes modules/ROOT/attachments
 // The remote form preserves the manual workflow, where the output is reviewed and
 // committed. The local forms write into the build so the deploy needs no commit.
-// Antora publishes modules/ROOT/attachments/* to <component>/<version>/_attachments/.
-// That is a live, publicly served location for llms.txt and llms-full.txt, so the
-// generated files are mirrored there as well as to the site root. Writing both from
-// one source keeps them identical; previously the root copy was produced by copying
-// the published attachment, which allowed the two to drift.
-function findAttachmentDirs(buildDir) {
-  const found = [];
-
-  const walk = (dir) => {
-    let entries;
-    try {
-      entries = fs.readdirSync(dir, { withFileTypes: true });
-    } catch (err) {
-      return;
-    }
-
-    for (const entry of entries) {
-      if (!entry.isDirectory()) continue;
-      const full = path.join(dir, entry.name);
-      if (entry.name === '_attachments') {
-        found.push(full);
-      } else {
-        walk(full);
-      }
-    }
-  };
-
-  walk(buildDir);
-  return found;
-}
-
-// Write the generated file where the build publishes it.
+// The generated files describe a single documentation version — parseSitemap() keeps
+// only the URLs under BASE_URL — so they must be published to that version's
+// attachments directory and no other. The path is derived from BASE_URL rather than
+// found by searching the build: a build contains an _attachments directory per
+// version, and searching wrote one version's content into every one of them.
 //
 // Antora publishes modules/ROOT/attachments/* to <component>/<version>/_attachments/,
-// which is a live, served location. The existing copy-llms-files.sh step then copies
-// from there to the site root, which is the second served location. Writing into
-// _attachments therefore feeds both published URLs through the mechanism already in
-// place, rather than introducing a second one.
-//
-// When no _attachments directory exists (for example when writing to the source tree
-// during a manual run) the file is written to outputDir directly.
+// which is a served location. The existing copy-llms-files.sh step then copies from
+// there to the site root, the second served location, so writing here feeds both
+// published URLs through the mechanism already in place.
+function versionAttachmentDir(buildDir) {
+  const versionPath = BASE_URL.startsWith(DOCS_ROOT_URL + '/')
+    ? BASE_URL.slice(DOCS_ROOT_URL.length + 1)
+    : null;
+
+  if (!versionPath) return null;
+
+  const dir = path.join(buildDir, versionPath, '_attachments');
+  return fs.existsSync(dir) ? dir : null;
+}
+
+// Write to the version's attachments directory when it exists, otherwise to the build
+// root. The fallback keeps /docs/llms.txt correct — and keeps copy-llms-files.sh's
+// existence check passing — if the version segment ever changes.
 function writeGenerated(outputDir, filename, contents) {
-  const attachmentDirs = path.resolve(outputDir) === path.resolve(ATTACHMENTS_DIR)
-    ? []
-    : findAttachmentDirs(outputDir);
+  if (path.resolve(outputDir) === path.resolve(ATTACHMENTS_DIR)) {
+    const target = path.join(outputDir, filename);
+    fs.writeFileSync(target, contents);
+    return [target];
+  }
 
-  const targets = attachmentDirs.length > 0
-    ? attachmentDirs.map((dir) => path.join(dir, filename))
-    : [path.join(outputDir, filename)];
+  const attachmentDir = versionAttachmentDir(outputDir);
 
-  targets.forEach((target) => fs.writeFileSync(target, contents));
-  return targets;
+  if (!attachmentDir) {
+    console.warn(`! No attachments directory for ${BASE_URL}; writing ${filename} to the build root instead.`);
+    const target = path.join(outputDir, filename);
+    fs.writeFileSync(target, contents);
+    return [target];
+  }
+
+  const target = path.join(attachmentDir, filename);
+  fs.writeFileSync(target, contents);
+  return [target];
 }
 
 function resolveTargets(arg) {

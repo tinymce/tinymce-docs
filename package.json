@@ -10,6 +10,7 @@
   "scripts": {
     "build": "./-scripts/api-reference.sh",
     "build-local-ref": "./-scripts/api-reference-local.sh",
+    "check-links": "lychee --config .lychee.toml --no-progress './build/site/**/*.html'",
     "clean": "rm -rf ./build",
     "nodemon": "nodemon --exec yarn antora ./antora-playbook.yml",
     "nodemon-dev": "nodemon --exec yarn antora ./antora-playbook-local.yml",

@@ -1,0 +1,58 @@
+# lychee link-checker configuration
+# https://github.com/lycheeverse/lychee
+#
+# Policy: a link is only "broken" if it fails to resolve or returns a genuine
+# error (4xx/5xx). Redirects and rate-limiting are treated as healthy. Hosts
+# that block automated checkers (403 to bots) are curated in .lycheeignore.
+
+# --- Request behaviour ---
+timeout = 30            # seconds before a request is considered timed out
+max_retries = 3         # retry transient failures (covers flaky 5xx / network blips)
+retry_wait_time = 2     # seconds between retries
+max_concurrency = 16
+max_redirects = 10      # follow redirect chains to their final destination
+
+# A browser-like user agent reduces false 403s from bot-hostile hosts.
+user_agent = "Mozilla/5.0 (compatible; TinyMCE-Docs-Link-Checker/1.0; +https://www.tiny.cloud/docs)"
+
+# Resolve root-relative links (leading "/") against the live domain instead of
+# erroring on them. The site is served from https://www.tiny.cloud/docs/, so a
+# link like "/docs/_/css/site.css" or "/roadmap/" becomes an absolute URL that
+# is HTTP-checked. Relative page-to-page links are still resolved locally on
+# disk, so internal cross-reference integrity is still verified.
+# NOTE: an `exclude = ["^/"]` pattern does NOT suppress these — lychee raises the
+# "cannot resolve root-relative link" error before the exclude filter runs, so a
+# base_url is the correct mechanism.
+base_url = "https://www.tiny.cloud"
+
+# --- What counts as success ---
+# Redirects are followed, so the final status is what matters; the 3xx codes are
+# listed defensively for chains that exceed max_redirects. 429 = rate-limited,
+# not dead. 403 is NOT accepted globally (that would hide genuinely dead pages) —
+# bot-hostile hosts are curated per-URL in .lycheeignore instead.
+accept = ["200..=206", "301", "302", "307", "308", "429"]
+
+# --- Caching (keeps PR-time runs fast) ---
+cache = true
+max_cache_age = "2d"
+
+# --- Structural excludes (not link rot) ---
+include_mail = false    # skip mailto: links
+exclude = [
+  # The site's own domains: self-referential links, UI-bundle chrome (CSS,
+  # favicons, footer images) and canonical URLs. base_url resolves root-relative
+  # links to these, and this filter then drops them. They are validated by the
+  # build/deploy pipeline; HTTP-checking them here would hammer our own
+  # production site (a rate-limit storm that fails thousands of links) and 404 on
+  # pages that a PR has added but not yet deployed. Internal .adoc cross-links are
+  # still verified locally (relative links resolve on disk) and by Antora at build.
+  '^https?://([a-z0-9-]+\.)*tiny\.cloud',
+  # Loopback / local addresses that only exist during a build or in examples
+  '^https?://localhost',
+  '^https?://127\.0\.0\.1',
+  '^https?://0\.0\.0\.0',
+  # GitHub action URLs that require auth and are not real navigational links
+  '^https://github\.com/[^/]+/[^/]+/(edit|new|delete)/',
+  # Internal Jira referenced in tickets/notes, not public docs
+  '^https://[a-z]+\.atlassian\.net',
+]

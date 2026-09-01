@@ -41,5 +41,9 @@ https://malavkhatri.com/
 # Bot detection -> 403:
 https://stackoverflow.com/
 https://www.graylog.org/
+# Tiny's support portal. Reachable in a browser; refuses automated checkers.
+# Previously covered by the domain-wide tiny.cloud exclude in .lychee.toml,
+# which has since been narrowed to the documentation path.
+https://support.tiny.cloud/
 # MCP endpoint: rejects HEAD/GET with 405 by design, it is not a web page.
 https://tinymcedocs.mcp.kapa.ai/

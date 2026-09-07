@@ -122,7 +122,7 @@ If the AI service needs to reach the host machine (for example a self-hosted Oll
 [source,bash]
 ----
 # --- Required: AI service license key provided by Tiny ---
-AI_LICENCE_KEY='paste-ai-licence-key-here'
+AI_LICENSE_KEY='paste-ai-license-key-here'
 
 # --- Required: strong secret used to log into the Management Panel ---
 MANAGEMENT_SECRET='replace-with-strong-secret'
@@ -142,9 +142,9 @@ AI_API_SECRET='paste-api-secret-here'
 
 [IMPORTANT]
 ====
- * `AI_LICENCE_KEY` activates the AI service container.
+ * `AI_LICENSE_KEY` activates the AI service container.
  * The `license_key` init option in `tinymce.init()` activates premium {productname} features in the self-hosted editor. 
- * These are different credentials from different sources — they are not interchangeable. See the xref:tinymceai-on-premises.adoc#_credentials[Credentials] section on the Overview page.
+ * These are different credentials from different sources — they are not interchangeable. See the xref:tinymceai-on-premises.adoc#credentials[Credentials] section on the Overview page.
 ====
 
 === Start MySQL and Redis
@@ -181,14 +181,14 @@ Use the matching network name in `--network` below. First, load the `.env` file:
 set -a && source .env && set +a
 ----
 
-Then start the AI service container. The `docker run` command maps the friendly `.env` names onto the service's own environment variables — for example, `AI_LICENCE_KEY` is passed to the container as `LICENSE_KEY`, and `MANAGEMENT_SECRET` as `ENVIRONMENTS_MANAGEMENT_SECRET_KEY`:
+Then start the AI service container. The `docker run` command maps the friendly `.env` names onto the service's own environment variables — for example, `AI_LICENSE_KEY` is passed to the container as `LICENSE_KEY`, and `MANAGEMENT_SECRET` as `ENVIRONMENTS_MANAGEMENT_SECRET_KEY`:
 
 [source,bash]
 ----
 docker run --init -d -p 8000:8000 \
   --network <compose-network-name> \
   --name ai-service \
-  -e LICENSE_KEY="$AI_LICENCE_KEY" \
+  -e LICENSE_KEY="$AI_LICENSE_KEY" \
   -e ENVIRONMENTS_MANAGEMENT_SECRET_KEY="$MANAGEMENT_SECRET" \
   -e DATABASE_DRIVER='mysql' \
   -e DATABASE_HOST='mysql' \
@@ -249,7 +249,7 @@ Server is listening on port 8000.
 
 [WARNING]
 --
-If the container exits immediately, run `docker logs ai-service`. The most common causes are documented in the xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting] guide. The top three are: malformed `AI_LICENCE_KEY` (line breaks from word wrap), missing PostgreSQL schema, and JSON syntax error in `PROVIDERS`.
+If the container exits immediately, run `docker logs ai-service`. The most common causes are documented in the xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting] guide. The top three are: malformed `AI_LICENSE_KEY` (line breaks from word wrap), missing PostgreSQL schema, and JSON syntax error in `PROVIDERS`.
 --
 
 === Create an environment and access key
@@ -380,6 +380,8 @@ app.listen(PORT, () => {
   console.log('AI Service: ' + AI_SERVICE_URL);
 });
 ----
+
+NOTE: Replace `'your-license-key'` in the `token-server.js` listing with the {productname} editor license key. This is the editor license key described in the xref:tinymceai-on-premises.adoc#credentials[Credentials] section, not the AI service `AI_LICENSE_KEY`. For details on obtaining and applying it, see xref:license-key.adoc[License key].
 
 === Install and run
 

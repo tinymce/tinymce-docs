@@ -71,7 +71,6 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
-
 === AI Assistant
 
 The {productname} {release-version} release includes an accompanying release of the **AI Assistant** premium plugin.
@@ -119,12 +118,11 @@ In {productname} {release-version}, the **Suggested Edits** plugin applies both 
 
 For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
 
-
 === TinyMCE AI
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following fix.
+**TinyMCE AI** includes the following fixs.
 
 ==== The `+body_class+` and `+body_id+` options were not applied to the TinyMCE AI preview iframe body
 // #TINYMCE-14872
@@ -132,6 +130,13 @@ The {productname} {release-version} release includes an accompanying release of 
 Previously, the **TinyMCE AI** plugin did not apply the xref:add-css-options.adoc#body_class[`+body_class+`] and xref:add-css-options.adoc#body_id[`+body_id+`] options to the preview iframe body element, so the preview did not render content consistently with the editor content.
 
 In {productname} {release-version}, the **TinyMCE AI** plugin applies both options to the preview body element, adding the `+body_class+` value alongside the `+mce-content-body+` class rather than replacing it.
+
+==== Menus in the TinyMCE AI sidebars showed unnecessary scrollbars when the sidebar type was set to 'floating'
+// #TINYMCE-14570
+
+Previously, menus opened from the **TinyMCE AI** sidebars showed unnecessary scrollbars. With the xref:tinymceai.adoc#tinymceai_sidebar_type[`+tinymceai_sidebar_type+`] option set to `+'floating'+`, the menu for adding context sources, the model selection dropdown, and the menu on a chat history item each showed a second vertical scrollbar or a horizontal scrollbar. This regression, introduced in {productname} 8.5, made those menus harder to read and to scroll.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin no longer applies its own overflow constraint to these menus, and sizes each menu to the space available to it rather than to the full width of its container. Menus in the Chat sidebar and the Review sidebar now show a single scrollbar, and only when the content does not fit.
 
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 

@@ -71,12 +71,65 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== AI Assistant
+
+The {productname} {release-version} release includes an accompanying release of the **AI Assistant** premium plugin.
+
+**AI Assistant** includes the following fix.
+
+==== The `+body_class+` and `+body_id+` options were not applied to the AI Assistant preview iframe body, and the `+mce-content-body+` class was missing
+// #TINYMCE-14872
+
+Previously, the **AI Assistant** plugin did not apply the xref:add-css-options.adoc#body_class[`+body_class+`] and xref:add-css-options.adoc#body_id[`+body_id+`] options to the preview iframe body element, and omitted the `+mce-content-body+` class, so the preview did not render content consistently with the editor content.
+
+In {productname} {release-version}, the **AI Assistant** plugin applies both options to the preview body element, and always applies the `+mce-content-body+` class alongside any class set through `+body_class+`.
+
+For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant].
+
+
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following fix.
+
+==== The `+body_id+` option was not applied to the Revision History preview iframe body
+// #TINYMCE-14872
+
+Previously, the **Revision History** plugin applied the xref:add-css-options.adoc#body_class[`+body_class+`] option to the preview iframe body element but not the xref:add-css-options.adoc#body_id[`+body_id+`] option, so the preview did not render content consistently with the editor content.
+
+In {productname} {release-version}, the **Revision History** plugin applies `+body_id+` to the preview body element, so styles that target that id now apply in the preview.
+
+For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
+
+
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following fix.
+
+==== The `+body_class+` and `+body_id+` options were not applied to the Suggested Edits preview iframe body
+// #TINYMCE-14872
+
+Previously, the **Suggested Edits** plugin did not apply the xref:add-css-options.adoc#body_class[`+body_class+`] and xref:add-css-options.adoc#body_id[`+body_id+`] options to the preview iframe body element, so the preview did not render content consistently with the editor content.
+
+In {productname} {release-version}, the **Suggested Edits** plugin applies both options to the preview body element, adding the `+body_class+` value alongside the `+mce-content-body+` class rather than replacing it.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
 
 === TinyMCE AI
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following fix.
+**TinyMCE AI** includes the following fixs.
+
+==== The `+body_class+` and `+body_id+` options were not applied to the TinyMCE AI preview iframe body
+// #TINYMCE-14872
+
+Previously, the **TinyMCE AI** plugin did not apply the xref:add-css-options.adoc#body_class[`+body_class+`] and xref:add-css-options.adoc#body_id[`+body_id+`] options to the preview iframe body element, so the preview did not render content consistently with the editor content.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin applies both options to the preview body element, adding the `+body_class+` value alongside the `+mce-content-body+` class rather than replacing it.
 
 ==== Menus in the TinyMCE AI sidebars showed unnecessary scrollbars when the sidebar type was set to 'floating'
 // #TINYMCE-14570

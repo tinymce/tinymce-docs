@@ -12,6 +12,7 @@ NOTE: The following is _general_ security advice that may be relevant to a websi
 * xref:what-we-do-to-maintain-security-for-tinymce[What we do to maintain security for {productname}]
 ** xref:scripts-and-xss-vulnerabilities[Scripts and XSS vulnerabilities]
 ** xref:keeping-dependencies-up-to-date[Keeping dependencies up-to-date]
+* xref:security-assurance-and-compliance[Security assurance and compliance]
 * xref:enforcing-https-with-hsts[Enforcing HTTPS with HSTS]
 * xref:configuring-content-security-policy-csp-for-tinymce[Configuring Content Security Policy (CSP) for {productname}]
 * xref:general-security-risks-for-user-input-elements[General security risks for user input elements]
@@ -61,6 +62,13 @@ From the 1st of January 2020, Security Advisories for patched XSS vulnerabilitie
 === Keeping dependencies up-to-date
 
 To protect our users, {companyname} ensures that the {productname} dependencies are updated before the next version (major or minor) is released.
+
+[[security-assurance-and-compliance]]
+== Security assurance and compliance
+
+{companyname} publishes its security and compliance posture, including the frameworks it maintains, in the link:https://trust.tiny.cloud/[{companyname} Trust Center].
+
+The Trust Center also holds the supporting documentation, such as audit reports, penetration test reports, and a completed security posture questionnaire. These documents are made available on request through the Trust Center.
 
 [[enforcing-https-with-hsts]]
 == Enforcing HTTPS with HSTS

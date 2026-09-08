@@ -81,7 +81,7 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== Styles from the `+content_style+` option did not take precedence over `+content_css+` in the preview iframe
 // #TINYMCE-14748
 
-Previously, the **Suggested Edits** plugin added the styles from the xref:add-css-options.adoc#content_style[`+content_style+`] option to the preview before the stylesheets loaded by the xref:add-css-options.adoc#content_css[`+content_css+`] option. The styles from both options carry equal specificity, so the `+content_css+` stylesheets overrode the `+content_style+` rules. The preview then rendered content differently from the editor content. The difference was clearest in body width and padding, two properties that `+content_style+` commonly sets.
+Previously, the **Suggested Edits** plugin added the styles from the xref:add-css-options.adoc#content_style[`+content_style+`] option to the preview before the stylesheets loaded by the xref:add-css-options.adoc#content_css[`+content_css+`] option. The styles from both options carry equal specificity, so the `+content_css+` stylesheets overrode the `+content_style+` rules. 
 
 In {productname} {release-version}, the **Suggested Edits** plugin adds the styles from `+content_style+` after the stylesheets loaded by `+content_css+`, matching the order that {productname} uses in the editor content. Styles from `+content_style+` now apply in the preview, so the preview renders consistently with the editor content.
 

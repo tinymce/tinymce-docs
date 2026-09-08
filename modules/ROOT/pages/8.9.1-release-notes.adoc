@@ -13,63 +13,13 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, September 9^th^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-// Remove sections and section boilerplates as necessary.
-// Pluralise as necessary or remove the placeholder plural marker.
-* xref:new-premium-plugin<s>[New Premium plugin<s>]
-* xref:new-open-source-plugin<s>[New Open Source plugin<s>]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
-* xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
-* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
-* xref:improvements[Improvements]
-* xref:additions[Additions]
-* xref:changes[Changes]
-* xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
-* xref:deprecated[Deprecated]
-* xref:known-issues[Known issues]
-
-
-[[new-premium-plugin<s>]]
-== New Premium plugin<s>
-
-The following new Premium plugin was released alongside {productname} {release-version}.
-
-=== <Premium plugin name>
-
-The new Premium plugin, **<Premium plugin name>** // description here.
-
-For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
-
-
-[[new-open-source-plugin]]
-== New Open Source plugin
-
-The following new Open Source plugin was released alongside {productname} {release-version}.
-
-=== <Open source plugin name>
-
-The new open source plugin, **<Open source plugin name>** // description here.
-
-For information on the **<Open source plugin name>** plugin, see xref:<plugincode>.adoc[<Open source plugin name>].
 
 
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium plugin changes
 
 The following premium plugin updates were released alongside {productname} {release-version}.
-
-=== <Premium plugin name 1> <Premium plugin name 1 version>
-
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
-
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
-
-==== <Premium plugin name 1 change 1>
-
-// CCFR here.
-
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
 === AI Assistant
 
@@ -103,26 +53,11 @@ In {productname} {release-version}, the **Revision History** plugin applies `+bo
 For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
 
 
-=== Suggested Edits
-
-The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
-
-**Suggested Edits** includes the following fix.
-
-==== The `+body_class+` and `+body_id+` options were not applied to the Suggested Edits preview iframe body
-// #TINYMCE-14872
-
-Previously, the **Suggested Edits** plugin did not apply the xref:add-css-options.adoc#body_class[`+body_class+`] and xref:add-css-options.adoc#body_id[`+body_id+`] options to the preview iframe body element, so the preview did not render content consistently with the editor content.
-
-In {productname} {release-version}, the **Suggested Edits** plugin applies both options to the preview body element, adding the `+body_class+` value alongside the `+mce-content-body+` class rather than replacing it.
-
-For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
-
 === TinyMCE AI
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following fixs.
+**TinyMCE AI** includes the following fixes.
 
 ==== The `+body_class+` and `+body_id+` options were not applied to the TinyMCE AI preview iframe body
 // #TINYMCE-14872
@@ -138,31 +73,6 @@ Previously, menus opened from the **TinyMCE AI** sidebars showed unnecessary scr
 
 In {productname} {release-version}, the **TinyMCE AI** plugin no longer applies its own overflow constraint to these menus, and sizes each menu to the space available to it rather than to the full width of its container. Menus in the Chat sidebar and the Review sidebar now show a single scrollbar, and only when the content does not fit.
 
-For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
-
-
-=== Suggested Edits
-
-The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
-
-**Suggested Edits** includes the following fix.
-
-==== Styles from the `+content_style+` option did not take precedence over `+content_css+` in the preview iframe
-// #TINYMCE-14748
-
-Previously, the **Suggested Edits** plugin added the styles from the xref:add-css-options.adoc#content_style[`+content_style+`] option to the preview before the stylesheets loaded by the xref:add-css-options.adoc#content_css[`+content_css+`] option. The styles from both options carry equal specificity, so the `+content_css+` stylesheets overrode the `+content_style+` rules. 
-
-In {productname} {release-version}, the **Suggested Edits** plugin adds the styles from `+content_style+` after the stylesheets loaded by `+content_css+`, matching the order that {productname} uses in the editor content. Styles from `+content_style+` now apply in the preview, so the preview renders consistently with the editor content.
-
-For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
-
-
-=== TinyMCE AI
-
-The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
-
-**TinyMCE AI** includes the following fix.
-
 ==== Styles from the `+content_style+` option did not take precedence over `+content_css+` in the preview iframe
 // #TINYMCE-14748
 
@@ -173,124 +83,25 @@ In {productname} {release-version}, the **TinyMCE AI** plugin adds the styles fr
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 
 
-[[accompanying-premium-plugin-end-of-life-announcement]]
-== Accompanying Premium plugin end-of-life announcement
+=== Suggested Edits
 
-The following Premium plugin has been announced as reaching its end-of-life:
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
 
-=== <Premium plugin name eol>
+**Suggested Edits** includes the following fixes.
 
-{productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+==== Styles from the `+content_style+` option did not take precedence over `+content_css+` in the preview iframe
+// #TINYMCE-14748
 
+Previously, the **Suggested Edits** plugin added the styles from the xref:add-css-options.adoc#content_style[`+content_style+`] option to the preview before the stylesheets loaded by the xref:add-css-options.adoc#content_css[`+content_css+`] option. The styles from both options carry equal specificity, so the `+content_css+` stylesheets overrode the `+content_style+` rules. 
 
-[[accompanying-open-source-plugin-end-of-life-announcement]]
-== Accompanying open source plugin end-of-life announcement
+In {productname} {release-version}, the **Suggested Edits** plugin adds the styles from `+content_style+` after the stylesheets loaded by `+content_css+`, matching the order that {productname} uses in the editor content. Styles from `+content_style+` now apply in the preview, so the preview renders consistently with the editor content.
 
-The following open source plugin has been announced as reaching its end-of-life:
+==== The `+body_class+` and `+body_id+` options were not applied to the Suggested Edits preview iframe body
+// #TINYMCE-14872
 
-=== <Open source plugin name eol>
+Previously, the **Suggested Edits** plugin did not apply the xref:add-css-options.adoc#body_class[`+body_class+`] and xref:add-css-options.adoc#body_id[`+body_id+`] options to the preview iframe body element, so the preview did not render content consistently with the editor content.
 
-{productname}’s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+In {productname} {release-version}, the **Suggested Edits** plugin applies both options to the preview body element, adding the `+body_class+` value alongside the `+mce-content-body+` class rather than replacing it.
 
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
 
-[[accompanying-enhanced-skins-and-icon-packs-changes]]
-== Accompanying Enhanced Skins & Icon Packs changes
-
-The {productname} {release-version} release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
-
-=== Enhanced Skins & Icon Packs
-
-The **Enhanced Skins & Icon Packs** release includes the following updates:
-
-The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} {release-version} skin, Oxide.
-
-For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
-
-
-[[improvements]]
-== Improvements
-
-{productname} {release-version} also includes the following improvement<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[additions]]
-== Additions
-
-{productname} {release-version} also includes the following addition<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[changes]]
-== Changes
-
-{productname} {release-version} also includes the following change<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[removed]]
-== Removed
-
-{productname} {release-version} also includes the following removal<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[bug-fixes]]
-== Bug fixes
-
-{productname} {release-version} also includes the following bug fix<es>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[security-fixes]]
-== Security fixes
-
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[deprecated]]
-== Deprecated
-
-{productname} {release-version} includes the following deprecation<s>:
-
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
-
-// placeholder here.
-
-
-[[known-issues]]
-== Known issues
-
-This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
-
-There <is one | are <number> known issue<s> in {productname} {release-version}.
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.

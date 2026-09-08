@@ -2,6 +2,7 @@
 :description_short: Specifying editor version and plugins for {cloudname} deployments.
 :description: Instructions on setting the {productname} editor version and plugins for {cloudname} deployments.
 :keywords: tinymce, cloud, script, textarea, apiKey, hybrid, dev, testing, production
+:page-aliases: plugin-editor-version-compatibility.adoc
 
 [[specifying-the-tinymce-editor-version-deployed-from-cloud]]
 == Specifying the {productname} Editor Version from {cloudname}
@@ -95,6 +96,8 @@ For more details, check out the xref:editor-and-features.adoc[{productname} edit
 == Specifying the Cloud Deployment of Plugins
 
 When self-hosting {productname}, integrators have the choice to host premium plugins or load them from {companyname} Cloud (a.k.a. hybrid mode). Depending on your requirements, you can use a combination of both approaches.
+
+IMPORTANT: Ensure the plugins are supported in your editor version when deploying premium plugins only using xref:features-only.adoc[{cloudname}].
 
 include::partial$misc/admon-script-tag-placement.adoc[]
 

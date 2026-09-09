@@ -446,14 +446,23 @@ instance.fire('event', {...});
 === focus()
 [source, javascript]
 ----
-focus(skipFocus: Boolean)
+focus(skipFocus: Boolean | Object, skipFocus.scrollToSelection: Boolean)
 ----
 Focuses/activates the editor. This will set this editor as the activeEditor in the tinymce collection
 it will also place DOM focus inside the editor.
 
+==== Examples
+[source, javascript]
+----
+tinymce.activeEditor.focus();
+tinymce.activeEditor.focus(true);
+tinymce.activeEditor.focus({ scrollToSelection: false });
+----
+
 ==== Parameters
 
-* `skipFocus (Boolean)` - Skip DOM focus. Just set is as the active editor.
+* `skipFocus (Boolean | Object)` - If true, skip DOM focus and only set this editor as the active editor. If an object, focus the editor and optionally control scrolling.
+* `skipFocus.scrollToSelection (Boolean)` - If false, focuses the editor without scrolling the selection into view. Defaults to true.
 
 '''
 

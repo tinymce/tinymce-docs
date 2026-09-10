@@ -56,11 +56,20 @@ Taking the configuration deeper, by adding plugins, tailoring toolbars and menus
 |Server |Description
 
 |https://tinymcedocs.mcp.kapa.ai[{productname} documentation MCP]
-|Semantic search across the published {productname} documentation, returning relevant extracts with links to their source pages. For the endpoint, authentication, and per-agent configuration, see xref:ai-coding-agents.adoc#connect-the-documentation-mcp-server[Connect the documentation MCP server].
+|Semantic search across the published {productname} documentation, returning relevant extracts with links to their source pages. For the per-agent configuration files, see xref:ai-coding-agents.adoc#connect-the-documentation-mcp-server[Connect the {productname} documentation MCP server].
 
 |https://context7.com/tinymce/tinymce-docs[Context7]
 |A general-purpose documentation MCP server. Point it at the `+tinymce/docs+` library to serve version-specific {productname} documentation to the agent. The skill checks for Context7 before generating code, so this is the server it uses when both are available.
 |===
+
+To connect the {productname} documentation MCP server, point the agent's MCP client at the following endpoint and complete the one-time OAuth sign-in:
+
+[source,text]
+----
+https://tinymcedocs.mcp.kapa.ai
+----
+
+Copy-to-clipboard install commands and one-click installs for supported editors are also available from the *Ask AI* widget on any documentation page, under *Use MCP*.
 
 With a server connected, ask the agent for the change required and it applies the change using current guidance, for example:
 

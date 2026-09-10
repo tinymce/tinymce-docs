@@ -1,26 +1,31 @@
 = Connecting AI coding agents to the {productname} documentation
-:navtitle: Documentation for AI agents
+:navtitle: Connect AI agents to the documentation
 :description: Give AI coding agents access to the {productname} documentation through the documentation MCP server, Context7, markdown pages, and llms.txt files.
 :description_short: Give AI coding agents access to the {productname} documentation.
 :keywords: ai, mcp, model context protocol, coding agent, claude code, cursor, codex, copilot, visual studio code, context7, llms.txt, markdown
 
-An AI coding agent works from its training data unless it is given something better. This page describes the ways to put the current {productname} documentation in front of an agent: a documentation https://modelcontextprotocol.io/[Model Context Protocol] (MCP) server, markdown versions of every page, and the `+llms.txt+` summaries. Each method applies to any {productname} installation, whether it is served from the {cloudname} or self-hosted.
+An AI coding agent works from its training data unless it is given something better. This page describes four ways to put the current {productname} documentation in front of an agent. They are alternatives rather than steps, and any of them can be used together. Each applies to any {productname} installation, whether it is served from the {cloudname} or self-hosted.
+
+* xref:#connect-the-documentation-mcp-server[{productname} documentation MCP server] -- a hosted https://modelcontextprotocol.io/[Model Context Protocol] (MCP) server that serves this documentation and nothing else. Suits any agent that supports MCP.
+* xref:#context7[Context7] -- a general-purpose documentation MCP server that also indexes the {productname} documentation. Suits an agent already using Context7 for other libraries.
+* xref:#read-the-documentation-as-markdown[Markdown pages] -- every documentation page is also published as markdown at its own URL. Suits an agent without MCP support, or a prompt that already names the page.
+* xref:#llms-txt-files[`+llms.txt+` files] -- two plain text summaries of the whole documentation set, for an agent that accepts a single bulk reference.
 
 TIP: To add {productname} to a project with an AI coding agent, see the xref:cloud-quick-start-ai.adoc[{cloudname} AI quick start guide].
 
-[NOTE]
+[TIP]
 ====
-This page covers giving external coding agents access to this documentation. It does not describe the in-editor AI features. For content generation inside the editor, see xref:tinymceai-introduction.adoc[{productname} AI].
+This page covers giving an external coding agent access to this documentation. It does not cover the AI features inside the editor. For the MCP tool calling and web integrations available to the {productname} AI service, see xref:tinymceai-on-premises-mcp.adoc[MCP and web integrations]. For content generation inside the editor, see xref:tinymceai-introduction.adoc[{productname} AI].
 ====
 
 [[connect-the-documentation-mcp-server]]
-== Connect the documentation MCP server
+== Connect the {productname} documentation MCP server
 
-The hosted {productname} documentation MCP server exposes semantic search across the published documentation, returning relevant extracts with links to their source pages. Any client that supports MCP over streamable HTTP can connect to it. This server supplies documentation to an external coding agent, and is separate from the MCP tool calling available to the {productname} AI service, described in xref:tinymceai-on-premises-mcp.adoc[MCP and web integrations].
+The {productname} documentation MCP server is hosted by Tiny and serves this documentation set alone. It exposes semantic search across the published pages, returning relevant extracts with links to their source. Any client that supports MCP over streamable HTTP can connect to it.
 
 *Endpoint:* `+https://tinymcedocs.mcp.kapa.ai+`
 
-*Authentication:* The server is protected by OAuth and requires a one-time sign-in. The first time the agent calls the server, a browser window opens to complete sign-in, after which the agent stores the resulting token. In Claude Code, if no sign-in prompt appears, run `+/mcp+`, select the server, and then select *Authenticate*.
+*Authentication:* The server is protected by OAuth and requires a one-time sign-in. The first time the agent calls the server, a browser window opens to complete sign-in, after which the agent stores the resulting token. If no sign-in prompt appears, trigger authentication from the agent's own MCP configuration, as described in the entry for that agent below.
 
 [IMPORTANT]
 ====
@@ -43,6 +48,8 @@ Each agent below is configured independently. Expand the entry for the agent in 
 .Claude Code
 [%collapsible]
 ====
+If no sign-in prompt appears, run `+/mcp+`, select the server, and then select *Authenticate*.
+
 [source,bash]
 ----
 claude mcp add --transport http --scope project tinymce-docs https://tinymcedocs.mcp.kapa.ai
@@ -157,7 +164,7 @@ https://tinymcedocs.mcp.kapa.ai
 [[context7]]
 == Connect Context7
 
-https://context7.com/[Context7] is a general-purpose documentation MCP server that also indexes the {productname} documentation. Where the {productname} documentation MCP server returns extracts from the published site, Context7 serves version-specific library documentation across many projects from a single server, which suits an agent already using it for other libraries.
+https://context7.com/[Context7] is a general-purpose documentation MCP server that serves version-specific library documentation for many projects, including {productname}, from a single server. An agent already using Context7 for other libraries can reach the {productname} documentation without adding a second server.
 
 *Library:* `+tinymce/docs+` at https://context7.com/tinymce/tinymce-docs[`+context7.com/tinymce/tinymce-docs+`]
 
@@ -179,6 +186,8 @@ Markdown is available for every documented version of {productname}, not only th
 ----
 https://www.tiny.cloud/docs/tinymce/7/basic-setup/index.md
 ----
+
+The current major version is always served from `+latest+`. A request for that version by number, such as `+/docs/tinymce/{productmajorversion}/basic-setup/index.md+`, redirects to its `+latest+` address, so an agent retrieving markdown by version number needs to follow redirects. Earlier versions are served directly.
 
 Each page also includes a *Copy Markdown* button next to the page title, which copies the markdown URL of the current page to the clipboard for pasting into an agent prompt.
 

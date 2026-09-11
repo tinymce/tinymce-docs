@@ -12,18 +12,18 @@ TIP: For the equivalent step-by-step setup without an AI coding agent, see the x
 [[install-the-skill]]
 == Install the {productname} skill
 
-The official {productname} skill teaches an AI coding agent how to add {productname} to a project. Install it into the agent (Claude Code, Codex, Cursor, GitHub Copilot, and others) with a single command:
+The official {productname} skill teaches an AI coding agent how to add {productname} to a project. From the project directory, install it into the agent (Claude Code, Codex, Cursor, GitHub Copilot, and others) with a single command:
 
 [source,bash]
 ----
 npx skills add tinymce/tinymce-ai-skills
 ----
 
-The installer detects the agents present in the project and writes the skill to each. The skill uses the open https://agentskills.io/[Agent Skills] format, so it works in any agent that supports that format.
+The installer downloads the skill, detects the agents present in the project, and writes the skill to each. Cloning the repository beforehand is not required. The skill uses the open https://agentskills.io/[Agent Skills] format, so it works in any agent that supports that format.
 
 Once installed, the skill loads on its own whenever the agent is asked to install, set up, configure, or troubleshoot {productname}. No extra prompting is required.
 
-To install without the command-line interface, follow the per-agent instructions under *Manual installation* in the https://github.com/tinymce/tinymce-ai-skills[`+tinymce/tinymce-ai-skills+`] README. Report guidance that is wrong, outdated, or missing from the skill by https://github.com/tinymce/tinymce-ai-skills/issues[opening an issue] in the same repository.
+To install without the command-line interface, follow the per-agent instructions under *Manual installation* in the https://github.com/tinymce/tinymce-ai-skills[tinymce-ai-skills README]. Report guidance that is wrong, outdated, or missing from the skill by https://github.com/tinymce/tinymce-ai-skills/issues[opening an issue] in the same repository.
 
 [[add-the-editor]]
 == Add {productname} to an application
@@ -49,7 +49,9 @@ include::partial$install/approve-domain-cloud.adoc[]
 [[connect-live-documentation]]
 == Configure further using live documentation
 
-Taking the configuration deeper, by adding plugins, tailoring toolbars and menus, or refining behavior against the current API, is more reliable when the agent reads the published documentation instead of relying on its training data. Connect one of the following https://modelcontextprotocol.io/[Model Context Protocol] (MCP) servers:
+Taking the configuration deeper, by adding plugins, tailoring toolbars and menus, or refining behavior against the current API, is more reliable when the agent reads the published documentation instead of relying on its training data. The sections below cover the main options; for all four, including the per-agent configuration files, see xref:ai-coding-agents.adoc[Connect AI agents to the documentation].
+
+Connect one of the following https://modelcontextprotocol.io/[Model Context Protocol] (MCP) servers:
 
 [cols="1,3",options="header"]
 |===
@@ -59,7 +61,7 @@ Taking the configuration deeper, by adding plugins, tailoring toolbars and menus
 |Semantic search across the published {productname} documentation, returning relevant extracts with links to their source pages. For the per-agent configuration files, see xref:ai-coding-agents.adoc#connect-the-documentation-mcp-server[Connect the {productname} documentation MCP server].
 
 |https://context7.com/tinymce/tinymce-docs[Context7]
-|A general-purpose documentation MCP server. Point it at the `+tinymce/docs+` library to serve version-specific {productname} documentation to the agent. The skill checks for Context7 before generating code, so this is the server it uses when both are available.
+|A general-purpose documentation MCP server. Point it at the `+tinymce/docs+` library to serve version-specific {productname} documentation to the agent. The skill checks for Context7 before generating code, so this is the server it uses when both are available. For the setup steps, see xref:ai-coding-agents.adoc#context7[Connect Context7].
 |===
 
 To connect the {productname} documentation MCP server, point the agent's MCP client at the following endpoint and complete the one-time OAuth sign-in:
@@ -78,6 +80,6 @@ ____
 Add the Table and Word Count plugins, and put a word counter in the status bar.
 ____
 
-Agents that do not support MCP can read the documentation as markdown or from the `+llms.txt+` files instead. See xref:ai-coding-agents.adoc#read-the-documentation-as-markdown[Read the documentation as markdown].
+Agents that do not support MCP can read the documentation as markdown or from the `+llms.txt+` files instead. See xref:ai-coding-agents.adoc#read-the-documentation-as-markdown[Read the documentation as markdown] and xref:ai-coding-agents.adoc#llms-txt-files[llms.txt files].
 
 include::partial$misc/quickstart-next-steps.adoc[]

@@ -8,22 +8,14 @@
 
 == Keyboard shortcuts
 
-The following *Alt+key* and *Option+key* shortcuts can only be used when the content area of the editor has focus.
+The *Alt+key* and *Option+key* shortcuts that move focus out of the content area, such as *Alt+F9* (or *⌥+F9*), can only be used when the content area of the editor has focus.
 
-[cols=",,",options="header"]
-|===
-|Task |Windows or Linux |macOS
-|Focus/jump to menu bar |Alt+F9 |⌥+F9
-|Focus/jump to toolbar |Alt+F10 |⌥+F10
-|Focus/jump to element path |Alt+F11 |⌥+F11
-|Focus/jump to notification |Alt+F12 |⌥+F12
-|Close menu/submenu/dialog |Esc |Esc
-|Return to the editor content area |Esc |Esc
-|Navigate left/right through menu/toolbar |Tab and the Arrow Keys |Tab and the Arrow Keys
-|Open the {productname} Help dialog |Alt+0 |⌥+0
-|===
+The complete list of shortcuts is maintained on the xref:keyboard-shortcuts.adoc[{productname} Keyboard shortcuts] page:
 
-For additional navigation keyboard shortcuts and shortcuts for applying some commonly-used formats, see: xref:keyboard-shortcuts.adoc[Keyboard shortcuts].
+* xref:keyboard-shortcuts.adoc#editor-keyboard-shortcuts[Editor keyboard shortcuts] lists the shortcuts that move focus to the menu bar, the toolbar, the element path, and notifications, along with the shortcuts for applying commonly-used formats.
+* xref:keyboard-shortcuts.adoc#accessibility-keyboard-shortcuts[Accessibility keyboard shortcuts] lists the shortcuts for moving between menus, toolbar buttons, and dialog controls within the editor user interface.
+
+The sections that follow describe how to use these shortcuts to complete each navigation task.
 
 == How to work with the editor
 

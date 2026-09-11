@@ -13,21 +13,12 @@ The editor provides two main ways to access formatting and editing features:
 
 [TIP]
 ====
-When a feature appears only in a contextual toolbar (for example, editing alternative text for an image), use the keyboard shortcut to focus the contextual toolbar. See the table below.
+When a feature appears only in a contextual toolbar (for example, editing alternative text for an image), press *Ctrl+F9* to focus the contextual toolbar.
 ====
 
 === Keyboard shortcuts for editor navigation
 
-[cols="1,2,2",options="header"]
-|===
-|Action |Windows or Linux |macOS
-|Focus the menu bar |Alt+F9 |⌥+F9
-|Focus the toolbar |Alt+F10 |⌥+F10
-|Focus the element path (footer) |Alt+F11 |⌥+F11
-|Focus notifications |Alt+F12 |⌥+F12
-|Focus the contextual toolbar |Ctrl+F9 |Ctrl+F9
-|Open the Help dialog |Alt+0 |⌥+0
-|===
+The shortcuts that move focus to the menu bar, the toolbar, the contextual toolbar, the element path, and notifications are listed in xref:keyboard-shortcuts.adoc#editor-keyboard-shortcuts[Editor keyboard shortcuts]. The shortcuts for moving between individual menus, toolbar buttons, and dialog controls are listed in xref:keyboard-shortcuts.adoc#accessibility-keyboard-shortcuts[Accessibility keyboard shortcuts]. For a task-by-task explanation of these shortcuts, see the xref:tinymce-and-screenreaders.adoc[Accessible navigation guide].
 
 The contextual toolbar appears when the cursor is on content that has context-specific actions, such as an image or a link. For example, to edit alternative text for an image using only the keyboard:
 

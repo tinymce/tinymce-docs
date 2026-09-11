@@ -4,6 +4,8 @@
 :description: Complete list of keyboard shortcuts.
 :keywords: keyboard, shortcuts
 
+This page is the complete reference for the keyboard shortcuts provided by {productname}. For a task-by-task explanation of how to use the focus and navigation shortcuts with a screen reader, see the xref:tinymce-and-screenreaders.adoc[Accessible navigation guide]. For the configuration options that affect keyboard and screen reader support, see xref:accessibility.adoc[Accessibility options].
+
 [[editor-keyboard-shortcuts]]
 == Editor keyboard shortcuts
 
@@ -40,9 +42,10 @@ This is a list of available keyboard shortcuts within the editor body.
 |Find |Ctrl+F |⌘+F |xref:searchreplace.adoc[searchreplace]
 |===
 
+[[accessibility-keyboard-shortcuts]]
 == Accessibility keyboard shortcuts
 
-This is a list of available keyboard shortcuts within the editor user interface.
+This is a list of available keyboard shortcuts within the editor user interface. The shortcuts that move focus into the editor user interface from the content area, such as *Alt+F9* (or *⌥+F9*), are listed in xref:#editor-keyboard-shortcuts[Editor keyboard shortcuts].
 
 [cols=",,",options="header"]
 |===

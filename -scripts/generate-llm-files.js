@@ -556,7 +556,7 @@ function categorizeUrl(urlPath) {
   if (urlPath.startsWith('bundle-') || urlPath.startsWith('bundling-') ||
       urlPath.startsWith('webpack-') || urlPath.startsWith('rollup-') ||
       urlPath.startsWith('browserify-') || urlPath.startsWith('vite-') ||
-      urlPath === 'bundle-intro-setup' || urlPath === 'plugin-editor-version-compatibility' ||
+      urlPath === 'bundle-intro-setup' ||
       urlPath === 'introduction-to-bundling-tinymce') {
     return { category: 'Customization & Development', subcategory: 'Bundling & Build Tools' };
   }
@@ -775,13 +775,13 @@ async function generateLLMsFullTxt(urls) {
   let content = `# TinyMCE Documentation - Complete Reference
 
 ## Overview
-TinyMCE is a rich text editor that provides a WYSIWYG editing experience. The latest stable version is TinyMCE 8, released in July 2025.
+TinyMCE is a rich text editor that provides a WYSIWYG editing experience. The latest stable version is TinyMCE 8.
 
 ## Current Version Information
 - **Latest Stable Version**: TinyMCE 8
 - **Version in CDN URLs**: Use \`tinymce@8\` or \`tinymce/8\`
 - **Package Installation**: Always install \`tinymce@8\` for new projects
-- **Legacy Versions**: TinyMCE 7, 6, and 5 are maintained for existing projects but new projects should use TinyMCE 8
+- **Legacy Versions**: TinyMCE 7, 6, and 5 are in varying stages of end-of-support. For current support and end-of-support dates, see ${BASE_URL}/support/. New projects should use TinyMCE 8
 
 ## Getting Started
 

@@ -1,0 +1,85 @@
+= Quick start: {productname} from {cloudname} with an AI coding agent
+:navtitle: AI quick start guide
+:description_short: Add {productname} {productmajorversion} from the {cloudname} using the official agent skill.
+:description: Add a {productname} {productmajorversion} editor to an application by installing the official agent skill and asking an AI coding agent to do the setup, then connect a documentation MCP server to configure the editor further.
+:keywords: quick start, ai, agent skill, agent skills, coding agent, mcp, model context protocol, claude code, cursor, codex, copilot, context7, kapa, cloud
+:productSource: cloud
+
+{productname} {productmajorversion} is a powerful and flexible rich text editor that can be embedded in web applications. This quick start covers how to add a {productname} editor to an application by installing the official https://github.com/tinymce/tinymce-ai-skills[{productname} agent skill] and letting an AI coding agent perform the setup.
+
+TIP: For the equivalent step-by-step setup without an AI coding agent, see the xref:cloud-quick-start.adoc[{cloudname} quick start guide].
+
+[[install-the-skill]]
+== Install the {productname} skill
+
+The official {productname} skill teaches an AI coding agent how to add {productname} to a project. From the project directory, install it into the agent (Claude Code, Codex, Cursor, GitHub Copilot, and others) with a single command:
+
+[source,bash]
+----
+npx skills add tinymce/tinymce-ai-skills
+----
+
+The installer downloads the skill, detects the agents present in the project, and writes the skill to each. Cloning the repository beforehand is not required. The skill uses the open https://agentskills.io/[Agent Skills] format, so it works in any agent that supports that format.
+
+Once installed, the skill loads on its own whenever the agent is asked to install, set up, configure, or troubleshoot {productname}. No extra prompting is required.
+
+To install without the command-line interface, follow the per-agent instructions under *Manual installation* in the https://github.com/tinymce/tinymce-ai-skills[tinymce-ai-skills README]. Report guidance that is wrong, outdated, or missing from the skill by https://github.com/tinymce/tinymce-ai-skills/issues[opening an issue] in the same repository.
+
+[[add-the-editor]]
+== Add {productname} to an application
+
+Ask the agent to add {productname} wherever a rich text editor is needed, for example:
+
+[quote]
+____
+Add a {productname} editor to the comment box on my post page.
+____
+
+The skill takes the agent through the whole setup:
+
+* Detecting the environment, whether that is vanilla JavaScript or a framework such as React, Next.js, Vue, or Angular.
+* Prompting for the {cloudname} account that supplies the API key. An account is created by signing up to the link:{accountsignup}/[{cloudname}], which also provides a trial of the xref:plugins.adoc#premium-plugins[Premium Plugins].
+* Selecting the plugins, toolbar, and menu that suit the use case.
+* Generating the integration code, wiring in the API key, and setting the options that the selected plugins require.
+
+The result is an editor configured for the project at hand, rather than a generic configuration to be adapted afterwards.
+
+include::partial$install/approve-domain-cloud.adoc[]
+
+[[connect-live-documentation]]
+== Configure further using live documentation
+
+Taking the configuration deeper, by adding plugins, tailoring toolbars and menus, or refining behavior against the current API, is more reliable when the agent reads the published documentation instead of relying on its training data. The sections below cover the main options; for all four, including the per-agent configuration files, see xref:ai-coding-agents.adoc[Connect AI agents to the documentation].
+
+Connect one of the following https://modelcontextprotocol.io/[Model Context Protocol] (MCP) servers:
+
+[cols="1,3",options="header"]
+|===
+|Server |Description
+
+|https://tinymcedocs.mcp.kapa.ai[{productname} documentation MCP]
+|Semantic search across the published {productname} documentation, returning relevant extracts with links to their source pages. For the per-agent configuration files, see xref:ai-coding-agents.adoc#connect-the-documentation-mcp-server[Connect the {productname} documentation MCP server].
+
+|https://context7.com/tinymce/tinymce-docs[Context7]
+|A general-purpose documentation MCP server. Point it at the `+tinymce/docs+` library to serve version-specific {productname} documentation to the agent. The skill checks for Context7 before generating code, so this is the server it uses when both are available. For the setup steps, see xref:ai-coding-agents.adoc#context7[Connect Context7].
+|===
+
+To connect the {productname} documentation MCP server, point the agent's MCP client at the following endpoint and complete the one-time OAuth sign-in:
+
+[source,text]
+----
+https://tinymcedocs.mcp.kapa.ai
+----
+
+Copy-to-clipboard install commands and one-click installs for supported editors are also available from the *Ask AI* widget on any documentation page, under *Use MCP*.
+
+With a server connected, ask the agent for the change required and it applies the change using current guidance, for example:
+
+[quote]
+____
+Add the Table and Word Count plugins, and put a word counter in the status bar.
+____
+
+Agents that do not support MCP can read the documentation as markdown or from the `+llms.txt+` files instead. See xref:ai-coding-agents.adoc#read-the-documentation-as-markdown[Read the documentation as markdown] and xref:ai-coding-agents.adoc#llms-txt-files[llms.txt files].
+
+include::partial$misc/quickstart-next-steps.adoc[]

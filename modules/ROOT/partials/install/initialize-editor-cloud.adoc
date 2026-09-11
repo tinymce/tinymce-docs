@@ -1,6 +1,6 @@
 Initialize {productname} {productmajorversion} on any element (or elements) on the web page by passing a `+selector+` to `+tinymce.init()+`. The `+selector+` value can be any valid https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors[CSS selector].
 
-For example, to initialize a {productname} {productmajorversion} instance at the textarea element, pass the selector `+#mytextarea+` to `+tinymce.init()+`.
+The `+plugins+` and `+toolbar+` options determine which features the editor provides. The following example initializes the editor on a `+textarea+` with the identifier `+mytextarea+`, and configures a menu bar and a toolbar covering the most commonly used editing features:
 
 [source,html,subs="attributes+"]
 ----
@@ -14,14 +14,22 @@ For example, to initialize a {productname} {productmajorversion} instance at the
   </head>
 
   <body>
-    <h1>{productname} Quick Start Guide</h1>
     <textarea id="mytextarea">Hello, World!</textarea>
     <script>
       tinymce.init({
-        selector: '#mytextarea'
+        selector: '#mytextarea',
+        plugins: [
+          'advlist', 'anchor', 'autolink', 'charmap', 'code', 'codesample', 'emoticons',
+          'fullscreen', 'help', 'image', 'insertdatetime', 'link', 'lists', 'media',
+          'preview', 'searchreplace', 'table', 'visualblocks', 'wordcount'
+        ],
+        menubar: 'file edit view insert format tools table help',
+        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media table | charmap emoticons codesample | code preview fullscreen | removeformat help',
+        height: 500
       });
     </script>
   </body>
 </html>
 ----
 
+Every plugin above is included with {productname}, so this configuration requires no further setup. To start from a minimal editor instead, pass only the `+selector+` and add options as needed.

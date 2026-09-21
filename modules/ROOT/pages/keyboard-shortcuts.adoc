@@ -4,7 +4,7 @@
 :description: Complete list of keyboard shortcuts.
 :keywords: keyboard, shortcuts
 
-This page is the complete reference for the keyboard shortcuts provided by {productname}. For a task-by-task explanation of how to use the focus and navigation shortcuts with a screen reader, see the xref:tinymce-and-screenreaders.adoc[Accessible navigation guide]. For the configuration options that affect keyboard and screen reader support, see xref:accessibility.adoc[Accessibility options].
+This page is the complete reference for the keyboard shortcuts provided by {productname}. For a task-by-task explanation of how to use the focus and navigation shortcuts with a screen reader, see the xref:tinymce-and-screenreaders.adoc[Accessible navigation guide]. For the configuration options that affect keyboard and screen reader support, see xref:accessibility.adoc[Accessibility options]. For the accessibility standards {productname} is developed against, see xref:accessibility-conformance.adoc[Accessibility conformance].
 
 [[editor-keyboard-shortcuts]]
 == Editor keyboard shortcuts
@@ -17,30 +17,65 @@ This is a list of available keyboard shortcuts within the editor body.
 |Bold |Ctrl+B |⌘+B |core
 |Italic |Ctrl+I |⌘+I |core
 |Underline |Ctrl+U |⌘+U |core
-|Select All |Ctrl+A |⌘+A |core
+|Select All footnote:selectall[On Firefox the browser's own select all behavior applies, as {productname} registers this shortcut on Chromium and Safari only.] |Ctrl+A |⌘+A |core
 |Redo |Ctrl+Y / Ctrl+Shift+Z |⌘+Y / ⌘+Shift+Z |core
 |Undo |Ctrl+Z |⌘+Z |core
-|Header 1 |Alt+Shift+1 |Ctrl+⌥+1 |core
-|Header 2 |Alt+Shift+2 |Ctrl+⌥+2 |core
-|Header 3 |Alt+Shift+3 |Ctrl+⌥+3 |core
-|Header 4 |Alt+Shift+4 |Ctrl+⌥+4 |core
-|Header 5 |Alt+Shift+5 |Ctrl+⌥+5 |core
-|Header 6 |Alt+Shift+6 |Ctrl+⌥+6 |core
+|Heading 1 |Alt+Shift+1 |Ctrl+⌥+1 |core
+|Heading 2 |Alt+Shift+2 |Ctrl+⌥+2 |core
+|Heading 3 |Alt+Shift+3 |Ctrl+⌥+3 |core
+|Heading 4 |Alt+Shift+4 |Ctrl+⌥+4 |core
+|Heading 5 |Alt+Shift+5 |Ctrl+⌥+5 |core
+|Heading 6 |Alt+Shift+6 |Ctrl+⌥+6 |core
 |Paragraph |Alt+Shift+7 |Ctrl+⌥+7 |core
 |Div |Alt+Shift+8 |Ctrl+⌥+8 |core
 |Address |Alt+Shift+9 |Ctrl+⌥+9 |core
-|Focus to menu bar |Alt+F9 |⌥+F9 |core
-|Focus to toolbar |Alt+F10 |⌥+F10 |core
-|Focus to element path |Alt+F11 |⌥+F11 |core
+|Focus to menu bar |Alt+F9 |⌥+F9 |theme
+|Focus to toolbar |Alt+F10 |⌥+F10 |theme
+|Focus to element path |Alt+F11 |⌥+F11 |theme
 |Focus to notification |Alt+F12 |⌥+F12 |core
-|Focus to contextual toolbar |Ctrl+F9 |Ctrl+F9 |core
+|Focus to contextual toolbar |Ctrl+F9 |Ctrl+F9 |theme
 |Print |Ctrl+P |⌘+P |core
 |Open the {productname} Help dialog |Alt+0 |⌥+0 |xref:help.adoc[help]
 |Insert link |Ctrl+K |⌘+K |xref:link.adoc[link]
 |Toggle Fullscreen |Ctrl+Shift+F |⌘+Shift+F |xref:fullscreen.adoc[fullscreen]
 |Save |Ctrl+S |⌘+S |xref:save.adoc[save]
 |Find |Ctrl+F |⌘+F |xref:searchreplace.adoc[searchreplace]
+|Paste as plain text |Ctrl+Shift+V |⌘+Shift+V |core
+|Paste |Shift+Insert |Shift+Insert |core
+|Open the selected link |Alt+Enter |⌥+Enter |xref:link.adoc[link]
 |===
+
+[[premium-plugin-keyboard-shortcuts]]
+== Premium plugin keyboard shortcuts
+
+This is a list of the keyboard shortcuts provided by premium plugins. Each shortcut is available only when the plugin that provides it is included in the `+plugins+` option.
+
+[cols=",,,",options="header"]
+|===
+|Action |Windows or Linux |macOS |Plugin
+|Open the AI Chat sidebar and move focus to it |Ctrl+J |⌘+J |xref:tinymceai.adoc[tinymceai]
+|Open the AI Review sidebar and move focus to it |Ctrl+Alt+S |Ctrl+Alt+S |xref:tinymceai.adoc[tinymceai]
+|Move focus to the AI Chat sidebar header or the AI preview toolbar |Ctrl+F9 |Ctrl+F9 |xref:tinymceai.adoc[tinymceai]
+|Open the AI dialog |Ctrl+J |⌘+J |xref:ai.adoc[ai]
+|Copy formatting |Ctrl+Alt+C |⌘+⌥+C |xref:formatpainter.adoc[formatpainter]
+|Apply formatting |Ctrl+Alt+V |⌘+⌥+V |xref:formatpainter.adoc[formatpainter]
+|Add a comment, or open and focus a comment reply |Ctrl+Alt+M |⌘+⌥+M |xref:introduction-to-tiny-comments.adoc[tinycomments]
+|Show or hide the comments sidebar, when the sidebar has focus |Ctrl+Alt+M |⌘+⌥+M |xref:introduction-to-tiny-comments.adoc[tinycomments]
+|Toggle the checked state of a checklist item |Ctrl+Enter |⌘+Enter |xref:checklist.adoc[checklist]
+|Paste as plain text |Ctrl+Shift+V |⌘+Shift+V |xref:introduction-to-powerpaste.adoc[powerpaste]
+|===
+
+[NOTE]
+====
+The `+tinycomments+` plugin uses *Ctrl+Alt+M* (or *⌘+⌥+M*) for two different actions. When the editor has focus, the shortcut adds a comment or opens and focuses a reply. When the comments sidebar has focus, the same shortcut shows or hides the sidebar.
+====
+
+[NOTE]
+====
+The `+powerpaste+` shortcut performs the same action as the core *Ctrl+Shift+V* (or *⌘+Shift+V*) shortcut listed in xref:#editor-keyboard-shortcuts[Editor keyboard shortcuts]. The plugin provides it for browsers that do not support switching paste modes with the *Shift* key.
+====
+
+IMPORTANT: The `+ai+` and `+tinymceai+` plugins both use *Ctrl+J* (or *⌘+J*). The `+ai+` plugin declares `+tinymceai+` as incompatible, so when both are included in the `+plugins+` option the `+ai+` plugin does not load and its shortcut is not registered.
 
 [[accessibility-keyboard-shortcuts]]
 == Accessibility keyboard shortcuts
@@ -53,11 +88,13 @@ This is a list of available keyboard shortcuts within the editor user interface.
 |Execute command |Enter / Spacebar |Enter / Spacebar
 |Focus on next UI Element(such as: Menu bar, Toolbar, Toolbar Group, Status Bar Item) |Tab |Tab
 |Focus on previous UI Element(such as: Menu bar, Toolbar, Toolbar Group, Status Bar Item) |Shift+Tab |Shift+Tab
-|Focus next Control(such as: toolbar button, menu, or menu item) |Right Arrow / Down Arrow |Right Arrow / Down Arrow
-|Focus previous Control(such as: toolbar button, menu, or menu item) |Left Arrow / Up Arrow |Left Arrow / Up Arrow
-|Open menu or toolbar menu button |Down Arrow / Spacebar |Down Arrow / Spacebar
-|Open group toolbar button |Spacebar |Spacebar
-|Open split toolbar button |Down Arrow |Down Arrow
+|Focus next control on a toolbar or the menu bar |Right Arrow / Down Arrow |Right Arrow / Down Arrow
+|Focus previous control on a toolbar or the menu bar |Left Arrow / Up Arrow |Left Arrow / Up Arrow
+|Focus next item in an open menu |Down Arrow |Down Arrow
+|Focus previous item in an open menu |Up Arrow |Up Arrow
+|Open menu or toolbar menu button |Down Arrow / Spacebar / Enter |Down Arrow / Spacebar / Enter
+|Open group toolbar button |Spacebar / Enter |Spacebar / Enter
+|Open the menu on a split toolbar button, when the arrow section has focus |Down Arrow |Down Arrow
 |Open the popup menu on split toolbar buttons |Shift+Enter |Shift+Enter
 |Open submenu |Right Arrow |Right Arrow
 |Close submenu |Left Arrow / Esc |Left Arrow / Esc
@@ -65,7 +102,12 @@ This is a list of available keyboard shortcuts within the editor user interface.
 |Close menu |Esc |Esc
 |Close notification |Esc |Esc
 |Move focus back to editor body |Esc |Esc
+|Execute a command in a multiline dialog text field |Ctrl+Enter |Ctrl+Enter
+|Switch to another dialog tab, when the tab menu has focus |Arrow keys |Arrow keys
+|Resize the editor, when the resize handle has focus |Arrow keys |Arrow keys
 |===
+
+In a dialog, the *Tab* and *Shift+Tab* keys cycle through the dialog controls and do not move focus out of the dialog. The *Enter* key submits the dialog, except in a multiline text field.
 
 NOTE: Browsers and Screen Readers provide additional shortcuts within the editor context.
 

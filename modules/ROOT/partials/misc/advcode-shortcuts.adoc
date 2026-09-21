@@ -16,5 +16,18 @@ Enhanced Code Editor provides the following shortcuts within the code dialog.
 | Unfold Code | Ctrl-Shift-] | Command-Option-]
 | Fold All | Ctrl-Alt-[ | Ctrl-Option-[
 | Unfold All | Ctrl-Alt-] | Ctrl-Option-]
-| Accept Completion | Enter | Enter
+| Accept Completion | Enter / Tab | Enter / Tab
+| Select Next Occurrence | Ctrl+D / Ctrl+B | Command+D / Command+B
+| Select All Matches of the Selection | Ctrl+Shift+L | Command+Shift+L
+| Go to Line (alternative) | Ctrl+Alt+G | Command+Option+G
+| Start Autocompletion | Ctrl+Space | Control+Space
+| Toggle Comment | Ctrl+/ | Command+/
+| Move Line Up or Down | Alt+Up / Alt+Down | Option+Up / Option+Down
+| Copy Line Up or Down | Shift+Alt+Up / Shift+Alt+Down | Shift+Option+Up / Shift+Option+Down
+| Delete Line | Ctrl+Shift+K | Command+Shift+K
 |===
+
+[IMPORTANT]
+====
+Within the code dialog, some shortcuts differ from the same key combination in the editor body. *Ctrl+B* (or *Command+B*) selects the next occurrence of the selection rather than applying bold, and *Ctrl+F* (or *Command+F*) opens the code dialog search panel rather than the xref:searchreplace.adoc[searchreplace] dialog. These shortcuts apply only while the code dialog has focus.
+====

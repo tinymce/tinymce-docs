@@ -62,6 +62,21 @@ jobs:
       run: |
         aws s3 sync ./build s3://tiny-cloud-antora-docs-preview/${PR}/${RUN}
 
+    # Attachment PDFs, such as the accessibility conformance reports, are served
+    # as downloads rather than rendered inline. This must also be applied by the
+    # production deployment, which is not defined in this repository.
+    - name: Serve attachment PDFs as downloads
+      run: |
+        aws s3 cp \
+          s3://tiny-cloud-antora-docs-preview/${PR}/${RUN}/ \
+          s3://tiny-cloud-antora-docs-preview/${PR}/${RUN}/ \
+          --recursive \
+          --exclude "*" \
+          --include "*/_attachments/*.pdf" \
+          --metadata-directive REPLACE \
+          --content-type application/pdf \
+          --content-disposition attachment
+
     - name: Create redirects on S3
       uses: tinymce/tinymce-docs-generate-redirects-action@v1.0
       with:

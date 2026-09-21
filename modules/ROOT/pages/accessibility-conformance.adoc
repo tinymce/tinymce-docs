@@ -1,0 +1,145 @@
+= Accessibility conformance
+:navtitle: Accessibility conformance
+:description_short: Accessibility conformance information and conformance reports for TinyMCE.
+:description: The accessibility standards {productname} is developed against, the Accessibility Conformance Reports available for download, and how to report an accessibility issue.
+:keywords: accessibility, conformance, VPAT, ACR, WCAG, Section 508, EN 301 549, a11y
+
+// TINYDOC-3624. Author-time markers below are intentional. The conformance
+// statements in "Conformance targets", the entries in "Known limitations", and
+// the combinations in "Recommended software" are all placeholders. Each one
+// requires sign-off from outside Documentation before this page is merged to
+// tinymce/8. Do not publish this page with the placeholders in place.
+
+This page describes the accessibility standards that {productname} is developed against, provides the Accessibility Conformance Reports available for download, and explains how to report an accessibility issue.
+
+For guidance on operating the editor with a keyboard or a screen reader, see the xref:tinymce-and-screenreaders.adoc[Accessible navigation guide].
+
+== Overview
+
+* xref:conformance-targets[Conformance targets]
+* xref:accessibility-conformance-report-vpat[Accessibility Conformance Report (VPAT)]
+* xref:reporting-an-accessibility-issue[Reporting an accessibility issue]
+* xref:known-limitations[Known limitations]
+* xref:recommended-software[Recommended software]
+* xref:related-guides[Related guides]
+
+[[conformance-targets]]
+== Conformance targets
+
+// CCFR here. Replace the placeholders below with the approved conformance
+// statement. Do not assert a standard, version, or level that the current
+// Accessibility Conformance Report does not support.
+
+{productname} is developed and tested against the following accessibility standards.
+
+[cols="1,1,2",options="header"]
+|===
+|Standard |Target |Applies to
+
+|https://www.w3.org/WAI/standards-guidelines/wcag/[Web Content Accessibility Guidelines (WCAG)] <version>
+|Level <A \| AA>
+|The editor user interface
+
+|https://www.access-board.gov/ict/[Section 508 of the Rehabilitation Act]
+|<conformance statement>
+|The editor user interface
+
+|https://www.etsi.org/standards[EN 301 549]
+|<conformance statement>
+|The editor user interface
+|===
+
+{productname} follows the https://www.w3.org/TR/wai-aria/[Web Accessibility Initiative - Accessible Rich Internet Applications (WAI-ARIA)] specification for the editor user interface.
+
+[NOTE]
+====
+These targets describe the accessibility of the {productname} user interface. They are separate from the accessibility of the content authored in the editor, which is the responsibility of the content author. To check authored content against https://www.w3.org/TR/WCAG21/[WCAG 2.1] and https://www.access-board.gov/ict/[Section 508] rules, see the xref:a11ychecker.adoc[Accessibility Checker plugin].
+====
+
+[[accessibility-conformance-report-vpat]]
+== Accessibility Conformance Report (VPAT)
+
+An Accessibility Conformance Report (ACR) records how a product measures against a set of accessibility standards. {companyname} publishes these reports using the https://www.itic.org/policy/accessibility/vpat[Information Technology Industry Council (ITI) Voluntary Product Accessibility Template (VPAT)].
+
+The current report is listed first. Earlier reports are retained so that organizations running an earlier release can reference the report that applies to the version they have deployed.
+
+[cols="1,1,2",options="header"]
+|===
+|Version |Published |Report
+
+|{productname} 8
+|<Month YYYY>
+|xref:attachment$vpat/VPAT_TinyMCE_8.pdf[Download the Accessibility Conformance Report for {productname} 8] (PDF)
+
+|{productname} 7
+|<Month YYYY>
+|xref:attachment$vpat/VPAT_TinyMCE_7.pdf[Download the Accessibility Conformance Report for {productname} 7] (PDF)
+
+|{productname} 6
+|<Month YYYY>
+|xref:attachment$vpat/VPAT_TinyMCE_6.pdf[Download the Accessibility Conformance Report for {productname} 6] (PDF)
+|===
+
+Reports are reviewed twice a year and republished alongside a release. For the security and compliance documentation that {companyname} maintains outside of accessibility, see xref:security.adoc#security-assurance-and-compliance[Security assurance and compliance].
+
+[[reporting-an-accessibility-issue]]
+== Reporting an accessibility issue
+
+// CCFR here. Confirm the correct destination for accessibility reports before
+// publishing. The address below is a placeholder.
+
+To report an accessibility issue in {productname}, or to request an accommodation, contact {companyname} at mailto:<accessibility-contact>@tiny.cloud[<accessibility-contact>@tiny.cloud,{productname} accessibility issue].
+
+Include the following information where it is available:
+
+* The version of {productname} in use.
+* The browser, operating system, and assistive technology, including version numbers.
+* The steps required to reproduce the issue.
+* The expected behavior and the observed behavior.
+
+Customers with a support plan can also raise an accessibility issue through the link:{supporturl}[{companyname} support portal].
+
+[[known-limitations]]
+== Known limitations
+
+// CCFR here. Populate from the current Accessibility Conformance Report. Every
+// entry must correspond to a documented finding. Remove this section only if
+// the report records no outstanding findings.
+
+The following accessibility limitations are known and are recorded in the current Accessibility Conformance Report.
+
+[cols="2,2,1",options="header"]
+|===
+|Limitation |Affected area |Status
+
+|<description of the limitation>
+|<affected component or feature>
+|<open \| scheduled \| resolved in x.y>
+|===
+
+[[recommended-software]]
+== Recommended software
+
+// CCFR here. Populate from the assistive technology and browser combinations
+// that are actually covered by the accessibility test process.
+
+{productname} is tested against the following combinations of assistive technology and browser.
+
+[cols="1,1,1",options="header"]
+|===
+|Assistive technology |Operating system |Browser
+
+|<screen reader name and version>
+|<operating system>
+|<browser>
+|===
+
+{productname} is compatible with screen readers such as JAWS and NVDA. For the best experience, use https://www.nvaccess.org/[NVDA] together with https://www.mozilla.org/en-US/firefox/products/[Firefox].
+
+[[related-guides]]
+== Related guides
+
+* xref:tinymce-and-screenreaders.adoc[Accessible navigation guide] - how to operate the editor with a keyboard or a screen reader.
+* xref:keyboard-shortcuts.adoc[{productname} Keyboard shortcuts] - the complete keyboard shortcut reference.
+* xref:accessibility.adoc[Accessibility options] - the configuration options that affect keyboard and screen reader support.
+* xref:a11ychecker.adoc[Accessibility Checker plugin] - checks the content authored in the editor against WCAG and Section 508 rules.

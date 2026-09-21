@@ -4,11 +4,11 @@
 :description: The accessibility standards {productname} is developed against, the Accessibility Conformance Reports available for download, and how to report an accessibility issue.
 :keywords: accessibility, conformance, VPAT, ACR, WCAG, Section 508, EN 301 549, a11y
 
-// TINYDOC-3624. Author-time markers below are intentional. The conformance
-// statements in "Conformance targets", the entries in "Known limitations", and
-// the combinations in "Recommended software" are all placeholders. Each one
-// requires sign-off from outside Documentation before this page is merged to
-// tinymce/8. Do not publish this page with the placeholders in place.
+// TINYDOC-3624. Author-time markers below are intentional. The statements in
+// "Conformance targets" and the publication dates in "Accessibility Conformance
+// Report (VPAT)" are placeholders. Each requires sign-off from outside
+// Documentation before this page is merged to tinymce/8. Do not publish this
+// page with the placeholders in place.
 
 This page describes the accessibility standards that {productname} is developed against, provides the Accessibility Conformance Reports available for download, and explains how to report an accessibility issue.
 
@@ -19,7 +19,6 @@ For guidance on operating the editor with a keyboard or a screen reader, see the
 * xref:conformance-targets[Conformance targets]
 * xref:accessibility-conformance-report-vpat[Accessibility Conformance Report (VPAT)]
 * xref:reporting-an-accessibility-issue[Reporting an accessibility issue]
-* xref:known-limitations[Known limitations]
 * xref:recommended-software[Recommended software]
 * xref:related-guides[Related guides]
 
@@ -85,10 +84,7 @@ Reports are reviewed twice a year and republished alongside a release. For the s
 [[reporting-an-accessibility-issue]]
 == Reporting an accessibility issue
 
-// CCFR here. Confirm the correct destination for accessibility reports before
-// publishing. The address below is a placeholder.
-
-To report an accessibility issue in {productname}, or to request an accommodation, contact {companyname} at mailto:<accessibility-contact>@tiny.cloud[<accessibility-contact>@tiny.cloud,{productname} accessibility issue].
+To report an accessibility issue in {productname}, or to request an accommodation, contact {companyname} through the https://support.tiny.cloud/hc/en-us[{companyname} support portal].
 
 Include the following information where it is available:
 
@@ -97,44 +93,23 @@ Include the following information where it is available:
 * The steps required to reproduce the issue.
 * The expected behavior and the observed behavior.
 
-Customers with a support plan can also raise an accessibility issue through the link:{supporturl}[{companyname} support portal].
-
-[[known-limitations]]
-== Known limitations
-
-// CCFR here. Populate from the current Accessibility Conformance Report. Every
-// entry must correspond to a documented finding. Remove this section only if
-// the report records no outstanding findings.
-
-The following accessibility limitations are known and are recorded in the current Accessibility Conformance Report.
-
-[cols="2,2,1",options="header"]
-|===
-|Limitation |Affected area |Status
-
-|<description of the limitation>
-|<affected component or feature>
-|<open \| scheduled \| resolved in x.y>
-|===
-
 [[recommended-software]]
 == Recommended software
 
-// CCFR here. Populate from the assistive technology and browser combinations
-// that are actually covered by the accessibility test process.
+{productname} is compatible with the following screen readers.
 
-{productname} is tested against the following combinations of assistive technology and browser.
-
-[cols="1,1,1",options="header"]
+[cols="1,2",options="header"]
 |===
-|Assistive technology |Operating system |Browser
+|Screen reader |Vendor
 
-|<screen reader name and version>
-|<operating system>
-|<browser>
+|JAWS
+|https://vispero.com/jaws-screen-reader-software/[Vispero]
+
+|NVDA
+|https://www.nvaccess.org/[NV Access]
 |===
 
-{productname} is compatible with screen readers such as JAWS and NVDA. For the best experience, use https://www.nvaccess.org/[NVDA] together with https://www.mozilla.org/en-US/firefox/products/[Firefox].
+For the best experience, use https://www.nvaccess.org/[NVDA] together with https://www.mozilla.org/en-US/firefox/products/[Firefox].
 
 [[related-guides]]
 == Related guides

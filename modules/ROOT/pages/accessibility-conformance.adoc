@@ -2,13 +2,7 @@
 :navtitle: Accessibility conformance
 :description_short: Accessibility conformance information and conformance reports for TinyMCE.
 :description: The accessibility standards {productname} is developed against, the Accessibility Conformance Reports available for download, and how to report an accessibility issue.
-:keywords: accessibility, conformance, VPAT, ACR, WCAG, Section 508, EN 301 549, a11y
-
-// TINYDOC-3624. Author-time markers below are intentional. The statements in
-// "Conformance targets" and the publication dates in "Accessibility Conformance
-// Report (VPAT)" are placeholders. Each requires sign-off from outside
-// Documentation before this page is merged to tinymce/8. Do not publish this
-// page with the placeholders in place.
+:keywords: accessibility, conformance, VPAT, ACR, WCAG, a11y
 
 This page describes the accessibility standards that {productname} is developed against, provides the Accessibility Conformance Reports available for download, and explains how to report an accessibility issue.
 
@@ -18,6 +12,7 @@ For guidance on operating the editor with a keyboard or a screen reader, see the
 
 * xref:conformance-targets[Conformance targets]
 * xref:accessibility-conformance-report-vpat[Accessibility Conformance Report (VPAT)]
+* xref:known-limitations[Known limitations]
 * xref:reporting-an-accessibility-issue[Reporting an accessibility issue]
 * xref:recommended-software[Recommended software]
 * xref:related-guides[Related guides]
@@ -25,28 +20,18 @@ For guidance on operating the editor with a keyboard or a screen reader, see the
 [[conformance-targets]]
 == Conformance targets
 
-// CCFR here. Replace the placeholders below with the approved conformance
-// statement. Do not assert a standard, version, or level that the current
-// Accessibility Conformance Report does not support.
-
-{productname} is developed and tested against the following accessibility standards.
+{productname} is developed and tested against the following accessibility standard.
 
 [cols="1,1,2",options="header"]
 |===
 |Standard |Target |Applies to
 
-|https://www.w3.org/WAI/standards-guidelines/wcag/[Web Content Accessibility Guidelines (WCAG)] <version>
-|Level <A \| AA>
-|The editor user interface
-
-|https://www.access-board.gov/ict/[Section 508 of the Rehabilitation Act]
-|<conformance statement>
-|The editor user interface
-
-|https://www.etsi.org/standards[EN 301 549]
-|<conformance statement>
+|https://www.w3.org/WAI/standards-guidelines/wcag/[Web Content Accessibility Guidelines (WCAG)] 2.0, 2.1, and 2.2
+|Level A and Level AA
 |The editor user interface
 |===
+
+A target describes what {productname} is developed against. It is not a statement of full conformance. The Accessibility Conformance Report records the measured result for each individual success criterion, and the criteria that are not fully met are listed in xref:known-limitations[Known limitations].
 
 {productname} follows the https://www.w3.org/TR/wai-aria/[Web Accessibility Initiative - Accessible Rich Internet Applications (WAI-ARIA)] specification for the editor user interface.
 
@@ -60,31 +45,59 @@ These targets describe the accessibility of the {productname} user interface. Th
 
 An Accessibility Conformance Report (ACR) records how a product measures against a set of accessibility standards. {companyname} publishes these reports using the https://www.itic.org/policy/accessibility/vpat[Information Technology Industry Council (ITI) Voluntary Product Accessibility Template (VPAT)].
 
-The current report is listed first. Earlier reports are retained so that organizations running an earlier release can reference the report that applies to the version they have deployed.
+The current report uses the WCAG edition of the template. It covers WCAG 2.0, 2.1, and 2.2 at Level A and Level AA. It does not cover Section 508 or EN 301 549.
 
 [cols="1,1,2",options="header"]
 |===
 |Version |Published |Report
 
-|{productname} 8
-|<Month YYYY>
-|xref:attachment$vpat/VPAT_TinyMCE_8.pdf[Download the Accessibility Conformance Report for {productname} 8] (PDF)
-
-|{productname} 7
-|<Month YYYY>
-|xref:attachment$vpat/VPAT_TinyMCE_7.pdf[Download the Accessibility Conformance Report for {productname} 7] (PDF)
-
-|{productname} 6
-|<Month YYYY>
-|xref:attachment$vpat/VPAT_TinyMCE_6.pdf[Download the Accessibility Conformance Report for {productname} 6] (PDF)
+|{productname} 8.5
+|May 2026
+|xref:attachment$vpat/VPAT_TinyMCE_8.pdf[Download the Accessibility Conformance Report for {productname} 8.5] (PDF)
 |===
 
-Reports are reviewed twice a year and republished alongside a release. For the security and compliance documentation that {companyname} maintains outside of accessibility, see xref:security.adoc#security-assurance-and-compliance[Security assurance and compliance].
+The report was produced by expert evaluation through Axess Lab, together with testing across a range of assistive technologies.
+
+Reports are reviewed twice a year and republished alongside a release. When a newer report supersedes an earlier one, the earlier report is retained so that organizations running an earlier release can reference the report that applies to the version they have deployed. For the security and compliance documentation that {companyname} maintains outside of accessibility, see xref:security.adoc#security-assurance-and-compliance[Security assurance and compliance].
+
+[[known-limitations]]
+== Known limitations
+
+The following success criteria are recorded as partially supported in the current Accessibility Conformance Report. Each entry corresponds to a finding in that report.
+
+[cols="1,2,1",options="header"]
+|===
+|Success criterion |Limitation |Affected area
+
+|1.3.1 Info and Relationships (Level A)
+|Some relationships within tables are conveyed less clearly than they could be.
+|Tables
+
+|3.2.2 On Input (Level A)
+|Selecting a character inserts it immediately and closes the dialog, without advance notice that this will happen.
+|xref:charmap.adoc[Character Map plugin]
+
+|3.3.2 Labels or Instructions (Level A)
+|Buttons that insert invisible or control characters are labeled with those characters, which leaves the buttons without a visible label.
+|xref:charmap.adoc[Character Map plugin]
+
+|4.1.2 Name, Role, Value (Level A)
+|The character buttons in the dialog are not marked up as buttons.
+|xref:charmap.adoc[Character Map plugin]
+
+|1.4.11 Non-text Contrast (Level AA)
+|The contrast of the outlines drawn around block-level elements is insufficient.
+|xref:visualblocks.adoc[Visual Blocks plugin]
+
+|4.1.3 Status Messages (Level AA)
+|Changes to the search results are not communicated to assistive technologies.
+|xref:charmap.adoc[Character Map plugin]
+|===
 
 [[reporting-an-accessibility-issue]]
 == Reporting an accessibility issue
 
-To report an accessibility issue in {productname}, or to request an accommodation, contact {companyname} through the https://support.tiny.cloud/hc/en-us[{companyname} support portal].
+To report an accessibility issue in {productname}, or to request an accommodation, contact link:{supporturl}/[{supportname}].
 
 Include the following information where it is available:
 
@@ -109,7 +122,7 @@ Include the following information where it is available:
 |https://www.nvaccess.org/[NV Access]
 |===
 
-For the best experience, use https://www.nvaccess.org/[NVDA] together with https://www.mozilla.org/en-US/firefox/products/[Firefox].
+For the best experience, use https://www.nvaccess.org/[NVDA] together with https://www.mozilla.org/en-US/firefox/products/[Firefox]. Other browser and screen reader combinations are not as well supported, although the editor can be used with a wide variety of combinations.
 
 [[related-guides]]
 == Related guides

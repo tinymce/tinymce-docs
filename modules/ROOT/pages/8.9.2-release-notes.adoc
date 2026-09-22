@@ -81,9 +81,9 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== The `+diff+` API would show identical tables as a replacement due to whitespace in the input strings
 // #TINYMCE-14568
 
-Previously, the xref:revisionhistory.adoc#diff[`+diff+`] API compared the two HTML strings exactly as supplied, so the whitespace used to format them registered as content. Two fragments that rendered identically, such as the same table indented differently, were reported as a replacement instead of as unchanged content.
+Previously, the xref:revisionhistory.adoc#diff[`+diff+`] API compared the two HTML strings exactly as supplied. Two fragments that rendered identically, such as the same table indented differently, were reported as a replacement instead of as unchanged content.
 
-In {productname} {release-version}, the `+diff+` API normalizes both strings before comparing them, so formatting whitespace no longer registers as a difference. Fragments that render identically are now reported as unchanged.
+In {productname} {release-version}, the `+diff+` API normalizes both strings before comparing them. Fragments that render identically, regardless of the whitespace used to format the HTML, are now reported as unchanged.
 
 For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
 

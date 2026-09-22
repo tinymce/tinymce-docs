@@ -71,6 +71,20 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following fix.
+
+==== The `+diff+` API would show identical tables as a replacement due to whitespace in the input strings
+// #TINYMCE-14568
+
+Previously, the xref:revisionhistory.adoc#diff[`+diff+`] API compared the two HTML strings exactly as supplied. When the strings contained whitespace characters, for example, indentation, the API could produce an unexpected result. Specifically, identical strings containing an indented table in HTML were reported as a replacement instead of as unchanged content.
+
+In {productname} {release-version}, the `+diff+` API normalizes both strings before comparing them. Fragments that render identically, regardless of the whitespace used to format the HTML, are now reported as unchanged.
+
+For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
 
 === Spell Checker
 

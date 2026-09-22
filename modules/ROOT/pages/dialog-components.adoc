@@ -226,7 +226,6 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 *When configured, the button will display the icon instead of text.*
 |buttonType |`+'primary'+`, `+'secondary'+`, or `+'toolbar'+` |optional |default: `+'secondary'+` - Whether to style the button as a primary, secondary, or toolbar button.
 |borderless |boolean |optional |default: `+false+` - Whether to style the button without a border and background color.
-4+|
 |context |string |optional |default: `mode:design` - The context property dynamically enables or disables the button based on the editor's current state. Only effective when `+enabled+` is true. For details, see: xref:context.adoc[Context].
 |===
 
@@ -421,7 +420,6 @@ An *input* is a composite component that renders a label and a single line text 
 |placeholder |string |optional |String of placeholder text for the input field.
 |enabled |boolean |optional |Allows the field to be disabled. Default is `+true+`.
 |inputMode |string |optional |Allows for the specification of input type for displaying contextual onscreen keyboards on mobile devices.
-4+|
 |context |string |optional |default: `mode:design` - The context property dynamically enables or disables the input based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===
 
@@ -754,7 +752,6 @@ If `picker_text` is not specified, the tooltip defaults to the value provided by
 
 This option *requires* `+file_picker_callback+` to be configured.
 
-4+|
 |context |string |optional |default: `mode:design` - The context property dynamically enables or disables the urlinput based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===
 

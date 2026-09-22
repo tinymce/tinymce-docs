@@ -71,7 +71,6 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
-
 === Revision History
 
 The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
@@ -86,6 +85,21 @@ Previously, the xref:revisionhistory.adoc#diff[`+diff+`] API compared the two HT
 In {productname} {release-version}, the `+diff+` API normalizes both strings before comparing them. Fragments that render identically, regardless of the whitespace used to format the HTML, are now reported as unchanged.
 
 For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
+
+=== Spell Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Spell Checker** premium plugin.
+
+**Spell Checker** includes the following fix.
+
+==== Could not apply a suggestion from the context menu while the dialog was open
+// #TINYMCE-14687
+
+Previously, choosing a spelling suggestion from the context menu had no effect while the Spell Checker dialog was open. Closing the dialog discarded the stored suggestions before the plugin could apply the selected one, so the misspelled word remained unchanged.
+
+In {productname} {release-version}, the **Spell Checker** plugin retains the suggestions long enough to apply the selection. Choosing a suggestion from the context menu now replaces the misspelled word.
+
+For information on the **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

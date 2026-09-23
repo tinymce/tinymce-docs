@@ -1,32 +1,23 @@
 #!/usr/bin/env node
 
 /**
- * Script to generate llms.txt and llms-full.txt files from sitemap.xml
- * 
+ * Generates llms.txt and llms-full.txt from a built site.
+ *
  * Usage:
- *   node -scripts/generate-llm-files.js [sitemap-path-or-url]
- * 
- * Defaults to build/site/sitemap.xml (local) or can use remote URL
+ *   node -scripts/generate-llm-files.js [buildDir]
+ *
+ * buildDir defaults to build/site. Run it after the markdown step
+ * (yarn build:markdown), because page titles are read from each page's
+ * generated index.md rather than fetched from the published site.
  */
 
 const fs = require('fs');
 const path = require('path');
-const https = require('https');
-const http = require('http');
-const sanitizeHtml = require('sanitize-html');
 
 const BASE_URL = 'https://www.tiny.cloud/docs/tinymce/latest';
 const DOCS_ROOT_URL = 'https://www.tiny.cloud/docs';
-const ATTACHMENTS_DIR = path.join(__dirname, '../modules/ROOT/attachments');
 const DEFAULT_BUILD_DIR = path.join(__dirname, '../build/site');
 
-// Resolve where the sitemap is read from and where the generated files are written.
-// The argument may be a build directory, a sitemap file, or a remote sitemap URL:
-//   generate-llm-files build/site               -> reads build/site/sitemap.xml, writes build/site
-//   generate-llm-files build/site/sitemap.xml   -> writes build/site
-//   generate-llm-files https://.../sitemap.xml  -> writes modules/ROOT/attachments
-// The remote form preserves the manual workflow, where the output is reviewed and
-// committed. The local forms write into the build so the deploy needs no commit.
 // The generated files describe a single documentation version — parseSitemap() keeps
 // only the URLs under BASE_URL — so they must be published to that version's
 // attachments directory and no other. The path is derived from BASE_URL rather than
@@ -52,12 +43,6 @@ function versionAttachmentDir(buildDir) {
 // root. The fallback keeps /docs/llms.txt correct — and keeps copy-llms-files.sh's
 // existence check passing — if the version segment ever changes.
 function writeGenerated(outputDir, filename, contents) {
-  if (path.resolve(outputDir) === path.resolve(ATTACHMENTS_DIR)) {
-    const target = path.join(outputDir, filename);
-    fs.writeFileSync(target, contents);
-    return [target];
-  }
-
   const attachmentDir = versionAttachmentDir(outputDir);
 
   if (!attachmentDir) {
@@ -72,24 +57,6 @@ function writeGenerated(outputDir, filename, contents) {
   return [target];
 }
 
-function resolveTargets(arg) {
-  if (!arg) {
-    return { sitemap: path.join(DEFAULT_BUILD_DIR, 'sitemap.xml'), outputDir: DEFAULT_BUILD_DIR };
-  }
-
-  if (arg.startsWith('http://') || arg.startsWith('https://')) {
-    return { sitemap: arg, outputDir: ATTACHMENTS_DIR };
-  }
-
-  const resolved = path.resolve(arg);
-
-  if (fs.existsSync(resolved) && fs.statSync(resolved).isDirectory()) {
-    return { sitemap: path.join(resolved, 'sitemap.xml'), outputDir: resolved };
-  }
-
-  return { sitemap: resolved, outputDir: path.dirname(resolved) };
-}
-
 // Convert a trailing-slash doc URL to its Markdown endpoint.
 // e.g. https://www.tiny.cloud/docs/tinymce/latest/basic-setup/
 //   -> https://www.tiny.cloud/docs/tinymce/latest/basic-setup/index.md
@@ -102,38 +69,14 @@ function toMarkdownEndpoints(content) {
   );
 }
 
-// Fetch sitemap from URL or file
-async function getSitemap(source) {
-  if (source.startsWith('http://') || source.startsWith('https://')) {
-    return new Promise((resolve, reject) => {
-      const client = source.startsWith('https') ? https : http;
-      client.get(source, (res) => {
-        let data = '';
-        res.on('data', (chunk) => { data += chunk; });
-        res.on('end', () => resolve(data));
-      }).on('error', reject);
-    });
-  } else {
-    // Validate file path to prevent path traversal
-    const resolvedPath = path.resolve(source);
-    const projectRoot = path.resolve(__dirname, '..');
-    
-    // Ensure the resolved path is within the project directory
-    if (!resolvedPath.startsWith(projectRoot)) {
-      throw new Error(`Invalid sitemap path: ${source}. Path must be within the project directory.`);
-    }
-    
-    if (!fs.existsSync(resolvedPath)) {
-      throw new Error(`Sitemap not found: ${source}\nPlease run 'yarn antora ./antora-playbook.yml' first to generate the site, or provide a URL.`);
-    }
-    
-    // Only allow .xml files
-    if (!resolvedPath.endsWith('.xml')) {
-      throw new Error(`Invalid file type: ${source}. Only .xml files are allowed.`);
-    }
-    
-    return fs.readFileSync(resolvedPath, 'utf8');
+function readSitemap(buildDir) {
+  const sitemapPath = path.join(buildDir, 'sitemap.xml');
+
+  if (!fs.existsSync(sitemapPath)) {
+    throw new Error(`Sitemap not found: ${sitemapPath}\nBuild the site first: yarn antora ./antora-playbook.yml`);
   }
+
+  return fs.readFileSync(sitemapPath, 'utf8');
 }
 
 // Parse sitemap.xml to extract all URLs
@@ -162,331 +105,49 @@ function getUrlPath(url) {
   return match ? match[1].replace(/\/$/, '') : '';
 }
 
-// Fetch H1 title from a page URL
-async function fetchH1Title(url) {
-  return new Promise((resolve) => {
-    // Validate URL to prevent SSRF - only allow tiny.cloud domains
-    if (!url.startsWith('https://www.tiny.cloud/') && !url.startsWith('http://www.tiny.cloud/')) {
-      resolve(null);
-      return;
-    }
-    
-    const client = url.startsWith('https') ? https : http;
-    
-    // codeql[js/file-access-to-http]: URL is validated to only allow tiny.cloud domains, preventing SSRF attacks
-    const req = client.get(url, (res) => {
-      // Check for error status codes (404, 500, etc.)
-      if (res.statusCode >= 400) {
-        resolve(null);
-        return;
-      }
-      
-      let data = '';
-      
-      res.on('data', (chunk) => { data += chunk; });
-      
-      res.on('end', () => {
-        try {
-          // Extract H1 tag using regex - look for <h1> or <h1 class="...">
-          const h1Match = data.match(/<h1[^>]*>(.*?)<\/h1>/i);
-          
-          if (h1Match && h1Match[1]) {
-            // Clean up the title using a well-tested HTML sanitization library
-            let title = h1Match[1];
-
-            // First, use sanitize-html to strip all HTML tags and attributes while preserving text.
-            // This avoids fragile hand-written tag parsing and multi-character sanitization pitfalls.
-            title = sanitizeHtml(title, {
-              allowedTags: [],
-              allowedAttributes: {},
-              textFilter: (text) => text
-            });
-
-            // Then, defensively remove any remaining angle brackets and script/protocol keywords
-            // to ensure no HTML-like or script-related fragments remain.
-            title = title
-              .replace(/[<>]/g, '')
-              .replace(/(?:javascript|data|vbscript)\s*:?/gi, '')
-              .replace(/\bscript\b/gi, '')
-              .trim();
-
-            // At this point, title is plain text with no angle brackets or script/protocol keywords
-            // Additionally, defensively strip any residual script/protocol keywords that could
-            // be used for injection even after angle brackets and colons have been removed
-            title = title.replace(/\b(?:script|javascript|vbscript|data)\b/gi, '');
-            
-            // Decode HTML entities safely - decode all entities to plain text
-            // Order matters: decode '&' last to avoid double-unescaping
-            // Decode all specific entities first, then &amp; at the end
-            title = title
-              .replace(/&nbsp;/g, ' ')
-              .replace(/&quot;/g, '"')
-              .replace(/&#39;/g, "'")
-              .replace(/&#8217;/g, "'") // Right single quotation mark (apostrophe)
-              .replace(/&#8216;/g, "'") // Left single quotation mark
-              .replace(/&#8220;/g, '"') // Left double quotation mark
-              .replace(/&#8221;/g, '"') // Right double quotation mark
-              .replace(/&#8211;/g, '–') // En dash
-              .replace(/&#8212;/g, '—') // Em dash
-              .replace(/&#160;/g, ' ') // Non-breaking space
-              // Decode numeric entities (&#123; format) - safe as we've already removed HTML tags
-              .replace(/&#(\d+);/g, (match, dec) => {
-                const code = parseInt(dec, 10);
-                // Only decode safe character codes (printable ASCII and valid Unicode)
-                if ((code >= 32 && code <= 126) || (code >= 160 && code <= 1114111)) {
-                  return String.fromCharCode(code);
-                }
-                return match; // Keep entity if unsafe
-              })
-              // Decode hex entities (&#x1F; format)
-              .replace(/&#x([0-9a-fA-F]+);/gi, (match, hex) => {
-                const code = parseInt(hex, 16);
-                // Only decode safe character codes
-                if ((code >= 32 && code <= 126) || (code >= 160 && code <= 1114111)) {
-                  return String.fromCharCode(code);
-                }
-                return match; // Keep entity if unsafe
-              })
-              // Decode remaining named entities (after numeric/hex to avoid conflicts)
-              .replace(/&lt;/g, '<') // Safe: HTML tags already removed
-              .replace(/&gt;/g, '>') // Safe: HTML tags already removed
-              .replace(/&amp;/g, '&') // Decode '&' last to prevent double-unescaping
-              .trim();
-            
-            // Remove extra whitespace
-            title = title.replace(/\s+/g, ' ');
-            
-            // Filter out error page titles
-            const errorPatterns = [
-              /couldn't find the page/i,
-              /page not found/i,
-              /404/i,
-              /error/i,
-              /not found/i
-            ];
-            
-            if (errorPatterns.some(pattern => pattern.test(title))) {
-              resolve(null);
-              return;
-            }
-            
-            if (title) {
-              resolve(title);
-            } else {
-              resolve(null);
-            }
-          } else {
-            // Fallback to generated title if no H1 found
-            resolve(null);
-          }
-        } catch (error) {
-          // If parsing fails, fallback to generated title
-          resolve(null);
-        }
-      });
-    });
-    
-    req.on('error', (error) => {
-      // If fetch fails, fallback to generated title
-      resolve(null);
-    });
-    
-    req.setTimeout(10000, () => {
-      req.destroy();
-      resolve(null);
-    });
-  });
+// The markdown sibling of a page URL, in the build directory.
+function markdownPathFor(buildDir, url) {
+  return path.join(buildDir, url.slice(DOCS_ROOT_URL.length), 'index.md');
 }
 
-// Batch fetch H1 titles with rate limiting
-async function fetchH1TitlesBatch(urls, batchSize = 10, delay = 100) {
-  const results = new Map();
-  
-  for (let i = 0; i < urls.length; i += batchSize) {
-    const batch = urls.slice(i, i + batchSize);
-    const promises = batch.map(async (url) => {
-      const title = await fetchH1Title(url);
-      return { url, title };
-    });
-    
-    const batchResults = await Promise.all(promises);
-    batchResults.forEach(({ url, title }) => {
-      results.set(url, title);
-    });
-    
-    // Rate limiting - wait between batches
-    if (i + batchSize < urls.length) {
-      await new Promise(resolve => setTimeout(resolve, delay));
+// Parse the frontmatter written by scripts/generate-markdown.mjs: one
+// `key: "string"` or `key: number` pair per line, strings escaped by escapeYaml.
+function parseFrontmatter(markdown) {
+  const match = markdown.match(/^---\n([\s\S]*?)\n---\n/);
+  if (!match) return null;
+
+  const fields = {};
+  for (const line of match[1].split('\n')) {
+    const pair = line.match(/^([a-z_]+): (?:"((?:[^"\\]|\\.)*)"|(\d+))$/);
+    if (pair) {
+      fields[pair[1]] = pair[3] !== undefined ? Number(pair[3]) : pair[2].replace(/\\(.)/g, '$1');
     }
   }
-  
-  return results;
+  return { fields, body: markdown.slice(match[0].length) };
 }
 
-// Generate a descriptive title from URL path
-// NOTE: This script does A LOT of string matching against URL paths. If you encounter
-// weirdness (e.g. wrong titles, wrong categories), search for the relevant path strings
-// in this file to locate and fix the matching logic.
-function generateTitleFromPath(urlPath) {
-  if (!urlPath) return 'Home';
+// Read every page's generated markdown. Every sitemap page must have one: the
+// markdown step skips a page with no article element, and a page missing here
+// would silently drop out of both LLM files.
+function readPages(buildDir, urls) {
+  const missing = [];
+  const pages = new Map();
 
-  const pathTitleMap = {
-    '': 'Home',
-    'index': 'Home',
-    'getting-started': 'Getting Started',
-    'introduction-to-tinymce': 'Introduction to TinyMCE',
-    'installation': 'Installation',
-    'cloud-quick-start': 'Cloud Quick Start',
-    'npm-projects': 'NPM Projects Quick Start',
-    'zip-install': 'ZIP Installation Quick Start',
-    'installation-cloud': 'Cloud',
-    'installation-self-hosted': 'Self-hosted',
-    'installation-zip': 'ZIP',
-    'basic-setup': 'Basic Setup',
-    'work-with-plugins': 'Using plugins to extend TinyMCE',
-    'filter-content': 'Content Filtering',
-    'content-filtering': 'Content filtering',
-    'localize-your-language': 'Localization',
-    'spell-checking': 'Spell Checking',
-    'editor-content-css': 'CSS for rendering content',
-    'url-handling': 'URL Handling',
-    'plugins': 'Plugins',
-    'table': 'Table',
-    'table-options': 'Table options',
-    'image': 'Image',
-    'link': 'Link',
-    'lists': 'Lists',
-    'code': 'Code',
-    'codesample': 'Code Sample',
-    'advtable': 'Enhanced Tables',
-    'advcode': 'Enhanced Code Editor',
-    'editimage': 'Image Editing',
-    'linkchecker': 'Link Checker',
-    'a11ychecker': 'Accessibility Checker',
-    'upgrading': 'Upgrading TinyMCE',
-    'migration-guides': 'Migration Guides Overview',
-    'migration-from-7x': 'Migration from 7.x',
-    'migration-from-6x': 'Migration from 6.x',
-    'migration-from-6x-to-8x': 'Migration from 6.x to 8.x',
-    'migration-from-5x': 'Migration from 5.x',
-    'migration-from-5x-to-8x': 'Migration from 5.x to 8.x',
-    'migration-from-4x': 'Migration from 4.x',
-    'migration-from-4x-to-8x': 'Migration from 4.x to 8.x',
-    'migration-from-froala': 'Migrating from Froala',
-    'examples': 'Examples',
-    'how-to-guides': 'How To Guides',
-    'release-notes': 'Release Notes',
-    'changelog': 'Changelog',
-    'accessibility': 'Accessibility',
-    'security': 'Security guide',
-    'support': 'Support',
-    'react': 'React',
-    'react-cloud': 'React Cloud',
-    'react-pm-host': 'React Package Manager',
-    'react-pm-bundle': 'React Package Manager (with bundling)',
-    'react-zip-host': 'React ZIP',
-    'react-zip-bundle': 'React ZIP (with bundling)',
-    'react-ref': 'Technical reference (React)',
-    'vue': 'Vue.js',
-    'vue-cloud': 'Vue Cloud',
-    'vue-pm': 'Vue Package Manager',
-    'vue-pm-bundle': 'Vue Package Manager (with bundling)',
-    'vue-zip': 'Vue ZIP',
-    'vue-ref': 'Technical reference (Vue)',
-    'angular': 'Angular',
-    'angular-cloud': 'Angular Cloud',
-    'angular-pm': 'Angular Package Manager',
-    'angular-pm-bundle': 'Angular Package Manager (with bundling)',
-    'angular-zip': 'Angular ZIP',
-    'angular-zip-bundle': 'Angular ZIP (with bundling)',
-    'angular-ref': 'Technical reference (Angular)',
-    'blazor': 'Blazor',
-    'blazor-cloud': 'Blazor Cloud',
-    'blazor-pm': 'Blazor Package Manager',
-    'blazor-zip': 'Blazor ZIP',
-    'blazor-ref': 'Technical reference (Blazor)',
-    'svelte': 'Svelte',
-    'svelte-cloud': 'Svelte Cloud',
-    'svelte-pm': 'Svelte Package Manager',
-    'svelte-pm-bundle': 'Svelte Package Manager (with bundling)',
-    'svelte-zip': 'Svelte ZIP',
-    'svelte-ref': 'Technical reference (Svelte)',
-    'webcomponent': 'Web Component',
-    'webcomponent-cloud': 'Web Component Cloud',
-    'webcomponent-pm': 'Web Component Package Manager',
-    'webcomponent-zip': 'Web Component ZIP',
-    'webcomponent-ref': 'Technical reference (Web Component)',
-    'jquery': 'jQuery',
-    'jquery-cloud': 'jQuery Cloud',
-    'jquery-pm': 'jQuery Package Manager',
-    'django': 'Django',
-    'django-cloud': 'Django Cloud',
-    'django-zip': 'Django ZIP',
-    'laravel': 'Laravel',
-    'laravel-tiny-cloud': 'Laravel Cloud',
-    'laravel-composer-install': 'Laravel Composer',
-    'laravel-zip-install': 'Laravel ZIP',
-    'rails': 'Ruby on Rails',
-    'rails-cloud': 'Rails Cloud',
-    'rails-third-party': 'Rails Package Manager',
-    'rails-zip': 'Rails ZIP',
-    'expressjs-pm': 'Node.js + Express',
-    'bootstrap': 'Bootstrap',
-    'bootstrap-cloud': 'Bootstrap Cloud',
-    'bootstrap-zip': 'Bootstrap ZIP',
-    'php-projects': 'PHP Projects',
-    'dotnet-projects': '.NET Projects',
-    'wordpress': 'WordPress',
-    'shadow-dom': 'Shadow DOM',
-    'swing': 'Java Swing'
-  };
-
-  if (pathTitleMap[urlPath]) {
-    return pathTitleMap[urlPath];
+  for (const url of urls) {
+    const mdPath = markdownPathFor(buildDir, url);
+    const parsed = fs.existsSync(mdPath) ? parseFrontmatter(fs.readFileSync(mdPath, 'utf8')) : null;
+    if (!parsed || !parsed.fields.title) {
+      missing.push(url);
+    } else {
+      pages.set(url, parsed);
+    }
   }
 
-  // Handle release notes
-  if (urlPath.match(/^\d+\.\d+\.\d+-release-notes$/)) {
-    const version = urlPath.replace('-release-notes', '');
-    return `TinyMCE ${version}`;
+  if (missing.length) {
+    throw new Error(`${missing.length} sitemap page(s) have no generated markdown (run yarn build:markdown first):\n  ${missing.join('\n  ')}`);
   }
 
-  // Handle bundling entries (order matters: more specific keys first)
-  const bundlingTitles = {
-    'webpack-cjs-npm': 'CommonJS and NPM (Webpack)',
-    'webpack-es6-npm': 'ES6 and NPM (Webpack)',
-    'webpack-cjs-download': 'CommonJS and a .zip archive (Webpack)',
-    'webpack-es6-download': 'ES6 and a .zip archive (Webpack)',
-    'rollup-es6-npm': 'ES6 and npm (Rollup)',
-    'rollup-es6-download': 'ES6 and a .zip archive (Rollup)',
-    'vite-es6-npm': 'ES6 and NPM (Vite)',
-    'browserify-cjs-npm': 'CommonJS and npm (Browserify)',
-    'browserify-cjs-download': 'CommonJS and a .zip archive (Browserify)'
-  };
-  const bundlingMatch = Object.keys(bundlingTitles).find((k) => urlPath.includes(k));
-  if (bundlingMatch) {
-    return bundlingTitles[bundlingMatch];
-  }
-  
-  // Handle API references
-  if (urlPath.startsWith('apis/')) {
-    const apiPath = urlPath.replace('apis/', '');
-    return apiPath.split('/').pop().replace(/\.adoc$/, '');
-  }
-  
-  // Convert kebab-case to Title Case
-  const words = urlPath
-    .replace(/-/g, ' ')
-    .split(' ')
-    .map(word => {
-      // Handle acronyms
-      if (word.toLowerCase() === 'npm' || word.toLowerCase() === 'cjs' || word.toLowerCase() === 'es6') {
-        return word.toUpperCase();
-      }
-      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-    });
-  
-  return words.join(' ');
+  return pages;
 }
 
 // Categorize URL based on path
@@ -762,43 +423,19 @@ function makeTitlesUnique(entries) {
 }
 
 // Generate llms-full.txt
-async function generateLLMsFullTxt(urls) {
-  console.log(`Fetching H1 titles from ${urls.length} pages...`);
-  console.log('This may take a few minutes...');
-  
-  // Fetch H1 titles from all pages
-  const h1Titles = await fetchH1TitlesBatch(urls, 10, 100);
-  
-  let fetchedCount = 0;
-  let fallbackCount = 0;
-  
-  // Process all URLs
+function generateLLMsFullTxt(urls, pages) {
   const entries = urls.map(url => {
     const urlPath = getUrlPath(url);
-    const fetchedTitle = h1Titles.get(url);
-    const generatedTitle = generateTitleFromPath(urlPath);
-    
-    // Use fetched H1 if available, otherwise fallback to generated
-    const title = fetchedTitle || generatedTitle;
-    
-    if (fetchedTitle) {
-      fetchedCount++;
-    } else {
-      fallbackCount++;
-    }
-    
     const catInfo = categorizeUrl(urlPath);
     
     return {
       url,
       urlPath,
-      title,
+      title: pages.get(url).fields.title,
       category: catInfo.category,
       subcategory: catInfo.subcategory
     };
   });
-  
-  console.log(`✓ Fetched ${fetchedCount} H1 titles, ${fallbackCount} used fallback titles`);
   
   // Remove duplicate URLs (keep first occurrence) - should already be unique from parseSitemap, but double-check
   const seenUrls = new Set();
@@ -1324,38 +961,35 @@ For a complete list of all ${urls.length} documentation pages, see [llms-full.tx
 }
 
 // Main execution
-async function main() {
-  const { sitemap: sitemapSource, outputDir } = resolveTargets(process.argv[2]);
+function main() {
+  const buildDir = path.resolve(process.argv[2] || DEFAULT_BUILD_DIR);
 
   console.log('Generating LLM files...');
-  console.log(`Using sitemap: ${sitemapSource}`);
-  console.log(`Writing to:    ${outputDir}`);
+  console.log(`Using build: ${buildDir}`);
 
-  if (!fs.existsSync(outputDir)) {
-    throw new Error(`Output directory does not exist: ${outputDir}`);
+  if (!fs.existsSync(buildDir) || !fs.statSync(buildDir).isDirectory()) {
+    throw new Error(`Build directory does not exist: ${buildDir}`);
   }
 
-  try {
-    const sitemapContent = await getSitemap(sitemapSource);
-    const urls = parseSitemap(sitemapContent);
-    console.log(`Found ${urls.length} unique URLs in sitemap`);
-    
-    const llmsTxt = toMarkdownEndpoints(generateLLMsTxt(urls));
-    const llmsTxtPaths = writeGenerated(outputDir, 'llms.txt', llmsTxt);
-    llmsTxtPaths.forEach((p) => console.log(`✓ Wrote ${p}`));
+  const urls = parseSitemap(readSitemap(buildDir));
+  console.log(`Found ${urls.length} unique URLs in sitemap`);
 
-    const llmsFullTxt = toMarkdownEndpoints(await generateLLMsFullTxt(urls));
-    const llmsFullPaths = writeGenerated(outputDir, 'llms-full.txt', llmsFullTxt);
-    llmsFullPaths.forEach((p) => console.log(`✓ Wrote ${p}`));
-    
+  const pages = readPages(buildDir, urls);
+
+  const llmsTxt = toMarkdownEndpoints(generateLLMsTxt(urls));
+  writeGenerated(buildDir, 'llms.txt', llmsTxt).forEach((p) => console.log(`✓ Wrote ${p}`));
+
+  const llmsFullTxt = toMarkdownEndpoints(generateLLMsFullTxt(urls, pages));
+  writeGenerated(buildDir, 'llms-full.txt', llmsFullTxt).forEach((p) => console.log(`✓ Wrote ${p}`));
+}
+
+if (require.main === module) {
+  try {
+    main();
   } catch (error) {
     console.error('Error:', error.message);
     process.exit(1);
   }
 }
 
-if (require.main === module) {
-  main();
-}
-
-module.exports = { generateLLMsTxt, generateLLMsFullTxt, parseSitemap, getSitemap, fetchH1Title, fetchH1TitlesBatch };
+module.exports = { generateLLMsTxt, generateLLMsFullTxt, parseSitemap, parseFrontmatter };

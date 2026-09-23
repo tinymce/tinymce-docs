@@ -24,6 +24,9 @@ import { encode } from 'gpt-tokenizer';
 
 const BUILD_DIR = process.argv[2] || 'build/site';
 const PAGE_DATES_FILE = process.env.PAGE_DATES_FILE || '.cache/page-dates.json';
+
+// Version of the _markdown-manifest.json shape. Increment on any breaking change.
+const MANIFEST_SCHEMA = 1;
 const SITE_URL = 'https://www.tiny.cloud/docs';
 
 // Not a documentation page: the site's 404 page is served for any missing path.
@@ -392,7 +395,16 @@ const main = async () => {
       withRawLinks.map((page) => `${page.path} (${page.rawLinks})`).join('\n  '));
   }
 
-  const manifest = Object.fromEntries(pages.map(({ path, tokens }) => [ path, tokens ]));
+  const manifest = {
+    schema: MANIFEST_SCHEMA,
+    generated: new Date().toISOString().replace(/\.\d{3}Z$/, 'Z'),
+    pages: Object.fromEntries(
+      pages
+        .sort((a, b) => a.path.localeCompare(b.path))
+        .map(({ path, title, description, md_url, version, last_updated, tokens }) =>
+          [ path, { title, description, md_url, version, last_updated, tokens } ])
+    ),
+  };
   const manifestPath = join(BUILD_DIR, '_markdown-manifest.json');
   await writeFile(manifestPath, JSON.stringify(manifest, null, 2) + '\n', 'utf-8');
 

@@ -59,4 +59,4 @@ include::partial$module-loading/bundling-external-plugins-npm.adoc[]
 };
 ----
 +
-NOTE: The `+license_key: 'gpl'+` value is for use under the GNU General Public License (GPL). To use a commercial license, replace `+'gpl'+` with the license key. For details, see xref:license-key.adoc[License key].
+include::partial$misc/admon-bundling-license-key.adoc[]

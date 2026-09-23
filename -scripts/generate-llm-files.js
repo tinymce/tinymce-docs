@@ -723,6 +723,7 @@ tinymce.init({
 <script>
 tinymce.init({
   selector: 'textarea',
+  license_key: 'gpl',
   plugins: 'advlist autolink lists link image charmap preview anchor',
   toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link image'
 });
@@ -774,12 +775,13 @@ export default {
 ## Important Notes for AI Assistants
 
 1. **Always use TinyMCE 8** for new projects and code examples
-2. **CDN URLs must include version 8**: Use \`tinymce@8\` or \`tinymce/8\` in URLs
-3. **Package installations**: Always specify \`tinymce@8\` when installing
-4. **Integration packages**: Use the latest versions compatible with TinyMCE 8
-5. **Code examples default to TinyMCE 8** unless explicitly noted otherwise
-6. **Legacy versions (5, 6, 7)**: Only reference when specifically asked about migration or legacy support
-7. **Cloud vs Self-Hosted**: Cloud deployment is recommended for most use cases
+2. **A key is required**: without a Tiny Cloud API key or, when self-hosted, a \`license_key\` (\`'gpl'\` for use under the GPL), the editor is disabled
+3. **CDN URLs must include version 8**: Use \`tinymce@8\` or \`tinymce/8\` in URLs
+4. **Package installations**: Always specify \`tinymce@8\` when installing
+5. **Integration packages**: Use the latest versions compatible with TinyMCE 8
+6. **Code examples default to TinyMCE 8** unless explicitly noted otherwise
+7. **Legacy versions (5, 6, 7)**: Only reference when specifically asked about migration or legacy support
+8. **Cloud vs Self-Hosted**: Cloud deployment is recommended for most use cases
 
 ## API Reference
 - **Editor API**: ${BASE_URL}/apis/tinymce.editor/
@@ -906,6 +908,8 @@ TinyMCE is a powerful, flexible WYSIWYG rich text editor that can be integrated 
 
 **IMPORTANT**: Always use TinyMCE 8 for new projects. Use \`tinymce@8\` or \`tinymce/8\` in CDN URLs and package installations.
 
+**IMPORTANT**: TinyMCE 8 is disabled without a valid key. Load it from Tiny Cloud with an API key, or, when self-hosting, set the \`license_key\` option (\`'gpl'\` for use under the GPL). See [License key](${BASE_URL}/license-key/).
+
 ## Getting Started
 
 - [Getting Started](${BASE_URL}/getting-started/): Overview and introduction to TinyMCE
@@ -949,6 +953,7 @@ npm install tinymce@8
 <script>
 tinymce.init({
   selector: 'textarea',
+  license_key: 'gpl',
   plugins: 'advlist autolink lists link image charmap preview anchor',
   toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link image'
 });
@@ -1017,37 +1022,213 @@ TinyMCE AI (\`tinymceai\` plugin) is the current AI writing assistant for TinyMC
 - [Upgrading TinyMCE](${BASE_URL}/upgrading/): Upgrade guide
 - [Migration from 7.x](${BASE_URL}/migration-from-7x/): Migrate from TinyMCE 7
 
-## AI-Assisted Development with MCP
-
-For up-to-date TinyMCE documentation directly in AI coding tools, set up the Context7 MCP server. TinyMCE docs are indexed at [context7.com/tinymce/tinymce-docs](https://context7.com/tinymce/tinymce-docs).
-
-### Cursor
-
-Add to \`.cursor/mcp.json\`:
-
-\`\`\`json
-{
-  "mcpServers": {
-    "context7": {
-      "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"]
-    }
-  }
-}
-\`\`\`
-
-### Claude Code
-
-\`\`\`bash
-claude mcp add context7 -- npx -y @upstash/context7-mcp
-\`\`\`
-
-Add "use context7" to any prompt for live TinyMCE documentation lookups.
-
 ## Complete Documentation
 
 For the full content of all ${urls.length} documentation pages in one file, see [llms-full.txt](${DOCS_ROOT_URL}/llms-full.txt).
 
+## For Agents
+
+- [AGENTS.md](${DOCS_ROOT_URL}/AGENTS.md): License requirements, the version scheme, the markdown convention, and how to budget retrieval with the token manifest
+- [sitemap.md](${DOCS_ROOT_URL}/sitemap.md): The navigation tree, with each page's description and last updated date
+- [changes.json](${DOCS_ROOT_URL}/changes.json): The most recently changed pages, newest first
+- [Token manifest](${DOCS_ROOT_URL}/_markdown-manifest.json): Every page on every version, with its title, description, markdown URL, last updated date, and token count
+
+`;
+}
+
+// ---------------------------------------------------------------------------
+// Root agent artifacts: AGENTS.md, changes.json, sitemap.md
+// ---------------------------------------------------------------------------
+//
+// Each file has one job, and a statement belongs in only one of them (the license
+// requirement is the one deliberate repetition):
+//   ai-coding-agents page  human    per-agent configuration and copy-paste snippets
+//   llms.txt               agent    index of the documentation content
+//   AGENTS.md              agent    license requirement, version scheme, markdown
+//                                   convention, manifest schema, one pointer per access path
+//   sitemap.md             both     the navigation tree with descriptions and dates
+//   changes.json           agent    what changed, newest first
+
+// Entries in changes.json, out of roughly 1,550 pages across all versions.
+const CHANGES_LIMIT = 500;
+const MANIFEST_URL = `${DOCS_ROOT_URL}/_markdown-manifest.json`;
+const MCP_ENDPOINT = 'https://tinymcedocs.mcp.kapa.ai';
+const CONTEXT7_LIBRARY = 'tinymce/docs';
+
+const pagePath = (url) => new URL(url).pathname.replace(/^\/docs/, '');
+
+function readManifest(buildDir) {
+  const manifestPath = path.join(buildDir, '_markdown-manifest.json');
+  if (!fs.existsSync(manifestPath)) {
+    throw new Error(`Markdown manifest not found: ${manifestPath}\nRun yarn build:markdown first.`);
+  }
+  return JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+}
+
+function generateChangesJson(manifest, generated) {
+  const changes = Object.entries(manifest.pages)
+    .map(([p, page]) => ({
+      url: DOCS_ROOT_URL + p,
+      md_url: page.md_url,
+      title: page.title,
+      version: page.version,
+      last_updated: page.last_updated,
+      tokens: page.tokens,
+    }))
+    .sort((a, b) => b.last_updated.localeCompare(a.last_updated) || a.url.localeCompare(b.url))
+    .slice(0, CHANGES_LIMIT);
+
+  return JSON.stringify({ schema: 1, generated, limit: CHANGES_LIMIT, changes }, null, 2) + '\n';
+}
+
+// Mirror the rendered navigation of the latest version's start page, which Antora
+// builds from nav.adoc and the API reference nav.
+function generateSitemapMd(buildDir, manifest, generated) {
+  const { JSDOM } = require('jsdom');
+  const versionPath = BASE_URL.slice(DOCS_ROOT_URL.length + 1);
+  const startPage = path.join(buildDir, versionPath, 'index.html');
+  const doc = new JSDOM(fs.readFileSync(startPage, 'utf8')).window.document;
+  const navList = doc.querySelector('nav.nav-menu > ul.nav-list');
+  if (!navList) throw new Error(`No navigation tree found in ${startPage}`);
+
+  const linked = new Set();
+  const lines = [];
+  const shortDate = (iso) => iso.slice(0, 10);
+  // Direct children only; jsdom treats ':scope > x' as a descendant selector.
+  const children = (el, selector) => [ ...el.children ].filter((child) => child.matches(selector));
+  const child = (el, selector) => children(el, selector)[0];
+
+  const entryLine = (label, href) => {
+    const url = new URL(href, BASE_URL + '/');
+    const page = url.origin === new URL(DOCS_ROOT_URL).origin ? manifest.pages[pagePath(url.href.split('#')[0])] : null;
+    if (!page) return `[${label}](${url.href})`;
+    // Later links to sections of a page already listed stay section links. The
+    // first link to a page, even to one of its sections, stands for the page.
+    const key = pagePath(url.href.split('#')[0]);
+    if (url.hash && linked.has(key)) return `[${label}](${url.href})`;
+    linked.add(key);
+    const description = page.description ? ` — ${page.description}` : '';
+    return `[${label}](${page.md_url})${description} (updated ${shortDate(page.last_updated)})`;
+  };
+
+  const walk = (ul, depth) => {
+    for (const li of children(ul, 'li.nav-item')) {
+      const link = child(li, 'a.nav-link');
+      const text = child(li, '.nav-text');
+      const label = (link || text)?.textContent.replace(/\s+/g, ' ').trim();
+      const sublist = child(li, 'ul.nav-list');
+
+      if (depth === 0 || !label) {
+        if (sublist) walk(sublist, depth === 0 ? 1 : depth);
+        continue;
+      }
+
+      const entry = link ? entryLine(label, link.getAttribute('href')) : `**${label}**`;
+      if (depth === 1) {
+        lines.push('', `## ${link ? entry : label}`, '');
+      } else {
+        lines.push(`${'  '.repeat(depth - 2)}- ${entry}`);
+      }
+      if (sublist) walk(sublist, depth + 1);
+    }
+  };
+  walk(navList, 0);
+
+  const unlinked = Object.entries(manifest.pages)
+    .filter(([p]) => p.startsWith(`/${versionPath}/`) && !linked.has(p))
+    .sort(([a], [b]) => a.localeCompare(b));
+  if (unlinked.length) {
+    lines.push('', '## Pages not in the navigation', '');
+    unlinked.forEach(([, page]) => {
+      const description = page.description ? ` — ${page.description}` : '';
+      lines.push(`- [${page.title}](${page.md_url})${description} (updated ${shortDate(page.last_updated)})`);
+    });
+  }
+
+  return [
+    '# TinyMCE 8 documentation sitemap',
+    '',
+    `> The navigation tree of the TinyMCE 8 documentation, with each page's description and last updated date. Generated ${generated}.`,
+    '',
+    `This sitemap covers TinyMCE 8 (\`latest\`) only. Links point to each page's markdown; the same path without \`index.md\` is the HTML page.`,
+    ...lines,
+    '',
+  ].join('\n');
+}
+
+function generateAgentsMd({ manifest, generated, llmsFullTokens }) {
+  const { encode } = require('gpt-tokenizer');
+  const page = (name) => manifest.pages[`/tinymce/latest/${name}/`];
+  const example = [ 'react-cloud', 'license-key', 'basic-setup' ].map((name) => ({ name, ...page(name) }));
+  const exampleTokens = example.reduce((sum, p) => sum + p.tokens, 0);
+  const manifestTokens = encode(JSON.stringify(manifest, null, 2), { allowedSpecial: 'all' }).length;
+  const format = (n) => n.toLocaleString('en-US');
+
+  return `# TinyMCE documentation for AI agents
+
+> How to retrieve and cite the TinyMCE documentation. Generated ${generated}.
+
+## A key is required, or the editor is disabled
+
+Without a valid key, TinyMCE 8 loads but the editor is disabled. Every configuration must choose one:
+
+- **Tiny Cloud**: load \`https://cdn.tiny.cloud/1/<api-key>/tinymce/8/tinymce.min.js\` with a Tiny Cloud API key. No \`license_key\` option is needed.
+- **Self-hosted** (npm, ZIP, or a public CDN such as jsDelivr): set the \`license_key\` option. Use \`license_key: 'gpl'\` for use under the GPL v2 or later. A commercial license key also requires the commercial license key manager.
+
+Details: ${BASE_URL}/license-key/index.md
+
+## What TinyMCE is
+
+TinyMCE is a rich text editor for web applications, maintained by Tiny Technologies. It is configured with a single \`tinymce.init()\` call and has official integrations for React, Vue, Angular, Svelte, Blazor, jQuery, and web components.
+
+## Versions
+
+- TinyMCE 8 is the current major version, documented under \`${BASE_URL}/\`. A URL that names version 8, such as \`${DOCS_ROOT_URL}/tinymce/8/basic-setup/\`, redirects to the same page under \`latest\`.
+- Earlier major versions are documented under their number: \`${DOCS_ROOT_URL}/tinymce/<major>/\`.
+
+## Markdown pages
+
+Each page's markdown opens with frontmatter that makes it citable on its own:
+
+\`\`\`yaml
+title: ${JSON.stringify(example[0].title)}
+description: ${JSON.stringify(example[0].description)}
+canonical_url: ${JSON.stringify(`${DOCS_ROOT_URL}/tinymce/latest/${example[0].name}/`)}
+md_url: ${JSON.stringify(example[0].md_url)}
+version: "latest"
+last_updated: ${JSON.stringify(example[0].last_updated)}
+tokens: ${example[0].tokens}
+\`\`\`
+
+Cite \`canonical_url\` and \`last_updated\`. On an earlier version's page, \`canonical_url\` points to the TinyMCE 8 page of the same name when one exists; \`md_url\` is always the file itself.
+
+## Budgeting retrieval with the token manifest
+
+${MANIFEST_URL} lists every page on every version:
+
+\`\`\`json
+{ "schema": 1, "generated": "…", "pages": { "/tinymce/latest/<page>/": { "title": "…", "description": "…", "md_url": "…", "version": "latest", "last_updated": "…", "tokens": 0 } } }
+\`\`\`
+
+\`tokens\` counts the markdown body with the o200k_base tokenizer; treat it as an estimate for other models.
+
+Worked example: adding TinyMCE to a React app on Tiny Cloud needs three pages.
+
+| Page | Tokens |
+|---|---|
+${example.map((p) => `| ${p.md_url} | ${format(p.tokens)} |`).join('\n')}
+| **Total** | **${format(exampleTokens)}** |
+
+That is ${(exampleTokens / llmsFullTokens * 100).toFixed(1)}% of the ${format(llmsFullTokens)} tokens in llms-full.txt. The manifest itself is about ${format(manifestTokens)} tokens: fetch and filter it in code rather than reading it into context. An agent that cannot run code can choose pages from ${DOCS_ROOT_URL}/sitemap.md instead. ${DOCS_ROOT_URL}/changes.json lists the most recently changed pages, newest first, to show whether a cached page is stale.
+
+## Other ways in
+
+- ${DOCS_ROOT_URL}/llms.txt: index of the TinyMCE 8 documentation.
+- ${DOCS_ROOT_URL}/llms-full.txt: the content of every TinyMCE 8 page in one file.
+- Documentation MCP server: \`${MCP_ENDPOINT}\` (streamable HTTP, OAuth sign-in).
+- Context7: library \`${CONTEXT7_LIBRARY}\`.
+
+Configuring a specific agent: ${BASE_URL}/ai-coding-agents/index.md
 `;
 }
 
@@ -1074,6 +1255,24 @@ function main() {
   const llmsFullTxt = generateLLMsFullTxt(urls, pages, generated);
   assertFullText(llmsFullTxt);
   writeGenerated(buildDir, 'llms-full.txt', llmsFullTxt).forEach((p) => console.log(`✓ Wrote ${p}`));
+
+  // The root agent artifacts are written to the build root by explicit path.
+  const { encode } = require('gpt-tokenizer');
+  const manifest = readManifest(buildDir);
+  const rootFiles = {
+    'AGENTS.md': generateAgentsMd({
+      manifest,
+      generated,
+      llmsFullTokens: encode(llmsFullTxt, { allowedSpecial: 'all' }).length,
+    }),
+    'changes.json': generateChangesJson(manifest, generated),
+    'sitemap.md': generateSitemapMd(buildDir, manifest, generated),
+  };
+  Object.entries(rootFiles).forEach(([filename, contents]) => {
+    const target = path.join(buildDir, filename);
+    fs.writeFileSync(target, contents);
+    console.log(`✓ Wrote ${target}`);
+  });
 }
 
 if (require.main === module) {

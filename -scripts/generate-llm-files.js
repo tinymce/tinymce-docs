@@ -26,43 +26,50 @@ const LLMS_FULL_MIN_BYTES = 2 * 1024 * 1024;
 // file of links alone cannot pass.
 const LLMS_FULL_SENTINEL = 'The four most common configuration options for TinyMCE are';
 
-// The generated files describe a single documentation version — parseSitemap() keeps
-// only the URLs under BASE_URL — so they must be published to that version's
-// attachments directory and no other. The path is derived from BASE_URL rather than
-// found by searching the build: a build contains an _attachments directory per
-// version, and searching wrote one version's content into every one of them.
-//
-// Antora publishes modules/ROOT/attachments/* to <component>/<version>/_attachments/,
-// which is a served location. The existing copy-llms-files.sh step then copies from
-// there to the site root, the second served location, so writing here feeds both
-// published URLs through the mechanism already in place.
-function versionAttachmentDir(buildDir) {
-  const versionPath = BASE_URL.startsWith(DOCS_ROOT_URL + '/')
-    ? BASE_URL.slice(DOCS_ROOT_URL.length + 1)
-    : null;
+// There is one corpus: llms.txt and llms-full.txt describe the latest version only,
+// because parseSitemap() keeps only the URLs under BASE_URL. The pair is published at
+// two URLs, and both files are written to both by explicit path:
+//   /docs/llms.txt                                the site root
+//   /docs/tinymce/latest/_attachments/llms.txt    the latest version's attachments
+// Nothing searches the build for these files. A build holds one _attachments directory
+// per version, so a search-and-copy is correct only while exactly one pair exists, and
+// silently publishes the wrong one when a second appears. assertSingleCorpus() fails
+// the build if a copy exists anywhere else.
+const LLMS_FILES = [ 'llms.txt', 'llms-full.txt' ];
 
-  if (!versionPath) return null;
-
-  const dir = path.join(buildDir, versionPath, '_attachments');
-  return fs.existsSync(dir) ? dir : null;
+function llmsTargets(buildDir, filename) {
+  const versionPath = BASE_URL.slice(DOCS_ROOT_URL.length + 1);
+  return [
+    path.join(buildDir, filename),
+    path.join(buildDir, versionPath, '_attachments', filename),
+  ];
 }
 
-// Write to the version's attachments directory when it exists, otherwise to the build
-// root. The fallback keeps /docs/llms.txt correct — and keeps copy-llms-files.sh's
-// existence check passing — if the version segment ever changes.
-function writeGenerated(outputDir, filename, contents) {
-  const attachmentDir = versionAttachmentDir(outputDir);
-
-  if (!attachmentDir) {
-    console.warn(`! No attachments directory for ${BASE_URL}; writing ${filename} to the build root instead.`);
-    const target = path.join(outputDir, filename);
+function writeGenerated(buildDir, filename, contents) {
+  const targets = llmsTargets(buildDir, filename);
+  targets.forEach((target) => {
+    fs.mkdirSync(path.dirname(target), { recursive: true });
     fs.writeFileSync(target, contents);
-    return [target];
-  }
+  });
+  return targets;
+}
 
-  const target = path.join(attachmentDir, filename);
-  fs.writeFileSync(target, contents);
-  return [target];
+function findFiles(dir, names, found = []) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) findFiles(full, names, found);
+    else if (names.includes(entry.name)) found.push(full);
+  }
+  return found;
+}
+
+function assertSingleCorpus(buildDir) {
+  const expected = new Set(LLMS_FILES.flatMap((filename) => llmsTargets(buildDir, filename)));
+  const stray = findFiles(buildDir, LLMS_FILES).filter((file) => !expected.has(file));
+  if (stray.length) {
+    throw new Error(`Found ${stray.length} llms file(s) outside the site root and ${BASE_URL}/_attachments/. ` +
+      `Only one corpus is published:\n  ${stray.join('\n  ')}`);
+  }
 }
 
 // Convert a trailing-slash doc URL to its Markdown endpoint.
@@ -906,6 +913,12 @@ function generateLLMsTxt(urls, generated) {
 
 TinyMCE is a powerful, flexible WYSIWYG rich text editor that can be integrated into any web application.
 
+## Version coverage
+
+- This file covers TinyMCE 8, the current major version: ${BASE_URL}/
+- TinyMCE 7, 6, and 5 are documented at ${DOCS_ROOT_URL}/tinymce/7/ and the matching /tinymce/6/ and /tinymce/5/ paths
+- Every page on every version is also served as markdown: append \`index.md\` to its URL
+
 **IMPORTANT**: Always use TinyMCE 8 for new projects. Use \`tinymce@8\` or \`tinymce/8\` in CDN URLs and package installations.
 
 **IMPORTANT**: TinyMCE 8 is disabled without a valid key. Load it from Tiny Cloud with an API key, or, when self-hosting, set the \`license_key\` option (\`'gpl'\` for use under the GPL). See [License key](${BASE_URL}/license-key/).
@@ -1248,6 +1261,8 @@ function main() {
 
   const pages = readPages(buildDir, urls);
   const generated = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
+
+  assertSingleCorpus(buildDir);
 
   const llmsTxt = toMarkdownEndpoints(generateLLMsTxt(urls, generated));
   writeGenerated(buildDir, 'llms.txt', llmsTxt).forEach((p) => console.log(`✓ Wrote ${p}`));

@@ -56,9 +56,6 @@ jobs:
     - name: Generate LLM files
       run: yarn generate-llm-files build/site
 
-    - name: Copy llms.txt files to root
-      run: ./-scripts/copy-llms-files.sh build/site
-
     - name: Rename site folder to docs
       run: |
         mv ./build/site ./build/docs

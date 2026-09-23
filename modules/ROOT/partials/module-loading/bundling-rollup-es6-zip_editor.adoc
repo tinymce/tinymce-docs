@@ -44,6 +44,7 @@ import contentCss from '../tinymce/js/tinymce/skins/content/default/content.css'
 export function render () {
   tinymce.init({
     selector: 'textarea#editor',
+    license_key: 'gpl',
     plugins: 'advlist code emoticons link lists table help',
     toolbar: 'bold italic | bullist numlist | link emoticons',
     skin: false,
@@ -53,3 +54,5 @@ include::partial$module-loading/bundling-external-plugins-zip.adoc[]
   });
 };
 ----
++
+NOTE: The `+license_key: 'gpl'+` value is for use under the GNU General Public License (GPL). To use a commercial license, replace `+'gpl'+` with the license key. For details, see xref:license-key.adoc[License key].

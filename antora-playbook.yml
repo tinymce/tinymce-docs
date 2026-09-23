@@ -16,5 +16,8 @@ ui:
 asciidoc:
   extensions:
     - '@tinymce/antora-extension-livedemos'
+antora:
+  extensions:
+    - require: ./lib/antora-extension-page-dates.js
 runtime:
   fetch: true

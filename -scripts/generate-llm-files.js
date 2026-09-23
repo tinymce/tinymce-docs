@@ -18,6 +18,14 @@ const BASE_URL = 'https://www.tiny.cloud/docs/tinymce/latest';
 const DOCS_ROOT_URL = 'https://www.tiny.cloud/docs';
 const DEFAULT_BUILD_DIR = path.join(__dirname, '../build/site');
 
+// llms-full.txt carries every page's content, measured at about 3.5 MB. Anything
+// under this floor means content is missing, so the build fails rather than
+// publishing an index of links.
+const LLMS_FULL_MIN_BYTES = 2 * 1024 * 1024;
+// A phrase from the body of the basic-setup page, not from its URL or title, so a
+// file of links alone cannot pass.
+const LLMS_FULL_SENTINEL = 'The four most common configuration options for TinyMCE are';
+
 // The generated files describe a single documentation version — parseSitemap() keeps
 // only the URLs under BASE_URL — so they must be published to that version's
 // attachments directory and no other. The path is derived from BASE_URL rather than
@@ -148,6 +156,63 @@ function readPages(buildDir, urls) {
   }
 
   return pages;
+}
+
+// ---------------------------------------------------------------------------
+// Page content for llms-full.txt
+// ---------------------------------------------------------------------------
+
+// Apply fn to each line outside fenced code blocks.
+function mapProseLines(markdown, fn) {
+  let inFence = false;
+  return markdown.split('\n').map((line) => {
+    if (/^\s*(```|~~~)/.test(line)) {
+      inFence = !inFence;
+      return line;
+    }
+    return inFence ? line : fn(line);
+  }).join('\n');
+}
+
+// Relative links in a page body resolve against that page's URL, so once the
+// page is inlined they must be made absolute. Inline code spans are left alone.
+function absolutizeLinks(markdown, pageUrl) {
+  return mapProseLines(markdown, (line) =>
+    line.split(/(`[^`]*`)/).map((part, i) => i % 2 ? part : part.replace(
+      /(\]\()([^)\s]+)(\))/g,
+      (match, open, target, close) => {
+        if (/^[a-z][a-z0-9+.-]*:/i.test(target)) return match;
+        try {
+          return open + new URL(target, pageUrl).href + close;
+        } catch {
+          return match;
+        }
+      }
+    )).join('')
+  );
+}
+
+// Each page is inlined under a level-2 heading, so its own headings move down one
+// level, and its level-1 title is dropped in favour of the section header.
+function demoteHeadings(markdown) {
+  return mapProseLines(markdown, (line) => {
+    const heading = line.match(/^(#{1,6}) (.*)$/);
+    if (!heading) return line;
+    return `${'#'.repeat(Math.min(heading[1].length + 1, 6))} ${heading[2]}`;
+  });
+}
+
+function renderPageSection({ fields, body }) {
+  const content = body.replace(/^\s*# [^\n]*\n+/, '').trim();
+  return [
+    `## ${fields.title}`,
+    '',
+    `Source: ${fields.canonical_url}`,
+    `Last updated: ${fields.last_updated}`,
+    '',
+    demoteHeadings(absolutizeLinks(content, fields.canonical_url)),
+    '',
+  ].join('\n');
 }
 
 // Categorize URL based on path
@@ -423,7 +488,7 @@ function makeTitlesUnique(entries) {
 }
 
 // Generate llms-full.txt
-function generateLLMsFullTxt(urls, pages) {
+function generateLLMsFullTxt(urls, pages, generated) {
   const entries = urls.map(url => {
     const urlPath = getUrlPath(url);
     const catInfo = categorizeUrl(urlPath);
@@ -481,6 +546,8 @@ function generateLLMsFullTxt(urls, pages) {
   
   // Build content
   let content = `# TinyMCE Documentation - Complete Reference
+
+> The complete content of the TinyMCE 8 documentation, grouped by topic. Generated ${generated}.
 
 ## Overview
 TinyMCE is a rich text editor that provides a WYSIWYG editing experience. The latest stable version is TinyMCE 8, released in July 2025.
@@ -733,7 +800,7 @@ export default {
 
   // Complete Documentation Index
   content += `## Complete Documentation Index\n\n`;
-  content += `This section provides a complete list of all ${uniqueEntries.length} documentation pages available in TinyMCE 8, organized by category. This comprehensive index ensures LLMs have access to every documentation page, reducing the risk of hallucinations or missing important details.\n\n`;
+  content += `This section lists all ${uniqueEntries.length} documentation pages available in TinyMCE 8, organized by category. The full content of every page follows the index, in the same order, each under its own heading with its source URL and last updated date.\n\n`;
 
   // Output categories in specific order
   const categoryStructure = [
@@ -802,14 +869,38 @@ export default {
     }
   });
 
-  return content;
+  // Page content, in index order: one level-1 heading per category, one level-2
+  // heading per page. Only the index is rewritten to markdown endpoints; page
+  // bodies, including their code samples, are inlined as generated.
+  let pagesContent = '';
+  categoryStructure.forEach(({ category, subcategory }) => {
+    const key = subcategory ? `${category}::${subcategory}` : category;
+    if (!categorized.has(key)) return;
+
+    pagesContent += `\n# ${subcategory ? `${category}: ${subcategory}` : category}\n\n`;
+    categorized.get(key).forEach((entry) => {
+      pagesContent += renderPageSection(pages.get(entry.url)) + '\n';
+    });
+  });
+
+  return toMarkdownEndpoints(content) + pagesContent;
+}
+
+// Fail the build rather than publish a file of links.
+function assertFullText(llmsFullTxt) {
+  const bytes = Buffer.byteLength(llmsFullTxt);
+  const problems = [];
+  if (bytes < LLMS_FULL_MIN_BYTES) problems.push(`is ${bytes} bytes, under the ${LLMS_FULL_MIN_BYTES}-byte floor`);
+  if (!llmsFullTxt.includes(LLMS_FULL_SENTINEL)) problems.push(`does not contain the basic-setup sentinel "${LLMS_FULL_SENTINEL}"`);
+  if (/^---$/m.test(llmsFullTxt)) problems.push('contains a frontmatter fence (---)');
+  if (problems.length) throw new Error(`llms-full.txt ${problems.join('; ')}`);
 }
 
 // Generate llms.txt (curated, simplified version)
-function generateLLMsTxt(urls) {
+function generateLLMsTxt(urls, generated) {
   return `# TinyMCE Documentation
 
-> Rich text editor for web applications. The latest stable version is TinyMCE 8.
+> Rich text editor for web applications. The latest stable version is TinyMCE 8. Generated ${generated}.
 
 TinyMCE is a powerful, flexible WYSIWYG rich text editor that can be integrated into any web application.
 
@@ -955,7 +1046,7 @@ Add "use context7" to any prompt for live TinyMCE documentation lookups.
 
 ## Complete Documentation
 
-For a complete list of all ${urls.length} documentation pages, see [llms-full.txt](${DOCS_ROOT_URL}/llms-full.txt).
+For the full content of all ${urls.length} documentation pages in one file, see [llms-full.txt](${DOCS_ROOT_URL}/llms-full.txt).
 
 `;
 }
@@ -975,11 +1066,13 @@ function main() {
   console.log(`Found ${urls.length} unique URLs in sitemap`);
 
   const pages = readPages(buildDir, urls);
+  const generated = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
 
-  const llmsTxt = toMarkdownEndpoints(generateLLMsTxt(urls));
+  const llmsTxt = toMarkdownEndpoints(generateLLMsTxt(urls, generated));
   writeGenerated(buildDir, 'llms.txt', llmsTxt).forEach((p) => console.log(`✓ Wrote ${p}`));
 
-  const llmsFullTxt = toMarkdownEndpoints(generateLLMsFullTxt(urls, pages));
+  const llmsFullTxt = generateLLMsFullTxt(urls, pages, generated);
+  assertFullText(llmsFullTxt);
   writeGenerated(buildDir, 'llms-full.txt', llmsFullTxt).forEach((p) => console.log(`✓ Wrote ${p}`));
 }
 

@@ -9,27 +9,43 @@ If you just want to add or change some behavior for a few items, use the xref:co
 
 === Control characters
 
-[cols="1,5",options="header"]
+Each element rule uses the following structure. Parts in square brackets are optional.
+
+[source,text]
+----
+element rule:    [- or #]name[/alias][!][[attribute rule|attribute rule|...]]
+attribute rule:  [! or -]name[=value, ~value, or <value?value]
+----
+
+The following table lists each control character and the part of the rule it is used in.
+
+[cols="1,1,4",options="header"]
 |===
-|Name |Summary
-|@ |Rules with this name will be applied to all elements defined after this rule. So `+@[attr1\|attr2]+` will enable `+attr1+` and `+attr2+` for all elements, but `+element1,@[attr1\|attr2],element2,element3+` will enable `+attr1+` and `+attr2+` only for `+element2+` and `+element3+`. If applied in xref:content-filtering.adoc#extended_valid_elements[extended_valid_elements], it is only effective for the elements in the extended_valid_elements list.
-|, |Separates element chunk definitions.
-|/ |Separates element synonyms. The first element is the one that will be output.
-|\| |Separates attribute definitions.
-|[ |Starts a new attribute list for an element definition.
-|] |Ends an attribute list for an element definition.
-|! |Makes attributes required. If none of the required attributes are set, the element will be removed. For example, `+'!href'+`.
-|= |Makes the attribute default to the specified value. For example, `+'target=_blank'+`
-|~ |Forces the attribute to the specified value. For example, `+'border~0'+`
-|< |Verifies the value of an attribute (only the listed values are allowed). For example, `+'target<_blank?_self'+`
-|? |Separates attribute verification values. See above.
-|+ |Makes the element open if no child nodes exists. For example, `+'+a'+`.
-|- |Enables removal of empty elements such as `+<strong />+`. For example, `+'-strong'+`.
-|# |Enables padding of empty elements. This will pad with `+&nbsp;+` if they are empty. For example, `+'#p'+`.
-|! |Enables removal of elements with no attributes such as `+<span>+`. They can still have content though.
+|Character |Used in |Summary
+|`+@+` |Element rule |Rules with this name will be applied to all elements defined after this rule. So `+@[attr1\|attr2]+` will enable `+attr1+` and `+attr2+` for all elements, but `+element1,@[attr1\|attr2],element2,element3+` will enable `+attr1+` and `+attr2+` only for `+element2+` and `+element3+`. If applied in xref:content-filtering.adoc#extended_valid_elements[extended_valid_elements], it is only effective for the elements in the extended_valid_elements list.
+|`+,+` |Rule list |Separates element rules.
+|`+/+` |Element rule |Separates element synonyms. The first element is the one that is output. For example, `+strong/b+` converts `+<b>+` elements to `+<strong>+` elements.
+|`+[+` |Element rule |Starts the attribute list for an element rule.
+|`+]+` |Element rule |Ends the attribute list for an element rule.
+|`+\|+` |Attribute list |Separates attribute rules.
+|`+-+` |Element rule (prefix) |Removes the element if it is empty. For example, `+-strong+` removes `+<strong></strong>+`.
+|`+#+` |Element rule (prefix) |Pads the element with `+&nbsp;+` if it is empty. For example, `+#p+` converts `+<p></p>+` to `+<p>&nbsp;</p>+`.
+|`+!+` |Element rule (before `+[+`) |Removes the element tag and keeps its content if the element has no attributes. The `+!+` must be placed directly after the element name, or after the alias, and before the attribute list. For example, `+span![class\|style]+` converts `+<span>text</span>+` to `+text+` and keeps `+<span class="note">text</span>+`.
+|`+!+` |Attribute rule (prefix) |Makes the attribute required. If the element has none of its required attributes, the element tag is removed and its content is kept. For example, `+a[!href]+` converts `+<a title="note">text</a>+` to `+text+`.
+|`+-+` |Attribute rule (prefix) |Removes an attribute that the element inherits from an `+@+` rule. For example, `+@[id\|title],a[-title\|href]+` allows `+id+` and `+title+` on all elements except `+a+`, which allows `+id+` and `+href+` only.
+|`+=+` |Attribute rule |Makes the attribute default to the specified value. For example, `+a[href\|target=_blank]+` adds `+target="_blank"+` to links that do not have a `+target+` attribute.
+|`+~+` |Attribute rule |Forces the attribute to the specified value. For example, `+a[href\|target~_blank]+` sets `+target="_blank"+` on all links.
+|`+<+` |Attribute rule |Verifies the value of an attribute (only the listed values are allowed). For example, `+a[href\|target<_blank?_self]+`.
+|`+?+` |Attribute rule |Separates attribute verification values. See above.
 |===
 
-Wildcards such as `+*+`,`+++`,`+?+` may be used in element or attribute name matching.
+Wildcards such as `+*+`,`+++`,`+?+` may be used in element or attribute name matching. For example, `+p[data-*]+` allows all attributes that start with `+data-+` on `+p+` elements.
+
+The element-level `+!+` checks the attributes present in the content before attributes that the rule does not allow are removed. An element that has only disallowed attributes is therefore kept, without those attributes. For example, with `+span![class]+`, `+<span title="note">text</span>+` becomes `+<span>text</span>+`.
+
+Attributes that start with `+data-+` or `+aria-+` are kept when validation is enabled, even if the attribute rules do not list them.
+
+The default rule set removes `+<span>+` elements that have no attributes. When `+valid_elements+` is set, use `+span!+` to keep this behavior, for example `+span![class|style]+`.
 
 === Variables
 
@@ -39,7 +55,7 @@ Wildcards such as `+*+`,`+++`,`+?+` may be used in element or attribute name mat
 |`+{$uid}+` |Results in a unique ID. For example, `+'p[id~{$uid}]'+`.
 |===
 
-Use `+*[*]+` to include all elements and all attributes. This can be very useful when used with the xref:content-filtering.adoc#invalid_elements[invalid_elements] option.
+CAUTION: Setting `+valid_elements+` to `+*[*]+` allows all elements and all attributes. This is equivalent to disabling validation: event handler attributes such as `+onclick+` and `+<script>+` elements are kept, and the xref:content-filtering.adoc#invalid_elements[`+invalid_elements+`] option has no effect. Using `+*[*]+` is not recommended because of the security risks.
 
 *Type:* `+String+`
 

@@ -10,17 +10,21 @@ tinymce.activeEditor.ui.registry.getAll().contextMenus
 
 The identifier below will add a context menu _section_ containing one or more items. It is not possible to add individual items from the following context menu sections.
 
-[cols="1,1,3",options="header"]
+Each section only shows its items when the context menu is opened on matching content, as described in the *Appears when* column. A section with no matching content shows no items.
+
+[cols="1,1,2,2",options="header"]
 |===
-|identifier |Core/Plugin |Description
-|image |xref:image.adoc[Image] |Adds the _Image..._ item for opening the *Insert/Edit Image* dialog.
-|editimage |xref:editimage.adoc[Image Editing] |Adds the _Edit image_ item for opening the *Edit Image* dialog.
-|link |xref:link.adoc[Link] |Adds the _Link..._ item for opening the *Insert/Edit Link* dialog.
-|linkchecker |xref:linkchecker.adoc[Link Checker] |Adds the _Ignore_ item on links marked as broken, allowing the user to instruct linkchecker to ignore the link.
-|lists |xref:lists.adoc[Lists] |Adds the _List properties..._ item for opening the *List Properties* dialog.
-|configurepermanentpen |xref:permanentpen.adoc[Permanent Pen] |Adds the _Permanent pen properties..._ item for opening the *Permanent Pen Properties* dialog when the permanent pen is in use.
-|spellchecker |xref:introduction-to-tiny-spellchecker.adoc[Spell Checker] |Adds a list suggested corrections, an _Ignore_ item, and an _Ignore all_ item.
-|table |xref:table.adoc[Table] |Adds table related context menu items, including Enhanced Tables context menu items (if the Enhanced Tables plugin is enabled).
+|identifier |Core/Plugin |Appears when |Description
+|advtemplate |xref:advanced-templates.adoc[Templates] |The context menu is opened anywhere in the editor. |Adds the _Save as template..._ item for saving the selected content as a template.
+|configurepermanentpen |xref:permanentpen.adoc[Permanent Pen] |The permanent pen is in use. |Adds the _Permanent pen properties..._ item for opening the *Permanent Pen Properties* dialog.
+|editimage |xref:editimage.adoc[Image Editing] |The context menu is opened on an editable image. |Adds the _Edit image_ item for opening the *Edit Image* dialog.
+|image |xref:image.adoc[Image] |The context menu is opened on an existing, editable image. |Adds the _Image..._ item for opening the *Insert/Edit Image* dialog to edit the selected image. This section does not add an item for inserting a new image. To insert an image, use the `+image+` toolbar button or the `+image+` menu item in the *Insert* menu.
+|link |xref:link.adoc[Link] |The context menu is opened on editable content. |Adds the _Link..._ item for opening the *Insert/Edit Link* dialog. When the context menu is opened on a link, the _Remove link_ and _Open link_ items are also added.
+|linkchecker |xref:linkchecker.adoc[Link Checker] |The context menu is opened on a link marked as broken. |Adds the _Ignore_ item, allowing the user to instruct linkchecker to ignore the link.
+|lists |xref:lists.adoc[Lists] |The context menu is opened in an ordered (numbered) list. |Adds the _List properties..._ item for opening the *List Properties* dialog.
+|math |xref:math.adoc[Math] |The context menu is opened on a math equation. |Adds the _Math..._ item for editing the equation.
+|spellchecker |xref:introduction-to-tiny-spellchecker.adoc[Spell Checker] |The context menu is opened on a misspelled word. |Adds a list of suggested corrections, an _Ignore_ item, and an _Ignore all_ item.
+|table |xref:table.adoc[Table] |The context menu is opened in a table. |Adds table related context menu items, including Enhanced Tables context menu items (if the Enhanced Tables plugin is enabled). In a table caption, only the table properties and delete table items are added.
 |===
 
 For a list of available menu items that can be added to the context menu, see: xref:available-menu-items.adoc[Menu Items Available for {productname}].

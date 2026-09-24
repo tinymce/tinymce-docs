@@ -49,6 +49,7 @@ const contentCss = fs.readFileSync('tinymce/js/tinymce/skins/content/default/con
 exports.render = () => {
   tinymce.init({
     selector: 'textarea#editor',
+    license_key: 'gpl',
     /* All plugins need to be imported and added to the plugins option. */
     plugins: 'advlist code emoticons link lists table help',
     toolbar: 'bold italic | bullist numlist | link emoticons',
@@ -59,3 +60,5 @@ include::partial$module-loading/bundling-external-plugins-zip.adoc[]
   });
 };
 ----
++
+include::partial$misc/admon-license-key-gpl.adoc[]

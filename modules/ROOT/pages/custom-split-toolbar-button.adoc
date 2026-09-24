@@ -21,7 +21,6 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |fetch |`+(success: (menu) => void) => void+` |Drop-down menu |required |A callback function that should be passed a list of xref:choice-menu-items[choice menu items] for the dropdown menu.
 |onItemAction |`+(api, value) => void+` |Choice menu items |required |Function invoked when a dropdown list option is clicked. The `+value+` is passed from the selected choice menu item.
 |onSetup |`+(api) => (api) => void+` |All |optional |default: `+() => () => {}+` - Function invoked when the button is rendered. For details, see: xref:using-onsetup[Using `+onSetup+`].
-5+|
 |context |string |All |optional |default: `mode:design` - The context property dynamically enables or disables the button based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===
 
@@ -34,7 +33,6 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |setEnabled |`+(state: boolean) => void+` |Sets the button's enabled state.
 |isActive |`+() => boolean+` |Checks the button's toggle state.
 |setActive |`+(state: boolean) => void+` |Sets the button's toggle state.
-3+|
 |setText |`+(text: string) => void+` |Sets the text label to display.
 |setIcon |`+(icon: string) => void+` |Sets the icon of the button.
 |setTooltip |`+(tooltip: string) => void+` |Sets the main button tooltip.

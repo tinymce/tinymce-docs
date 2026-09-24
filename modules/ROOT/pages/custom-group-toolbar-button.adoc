@@ -18,7 +18,6 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |tooltip |string |optional |Text for button tooltip.
 |items |string or `+LabelledToolbar[]+` |required |A string of space separated toolbar button names, or an array of xref:toolbar-configuration-options.adoc#adding-toolbar-group-labels[labelled toolbar buttons].
 |onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function that's invoked when the button is rendered. For details, see: xref:using-onsetup[Using `+onSetup+`].
-4+|
 |context |string |optional |default: `mode:design` - The context property dynamically enables or disables the button based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===
 
@@ -29,7 +28,6 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |Name |Value |Description
 |isEnabled |`+() => boolean+` |Checks if the button is enabled.
 |setEnabled |`+(state: boolean) => void+` |Sets the button's enabled state.
-3+|
 |setText |`+(text: string) => void+` |Sets the text label to display.
 |setIcon |`+(icon: string) => void+` |Sets the icon of the button.
 |===

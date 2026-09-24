@@ -43,10 +43,13 @@ include::partial$integrations/rails-basic-proj.adoc[]
 <script>
   tinymce.init({
     selector: '.tinymce',
+    license_key: 'gpl',
     plugins: 'lists link image table code help wordcount'
   });
 </script>
 ----
++
+include::partial$misc/admon-bundling-license-key.adoc[]
 . Create a `+<textarea>+` with the initial content `+Hello, World!+` for {productname} by adding the following lines to `+app/views/welcome/index.html.erb+`:
 +
 [source,erb]
@@ -96,6 +99,7 @@ touch config/tinymce.yml
 +
 [source,yml]
 ----
+license_key: gpl
 height: 500
 menubar: false
 toolbar:
@@ -103,6 +107,8 @@ toolbar:
 plugins:
   - insertdatetime lists media table code help wordcount
 ----
++
+NOTE: `+license_key: gpl+` is for self-hosting {productname} under the GNU General Public License (GPL). To use a commercial license, or to include premium plugins, replace `+gpl+` with a valid license key. For details, see xref:license-key.adoc#setting-the-license[Setting the license].
 . Add the following lines within the `+<head>+` element of `+app/views/layouts/application.html.erb+` to automatically include {productname} on pages using the `+application+` layout:
 +
 [source,erb]

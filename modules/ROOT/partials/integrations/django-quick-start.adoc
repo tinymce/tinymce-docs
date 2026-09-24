@@ -38,5 +38,22 @@ TINYMCE_COMPRESSOR = False
 TINYMCE_JS_ROOT = os.path.join(MEDIA_URL, "path/to/tinymce")
 TINYMCE_COMPRESSOR = True
 ----
+. Set `+license_key+` in `+TINYMCE_DEFAULT_CONFIG+` in the project’s `+settings.py+` file. `+TINYMCE_DEFAULT_CONFIG+` replaces the default `+django-tinymce+` configuration, so include any other options the editor needs. Such as:
++
+[source,py]
+----
+TINYMCE_DEFAULT_CONFIG = {
+    "license_key": "gpl",
+    "height": 500,
+    "menubar": False,
+    "plugins": "advlist,autolink,lists,link,image,charmap,preview,anchor,"
+    "searchreplace,visualblocks,code,fullscreen,insertdatetime,media,table,"
+    "help,wordcount",
+    "toolbar": "undo redo | blocks | bold italic backcolor | alignleft aligncenter "
+    "alignright alignjustify | bullist numlist outdent indent | removeformat | help",
+}
+----
++
+NOTE: The `+"license_key": "gpl"+` value is for self-hosting {productname} under the GNU General Public License (GPL). To use a commercial license, or to include premium plugins, replace `+"gpl"+` with a valid license key. For details, see xref:license-key.adoc#setting-the-license[Setting the license].
 
 endif::[]

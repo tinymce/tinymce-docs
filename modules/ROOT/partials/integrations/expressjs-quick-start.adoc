@@ -88,9 +88,12 @@ Windows:
 ----
 tinymce.init({
   selector: 'textarea#my-expressjs-{prodnamecode}-app',
+  license_key: 'gpl',
   plugins: 'lists link image table code help wordcount'
 });
 ----
++
+include::partial$misc/admon-bundling-license-key.adoc[]
 . Update `+public/index.html+` to include:
 * The document type declaration, `+<!DOCTYPE html>+`.
 * A `+<script>+` element sourcing `+tinymce.min.js+`.

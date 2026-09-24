@@ -52,10 +52,20 @@ endif::[]
 ----
 <script>
   tinymce.init({
+ifeval::["{productSource}" == "cloud"]
     selector: 'textarea#tiny'
+endif::[]
+ifeval::["{productSource}" != "cloud"]
+    selector: 'textarea#tiny',
+    license_key: 'gpl'
+endif::[]
   });
 </script>
 ----
+ifeval::["{productSource}" != "cloud"]
++
+include::partial$misc/admon-bundling-license-key.adoc[]
+endif::[]
 
 == Using {productname} in a Bootstrap dialog
 

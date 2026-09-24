@@ -6,6 +6,8 @@
 
 {productname} is compatible with screen readers such as JAWS and NVDA as it follows the WAI-ARIA specification. Use http://www.nvaccess.org/[NVDA] together with https://www.mozilla.org/en-US/firefox/products/[Firefox] for the best Accessibility experience.
 
+For the accessibility standards {productname} is developed against and the Accessibility Conformance Reports available for download, see xref:accessibility-conformance.adoc[Accessibility conformance].
+
 == Keyboard shortcuts
 
 The *Alt+key* and *Option+key* shortcuts that move focus out of the content area, such as *Alt+F9* (or *⌥+F9*), can only be used when the content area of the editor has focus.
@@ -16,6 +18,23 @@ The complete list of shortcuts is maintained on the xref:keyboard-shortcuts.adoc
 * xref:keyboard-shortcuts.adoc#accessibility-keyboard-shortcuts[Accessibility keyboard shortcuts] lists the shortcuts for moving between menus, toolbar buttons, and dialog controls within the editor user interface.
 
 The sections that follow describe how to use these shortcuts to complete each navigation task.
+
+[[user-interface-navigation-order]]
+== User interface navigation order
+
+The *Tab* key moves focus to the next user interface section, and *Shift+Tab* moves focus to the previous section. The sections are reached in the following order:
+
+. Menu bar
+. Each toolbar group
+. Sidebar
+. Element path, in the status bar
+. Word count toggle button, in the status bar
+. Branding link, in the status bar
+. Editor resize handle, in the status bar
+
+A section that is not present is skipped. Within a section, the arrow keys move between the individual controls and cycle back to the start when the end of the section is reached.
+
+NOTE: When the status bar has focus and no sidebar is visible, pressing *Shift+Tab* moves focus to the first toolbar group rather than the last.
 
 == How to work with the editor
 

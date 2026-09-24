@@ -7,14 +7,16 @@ On most browsers, the value is applied as an `+aria-label+` on the `+<body>+` el
 
 [source,html]
 ----
-<body aria-label="Rich Text Area. Press ALT-0 for help."></body>
+<body aria-label="Rich Text Area"></body>
 ----
 
 This option only applies to {productname} classic (iframe) mode and has no effect on xref:inline-editor-options.adoc#inline[`+inline+` editors].
 
 *Type:* `+String+`
 
-*Default value:* `+'Rich Text Area. Press ALT-0 for help.'+`
+*Default value:* `+'Rich Text Area'+`
+
+When the xref:help.adoc[Help] plugin is loaded, `+'. Press ALT-0 for help.'+` is appended to the default value, giving `+'Rich Text Area. Press ALT-0 for help.'+`. The suffix is not added when the plugin is not loaded, because the shortcut it describes is unavailable.
 
 === Example: using `+iframe_aria_text+`
 

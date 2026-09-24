@@ -93,7 +93,7 @@ tinymce.init({
 });
 ----
 +
-include::partial$misc/admon-bundling-license-key.adoc[]
+include::partial$misc/admon-license-key-gpl.adoc[]
 . Update `+public/index.html+` to include:
 * The document type declaration, `+<!DOCTYPE html>+`.
 * A `+<script>+` element sourcing `+tinymce.min.js+`.

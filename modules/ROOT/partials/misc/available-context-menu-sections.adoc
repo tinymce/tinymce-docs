@@ -10,17 +10,17 @@ tinymce.activeEditor.ui.registry.getAll().contextMenus
 
 The identifier below will add a context menu _section_ containing one or more items. It is not possible to add individual items from the following context menu sections.
 
-Each section only shows its items when the context menu is opened on matching content, as described in the *Appears when* column. A section with no matching content shows no items.
+A section adds items only when the context menu is opened on matching content, as described in the *Appears when* column. On other content, the section is left out of the menu. A section also appears only if its identifier is in the xref:contextmenu.adoc#contextmenu[`+contextmenu+`] option. The default value does not include `+advtemplate+`, `+lists+`, or `+math+`.
 
 [cols="1,1,2,2",options="header"]
 |===
-|identifier |Core/Plugin |Appears when |Description
-|advtemplate |xref:advanced-templates.adoc[Templates] |The context menu is opened anywhere in the editor. |Adds the _Save as template..._ item for saving the selected content as a template.
+|Identifier |Core/Plugin |Appears when |Description
+|advtemplate |xref:advanced-templates.adoc[Templates] |The xref:advanced-templates.adoc#advtemplate_create_template[`+advtemplate_create_template+`] option is set. The item shows anywhere in the editor, but is enabled only when content is selected. |Adds the _Save as template..._ item for saving the selected content as a template.
 |configurepermanentpen |xref:permanentpen.adoc[Permanent Pen] |The permanent pen is in use. |Adds the _Permanent pen properties..._ item for opening the *Permanent Pen Properties* dialog.
-|editimage |xref:editimage.adoc[Image Editing] |The context menu is opened on an editable image. |Adds the _Edit image_ item for opening the *Edit Image* dialog.
+|editimage |xref:editimage.adoc[Image Editing] |The context menu is opened on an image that the plugin can edit: an image on the same host as the page, a `+data:+` or `+blob:+` image, an image from a host in xref:editimage.adoc#editimage_cors_hosts[`+editimage_cors_hosts+`], or any image when an xref:editimage.adoc#editimage_proxy[image proxy] is configured. |Adds the _Edit image_ item for opening the *Edit Image* dialog.
 |image |xref:image.adoc[Image] |The context menu is opened on an existing, editable image. |Adds the _Image..._ item for opening the *Insert/Edit Image* dialog to edit the selected image. This section does not add an item for inserting a new image. To insert an image, use the `+image+` toolbar button or the `+image+` menu item in the *Insert* menu.
 |link |xref:link.adoc[Link] |The context menu is opened on editable content. |Adds the _Link..._ item for opening the *Insert/Edit Link* dialog. When the context menu is opened on a link, the _Remove link_ and _Open link_ items are also added.
-|linkchecker |xref:linkchecker.adoc[Link Checker] |The context menu is opened on a link marked as broken. |Adds the _Ignore_ item, allowing the user to instruct linkchecker to ignore the link.
+|linkchecker |xref:linkchecker.adoc[Link Checker] |The context menu is opened on a link marked as broken. |Adds the _Ignore_ item, allowing the user to instruct linkchecker to ignore the link. When the xref:contextmenu.adoc#contextmenu[`+contextmenu+`] option does not include `+link+`, the section also adds the _Remove link_ and _Open link_ items, and the _Link..._ item when the xref:link.adoc[Link] plugin is loaded.
 |lists |xref:lists.adoc[Lists] |The context menu is opened in an ordered (numbered) list. |Adds the _List properties..._ item for opening the *List Properties* dialog.
 |math |xref:math.adoc[Math] |The context menu is opened on a math equation. |Adds the _Math..._ item for editing the equation.
 |spellchecker |xref:introduction-to-tiny-spellchecker.adoc[Spell Checker] |The context menu is opened on a misspelled word. |Adds a list of suggested corrections, an _Ignore_ item, and an _Ignore all_ item.

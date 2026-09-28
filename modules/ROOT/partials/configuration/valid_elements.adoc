@@ -9,11 +9,12 @@ If you just want to add or change some behavior for a few items, use the xref:co
 
 === Control characters
 
-Each element rule uses the following structure. Parts in square brackets are optional.
+Each element rule uses the following structure. Parts in square brackets are optional, and characters in double quotes are literal.
 
 [source,text]
 ----
-element rule:    [- or #]name[/alias][!][[attribute rule|attribute rule|...]]
+element rule:    [- or #]name[/alias][attribute list]
+attribute list:  [!]"[" attribute rule "|" attribute rule "|" ... "]"
 attribute rule:  [! or -]name[=value, ~value, or <value?value]
 ----
 
@@ -22,8 +23,8 @@ The following table lists each control character and the part of the rule it is 
 [cols="1,1,4",options="header"]
 |===
 |Character |Used in |Summary
-|`+@+` |Element rule |Rules with this name will be applied to all elements defined after this rule. So `+@[attr1\|attr2]+` will enable `+attr1+` and `+attr2+` for all elements, but `+element1,@[attr1\|attr2],element2,element3+` will enable `+attr1+` and `+attr2+` only for `+element2+` and `+element3+`. If applied in xref:content-filtering.adoc#extended_valid_elements[extended_valid_elements], it is only effective for the elements in the extended_valid_elements list.
-|`+,+` |Rule list |Separates element rules.
+|`+@+` |Element rule |Rules with this name will be applied to all elements defined after this rule. So `+@[attr1\|attr2]+` will enable `+attr1+` and `+attr2+` for all elements, but `+element1,@[attr1\|attr2],element2,element3+` will enable `+attr1+` and `+attr2+` only for `+element2+` and `+element3+`. Only the first `+@+` rule is used. An `+@+` rule in `+valid_elements+` also applies to the elements in xref:content-filtering.adoc#extended_valid_elements[`+extended_valid_elements+`], and an `+@+` rule in `+extended_valid_elements+` is ignored if `+valid_elements+` already has one. If only `+extended_valid_elements+` has an `+@+` rule, it applies only to the elements defined after it in that option.
+|`+,+` |Rule list |Separates element rules. Do not add spaces after commas. For example, `+'p, strong'+` does not allow `+<strong>+` elements.
 |`+/+` |Element rule |Separates element synonyms. The first element is the one that is output. For example, `+strong/b+` converts `+<b>+` elements to `+<strong>+` elements.
 |`+[+` |Element rule |Starts the attribute list for an element rule.
 |`+]+` |Element rule |Ends the attribute list for an element rule.
@@ -32,20 +33,20 @@ The following table lists each control character and the part of the rule it is 
 |`+#+` |Element rule (prefix) |Pads the element with `+&nbsp;+` if it is empty. For example, `+#p+` converts `+<p></p>+` to `+<p>&nbsp;</p>+`.
 |`+!+` |Element rule (before `+[+`) |Removes the element tag and keeps its content if the element has no attributes. The `+!+` must be placed directly after the element name, or after the alias, and before the attribute list. For example, `+span![class\|style]+` converts `+<span>text</span>+` to `+text+` and keeps `+<span class="note">text</span>+`.
 |`+!+` |Attribute rule (prefix) |Makes the attribute required. If the element has none of its required attributes, the element tag is removed and its content is kept. For example, `+a[!href]+` converts `+<a title="note">text</a>+` to `+text+`.
-|`+-+` |Attribute rule (prefix) |Removes an attribute that the element inherits from an `+@+` rule. For example, `+@[id\|title],a[-title\|href]+` allows `+id+` and `+title+` on all elements except `+a+`, which allows `+id+` and `+href+` only.
+|`+-+` |Attribute rule (prefix) |Removes an attribute that the element inherits from an `+@+` rule. For example, `+@[id\|title],p,a[-title\|href]+` allows `+id+` and `+title+` on `+p+` elements, and `+id+` and `+href+` on `+a+` elements.
 |`+=+` |Attribute rule |Makes the attribute default to the specified value. For example, `+a[href\|target=_blank]+` adds `+target="_blank"+` to links that do not have a `+target+` attribute.
 |`+~+` |Attribute rule |Forces the attribute to the specified value. For example, `+a[href\|target~_blank]+` sets `+target="_blank"+` on all links.
-|`+<+` |Attribute rule |Verifies the value of an attribute (only the listed values are allowed). For example, `+a[href\|target<_blank?_self]+`.
+|`+<+` |Attribute rule |Lists the allowed values of an attribute. {productname} currently parses this rule but does not enforce it. For example, `+a[href\|target<_blank?_self]+`.
 |`+?+` |Attribute rule |Separates attribute verification values. See above.
 |===
 
-Wildcards such as `+*+`,`+++`,`+?+` may be used in element or attribute name matching. For example, `+p[data-*]+` allows all attributes that start with `+data-+` on `+p+` elements.
+Wildcards can be used in element and attribute names: `+*+` matches zero or more characters, `+++` matches one or more, and `+?+` matches zero or one. For example, `+td[col*|row*]+` allows `+colspan+` and `+rowspan+` on `+td+` elements. A wildcard matches any character, so `+h?+` matches `+h1+` to `+h6+` and also `+hr+`.
 
-The element-level `+!+` checks the attributes present in the content before attributes that the rule does not allow are removed. An element that has only disallowed attributes is therefore kept, without those attributes. For example, with `+span![class]+`, `+<span title="note">text</span>+` becomes `+<span>text</span>+`.
+Both forms of `+!+` are checked again when the content is saved, after attributes that the rule does not allow, or that are unsafe, have been removed. For example, with `+span![class]+`, `+<span title="note">text</span>+` is saved as `+text+`. With `+a[!href]+`, `+<a href="javascript:alert(1)">text</a>+` is saved as `+text+`.
 
 Attributes that start with `+data-+` or `+aria-+` are kept when validation is enabled, even if the attribute rules do not list them.
 
-The default rule set removes `+<span>+` elements that have no attributes. When `+valid_elements+` is set, use `+span!+` to keep this behavior, for example `+span![class|style]+`.
+The default rule set removes the tag of `+<span>+` elements that have no attributes, pads empty block elements, removes empty inline elements, and converts `+<b>+` and `+<i>+` to `+<strong>+` and `+<em>+`. When `+valid_elements+` is set, these defaults do not apply. To keep them, use the `+!+`, `+#+`, `+-+`, and `+/+` controls, for example `+span![class|style]+`, `+#p+`, and `+-strong/b+`. If no rule allows `+span+`, the tag of every `+<span>+` element is removed, including elements that have attributes.
 
 === Variables
 

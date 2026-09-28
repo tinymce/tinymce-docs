@@ -9,9 +9,9 @@
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
-The `+a11ychecker+` premium plugin allows you to check the HTML authored in the editor for various WCAG and Section 508 accessibility problems. It has an auto-repair feature that lets the user fix identified problems.
+The `+a11ychecker+` premium plugin allows you to check the HTML authored in the editor for various https://www.w3.org/TR/WCAG21/[Web Content Accessibility Guidelines (WCAG) 2.1] and https://www.access-board.gov/ict/[Section 508] accessibility problems. It has an auto-repair feature that lets the user fix identified problems.
 
-NOTE: The {pluginname} plugin evaluates the content authored in the editor. It does not evaluate the accessibility of the {productname} user interface, and the rules it applies are not a statement of conformance for {productname} itself. For information on using the editor with a keyboard or a screen reader, see the xref:tinymce-and-screenreaders.adoc[Accessible navigation guide].
+NOTE: The {pluginname} plugin evaluates the content authored in the editor. It does not evaluate the accessibility of the {productname} user interface, and the rules it applies are not a statement of conformance for {productname} itself. For information on using the editor with a keyboard or a screen reader, see the xref:tinymce-and-screenreaders.adoc[Accessible navigation guide]. For the conformance statement covering the {productname} user interface, see xref:accessibility-conformance.adoc[Accessibility conformance].
 
 == Interactive example
 

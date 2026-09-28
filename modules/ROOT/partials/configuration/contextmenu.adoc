@@ -1,7 +1,7 @@
 [[contextmenu]]
 == `+contextmenu+`
 
-The `+contextmenu+` option allows you to specify which items appear on the context menu. The format of this option is a space separated list of items in a string.
+The `+contextmenu+` option allows you to specify which items appear on the context menu. The format of this option is a space separated list of items in a string, or an array of item names.
 
 The context menu option accepts three styles of item:
 
@@ -15,7 +15,7 @@ The default configuration includes the context menu sections for the following p
 
 To disable the editor's context menu, set this option to `+false+`.
 
-*Type:* `+String+` or `+false+`
+*Type:* `+String+`, `+Array+` of strings, or `+false+`
 
 *Default value:* `+'link linkchecker image editimage table spellchecker configurepermanentpen'+`
 

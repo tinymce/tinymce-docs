@@ -111,7 +111,10 @@ ifeval::["{productSource}" != "cloud"]
 ----
 <Editor
   ScriptSrc="/path/to/tinymce.min.js"
+  LicenseKey="gpl"
 />
 ----
++
+include::partial$misc/admon-license-key-gpl.adoc[]
 
 endif::[]

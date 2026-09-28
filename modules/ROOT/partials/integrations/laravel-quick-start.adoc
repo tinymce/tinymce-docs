@@ -119,11 +119,18 @@ _File:_ `+resources/views/components/head/tinymce-config.blade.php+`
 <script>
   tinymce.init({
     selector: 'textarea#myeditorinstance', // Replace this CSS selector to match the placeholder element for TinyMCE
+ifeval::["{productSource}" != "cloud"]
+    license_key: 'gpl',
+endif::[]
     plugins: 'code table lists',
     toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
   });
 </script>
 ----
+ifeval::["{productSource}" != "cloud"]
++
+include::partial$misc/admon-license-key-gpl.adoc[]
+endif::[]
 
 ifeval::["{productSource}" == "cloud"]
 . Replace `+no-api-key+` in the {productname} source script with your {cloudname} API Key.

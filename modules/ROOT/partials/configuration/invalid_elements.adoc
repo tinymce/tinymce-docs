@@ -15,6 +15,8 @@ tinymce.init({
 });
 ----
 
-CAUTION: This option doesn't accept attributes in the list, only elements.
+CAUTION: This option does not accept attributes in the list, only elements.
+
+IMPORTANT: The `+invalid_elements+` option takes precedence over element rules with exact names in the xref:content-filtering.adoc#valid_elements[`+valid_elements+`] and xref:content-filtering.adoc#extended_valid_elements[`+extended_valid_elements+`] options. It has no effect on elements that match a wildcard rule, such as `+*[*]+`, `+*[class]+`, or `+h?+`, in either option.
 
 Also see xref:content-filtering.adoc#valid_elements[valid_elements] and xref:content-filtering.adoc#extended_valid_elements[extended_valid_elements] for more configuration options.

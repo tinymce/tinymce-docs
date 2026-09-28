@@ -50,14 +50,11 @@ jobs:
     - name: Build Website
       run: yarn antora ./antora-playbook.yml
 
-    - name: Generate LLM files
-      run: yarn generate-llm-files build/site
-
-    - name: Copy llms.txt files to root
-      run: ./-scripts/copy-llms-files.sh build/site
-
     - name: Generate markdown for agents
       run: yarn build:markdown build/site
+
+    - name: Generate LLM files
+      run: yarn generate-llm-files build/site
 
     - name: Rename site folder to docs
       run: |

@@ -1,93 +1,75 @@
 #!/usr/bin/env node
 
 /**
- * Script to generate llms.txt and llms-full.txt files from sitemap.xml
- * 
+ * Generates llms.txt and llms-full.txt from a built site.
+ *
  * Usage:
- *   node -scripts/generate-llm-files.js [sitemap-path-or-url]
- * 
- * Defaults to build/site/sitemap.xml (local) or can use remote URL
+ *   node -scripts/generate-llm-files.js [buildDir]
+ *
+ * buildDir defaults to build/site. Run it after the markdown step
+ * (yarn build:markdown), because page titles are read from each page's
+ * generated index.md rather than fetched from the published site.
  */
 
 const fs = require('fs');
 const path = require('path');
-const https = require('https');
-const http = require('http');
-const sanitizeHtml = require('sanitize-html');
 
 const BASE_URL = 'https://www.tiny.cloud/docs/tinymce/latest';
 const DOCS_ROOT_URL = 'https://www.tiny.cloud/docs';
-const ATTACHMENTS_DIR = path.join(__dirname, '../modules/ROOT/attachments');
 const DEFAULT_BUILD_DIR = path.join(__dirname, '../build/site');
 
-// Resolve where the sitemap is read from and where the generated files are written.
-// The argument may be a build directory, a sitemap file, or a remote sitemap URL:
-//   generate-llm-files build/site               -> reads build/site/sitemap.xml, writes build/site
-//   generate-llm-files build/site/sitemap.xml   -> writes build/site
-//   generate-llm-files https://.../sitemap.xml  -> writes modules/ROOT/attachments
-// The remote form preserves the manual workflow, where the output is reviewed and
-// committed. The local forms write into the build so the deploy needs no commit.
-// The generated files describe a single documentation version — parseSitemap() keeps
-// only the URLs under BASE_URL — so they must be published to that version's
-// attachments directory and no other. The path is derived from BASE_URL rather than
-// found by searching the build: a build contains an _attachments directory per
-// version, and searching wrote one version's content into every one of them.
-//
-// Antora publishes modules/ROOT/attachments/* to <component>/<version>/_attachments/,
-// which is a served location. The existing copy-llms-files.sh step then copies from
-// there to the site root, the second served location, so writing here feeds both
-// published URLs through the mechanism already in place.
-function versionAttachmentDir(buildDir) {
-  const versionPath = BASE_URL.startsWith(DOCS_ROOT_URL + '/')
-    ? BASE_URL.slice(DOCS_ROOT_URL.length + 1)
-    : null;
+// llms-full.txt carries every page's content, measured at about 3.5 MB. Anything
+// under this floor means content is missing, so the build fails rather than
+// publishing an index of links.
+const LLMS_FULL_MIN_BYTES = 2 * 1024 * 1024;
+// A phrase from the body of the basic-setup page, not from its URL or title, so a
+// file of links alone cannot pass.
+const LLMS_FULL_SENTINEL = 'The four most common configuration options for TinyMCE are';
 
-  if (!versionPath) return null;
+// There is one corpus: llms.txt and llms-full.txt describe the latest version only,
+// because parseSitemap() keeps only the URLs under BASE_URL. The pair is published at
+// two URLs, and both files are written to both by explicit path:
+//   /docs/llms.txt                                the site root
+//   /docs/tinymce/latest/_attachments/llms.txt    the latest version's attachments
+// Nothing searches the build for these files. A build holds one _attachments directory
+// per version, so a search-and-copy is correct only while exactly one pair exists, and
+// silently publishes the wrong one when a second appears. assertSingleCorpus() fails
+// the build if a copy exists anywhere else.
+const LLMS_FILES = [ 'llms.txt', 'llms-full.txt' ];
 
-  const dir = path.join(buildDir, versionPath, '_attachments');
-  return fs.existsSync(dir) ? dir : null;
+function llmsTargets(buildDir, filename) {
+  const versionPath = BASE_URL.slice(DOCS_ROOT_URL.length + 1);
+  return [
+    path.join(buildDir, filename),
+    path.join(buildDir, versionPath, '_attachments', filename),
+  ];
 }
 
-// Write to the version's attachments directory when it exists, otherwise to the build
-// root. The fallback keeps /docs/llms.txt correct — and keeps copy-llms-files.sh's
-// existence check passing — if the version segment ever changes.
-function writeGenerated(outputDir, filename, contents) {
-  if (path.resolve(outputDir) === path.resolve(ATTACHMENTS_DIR)) {
-    const target = path.join(outputDir, filename);
+function writeGenerated(buildDir, filename, contents) {
+  const targets = llmsTargets(buildDir, filename);
+  targets.forEach((target) => {
+    fs.mkdirSync(path.dirname(target), { recursive: true });
     fs.writeFileSync(target, contents);
-    return [target];
-  }
-
-  const attachmentDir = versionAttachmentDir(outputDir);
-
-  if (!attachmentDir) {
-    console.warn(`! No attachments directory for ${BASE_URL}; writing ${filename} to the build root instead.`);
-    const target = path.join(outputDir, filename);
-    fs.writeFileSync(target, contents);
-    return [target];
-  }
-
-  const target = path.join(attachmentDir, filename);
-  fs.writeFileSync(target, contents);
-  return [target];
+  });
+  return targets;
 }
 
-function resolveTargets(arg) {
-  if (!arg) {
-    return { sitemap: path.join(DEFAULT_BUILD_DIR, 'sitemap.xml'), outputDir: DEFAULT_BUILD_DIR };
+function findFiles(dir, names, found = []) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) findFiles(full, names, found);
+    else if (names.includes(entry.name)) found.push(full);
   }
+  return found;
+}
 
-  if (arg.startsWith('http://') || arg.startsWith('https://')) {
-    return { sitemap: arg, outputDir: ATTACHMENTS_DIR };
+function assertSingleCorpus(buildDir) {
+  const expected = new Set(LLMS_FILES.flatMap((filename) => llmsTargets(buildDir, filename)));
+  const stray = findFiles(buildDir, LLMS_FILES).filter((file) => !expected.has(file));
+  if (stray.length) {
+    throw new Error(`Found ${stray.length} llms file(s) outside the site root and ${BASE_URL}/_attachments/. ` +
+      `Only one corpus is published:\n  ${stray.join('\n  ')}`);
   }
-
-  const resolved = path.resolve(arg);
-
-  if (fs.existsSync(resolved) && fs.statSync(resolved).isDirectory()) {
-    return { sitemap: path.join(resolved, 'sitemap.xml'), outputDir: resolved };
-  }
-
-  return { sitemap: resolved, outputDir: path.dirname(resolved) };
 }
 
 // Convert a trailing-slash doc URL to its Markdown endpoint.
@@ -102,38 +84,14 @@ function toMarkdownEndpoints(content) {
   );
 }
 
-// Fetch sitemap from URL or file
-async function getSitemap(source) {
-  if (source.startsWith('http://') || source.startsWith('https://')) {
-    return new Promise((resolve, reject) => {
-      const client = source.startsWith('https') ? https : http;
-      client.get(source, (res) => {
-        let data = '';
-        res.on('data', (chunk) => { data += chunk; });
-        res.on('end', () => resolve(data));
-      }).on('error', reject);
-    });
-  } else {
-    // Validate file path to prevent path traversal
-    const resolvedPath = path.resolve(source);
-    const projectRoot = path.resolve(__dirname, '..');
-    
-    // Ensure the resolved path is within the project directory
-    if (!resolvedPath.startsWith(projectRoot)) {
-      throw new Error(`Invalid sitemap path: ${source}. Path must be within the project directory.`);
-    }
-    
-    if (!fs.existsSync(resolvedPath)) {
-      throw new Error(`Sitemap not found: ${source}\nPlease run 'yarn antora ./antora-playbook.yml' first to generate the site, or provide a URL.`);
-    }
-    
-    // Only allow .xml files
-    if (!resolvedPath.endsWith('.xml')) {
-      throw new Error(`Invalid file type: ${source}. Only .xml files are allowed.`);
-    }
-    
-    return fs.readFileSync(resolvedPath, 'utf8');
+function readSitemap(buildDir) {
+  const sitemapPath = path.join(buildDir, 'sitemap.xml');
+
+  if (!fs.existsSync(sitemapPath)) {
+    throw new Error(`Sitemap not found: ${sitemapPath}\nBuild the site first: yarn antora ./antora-playbook.yml`);
   }
+
+  return fs.readFileSync(sitemapPath, 'utf8');
 }
 
 // Parse sitemap.xml to extract all URLs
@@ -162,331 +120,106 @@ function getUrlPath(url) {
   return match ? match[1].replace(/\/$/, '') : '';
 }
 
-// Fetch H1 title from a page URL
-async function fetchH1Title(url) {
-  return new Promise((resolve) => {
-    // Validate URL to prevent SSRF - only allow tiny.cloud domains
-    if (!url.startsWith('https://www.tiny.cloud/') && !url.startsWith('http://www.tiny.cloud/')) {
-      resolve(null);
-      return;
+// The markdown sibling of a page URL, in the build directory.
+function markdownPathFor(buildDir, url) {
+  return path.join(buildDir, url.slice(DOCS_ROOT_URL.length), 'index.md');
+}
+
+// Parse the frontmatter written by scripts/generate-markdown.mjs: one
+// `key: "string"` or `key: number` pair per line, strings escaped by escapeYaml.
+function parseFrontmatter(markdown) {
+  const match = markdown.match(/^---\n([\s\S]*?)\n---\n/);
+  if (!match) return null;
+
+  const fields = {};
+  for (const line of match[1].split('\n')) {
+    const pair = line.match(/^([a-z_]+): (?:"((?:[^"\\]|\\.)*)"|(\d+))$/);
+    if (pair) {
+      fields[pair[1]] = pair[3] !== undefined ? Number(pair[3]) : pair[2].replace(/\\(.)/g, '$1');
     }
-    
-    const client = url.startsWith('https') ? https : http;
-    
-    // codeql[js/file-access-to-http]: URL is validated to only allow tiny.cloud domains, preventing SSRF attacks
-    const req = client.get(url, (res) => {
-      // Check for error status codes (404, 500, etc.)
-      if (res.statusCode >= 400) {
-        resolve(null);
-        return;
-      }
-      
-      let data = '';
-      
-      res.on('data', (chunk) => { data += chunk; });
-      
-      res.on('end', () => {
+  }
+  return { fields, body: markdown.slice(match[0].length) };
+}
+
+// Read every page's generated markdown. Every sitemap page must have one: the
+// markdown step skips a page with no article element, and a page missing here
+// would silently drop out of both LLM files.
+function readPages(buildDir, urls) {
+  const missing = [];
+  const pages = new Map();
+
+  for (const url of urls) {
+    const mdPath = markdownPathFor(buildDir, url);
+    const parsed = fs.existsSync(mdPath) ? parseFrontmatter(fs.readFileSync(mdPath, 'utf8')) : null;
+    if (!parsed || !parsed.fields.title) {
+      missing.push(url);
+    } else {
+      pages.set(url, parsed);
+    }
+  }
+
+  if (missing.length) {
+    throw new Error(`${missing.length} sitemap page(s) have no generated markdown (run yarn build:markdown first):\n  ${missing.join('\n  ')}`);
+  }
+
+  return pages;
+}
+
+// ---------------------------------------------------------------------------
+// Page content for llms-full.txt
+// ---------------------------------------------------------------------------
+
+// Apply fn to each line outside fenced code blocks.
+function mapProseLines(markdown, fn) {
+  let inFence = false;
+  return markdown.split('\n').map((line) => {
+    if (/^\s*(```|~~~)/.test(line)) {
+      inFence = !inFence;
+      return line;
+    }
+    return inFence ? line : fn(line);
+  }).join('\n');
+}
+
+// Relative links in a page body resolve against that page's URL, so once the
+// page is inlined they must be made absolute. Inline code spans are left alone.
+function absolutizeLinks(markdown, pageUrl) {
+  return mapProseLines(markdown, (line) =>
+    line.split(/(`[^`]*`)/).map((part, i) => i % 2 ? part : part.replace(
+      /(\]\()([^)\s]+)(\))/g,
+      (match, open, target, close) => {
+        if (/^[a-z][a-z0-9+.-]*:/i.test(target)) return match;
         try {
-          // Extract H1 tag using regex - look for <h1> or <h1 class="...">
-          const h1Match = data.match(/<h1[^>]*>(.*?)<\/h1>/i);
-          
-          if (h1Match && h1Match[1]) {
-            // Clean up the title using a well-tested HTML sanitization library
-            let title = h1Match[1];
-
-            // First, use sanitize-html to strip all HTML tags and attributes while preserving text.
-            // This avoids fragile hand-written tag parsing and multi-character sanitization pitfalls.
-            title = sanitizeHtml(title, {
-              allowedTags: [],
-              allowedAttributes: {},
-              textFilter: (text) => text
-            });
-
-            // Then, defensively remove any remaining angle brackets and script/protocol keywords
-            // to ensure no HTML-like or script-related fragments remain.
-            title = title
-              .replace(/[<>]/g, '')
-              .replace(/(?:javascript|data|vbscript)\s*:?/gi, '')
-              .replace(/\bscript\b/gi, '')
-              .trim();
-
-            // At this point, title is plain text with no angle brackets or script/protocol keywords
-            // Additionally, defensively strip any residual script/protocol keywords that could
-            // be used for injection even after angle brackets and colons have been removed
-            title = title.replace(/\b(?:script|javascript|vbscript|data)\b/gi, '');
-            
-            // Decode HTML entities safely - decode all entities to plain text
-            // Order matters: decode '&' last to avoid double-unescaping
-            // Decode all specific entities first, then &amp; at the end
-            title = title
-              .replace(/&nbsp;/g, ' ')
-              .replace(/&quot;/g, '"')
-              .replace(/&#39;/g, "'")
-              .replace(/&#8217;/g, "'") // Right single quotation mark (apostrophe)
-              .replace(/&#8216;/g, "'") // Left single quotation mark
-              .replace(/&#8220;/g, '"') // Left double quotation mark
-              .replace(/&#8221;/g, '"') // Right double quotation mark
-              .replace(/&#8211;/g, '–') // En dash
-              .replace(/&#8212;/g, '—') // Em dash
-              .replace(/&#160;/g, ' ') // Non-breaking space
-              // Decode numeric entities (&#123; format) - safe as we've already removed HTML tags
-              .replace(/&#(\d+);/g, (match, dec) => {
-                const code = parseInt(dec, 10);
-                // Only decode safe character codes (printable ASCII and valid Unicode)
-                if ((code >= 32 && code <= 126) || (code >= 160 && code <= 1114111)) {
-                  return String.fromCharCode(code);
-                }
-                return match; // Keep entity if unsafe
-              })
-              // Decode hex entities (&#x1F; format)
-              .replace(/&#x([0-9a-fA-F]+);/gi, (match, hex) => {
-                const code = parseInt(hex, 16);
-                // Only decode safe character codes
-                if ((code >= 32 && code <= 126) || (code >= 160 && code <= 1114111)) {
-                  return String.fromCharCode(code);
-                }
-                return match; // Keep entity if unsafe
-              })
-              // Decode remaining named entities (after numeric/hex to avoid conflicts)
-              .replace(/&lt;/g, '<') // Safe: HTML tags already removed
-              .replace(/&gt;/g, '>') // Safe: HTML tags already removed
-              .replace(/&amp;/g, '&') // Decode '&' last to prevent double-unescaping
-              .trim();
-            
-            // Remove extra whitespace
-            title = title.replace(/\s+/g, ' ');
-            
-            // Filter out error page titles
-            const errorPatterns = [
-              /couldn't find the page/i,
-              /page not found/i,
-              /404/i,
-              /error/i,
-              /not found/i
-            ];
-            
-            if (errorPatterns.some(pattern => pattern.test(title))) {
-              resolve(null);
-              return;
-            }
-            
-            if (title) {
-              resolve(title);
-            } else {
-              resolve(null);
-            }
-          } else {
-            // Fallback to generated title if no H1 found
-            resolve(null);
-          }
-        } catch (error) {
-          // If parsing fails, fallback to generated title
-          resolve(null);
+          return open + new URL(target, pageUrl).href + close;
+        } catch {
+          return match;
         }
-      });
-    });
-    
-    req.on('error', (error) => {
-      // If fetch fails, fallback to generated title
-      resolve(null);
-    });
-    
-    req.setTimeout(10000, () => {
-      req.destroy();
-      resolve(null);
-    });
+      }
+    )).join('')
+  );
+}
+
+// Each page is inlined under a level-2 heading, so its own headings move down one
+// level, and its level-1 title is dropped in favour of the section header.
+function demoteHeadings(markdown) {
+  return mapProseLines(markdown, (line) => {
+    const heading = line.match(/^(#{1,6}) (.*)$/);
+    if (!heading) return line;
+    return `${'#'.repeat(Math.min(heading[1].length + 1, 6))} ${heading[2]}`;
   });
 }
 
-// Batch fetch H1 titles with rate limiting
-async function fetchH1TitlesBatch(urls, batchSize = 10, delay = 100) {
-  const results = new Map();
-  
-  for (let i = 0; i < urls.length; i += batchSize) {
-    const batch = urls.slice(i, i + batchSize);
-    const promises = batch.map(async (url) => {
-      const title = await fetchH1Title(url);
-      return { url, title };
-    });
-    
-    const batchResults = await Promise.all(promises);
-    batchResults.forEach(({ url, title }) => {
-      results.set(url, title);
-    });
-    
-    // Rate limiting - wait between batches
-    if (i + batchSize < urls.length) {
-      await new Promise(resolve => setTimeout(resolve, delay));
-    }
-  }
-  
-  return results;
-}
-
-// Generate a descriptive title from URL path
-// NOTE: This script does A LOT of string matching against URL paths. If you encounter
-// weirdness (e.g. wrong titles, wrong categories), search for the relevant path strings
-// in this file to locate and fix the matching logic.
-function generateTitleFromPath(urlPath) {
-  if (!urlPath) return 'Home';
-
-  const pathTitleMap = {
-    '': 'Home',
-    'index': 'Home',
-    'getting-started': 'Getting Started',
-    'introduction-to-tinymce': 'Introduction to TinyMCE',
-    'installation': 'Installation',
-    'cloud-quick-start': 'Cloud Quick Start',
-    'npm-projects': 'NPM Projects Quick Start',
-    'zip-install': 'ZIP Installation Quick Start',
-    'installation-cloud': 'Cloud',
-    'installation-self-hosted': 'Self-hosted',
-    'installation-zip': 'ZIP',
-    'basic-setup': 'Basic Setup',
-    'work-with-plugins': 'Using plugins to extend TinyMCE',
-    'filter-content': 'Content Filtering',
-    'content-filtering': 'Content filtering',
-    'localize-your-language': 'Localization',
-    'spell-checking': 'Spell Checking',
-    'editor-content-css': 'CSS for rendering content',
-    'url-handling': 'URL Handling',
-    'plugins': 'Plugins',
-    'table': 'Table',
-    'table-options': 'Table options',
-    'image': 'Image',
-    'link': 'Link',
-    'lists': 'Lists',
-    'code': 'Code',
-    'codesample': 'Code Sample',
-    'advtable': 'Enhanced Tables',
-    'advcode': 'Enhanced Code Editor',
-    'editimage': 'Image Editing',
-    'linkchecker': 'Link Checker',
-    'a11ychecker': 'Accessibility Checker',
-    'upgrading': 'Upgrading TinyMCE',
-    'migration-guides': 'Migration Guides Overview',
-    'migration-from-7x': 'Migration from 7.x',
-    'migration-from-6x': 'Migration from 6.x',
-    'migration-from-6x-to-8x': 'Migration from 6.x to 8.x',
-    'migration-from-5x': 'Migration from 5.x',
-    'migration-from-5x-to-8x': 'Migration from 5.x to 8.x',
-    'migration-from-4x': 'Migration from 4.x',
-    'migration-from-4x-to-8x': 'Migration from 4.x to 8.x',
-    'migration-from-froala': 'Migrating from Froala',
-    'examples': 'Examples',
-    'how-to-guides': 'How To Guides',
-    'release-notes': 'Release Notes',
-    'changelog': 'Changelog',
-    'accessibility': 'Accessibility',
-    'security': 'Security guide',
-    'support': 'Support',
-    'react': 'React',
-    'react-cloud': 'React Cloud',
-    'react-pm-host': 'React Package Manager',
-    'react-pm-bundle': 'React Package Manager (with bundling)',
-    'react-zip-host': 'React ZIP',
-    'react-zip-bundle': 'React ZIP (with bundling)',
-    'react-ref': 'Technical reference (React)',
-    'vue': 'Vue.js',
-    'vue-cloud': 'Vue Cloud',
-    'vue-pm': 'Vue Package Manager',
-    'vue-pm-bundle': 'Vue Package Manager (with bundling)',
-    'vue-zip': 'Vue ZIP',
-    'vue-ref': 'Technical reference (Vue)',
-    'angular': 'Angular',
-    'angular-cloud': 'Angular Cloud',
-    'angular-pm': 'Angular Package Manager',
-    'angular-pm-bundle': 'Angular Package Manager (with bundling)',
-    'angular-zip': 'Angular ZIP',
-    'angular-zip-bundle': 'Angular ZIP (with bundling)',
-    'angular-ref': 'Technical reference (Angular)',
-    'blazor': 'Blazor',
-    'blazor-cloud': 'Blazor Cloud',
-    'blazor-pm': 'Blazor Package Manager',
-    'blazor-zip': 'Blazor ZIP',
-    'blazor-ref': 'Technical reference (Blazor)',
-    'svelte': 'Svelte',
-    'svelte-cloud': 'Svelte Cloud',
-    'svelte-pm': 'Svelte Package Manager',
-    'svelte-pm-bundle': 'Svelte Package Manager (with bundling)',
-    'svelte-zip': 'Svelte ZIP',
-    'svelte-ref': 'Technical reference (Svelte)',
-    'webcomponent': 'Web Component',
-    'webcomponent-cloud': 'Web Component Cloud',
-    'webcomponent-pm': 'Web Component Package Manager',
-    'webcomponent-zip': 'Web Component ZIP',
-    'webcomponent-ref': 'Technical reference (Web Component)',
-    'jquery': 'jQuery',
-    'jquery-cloud': 'jQuery Cloud',
-    'jquery-pm': 'jQuery Package Manager',
-    'django': 'Django',
-    'django-cloud': 'Django Cloud',
-    'django-zip': 'Django ZIP',
-    'laravel': 'Laravel',
-    'laravel-tiny-cloud': 'Laravel Cloud',
-    'laravel-composer-install': 'Laravel Composer',
-    'laravel-zip-install': 'Laravel ZIP',
-    'rails': 'Ruby on Rails',
-    'rails-cloud': 'Rails Cloud',
-    'rails-third-party': 'Rails Package Manager',
-    'rails-zip': 'Rails ZIP',
-    'expressjs-pm': 'Node.js + Express',
-    'bootstrap': 'Bootstrap',
-    'bootstrap-cloud': 'Bootstrap Cloud',
-    'bootstrap-zip': 'Bootstrap ZIP',
-    'php-projects': 'PHP Projects',
-    'dotnet-projects': '.NET Projects',
-    'wordpress': 'WordPress',
-    'shadow-dom': 'Shadow DOM',
-    'swing': 'Java Swing'
-  };
-
-  if (pathTitleMap[urlPath]) {
-    return pathTitleMap[urlPath];
-  }
-
-  // Handle release notes
-  if (urlPath.match(/^\d+\.\d+\.\d+-release-notes$/)) {
-    const version = urlPath.replace('-release-notes', '');
-    return `TinyMCE ${version}`;
-  }
-
-  // Handle bundling entries (order matters: more specific keys first)
-  const bundlingTitles = {
-    'webpack-cjs-npm': 'CommonJS and NPM (Webpack)',
-    'webpack-es6-npm': 'ES6 and NPM (Webpack)',
-    'webpack-cjs-download': 'CommonJS and a .zip archive (Webpack)',
-    'webpack-es6-download': 'ES6 and a .zip archive (Webpack)',
-    'rollup-es6-npm': 'ES6 and npm (Rollup)',
-    'rollup-es6-download': 'ES6 and a .zip archive (Rollup)',
-    'vite-es6-npm': 'ES6 and NPM (Vite)',
-    'browserify-cjs-npm': 'CommonJS and npm (Browserify)',
-    'browserify-cjs-download': 'CommonJS and a .zip archive (Browserify)'
-  };
-  const bundlingMatch = Object.keys(bundlingTitles).find((k) => urlPath.includes(k));
-  if (bundlingMatch) {
-    return bundlingTitles[bundlingMatch];
-  }
-  
-  // Handle API references
-  if (urlPath.startsWith('apis/')) {
-    const apiPath = urlPath.replace('apis/', '');
-    return apiPath.split('/').pop().replace(/\.adoc$/, '');
-  }
-  
-  // Convert kebab-case to Title Case
-  const words = urlPath
-    .replace(/-/g, ' ')
-    .split(' ')
-    .map(word => {
-      // Handle acronyms
-      if (word.toLowerCase() === 'npm' || word.toLowerCase() === 'cjs' || word.toLowerCase() === 'es6') {
-        return word.toUpperCase();
-      }
-      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-    });
-  
-  return words.join(' ');
+function renderPageSection({ fields, body }) {
+  const content = body.replace(/^\s*# [^\n]*\n+/, '').trim();
+  return [
+    `## ${fields.title}`,
+    '',
+    `Source: ${fields.canonical_url}`,
+    `Last updated: ${fields.last_updated}`,
+    '',
+    demoteHeadings(absolutizeLinks(content, fields.canonical_url)),
+    '',
+  ].join('\n');
 }
 
 // Categorize URL based on path
@@ -762,43 +495,19 @@ function makeTitlesUnique(entries) {
 }
 
 // Generate llms-full.txt
-async function generateLLMsFullTxt(urls) {
-  console.log(`Fetching H1 titles from ${urls.length} pages...`);
-  console.log('This may take a few minutes...');
-  
-  // Fetch H1 titles from all pages
-  const h1Titles = await fetchH1TitlesBatch(urls, 10, 100);
-  
-  let fetchedCount = 0;
-  let fallbackCount = 0;
-  
-  // Process all URLs
+function generateLLMsFullTxt(urls, pages, generated) {
   const entries = urls.map(url => {
     const urlPath = getUrlPath(url);
-    const fetchedTitle = h1Titles.get(url);
-    const generatedTitle = generateTitleFromPath(urlPath);
-    
-    // Use fetched H1 if available, otherwise fallback to generated
-    const title = fetchedTitle || generatedTitle;
-    
-    if (fetchedTitle) {
-      fetchedCount++;
-    } else {
-      fallbackCount++;
-    }
-    
     const catInfo = categorizeUrl(urlPath);
     
     return {
       url,
       urlPath,
-      title,
+      title: pages.get(url).fields.title,
       category: catInfo.category,
       subcategory: catInfo.subcategory
     };
   });
-  
-  console.log(`✓ Fetched ${fetchedCount} H1 titles, ${fallbackCount} used fallback titles`);
   
   // Remove duplicate URLs (keep first occurrence) - should already be unique from parseSitemap, but double-check
   const seenUrls = new Set();
@@ -844,6 +553,8 @@ async function generateLLMsFullTxt(urls) {
   
   // Build content
   let content = `# TinyMCE Documentation - Complete Reference
+
+> The complete content of the TinyMCE 8 documentation, grouped by topic. Generated ${generated}.
 
 ## Overview
 TinyMCE is a rich text editor that provides a WYSIWYG editing experience. The latest stable version is TinyMCE 8, released in July 2025.
@@ -1019,6 +730,7 @@ tinymce.init({
 <script>
 tinymce.init({
   selector: 'textarea',
+  license_key: 'gpl',
   plugins: 'advlist autolink lists link image charmap preview anchor',
   toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link image'
 });
@@ -1070,12 +782,13 @@ export default {
 ## Important Notes for AI Assistants
 
 1. **Always use TinyMCE 8** for new projects and code examples
-2. **CDN URLs must include version 8**: Use \`tinymce@8\` or \`tinymce/8\` in URLs
-3. **Package installations**: Always specify \`tinymce@8\` when installing
-4. **Integration packages**: Use the latest versions compatible with TinyMCE 8
-5. **Code examples default to TinyMCE 8** unless explicitly noted otherwise
-6. **Legacy versions (5, 6, 7)**: Only reference when specifically asked about migration or legacy support
-7. **Cloud vs Self-Hosted**: Cloud deployment is recommended for most use cases
+2. **A key is required**: without a Tiny Cloud API key or, when self-hosted, a \`license_key\` (\`'gpl'\` for use under the GPL), the editor is disabled
+3. **CDN URLs must include version 8**: Use \`tinymce@8\` or \`tinymce/8\` in URLs
+4. **Package installations**: Always specify \`tinymce@8\` when installing
+5. **Integration packages**: Use the latest versions compatible with TinyMCE 8
+6. **Code examples default to TinyMCE 8** unless explicitly noted otherwise
+7. **Legacy versions (5, 6, 7)**: Only reference when specifically asked about migration or legacy support
+8. **Cloud vs Self-Hosted**: Cloud deployment is recommended for most use cases
 
 ## API Reference
 - **Editor API**: ${BASE_URL}/apis/tinymce.editor/
@@ -1096,7 +809,7 @@ export default {
 
   // Complete Documentation Index
   content += `## Complete Documentation Index\n\n`;
-  content += `This section provides a complete list of all ${uniqueEntries.length} documentation pages available in TinyMCE 8, organized by category. This comprehensive index ensures LLMs have access to every documentation page, reducing the risk of hallucinations or missing important details.\n\n`;
+  content += `This section lists all ${uniqueEntries.length} documentation pages available in TinyMCE 8, organized by category. The full content of every page follows the index, in the same order, each under its own heading with its source URL and last updated date.\n\n`;
 
   // Output categories in specific order
   const categoryStructure = [
@@ -1165,18 +878,50 @@ export default {
     }
   });
 
-  return content;
+  // Page content, in index order: one level-1 heading per category, one level-2
+  // heading per page. Only the index is rewritten to markdown endpoints; page
+  // bodies, including their code samples, are inlined as generated.
+  let pagesContent = '';
+  categoryStructure.forEach(({ category, subcategory }) => {
+    const key = subcategory ? `${category}::${subcategory}` : category;
+    if (!categorized.has(key)) return;
+
+    pagesContent += `\n# ${subcategory ? `${category}: ${subcategory}` : category}\n\n`;
+    categorized.get(key).forEach((entry) => {
+      pagesContent += renderPageSection(pages.get(entry.url)) + '\n';
+    });
+  });
+
+  return toMarkdownEndpoints(content) + pagesContent;
+}
+
+// Fail the build rather than publish a file of links.
+function assertFullText(llmsFullTxt) {
+  const bytes = Buffer.byteLength(llmsFullTxt);
+  const problems = [];
+  if (bytes < LLMS_FULL_MIN_BYTES) problems.push(`is ${bytes} bytes, under the ${LLMS_FULL_MIN_BYTES}-byte floor`);
+  if (!llmsFullTxt.includes(LLMS_FULL_SENTINEL)) problems.push(`does not contain the basic-setup sentinel "${LLMS_FULL_SENTINEL}"`);
+  if (/^---$/m.test(llmsFullTxt)) problems.push('contains a frontmatter fence (---)');
+  if (problems.length) throw new Error(`llms-full.txt ${problems.join('; ')}`);
 }
 
 // Generate llms.txt (curated, simplified version)
-function generateLLMsTxt(urls) {
+function generateLLMsTxt(urls, generated) {
   return `# TinyMCE Documentation
 
-> Rich text editor for web applications. The latest stable version is TinyMCE 8.
+> Rich text editor for web applications. The latest stable version is TinyMCE 8. Generated ${generated}.
 
 TinyMCE is a powerful, flexible WYSIWYG rich text editor that can be integrated into any web application.
 
+## Version coverage
+
+- This file covers TinyMCE 8, the current major version: ${BASE_URL}/
+- TinyMCE 7, 6, and 5 are documented at ${DOCS_ROOT_URL}/tinymce/7/ and the matching /tinymce/6/ and /tinymce/5/ paths
+- Every page on every version is also served as markdown: append \`index.md\` to its URL
+
 **IMPORTANT**: Always use TinyMCE 8 for new projects. Use \`tinymce@8\` or \`tinymce/8\` in CDN URLs and package installations.
+
+**IMPORTANT**: TinyMCE 8 is disabled without a valid key. Load it from Tiny Cloud with an API key, or, when self-hosting, set the \`license_key\` option (\`'gpl'\` for use under the GPL). See [License key](${BASE_URL}/license-key/).
 
 ## Getting Started
 
@@ -1221,6 +966,7 @@ npm install tinymce@8
 <script>
 tinymce.init({
   selector: 'textarea',
+  license_key: 'gpl',
   plugins: 'advlist autolink lists link image charmap preview anchor',
   toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link image'
 });
@@ -1289,73 +1035,268 @@ TinyMCE AI (\`tinymceai\` plugin) is the current AI writing assistant for TinyMC
 - [Upgrading TinyMCE](${BASE_URL}/upgrading/): Upgrade guide
 - [Migration from 7.x](${BASE_URL}/migration-from-7x/): Migrate from TinyMCE 7
 
-## AI-Assisted Development with MCP
-
-For up-to-date TinyMCE documentation directly in AI coding tools, set up the Context7 MCP server. TinyMCE docs are indexed at [context7.com/tinymce/tinymce-docs](https://context7.com/tinymce/tinymce-docs).
-
-### Cursor
-
-Add to \`.cursor/mcp.json\`:
-
-\`\`\`json
-{
-  "mcpServers": {
-    "context7": {
-      "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"]
-    }
-  }
-}
-\`\`\`
-
-### Claude Code
-
-\`\`\`bash
-claude mcp add context7 -- npx -y @upstash/context7-mcp
-\`\`\`
-
-Add "use context7" to any prompt for live TinyMCE documentation lookups.
-
 ## Complete Documentation
 
-For a complete list of all ${urls.length} documentation pages, see [llms-full.txt](${DOCS_ROOT_URL}/llms-full.txt).
+For the full content of all ${urls.length} documentation pages in one file, see [llms-full.txt](${DOCS_ROOT_URL}/llms-full.txt).
+
+## For Agents
+
+- [AGENTS.md](${DOCS_ROOT_URL}/AGENTS.md): License requirements, the version scheme, the markdown convention, and how to budget retrieval with the token manifest
+- [sitemap.md](${DOCS_ROOT_URL}/sitemap.md): The navigation tree, with each page's description and last updated date
+- [changes.json](${DOCS_ROOT_URL}/changes.json): The most recently changed pages, newest first
+- [Token manifest](${DOCS_ROOT_URL}/_markdown-manifest.json): Every page on every version, with its title, description, markdown URL, last updated date, and token count
 
 `;
 }
 
-// Main execution
-async function main() {
-  const { sitemap: sitemapSource, outputDir } = resolveTargets(process.argv[2]);
+// ---------------------------------------------------------------------------
+// Root agent artifacts: AGENTS.md, changes.json, sitemap.md
+// ---------------------------------------------------------------------------
+//
+// Each file has one job, and a statement belongs in only one of them (the license
+// requirement is the one deliberate repetition):
+//   ai-coding-agents page  human    per-agent configuration and copy-paste snippets
+//   llms.txt               agent    index of the documentation content
+//   AGENTS.md              agent    license requirement, version scheme, markdown
+//                                   convention, manifest schema, one pointer per access path
+//   sitemap.md             both     the navigation tree with descriptions and dates
+//   changes.json           agent    what changed, newest first
 
-  console.log('Generating LLM files...');
-  console.log(`Using sitemap: ${sitemapSource}`);
-  console.log(`Writing to:    ${outputDir}`);
+// Entries in changes.json, out of roughly 1,550 pages across all versions.
+const CHANGES_LIMIT = 500;
+const MANIFEST_URL = `${DOCS_ROOT_URL}/_markdown-manifest.json`;
+const MCP_ENDPOINT = 'https://tinymcedocs.mcp.kapa.ai';
+const CONTEXT7_LIBRARY = 'tinymce/docs';
 
-  if (!fs.existsSync(outputDir)) {
-    throw new Error(`Output directory does not exist: ${outputDir}`);
+const pagePath = (url) => new URL(url).pathname.replace(/^\/docs/, '');
+
+function readManifest(buildDir) {
+  const manifestPath = path.join(buildDir, '_markdown-manifest.json');
+  if (!fs.existsSync(manifestPath)) {
+    throw new Error(`Markdown manifest not found: ${manifestPath}\nRun yarn build:markdown first.`);
+  }
+  return JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+}
+
+function generateChangesJson(manifest, generated) {
+  const changes = Object.entries(manifest.pages)
+    .map(([p, page]) => ({
+      url: DOCS_ROOT_URL + p,
+      md_url: page.md_url,
+      title: page.title,
+      version: page.version,
+      last_updated: page.last_updated,
+      tokens: page.tokens,
+    }))
+    .sort((a, b) => b.last_updated.localeCompare(a.last_updated) || a.url.localeCompare(b.url))
+    .slice(0, CHANGES_LIMIT);
+
+  return JSON.stringify({ schema: 1, generated, limit: CHANGES_LIMIT, changes }, null, 2) + '\n';
+}
+
+// Mirror the rendered navigation of the latest version's start page, which Antora
+// builds from nav.adoc and the API reference nav.
+function generateSitemapMd(buildDir, manifest, generated) {
+  const { JSDOM } = require('jsdom');
+  const versionPath = BASE_URL.slice(DOCS_ROOT_URL.length + 1);
+  const startPage = path.join(buildDir, versionPath, 'index.html');
+  const doc = new JSDOM(fs.readFileSync(startPage, 'utf8')).window.document;
+  const navList = doc.querySelector('nav.nav-menu > ul.nav-list');
+  if (!navList) throw new Error(`No navigation tree found in ${startPage}`);
+
+  const linked = new Set();
+  const lines = [];
+  const shortDate = (iso) => iso.slice(0, 10);
+  // Direct children only; jsdom treats ':scope > x' as a descendant selector.
+  const children = (el, selector) => [ ...el.children ].filter((child) => child.matches(selector));
+  const child = (el, selector) => children(el, selector)[0];
+
+  const entryLine = (label, href) => {
+    const url = new URL(href, BASE_URL + '/');
+    const page = url.origin === new URL(DOCS_ROOT_URL).origin ? manifest.pages[pagePath(url.href.split('#')[0])] : null;
+    if (!page) return `[${label}](${url.href})`;
+    // Later links to sections of a page already listed stay section links. The
+    // first link to a page, even to one of its sections, stands for the page.
+    const key = pagePath(url.href.split('#')[0]);
+    if (url.hash && linked.has(key)) return `[${label}](${url.href})`;
+    linked.add(key);
+    const description = page.description ? ` — ${page.description}` : '';
+    return `[${label}](${page.md_url})${description} (updated ${shortDate(page.last_updated)})`;
+  };
+
+  const walk = (ul, depth) => {
+    for (const li of children(ul, 'li.nav-item')) {
+      const link = child(li, 'a.nav-link');
+      const text = child(li, '.nav-text');
+      const label = (link || text)?.textContent.replace(/\s+/g, ' ').trim();
+      const sublist = child(li, 'ul.nav-list');
+
+      if (depth === 0 || !label) {
+        if (sublist) walk(sublist, depth === 0 ? 1 : depth);
+        continue;
+      }
+
+      const entry = link ? entryLine(label, link.getAttribute('href')) : `**${label}**`;
+      if (depth === 1) {
+        lines.push('', `## ${link ? entry : label}`, '');
+      } else {
+        lines.push(`${'  '.repeat(depth - 2)}- ${entry}`);
+      }
+      if (sublist) walk(sublist, depth + 1);
+    }
+  };
+  walk(navList, 0);
+
+  const unlinked = Object.entries(manifest.pages)
+    .filter(([p]) => p.startsWith(`/${versionPath}/`) && !linked.has(p))
+    .sort(([a], [b]) => a.localeCompare(b));
+  if (unlinked.length) {
+    lines.push('', '## Pages not in the navigation', '');
+    unlinked.forEach(([, page]) => {
+      const description = page.description ? ` — ${page.description}` : '';
+      lines.push(`- [${page.title}](${page.md_url})${description} (updated ${shortDate(page.last_updated)})`);
+    });
   }
 
-  try {
-    const sitemapContent = await getSitemap(sitemapSource);
-    const urls = parseSitemap(sitemapContent);
-    console.log(`Found ${urls.length} unique URLs in sitemap`);
-    
-    const llmsTxt = toMarkdownEndpoints(generateLLMsTxt(urls));
-    const llmsTxtPaths = writeGenerated(outputDir, 'llms.txt', llmsTxt);
-    llmsTxtPaths.forEach((p) => console.log(`✓ Wrote ${p}`));
+  return [
+    '# TinyMCE 8 documentation sitemap',
+    '',
+    `> The navigation tree of the TinyMCE 8 documentation, with each page's description and last updated date. Generated ${generated}.`,
+    '',
+    `This sitemap covers TinyMCE 8 (\`latest\`) only. Links point to each page's markdown; the same path without \`index.md\` is the HTML page.`,
+    ...lines,
+    '',
+  ].join('\n');
+}
 
-    const llmsFullTxt = toMarkdownEndpoints(await generateLLMsFullTxt(urls));
-    const llmsFullPaths = writeGenerated(outputDir, 'llms-full.txt', llmsFullTxt);
-    llmsFullPaths.forEach((p) => console.log(`✓ Wrote ${p}`));
-    
+function generateAgentsMd({ manifest, generated, llmsFullTokens }) {
+  const { encode } = require('gpt-tokenizer');
+  const page = (name) => manifest.pages[`/tinymce/latest/${name}/`];
+  const example = [ 'react-cloud', 'license-key', 'basic-setup' ].map((name) => ({ name, ...page(name) }));
+  const exampleTokens = example.reduce((sum, p) => sum + p.tokens, 0);
+  const manifestTokens = encode(JSON.stringify(manifest, null, 2), { allowedSpecial: 'all' }).length;
+  const format = (n) => n.toLocaleString('en-US');
+
+  return `# TinyMCE documentation for AI agents
+
+> How to retrieve and cite the TinyMCE documentation. Generated ${generated}.
+
+## A key is required, or the editor is disabled
+
+Without a valid key, TinyMCE 8 loads but the editor is disabled. Every configuration must choose one:
+
+- **Tiny Cloud**: load \`https://cdn.tiny.cloud/1/<api-key>/tinymce/8/tinymce.min.js\` with a Tiny Cloud API key. No \`license_key\` option is needed.
+- **Self-hosted** (npm, ZIP, or a public CDN such as jsDelivr): set the \`license_key\` option. Use \`license_key: 'gpl'\` for use under the GPL v2 or later. A commercial license key also requires the commercial license key manager.
+
+Details: ${BASE_URL}/license-key/index.md
+
+## What TinyMCE is
+
+TinyMCE is a rich text editor for web applications, maintained by Tiny Technologies. It is configured with a single \`tinymce.init()\` call and has official integrations for React, Vue, Angular, Svelte, Blazor, jQuery, and web components.
+
+## Versions
+
+- TinyMCE 8 is the current major version, documented under \`${BASE_URL}/\`. A URL that names version 8, such as \`${DOCS_ROOT_URL}/tinymce/8/basic-setup/\`, redirects to the same page under \`latest\`.
+- Earlier major versions are documented under their number: \`${DOCS_ROOT_URL}/tinymce/<major>/\`.
+
+## Markdown pages
+
+Each page's markdown opens with frontmatter that makes it citable on its own:
+
+\`\`\`yaml
+title: ${JSON.stringify(example[0].title)}
+description: ${JSON.stringify(example[0].description)}
+canonical_url: ${JSON.stringify(`${DOCS_ROOT_URL}/tinymce/latest/${example[0].name}/`)}
+md_url: ${JSON.stringify(example[0].md_url)}
+version: "latest"
+last_updated: ${JSON.stringify(example[0].last_updated)}
+tokens: ${example[0].tokens}
+\`\`\`
+
+Cite \`canonical_url\` and \`last_updated\`. On an earlier version's page, \`canonical_url\` points to the TinyMCE 8 page of the same name when one exists; \`md_url\` is always the file itself.
+
+## Budgeting retrieval with the token manifest
+
+${MANIFEST_URL} lists every page on every version:
+
+\`\`\`json
+{ "schema": 1, "generated": "…", "pages": { "/tinymce/latest/<page>/": { "title": "…", "description": "…", "md_url": "…", "version": "latest", "last_updated": "…", "tokens": 0 } } }
+\`\`\`
+
+\`tokens\` counts the markdown body with the o200k_base tokenizer; treat it as an estimate for other models.
+
+Worked example: adding TinyMCE to a React app on Tiny Cloud needs three pages.
+
+| Page | Tokens |
+|---|---|
+${example.map((p) => `| ${p.md_url} | ${format(p.tokens)} |`).join('\n')}
+| **Total** | **${format(exampleTokens)}** |
+
+That is ${(exampleTokens / llmsFullTokens * 100).toFixed(1)}% of the ${format(llmsFullTokens)} tokens in llms-full.txt. The manifest itself is about ${format(manifestTokens)} tokens: fetch and filter it in code rather than reading it into context. An agent that cannot run code can choose pages from ${DOCS_ROOT_URL}/sitemap.md instead. ${DOCS_ROOT_URL}/changes.json lists the most recently changed pages, newest first, to show whether a cached page is stale.
+
+## Other ways in
+
+- ${DOCS_ROOT_URL}/llms.txt: index of the TinyMCE 8 documentation.
+- ${DOCS_ROOT_URL}/llms-full.txt: the content of every TinyMCE 8 page in one file.
+- Documentation MCP server: \`${MCP_ENDPOINT}\` (streamable HTTP, OAuth sign-in).
+- Context7: library \`${CONTEXT7_LIBRARY}\`.
+
+Configuring a specific agent: ${BASE_URL}/ai-coding-agents/index.md
+`;
+}
+
+// Main execution
+function main() {
+  const buildDir = path.resolve(process.argv[2] || DEFAULT_BUILD_DIR);
+
+  console.log('Generating LLM files...');
+  console.log(`Using build: ${buildDir}`);
+
+  if (!fs.existsSync(buildDir) || !fs.statSync(buildDir).isDirectory()) {
+    throw new Error(`Build directory does not exist: ${buildDir}`);
+  }
+
+  const urls = parseSitemap(readSitemap(buildDir));
+  console.log(`Found ${urls.length} unique URLs in sitemap`);
+
+  const pages = readPages(buildDir, urls);
+  const generated = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
+
+  assertSingleCorpus(buildDir);
+
+  const llmsTxt = toMarkdownEndpoints(generateLLMsTxt(urls, generated));
+  writeGenerated(buildDir, 'llms.txt', llmsTxt).forEach((p) => console.log(`✓ Wrote ${p}`));
+
+  const llmsFullTxt = generateLLMsFullTxt(urls, pages, generated);
+  assertFullText(llmsFullTxt);
+  writeGenerated(buildDir, 'llms-full.txt', llmsFullTxt).forEach((p) => console.log(`✓ Wrote ${p}`));
+
+  // The root agent artifacts are written to the build root by explicit path.
+  const { encode } = require('gpt-tokenizer');
+  const manifest = readManifest(buildDir);
+  const rootFiles = {
+    'AGENTS.md': generateAgentsMd({
+      manifest,
+      generated,
+      llmsFullTokens: encode(llmsFullTxt, { allowedSpecial: 'all' }).length,
+    }),
+    'changes.json': generateChangesJson(manifest, generated),
+    'sitemap.md': generateSitemapMd(buildDir, manifest, generated),
+  };
+  Object.entries(rootFiles).forEach(([filename, contents]) => {
+    const target = path.join(buildDir, filename);
+    fs.writeFileSync(target, contents);
+    console.log(`✓ Wrote ${target}`);
+  });
+}
+
+if (require.main === module) {
+  try {
+    main();
   } catch (error) {
     console.error('Error:', error.message);
     process.exit(1);
   }
 }
 
-if (require.main === module) {
-  main();
-}
-
-module.exports = { generateLLMsTxt, generateLLMsFullTxt, parseSitemap, getSitemap, fetchH1Title, fetchH1TitlesBatch };
+module.exports = { generateLLMsTxt, generateLLMsFullTxt, parseSitemap, parseFrontmatter };

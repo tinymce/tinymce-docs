@@ -1066,7 +1066,7 @@ For the full content of all ${urls.length} documentation pages in one file, see 
 const CHANGES_LIMIT = 500;
 const MANIFEST_URL = `${DOCS_ROOT_URL}/_markdown-manifest.json`;
 const MCP_ENDPOINT = 'https://tinymcedocs.mcp.kapa.ai';
-const CONTEXT7_LIBRARY = 'tinymce/docs';
+const CONTEXT7_LIBRARY = '/tinymce/tinymce-docs';
 
 const pagePath = (url) => new URL(url).pathname.replace(/^\/docs/, '');
 

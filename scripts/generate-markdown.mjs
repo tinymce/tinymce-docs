@@ -106,6 +106,16 @@ const extractDemoCode = (demo, doc) => {
   return fragment;
 };
 
+// The converter fences a <pre> only when it holds a <code> element.
+const fenceLiteralBlocks = (article, doc) => {
+  article.querySelectorAll('pre').forEach((pre) => {
+    if (pre.querySelector('code')) return;
+    const code = doc.createElement('code');
+    code.append(...pre.childNodes);
+    pre.appendChild(code);
+  });
+};
+
 const rewriteLiveDemos = (article, doc) => {
   article.querySelectorAll('.live-demo').forEach((demo) => {
     const replacement = extractDemoCode(demo, doc);
@@ -190,6 +200,115 @@ const rewriteCardTables = (article, doc) => {
   });
 };
 
+// The converter ends a table row at any line break inside a cell. So merged
+// cells are filled in, a table with block content in its cells is written as
+// one block per row, and any other table keeps each cell on one line, with
+// CELL_BREAK written as <br>.
+const CELL_BREAK = '\u2063br\u2063';
+
+const unwrap = (el) => el.replaceWith(...el.childNodes);
+
+const hasBlockContent = (cell) => cell.querySelector('pre, ul, ol, dl, table, blockquote') !== null;
+
+const fillMergedCells = (table) => {
+  const carried = [];
+  [ ...table.rows ].forEach((row) => {
+    const cells = [];
+    const takeCarried = () => {
+      while (carried[cells.length]?.rows > 0) {
+        carried[cells.length].rows--;
+        cells.push(carried[cells.length].cell.cloneNode(true));
+      }
+    };
+
+    takeCarried();
+    [ ...row.cells ].forEach((cell) => {
+      const { rowSpan, colSpan } = cell;
+      cell.removeAttribute('rowspan');
+      cell.removeAttribute('colspan');
+      for (let i = 0; i < Math.max(colSpan, 1); i++) {
+        const copy = i ? cell.cloneNode(true) : cell;
+        if (rowSpan > 1) carried[cells.length] = { cell: copy, rows: rowSpan - 1 };
+        cells.push(copy);
+        takeCarried();
+      }
+    });
+    row.replaceChildren(...cells);
+  });
+};
+
+// One paragraph of the row's short cells, each after its column label, then
+// each block cell under its label.
+const tableToRows = (table, doc) => {
+  const labels = [ ...(table.tHead?.rows[0]?.cells ?? []) ].map((th) => th.textContent.trim());
+  const label = (i) => {
+    const strong = doc.createElement('strong');
+    strong.textContent = labels[i] + ':';
+    return labels[i] ? [ strong, ' ' ] : [];
+  };
+
+  const output = [];
+  [ ...table.rows ].filter((row) => row.parentElement !== table.tHead).forEach((row) => {
+    const summary = doc.createElement('p');
+    const blocks = [];
+    [ ...row.cells ].forEach((cell, i) => {
+      if (hasBlockContent(cell)) {
+        const heading = doc.createElement('p');
+        heading.append(...label(i));
+        blocks.push(heading, ...cell.childNodes);
+      } else if (cell.textContent.trim() || cell.querySelector('img')) {
+        if (summary.hasChildNodes()) summary.append(' \u00b7 ');
+        cell.querySelectorAll('p').forEach((p, j) => {
+          if (j) p.before(' ');
+          unwrap(p);
+        });
+        summary.append(...label(i), ...cell.childNodes);
+      }
+    });
+    output.push(summary, ...blocks);
+  });
+  table.replaceWith(...output);
+};
+
+// The converter also puts a line break after every image, so images outside
+// links are written as markdown here (flattenLinkContent handles linked ones),
+// and it writes a header separator only after a row of header cells.
+const flattenCells = (table, doc) => {
+  [ ...table.rows ].flatMap((row) => [ ...row.cells ]).forEach((cell) => {
+    cell.querySelectorAll('br').forEach((br) => br.replaceWith(CELL_BREAK));
+    cell.querySelectorAll('img').forEach((img) => {
+      if (!img.closest('a')) img.replaceWith(`![${img.alt}](${img.getAttribute('src')})`);
+    });
+    cell.querySelectorAll('p').forEach((p, i) => {
+      if (i) p.before(CELL_BREAK);
+      unwrap(p);
+    });
+    cell.querySelectorAll('div').forEach(unwrap);
+
+    const walker = doc.createTreeWalker(cell, doc.defaultView.NodeFilter.SHOW_TEXT);
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      node.textContent = node.textContent.replace(/\s*\n\s*/g, ' ');
+    }
+  });
+
+  if (!table.tHead && table.rows[0]) {
+    [ ...table.rows[0].cells ].forEach((cell) => {
+      const th = doc.createElement('th');
+      th.append(...cell.childNodes);
+      cell.replaceWith(th);
+    });
+  }
+};
+
+const rewriteTables = (article, doc) => {
+  // Innermost first, so a nested table is reshaped before its parent.
+  [ ...article.querySelectorAll('table') ].reverse().forEach((table) => {
+    fillMergedCells(table);
+    const cells = [ ...table.rows ].flatMap((row) => [ ...row.cells ]);
+    cells.some(hasBlockContent) ? tableToRows(table, doc) : flattenCells(table, doc);
+  });
+};
+
 // ---------------------------------------------------------------------------
 // Preprocessing pipeline
 // ---------------------------------------------------------------------------
@@ -198,8 +317,10 @@ const TRANSFORMS = [
   stripNonContent,
   rewriteAdmonitions,
   rewriteLiveDemos,
+  fenceLiteralBlocks,
   stripHeadingAnchors,
   rewriteCardTables,
+  rewriteTables,
   flattenLinkContent,
 ];
 
@@ -224,6 +345,34 @@ const D2M_OPTIONS = (dom) => ({
 const fixBlankAnchors = (md) =>
   md.replace(/about:blank#/g, '#');
 
+const FENCE = /^\s*(```|~~~)/;
+const LIST_ITEM = /^\s*([-*+]|\d+\.) /;
+
+// Without a blank line after it, a table takes the next paragraph as a row and
+// a list takes it as part of its last item.
+const separateBlocks = (md) => {
+  const lines = [];
+  let inFence = false;
+  let block = null;
+  for (const line of md.split('\n')) {
+    if (inFence) {
+      if (FENCE.test(line)) inFence = false;
+      lines.push(line);
+      continue;
+    }
+
+    const isRow = line.startsWith('|');
+    const isListLine = LIST_ITEM.test(line) || (block === 'list' && /^\s/.test(line));
+    const ends = (block === 'table' && !isRow) || (block === 'list' && !isListLine);
+    if (ends && line.trim()) lines.push('');
+
+    block = !line.trim() ? null : isRow ? 'table' : isListLine ? 'list' : null;
+    if (FENCE.test(line)) inFence = true;
+    lines.push(line);
+  }
+  return lines.join('\n');
+};
+
 // Occurrences of "<a href" that the page shows as literal text, outside code.
 const countLiteralLinkText = (article, dom) => {
   const walker = dom.window.document.createTreeWalker(article, dom.window.NodeFilter.SHOW_TEXT);
@@ -239,7 +388,8 @@ const countLiteralLinkText = (article, dom) => {
 const toMarkdown = (articleEl, dom) => {
   const article = preprocess(articleEl, dom.window.document);
   const raw = convertHtmlToMarkdown(article.innerHTML, D2M_OPTIONS(dom));
-  return { markdown: fixBlankAnchors(raw), literalLinkText: countLiteralLinkText(article, dom) };
+  const markdown = separateBlocks(fixBlankAnchors(raw).replaceAll(CELL_BREAK, '<br>'));
+  return { markdown, literalLinkText: countLiteralLinkText(article, dom) };
 };
 
 // ---------------------------------------------------------------------------
@@ -316,6 +466,29 @@ const countRawLinks = (markdown, literalLinkText) => {
   return Math.max(0, count - literalLinkText);
 };
 
+// Count table rows that do not match their header: a different number of cells
+// (pipes in code spans and escaped pipes do not count), a code fence, or a
+// merged-cell comment.
+const countCells = (row) =>
+  (row.replace(/(`+).*?\1/g, '').match(/(?<!\\)\|/g) ?? []).length;
+
+const countBrokenTableRows = (markdown) => {
+  let inFence = false;
+  let columns = 0;
+  return markdown.split('\n').filter((line, i, lines) => {
+    if (FENCE.test(line)) inFence = !inFence;
+    if (inFence || !line.startsWith('|')) {
+      columns = 0;
+      return false;
+    }
+    if (!columns && /^\|\s*:?-{3}/.test(lines[i + 1] ?? '')) {
+      columns = countCells(line);
+      return false;
+    }
+    return countCells(line) !== columns || /```|<!-- (rowspan|colspan)/.test(line);
+  }).length;
+};
+
 // ---------------------------------------------------------------------------
 // File walking
 // ---------------------------------------------------------------------------
@@ -357,6 +530,7 @@ const convertPage = async (htmlPath, pageDates) => {
     last_updated: pageDates[path]?.last_updated,
     tokens: encode(markdown, { allowedSpecial: 'all' }).length,
     rawLinks: countRawLinks(markdown, literalLinkText),
+    brokenTableRows: countBrokenTableRows(markdown),
   };
 
   if (page.last_updated) {
@@ -393,6 +567,12 @@ const main = async () => {
   if (withRawLinks.length) {
     throw new Error(`${withRawLinks.length} page(s) contain raw <a href> elements outside code:\n  ` +
       withRawLinks.map((page) => `${page.path} (${page.rawLinks})`).join('\n  '));
+  }
+
+  const withBrokenTables = pages.filter((page) => page.brokenTableRows > 0);
+  if (withBrokenTables.length) {
+    throw new Error(`${withBrokenTables.length} page(s) contain table rows that do not match their header:\n  ` +
+      withBrokenTables.map((page) => `${page.path} (${page.brokenTableRows})`).join('\n  '));
   }
 
   const manifest = {

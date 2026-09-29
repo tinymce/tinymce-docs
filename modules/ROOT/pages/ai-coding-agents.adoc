@@ -161,9 +161,9 @@ https://tinymcedocs.mcp.kapa.ai
 
 https://context7.com/[Context7] is a general-purpose documentation MCP server that serves version-specific library documentation for many projects, including {productname}, from a single server. An agent already using Context7 for other libraries can reach the {productname} documentation without adding a second server.
 
-*Library:* `+tinymce/docs+` at https://context7.com/tinymce/tinymce-docs[`+context7.com/tinymce/tinymce-docs+`]
+*Library:* `+/tinymce/tinymce-docs+` at https://context7.com/tinymce/tinymce-docs[`+context7.com/tinymce/tinymce-docs+`]
 
-Configure Context7 following its own installation instructions, then reference the `+tinymce/docs+` library in prompts so the agent resolves {productname} questions against it.
+Configure Context7 following its own installation instructions, then reference the `+/tinymce/tinymce-docs+` library in prompts so the agent resolves {productname} questions against it.
 
 [[read-the-documentation-as-markdown]]
 == Read the documentation as markdown

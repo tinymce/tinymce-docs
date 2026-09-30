@@ -1,6 +1,8 @@
 **Ticket:** DOC-<num>
 
-**Site:** [Staging branch](https://pr-<PR#>.tinymce-docs.iad.staging.tiny.cloud/docs/tinymce/8/)
+**Site:** `https://pr-PR_NUMBER.tinymce-docs.iad.staging.tiny.cloud/docs/tinymce/latest/PAGE_PATH` – Replace PR_NUMBER (from `gh pr view`) and PAGE_PATH. For shared partials affecting multiple pages, list each:
+- [Page 1](https://pr-PR_NUMBER.tinymce-docs.iad.staging.tiny.cloud/docs/tinymce/latest/page-1)
+- [Page 2](https://pr-PR_NUMBER.tinymce-docs.iad.staging.tiny.cloud/docs/tinymce/latest/page-2)
 
 **Changes:**
 * <placeholder-text>

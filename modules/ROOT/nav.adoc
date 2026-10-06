@@ -76,6 +76,13 @@
 **** Other Integrations
 ***** xref:bootstrap-zip.adoc[Bootstrap]
 ***** xref:swing.adoc[Java Swing]
+*** Integration technical references
+**** xref:react-ref.adoc[React]
+**** xref:angular-ref.adoc[Angular]
+**** xref:vue-ref.adoc[Vue.js]
+**** xref:blazor-ref.adoc[Blazor]
+**** xref:svelte-ref.adoc[Svelte]
+**** xref:webcomponent-ref.adoc[Web Component]
 ** xref:upgrading.adoc[Upgrading {productname}]
 * xref:how-to-guides.adoc[How-to guides]
 ** Learn the basics
@@ -196,6 +203,7 @@
 ** xref:examples.adoc#skins-and-icons-examples[Skins and Icons examples]
 *** xref:bootstrap-demo.adoc[Bootstrap Demo]
 *** xref:borderless-demo.adoc[Borderless Demo]
+*** xref:custom-icon-pack-demo.adoc[Custom Icon Pack Demo]
 *** xref:fabric-demo.adoc[Fabric Demo]
 *** xref:fluent-demo.adoc[Fluent Demo]
 *** xref:jam-demo.adoc[Jam Icons Demo]
@@ -415,7 +423,7 @@
 * Security
 ** xref:security.adoc[Security guide]
 *** xref:security.adoc#reporting-tinymce-security-issues[Reporting {productname} security issues]
-*** xref:security.adoc#xref:what-we-do-to-maintain-security-for-tinymce[What we do to maintain security for {productname}]
+*** xref:security.adoc#what-we-do-to-maintain-security-for-tinymce[What we do to maintain security for {productname}]
 *** xref:security.adoc#configuring-content-security-policy-csp-for-tinymce[Configuring Content Security Policy (CSP) for {productname}]
 *** xref:security.adoc#general-security-risks-for-user-input-elements[General security risks for user input elements]
 ** xref:tinymce-and-csp.adoc[Content Security Policies (CSP)]

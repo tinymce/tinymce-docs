@@ -1,0 +1,33 @@
+= {productname} {release-version}
+:release-version: 7.9.4
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Tuesday, October 6^th^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+* xref:security-fixes[Security fixes]
+
+
+[[security-fixes]]
+== Security fixes
+
+{productname} {release-version} includes a fix for the following security issue:
+
+=== Fixed stored XSS vulnerability using media plugin `data-mce-object` serialization
+// #TINYMCE-14932
+
+A stored cross-site scripting (XSS) vulnerability was identified in the media plugin. Elements crafted through the `data-mce-object` attribute were created before sanitization, which allowed event handler scripts on those elements to run. {productname} {release-version} ensures that, when the media plugin is in use, any content created through the `data-mce-object` attribute is sanitized first.
+
+CVE: _pending_
+
+GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-mf2p-h6hf-fcwm[GitHub Advisories].
+
+NOTE: Tiny Technologies would like to thank https://github.com/farisv[Fariskhi Vidyan] and David Vieira Kurz (HiSolutions AG) for discovering this vulnerability.

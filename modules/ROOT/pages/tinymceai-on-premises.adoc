@@ -5,7 +5,7 @@
 :keywords: AI, on-premises, self-hosted, deployment, overview, architecture, prerequisites, container, LLM
 :pluginname: TinyMCE AI
 
-The {pluginname} on-premises service is a self-hosted back end that powers AI writing assistance. It can be used with the {productname} rich text editor, particularly the xref:tinymceai.adoc[TinyMCE AI plugin], or as a standalone service. It runs entirely within the host infrastructure. Document content, conversation history, file attachments, and user data stay within the host network and are not stored by Tiny. Data sent to a configured LLM provider is subject to that provider's data handling policies.
+The {pluginname} on-premises service is a self-hosted back end that powers AI writing assistance. It can be used with the {productname} rich text editor, particularly the xref:tinymceai.adoc[{pluginname} plugin], or as a standalone service. It runs entirely within the host infrastructure. Document content, conversation history, file attachments, and user data stay within the host network and are not stored by Tiny. Data sent to a configured LLM provider is subject to that provider's data handling policies.
 
 The service ships as a single Open Container Initiative (OCI) container image (`registry.containers.tiny.cloud/ai-service-tiny`). It exposes a REST API, a Management Panel, Server-Sent Events streaming, and an OpenAPI spec.
 
@@ -14,7 +14,7 @@ The service ships as a single Open Container Initiative (OCI) container image (`
 The infrastructure consists of three layers:
 
 * The *browser* runs the {productname} editor with the `tinymceai` plugin.
-* The *application layer* runs the token endpoint (which signs JWTs), the AI service container, and a load balancer or reverse proxy. It may consist of one or more AI service instances behind the load balancer (round-robin recommended). Each instance runs the same stateless container image.
+* The *application layer* runs the token endpoint (which signs JWTs), the AI service container, and a load balancer or reverse proxy. It may consist of one or more AI service instances behind the load balancer (round-robin recommended). Each instance runs the same stateless container image and listens on port `8000`.
 * The *data layer* consists of a SQL database, a Redis instance, and file storage:
 ** *SQL database*: stores persistent data such as configurations and conversations.
 ** *Redis*: caching and coordination (SSE delivery, rate limits, pub/sub). Enables the AI service to remain stateless.
@@ -35,7 +35,7 @@ Data flow for a single AI request:
 
 When used with {productname} `tinymceai`, the plugin handles steps 1, 2, and 5 automatically through the `tinymceai_token_provider` callback.
 
-NOTE: The browser connects directly to the AI service — requests do not pass through the application back end. The AI service must be network-reachable from the end-user browser, which means it must have a public URL (or be accessible through a VPN/internal network when deployed on an intranet). Configure xref:tinymceai-on-premises-frameworks.adoc#_cross_origin_requests_to_the_ai_service[CORS] and xref:tinymceai-on-premises-production.adoc#_tls_https[TLS] on the AI service accordingly.
+NOTE: The browser connects directly to the AI service — requests do not pass through the application back end. The AI service must be network-reachable from the end-user browser, which means it must have a public URL (or be accessible through a VPN/internal network when deployed on an intranet). Configure xref:tinymceai-on-premises-frameworks.adoc#cross-origin-requests-to-the-ai-service[CORS] and xref:tinymceai-on-premises-production.adoc#tls-https[TLS] on the AI service accordingly.
 
 The shared secret (API Secret) exists only in the application back end (token endpoint) and the AI service container. The browser and the editor never see it — they only handle signed tokens.
 
@@ -85,7 +85,7 @@ The shared secret (API Secret) exists only in the application back end (token en
 |The service is stateless; add replicas behind a load balancer without shared local state.
 
 |OpenAPI specification
-|Published at `/v1/api/doc.json` with interactive documentation at `/docs/`. Auto-generate clients in any language.
+|Published at `/v1/api/doc.json` with interactive documentation at `/v1/api/docs` (`/docs/` redirects there). Auto-generate clients in any language.
 |===
 
 == Credentials
@@ -128,7 +128,7 @@ NOTE: The service license key (`LICENSE_KEY`) and the {productname} editor licen
 |At least one provider. Multiple providers can coexist.
 
 |License key and registry credentials
-|Provided by a Tiny account representative.
+|Provided by a {companyname} account representative.
 
 |Token endpoint
 |A back end that signs HS256 JWTs.

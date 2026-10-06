@@ -60,6 +60,8 @@ The *key* (not the `type`) is what gets referenced from:
 }
 ----
 
+`GET /v1/models/1` reports the provider `name`, not the provider key, in the `provider` field of each model.
+
 === How the pieces fit together
 
 [.text-center]
@@ -420,6 +422,8 @@ IMPORTANT: The AI service does *not* use the AWS SDK default credential chain. `
 ----
 
 The `sessionToken` field is optional but required for STS-issued short-lived credentials. Plan a rotation procedure when using temporary credentials.
+
+Instead of `+credentials+`, a Bedrock provider can set `+apiKeys+` to a Bedrock API key issued in the AWS console.
 
 NOTE: Bedrock console-issued API keys have a separate billing entitlement check that can return `INVALID_PAYMENT_INSTRUMENT` on accounts where the IAM-credential path works fine. Prefer the `credentials` block (IAM user with `accessKeyId` / `secretAccessKey`) for production.
 
@@ -906,7 +910,7 @@ A `MODELS` array routes individual models to specific providers using the `provi
 
 This wires conversations to OpenAI, reviews to Bedrock-hosted Claude, and quick actions to a local Ollama model. The {productname} editor will pick the appropriate provider for each feature based on which models declare which `features`.
 
-A `MODELS` entry with a `provider` value that does not exist in `PROVIDERS` is silently skipped; that model will not appear in `/v1/models/1`. When a model is missing from the model selector in the rich text editor, check the spelling of its `provider` field against the keys in `PROVIDERS` (case-sensitive). See xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting] for additional debugging steps.
+A `MODELS` entry with a `provider` value that does not exist in `PROVIDERS` stops the service at startup with `[FATAL] Following models have invalid provider:` followed by the affected model IDs. Check the spelling of each `provider` field against the keys in `PROVIDERS` (case-sensitive). See xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting] for additional debugging steps.
 
 
 
@@ -976,7 +980,7 @@ actions.fix-grammar
 actions.improve-writing
 ----
 
-The three umbrella values `conversations`, `reviews`, and `actions` enable the entire family. Use a specific sub-feature only when restricting a model to a subset; for example, a low-cost model that handles only `actions.fix-grammar`.
+The three umbrella values `conversations`, `reviews`, and `actions` enable every sub-feature of that feature. Use a specific sub-feature only when restricting a model to a subset; for example, a low-cost model that handles only `actions.fix-grammar`.
 
 A model with no `features` entry, or with only sub-features the editor does not request, will be hidden from the picker.
 
@@ -1012,7 +1016,7 @@ The same procedure works for `anthropic`, `google`, `azure`, and `openai-compati
 [cols=",,",options="header",]
 |===
 |Symptom |Most likely cause |Section
-|Editor shows "model unavailable" / `agent-1 allowed:false` |`MODELS` not set or every entry skipped |<<models-required,Defining the model list>>
+|Editor shows "model unavailable" / `agent-1 allowed:false` |`MODELS` not set |<<models-required,Defining the model list>>
 |`GET /v1/models/v1` returns 500 |Wrong compatibility version |<<models-required,Defining the model list>>
 |Bedrock returns `NoValidApiKeysFoundError` |Relying on the AWS default credential chain |Bedrock
 |Bedrock returns `AccessDeniedException` |Model access not enabled in console |Bedrock prerequisites

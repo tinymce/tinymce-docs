@@ -8,7 +8,7 @@
 
 The AI service extends model capabilities through two integration points: the https://modelcontextprotocol.io/[Model Context Protocol] (MCP) for tool calling, and pluggable web endpoints for page fetching and search. Both features operate within AI conversations only. Web search and scraping allow the AI to reference live internet content during conversations, and for most deployments, enabling at least web search improves response quality.
 
-These features are configured entirely through environment variables on the AI service container. No additional infrastructure is required beyond a search endpoint.
+These features are configured entirely through environment variables on the AI service container. No additional infrastructure is required beyond a search endpoint and a scrape endpoint.
 
 [.text-center]
 image::tinymceai-on-premises/mcp-web-integrations-architecture.svg[MCP and web integrations architecture: TinyMCE editor connects to AI Service through SSE conversations. AI Service connects to LLM provider for inference and to MCP servers and web search and scrape endpoints for tool calling and live web content.,width=100%]
@@ -391,7 +391,7 @@ The {productname} editor sends the web search activation flag when the user togg
 }
 ----
 
-The value *must* be an empty object (`{}`). This is the documented API contract (see https://ckeditor.com/docs/cs/latest/guides/ckeditor-ai/models.html#capability-configuration[CKEditor AI Models: Capability Configuration]). The service rejects other shapes:
+The value *must* be an empty object (`{}`). This is the documented API contract (see xref:tinymceai-models.adoc#capability-configuration[Capability configuration]). The service rejects other shapes:
 
 * `"webSearch": true` : rejected (schema expects an object, not a boolean).
 * `"webSearch": {"enabled": true}` : rejected (unrecognized key).
@@ -399,6 +399,7 @@ The value *must* be an empty object (`{}`). This is the documented API contract 
 
 Without this field, the environment variables, JWT permission, and MODELS configuration are insufficient. The model never receives the web search tool.
 
+[[web-search-contract]]
 === Endpoint contract
 
 [cols="1,2",options="header"]
@@ -487,10 +488,11 @@ Content-Type: application/json
 { "url": "https://example.com/page-to-fetch" }
 ----
 
-The {productname} editor sends this request when a user pastes or references a URL in conversation. Custom integrations must call this endpoint explicitly to trigger a page fetch.
+The {productname} editor sends this request when a user adds a link as a source in the Chat sidebar (the *Add context source* button, then *Link*), or selects an integrator-provided source that resolves to a URL (see xref:tinymceai.adoc#tinymceai_chat_fetch_sources[`+tinymceai_chat_fetch_sources+`]). A URL typed into the chat message itself does not trigger a fetch. Custom integrations must call this endpoint explicitly to trigger a page fetch.
 
-The response is stored against the conversation. The `type` field in the scrape response must be `text/html` or `text/markdown`. Other MIME types (for example, `application/pdf`) are rejected with a `422 web-resource-download-error`.
+The response is stored against the conversation. The `type` field in the scrape response must be `text/html` or `text/markdown`, and `data` must not be empty. Other MIME types (for example, `application/pdf`) and an empty `data` field are rejected with a `422 web-resource-download-error`.
 
+[[web-scraping-contract]]
 === Endpoint contract
 
 [cols="1,2",options="header"]
@@ -545,9 +547,11 @@ Custom streaming UI integrations can use the following Server-Sent Events (SSE) 
 |===
 |Event name |Description
 |`mcp-tool-result` |Emitted when an MCP tool call completes. Contains the tool result. There is no pre-call event; clients receive no signal until the tool call finishes.
-|`web-search` |Emitted when a web search returns results (or fails without emitting an error event; see <<web-search-troubleshooting,Troubleshooting>>).
+|`web-search` |Sent when a web search runs. The payload is an empty object, and the event is also sent when the search back end fails (see <<web-search-troubleshooting,Troubleshooting>>).
 |`source` |Emitted with source citations from the model response.
 |===
+
+For every event and its payload, see the https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages/operation/createMessage[API reference].
 
 
 

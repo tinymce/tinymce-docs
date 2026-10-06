@@ -36,7 +36,7 @@ tinymce.init({
   selector: "textarea",
   plugins: "tinymceai",
   toolbar: "tinymceai-chat tinymceai-review tinymceai-quickactions",
-  sidebar_show: 'aichat',
+  sidebar_show: 'tinymceai-chat',
   tinymceai_token_provider: async () => {
 	await fetch(`https://demo.api.tiny.cloud/1/no-api-key/auth/random`, { method: "POST", credentials: "include" });
 	return await fetch(`https://demo.api.tiny.cloud/1/no-api-key/jwt/tinymceai`, { credentials: "include" })
@@ -60,7 +60,7 @@ tinymce.init({
   selector: "textarea",
   plugins: "tinymceai",
   toolbar: "tinymceai-chat tinymceai-review tinymceai-quickactions",
-  sidebar_show: 'aichat',
+  sidebar_show: 'tinymceai-chat',
   tinymceai_token_provider: async () => {
 	// Wait for the session request so the JWT endpoint receives the session cookie.
 	await isLoggedIn;
@@ -148,10 +148,20 @@ The JWT payload is a JSON object containing claims that identify the user, speci
 The following properties **must** be included in the payload:
 
 * `aud`: The API key that has entitlements to use {pluginname}.
-* `sub`: The user ID. This should be a unique identifier for the user making the request. This identifier is used to lock down conversation history, AI-generated content, and other user-specific data to individual users, ensuring privacy and data isolation.
+* `sub`: The user ID. This should be a unique identifier for the user making the request. This identifier is used to lock down conversation history, AI-generated content, and other user-specific data to individual users, ensuring privacy and data isolation. The user ID must not exceed 96 characters.
 * `iat`: "Issued at". Ensure `iat` is present and contains a correct time stated in seconds. Some JWT implementations do not include it by default. Sometimes the system time may also be invalid, causing issues.
 * `exp`: Token expiration time. Identifies the expiration time after which the JWT will not be accepted. {pluginname} only accepts tokens no older than 24 hours. This field can be used to shorten the token validity time.
 * `auth`: The `auth.ai.permissions` array inside is required. This defines which AI features the user can access. See xref:#permissions[Permissions] below for details.
+
+Every token returned during one editor session must carry the same `+sub+` and `+aud+` values as the first token. To switch to a different user or API key, reload the editor. See xref:#changed-claims-error[Changed `+sub+` or `+aud+` claims].
+
+Each token must also meet these requirements, or the editor shows an error and the request is not sent:
+
+* It contains `+sub+`, `+aud+`, `+iat+`, `+exp+`, and the `+auth.ai.permissions+` array. Otherwise, the error is `+Invalid JWT token payload+`.
+* It is no more than two minutes past its `+exp+` time.
+* Its `+iat+` and `+exp+` times are no more than 24 hours in the past.
+
+A token that fails either time check produces the error `+JWT token has expired+`.
 
 The properties that are optional:
 
@@ -160,7 +170,7 @@ The properties that are optional:
 [[example-token-payload]]
 ==== Example Token Payload
 
-The example below presents a complete token payload with access to all AI features:
+The example below presents a complete token payload:
 
 [source,json]
 ----
@@ -226,7 +236,7 @@ The token for {pluginname} is requested by the {pluginname} plugin. The easiest 
 The token endpoint will be requested:
 
 * At editor initialization
-* Periodically to refresh the token (typically every hour)
+* On the next request to the AI service once the current token is within 60 seconds of its `+exp+` time
 
 [[simple-token-request]]
 === Simple Usage
@@ -248,13 +258,13 @@ tinymce.init({
 
 [TIP]
 ====
-The editor will not be ready to use until the first token is obtained from the token endpoint. If an error occurs during the initial request, the editor will not start correctly.
+The first token is requested while the editor loads. If the token request fails, the editor still starts, an error notification appears, and {pluginname} requests fail until the token endpoint returns a valid token.
 ====
 
 [[token-responses]]
 == Responses from the Token Endpoint
 
-The token provider must return an object with a `+token+` property: `+{ token: string }+`. The endpoint may respond in either format:
+The token provider must return a Promise that resolves to an object with a `+token+` property: `+{ token: string }+`. The plugin reports an error if the function does not return a Promise, or if the resolved value has no `+token+` string. The endpoint may respond in either format:
 
 * **JSON response**: Endpoint returns `+{ "token": "eyJ..." }+`. Use `+response.json()+` and return `+{ token: data.token }+`.
 * **Plain text response**: Endpoint returns the raw JWT string. Use `+response.text()+` and return `+{ token }+`.
@@ -305,8 +315,10 @@ If an error message indicates an invalid token:
 * Verify that the token is signed with one of the xref:#supported-algorithms[supported algorithms]
 * Check that the public key in the {accountpage} matches the private key used to sign the token
 * Validate the token structure using the link:https://jwt.io/[jwt.io debugger]
+* Check that the token has every required claim and has not expired, as described in xref:#payload-properties[Payload properties]
 * Ensure the `iat` (issued at) timestamp is correct and not in the future
 * Verify that system time is accurate (time drift can cause token validation issues)
+* If the error code is `+jwt-too-long+`, reduce the size of the claims
 
 [[insufficient-permissions-error]]
 === Insufficient permissions
@@ -317,6 +329,17 @@ If an error indicates insufficient permissions:
 * Check that the permissions match the AI features being accessed
 * Review the xref:tinymceai-permissions.adoc[Permissions] guide for the correct permission format
 * Ensure permissions are specified correctly (for example, `ai:conversations:read`, `ai:conversations:write`)
+* Add the scopes listed in the `+data.missingPermissions+` array of the `+403+` `+missing-permissions+` response
+
+[[changed-claims-error]]
+=== Changed `+sub+` or `+aud+` claims
+
+If the plugin reports that the JWT token claims (`+sub+` or `+aud+`) have changed since the last token was issued, the token provider returned a token for a different user or API key during the same editor session. Return tokens with the same `+sub+` and `+aud+` for the whole session, or reload the editor after the user changes.
+
+[[error-codes]]
+=== Error codes
+
+For the error response shape, see xref:tinymceai-api-overview.adoc#error-responses[Error responses]. For the full list of error codes, see the link:https://tinymceai.api.tiny.cloud/docs#section/Overview/Error-codes[API reference]. The token-related fixes are in xref:#invalid-token-error[Invalid token] and xref:#insufficient-permissions-error[Insufficient permissions].
 
 [[related-features]]
 == Related Features

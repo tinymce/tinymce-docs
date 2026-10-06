@@ -54,7 +54,7 @@ NOTE: This section applies to PostgreSQL deployments only. MySQL deployments can
 The AI service expects a schema named `cs-on-premises` (with hyphens). If that schema does not exist, the container crashes on first boot with:
 
 ....
-error: schema "cs-on-premises" does not exist
+[FATAL] PostgreSQL Error: schema "cs-on-premises" does not exist
 ....
 
 Apply one of the following fixes *before* starting the AI service for the first time.
@@ -89,12 +89,14 @@ TIP: Pin specific major versions for all data layer images (`mysql:8.0`, `postgr
 [[mysql-version-pinning]]
 === MySQL
 
-WARNING: Do *not* use `mysql:8`. That tag now floats to the latest MySQL, which removes the `default-authentication-plugin=mysql_native_password` startup flag the AI service relies on. The container crashloops with:
+WARNING: Do *not* use `mysql:8`. That tag now resolves to MySQL 8.4, which removes the `default-authentication-plugin` server option. A MySQL container started with `--default-authentication-plugin=mysql_native_password`, as some older compose files and manifests do, fails at startup and restarts repeatedly with:
 
 ....
 [ERROR] [MY-000067] [Server] unknown variable 'default-authentication-plugin=mysql_native_password'.
 [ERROR] [MY-010119] [Server] Aborting
 ....
+
+The AI service connects with the MySQL 8.0 default authentication plugin, so that option is not needed; the examples on this page do not set it.
 
 Pin to `mysql:8.0` in every manifest: `docker run`, Docker Compose, Kubernetes, Helm, ECS. Running newer MySQL versions with workarounds (removing the flag and switching to `caching_sha2_password`) is not a supported configuration.
 
@@ -130,9 +132,9 @@ GRANT ALL PRIVILEGES ON ai_service.* TO 'ai_service'@'%';
 
 [NOTE]
 --
-Some versions of the AI service image report false-positive "Not enough permissions to access database" errors even with `ALL PRIVILEGES`. If this occurs, grant the privileges globally rather than per-database, or use the MySQL `root` user for development.
+Grant the privileges on the AI service database itself (`ON ai_service.*`), as in the statements above. The startup check does not accept privileges granted globally (`ON *.*`) or inherited through a role: the service stops with `Not enough permissions to access database. Missing privileges: ...` even when the user holds every listed privilege.
 
-On Cloud SQL MySQL, grant privileges to the service user **directly** — not via a role (e.g. `cloudsqlsuperuser`). The startup grant check runs `SHOW GRANTS FOR user` and does not resolve role-inherited grants.
+On Cloud SQL MySQL, the default user holds its privileges through the `cloudsqlsuperuser` role. Run the database-scoped `GRANT` statement for the service user before the first start.
 --
 
 === PostgreSQL
@@ -170,7 +172,7 @@ GRANT ALL ON SCHEMA "cs-on-premises" TO ai_service;
 
 == Database setup
 
-The sections below provide ready-to-use configuration for each database engine. Use the Docker Compose files for local evaluation; for production, provision managed database services (Amazon RDS, Azure Database, Cloud SQL) and pass the connection details as environment variables (see <<_connecting_the_ai_service>>).
+The sections below provide ready-to-use configuration for each database engine. Use the Docker Compose files for local evaluation; for production, provision managed database services (Amazon RDS, Azure Database, Cloud SQL) and pass the connection details as environment variables (see <<connecting-the-ai-service>>).
 
 === Docker Compose (recommended for evaluation)
 
@@ -733,21 +735,14 @@ Expected: `PONG`.
 
 === AI service migration
 
-After starting the AI service, confirm it has connected and run migrations:
+After starting the AI service, check the log for start-up errors:
 
 [source,bash]
 ----
-docker logs ai-service 2>&1 | grep -i 'migrat\|schema\|database'
+docker logs ai-service 2>&1 | grep -i 'fatal\|error\|listening'
 ----
 
-Expected output (paraphrased):
-
-....
-Connecting to database (driver=postgres host=...)
-Running migrations on schema "cs-on-premises"
-Migrations complete: 32 tables ready
-Server is listening on port 8000.
-....
+A successful start logs `Server is listening on port 8000.` The start-up log does not report the database driver, the schema, or the migration count, so list the tables to confirm the migrations ran (see below). On a new database, the migrations create 32 tables.
 
 If `schema "cs-on-premises" does not exist` appears, return to <<postgresql-schema-prerequisite>>. If `unknown variable 'default-authentication-plugin'` appears, return to <<mysql-version-pinning>>.
 

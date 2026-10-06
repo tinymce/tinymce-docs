@@ -11,7 +11,7 @@
 For information about JWT authentication setup and required claims, see xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication].
 
 [[quick-reference]]
-== Quick Reference
+== Quick reference
 
 [cols="2,3"]
 |===
@@ -37,7 +37,7 @@ For information about JWT authentication setup and required claims, see xref:tin
 |===
 
 [[use-cases]]
-== Use Cases
+== Use cases
 
 * **Role-based access**: Different user roles have different AI capabilities
 * **Cost control**: Limit access to expensive models or features
@@ -45,12 +45,12 @@ For information about JWT authentication setup and required claims, see xref:tin
 * **Security**: Restrict access to sensitive AI operations
 
 [[permission-format]]
-== Permission Format
+== Permission format
 
-Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific-permission>`
+Permissions are an array of strings in the `+auth.ai.permissions+` claim of the JWT. Each string has the form `+ai:<permission-type>:<permission-value>+`, where `+<permission-type>+` is one of `+models+`, `+conversations+`, `+actions+`, `+reviews+`, or `+admin+`. The `+<permission-value>+` can contain the `+*+` wildcard. The service ignores any string that does not match this format.
 
 [[admin-permissions]]
-== Admin Permissions
+== Admin permissions
 
 [cols="2,3"]
 |===
@@ -61,7 +61,7 @@ Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific
 |===
 
 [[model-permissions]]
-== Model Permissions
+== Model permissions
 
 [cols="2,3"]
 |===
@@ -80,8 +80,10 @@ Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific
 |Access to the agent model which automatically selects the best model for each request. This is the recommended permission for most use cases.
 |===
 
+Conversation messages, custom actions, and custom reviews also require the permission for the model that the request uses. System actions and system reviews require only their own permission.
+
 [[conversation-permissions]]
-== Conversation Permissions
+== Conversation permissions
 
 [cols="2,3"]
 |===
@@ -91,10 +93,10 @@ Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific
 |Full access to all conversation features including read, write, web search, and reasoning.
 
 |`ai:conversations:read`
-|Ability to read and list conversations.
+|Ability to read and list conversations, messages, and attachments.
 
 |`ai:conversations:write`
-|Ability to create and send messages in conversations.
+|Ability to create, update, and delete conversations, and to send messages. Requires `+ai:conversations:read+` as well.
 
 |`ai:conversations:websearch`
 |Ability to use web search capability in conversations.
@@ -104,7 +106,7 @@ Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific
 |===
 
 [[context-permissions]]
-== Context Permissions
+== Context permissions
 
 [cols="2,3"]
 |===
@@ -123,8 +125,10 @@ Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific
 |Ability to use web URLs as context sources.
 |===
 
+Uploading a file also requires `+ai:conversations:write+`.
+
 [[actions-permissions]]
-== Actions Permissions
+== Actions permissions
 
 [cols="2,3"]
 |===
@@ -143,8 +147,10 @@ Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific
 |Access to specific system actions. Examples: `ai:actions:system:improve-writing`, `ai:actions:system:fix-grammar`, `ai:actions:system:translate`
 |===
 
+Quick Actions that open in Chat, such as *Explain*, *Summarize*, and *Highlight key points*, and custom Quick Actions with `+type: 'chat'+`, send a conversation message. They require the xref:#conversation-permissions[conversation permissions] and the permission for the selected model.
+
 [[reviews-permissions]]
-== Reviews Permissions
+== Reviews permissions
 
 [cols="2,3"]
 |===
@@ -154,7 +160,7 @@ Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific
 |Access to all review types, including custom and system reviews.
 
 |`ai:reviews:custom`
-|Ability to run custom reviews with free-form prompts.
+|Ability to run custom reviews with free-form prompts, including xref:tinymceai.adoc#integrator-defined-reviews[integrator-defined reviews].
 
 |`ai:reviews:system:*`
 |Access to all pre-defined system reviews.
@@ -164,10 +170,10 @@ Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific
 |===
 
 [[permission-examples]]
-== Permission Examples
+== Permission examples
 
 [[basic-user]]
-=== Basic User
+=== Basic user
 
 [source,json]
 ----
@@ -186,8 +192,33 @@ Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific
 }
 ----
 
+[[all-plugin-features]]
+=== All `+tinymceai+` plugin features
+
+This set covers Chat with web search, reasoning, and attachments, plus system and custom Quick Actions and reviews, with the Agent model. If a custom Quick Action or custom review uses a specific model, add the permission for that model.
+
+[source,json]
+----
+{
+  "auth": {
+    "ai": {
+      "permissions": [
+        "ai:conversations:read",
+        "ai:conversations:write",
+        "ai:conversations:websearch",
+        "ai:conversations:reasoning",
+        "ai:conversations:context:*",
+        "ai:models:agent",
+        "ai:actions:*",
+        "ai:reviews:*"
+      ]
+    }
+  }
+}
+----
+
 [[premium-user]]
-=== Premium User
+=== Premium user
 
 [source,json]
 ----
@@ -206,7 +237,7 @@ Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific
 ----
 
 [[enterprise-admin]]
-=== Enterprise Admin
+=== Enterprise admin
 
 [source,json]
 ----
@@ -222,7 +253,9 @@ Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific
 ----
 
 [[restricted-user-review-only]]
-=== Restricted User (Review Only)
+=== Restricted user (review only)
+
+System reviews require no model permission.
 
 [source,json]
 ----
@@ -231,8 +264,7 @@ Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific
     "ai": {
       "permissions": [
         "ai:reviews:system:correctness",
-        "ai:reviews:system:clarity",
-        "ai:models:gpt-4.1-mini"
+        "ai:reviews:system:clarity"
       ]
     }
   }
@@ -240,22 +272,22 @@ Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific
 ----
 
 [[best-practices]]
-== Best Practices
+== Best practices
 
 [[permission-design]]
-=== Permission Design
+=== Permission design
 
 Begin with minimal, specific permissions based on actual requirements. Use wildcards only for testing environments and power users who need comprehensive access. Gradually expand permissions based on user needs and usage patterns.
 
 Avoid `ai:models:*` in production to prevent unexpected access to new expensive models. Use provider-specific permissions like `ai:models:openai:*` for better control, or specify exact models for maximum control. Start with common formats (PDF, DOCX, TXT, PNG, JPEG) and add specialized formats only when needed.
 
 [[error-handling]]
-== Error Handling
+== Error handling
 
-When a user lacks required permissions, the API returns a `403 Forbidden` error with the message "No permissions to the resource". Common issues include missing model permissions, file type restrictions, feature access without permission, and action/review access without permission.
+When a user lacks required permissions, the API returns a `403 Forbidden` error with the code `+missing-permissions+`. The `+data.missingPermissions+` array lists the permissions that the token lacks. For the response body, see xref:tinymceai-api-overview.adoc#error-responses[Error responses]. Common issues include missing model permissions, file type restrictions, feature access without permission, and action/review access without permission.
 
 [[related-features]]
-== Related Features
+== Related features
 
 * xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication]: JWT authentication setup and required claims.
 * xref:tinymceai-models.adoc[AI Models]: Model selection and capabilities.

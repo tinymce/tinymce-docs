@@ -42,7 +42,7 @@ The `aud` is a case-sensitive string that must match a valid API key that has th
 `+sub+` _(required)_::
 *Type:* `+String+`
 +
-The `sub` claim identifies the user. This should be a unique identifier for the user making the request.
+The `sub` claim identifies the user. This should be a unique identifier for the user making the request. See xref:tinymceai-jwt-authentication-intro.adoc#payload-properties[Payload properties] for the length limit and the session requirements.
 
 `+iat+` _(required)_::
 *Type:* `+Number+`

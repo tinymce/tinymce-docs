@@ -162,15 +162,8 @@ The {pluginname} plugin provides the following {productname} commands.
 
 include::partial$commands/{plugincode}-cmds.adoc[]
 
-[[events]]
-== Events
-
-The {pluginname} plugin provides the following events.
-
-include::partial$events/{plugincode}-events.adoc[]
-
 [[detecting-ai-changes]]
-=== Detecting content written by the plugin
+== Detecting content written by the plugin
 
 When the {pluginname} plugin writes AI changes to the editor, it sets the `+ai+` property to `+true+` on the core `+BeforeSetContent+` and `+SetContent+` events. Event handlers can check this property to tell AI changes apart from other content changes.
 

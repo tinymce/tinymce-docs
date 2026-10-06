@@ -277,7 +277,6 @@ The following plugins provide events.
 * xref:spell-checker-events[Spell Checker events]
 * xref:revisionhistory-events[Revision History events]
 * xref:autocorrect-events[Spelling Autocorrect events]
-* xref:tinymceai-events[{productname} AI events]
 * xref:visual-blocks-events[Visual Blocks events]
 * xref:visual-characters-events[Visual Characters events]
 * xref:word-count-events[Word Count events]
@@ -423,11 +422,6 @@ include::partial$events/tinymcespellchecker-events.adoc[]
 === Spelling Autocorrect events
 
 include::partial$events/autocorrect-events.adoc[]
-
-[[tinymceai-events]]
-=== {productname} AI events
-
-include::partial$events/tinymceai-events.adoc[]
 
 [[visual-blocks-events]]
 === Visual Blocks events

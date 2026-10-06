@@ -33,6 +33,15 @@ The AI service is stateless, persists all state to MySQL/PostgreSQL and Redis, a
 
 The AI service does not terminate Transport Layer Security (TLS). Place a reverse proxy in front.
 
+[[proxy-requirements]]
+=== Proxy requirements
+
+The reverse proxy or load balancer must meet these requirements:
+
+* *Keep long responses open.* Set the read timeout and the idle timeout to at least 300 seconds, as in the examples below. The {pluginname} plugin sets no request timeout of its own.
+* *Do not buffer response bodies.* The service streams responses as Server-Sent Events (SSE).
+* *Do not rewrite the `Content-Type` response header.* The {pluginname} plugin reads responses to `POST`, `PATCH`, and `DELETE` requests only when `Content-Type` is exactly `application/json`, and reads streamed responses only when it is exactly `text/event-stream`. A proxy that changes the header, for example by adding a `charset` parameter, stops the editor from reading those responses.
+
 === Nginx example
 
 [source,nginx]
@@ -99,7 +108,7 @@ When deploying for the first time or upgrading to a new version, start a single 
 
 == Podman deployment
 
-NOTE: This example uses `STORAGE_DRIVER='database'` for simplicity. For production workloads, use S3 or Azure Blob storage. See xref:tinymceai-on-premises-database.adoc#_file_storage[File storage] for options.
+NOTE: This example uses `STORAGE_DRIVER='database'` for simplicity. For production workloads, use S3 or Azure Blob storage. See xref:tinymceai-on-premises-database.adoc#file-storage[File storage] for options.
 
 The AI service works with Podman as an alternative to Docker. In Podman, containers within a pod share a network namespace, so use `127.0.0.1` instead of container names for hostnames.
 
@@ -301,7 +310,7 @@ Any multi-replica deployment should include the following Kubernetes primitives 
 * *`podAntiAffinity`*: distributes replicas across nodes to avoid single-node failures.
 * *`topologySpreadConstraints`*: spreads replicas across availability zones for zone-level resilience.
 
-The canonical Deployment example above does not include these — they are site-specific. Without them, the scheduler may bin-pack all replicas onto a single node in a single availability zone.
+The canonical Deployment example above does not include these — they are site-specific. Without them, the scheduler may bin-pack all replicas onto a single node in a single availability zone. Soft rules can have the same result: on a cluster with spare capacity, `preferredDuringSchedulingIgnoredDuringExecution` anti-affinity and `whenUnsatisfiable: ScheduleAnyway` still let the scheduler place every replica on one node. To force a spread across zones, set `whenUnsatisfiable: DoNotSchedule` on the zone topology spread constraint. With two nodes, a node drain or a rolling restart can still drop a few requests, so plan for at least three nodes.
 
 === Step 4: Service
 
@@ -329,7 +338,7 @@ After the first pod reaches Ready status, create an environment and access key t
 . Create an environment and note the Environment ID.
 . Create an access key and copy the API Secret immediately (shown only once).
 
-These values are required by the token endpoint. See xref:tinymceai-on-premises-getting-started.adoc#_create_an_environment_and_access_key[Getting started — Create an environment and access key] for details.
+These values are required by the token endpoint. See xref:tinymceai-on-premises-getting-started.adoc#create-an-environment-and-access-key[Getting started — Create an environment and access key] for details.
 
 [IMPORTANT]
 --
@@ -466,13 +475,15 @@ The AI service does not use platform-native credential chains. AWS IRSA, EC2 ins
 |Registry pull credentials |Secrets Manager {plus} ECR pull-through cache, or a private repository mirroring `registry.containers.tiny.cloud`
 |===
 
+NOTE: On Amazon EKS Auto Mode, pods use the cluster's primary security group (the Amazon EKS-managed cluster security group), not the node security group. Allow inbound database and Redis traffic from the cluster primary security group. With the wrong security group, the AI service pods stay unready and write no log output.
+
 === Azure (AKS)
 
 Deploy on Azure Kubernetes Service with Azure Database for PostgreSQL Flexible Server, Azure Cache for Redis, and Azure Blob Storage. Service-shape considerations:
 
 * `STORAGE_DRIVER=azure` is the recommended storage backend on Azure.
-* PostgreSQL Flexible Server defaults to enforcing TLS — see the xref:tinymceai-on-premises-database.adoc#_postgresql[known TLS error surface].
-* The AI service does not use Workload Identity or managed identity for LLM credentials — inline Azure OpenAI credentials in `PROVIDERS` (see xref:tinymceai-on-premises-providers.adoc#_azure_openai[Azure OpenAI]).
+* PostgreSQL Flexible Server defaults to enforcing TLS — see the xref:tinymceai-on-premises-database.adoc#managed-database-tls[known TLS error surface].
+* The AI service does not use Workload Identity or managed identity for LLM credentials — inline Azure OpenAI credentials in `PROVIDERS` (see xref:tinymceai-on-premises-providers.adoc#azure-openai[Azure OpenAI]).
 
 For AKS cluster setup, node pools, and networking, refer to the https://learn.microsoft.com/en-us/azure/aks/[Azure Kubernetes Service documentation].
 
@@ -481,8 +492,8 @@ For AKS cluster setup, node pools, and networking, refer to the https://learn.mi
 Deploy on Google Kubernetes Engine (Standard mode — not Autopilot) with Cloud SQL for PostgreSQL, Memorystore for Redis, and GCS for file storage. Service-shape considerations:
 
 * No native GCS driver exists. Use GCS via S3-interop (`STORAGE_DRIVER=s3` with HMAC credentials). The bucket must have `uniform_bucket_level_access` disabled (the SDK sends `x-amz-acl` headers).
-* The AI service does not use GKE Workload Identity or Application Default Credentials — inline Vertex SA credentials in `PROVIDERS` (see xref:tinymceai-on-premises-providers.adoc#_google_vertex_ai[Google Vertex AI]).
-* Cloud SQL for PostgreSQL defaults to enforcing TLS — see the xref:tinymceai-on-premises-database.adoc#_postgresql[known TLS error surface].
+* The AI service does not use GKE Workload Identity or Application Default Credentials — inline Vertex SA credentials in `PROVIDERS` (see xref:tinymceai-on-premises-providers.adoc#google-vertex-ai[Google Vertex AI]).
+* Cloud SQL for PostgreSQL defaults to enforcing TLS — see the xref:tinymceai-on-premises-database.adoc#managed-database-tls[known TLS error surface].
 
 For GKE cluster creation and node pool configuration, refer to the https://cloud.google.com/kubernetes-engine/docs[Google Kubernetes Engine documentation].
 

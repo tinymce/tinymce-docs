@@ -12,7 +12,7 @@ Alphabetized. Required-ness is marked relative to a minimum working deployment.
 [cols=",,,",options="header",]
 |===
 |Variable |Required |Default |Description
-|`ALLOWED_ORIGINS` |Recommended |- |Comma-separated list of CORS-allowed editor origins. Required for cross-origin editor deployments. See xref:tinymceai-on-premises-frameworks.adoc#_cross_origin_requests_to_the_ai_service[Cross-origin requests] for format, wildcards, and verification.
+|`ALLOWED_ORIGINS` |Recommended |- |Comma-separated list of CORS-allowed editor origins. Required for cross-origin editor deployments. See xref:tinymceai-on-premises-frameworks.adoc#cross-origin-requests-to-the-ai-service[Cross-origin requests] for format, wildcards, and verification.
 |`DATABASE_DATABASE` |Yes |- |Database name (`ai_service` is the convention).
 |`DATABASE_DRIVER` |Yes |- |`mysql` or `postgres`.
 |`DATABASE_HOST` |Yes |- |Database hostname or IP.
@@ -60,12 +60,12 @@ Alphabetized. Required-ness is marked relative to a minimum working deployment.
 |`STORAGE_LOCATION` |If using filesystem |- |Mount point for filesystem storage. Must be writable by the container user.
 |`STORAGE_REGION` |If using S3 |- |S3 region.
 |`STORAGE_SECRET_ACCESS_KEY` |If using S3 |- |S3 secret access key.
-|`WEBRESOURCES_ENABLED` |No |`false` |Enable web scraping endpoint forwarding. See xref:tinymceai-on-premises-mcp.adoc#web-scraping-and-search[Web scraping and web search].
+|`WEBRESOURCES_ENABLED` |No |`false` |Enable web scraping endpoint forwarding. See xref:tinymceai-on-premises-mcp.adoc#web-scraping[Web scraping].
 |`WEBRESOURCES_ENDPOINT` |If web resources enabled |- |Scraper URL.
 |`WEBRESOURCES_REQUEST_TIMEOUT` |No |- |Scraper request timeout in ms.
-|`WEBSEARCH_ENABLED` |No |`false` |Enable web search forwarding. See xref:tinymceai-on-premises-mcp.adoc#web-scraping-and-search[Web scraping and web search].
+|`WEBSEARCH_ENABLED` |No |`false` |Enable web search forwarding. See xref:tinymceai-on-premises-mcp.adoc#web-search[Web search].
 |`WEBSEARCH_ENDPOINT` |If web search enabled |- |Search URL.
-|`WEBSEARCH_HEADERS` |No |- |Colon-CSV format (`Header-Name: value, Another: value`). Extra headers sent to the search endpoint. Do not use JSON — see xref:tinymceai-on-premises-mcp.adoc#web-scraping-and-search[Web scraping and web search].
+|`WEBSEARCH_HEADERS` |No |- |Colon-CSV format (`Header-Name: value, Another: value`). Extra headers sent to the search endpoint. Do not use JSON — see xref:tinymceai-on-premises-mcp.adoc#web-search[Web search].
 |`WEBSEARCH_REQUEST_TIMEOUT` |No |- |Search request timeout in ms.
 |===
 
@@ -107,7 +107,8 @@ For PostgreSQL, change `DATABASE_DRIVER` to `'postgres'` and add `-e DATABASE_SC
 |===
 |Method |Path |Auth |Description
 |GET |`/health` |None |Liveness probe. Returns `{"serviceName":"on-premises-http","uptime":<seconds>}`. Not metric-logged.
-|GET |`/docs/` |None |ReDoc-rendered API documentation.
+|GET |`/docs/` |None |Redirects (HTTP 301) to `/v1/api/docs`.
+|GET |`/v1/api/docs` |None |ReDoc-rendered API documentation.
 |GET |`/v1/api/doc.json` |None |OpenAPI 3 JSON spec.
 |GET |`/panel/` |Management secret (login form) |Management Panel UI. Sign in with `ENVIRONMENTS_MANAGEMENT_SECRET_KEY` through the browser login form.
 |GET |`/v1/models/1` |JWT |List available models for the current token. The compatibility version literal `1` is the only accepted value; `v1`, `v2`, `latest` all return 500.
@@ -116,33 +117,41 @@ For PostgreSQL, change `DATABASE_DRIVER` to `'postgres'` and add `-e DATABASE_SC
 |GET |`/v1/conversations/\{id}` |JWT |Read one conversation.
 |POST |`/v1/conversations/\{id}/messages` |JWT |Send a message. Returns Server-Sent Events (SSE) stream.
 |POST |`/v1/conversations/\{id}/web-resources` |JWT |Fetch a web page through the configured scrape endpoint. Body: `{"url":"https://..."}`. Returns 201 on success, 422 on scrape failure. Requires `WEBRESOURCES_ENABLED='true'`. See xref:tinymceai-on-premises-mcp.adoc#web-scraping[Web scraping].
+|GET |`/v1/conversations/\{id}/web-resources` |JWT |List the web resources fetched for a conversation.
+|DELETE |`/v1/conversations/\{id}/web-resources/\{webResourceId}` |JWT |Remove a web resource from a conversation.
+|POST |`/v1/conversations/\{id}/files` |JWT |Upload a file to a conversation as `+multipart/form-data+`.
+|DELETE |`/v1/conversations/\{id}/files/\{fileId}` |JWT |Remove a file from a conversation.
+|POST |`/v1/conversations/\{id}/documents` |JWT |Add a document to a conversation.
+|GET |`/v1/conversations/\{id}/documents/\{documentId}` |JWT |Read one conversation document.
 |DELETE |`/v1/conversations/\{id}` |JWT |Delete a conversation.
-|POST |`/v1/actions/\{actionId}` |JWT |Run a quick action. Body shape: `{"content":[{"type":"text","content":"..."}]}` (no `modelId`).
-|POST |`/v1/reviews/\{reviewId}` |JWT |Run a review.
+|POST |`/v1/actions/system/\{actionName}/calls` |JWT |Run a built-in quick action, for example `+fix-grammar+`. Body shape: `{"content":[{"type":"text","content":"..."}]}` with exactly one `+text+` part (no `modelId`). Returns an SSE stream.
+|POST |`/v1/reviews/system/\{reviewName}/calls` |JWT |Run a built-in review, for example `+correctness+`. Returns an SSE stream. For the content format, see the https://tinymceai.api.tiny.cloud/docs#tag/Reviews/operation/callSystemReview[API reference].
+|POST |`/v1/actions/custom/calls` |JWT |Run a custom action with a prompt and a model. Returns an SSE stream.
+|POST |`/v1/reviews/custom/calls` |JWT |Run a custom review with a prompt and a model. Returns an SSE stream.
 |GET |`/v1/mcp/oauth/status` |JWT |Connection status for all OAuth-enabled MCP servers. See xref:tinymceai-on-premises-mcp.adoc#mcp-oauth-endpoints[OAuth REST endpoints].
 |POST |`/v1/mcp/oauth/\{serverName}/initialize` |JWT |Start the OAuth authorization flow.
 |POST |`/v1/mcp/oauth/\{serverName}/complete` |JWT |Complete the OAuth flow with the authorization code.
 |DELETE |`/v1/mcp/oauth/\{serverName}` |JWT |Revoke the OAuth connection for the calling user.
 |===
 
-NOTE: The OAuth endpoints are available only when at least one MCP server has an `oauth` block configured. The interactive API documentation at `/docs/` may not include these endpoints; they are documented in the xref:tinymceai-on-premises-mcp.adoc#mcp-oauth[MCP OAuth section].
+NOTE: The OAuth endpoints are available only when at least one MCP server has an `oauth` block configured. The interactive API documentation at `/v1/api/docs` may not include these endpoints; they are documented in the xref:tinymceai-on-premises-mcp.adoc#mcp-oauth[MCP OAuth section].
 
 NOTE: Environment management (create, read, update, delete) is handled through the Management Panel UI at `/panel/`.
 
 == Server-Sent Events reference
 
-The message endpoint returns `Content-Type: text/event-stream`. Events use named types:
+The message endpoint returns `Content-Type: text/event-stream`. Events use named types. The following table lists the main events. For every event and its payload, see the https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages/operation/createMessage[API reference].
 
 [cols=",,",options="header",]
 |===
 |Event |Payload shape |Meaning
 |`message-metadata` |`{"messageId":"..."}` |Sent once at the start of each message.
 |`text-delta` |`{"textDelta":"..."}` |Incremental text fragment. The editor concatenates these.
-|`tool-call` |`{"toolName":"...","arguments":{...}}` |Emitted when the model invokes an MCP tool.
-|`tool-result` |`{"toolName":"...","result":{...}}` |Emitted when an MCP tool returns.
+|`+mcp-tool-result+` |`+{"toolName":"...","result":"...","success":true}+` |Emitted when an MCP tool call completes. `+result+` is a string.
 |`error` |`{"message":"...","cause":{...}}` |Provider error. HTTP status remains 200; the error is in-stream.
-|`done` |`{}` |Sent once at the end of the stream.
 |===
+
+There is no end-of-stream event. The stream ends when the service closes the response.
 
 Healthy stream example:
 
@@ -156,9 +165,6 @@ data: {"textDelta":"Hello "}
 
 event: text-delta
 data: {"textDelta":"there!"}
-
-event: done
-data: {}
 ----
 
 Error stream example:
@@ -177,11 +183,15 @@ Browser client parsing notes:
 * Each event is two lines: `event: <name>` and `data: <json>`, separated from the next event by a blank line.
 * `data` is always valid JSON.
 * Unknown `event` types carry informational payloads and can be ignored for forward compatibility.
-* `text-delta` is the only event that contributes to the visible response body.
+* `text-delta` carries the visible reply text, and `+modification-delta+` carries the text of a proposed document modification.
+
+The action and review endpoints also return SSE streams, with their own events. See the API reference for https://tinymceai.api.tiny.cloud/docs#tag/Actions/operation/callSystemAction[actions] and https://tinymceai.api.tiny.cloud/docs#tag/Reviews/operation/callSystemReview[reviews].
 
 == Error code reference
 
 Error codes returned in HTTP 4xx responses and inside SSE `event: error` payloads.
+
+Every error response carries a `+traceId+`. See xref:tinymceai-on-premises-troubleshooting.adoc#tracing-a-failed-request[Tracing a failed request].
 
 [cols=",,,",options="header",]
 |===
@@ -192,10 +202,10 @@ Error codes returned in HTTP 4xx responses and inside SSE `event: error` payload
 |`Environment not found` |AI runtime |Same as `invalid-jwt-payload` second sub-cause |Recreate env through Panel UI
 |`missing-permissions` |Permission checker |`auth.ai.permissions` array does not cover the requested action |Add the missing permission string
 |`invalid-request-data` |Input validator |Field validation failed (most commonly the 100,000 char prompt cap) |Fix the request body. See error message
-|`environment-not-found` |AI runtime |Same as `Environment not found` |Recreate through Panel UI
+|`environment-not-found` |AI runtime |Same as `Environment not found`. The editor displays this error as `Invalid API key provided in JWT token (aud) claim`. |Recreate through Panel UI
 |`conversation in use` |Conversation runtime |Stream-abort left stale state |Start a new conversation
 |`conversation does not exist` |Conversation runtime |Follow-up to `conversation in use` |Start a new conversation
-|`NoValidApiKeysFoundError` |Bedrock / Vertex adapter |Inline credentials missing |Inline `credentials` in `PROVIDERS`
+|`NoValidApiKeysFoundError` (HTTP 500) |Bedrock / Vertex adapter |Inline credentials missing |Inline `credentials` in `PROVIDERS`
 |`AccessDeniedException` |Bedrock |Missing model access or IAM permissions |Enable Bedrock model access; attach the IAM policy from xref:tinymceai-on-premises-providers.adoc[LLM providers]
 |`INVALID_PAYMENT_INSTRUMENT` |Bedrock |Anthropic on Bedrock without Marketplace subscription |Subscribe through AWS Marketplace
 |`ValidationException` |Bedrock |Wrong model ID format (regional instead of cross-region) |Use the inference profile ID for Claude 4.x

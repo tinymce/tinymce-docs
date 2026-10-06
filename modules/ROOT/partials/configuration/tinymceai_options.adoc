@@ -41,7 +41,7 @@ A function that returns a Promise resolving to an object with a `+token+` proper
 
 *Type:* `+Function+` (`+() => Promise<{ token: string }>+`)
 
-*Default value:* `+undefined+`
+*Default value:* A function that rejects with the error `+No token provider configured+`, so every request to the AI service fails until this option is set.
 
 The JWT payload must include these required claims:
 
@@ -89,6 +89,38 @@ tinymce.init({
 });
 ----
 
+[[tinymceai_service_url]]
+=== `+tinymceai_service_url+`
+
+The base URL of the AI service that the {pluginname} plugin sends its requests to. For the {cloudname} AI service, the value is `+https://tinymceai.api.tiny.cloud+`. For a xref:tinymceai-on-premises.adoc[self-hosted AI service], the value is the base URL of that service. Set the base URL only: API paths such as `+/v1/conversations+` are appended to it. A trailing slash is optional.
+
+Every {pluginname} request, including Chat, Quick Actions, Review, chat history, sources, and model list requests, goes to this URL, so the JSON Web Token (JWT) returned by xref:tinymceai.adoc#tinymceai_token_provider[`+tinymceai_token_provider+`] must be valid for the service at that address. If no service URL is available, requests fail with the error `+No service URL provided in "tinymceai_service_url" option+`.
+
+*Type:* `+String+`
+
+*Default value:* None. The {pluginname} plugin does not set a default service URL.
+
+When the option is not set, a self-hosted editor that uses a trial (ONLINE+) license key with `+online_license_services_opt_in: true+` uses the {cloudname} AI service URL, `+https://tinymceai.api.tiny.cloud+`. A value set in the editor configuration takes precedence. See xref:self-hosted-trial.adoc[Self-hosted trial].
+
+Set the option when a self-hosted editor with a standard license key connects to the {cloudname} AI service.
+
+.Example: connecting to the {cloudname} AI service
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to the HTML
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_service_url: 'https://tinymceai.api.tiny.cloud',
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  }
+});
+----
+
+For the complete setup with a self-hosted AI service, see xref:tinymceai-on-premises-frameworks.adoc[{productname} integration for the on-premises AI service].
+
 [[tinymceai_sidebar_type]]
 === `+tinymceai_sidebar_type+`
 
@@ -123,7 +155,9 @@ Changing this property dynamically (after the editor has been initialized) is no
 [[tinymceai_default_model]]
 === `+tinymceai_default_model+`
 
-The default AI model to use when no model is explicitly selected by the user. If undefined, the AI service will select the best model for speed, quality, and cost.
+The default AI model to use when no model is explicitly selected by the user. The value is a model ID returned by the AI service, for example `+agent-1+`. For the available IDs, see xref:tinymceai-models.adoc[AI Models].
+
+If the option is not set, or the ID is not among the models that the AI service returns, the default is the first model that the service returns. An ID that is not found also logs the warning `+Default model provided <id> not found+` in the browser console.
 
 *Type:* `+String+`
 
@@ -299,11 +333,13 @@ tinymce.init({
 [[tinymceai_chat_welcome_message]]
 === `+tinymceai_chat_welcome_message+`
 
-Customizes the welcome message displayed in the Chat sidebar when starting a new conversation.
+Customizes the welcome message displayed in the Chat sidebar when starting a new conversation. Set the option to an empty string (`+''+`) to show no welcome message.
+
+The value can contain Markdown or HTML formatting. Only these formatting elements are kept: paragraphs, headings, bold, italic and underlined text, links, ordered and unordered lists, line breaks, images, preformatted text and code, block quotes, tables, and horizontal rules. Other elements and attributes, scripts, styles, and event handler attributes are removed.
 
 *Type:* `+String+`
 
-*Default value:* A default message introducing the AI assistant and its capabilities.
+*Default value:* A default message that introduces the writing assistant and its capabilities.
 
 .Example
 [source,js]
@@ -371,7 +407,7 @@ tinymce.init({
 [[tinymceai_tool_data_callback]]
 === `+tinymceai_tool_data_callback+`
 
-Customizes the status message shown in the Chat sidebar while the AI model calls a Model Context Protocol (MCP) tool. The function runs when the MCP server sends an `+mcp-tool-result+` or `+mcp-tool-notification+` event during a streaming response. The function returns a string to display as the status message, or returns `+undefined+` to fall back to the default status message.
+Customizes the status message shown in the Chat sidebar while the AI model calls a Model Context Protocol (MCP) tool. The function runs when the MCP server sends an `+mcp-tool-result+` or `+mcp-tool-notification+` event during a streaming response. The function returns a string to display as the status message, or returns `+undefined+` to fall back to the default status message. Any value other than a string also falls back to the default status message.
 
 *Type:* `+Function+` (`+(event: MCPToolEvent) => string | undefined+`)
 
@@ -390,7 +426,7 @@ The function receives a single `+event+` argument, which is one of the following
 ** `+level+` (`+String+`): The severity of the notification. One of `+'error'+`, `+'info'+`, `+'debug'+`, `+'notice'+`, `+'warning'+`, `+'critical'+`, `+'alert'+`, or `+'emergency'+`.
 ** `+data+`: The data included with the notification.
 
-A common use is to map each tool name to a human-readable message. For example, the callback can display `+Searching the knowledge base...+` while a `+search-knowledge-base+` tool runs.
+A common use is to map each tool name to a human-readable message. Tool names in these events start with the MCP server name, so match on the end of the name. For example, after a `+search-knowledge-base+` tool returns, the callback can display `+Knowledge base searched. Writing the reply...+`.
 
 .Example
 [source,js]
@@ -400,12 +436,19 @@ tinymce.init({
   plugins: 'tinymceai',
   toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
   tinymceai_tool_data_callback: (event) => {
-    // Map tool names to human-readable status messages
-    const statusMessages = {
-      'search-knowledge-base': 'Searching the knowledge base...'
-    };
+    // Tool names arrive prefixed with the MCP server name, so match the end of the name
     if (event.type === 'mcp-tool-result') {
-      return statusMessages[event.toolName] || `Running ${event.toolName}...`;
+      // The tool has already returned when this event arrives
+      if (event.toolName.endsWith('search-knowledge-base')) {
+        return event.success
+          ? 'Knowledge base searched. Writing the reply...'
+          : 'The knowledge base search failed. Writing the reply...';
+      }
+      return `Finished ${event.toolName}. Writing the reply...`;
+    }
+    if (event.type === 'mcp-tool-notification' && event.level === 'info') {
+      // A progress message from a tool that is still running
+      return `${event.toolName} is working...`;
     }
     // Use the default status message for other events
     return undefined;
@@ -425,7 +468,7 @@ These options configure the Quick Actions menu, which provides one-click AI tran
 [[tinymceai_quickactions_menu]]
 === `+tinymceai_quickactions_menu+`
 
-Array of control IDs that define the order of items in the Quick Actions menu. The default value includes all default items, including `+ai-quickactions-custom+` which adds a submenu of custom actions defined by `+tinymceai_quickactions_custom+`.
+Array of control IDs that define the order of items in the Quick Actions menu. The default value includes all default items, including `+ai-quickactions-custom+`, which adds the **Other** submenu of custom actions defined by xref:tinymceai.adoc#tinymceai_quickactions_custom[`+tinymceai_quickactions_custom+`].
 
 *Type:* `+Array+` of `+String+`
 
@@ -575,19 +618,21 @@ tinymce.init({
 [[tinymceai_quickactions_custom]]
 === `+tinymceai_quickactions_custom+`
 
-Array of custom actions rendered in the Custom submenu within the AI Quick Actions menu. Each item can be type `+action+` (quick action with immediate preview) or type `+chat+` (opens in chat).
+Array of custom actions rendered in the **Other** submenu within the AI Quick Actions menu. Each item can be type `+action+` (quick action with immediate preview) or type `+chat+` (opens in chat).
 
 * `+title+`: Text shown in the menu and chat history
 * `+prompt+`: The prompt sent to the AI
 * `+type+`: `+'action'+` or `+'chat'+`
 * `+model+`: Required for `+action+` type only
-* `+id+` (optional): Stable identifier for the custom action. When set, the same string can be listed in xref:tinymceai.adoc#tinymceai_quickactions_menu[`tinymceai_quickactions_menu`] so the action appears as its own top-level menu item instead of only inside the Custom submenu. The identifier can also be used in the xref:menus-configuration-options.adoc#menu[`+menu+`] option or any other menu configuration that accepts menu item identifiers.
+* `+id+` (optional): Stable identifier for the custom action. When set, the same string can be listed in xref:tinymceai.adoc#tinymceai_quickactions_menu[`+tinymceai_quickactions_menu+`] so the action appears as its own top-level menu item instead of only inside the **Other** submenu. The identifier can also be used in the xref:menus-configuration-options.adoc#menu[`+menu+`] option or any other menu configuration that accepts menu item identifiers.
 
 *Type:* `+Array+` of `+Object+`
 
 *Possible Values:* For `+type+` property: `+'action'+`, `+'chat'+`
 
 *Default value:* `+[]+`
+
+The `+ai-quickactions-custom+` identifier, labeled **Other**, lists the custom actions. It is available as a menu item and a toolbar button only when the array contains at least one action. When the array is empty, it does not appear in the Quick Actions menu or in a toolbar that lists it.
 
 .Example
 [source,js]

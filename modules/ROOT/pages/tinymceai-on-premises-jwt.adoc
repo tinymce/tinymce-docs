@@ -75,6 +75,8 @@ Every token MUST contain the following claims.
 |`auth.ai.permissions` |`string[]` |Array of feature permission strings. See the permissions reference below. Wildcards (`+*+`) are accepted only in the documented positions; the bare string `"*"` is rejected.
 |===
 
+The {pluginname} plugin also checks the claims of each token before it sends the token to the AI service. See xref:tinymceai-jwt-authentication-intro.adoc#payload-properties[Payload properties].
+
 == Optional claims
 
 [cols=",,",options="header",]
@@ -100,6 +102,7 @@ This is the canonical permission list for the AI service.
 |`ai:conversations:*` |All conversation operations: create, list, send message, delete, and web search
 |`ai:conversations:create` |Create new conversations
 |`ai:conversations:read` |List and read existing conversations
+|`+ai:conversations:write+` |Create conversations and send messages
 |`ai:conversations:delete` |Delete conversations
 |`ai:conversations:webSearch` |Enable the web search toggle in conversations. Without this permission, `GET /v1/models/1` reports `capabilities.webSearch.allowed: false` even when `WEBSEARCH_ENABLED=true` and `capabilities.webSearch: true` is set on the model.
 |`ai:models:agent` |Access the built-in agent model (model ID `agent-1`)
@@ -122,6 +125,8 @@ ai:models:bedrock:us.anthropic.claude-sonnet-4-20250514-v1:0
 ai:models:vertex:gemini-2.5-pro
 ai:models:azure:my-gpt5-deployment
 ....
+
+`<provider>` is the key of the provider in `PROVIDERS`, not its `name`. The `+provider+` field of each model in `GET /v1/models/1` shows the display `name`, so do not build permission strings from that field.
 
 For Azure, `<model-id>` is the *deployment name* configured in the Azure portal, not the underlying OpenAI model name.
 
@@ -770,7 +775,7 @@ tinymce.init({
 
 IMPORTANT: Do not cache the JWT in application code. The plugin calls the provider on initialization and again as the token nears expiry; it manages refresh internally.
 
-The provider must return a Promise that resolves to `pass:c[{ token: '<jwt>' }]`. Returning the raw string fails silently. If the provider rejects or returns a non-OK response, the plugin surfaces an error in the editor UI.
+The provider must return a Promise that resolves to `pass:c[{ token: '<jwt>' }]`. Any other return value fails with an error; see xref:tinymceai-on-premises-frameworks.adoc#token-provider[`tinymceai_token_provider`] for the error messages. If the provider rejects or returns a non-OK response, the plugin surfaces an error in the editor UI.
 
 TIP: Set `credentials: 'include'` on the fetch when the token endpoint relies on session cookies. Without it, the browser does not send cookies on cross-origin requests. When the token endpoint is on the same origin as the editor, `credentials: 'include'` is harmless but unnecessary.
 
@@ -870,14 +875,14 @@ When debugging, start here. Most "auth failures" reflect wrong claim values rath
 |`invalid-jwt-signature` |API Secret mismatch |Verify `AI_API_SECRET` matches the value displayed at access-key creation. If lost, create a new access key and rotate.
 |`invalid-jwt-signature` (after copying cloud guide) |Token signed with RS256 |Switch to HS256 with the API Secret. See top-of-page warning.
 |`invalid-jwt-payload` |`aud` does not match a real Environment ID |Confirm the Environment ID from the Management Panel matches `aud` exactly.
-|`invalid-jwt-payload` (env "exists") |Environment created through raw management API rather than the Management Panel UI |Recreate through the panel. See the Environment creation section below.
+|`invalid-jwt-payload` (env "exists") |Environment created through the management API without the `ai-assistant` service attached |Recreate through the panel. See xref:tinymceai-on-premises-getting-started.adoc#create-an-environment-and-access-key[Create an environment and access key].
 |`invalid-jwt` (not `jwt-expired`) |Token is past `exp` by more than 60 seconds |Request a new token. The server allows 60-second clock-skew leeway; anything beyond is rejected with `invalid-jwt`.
-|`Environment not found` |Environment is in `environments__environment` / `security__environment` but not in `ai_assistant_environments` |Recreate through Management Panel UI.
+|`Environment not found` |Environment is in `environments__environment` / `security__environment` but not in `ai_assistant_environments`, because no `ai-assistant` service is attached to it. |Recreate through Management Panel UI.
 |`allowed: false` on every endpoint |Wrong shape for `auth.ai.permissions` |Must be ``string[]``. Not a single string. Not `useAllFeatures`. Not `ai:admin`.
 |`allowed: false` on specific endpoints only |Missing the specific permission |Decode token, check the `auth.ai.permissions` array against the table above.
 |Token silently rejected, no decoded error |RS256 signature |Re-sign with HS256.
 |`aud` claim type mismatch |`aud` issued as array instead of string |Some JWT libraries default to array `aud`. Force string.
-|Editor shows "Failed to authenticate" |Token endpoint returned non-JSON, returned `token` as nested object, or Cross-Origin Resource Sharing (CORS) blocked the request |Open browser devtools → Network → inspect the response from `/api/ai-token`.
+|Editor shows an error, and the browser console logs `TinyMCE AI Error:` with the cause, for example `Invalid JWT token provider result` or `Invalid JWT token payload` |Token endpoint returned non-JSON, returned `token` as a nested object, returned a token without the required claims, or Cross-Origin Resource Sharing (CORS) blocked the request |Open browser devtools → Network → inspect the response from `/api/ai-token`.
 |===
 
 === Sanity-check a token manually
@@ -889,7 +894,7 @@ TOKEN=$(curl -s -X POST http://localhost:3000/api/ai-token | jq -r .token)
 curl -i https://ai.example.com/v1/conversations \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{}'
+  -d '{"id":"token-check-1"}'
 ----
 
 A `201 Created` confirms the full chain works: secret, claims, permissions, environment registration.

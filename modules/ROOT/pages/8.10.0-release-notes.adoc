@@ -71,6 +71,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Applying or skipping all quick action suggestions did nothing when the Review sidebar was open
+// #TINYMCE-14293
+
+Previously, when the Review sidebar was open but no review was in progress, the **TinyMCE AI** plugin handled a quick action preview as if it belonged to a review. Selecting **Apply all** or **Skip all** in the preview footer did not resolve the suggestions, and the editor stayed in preview mode. Users had to close the Review sidebar before they could apply or skip the result of a quick action.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin resolves a quick action preview based on whether a review is in progress, not on whether the Review sidebar is open. While the Review sidebar is open, **Apply all** applies the suggestions, **Skip all** skips them, and the editor then leaves preview mode.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

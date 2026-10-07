@@ -42,8 +42,10 @@ The Review Edits view can be used to view and reviewing edits made by multiple a
 The view contains a few controls to manage the review process: 
 
 * Show edits: Toggles whether suggested edits are shown. When hidden, the view shows what the document will look like if the review is completed.
-* Complete review: Ends the review, applying resolved suggestions to the document. Unresolved suggestions remain in the document for future review.
-* Cancel: Ignores any resolved suggestions and makes no change to the document. Feedback given on suggestions will be retained.
+* Save & Exit: Ends the review, applying resolved suggestions to the document. Unresolved suggestions remain in the document for future review.
+* image:icons/close.svg[Exit review icon,24px] Exit review: Ignores any resolved suggestions and makes no change to the document. Feedback given on suggestions will be retained.
+
+The **Save & Exit** and **Exit review** buttons appear in the sidebar header, next to the **Review edits** title. The **Exit review** button displays only an icon. The text **Exit review** appears as a tooltip and as the accessible label of the button.
 
 === Document
 

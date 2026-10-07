@@ -1,0 +1,139 @@
+= TinyMCE AI multi-editor mode
+:navtitle: Multi-editor mode
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
+:description: Group several editors on one page so that they share TinyMCE AI Chat, Review, and Quick Actions
+:description_short: multi-editor mode
+:keywords: AI, multi-editor, multiple editors, group, tinymceai
+:page-role: -toc
+
+include::partial$misc/admon-requires-8.10v.adoc[]
+
+Multi-editor mode groups several {productname} editors on the same page so that they share one Chat sidebar and one Review sidebar. Use multi-editor mode when a page splits related content across several editors, for example a form with separate editors for a summary and a body, or a page that edits several related articles side by side.
+
+In a group, Chat, Review, and Quick Actions work across the content of every editor. The {pluginname} plugin identifies the content of each editor by name, and previews and applies each change in the editor it belongs to.
+
+[[demo]]
+== Demo
+
+The demo below splits an article across an Introduction editor and a Body editor in one group. Select the image:icons-premium/ai-assistant.svg[Chat icon,24px] Chat toolbar button in either editor to open the shared Chat sidebar, which the first editor hosts. Then ask the AI to change both parts of the article, or run a review over both editors.
+
+liveDemo::tinymceai-multi-editor[]
+
+include::partial$misc/admon-inline-not-supported.adoc[]
+
+[[how-grouped-editors-work]]
+== How grouped editors work
+
+[[shared-sidebar]]
+=== Shared sidebar
+
+The first editor of the group to be created hosts the shared Chat sidebar and Review sidebar. The Chat and Review toolbar buttons and menu items in every other editor of the group open, close, and focus that shared sidebar.
+
+[[chat]]
+=== Chat
+
+By default, each chat prompt includes the content of every editor in the group. Each editor appears above the prompt as a context tag labeled with its xref:tinymceai.adoc#tinymceai_document_name[`+tinymceai_document_name+`] value, for example image:tinymceai/tinymceai-context-tag.png[Body context tag] for an editor named `+Body+`.
+
+Before sending the first message of a conversation, users can change which editors the AI works with:
+
+* Removing a context tag leaves the content of that editor out of the prompt, and the AI does not change that editor.
+* The **Add context** menu lists every editor in the group and adds a removed editor back.
+
+After the first message, the editors in the conversation stay fixed until the user starts a new conversation.
+
+The AI can change the content of any editor in the group, and the plugin previews and applies each change in the editor it belongs to. To direct a request at the content of one editor, name that content in the prompt, for example _"Shorten the Introduction"_. For more information about chat, see xref:tinymceai-chat.adoc[Chat].
+
+[[review]]
+=== Review
+
+A review analyzes the content of every editor in the group. The Review sidebar groups suggestions under the name of the editor they belong to and shows the number of pending suggestions in each group. A review always covers the whole group. For more information about reviews, see xref:tinymceai-review.adoc[Review].
+
+[[quick-actions]]
+=== Quick Actions
+
+Users can run a Quick Action from any editor in the group. What the Quick Action changes depends on whether text is selected in that editor:
+
+* With text selected, the Quick Action changes only the selected text in that editor.
+* With no text selected, the Quick Action changes the whole content of every editor in the group and ignores any text selected in the other editors. For example, running **Translate** with no text selected translates every editor in the group.
+
+Chat actions, such as **Explain**, **Summarize**, and **Highlight key points**, open the shared Chat sidebar and start a conversation that includes every editor in the group, as described in xref:#chat[Chat]. For more information about Quick Actions, see xref:tinymceai-actions.adoc[Quick Actions].
+
+[[previewing-and-applying-changes]]
+=== Previewing and applying changes
+
+While the {pluginname} plugin previews changes from Chat or Quick Actions, each affected editor shows its own preview and is read-only. The whole group shares one change toolbar:
+
+* The change counter covers the changes in every editor of the group.
+* The next and previous buttons move between changes across editors.
+* Selecting a change in any editor moves the change toolbar to that change.
+* Accepting or rejecting a change applies it to the editor that holds the change.
+
+Each editor filters the content returned by the AI through its own schema, so a change applied to an editor contains only the elements and attributes that the editor allows.
+
+[[discarding-suggestions]]
+=== Discarding pending suggestions
+
+When any editor in the group has pending suggestions, the {pluginname} plugin asks for confirmation before it discards them and starts a different AI task. For example, the confirmation appears when the user switches between the Chat sidebar and the Review sidebar, or runs a Quick Action while a review has pending suggestions.
+
+If the user confirms, the plugin discards the pending suggestions in every editor of the group and returns each editor to normal editing. If the user cancels, the plugin keeps every preview and pending suggestion.
+
+[[integration]]
+== Integration
+
+To group editors, load the `+tinymceai+` plugin in each editor and set the same xref:tinymceai.adoc#tinymceai_group[`+tinymceai_group+`] value on each editor in the group. Give each editor a unique xref:tinymceai.adoc#tinymceai_document_name[`+tinymceai_document_name+`] value, and optionally a xref:tinymceai.adoc#tinymceai_document_description[`+tinymceai_document_description+`] value that describes the content to the AI.
+
+Use the same {pluginname} configuration for every editor in a group, for example by sharing a settings object between the `+tinymce.init+` calls:
+
+[source,js]
+----
+const sharedSettings = {
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_sidebar_type: 'floating',
+  tinymceai_group: 'article',
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
+  }
+};
+
+tinymce.init({
+  ...sharedSettings,
+  selector: 'textarea#introduction', // change this value according to the HTML
+  tinymceai_document_name: 'Introduction',
+  tinymceai_document_description: 'The introduction of the article. A short paragraph that sets out the topic and hooks the reader.'
+});
+
+tinymce.init({
+  ...sharedSettings,
+  selector: 'textarea#body', // change this value according to the HTML
+  tinymceai_document_name: 'Body',
+  tinymceai_document_description: 'The main body of the article. Uses h2 subheadings and short paragraphs.'
+});
+----
+
+Grouped editors must be on the same page and use the same `+tinymce+` instance. Set xref:tinymceai.adoc#tinymceai_group[`+tinymceai_group+`] in the initial configuration of each editor.
+
+For information about installing the plugin and enabling AI features, see xref:tinymceai.adoc[Plugin Reference].
+
+[[multiple-groups]]
+=== Multiple groups on one page
+
+A page can contain several independent groups, each with a different xref:tinymceai.adoc#tinymceai_group[`+tinymceai_group+`] value. Each group has its own shared sidebar, and an editor in one group never receives the content of an editor in another group.
+
+The demo below splits one article across four editors in two groups. The Introduction and Native integration editors form one group, and the Workflow comparison and Adoption challenges editors form a second group. A chat in the first group cannot read or change the content of the second group.
+
+liveDemo::tinymceai-multi-editor-groups[]
+
+[[configuration]]
+== Configuration
+
+For the options that configure multi-editor mode, see xref:tinymceai.adoc#options-multi-editor[Options for multi-editor mode].
+
+[[related-features]]
+== Related features
+
+* xref:tinymceai-chat.adoc[AI Chat]: For interactive discussions with document analysis and context.
+* xref:tinymceai-review.adoc[AI Review]: For content quality analysis and improvement suggestions.
+* xref:tinymceai-actions.adoc[Quick Actions]: For fast, stateless content transformations.

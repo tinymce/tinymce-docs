@@ -71,6 +71,25 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following addition.
+
+==== New multi-editor support
+// #TINYMCE-14817
+
+Previously, the **TinyMCE AI** plugin worked with one editor at a time. When related content was split across several editors on a page, users had to run Chat, Review, and Quick Actions in each editor separately, and the AI had no context from the other editors.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin can group editors on the same page. Editors that share a xref:tinymceai.adoc#tinymceai_group[`+tinymceai_group+`] value share one Chat sidebar and one Review sidebar. Chat, Review, and Quick Actions work across the content of every editor in the group, and the plugin previews and applies each change in the editor it belongs to. The Review sidebar groups suggestions under the name of the editor they belong to.
+
+The xref:tinymceai.adoc#tinymceai_document_name[`+tinymceai_document_name+`] option names the content of each editor, and the xref:tinymceai.adoc#tinymceai_document_description[`+tinymceai_document_description+`] option describes that content to the AI service. Each editor filters the content returned by the AI through its own schema.
+
+For information on multi-editor mode, see xref:tinymceai-multi-editor.adoc[Multi-editor mode].
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

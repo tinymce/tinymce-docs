@@ -847,3 +847,135 @@ tinymceai_reviews: [
 ]
 ----
 
+[[options-multi-editor]]
+== Options for multi-editor mode
+
+These options group several editors on the same page so that they share one Chat sidebar and one Review sidebar, and identify the content of each editor to users and to the AI service. For a description of how grouped editors work, see xref:tinymceai-multi-editor.adoc[Multi-editor mode].
+
+include::partial$misc/admon-requires-8.10v.adoc[]
+
+[[tinymceai_group]]
+=== `+tinymceai_group+`
+
+Adds the editor to a named group. Editors on the same page with the same `+tinymceai_group+` value share one Chat sidebar and one Review sidebar. In a group, Chat, Review, and Quick Actions work across the content of every editor. The editor created first in the group hosts the shared sidebars.
+
+The plugin uses the group name only to match editors, and never shows the name to users or sends it to the AI service. A page can contain several independent groups, each with a different name. Editors in one group never receive content from another group.
+
+An editor without this option does not belong to any group. It has its own Chat sidebar and Review sidebar, and works only with its own content, even when other editors on the same page belong to a group.
+
+For more details and live demos, see xref:tinymceai-multi-editor.adoc[Multi-editor mode].
+
+*Type:* `+String+`
+
+*Default value:* `+undefined+`
+
+.Example: two independent groups on one page
+[source,js]
+----
+const sharedSettings = {
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
+  }
+};
+
+// Group "article": the introduction and body editors share one AI sidebar.
+tinymce.init({
+  ...sharedSettings,
+  selector: 'textarea#introduction', // change this value according to the HTML
+  tinymceai_group: 'article'
+});
+
+tinymce.init({
+  ...sharedSettings,
+  selector: 'textarea#body', // change this value according to the HTML
+  tinymceai_group: 'article'
+});
+
+// Group "notes": a separate AI sidebar that never receives the content of the "article" group.
+tinymce.init({
+  ...sharedSettings,
+  selector: 'textarea#research-notes', // change this value according to the HTML
+  tinymceai_group: 'notes'
+});
+
+tinymce.init({
+  ...sharedSettings,
+  selector: 'textarea#review-notes', // change this value according to the HTML
+  tinymceai_group: 'notes'
+});
+----
+
+[NOTE]
+====
+Set this option in the initial configuration of the editor. Changing this option after the editor initializes is not supported.
+====
+
+[[tinymceai_document_name]]
+=== `+tinymceai_document_name+`
+
+The name of the content in the editor. The {pluginname} plugin uses this name to:
+
+* Label the content of the editor in the Chat sidebar, including the context tags of a prompt and the chat history.
+* Label the group of suggestions for the editor in the Review sidebar.
+* Name the content that the plugin sends to the AI service with a chat prompt, so that the AI can refer to it and tell it apart from the content of other editors.
+* Match each editor to its content when a user resumes a conversation from the chat history.
+
+When this option is not set, the plugin uses the editor ID as the name, for example `+mce_0+` or the ID of the target element. Set a descriptive name for each editor in a group, because an editor ID does not identify the content to users or to the AI service.
+
+The plugin removes leading and trailing whitespace from the value. A value that is empty or longer than 255 characters is not valid. When the value is not valid, {productname} logs a warning to the browser console and the plugin uses the editor ID instead.
+
+*Type:* `+String+`
+
+*Default value:* `+undefined+`
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to the HTML
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_group: 'report',
+  tinymceai_document_name: 'Executive summary',
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
+  }
+});
+----
+
+[IMPORTANT]
+====
+Give each editor in a group a unique name, and keep each name the same across page loads. When a user resumes a conversation from the chat history, the plugin matches the stored content to editors by name. If two editors in a group share a name, the plugin can match content to the wrong editor. If a name changes, the plugin no longer matches conversations saved with the previous name to that editor.
+====
+
+[[tinymceai_document_description]]
+=== `+tinymceai_document_description+`
+
+A short description of the content in the editor, such as its purpose, format, length limits, or audience. The {pluginname} plugin sends the description to the AI service with the content of the editor when a user submits a chat prompt. The AI uses the description as additional context, for example to keep a title short or to apply a change only to the relevant content.
+
+Users do not see the description.
+
+*Type:* `+String+`
+
+*Default value:* `+undefined+`
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to the HTML
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_group: 'blog-post',
+  tinymceai_document_name: 'Blog post body',
+  tinymceai_document_description: 'The main body of the blog post. Uses h2 subheadings and short paragraphs.',
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
+  }
+});
+----

@@ -71,6 +71,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following improvement.
+
+==== Diff mode now dims unchanged content so the suggested changes stand out
+// #TINYMCE-14609
+
+Previously, with **Show edits** turned on, the **Suggested Edits** plugin displayed unchanged content with the same emphasis as suggested edits, so the suggestions were hard to spot. With **Show edits** turned off, the plugin did not show where the suggestions were. The plugin also marked every line break in the document, not only the line breaks that changed. Reviewers had to read the whole document to find each suggestion and could miss one in a long document.
+
+In {productname} {release-version}, **Diff mode** dims unchanged content while suggestions are pending, so the pending suggestions stand out. **Preview** highlights each suggestion in place, and line break markers appear only where a line break was added or removed.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

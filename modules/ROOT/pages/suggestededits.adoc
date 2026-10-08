@@ -41,7 +41,6 @@ The Review Edits view can be used to view and reviewing edits made by multiple a
 
 The view contains a few controls to manage the review process: 
 
-* Show edits: Toggles whether suggested edits are shown. When hidden, the view shows what the document will look like if the review is completed.
 * Complete review: Ends the review, applying resolved suggestions to the document. Unresolved suggestions remain in the document for future review.
 * Cancel: Ignores any resolved suggestions and makes no change to the document. Feedback given on suggestions will be retained.
 
@@ -54,6 +53,11 @@ The current editor document is displayed in a sandboxed iframe, with each sugges
 * Red: Removed content.
 
 Replaced content is represented as both added and removed content, and indicates that some content was removed and replaced with new content in a single edit. When a suggestion is selected, whether in the document or in the sidebar, the corresponding highlighted suggestion in the document will be outlined in blue and scrolled into view.
+
+A toolbar at the bottom of the document provides two views:
+
+* Diff mode: Shows the suggested edits with the color coding described above. While suggestions are pending, Diff mode dims unchanged content so the pending suggestions stand out. Diff mode is the default view.
+* Preview: Shows what the document looks like if the reviewer completes the review, and highlights each suggestion in place.
 
 === Sidebar
 

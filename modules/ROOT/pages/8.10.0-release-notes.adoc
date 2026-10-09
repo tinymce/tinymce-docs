@@ -75,7 +75,7 @@ For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode
 
 The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin. The review interface now uses the same layout and components as the **TinyMCE AI** review. Setup and configuration of the plugin are unchanged. The class names of the suggestion cards and the review panel have changed, so custom CSS written for the previous class names must be updated.
 
-**Suggested Edits** includes the following changes, improvements, and a fix.
+**Suggested Edits** includes the following changes, improvements, and fixes.
 
 ==== The review actions moved to the sidebar header and were renamed
 // #TINYMCE-14619
@@ -196,6 +196,13 @@ In {productname} {release-version}, the main **Suggested Edits** plugin file no 
 Previously, feedback on a suggestion that contained a long string with no spaces, such as a long link, ran past the edge of the suggestion card. The overflowing text pushed the buttons and the feedback text box of the card out of alignment and made the sidebar scroll sideways.
 
 In {productname} {release-version}, long feedback text wraps onto new lines within the suggestion card, and the buttons and text box of the card remain aligned.
+
+==== Nested parts of the same suggestion showed duplicate highlights
+// #TINYMCE-14358
+
+Previously, when one suggestion changed both an element and the content inside it, such as the font size of a list, the Review edits view highlighted the element, then highlighted each part of the content inside it again. The Review edits view also stacked the selection styling when the suggestion was selected. The stacked styling made the change cluttered and harder to read.
+
+In {productname} {release-version}, the **Suggested Edits** plugin applies the highlight and selection styling once for each suggestion, on the outermost element that the suggestion changes, in both **Diff mode** and **Preview**.
 
 For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
 

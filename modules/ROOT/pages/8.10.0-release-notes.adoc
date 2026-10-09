@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== The editor iframe was missing its `+title+` attribute on browsers other than Firefox
+// #TINYMCE-13100
+
+Previously, {productname} set the `+title+` attribute on the editor iframe only in Firefox. In other browsers, the iframe had no `+title+`. {productname} applied the xref:accessibility.adoc#iframe_aria_text[`+iframe_aria_text+`] value as an `+aria-label+` on the `+<body>+` element inside the iframe instead. Screen readers announced the editor correctly, but accessibility checkers reported the missing iframe `+title+` as a violation of the Web Content Accessibility Guidelines (WCAG).
+
+In {productname} {release-version}, the editor sets the `+title+` attribute of the iframe to the `+iframe_aria_text+` value in every browser. On macOS and iOS, the VoiceOver screen reader does not announce the iframe `+title+`. The editor therefore also sets the value as an `+aria-label+` on the `+<body>+` element, together with `+role="textbox"+` and `+aria-multiline="true"+`. On other operating systems, the editor no longer sets an `+aria-label+` on the `+<body>+` element.
+
 
 [[security-fixes]]
 == Security fixes

@@ -71,6 +71,141 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin. The review interface now uses the same layout and components as the **TinyMCE AI** review. Setup and configuration of the plugin are unchanged. The class names of the suggestion cards and the review panel have changed, so custom CSS written for the previous class names must be updated.
+
+**Suggested Edits** includes the following changes, improvements, and fixes.
+
+==== The review actions moved to the sidebar header and were renamed
+// #TINYMCE-14619
+// #TINYMCE-14620
+// #TINYMCE-14862
+// #TINYMCE-14618
+
+Previously, the **Complete review** and **Cancel** buttons for a Suggested Edits review appeared in a header bar above the review content, apart from the sidebar that lists the suggestions.
+
+In {productname} {release-version}, the **Suggested Edits** plugin shows these actions in the sidebar header, next to the **Review edits** title. The **Save & Exit** button replaces **Complete review**. The **Exit review** button replaces **Cancel** and shows only an icon, with **Exit review** as its tooltip and accessible label. Both actions work as before. The sidebar is also wider, 440 pixels instead of 316 pixels, to fit the new header. For more information, see xref:suggestededits.adoc#header[Header].
+
+==== Diff mode and Preview options replaced the Show edits toggle
+// #TINYMCE-14610
+
+Previously, the **Suggested Edits** plugin placed the **Show edits** toggle in the header of the Review edits view, apart from the review content that the toggle switched. With **Show edits** turned off, the plugin also dimmed the suggestion cards, which made the cards look disabled even though their buttons still worked.
+
+In {productname} {release-version}, the **Suggested Edits** plugin replaces the **Show edits** toggle with **Diff mode** and **Preview** options in a footer below the review content. **Diff mode** shows the suggested edits and is the default view. **Preview** shows how the document reads with the suggested edits applied. The suggestion cards no longer dim in either view. The toolbar matches the review bar in **TinyMCE AI**, so the view switch appears in the same place in both plugins. For more information, see xref:suggestededits.adoc#footer[Footer].
+
+==== The review now keeps the editor toolbar visible, makes the editor read-only, and closes when a sidebar opens
+// #TINYMCE-14768
+
+Previously, the Review edits view replaced the whole editor, including the menu bar and toolbar, so the review appeared as a separate screen.
+
+In {productname} {release-version}, the **Suggested Edits** plugin keeps the editor menu bar and toolbar visible during a review and makes the editor content read-only. Opening a sidebar closes the review. For more information, see xref:suggestededits.adoc#reviewing-edits[Reviewing edits].
+
+==== The review now keeps the status bar visible and lets the editor be resized while suggestions are reviewed
+// #TINYMCE-14920
+
+Previously, the Review edits view covered the editor status bar, so the editor could not be resized during a review.
+
+In {productname} {release-version}, the status bar remains visible during a review, and the editor can be resized while suggestions are reviewed.
+
+==== Bulk accepting or rejecting suggestions no longer overwrites suggestions that were already accepted or rejected individually
+// #TINYMCE-14851
+// #TINYMCE-14913
+
+Previously, the **Accept all** and **Reject all** bulk actions changed the status of every suggestion, including suggestions already accepted or rejected individually. Reviewers who mixed individual and bulk decisions lost their earlier decisions and had to make them again.
+
+In {productname} {release-version}, bulk accept and reject apply only to unresolved suggestions. After at least one suggestion is resolved, the bulk actions are labeled **Accept remaining** and **Reject remaining**. **Revert all** is unavailable until at least one suggestion is resolved, and the accept and reject actions are unavailable when no unresolved suggestions remain. For more information, see xref:suggestededits.adoc#bulk-actions[Bulk actions].
+
+==== Suggested Edits cards now use icon-only accept and reject actions that appear on hover, with tooltips
+// #TINYMCE-14607
+// #TINYMCE-14612
+// #TINYMCE-14705
+
+Previously, each suggestion card stacked the author, a colored label for the type of change, and the date, and a selected card added a row of **Reject** and **Accept** text buttons below its details.
+
+In {productname} {release-version}, the card header shows the author's avatar, name, and the date in one row. **Accept** and **Reject** are icon buttons with tooltips in the card header. The buttons appear when pointing to a card and stay visible while the card is selected, so more cards fit in the sidebar.
+
+==== Suggested Edits cards now show a preview of changed text for each operation
+// #TINYMCE-14828
+// #TINYMCE-14615
+
+Previously, suggestion cards described only the type of content that changed, such as "deleted text", so reviewers could not tell from the card alone which part of the document had changed.
+
+In {productname} {release-version}, each card quotes the changed text, for example: Replaced "`the`" with "`them`". Long text is shortened with an ellipsis. Changes that are not text name the type of content that changed, such as an image or a table. Reviewers can see what changed, and where, from the card alone.
+
+==== Suggestion cards in the sidebar are now listed in the order the changes appear in the document
+// #TINYMCE-14966
+
+Previously, suggestion cards were listed in the order the suggestions were created. For example, deleting an image near the top of the document after editing further down placed the card for the image near the bottom of the sidebar. Reviewers working from top to bottom had to move around the document.
+
+In {productname} {release-version}, suggestion cards are listed in the order their changes appear in the document, from top to bottom, regardless of who made each change or when. Users can work through suggestions in reading order and match each card to its change.
+
+==== Diff mode now dims unchanged content so the suggested changes stand out
+// #TINYMCE-14609
+
+Previously, with **Show edits** turned on, the **Suggested Edits** plugin displayed unchanged content with the same emphasis as suggested edits, so the suggestions were hard to spot. With **Show edits** turned off, the plugin did not show where the suggestions were. The plugin also marked every line break in the document, not only the line breaks that changed. Reviewers had to read the whole document to find each suggestion and could miss one in a long document.
+
+In {productname} {release-version}, **Diff mode** dims unchanged content while suggestions are pending, so the pending suggestions stand out. **Preview** underlines added and modified content in place, and line break markers appear only where a line break was added or removed.
+
+==== Deleted media in Diff mode now shows a red X overlay
+// #TINYMCE-14611
+
+Previously, a deleted image was marked only with a highlight, which could be easy to miss.
+
+In {productname} {release-version}, **Diff mode** also marks deleted images, videos, and embedded frames with a large red X.
+
+==== Preview now shows only the inserted text of a replaced suggestion
+// #TINYMCE-14771
+
+In {productname} {release-version}, selecting a suggestion that replaces text in **Preview** shows and highlights only the new text, and the removed text stays hidden. **Preview** matches the content produced by accepting the suggestion. **Diff mode** continues to show both the removed and the added text.
+
+==== Opening the Review edits view now keeps the editor scroll position, and closing it restores the review scroll position in the editor
+// #TINYMCE-14902
+
+Previously, opening the Review edits view jumped to the first change, and closing it scrolled the editor back to the cursor. Each time the review opened or closed, the reader lost the current position in the document.
+
+In {productname} {release-version}, the Review edits view opens at the same position in the document that the editor showed, and closing the review returns the editor to the position last shown in the review. Selecting a card still scrolls to its change.
+
+==== The up and down arrow keys now move between suggestion cards in the sidebar and select the focused suggestion
+// #TINYMCE-14844
+
+Previously, the Up Arrow and Down Arrow keys did not move between suggestion cards in the sidebar, so keyboard users had to press Tab through the controls of each card to reach the next suggestion. Reviewing a document with many suggestions from the keyboard was slow.
+
+In {productname} {release-version}, the Up Arrow and Down Arrow keys move between suggestion cards in the sidebar and select the focused suggestion, which highlights it in the document. Pressing Enter on a card moves focus into the content of that card. For more information, see xref:suggestededits.adoc#keyboard-navigation[Keyboard navigation].
+
+==== Suggestion cards now include the accepted or rejected outcome in their accessible name, and the revert button is named Revert
+// #TINYMCE-14616
+
+In {productname} {release-version}, screen readers announce whether a suggestion was accepted or rejected as part of the card name, and the button that reverts a decision is announced as **Revert**.
+
+==== Suggested Edits cards now describe elements without a friendly name as "content" instead of showing their HTML tag name
+// #TINYMCE-14952
+
+Previously, when a changed element did not have a friendly name, its card showed the HTML tag name of the element. For example, pasting content that contained a `+div+` element produced a card reading "Added div". Users could see technical terms that did not explain the change.
+
+In {productname} {release-version}, cards describe elements without a friendly name as "content", so "Added div" now reads "Added content". The card still shows the changed text, and elements that already have a friendly name, such as paragraphs, images, tables, and lists, are described as before.
+
+==== Reduced bundle size
+// #TINYMCE-15000
+
+In {productname} {release-version}, the main **Suggested Edits** plugin file no longer includes code that only the Review edits view uses, so the plugin file is smaller.
+
+==== Long feedback text without spaces overflowed the suggested edit card and pushed the card's buttons and textbox out of alignment
+// #TINYMCE-14973
+
+Previously, feedback on a suggestion that contained a long string with no spaces, such as a long link, ran past the edge of the suggestion card. The overflowing text pushed the buttons and the feedback text box of the card out of alignment and made the sidebar scroll sideways.
+
+In {productname} {release-version}, long feedback text wraps onto new lines within the suggestion card, and the buttons and text box of the card remain aligned.
+
+==== Nested parts of the same suggestion showed duplicate highlights
+// #TINYMCE-14358
+
+Previously, when one suggestion changed both an element and the content inside it, such as the font size of a list, the Review edits view highlighted the element, then highlighted each part of the content inside it again. The Review edits view also stacked the selection styling when the suggestion was selected. The stacked styling made the change cluttered and harder to read.
+
+In {productname} {release-version}, the **Suggested Edits** plugin applies the highlight and selection styling once for each suggestion, on the outermost element that the suggestion changes, in both **Diff mode** and **Preview**.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

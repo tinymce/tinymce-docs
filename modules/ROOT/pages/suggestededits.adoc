@@ -21,7 +21,7 @@ include::partial$misc/bundling-guide-link.adoc[]
 
 == How it works
 
-The {pluginname} plugin keeps track of every edit made to the document by the current user and stores this metadata in an internal model of the document. These suggestions can then be reviewed in the Review Edits view, where each edit is highlighted in the document, and where users can accept, reject, or provide feedback. The Review Edits view is accessible via either the `suggestededits` toolbar button or menu button within the `View` menu.
+The {pluginname} plugin keeps track of every edit made to the document by the current user and stores this metadata in an internal model of the document. These suggestions can then be reviewed in the Review edits view, where each edit is highlighted in the document, and where users can accept, reject, or provide feedback. The Review edits view opens from either the `suggestededits` toolbar button or the `suggestededits` menu item in the `View` menu.
 
 == The model
 
@@ -35,50 +35,79 @@ Alternatively the xref:#suggestededits_content[`+suggestededits_content+`] optio
 
 == Reviewing edits
 
-The Review Edits view can be used to view and reviewing edits made by multiple authors. The available actions in this view depends on the xref:#suggestededits_access[`+suggestededits_access+` option].
+The Review edits view displays the edits made by multiple authors for review. The available actions in this view depend on the xref:#suggestededits_access[`+suggestededits_access+` option].
+
+While the Review edits view is open, the editor menu bar, toolbar, and status bar remain visible, the editor content is read-only, and the editor can still be resized. Opening a sidebar closes the Review edits view. Opening and closing the Review edits view keeps the current scroll position in the document.
 
 === Header
 
-The view contains a few controls to manage the review process: 
+The header at the top of the sidebar shows the **Review edits** title and two buttons that end the review:
 
-* Show edits: Toggles whether suggested edits are shown. When hidden, the view shows what the document will look like if the review is completed.
-* Complete review: Ends the review, applying resolved suggestions to the document. Unresolved suggestions remain in the document for future review.
-* Cancel: Ignores any resolved suggestions and makes no change to the document. Feedback given on suggestions will be retained.
+* Save & Exit: Ends the review, applying resolved suggestions to the document. Unresolved suggestions remain in the document for future review. This button is available only to users with `+full+` access.
+* image:icons/close.svg[Exit review icon,24px] Exit review: Ends the review without applying resolved suggestions, and makes no change to the document. Feedback given on suggestions will be retained.
+
+The **Exit review** button displays only an icon. The text **Exit review** appears as a tooltip and as the accessible label of the button.
+
+=== Footer
+
+The footer below the document switches between two views:
+
+* Diff mode: Shows the suggested edits with the color coding described in xref:#document[Document]. While unresolved suggestions remain, Diff mode dims unchanged content so the unresolved suggestions stand out. Diff mode is the default view.
+* Preview: Shows how the document reads with the suggested edits applied, taking accepted and rejected suggestions into account. Added and modified content is underlined, and removed content is hidden.
 
 === Document
 
-The current editor document is displayed in a sandboxed iframe, with each suggested edit highlighted as they appear in the document. The following color coding is used to indicate the type of change:  
+The Review edits view displays the current editor document in an iframe, with each suggested edit highlighted where it appears in the document.
 
-* Green: Added content. 
-* Blue: Modified attributes or formatting (e.g. bold, italic, etc.).
-* Red: Removed content.
+In Diff mode, the following color coding is used to indicate the type of change:
 
-Replaced content is represented as both added and removed content, and indicates that some content was removed and replaced with new content in a single edit. When a suggestion is selected, whether in the document or in the sidebar, the corresponding highlighted suggestion in the document will be outlined in blue and scrolled into view.
+* Green: Added content.
+* Blue: Modified attributes or formatting, such as bold or italic.
+* Red: Removed content, shown with a strikethrough.
+
+In Diff mode, removed images, videos, and embedded frames are also marked with a red X. Line break markers appear only where a line break was added or removed.
+
+Replaced content is represented as both added and removed content, and indicates that some content was removed and replaced with new content in a single edit. When a suggestion is selected, whether in the document or in the sidebar, the corresponding highlighted suggestion in the document will be outlined in blue and scrolled into view. In Diff mode, accepted and rejected suggestions show their result without highlighting, except while the suggestion is selected. Selecting anywhere outside a card or a suggestion clears the selection.
 
 === Sidebar
 
-Each suggested edit is listed as a card in the sidebar and color coded by the type of change. Each card shows a contextual description of the content, along with the user who made the suggestion, when the edit was made, and any feedback provided on that suggestion.
+Each suggested edit is listed as a card in the sidebar, in the order the edits appear in the document. The card header shows the user who made the suggestion and when the edit was made. Below the header, the card describes the edit and quotes the changed text, for example: Replaced "`the`" with "`them`". Long text is shortened with an ellipsis.
 
 Edits made with the xref:tinymceai.adoc[{productname} AI] plugin are recorded as AI-assisted. An AI badge appears on their cards by default. Set xref:#suggestededits_ai_attribution[`+suggestededits_ai_attribution+`] to `+false+` to hide the badge.
 
-When selected, a suggestion can be handled in the following ways:
+For users with `+full+` access, pointing to a card or selecting it shows the following buttons in the card header:
 
 * Accept: Resolves the suggestion, applying the edit to the document when the review is completed.
 * Reject: Resolves the suggestion, turning back the edit to the original state.
-* Revert: Reverts the current "Accept" or "Reject" resolution on the suggestion.
-* Provide feedback: Opens a text area for users to provide feedback on the suggestion.
 
-Feedback is shown in chronological order beneath the card details when the card is selected. Feedback allows users to discuss suggestions before resolving them. The feedback author can edit or delete their own feedback, with the appropriate permissions in the xref:#suggestededits_access[`+suggestededits_access+`] option.
+After a suggestion is accepted or rejected, the card header shows a **Revert** button with an icon that indicates the decision. Selecting **Revert** removes the decision and returns the suggestion to an unresolved state.
 
-At the top of the sidebar there is a dropdown menu to apply review actions in bulk to all suggested edits:
+When an unresolved suggestion is selected, users with `+feedback+` or `+full+` access can select **Provide feedback** to open a text area and provide feedback on the suggestion.
 
-* Accept all.
-* Reject all.
-* Revert all.
+Feedback is shown in chronological order beneath the card details when an unresolved card is selected. Feedback allows users to discuss suggestions before resolving them. The feedback author can edit or delete their own feedback, with the appropriate permissions in the xref:#suggestededits_access[`+suggestededits_access+`] option.
+
+==== Bulk actions
+
+Users with `+full+` access can use the **Bulk actions** menu at the top of the sidebar to resolve several suggestions at once:
+
+* Accept all: Accepts every unresolved suggestion. Suggestions that are already accepted or rejected keep their decision. After at least one suggestion is resolved, this item is labeled **Accept remaining**.
+* Reject all: Rejects every unresolved suggestion. Suggestions that are already accepted or rejected keep their decision. After at least one suggestion is resolved, this item is labeled **Reject remaining**.
+* Revert all: Returns every accepted or rejected suggestion to an unresolved state.
+
+The accept and reject items are unavailable when no unresolved suggestions remain. **Revert all** is unavailable until at least one suggestion is resolved.
+
+=== Keyboard navigation
+
+The Review edits view supports the following keys:
+
+* Tab and Shift+Tab: Move focus between the buttons in the sidebar header, the **Bulk actions** menu, and the cards.
+* Up Arrow and Down Arrow: Move between cards and select the focused suggestion.
+* Enter: Moves focus into the content of the focused card.
+* Escape: Moves focus to the **Exit review** button. When **Exit review** already has focus, Escape ends the review.
 
 === Finishing a review
 
-When completing a review, resolved suggestions will be applied to the document and will no longer be tracked in the model as a suggestion. Feedback on resolved suggestions is discarded. Any "accepted" edits will remain in the document, and any "rejected" edits will be reverted to the state before the suggestion was made.
+When a review is completed with **Save & Exit**, resolved suggestions will be applied to the document and will no longer be tracked in the model as a suggestion. Feedback on resolved suggestions is discarded. Any "accepted" edits will remain in the document, and any "rejected" edits will be reverted to the state before the suggestion was made.
 
 Review actions will apply the following to the document:
 
@@ -97,7 +126,7 @@ When removed content is:
 * Accepted: The content will be removed from the document.
 * Rejected: The removed content will be restored to the document.
 
-If a review is canceled, no resolved suggestions will be applied to the document. All suggestions, including any feedback provided during that review session, will remain stored in the model.
+If a review ends with **Exit review**, no resolved suggestions will be applied to the document. All suggestions, including any feedback provided during that review session, will remain stored in the model.
 
 == Initial setup
 

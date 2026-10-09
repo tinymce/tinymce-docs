@@ -1,7 +1,7 @@
 [cols="1,3",options="header"]
 |===
 |Command |Description
-|suggestededits |Toggles the Suggested Edits view.
+|suggestededits |Opens the Review edits view, or closes it without applying resolved suggestions if it is already open. The view opens only when there are suggestions to review and the user has at least `'read'` access.
 |suggestededitsToggleTracking |Toggles the tracking of suggested edits.
 |===
 

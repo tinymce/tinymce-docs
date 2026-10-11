@@ -75,10 +75,12 @@ jobs:
       run: |
         aws s3 sync ./build s3://${BUCKET}/main/${RUN} \
           --exclude "*/index.html" \
+          --exclude "*/index.md" \
           --cache-control "public, max-age=3600, stale-if-error=3600, stale-while-revalidate=86400"
         aws s3 sync ./build s3://${BUCKET}/main/${RUN} \
           --exclude "*" \
           --include "*/index.html" \
+          --include "*/index.md" \
           --cache-control "max-age=300, stale-if-error=3600, stale-while-revalidate=86400"
 
     # Attachment PDFs, such as the accessibility conformance reports, are served

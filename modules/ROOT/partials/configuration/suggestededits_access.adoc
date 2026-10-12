@@ -6,8 +6,8 @@ The `suggestededits_access` option determines the level of access a user has to 
 When set to:
 
 * `'full'`: The user has full access to the Review edits view, with permission to accept or reject suggestions, use the **Bulk actions** menu, and complete the review with **Save & Exit**.
-* `'feedback'`: The user has access to the Review edits view, with permission to add feedback to suggestions. The **Save & Exit** button is unavailable.
-* `'read'`: The user has read-only access to the Review edits view. The **Save & Exit** button is unavailable.
+* `'feedback'`: The user has access to the Review edits view, with permission to add feedback to suggestions. The **Save & Exit** button is disabled.
+* `'read'`: The user has read-only access to the Review edits view. The **Save & Exit** button is disabled.
 * `'none'`: The user has no access to the Review edits view. The `suggestededits` toolbar button and menu item are unavailable.
 
 *Type:* `+String+`

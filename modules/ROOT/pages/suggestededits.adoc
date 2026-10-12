@@ -43,7 +43,7 @@ While the Review edits view is open, the editor menu bar, toolbar, and status ba
 
 The header at the top of the sidebar shows the **Review edits** title and two buttons that end the review:
 
-* Save & Exit: Ends the review, applying resolved suggestions to the document. Unresolved suggestions remain in the document for future review. This button is available only to users with `+full+` access.
+* Save & Exit: Ends the review, applying resolved suggestions to the document. Unresolved suggestions remain in the document for future review. This button is disabled for users without `+full+` access.
 * image:icons/close.svg[Exit review icon,24px] Exit review: Ends the review without applying resolved suggestions, and makes no change to the document. Feedback given on suggestions will be retained.
 
 The **Exit review** button displays only an icon. The text **Exit review** appears as a tooltip and as the accessible label of the button.
@@ -53,7 +53,7 @@ The **Exit review** button displays only an icon. The text **Exit review** appea
 The footer below the document switches between two views:
 
 * Diff mode: Shows the suggested edits with the color coding described in xref:#document[Document]. While unresolved suggestions remain, Diff mode dims unchanged content so the unresolved suggestions stand out. Diff mode is the default view.
-* Preview: Shows how the document reads with the suggested edits applied, taking accepted and rejected suggestions into account. Added and modified content is underlined, and removed content is hidden.
+* Preview: Shows how the document reads with the suggested edits applied, taking accepted and rejected suggestions into account. Added and modified content is underlined, and removed content is hidden unless the suggestion is selected.
 
 === Document
 
@@ -90,8 +90,8 @@ Feedback is shown in chronological order beneath the card details when an unreso
 
 Users with `+full+` access can use the **Bulk actions** menu at the top of the sidebar to resolve several suggestions at once:
 
-* Accept all: Accepts every unresolved suggestion. Suggestions that are already accepted or rejected keep their decision. After at least one suggestion is resolved, this item is labeled **Accept remaining**.
-* Reject all: Rejects every unresolved suggestion. Suggestions that are already accepted or rejected keep their decision. After at least one suggestion is resolved, this item is labeled **Reject remaining**.
+* Accept all: Accepts every unresolved suggestion. Suggestions that are already accepted or rejected keep their decision. While some suggestions are resolved and others remain unresolved, this item is labeled **Accept remaining**.
+* Reject all: Rejects every unresolved suggestion. Suggestions that are already accepted or rejected keep their decision. While some suggestions are resolved and others remain unresolved, this item is labeled **Reject remaining**.
 * Revert all: Returns every accepted or rejected suggestion to an unresolved state.
 
 The accept and reject items are unavailable when no unresolved suggestions remain. **Revert all** is unavailable until at least one suggestion is resolved.

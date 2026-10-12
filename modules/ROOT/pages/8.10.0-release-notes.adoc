@@ -85,7 +85,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 Previously, the **Complete review** and **Cancel** buttons for a Suggested Edits review appeared in a header bar above the review content, apart from the sidebar that lists the suggestions.
 
-In {productname} {release-version}, the **Suggested Edits** plugin shows these actions in the sidebar header, next to the **Review edits** title. The **Save & Exit** button replaces **Complete review**. The **Exit review** button replaces **Cancel** and shows only an icon, with **Exit review** as its tooltip and accessible label. Both actions work as before. The sidebar is also wider, 440 pixels instead of 316 pixels, to fit the new header. For more information, see xref:suggestededits.adoc#header[Header].
+In {productname} {release-version}, the **Suggested Edits** plugin shows these actions in the sidebar header, next to the **Review edits** title. The **Save & Exit** button replaces **Complete review**. The **Exit review** button replaces **Cancel** and shows only an icon, with **Exit review** as its tooltip and accessible label. Both actions work as before. The sidebar is also wider, 440 pixels instead of 316 pixels. For more information, see xref:suggestededits.adoc#header[Header].
 
 ==== Diff mode and Preview options replaced the Show edits toggle
 // #TINYMCE-14610
@@ -114,7 +114,7 @@ In {productname} {release-version}, the status bar remains visible during a revi
 
 Previously, the **Accept all** and **Reject all** bulk actions changed the status of every suggestion, including suggestions already accepted or rejected individually. Reviewers who mixed individual and bulk decisions lost their earlier decisions and had to make them again.
 
-In {productname} {release-version}, bulk accept and reject apply only to unresolved suggestions. After at least one suggestion is resolved, the bulk actions are labeled **Accept remaining** and **Reject remaining**. **Revert all** is unavailable until at least one suggestion is resolved, and the accept and reject actions are unavailable when no unresolved suggestions remain. For more information, see xref:suggestededits.adoc#bulk-actions[Bulk actions].
+In {productname} {release-version}, bulk accept and reject apply only to unresolved suggestions. While some suggestions are resolved and others remain unresolved, the bulk actions are labeled **Accept remaining** and **Reject remaining**. **Revert all** is unavailable until at least one suggestion is resolved, and the accept and reject actions are unavailable when no unresolved suggestions remain. For more information, see xref:suggestededits.adoc#bulk-actions[Bulk actions].
 
 ==== Suggested Edits cards now use icon-only accept and reject actions that appear on hover, with tooltips
 // #TINYMCE-14607
@@ -140,7 +140,7 @@ Previously, suggestion cards were listed in the order the suggestions were creat
 
 In {productname} {release-version}, suggestion cards are listed in the order their changes appear in the document, from top to bottom, regardless of who made each change or when. Users can work through suggestions in reading order and match each card to its change.
 
-==== Diff mode now dims unchanged content so the suggested changes stand out
+==== Diff mode and Preview now make suggested changes easier to spot
 // #TINYMCE-14609
 
 Previously, with **Show edits** turned on, the **Suggested Edits** plugin displayed unchanged content with the same emphasis as suggested edits, so the suggestions were hard to spot. With **Show edits** turned off, the plugin did not show where the suggestions were. The plugin also marked every line break in the document, not only the line breaks that changed. Reviewers had to read the whole document to find each suggestion and could miss one in a long document.
@@ -184,11 +184,6 @@ In {productname} {release-version}, screen readers announce whether a suggestion
 Previously, when a changed element did not have a friendly name, its card showed the HTML tag name of the element. For example, pasting content that contained a `+div+` element produced a card reading "Added div". Users could see technical terms that did not explain the change.
 
 In {productname} {release-version}, cards describe elements without a friendly name as "content", so "Added div" now reads "Added content". The card still shows the changed text, and elements that already have a friendly name, such as paragraphs, images, tables, and lists, are described as before.
-
-==== Reduced bundle size
-// #TINYMCE-15000
-
-In {productname} {release-version}, the main **Suggested Edits** plugin file no longer includes code that only the Review edits view uses, so the plugin file is smaller.
 
 ==== Long feedback text without spaces overflowed the suggested edit card and pushed the card's buttons and textbox out of alignment
 // #TINYMCE-14973

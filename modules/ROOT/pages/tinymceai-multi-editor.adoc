@@ -69,8 +69,6 @@ While the {pluginname} plugin previews changes from Chat or Quick Actions, each 
 * Selecting a change in any editor moves the change toolbar to that change.
 * Accepting or rejecting a change applies it to the editor that holds the change.
 
-Each editor filters the content returned by the AI through its own schema, so a change applied to an editor contains only the elements and attributes that the editor allows.
-
 [[discarding-suggestions]]
 === Discarding pending suggestions
 

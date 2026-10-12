@@ -5,7 +5,6 @@
 :description: Group several editors on one page so that they share TinyMCE AI Chat, Review, and Quick Actions
 :description_short: multi-editor mode
 :keywords: AI, multi-editor, multiple editors, group, tinymceai
-:page-role: -toc
 
 include::partial$misc/admon-requires-8.10v.adoc[]
 
@@ -38,7 +37,7 @@ By default, each chat prompt includes the content of every editor in the group. 
 Before sending the first message of a conversation, users can change which editors the AI works with:
 
 * Removing a context tag leaves the content of that editor out of the prompt, and the AI does not change that editor.
-* The **Add context** menu lists every editor in the group and adds a removed editor back.
+* The **Add context source** menu lists every editor in the group and adds a removed editor back.
 
 After the first message, the editors in the conversation stay fixed until the user starts a new conversation.
 
@@ -81,6 +80,8 @@ If the user confirms, the plugin discards the pending suggestions in every edito
 
 To group editors, load the `+tinymceai+` plugin in each editor and set the same xref:tinymceai.adoc#tinymceai_group[`+tinymceai_group+`] value on each editor in the group. Give each editor a unique xref:tinymceai.adoc#tinymceai_document_name[`+tinymceai_document_name+`] value, and optionally a xref:tinymceai.adoc#tinymceai_document_description[`+tinymceai_document_description+`] value that describes the content to the AI.
 
+Multi-editor mode is supported with the floating sidebar. Set xref:tinymceai.adoc#tinymceai_sidebar_type[`+tinymceai_sidebar_type+`] to `+'floating'+` for every editor in the group.
+
 Use the same {pluginname} configuration for every editor in a group, for example by sharing a settings object between the `+tinymce.init+` calls:
 
 [source,js]
@@ -119,10 +120,6 @@ For information about installing the plugin and enabling AI features, see xref:t
 === Multiple groups on one page
 
 A page can contain several independent groups, each with a different xref:tinymceai.adoc#tinymceai_group[`+tinymceai_group+`] value. Each group has its own shared sidebar, and an editor in one group never receives the content of an editor in another group.
-
-The demo below splits one article across four editors in two groups. The Introduction and Native integration editors form one group, and the Workflow comparison and Adoption challenges editors form a second group. A chat in the first group cannot read or change the content of the second group.
-
-liveDemo::tinymceai-multi-editor-groups[]
 
 [[configuration]]
 == Configuration

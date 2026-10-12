@@ -48,12 +48,12 @@ const createRevisionHistoryFetch = (selector) => () => {
 
 // Share one TinyMCE AI configuration between every editor in the group.
 const sharedSettings = {
-  height: '800px',
+  height: '400px',
   plugins: [
     'autolink', 'link', 'emoticons', 'lists', 'table', 'advlist', 'searchreplace', 'wordcount', 'autocorrect', 'tinymcespellchecker', 'charmap', 'fullscreen', 'advcode', 'accordion', 'anchor', 'footnotes', 'powerpaste', 'importword', 'exportpdf', 'exportword', 'markdown', 'a11ychecker', 'typography', 'casechange', 'checklist', 'advtable', 'formatpainter', 'permanentpen', 'tableofcontents', 'help', 'math', 'linkchecker', 'media', 'mediaembed',
     'quickbars', 'tinymceai', 'tinycomments', 'mentions', 'revisionhistory', 'suggestededits', 'uploadcare'
   ],
-  toolbar: 'undo redo | tinymceai-chat tinymceai-review ai-quickactions-translate spellchecker | styles | bold italic underline forecolor backcolor casechange | link uploadcare table addcomment | align bullist numlist checklist removeformat | code fullscreen help',
+  toolbar: 'undo redo | tinymceai-chat tinymceai-review ai-quickactions-translate | styles | bold italic | bullist numlist | link',
   tinymceai_sidebar_type: 'floating',
   quickbars_selection_toolbar: 'tinymceai-quickactions addcomment',
   tinymceai_chat_welcome_message: '<p>Welcome to TinyMCE AI. Pick an action below or type your own prompt.</p>',

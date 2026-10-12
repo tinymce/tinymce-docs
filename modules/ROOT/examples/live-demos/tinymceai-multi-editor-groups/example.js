@@ -2,9 +2,9 @@
 // Open-source plugins below are only for editing the demo HTML (lists, links, tables). TinyMCE AI options are the focus.
 // Share one TinyMCE AI configuration between every editor. Each editor sets its own group, so the page holds two independent groups.
 const sharedSettings = {
-  height: '600px',
+  height: '400px',
   plugins: ['tinymceai', 'advlist', 'lists', 'link', 'autolink', 'table', 'wordcount'],
-  toolbar: 'undo redo | tinymceai-chat ai-quickactions-translate tinymceai-review | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link',
+  toolbar: 'undo redo | tinymceai-chat tinymceai-review ai-quickactions-translate | styles | bold italic | bullist numlist | link',
   tinymceai_sidebar_type: 'floating',
   tinymceai_chat_welcome_message: '<p>Welcome to TinyMCE AI. Pick an action below or type your own prompt.</p>',
   tinymceai_chat_welcome_actions: [

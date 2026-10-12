@@ -225,7 +225,7 @@ Both shapes are supported. Returning an array populates the sources menu without
 
 Each identifier listed in `+defaults+` must match the `+id+` of a source listed in `+sources+`. The plugin adds each matching source to the context of every new conversation, and shows it as selected in the sources menu. Identifiers without a matching source are not added to the context, and the plugin logs an error in the browser console. Users can remove a default source from a conversation and add it again from the sources menu.
 
-If `+menu+` is missing or empty, the plugin logs an error in the browser console and populates no sources.
+If the returned value does not match either shape, for example when `+menu+` is missing, `+defaults+` is not an array, or a source has no `+type+`, the plugin populates no sources. The Chat sidebar shows the error **Error adding sources for chat**, and the plugin logs the details in the browser console. An empty array of source groups is valid and leaves the sources menu empty.
 
 *Type:* `+Function+` (`+() => Promise<Array | Object>+`)
 

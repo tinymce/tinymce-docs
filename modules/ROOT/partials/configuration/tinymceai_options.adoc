@@ -863,7 +863,7 @@ The plugin uses the group name only to match editors, and never shows the name t
 
 An editor without this option does not belong to any group. It has its own Chat sidebar and Review sidebar, and works only with its own content, even when other editors on the same page belong to a group.
 
-For more details and live demos, see xref:tinymceai-multi-editor.adoc[Multi-editor mode].
+For more details and a live demo, see xref:tinymceai-multi-editor.adoc[Multi-editor mode].
 
 *Type:* `+String+`
 
@@ -875,6 +875,7 @@ For more details and live demos, see xref:tinymceai-multi-editor.adoc[Multi-edit
 const sharedSettings = {
   plugins: 'tinymceai',
   toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_sidebar_type: 'floating',
   // Required for authentication
   tinymceai_token_provider: () => {
     return fetch('/api/token').then(r => r.text()).then(token => ({ token }));

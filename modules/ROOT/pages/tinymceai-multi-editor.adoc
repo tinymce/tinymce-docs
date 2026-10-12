@@ -41,7 +41,7 @@ Before sending the first message of a conversation, users can change which edito
 
 After the first message, the editors in the conversation stay fixed until the user starts a new conversation.
 
-The AI can change the content of any editor in the group, and the plugin previews and applies each change in the editor it belongs to. To direct a request at the content of one editor, name that content in the prompt, for example _"Shorten the Introduction"_. For more information about chat, see xref:tinymceai-chat.adoc[Chat].
+The AI can change the content of any editor in the conversation, and the plugin previews and applies each change in the editor it belongs to. To direct a request at the content of one editor, name that content in the prompt, for example _"Shorten the Introduction"_. For more information about chat, see xref:tinymceai-chat.adoc[Chat].
 
 [[review]]
 === Review
@@ -119,7 +119,7 @@ For information about installing the plugin and enabling AI features, see xref:t
 [[multiple-groups]]
 === Multiple groups on one page
 
-A page can contain several independent groups, each with a different xref:tinymceai.adoc#tinymceai_group[`+tinymceai_group+`] value. Each group has its own shared sidebar, and an editor in one group never receives the content of an editor in another group.
+A page can contain several independent groups, each with a different xref:tinymceai.adoc#tinymceai_group[`+tinymceai_group+`] value. Each group has its own shared sidebar, and an editor in one group never receives the content of an editor in another group. For a configuration with two groups, see the xref:tinymceai.adoc#tinymceai_group[two-group example].
 
 [[configuration]]
 == Configuration

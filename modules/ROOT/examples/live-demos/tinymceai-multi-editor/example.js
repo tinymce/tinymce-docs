@@ -1,4 +1,3 @@
-// Step 1: Set up session - this should be part of the application's user management process.
 // Open-source plugins below are only for editing the demo HTML (lists, links, tables). TinyMCE AI options are the focus.
 // Share one TinyMCE AI configuration between every editor in the group.
 const sharedSettings = {
@@ -15,7 +14,7 @@ const sharedSettings = {
     { title: 'Review my document', command: 'ToggleSidebar', value: 'tinymceai-review' }
   ],
   tinymceai_token_provider: async () => {
-    return fetch('/api/tinymceai-token', { credentials: 'include' })
+    return fetch('/api/token', { credentials: 'include' })
       .then(resp => resp.text())
       .then(token => ({ token }));
   },

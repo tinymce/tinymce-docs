@@ -216,11 +216,19 @@ In {productname} {release-version}, the **Suggested Edits** plugin applies the h
 
 For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
 
+
 === TinyMCE AI
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following fixes.
+**TinyMCE AI** includes the following fixes
+
+==== Applying or skipping all quick action suggestions did nothing when the Review sidebar was open
+// #TINYMCE-14293
+
+Previously, when the Review sidebar was open but no review was in progress, the **TinyMCE AI** plugin handled a quick action preview as if it belonged to a review. Selecting **Apply all** or **Skip all** in the preview footer did not resolve the suggestions, and the editor stayed in preview mode. Users had to close the Review sidebar before they could apply or skip the result of a quick action.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin resolves a quick action preview based on whether a review is in progress, not on whether the Review sidebar is open. While the Review sidebar is open, **Apply all** applies the suggestions, **Skip all** skips them, and the editor then leaves preview mode.
 
 ==== Selecting an applied or skipped suggestion in Diff mode showed only part of the change, or none of it, instead of the full suggestion
 // #TINYMCE-14948

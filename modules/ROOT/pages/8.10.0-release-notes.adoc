@@ -86,6 +86,51 @@ In {productname} {release-version}, the **TinyMCE AI** plugin no longer reserves
 
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 
+=== Spell Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Spell Checker** premium plugin.
+
+**Spell Checker** includes the following fix.
+
+==== Moving the caret backwards with the keyboard lost its column position and jumped to the beginning of the line
+// #TINYMCE-14832
+
+Previously, when the **Spell Checker** plugin was active, pressing the Up Arrow key to move up through several lines could place the caret at the beginning of a line instead of keeping its column position. The same problem occurred when extending a selection upward with Shift+Up Arrow.
+
+In {productname} {release-version}, the **Spell Checker** plugin restores the selection only when spell checking changes the editor content. The caret keeps its column position when it moves up through lines, including when Shift+Up Arrow extends a selection.
+
+For information on the **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker].
+
+=== PowerPaste
+
+The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** includes the following fix.
+
+==== Nested list items pasted from Google Docs with Keep formatting became bold when only the top-level list item was bold
+// #TINYMCE-13282
+
+Previously, when a user pasted a nested list from Google Docs and selected **Keep formatting**, the **PowerPaste** plugin made every nested list item bold, even when only the top-level list item was bold in the source document. The pasted list did not match the original document. Pasting with **Remove formatting** avoided the issue, but also removed the inline styles and classes from the pasted content.
+
+In {productname} {release-version}, the **PowerPaste** plugin keeps the font weight of each list item from the Google Docs content. When only the top-level list item is bold, the plugin pastes the nested list items with normal font weight, and the pasted list matches the original document.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
+
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following addition.
+
+==== New `+tags+` metadata field for displaying tags in revision cards
+// #TINYMCE-14331
+
+The revision xref:revisionhistory.adoc#metadata[`+metadata+`] object now supports an optional `+tags+` field. The `+tags+` field takes an array of xref:revisionhistory.adoc#tag[tag] objects, each with a `+label+` string. The **Revision History** plugin displays each tag as a label on the revision card, in the same style as the revision type label, such as `+DRAFT+`. The plugin displays the label text exactly as provided, without changes to capitalization.
+
+Integrators can use tags to mark saved revisions with a custom status, such as `+REVIEWED+` or `+Legal+`.
+
+For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

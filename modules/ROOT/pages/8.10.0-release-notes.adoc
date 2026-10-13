@@ -221,7 +221,7 @@ For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following fixes
+**TinyMCE AI** includes the following improvement and fixes.
 
 ==== Applying or skipping all quick action suggestions did nothing when the Review sidebar was open
 // #TINYMCE-14293
@@ -264,6 +264,13 @@ In {productname} {release-version}, the **TinyMCE AI** plugin no longer reserves
 The **TinyMCE AI** plugin runs one AI task at a time, and starting a new task cancels the task in progress. Previously, when a user started a quick action, sent a chat prompt, or started a review while another task was still running, the plugin canceled both the running task and the new one. Users had to start the new task again.
 
 In {productname} {release-version}, starting a new task while another task is running cancels only the running task. The new quick action, chat prompt, or review runs to completion.
+
+==== The `+tinymceai_chat_fetch_sources+` option now reports a clear error when it returns sources in an unexpected format
+// #TINYMCE-14802
+
+Previously, the **TinyMCE AI** plugin did not check the value returned by the xref:tinymceai.adoc#tinymceai_chat_fetch_sources[`+tinymceai_chat_fetch_sources+`] function. When the function resolved with a value in an unexpected format, for example a source without a `+type+` or a `+defaults+` value that was not an array, the browser console showed a generic JavaScript error that did not identify the cause.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin checks the returned value against the formats that the option supports. When the value does not match, the browser console logs a `+DecodingError+` that includes the value the function returned.
 
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 

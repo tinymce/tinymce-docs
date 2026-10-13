@@ -201,6 +201,21 @@ In {productname} {release-version}, the **Suggested Edits** plugin applies the h
 
 For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Diff mode reserved an empty scrollbar gutter beside the content
+// #TINYMCE-14933
+
+Previously, the **TinyMCE AI** plugin reserved space for a scrollbar whenever the **Diff mode** tab displayed proposed changes, even when the content was too short to scroll. The empty gutter beside the content looked like a broken scrollbar.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin no longer reserves space for a scrollbar in **Diff mode**. A scrollbar appears only when the content is long enough to scroll.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 === Spell Checker
 
 The {productname} {release-version} release includes an accompanying release of the **Spell Checker** premium plugin.
@@ -230,6 +245,21 @@ Previously, when a user pasted a nested list from Google Docs and selected **Kee
 In {productname} {release-version}, the **PowerPaste** plugin keeps the font weight of each list item from the Google Docs content. When only the top-level list item is bold, the plugin pastes the nested list items with normal font weight, and the pasted list matches the original document.
 
 For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
+
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following addition.
+
+==== New `+tags+` metadata field for displaying tags in revision cards
+// #TINYMCE-14331
+
+The revision xref:revisionhistory.adoc#metadata[`+metadata+`] object now supports an optional `+tags+` field. The `+tags+` field takes an array of xref:revisionhistory.adoc#tag[tag] objects, each with a `+label+` string. The **Revision History** plugin displays each tag as a label on the revision card, in the same style as the revision type label, such as `+DRAFT+`. The plugin displays the label text exactly as provided, without changes to capitalization.
+
+Integrators can use tags to mark saved revisions with a custom status, such as `+REVIEWED+` or `+Legal+`.
+
+For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

@@ -443,6 +443,13 @@ Previously, in Chrome and other Chromium-based browsers, pressing the mouse butt
 
 In {productname} {release-version}, the workaround runs when the click completes instead. Pressing the mouse button to the right of a list item and dragging selects content, and clicking to the right of a list item still places the caret where expected.
 
+=== Clicking to the right of an `+&nbsp;+` at the end of an element could make the selection jump when the content contained an empty formatting element
+// #TINYMCE-14724
+
+Previously, when the content contained an empty formatting element, for example one left after a format such as a font size was applied with no text selected, clicking to the right of a line that ended in a non-breaking space (`+&nbsp;+`) moved the caret away from the click position. {productname} removed the empty formatting element and placed the caret where that element had been, such as at the start of another paragraph.
+
+In {productname} {release-version}, {productname} moves the caret only when the empty formatting element it removes is next to the selection. Clicking to the right of a line that ends in a non-breaking space places the caret at the end of that line.
+
 
 [[security-fixes]]
 == Security fixes

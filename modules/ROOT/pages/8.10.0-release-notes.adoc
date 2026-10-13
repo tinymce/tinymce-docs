@@ -450,6 +450,13 @@ Previously, when the content contained an empty formatting element, for example 
 
 In {productname} {release-version}, {productname} moves the caret only when the empty formatting element it removes is next to the selection. Clicking to the right of a line that ends in a non-breaking space places the caret at the end of that line.
 
+=== Opening or closing a view no longer scrolls the editor to the caret position
+// #TINYMCE-14905
+
+Previously, opening or closing a view, such as a xref:custom-view.adoc[custom view] or the **Revision History** view, scrolled the editor content to the caret, even when the user had scrolled to a different part of the document. Users lost their place in the document each time a view was opened or closed, which was most noticeable when the caret was far outside the visible area.
+
+In {productname} {release-version}, opening or closing a view keeps the editor scroll position. The editor still receives focus when a view closes, and the caret and selection do not change.
+
 
 [[security-fixes]]
 == Security fixes

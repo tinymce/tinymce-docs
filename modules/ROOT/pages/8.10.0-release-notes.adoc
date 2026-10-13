@@ -264,7 +264,14 @@ For information on the **Spell Checker** plugin, see: xref:introduction-to-tiny-
 
 The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.
 
-**PowerPaste** includes the following fix.
+**PowerPaste** includes the following fixes.
+
+==== Pasting the same image more than once from HTML content, such as from another editor, created a separate blob URL for each copy instead of reusing the existing one
+// #TINYMCE-11140
+
+Previously, when a user pasted the same image more than once from HTML content, such as from another editor or a Microsoft Word document, the **PowerPaste** plugin created a new blob URL for each copy. The editor treated each copy as a separate image and uploaded each one. Without the **PowerPaste** plugin, copies of the same pasted image already shared one blob URL.
+
+In {productname} {release-version}, the **PowerPaste** plugin checks whether the editor contains an image with identical data. When the editor already contains a matching image, the plugin reuses the blob URL of that image. Copies of the same image now share one blob URL for every paste source. The editor uploads the image only once.
 
 ==== Nested list items pasted from Google Docs with Keep formatting became bold when only the top-level list item was bold
 // #TINYMCE-13282

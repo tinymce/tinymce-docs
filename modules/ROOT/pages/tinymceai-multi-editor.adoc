@@ -71,7 +71,7 @@ While the {pluginname} plugin previews changes from Chat or Quick Actions, each 
 [[discarding-suggestions]]
 === Discarding pending suggestions
 
-When any editor in the group has pending suggestions, the {pluginname} plugin asks for confirmation before it discards them and starts a different AI task. For example, the confirmation appears when the user switches between the Chat sidebar and the Review sidebar, or runs a Quick Action while a review has pending suggestions.
+When any editor in the group has pending suggestions, the {pluginname} plugin asks for confirmation before it discards them and starts a different AI task. For example, the confirmation dialog appears when the user switches between the Chat sidebar and the Review sidebar, or runs a Quick Action while a review has pending suggestions.
 
 If the user confirms, the plugin discards the pending suggestions in every editor of the group and returns each editor to normal editing. If the user cancels, the plugin keeps every preview and pending suggestion.
 

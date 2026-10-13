@@ -436,6 +436,13 @@ Previously, {productname} set the `+title+` attribute on the editor iframe only 
 
 In {productname} {release-version}, the editor sets the `+title+` attribute of the iframe to the `+iframe_aria_text+` value in every browser. On macOS and iOS, the VoiceOver screen reader does not announce the iframe `+title+`. The editor therefore also sets the value as an `+aria-label+` on the `+<body>+` element, together with `+role="textbox"+` and `+aria-multiline="true"+`. On other operating systems, the editor no longer sets an `+aria-label+` on the `+<body>+` element.
 
+=== Drag selection did not work when clicking to the right of a list item in Chrome
+// #TINYMCE-14855
+
+Previously, in Chrome and other Chromium-based browsers, pressing the mouse button to the right of the text in a list item and dragging did not select any content. {productname} 8.7.0 added a workaround for a Chromium bug that placed the caret at the start of a list item when clicking to the right of its text. The workaround ran when the mouse button was pressed and blocked the default browser behavior, which also prevented drag selection.
+
+In {productname} {release-version}, the workaround runs when the click completes instead. Pressing the mouse button to the right of a list item and dragging selects content, and clicking to the right of a list item still places the caret where expected.
+
 
 [[security-fixes]]
 == Security fixes

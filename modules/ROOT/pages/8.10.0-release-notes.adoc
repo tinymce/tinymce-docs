@@ -205,7 +205,14 @@ For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following improvements.
+**TinyMCE AI** includes the following fixes.
+
+==== Button text in the confirmation dialog would not be translated
+// #TINYMCE-14751
+
+Previously, the confirmation dialog that appeared when a user deleted a conversation from the Chat history displayed the **Yes** and **No** buttons in English, regardless of the editor language. The **TinyMCE AI** plugin translated the confirmation message but not the button text, so users of a non-English editor saw a dialog in two languages.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin translates the **Yes** and **No** buttons into the language set by the xref:ui-localization.adoc#language[`+language+`] option. The whole confirmation dialog now appears in the configured language.
 
 ==== Clicking outside a suggestion in the AI preview now deselects the active suggestion and dismisses its context toolbar or review card highlight
 // #TINYMCE-14706

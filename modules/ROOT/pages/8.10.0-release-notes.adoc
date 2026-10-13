@@ -71,6 +71,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Image Editing
+
+The {productname} {release-version} release includes an accompanying release of the **Image Editing** premium plugin.
+
+**Image Editing** includes the following fix.
+
+==== Clicking `Edit image` now shows an error notification instead of failing silently when the image cannot be loaded
+// #TINYMCE-14679
+
+Previously, when the image proxy returned an error for an image, such as a `+404+` or `+424+` response, clicking **Edit image** did not open the Edit Image dialog and did not display a message. The **Image Editing** plugin logged an uncaught error to the browser console instead. Users received no indication that the image could not be loaded for editing.
+
+In {productname} {release-version}, the **Image Editing** plugin displays an error notification when the image cannot be loaded. The plugin also displays an error notification when applying an edit from the Edit Image dialog fails. The image proxy returns a `+424+` response when it cannot retrieve the image from its source. In that case, the notification reports that the image failed to load.
+
+For information on the **Image Editing** plugin, see: xref:editimage.adoc[Image Editing].
+
 === Suggested Edits
 
 The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin. The review interface now uses the same layout and components as the **TinyMCE AI** review. Setup and configuration of the plugin are unchanged. The class names of the suggestion cards and the review panel have changed, so custom CSS written for the previous class names must be updated.

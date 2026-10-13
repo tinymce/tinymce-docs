@@ -87,7 +87,7 @@ The revision is an `+Object+` that contains the following fields:
 | `+createdAt+`  | `+string+` | required  | A UTC datetime string in ISO-8061 format.
 | `+content+`    | `+string+` | optional  | HTML string of the revision content. Empty string is considered as valid content.
 | `+author+`     | xref:#author[Author] `+Object+` | optional  | The author of the revision.
-| `+metadata+`   | xref:#metadata[Metadata] `+Object+` | optional  | Additional information about the revision, such as whether it was AI-assisted.
+| `+metadata+`   | xref:#metadata[Metadata] `+Object+` | optional  | Additional information about the revision, such as whether it was AI-assisted and which tags appear on its revision card.
 |===
 
 === Author
@@ -110,7 +110,37 @@ The metadata is an `+Object+` that holds additional information about a revision
 |===
 | Field      | Type       | Required? | Description
 | `+source+` | `+string+` | optional  | The origin of the revision's content. A value of `+'ai'+` marks the revision as AI-assisted and displays an AI badge on the revision card by default. Set xref:revisionhistory_ai_attribution[`+revisionhistory_ai_attribution+`] to `+false+` to hide the badge.
+| `+tags+`   | `+Array+` of xref:#tag[Tag] `+Object+` | optional  | The tags that appear on the revision card. Each tag appears as a label in the same style as the revision type label, such as `+DRAFT+`.
 |===
+
+=== Tag
+
+The tag is an `+Object+` that represents a label displayed on a revision card. It contains the following fields:
+
+[cols="1,1,1,3",options="header"]
+|===
+| Field     | Type       | Required? | Description
+| `+label+` | `+string+` | required  | The text of the tag. The plugin displays the text exactly as provided, without changes to capitalization.
+|===
+
+The following example defines a saved revision that has two tags:
+
+[source,js]
+----
+const revision = {
+  revisionId: '3',
+  createdAt: '2026-10-14T10:11:21.578Z',
+  content: '<p>Approved content.</p>',
+  metadata: {
+    tags: [
+      { label: 'REVIEWED' },
+      { label: 'Legal' }
+    ]
+  }
+};
+----
+
+Tags appear only on `+saved+` revisions. The `+draft+` and `+initial+` revisions are generated from the editor's current content and do not carry `+metadata+`. See xref:#understanding-revision-types[Understanding revision types].
 
 == Attributing AI-assisted revisions
 

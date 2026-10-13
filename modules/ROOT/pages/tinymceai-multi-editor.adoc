@@ -34,12 +34,12 @@ The first editor of the group to be created hosts the shared Chat sidebar and Re
 
 By default, each chat prompt includes the content of every editor in the group. Each editor appears above the prompt as a context tag labeled with its xref:tinymceai.adoc#tinymceai_document_name[`+tinymceai_document_name+`] value, for example image:tinymceai/tinymceai-context-tag.png[Body context tag] for an editor named `+Body+`.
 
-Before sending the first message of a conversation, users can change which editors the AI works with:
+Users can change which editors the AI works with:
 
 * Removing a context tag leaves the content of that editor out of the prompt, and the AI does not change that editor.
 * The **Add context source** menu lists every editor in the group and adds a removed editor back.
 
-After the first message, the editors in the conversation stay fixed until the user starts a new conversation.
+After a message is sent, the editors included in that message stay in the conversation and their context tags cannot be removed until the user starts a new conversation. Editors that were left out can still be added from the **Add context source** menu at any point in the conversation.
 
 The AI can change the content of any editor in the conversation, and the plugin previews and applies each change in the editor it belongs to. To direct a request at the content of one editor, name that content in the prompt, for example _"Shorten the Introduction"_. For more information about chat, see xref:tinymceai-chat.adoc[Chat].
 

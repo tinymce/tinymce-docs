@@ -850,7 +850,7 @@ tinymceai_reviews: [
 [[options-multi-editor]]
 == Options for multi-editor mode
 
-These options group several editors on the same page so that they share one Chat sidebar and one Review sidebar, and identify the content of each editor to users and to the AI service. For a description of how grouped editors work, see xref:tinymceai-multi-editor.adoc[Multi-editor mode].
+These options group several editors on the same page so that they share one Chat sidebar and one Review sidebar, and Chat, Review, and Quick Actions work across the content of every editor in the group. The options also identify the content of each editor to users and to the AI service. For a description of how grouped editors work, see xref:tinymceai-multi-editor.adoc[Multi-editor mode].
 
 include::partial$misc/admon-requires-8.10v.adoc[]
 

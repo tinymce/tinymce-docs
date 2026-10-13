@@ -37,7 +37,7 @@ Alternatively the xref:#suggestededits_content[`+suggestededits_content+`] optio
 
 The Review edits view displays the edits made by multiple authors for review. The available actions in this view depend on the xref:#suggestededits_access[`+suggestededits_access+` option].
 
-While the Review edits view is open, the editor menu bar, toolbar, and status bar remain visible, the editor content is read-only, and the editor can still be resized. Opening a sidebar closes the Review edits view. Opening and closing the Review edits view keeps the current scroll position in the document.
+While the Review edits view is open, the editor menu bar, toolbar, and status bar remain visible, the editor content is read-only, and the editor can still be resized. Most toolbar buttons and menu items are disabled while the view is open. Items that work in any editor mode, such as Fullscreen, Preview, and Print, remain available. For details, see xref:context.adoc#built-in-contexts[Built-in contexts]. Opening a sidebar closes the Review edits view. Opening and closing the Review edits view keeps the current scroll position in the document.
 
 === Header
 

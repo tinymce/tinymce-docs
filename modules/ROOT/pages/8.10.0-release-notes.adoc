@@ -92,14 +92,14 @@ In {productname} {release-version}, the **Suggested Edits** plugin shows these a
 
 Previously, the **Suggested Edits** plugin placed the **Show edits** toggle in the header of the Review edits view, apart from the review content that the toggle switched. With **Show edits** turned off, the plugin also dimmed the suggestion cards, which made the cards look disabled even though their buttons still worked.
 
-In {productname} {release-version}, the **Suggested Edits** plugin replaces the **Show edits** toggle with **Diff mode** and **Preview** options in a footer below the review content. **Diff mode** shows the suggested edits and is the default view. **Preview** shows how the document reads with the suggested edits applied. The suggestion cards no longer dim in either view. The toolbar matches the review bar in **TinyMCE AI**, so the view switch appears in the same place in both plugins. For more information, see xref:suggestededits.adoc#footer[Footer].
+In {productname} {release-version}, the **Suggested Edits** plugin replaces the **Show edits** toggle with **Diff mode** and **Preview** options in a footer below the review content. **Diff mode** shows the suggested edits and is the default view. **Preview** shows how the document reads with the suggested edits applied. The suggestion cards no longer dim in either view. The footer matches the review bar in **TinyMCE AI**, so the view switch appears in the same place in both plugins. For more information, see xref:suggestededits.adoc#footer[Footer].
 
-==== The review now keeps the editor toolbar visible, makes the editor read-only, and closes when a sidebar opens
+==== The review now keeps the editor menu bar and toolbar visible, makes the editor read-only, and closes when a sidebar opens
 // #TINYMCE-14768
 
 Previously, the Review edits view replaced the whole editor, including the menu bar and toolbar, so the review appeared as a separate screen.
 
-In {productname} {release-version}, the **Suggested Edits** plugin keeps the editor menu bar and toolbar visible during a review and makes the editor content read-only. Opening a sidebar closes the review. For more information, see xref:suggestededits.adoc#reviewing-edits[Reviewing edits].
+In {productname} {release-version}, the **Suggested Edits** plugin keeps the editor menu bar and toolbar visible during a review and makes the editor content read-only. Most toolbar buttons and menu items are disabled during the review, but items that work in any editor mode, such as **Fullscreen**, **Preview**, and **Print**, remain available. Opening a sidebar closes the review. For more information, see xref:suggestededits.adoc#reviewing-edits[Reviewing edits].
 
 ==== The review now keeps the status bar visible and lets the editor be resized while suggestions are reviewed
 // #TINYMCE-14920

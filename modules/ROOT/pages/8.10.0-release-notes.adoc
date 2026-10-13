@@ -389,6 +389,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Added the `+BlobInfo+` type to the public API
+// #TINYMCE-14853
+
+Previously, {productname} passed a `+BlobInfo+` object to the functions set for options such as xref:file-image-upload.adoc#images_upload_handler[`+images_upload_handler+`], but did not export the `+BlobInfo+` type. TypeScript integrations had to declare their own interface for the object.
+
+In {productname} {release-version}, the `+BlobInfo+` type is part of the public {productname} API. TypeScript integrations can use it to type the functions they set for these options.
+
 
 [[changes]]
 == Changes

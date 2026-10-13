@@ -258,6 +258,13 @@ Previously, the **TinyMCE AI** plugin reserved space for a scrollbar whenever th
 
 In {productname} {release-version}, the **TinyMCE AI** plugin no longer reserves space for a scrollbar in **Diff mode**. A scrollbar appears only when the content is long enough to scroll.
 
+==== Starting a quick action, chat prompt, or review while another one was still running canceled both instead of keeping the new one
+// #TINYMCE-14806
+
+The **TinyMCE AI** plugin runs one AI task at a time, and starting a new task cancels the task in progress. Previously, when a user started a quick action, sent a chat prompt, or started a review while another task was still running, the plugin canceled both the running task and the new one. Users had to start the new task again.
+
+In {productname} {release-version}, starting a new task while another task is running cancels only the running task. The new quick action, chat prompt, or review runs to completion.
+
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 
 === Spell Checker

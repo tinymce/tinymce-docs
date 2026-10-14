@@ -71,17 +71,38 @@ jobs:
         role-session-name: tinymce-docs-${{ env.TARGET }}-release
         aws-region: us-east-1
 
+    # Markdown and plain-text files cannot declare their own encoding the way
+    # HTML does with <meta charset>, so the charset must be in the content type.
+    # Without it, browsers decode the UTF-8 files as Windows-1252 and show an
+    # em dash as "â€”". The sync guesses the type with no charset, so these files
+    # are uploaded separately with the type set explicitly.
     - name: Upload website to S3
       run: |
         aws s3 sync ./build s3://${BUCKET}/main/${RUN} \
           --exclude "*/index.html" \
-          --exclude "*/index.md" \
+          --exclude "*.md" \
+          --exclude "*.txt" \
           --cache-control "public, max-age=3600, stale-if-error=3600, stale-while-revalidate=86400"
         aws s3 sync ./build s3://${BUCKET}/main/${RUN} \
           --exclude "*" \
           --include "*/index.html" \
-          --include "*/index.md" \
           --cache-control "max-age=300, stale-if-error=3600, stale-while-revalidate=86400"
+        aws s3 sync ./build s3://${BUCKET}/main/${RUN} \
+          --exclude "*" \
+          --include "*/index.md" \
+          --content-type "text/markdown; charset=utf-8" \
+          --cache-control "max-age=300, stale-if-error=3600, stale-while-revalidate=86400"
+        aws s3 sync ./build s3://${BUCKET}/main/${RUN} \
+          --exclude "*" \
+          --include "*.md" \
+          --exclude "*/index.md" \
+          --content-type "text/markdown; charset=utf-8" \
+          --cache-control "public, max-age=3600, stale-if-error=3600, stale-while-revalidate=86400"
+        aws s3 sync ./build s3://${BUCKET}/main/${RUN} \
+          --exclude "*" \
+          --include "*.txt" \
+          --content-type "text/plain; charset=utf-8" \
+          --cache-control "public, max-age=3600, stale-if-error=3600, stale-while-revalidate=86400"
 
     # Attachment PDFs, such as the accessibility conformance reports, are served
     # as downloads rather than rendered inline. The metadata directive replaces

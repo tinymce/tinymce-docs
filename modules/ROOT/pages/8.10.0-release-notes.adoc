@@ -13,45 +13,10 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, October 14^th^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-// Remove sections and section boilerplates as necessary.
-// Pluralise as necessary or remove the placeholder plural marker.
-* xref:new-premium-plugin<s>[New Premium plugin<s>]
-* xref:new-open-source-plugin<s>[New Open Source plugin<s>]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
-* xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
 * xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
-* xref:improvements[Improvements]
 * xref:additions[Additions]
-* xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
-* xref:deprecated[Deprecated]
-* xref:known-issues[Known issues]
-
-
-[[new-premium-plugin<s>]]
-== New Premium plugin<s>
-
-The following new Premium plugin was released alongside {productname} {release-version}.
-
-=== <Premium plugin name>
-
-The new Premium plugin, **<Premium plugin name>** // description here.
-
-For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
-
-
-[[new-open-source-plugin]]
-== New Open Source plugin
-
-The following new Open Source plugin was released alongside {productname} {release-version}.
-
-=== <Open source plugin name>
-
-The new open source plugin, **<Open source plugin name>** // description here.
-
-For information on the **<Open source plugin name>** plugin, see xref:<plugincode>.adoc[<Open source plugin name>].
 
 
 [[accompanying-premium-plugin-changes]]
@@ -59,26 +24,13 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
-
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
-
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
-
-==== <Premium plugin name 1 change 1>
-
-// CCFR here.
-
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
-
-
 === Image Editing
 
 The {productname} {release-version} release includes an accompanying release of the **Image Editing** premium plugin.
 
 **Image Editing** includes the following fix.
 
-==== Clicking `Edit image` now shows an error notification instead of failing silently when the image cannot be loaded
+==== Clicking **Edit image** now shows an error notification instead of failing silently when the image cannot be loaded
 // #TINYMCE-14679
 
 Previously, when the image proxy returned an error for an image, such as a `+404+` or `+424+` response, clicking **Edit image** did not open the Edit Image dialog and did not display a message. The **Image Editing** plugin logged an uncaught error to the browser console instead. Users received no indication that the image could not be loaded for editing.
@@ -208,7 +160,7 @@ Previously, feedback on a suggestion that contained a long string with no spaces
 
 In {productname} {release-version}, long feedback text wraps onto new lines within the suggestion card, and the buttons and text box of the card remain aligned.
 
-=== Nested parts of the same suggestion showed duplicate highlights
+==== Nested parts of the same suggestion showed duplicate highlights
 // #TINYMCE-14358
 
 Previously, when one suggestion changed both an element and the content inside it, such as the font size of a list, the Review edits view highlighted the element, then highlighted each part of the content inside it again. The Review edits view also stacked the selection styling when the suggestion was selected. The stacked styling made the change cluttered and harder to read.
@@ -222,7 +174,7 @@ For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following addition, improvements and fixes.
+**TinyMCE AI** includes the following addition, improvements, and fixes.
 
 ==== New multi-editor support
 // #TINYMCE-14817
@@ -234,6 +186,13 @@ In {productname} {release-version}, the **TinyMCE AI** plugin can group editors 
 The xref:tinymceai.adoc#tinymceai_document_name[`+tinymceai_document_name+`] option names the content of each editor, and the xref:tinymceai.adoc#tinymceai_document_description[`+tinymceai_document_description+`] option describes that content to the AI service.
 
 For information on multi-editor mode, see xref:tinymceai-multi-editor.adoc[Multi-editor mode].
+
+==== Deleted media in AI preview Diff mode now shows a red X overlay
+// #TINYMCE-14611
+
+Previously, a deleted image in a **TinyMCE AI** preview was marked only with a highlight, which could be easy to miss.
+
+In {productname} {release-version}, **Diff mode** in a **TinyMCE AI** preview also marks deleted images, videos, and embedded frames with a large red X.
 
 ==== Nested parts of the same suggestion showed duplicate highlights
 // #TINYMCE-14358
@@ -396,26 +355,6 @@ In {productname} {release-version}, the **Templates** plugin adds bundled conten
 For information on the **Templates** plugin, see: xref:advanced-templates.adoc[Templates].
 
 
-[[accompanying-premium-plugin-end-of-life-announcement]]
-== Accompanying Premium plugin end-of-life announcement
-
-The following Premium plugin has been announced as reaching its end-of-life:
-
-=== <Premium plugin name eol>
-
-{productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
-
-
-[[accompanying-open-source-plugin-end-of-life-announcement]]
-== Accompanying open source plugin end-of-life announcement
-
-The following open source plugin has been announced as reaching its end-of-life:
-
-=== <Open source plugin name eol>
-
-{productname}’s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
-
-
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes
 
@@ -430,26 +369,10 @@ The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also inc
 For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
 
 
-[[improvements]]
-== Improvements
-
-{productname} {release-version} also includes the following improvement<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+{productname} {release-version} also includes the following addition:
 
 === Added the `+BlobInfo+` type to the public API
 // #TINYMCE-14853
@@ -459,37 +382,10 @@ Previously, {productname} passed a `+BlobInfo+` object to the functions set for 
 In {productname} {release-version}, the `+BlobInfo+` type is part of the public {productname} API. TypeScript integrations can use it to type the functions they set for these options.
 
 
-[[changes]]
-== Changes
-
-{productname} {release-version} also includes the following change<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[removed]]
-== Removed
-
-{productname} {release-version} also includes the following removal<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+{productname} {release-version} also includes the following bug fixes:
 
 === The editor iframe was missing its `+title+` attribute on browsers other than Firefox
 // #TINYMCE-13100
@@ -532,37 +428,3 @@ In {productname} {release-version}, clicking to the right of the text in a list 
 Previously, some list items had their own inline `+list-style-type+`, for example after content was pasted from Microsoft Word with **PowerPaste**. When the selection was in such an item, choosing a style from the `+numlist+` or `+bullist+` toolbar button menu did not change the item's marker, because the item's own style overrode the style that {productname} applied to the list. The menu also showed **Default** as the active style instead of the item's actual style.
 
 In {productname} {release-version}, the list style menu shows the style of the selected list item when the item has its own `+list-style-type+`. Applying a list style removes the inline `+list-style-type+` from the selected list items and applies the chosen style to the whole list. Other list items that have their own `+list-style-type+` keep it until they are selected and changed.
-
-
-[[security-fixes]]
-== Security fixes
-
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[deprecated]]
-== Deprecated
-
-{productname} {release-version} includes the following deprecation<s>:
-
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
-
-// placeholder here.
-
-
-[[known-issues]]
-== Known issues
-
-This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
-
-There <is one | are <number> known issue<s> in {productname} {release-version}.
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.

@@ -272,6 +272,13 @@ Previously, the **TinyMCE AI** plugin did not check the value returned by the xr
 
 In {productname} {release-version}, the **TinyMCE AI** plugin checks the returned value against the formats that the option supports. When the value does not match, the browser console logs a `+DecodingError+` that includes the value the function returned.
 
+==== Opening an editor view now asks for confirmation before discarding AI suggestions
+// #TINYMCE-14893
+
+Previously, while **TinyMCE AI** suggestions were displayed in the editor, for example after running a quick action, opening an editor view such as the **Suggested Edits** review discarded the suggestions without warning. Switching to the Chat sidebar or the Review sidebar already asked for confirmation, but opening a view did not.
+
+In {productname} {release-version}, opening a view while suggestions are displayed shows the same confirmation dialog: _Leaving this AI flow will discard current suggestions and reset applied changes. Continue?_ Canceling keeps the suggestions and the current view. Confirming discards the suggestions and opens the view.
+
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 
 === Spell Checker

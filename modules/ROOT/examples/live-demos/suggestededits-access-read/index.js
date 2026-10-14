@@ -13,7 +13,6 @@ tinymce.init({
   suggestededits_model: model,
   suggestededits_access: 'read', // Set this value to restrict the permissions in the Suggested Edits view
   suggestededits_content: 'html',
-  view_show: 'suggestededits',
   user_id: 'kai-nakamura',
   fetch_users: (userIds) => Promise.all(userIds
     .map((userId) =>

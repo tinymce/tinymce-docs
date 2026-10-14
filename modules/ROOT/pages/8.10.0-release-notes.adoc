@@ -507,6 +507,13 @@ Previously, in Chrome and other Chromium-based browsers, when the editor was not
 
 In {productname} {release-version}, clicking to the right of the text in a list item in an unfocused editor keeps the scroll position and places the caret where the user clicked.
 
+=== Applying a list style did not change the markers, and the toolbar showed the wrong active style, on list items that had their own inline `+list-style-type+`
+// #TINYMCE-14565
+
+Previously, some list items had their own inline `+list-style-type+`, for example after content was pasted from Microsoft Word with **PowerPaste**. When the selection was in such an item, choosing a style from the `+numlist+` or `+bullist+` toolbar button menu did not change the item's marker, because the item's own style overrode the style that {productname} applied to the list. The menu also showed **Default** as the active style instead of the item's actual style.
+
+In {productname} {release-version}, the list style menu shows the style of the selected list item when the item has its own `+list-style-type+`. Applying a list style removes the inline `+list-style-type+` from the selected list items and applies the chosen style to the whole list. Other list items that have their own `+list-style-type+` keep it until they are selected and changed.
+
 
 [[security-fixes]]
 == Security fixes

@@ -221,7 +221,7 @@ For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following improvement and fixes.
+**TinyMCE AI** includes the following improvements and fixes.
 
 ==== Applying or skipping all quick action suggestions did nothing when the Review sidebar was open
 // #TINYMCE-14293
@@ -285,6 +285,13 @@ In {productname} {release-version}, opening a view while suggestions are display
 Previously, when a user opened the Chat sidebar, typed a prompt, and pressed Enter before the list of AI models had loaded, the **TinyMCE AI** plugin sent the prompt without a model. An error notification appeared, and the browser console logged `+TinyMCE AI Error: No model selected+`. The send button was already disabled until a model was selected, but pressing Enter bypassed that check.
 
 In {productname} {release-version}, pressing Enter does nothing until a model is selected. The prompt text stays in the prompt field, no error appears, and the user can send the prompt once the models have loaded.
+
+==== Link sources in the AI Chat without an http or https scheme or a dotted hostname are now treated as invalid URLs
+// #TINYMCE-14813
+
+Previously, the **TinyMCE AI** plugin showed different errors for invalid links added with **Add context source** > **Link**. An empty value or plain text, such as `+test+`, showed _This URL isn't valid. Check the full, correct web address and try again._ A URL with an incomplete scheme or hostname, such as `+https://test+`, was sent to the AI service and failed with _Failed to add web resource "https://test": The web resource could not be scraped from the provided URL_.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin accepts a link only when its URL uses the `+http+` or `+https+` scheme and has a hostname that contains a dot, such as `+example.com+`. Any other value shows _This URL isn't valid. Check the full, correct web address and try again._ and is not sent to the AI service. The same check applies to web resources returned by the xref:tinymceai.adoc#tinymceai_chat_fetch_source[`+tinymceai_chat_fetch_source+`] option, so URLs such as `+http://localhost+` are rejected.
 
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 

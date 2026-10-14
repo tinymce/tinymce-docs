@@ -500,6 +500,13 @@ Previously, opening or closing a view, such as a xref:custom-view.adoc[custom vi
 
 In {productname} {release-version}, opening or closing a view keeps the editor scroll position. The editor still receives focus when a view closes, and the caret and selection do not change.
 
+=== Clicking to the right of a list item's text in an unfocused editor scrolled the content back to the top in Chrome
+// #TINYMCE-14856
+
+Previously, in Chrome and other Chromium-based browsers, when the editor was not focused, scrolling down the editor content and clicking to the right of the text in a list item scrolled the content back to the top. The caret was placed in the list item, but the list item was no longer in view.
+
+In {productname} {release-version}, clicking to the right of the text in a list item in an unfocused editor keeps the scroll position and places the caret where the user clicked.
+
 
 [[security-fixes]]
 == Security fixes

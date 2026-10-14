@@ -361,6 +361,21 @@ Integrators can use tags to mark saved revisions with a custom status, such as `
 
 For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
 
+=== Templates
+
+The {productname} {release-version} release includes an accompanying release of the **Templates** premium plugin.
+
+**Templates** includes the following fix.
+
+==== Bundled content CSS is now loaded in the template preview
+// #TINYMCE-14363
+
+Previously, when the editor content CSS was bundled, the **Templates** plugin did not load it into the template preview of the **Insert template** dialog. The preview loaded content CSS only from URLs, so it did not match the styling of the editor content. {productname} 8.4.0 fixed the same problem in the Preview dialog, the **Suggested Edits** view, and the **Revision History** view.
+
+In {productname} {release-version}, the **Templates** plugin adds bundled content CSS to the template preview, so the preview matches the editor content. Content CSS loaded from a URL works as before. For information on bundling content CSS, see xref:bundling-content-css.adoc[Bundling content CSS].
+
+For information on the **Templates** plugin, see: xref:advanced-templates.adoc[Templates].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

@@ -293,6 +293,13 @@ Previously, the **TinyMCE AI** plugin showed different errors for invalid links 
 
 In {productname} {release-version}, the **TinyMCE AI** plugin accepts a link only when its URL uses the `+http+` or `+https+` scheme and has a hostname that contains a dot, such as `+example.com+`. Any other value shows _This URL isn't valid. Check the full, correct web address and try again._ and is not sent to the AI service. The same check applies to web resources returned by the xref:tinymceai.adoc#tinymceai_chat_fetch_source[`+tinymceai_chat_fetch_source+`] option, so URLs such as `+http://localhost+` are rejected.
 
+==== The chat actions button in the chat history now has an accessible name for screen readers
+// #TINYMCE-14742
+
+Previously, in the **TinyMCE AI** Chat history, the actions button on each conversation, which opens the **Pin**, **Rename**, and **Delete** options, had no accessible name. Screen readers announced it only as "button".
+
+In {productname} {release-version}, screen readers announce the button as "Chat actions", and announce each conversation in the history by its title and date.
+
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 
 === Spell Checker

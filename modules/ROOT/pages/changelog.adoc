@@ -22,7 +22,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 // #TINYMCE-14855
 * Resizing an image would sometimes show a 0px ghost image
 // #TINYMCE-14887
-* Clicking to the right of an `&nbsp;` at the end of an element could make the selection jump if there is an empty element inside the editor.
+* Clicking to the right of an `+&nbsp;+` at the end of an element could make the selection jump if there is an empty element inside the editor.
 // #TINYMCE-14724
 * Opening or closing a View no longer scrolls the editor to the caret position.
 // #TINYMCE-14905

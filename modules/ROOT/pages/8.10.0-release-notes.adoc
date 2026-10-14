@@ -372,7 +372,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition:
+{productname} {release-version} also includes the following additions:
 
 === Added the `+BlobInfo+` type to the public API
 // #TINYMCE-14853
@@ -380,6 +380,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 Previously, {productname} passed a `+BlobInfo+` object to the functions set for options such as xref:file-image-upload.adoc#images_upload_handler[`+images_upload_handler+`], but did not export the `+BlobInfo+` type. TypeScript integrations had to declare their own interface for the object.
 
 In {productname} {release-version}, the `+BlobInfo+` type is part of the public {productname} API. TypeScript integrations can use it to type the functions they set for these options.
+
+=== New `+keepToolbar+` property for custom views
+// #TINYMCE-14768
+
+Previously, opening a xref:custom-view.adoc[custom view] hid the editor menu bar, toolbar, and status bar, so the view replaced the whole editor.
+
+In {productname} {release-version}, the view specification object accepts a new xref:custom-view.adoc#keeptoolbar[`+keepToolbar+`] property. When `+keepToolbar+` is set to `+true+`, the menu bar, toolbar, and status bar stay visible while the view is open, and opening the view closes any open sidebar. The default value is `+false+`, which keeps the previous behavior.
 
 
 [[bug-fixes]]

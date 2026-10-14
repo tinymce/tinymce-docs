@@ -12,6 +12,8 @@ NOTE: This is the {productname} Community version changelog. For information abo
 // #TINYMCE-14853
 * New `revert-all` icon.
 // #TINYMCE-14851
+* Views can now keep the editor toolbar visible with the new `keepToolbar` option, which closes any open sidebar.
+// #TINYMCE-14768
 
 ### Fixed
 * Applying a list style did not change the markers, and the toolbar showed the wrong active style, on list items that had their own inline `list-style-type`.

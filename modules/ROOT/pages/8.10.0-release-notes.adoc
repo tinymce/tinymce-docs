@@ -221,7 +221,18 @@ For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following improvements and fixes.
+**TinyMCE AI** includes the following addition, improvements and fixes.
+
+==== New multi-editor support
+// #TINYMCE-14817
+
+Previously, the **TinyMCE AI** plugin worked with one editor at a time. When related content was split across several editors on a page, users had to run Chat, Review, and Quick Actions in each editor separately, and the AI had no context from the other editors.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin can group editors on the same page. Editors that share a xref:tinymceai.adoc#tinymceai_group[`+tinymceai_group+`] value share one Chat sidebar and one Review sidebar. Chat, Review, and Quick Actions work across the content of every editor in the group, and the plugin previews and applies each change in the editor it belongs to. The Review sidebar groups suggestions under the name of the editor they belong to.
+
+The xref:tinymceai.adoc#tinymceai_document_name[`+tinymceai_document_name+`] option names the content of each editor, and the xref:tinymceai.adoc#tinymceai_document_description[`+tinymceai_document_description+`] option describes that content to the AI service.
+
+For information on multi-editor mode, see xref:tinymceai-multi-editor.adoc[Multi-editor mode].
 
 ==== Applying or skipping all quick action suggestions did nothing when the Review sidebar was open
 // #TINYMCE-14293

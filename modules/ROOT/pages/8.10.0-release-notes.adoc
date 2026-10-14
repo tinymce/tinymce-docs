@@ -11,47 +11,12 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} {release-version} was released for {enterpriseversion} and {cloudname} on <weekday>, <month> <DD>^<st|nd|rd|th>^, <YYYY>. These release notes provide an overview of the changes for {productname} {release-version}, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, October 14^th^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-// Remove sections and section boilerplates as necessary.
-// Pluralise as necessary or remove the placeholder plural marker.
-* xref:new-premium-plugin<s>[New Premium plugin<s>]
-* xref:new-open-source-plugin<s>[New Open Source plugin<s>]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
-* xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
 * xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
-* xref:improvements[Improvements]
 * xref:additions[Additions]
-* xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
-* xref:deprecated[Deprecated]
-* xref:known-issues[Known issues]
-
-
-[[new-premium-plugin<s>]]
-== New Premium plugin<s>
-
-The following new Premium plugin was released alongside {productname} {release-version}.
-
-=== <Premium plugin name>
-
-The new Premium plugin, **<Premium plugin name>** // description here.
-
-For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
-
-
-[[new-open-source-plugin]]
-== New Open Source plugin
-
-The following new Open Source plugin was released alongside {productname} {release-version}.
-
-=== <Open source plugin name>
-
-The new open source plugin, **<Open source plugin name>** // description here.
-
-For information on the **<Open source plugin name>** plugin, see xref:<plugincode>.adoc[<Open source plugin name>].
 
 
 [[accompanying-premium-plugin-changes]]
@@ -59,37 +24,335 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Image Editing
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Image Editing** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Image Editing** includes the following fix.
 
-==== <Premium plugin name 1 change 1>
+==== Clicking **Edit image** now shows an error notification instead of failing silently when the image cannot be loaded
+// #TINYMCE-14679
 
-// CCFR here.
+Previously, when the image proxy returned an error for an image, such as a `+404+` or `+424+` response, clicking **Edit image** did not open the Edit Image dialog and did not display a message. The **Image Editing** plugin logged an uncaught error to the browser console instead. Users received no indication that the image could not be loaded for editing.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+In {productname} {release-version}, the **Image Editing** plugin displays an error notification when the image cannot be loaded. The plugin also displays an error notification when applying an edit from the Edit Image dialog fails. The image proxy returns a `+424+` response when it cannot retrieve the image from its source. In that case, the notification reports that the image failed to load.
+
+For information on the **Image Editing** plugin, see: xref:editimage.adoc[Image Editing].
+
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin. The review interface now uses the same layout and components as the **TinyMCE AI** review. Setup and configuration of the plugin are unchanged. The class names of the suggestion cards and the review panel have changed, so custom CSS written for the previous class names must be updated.
+
+**Suggested Edits** includes the following changes, improvements, and fixes.
+
+==== The review actions moved to the sidebar header and were renamed
+// #TINYMCE-14619
+// #TINYMCE-14620
+// #TINYMCE-14862
+// #TINYMCE-14618
+
+Previously, the **Complete review** and **Cancel** buttons for a Suggested Edits review appeared in a header bar above the review content, apart from the sidebar that lists the suggestions.
+
+In {productname} {release-version}, the **Suggested Edits** plugin shows these actions in the sidebar header, next to the **Review edits** title. The **Save & Exit** button replaces **Complete review**. The **Exit review** button replaces **Cancel** and shows only an icon, with **Exit review** as its tooltip and accessible label. Both actions work as before. The sidebar is also wider, 440 pixels instead of 316 pixels. For more information, see xref:suggestededits.adoc#header[Header].
+
+==== Diff mode and Preview options replaced the Show edits toggle
+// #TINYMCE-14610
+
+Previously, the **Suggested Edits** plugin placed the **Show edits** toggle in the header of the Review edits view, apart from the review content that the toggle switched. With **Show edits** turned off, the plugin also dimmed the suggestion cards, which made the cards look disabled even though their buttons still worked.
+
+In {productname} {release-version}, the **Suggested Edits** plugin replaces the **Show edits** toggle with **Diff mode** and **Preview** options in a footer below the review content. **Diff mode** shows the suggested edits and is the default view. **Preview** shows how the document reads with the suggested edits applied. The suggestion cards no longer dim in either view. The footer matches the review bar in **TinyMCE AI**, so the view switch appears in the same place in both plugins. For more information, see xref:suggestededits.adoc#footer[Footer].
+
+==== The review now keeps the editor menu bar and toolbar visible, makes the editor read-only, and closes when a sidebar opens
+// #TINYMCE-14768
+
+Previously, the Review edits view replaced the whole editor, including the menu bar and toolbar, so the review appeared as a separate screen.
+
+In {productname} {release-version}, the **Suggested Edits** plugin keeps the editor menu bar and toolbar visible during a review and makes the editor content read-only. Most toolbar buttons and menu items are disabled during the review, but items that work in any editor mode, such as **Fullscreen**, **Preview**, and **Print**, remain available. Opening a sidebar closes the review. For more information, see xref:suggestededits.adoc#reviewing-edits[Reviewing edits].
+
+==== The review now keeps the status bar visible and lets the editor be resized while suggestions are reviewed
+// #TINYMCE-14920
+
+Previously, the Review edits view covered the editor status bar, so the editor could not be resized during a review.
+
+In {productname} {release-version}, the status bar remains visible during a review, and the editor can be resized while suggestions are reviewed.
+
+==== Bulk accepting or rejecting suggestions no longer overwrites suggestions that were already accepted or rejected individually
+// #TINYMCE-14851
+// #TINYMCE-14913
+
+Previously, the **Accept all** and **Reject all** bulk actions changed the status of every suggestion, including suggestions already accepted or rejected individually. Reviewers who mixed individual and bulk decisions lost their earlier decisions and had to make them again.
+
+In {productname} {release-version}, bulk accept and reject apply only to unresolved suggestions. While some suggestions are resolved and others remain unresolved, the bulk actions are labeled **Accept remaining** and **Reject remaining**. **Revert all** is unavailable until at least one suggestion is resolved, and the accept and reject actions are unavailable when no unresolved suggestions remain. For more information, see xref:suggestededits.adoc#bulk-actions[Bulk actions].
+
+==== Suggested Edits cards now use icon-only accept and reject actions that appear on hover, with tooltips
+// #TINYMCE-14607
+// #TINYMCE-14612
+// #TINYMCE-14705
+
+Previously, each suggestion card stacked the author, a colored label for the type of change, and the date, and a selected card added a row of **Reject** and **Accept** text buttons below its details.
+
+In {productname} {release-version}, the card header shows the author's avatar, name, and the date in one row. **Accept** and **Reject** are icon buttons with tooltips in the card header. The buttons appear when pointing to a card and stay visible while the card is selected, so more cards fit in the sidebar.
+
+==== Suggested Edits cards now show a preview of changed text for each operation
+// #TINYMCE-14828
+// #TINYMCE-14615
+
+Previously, suggestion cards described only the type of content that changed, such as "deleted text", so reviewers could not tell from the card alone which part of the document had changed.
+
+In {productname} {release-version}, each card quotes the changed text, for example: Replaced "`the`" with "`them`". Long text is shortened with an ellipsis. Changes that are not text name the type of content that changed, such as an image or a table. Reviewers can see what changed, and where, from the card alone.
+
+==== Suggestion cards in the sidebar are now listed in the order the changes appear in the document
+// #TINYMCE-14966
+
+Previously, suggestion cards were listed in the order the suggestions were created. For example, deleting an image near the top of the document after editing further down placed the card for the image near the bottom of the sidebar. Reviewers working from top to bottom had to move around the document.
+
+In {productname} {release-version}, suggestion cards are listed in the order their changes appear in the document, from top to bottom, regardless of who made each change or when. Users can work through suggestions in reading order and match each card to its change.
+
+==== Diff mode and Preview now make suggested changes easier to spot
+// #TINYMCE-14609
+
+Previously, with **Show edits** turned on, the **Suggested Edits** plugin displayed unchanged content with the same emphasis as suggested edits, so the suggestions were hard to spot. With **Show edits** turned off, the plugin did not show where the suggestions were. The plugin also marked every line break in the document, not only the line breaks that changed. Reviewers had to read the whole document to find each suggestion and could miss one in a long document.
+
+In {productname} {release-version}, **Diff mode** dims unchanged content while suggestions are pending, so the pending suggestions stand out. **Preview** underlines added and modified content in place, and line break markers appear only where a line break was added or removed.
+
+==== Deleted media in Diff mode now shows a red X overlay
+// #TINYMCE-14611
+
+Previously, a deleted image was marked only with a highlight, which could be easy to miss.
+
+In {productname} {release-version}, **Diff mode** also marks deleted images, videos, and embedded frames with a large red X.
+
+==== Preview now shows only the inserted text of a replaced suggestion
+// #TINYMCE-14771
+
+In {productname} {release-version}, selecting a suggestion that replaces text in **Preview** shows and highlights only the new text, and the removed text stays hidden. **Preview** matches the content produced by accepting the suggestion. **Diff mode** continues to show both the removed and the added text.
+
+==== Opening the Review edits view now keeps the editor scroll position, and closing it restores the review scroll position in the editor
+// #TINYMCE-14902
+
+Previously, opening the Review edits view jumped to the first change, and closing it scrolled the editor back to the cursor. Each time the review opened or closed, the reader lost the current position in the document.
+
+In {productname} {release-version}, the Review edits view opens at the same position in the document that the editor showed, and closing the review returns the editor to the position last shown in the review. Selecting a card still scrolls to its change.
+
+==== The up and down arrow keys now move between suggestion cards in the sidebar and select the focused suggestion
+// #TINYMCE-14844
+
+Previously, the Up Arrow and Down Arrow keys did not move between suggestion cards in the sidebar, so keyboard users had to press Tab through the controls of each card to reach the next suggestion. Reviewing a document with many suggestions from the keyboard was slow.
+
+In {productname} {release-version}, the Up Arrow and Down Arrow keys move between suggestion cards in the sidebar and select the focused suggestion, which highlights it in the document. Pressing Enter on a card moves focus into the content of that card. For more information, see xref:suggestededits.adoc#keyboard-navigation[Keyboard navigation].
+
+==== Suggestion cards now include the accepted or rejected outcome in their accessible name, and the revert button is named Revert
+// #TINYMCE-14616
+
+In {productname} {release-version}, screen readers announce whether a suggestion was accepted or rejected as part of the card name, and the button that reverts a decision is announced as **Revert**.
+
+==== Suggested Edits cards now describe elements without a friendly name as "content" instead of showing their HTML tag name
+// #TINYMCE-14952
+
+Previously, when a changed element did not have a friendly name, its card showed the HTML tag name of the element. For example, pasting content that contained a `+div+` element produced a card reading "Added div". Users could see technical terms that did not explain the change.
+
+In {productname} {release-version}, cards describe elements without a friendly name as "content", so "Added div" now reads "Added content". The card still shows the changed text, and elements that already have a friendly name, such as paragraphs, images, tables, and lists, are described as before.
+
+==== Long feedback text without spaces overflowed the suggested edit card and pushed the card's buttons and textbox out of alignment
+// #TINYMCE-14973
+
+Previously, feedback on a suggestion that contained a long string with no spaces, such as a long link, ran past the edge of the suggestion card. The overflowing text pushed the buttons and the feedback text box of the card out of alignment and made the sidebar scroll sideways.
+
+In {productname} {release-version}, long feedback text wraps onto new lines within the suggestion card, and the buttons and text box of the card remain aligned.
+
+==== Nested parts of the same suggestion showed duplicate highlights
+// #TINYMCE-14358
+
+Previously, when one suggestion changed both an element and the content inside it, such as the font size of a list, the Review edits view highlighted the element, then highlighted each part of the content inside it again. The Review edits view also stacked the selection styling when the suggestion was selected. The stacked styling made the change cluttered and harder to read.
+
+In {productname} {release-version}, the **Suggested Edits** plugin applies the highlight and selection styling once for each suggestion, on the outermost element that the suggestion changes, in both **Diff mode** and **Preview**.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
 
 
-[[accompanying-premium-plugin-end-of-life-announcement]]
-== Accompanying Premium plugin end-of-life announcement
+=== TinyMCE AI
 
-The following Premium plugin has been announced as reaching its end-of-life:
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-=== <Premium plugin name eol>
+**TinyMCE AI** includes the following addition, improvements, and fixes.
 
-{productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+==== New multi-editor support
+// #TINYMCE-14817
 
+Previously, the **TinyMCE AI** plugin worked with one editor at a time. When related content was split across several editors on a page, users had to run Chat, Review, and Quick Actions in each editor separately, and the AI had no context from the other editors.
 
-[[accompanying-open-source-plugin-end-of-life-announcement]]
-== Accompanying open source plugin end-of-life announcement
+In {productname} {release-version}, the **TinyMCE AI** plugin can group editors on the same page. Editors that share a xref:tinymceai.adoc#tinymceai_group[`+tinymceai_group+`] value share one Chat sidebar and one Review sidebar. Chat, Review, and Quick Actions work across the content of every editor in the group, and the plugin previews and applies each change in the editor it belongs to. The Review sidebar groups suggestions under the name of the editor they belong to.
 
-The following open source plugin has been announced as reaching its end-of-life:
+The xref:tinymceai.adoc#tinymceai_document_name[`+tinymceai_document_name+`] option names the content of each editor, and the xref:tinymceai.adoc#tinymceai_document_description[`+tinymceai_document_description+`] option describes that content to the AI service.
 
-=== <Open source plugin name eol>
+For information on multi-editor mode, see xref:tinymceai-multi-editor.adoc[Multi-editor mode].
 
-{productname}’s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+==== Deleted media in AI preview Diff mode now shows a red X overlay
+// #TINYMCE-14611
+
+Previously, a deleted image in a **TinyMCE AI** preview was marked only with a highlight, which could be easy to miss.
+
+In {productname} {release-version}, **Diff mode** in a **TinyMCE AI** preview also marks deleted images, videos, and embedded frames with a large red X.
+
+==== Nested parts of the same suggestion showed duplicate highlights
+// #TINYMCE-14358
+
+Previously, when one suggestion changed both an element and the content inside it, such as a modified list item and its modified text, the **TinyMCE AI** plugin applied the highlight, selection, and preview highlight styling to the element and again to the content inside it. The stacked styling appeared in **Diff mode** and **Preview** for Chat, Quick Actions, and Review suggestions. It made the suggestion cluttered and harder to read.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin applies the highlight, selection, and preview highlight styling only once for each suggestion, on the outermost element that the suggestion changes, in both **Diff mode** and **Preview**. Content inside that element no longer repeats the styling.
+
+==== Applying or skipping all quick action suggestions did nothing when the Review sidebar was open
+// #TINYMCE-14293
+
+Previously, when the Review sidebar was open but no review was in progress, the **TinyMCE AI** plugin handled a quick action preview as if it belonged to a review. Selecting **Apply all** or **Skip all** in the preview footer did not resolve the suggestions, and the editor stayed in preview mode. Users had to close the Review sidebar before they could apply or skip the result of a quick action.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin resolves a quick action preview based on whether a review is in progress, not on whether the Review sidebar is open. While the Review sidebar is open, **Apply all** applies the suggestions, **Skip all** skips them, and the editor then leaves preview mode.
+
+==== Selecting an applied or skipped suggestion in Diff mode showed only part of the change, or none of it, instead of the full suggestion
+// #TINYMCE-14948
+
+Previously, in **Diff mode**, the **TinyMCE AI** plugin hid part or all of a change as soon as applying or skipping the suggestion removed that content from the result. This affected a skipped addition, an applied deletion, and the added part of a skipped replacement. The suggestion stayed selected, for example as a card in the Review sidebar, but the change no longer appeared in the content. Users could not check what they had just applied or skipped, so reconsidering a decision before finishing the review was harder.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin shows the full change in **Diff mode** while an applied or skipped suggestion is selected, with removed content struck through and added content styled as an addition. The plugin hides the change when another suggestion is selected, and shows it again whenever its suggestion is selected. **Preview** still shows only the resulting content.
+
+==== Button text in the confirmation dialog would not be translated
+// #TINYMCE-14751
+
+Previously, the confirmation dialog that appeared when a user deleted a conversation from the Chat history displayed the **Yes** and **No** buttons in English, regardless of the editor language. The **TinyMCE AI** plugin translated the confirmation message but not the button text, so users of a non-English editor saw a dialog in two languages.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin translates the **Yes** and **No** buttons into the language set by the xref:ui-localization.adoc#language[`+language+`] option. The whole confirmation dialog now appears in the configured language.
+
+==== Clicking outside a suggestion in the AI preview now deselects the active suggestion and dismisses its context toolbar or review card highlight
+// #TINYMCE-14706
+
+Previously, clicking empty space outside a suggestion in a **TinyMCE AI** preview did nothing. The last selected suggestion stayed highlighted, its context toolbar stayed on screen, and during a review the matching card in the Review sidebar stayed selected. The only way to clear the selection was to select a different suggestion. Users could not get a clear view of the proposed content, and the context toolbar could cover nearby text.
+
+In {productname} {release-version}, clicking anywhere in the preview outside a suggestion clears the active selection. The **TinyMCE AI** plugin closes the context toolbar and, during a review, removes the highlight from the card in the Review sidebar.
+
+==== Diff mode reserved an empty scrollbar gutter beside the content
+// #TINYMCE-14933
+
+Previously, the **TinyMCE AI** plugin reserved space for a scrollbar whenever the **Diff mode** tab displayed proposed changes, even when the content was too short to scroll. The empty gutter beside the content looked like a broken scrollbar.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin no longer reserves space for a scrollbar in **Diff mode**. A scrollbar appears only when the content is long enough to scroll.
+
+==== Starting a quick action, chat prompt, or review while another one was still running canceled both instead of keeping the new one
+// #TINYMCE-14806
+
+The **TinyMCE AI** plugin runs one AI task at a time, and starting a new task cancels the task in progress. Previously, when a user started a quick action, sent a chat prompt, or started a review while another task was still running, the plugin canceled both the running task and the new one. Users had to start the new task again.
+
+In {productname} {release-version}, starting a new task while another task is running cancels only the running task. The new quick action, chat prompt, or review runs to completion.
+
+==== The `+tinymceai_chat_fetch_sources+` option now reports a clear error when it returns sources in an unexpected format
+// #TINYMCE-14802
+
+Previously, the **TinyMCE AI** plugin did not check the value returned by the xref:tinymceai.adoc#tinymceai_chat_fetch_sources[`+tinymceai_chat_fetch_sources+`] function. When the function resolved with a value in an unexpected format, for example a source without a `+type+` or a `+defaults+` value that was not an array, the browser console showed a generic JavaScript error that did not identify the cause.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin checks the returned value against the formats that the option supports. When the value does not match, the browser console logs a `+DecodingError+` that includes the value the function returned.
+
+==== Opening an editor view now asks for confirmation before discarding AI suggestions
+// #TINYMCE-14893
+
+Previously, while **TinyMCE AI** suggestions were displayed in the editor, for example after running a quick action, opening an editor view such as the **Suggested Edits** review discarded the suggestions without warning. Switching to the Chat sidebar or the Review sidebar already asked for confirmation, but opening a view did not.
+
+In {productname} {release-version}, opening a view while suggestions are displayed shows the same confirmation dialog: _Leaving this AI flow will discard current suggestions and reset applied changes. Continue?_ Canceling keeps the suggestions and the current view. Confirming discards the suggestions and opens the view.
+
+==== Pressing Enter in the AI Chat prompt before the models loaded caused a "No model selected" error
+// #TINYMCE-14827
+
+Previously, when a user opened the Chat sidebar, typed a prompt, and pressed Enter before the list of AI models had loaded, the **TinyMCE AI** plugin sent the prompt without a model. An error notification appeared, and the browser console logged `+TinyMCE AI Error: No model selected+`. The send button was already disabled until a model was selected, but pressing Enter bypassed that check.
+
+In {productname} {release-version}, pressing Enter does nothing until a model is selected. The prompt text stays in the prompt field, no error appears, and the user can send the prompt once the models have loaded.
+
+==== Link sources in the AI Chat without an http or https scheme or a dotted hostname are now treated as invalid URLs
+// #TINYMCE-14813
+
+Previously, the **TinyMCE AI** plugin showed different errors for invalid links added with **Add context source** > **Link**. An empty value or plain text, such as `+test+`, showed _This URL isn't valid. Check the full, correct web address and try again._ A URL with an incomplete scheme or hostname, such as `+https://test+`, was sent to the AI service and failed with _Failed to add web resource "https://test": The web resource could not be scraped from the provided URL_.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin accepts a link only when its URL uses the `+http+` or `+https+` scheme and has a hostname that contains a dot, such as `+example.com+`. Any other value shows _This URL isn't valid. Check the full, correct web address and try again._ and is not sent to the AI service. The same check applies to web resources returned by the xref:tinymceai.adoc#tinymceai_chat_fetch_source[`+tinymceai_chat_fetch_source+`] option, so URLs such as `+http://localhost+` are rejected.
+
+==== The chat actions button in the chat history now has an accessible name for screen readers
+// #TINYMCE-14742
+
+Previously, in the **TinyMCE AI** Chat history, the actions button on each conversation, which opens the **Pin**, **Rename**, and **Delete** options, had no accessible name. Screen readers announced it only as "button".
+
+In {productname} {release-version}, screen readers announce the button as "Chat actions", and announce each conversation in the history by its title and date.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
+=== Spell Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Spell Checker** premium plugin.
+
+**Spell Checker** includes the following fixes.
+
+==== Moving the caret backwards with the keyboard lost its column position and jumped to the beginning of the line
+// #TINYMCE-14832
+
+Previously, when the **Spell Checker** plugin was active, pressing the Up Arrow key to move up through several lines could place the caret at the beginning of a line instead of keeping its column position. The same problem occurred when extending a selection upward with Shift+Up Arrow.
+
+In {productname} {release-version}, the **Spell Checker** plugin restores the selection only when spell checking changes the editor content. The caret keeps its column position when it moves up through lines, including when Shift+Up Arrow extends a selection.
+
+==== Disabling spell checking removed the misspelled word from a selection that started right before it
+// #TINYMCE-14878
+
+Previously, when spell checking as-you-type was enabled and a selection started or ended immediately before a misspelled word, disabling spell checking removed the misspelled word from the selection. Formatting applied to the selection afterward, such as bold, then skipped the misspelled word.
+
+In {productname} {release-version}, the **Spell Checker** plugin keeps the selection unchanged when spell checking is disabled.
+
+For information on the **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker].
+
+=== PowerPaste
+
+The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** includes the following fixes.
+
+==== Pasting the same image more than once from HTML content, such as from another editor, created a separate blob URL for each copy instead of reusing the existing one
+// #TINYMCE-11140
+
+Previously, when a user pasted the same image more than once from HTML content, such as from another editor or a Microsoft Word document, the **PowerPaste** plugin created a new blob URL for each copy. The editor treated each copy as a separate image and uploaded each one. Without the **PowerPaste** plugin, copies of the same pasted image already shared one blob URL.
+
+In {productname} {release-version}, the **PowerPaste** plugin checks whether the editor contains an image with identical data. When the editor already contains a matching image, the plugin reuses the blob URL of that image. Copies of the same image now share one blob URL for every paste source. The editor uploads the image only once.
+
+==== Nested list items pasted from Google Docs with Keep formatting became bold when only the top-level list item was bold
+// #TINYMCE-13282
+
+Previously, when a user pasted a nested list from Google Docs and selected **Keep formatting**, the **PowerPaste** plugin made every nested list item bold, even when only the top-level list item was bold in the source document. The pasted list did not match the original document. Pasting with **Remove formatting** avoided the issue, but also removed the inline styles and classes from the pasted content.
+
+In {productname} {release-version}, the **PowerPaste** plugin keeps the font weight of each list item from the Google Docs content. When only the top-level list item is bold, the plugin pastes the nested list items with normal font weight, and the pasted list matches the original document.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
+
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following addition.
+
+==== New `+tags+` metadata field for displaying tags in revision cards
+// #TINYMCE-14331
+
+The revision xref:revisionhistory.adoc#metadata[`+metadata+`] object now supports an optional `+tags+` field. The `+tags+` field takes an array of xref:revisionhistory.adoc#tag[tag] objects, each with a `+label+` string. The **Revision History** plugin displays each tag as a label on the revision card, in the same style as the revision type label, such as `+DRAFT+`. The plugin displays the label text exactly as provided, without changes to capitalization.
+
+Integrators can use tags to mark saved revisions with a custom status, such as `+REVIEWED+` or `+Legal+`.
+
+For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
+
+=== Templates
+
+The {productname} {release-version} release includes an accompanying release of the **Templates** premium plugin.
+
+**Templates** includes the following fix.
+
+==== Bundled content CSS is now loaded in the template preview
+// #TINYMCE-14363
+
+Previously, when the editor content CSS was bundled, the **Templates** plugin did not load it into the template preview of the **Insert template** dialog. The preview loaded content CSS only from URLs, so it did not match the styling of the editor content. {productname} 8.4.0 fixed the same problem in the Preview dialog, the **Suggested Edits** view, and the **Revision History** view.
+
+In {productname} {release-version}, the **Templates** plugin adds bundled content CSS to the template preview, so the preview matches the editor content. Content CSS loaded from a URL works as before. For information on bundling content CSS, see xref:bundling-content-css.adoc[Bundling content CSS].
+
+For information on the **Templates** plugin, see: xref:advanced-templates.adoc[Templates].
 
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
@@ -106,90 +369,62 @@ The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also inc
 For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
 
 
-[[improvements]]
-== Improvements
-
-{productname} {release-version} also includes the following improvement<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition<s>:
+{productname} {release-version} also includes the following addition:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Added the `+BlobInfo+` type to the public API
+// #TINYMCE-14853
 
-// CCFR here.
+Previously, {productname} passed a `+BlobInfo+` object to the functions set for options such as xref:file-image-upload.adoc#images_upload_handler[`+images_upload_handler+`], but did not export the `+BlobInfo+` type. TypeScript integrations had to declare their own interface for the object.
 
-
-[[changes]]
-== Changes
-
-{productname} {release-version} also includes the following change<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[removed]]
-== Removed
-
-{productname} {release-version} also includes the following removal<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+In {productname} {release-version}, the `+BlobInfo+` type is part of the public {productname} API. TypeScript integrations can use it to type the functions they set for these options.
 
 
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== The editor iframe was missing its `+title+` attribute on browsers other than Firefox
+// #TINYMCE-13100
 
-// CCFR here.
+Previously, {productname} set the `+title+` attribute on the editor iframe only in Firefox. In other browsers, the iframe had no `+title+`. {productname} applied the xref:accessibility.adoc#iframe_aria_text[`+iframe_aria_text+`] value as an `+aria-label+` on the `+<body>+` element inside the iframe instead. Screen readers announced the editor correctly, but accessibility checkers reported the missing iframe `+title+` as a violation of the Web Content Accessibility Guidelines (WCAG).
 
+In {productname} {release-version}, the editor sets the `+title+` attribute of the iframe to the `+iframe_aria_text+` value in every browser. On macOS and iOS, the VoiceOver screen reader does not announce the iframe `+title+`. The editor therefore also sets the value as an `+aria-label+` on the `+<body>+` element, together with `+role="textbox"+` and `+aria-multiline="true"+`. On other operating systems, the editor no longer sets an `+aria-label+` on the `+<body>+` element.
 
-[[security-fixes]]
-== Security fixes
+=== Drag selection did not work when clicking to the right of a list item in Chrome
+// #TINYMCE-14855
 
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
+Previously, in Chrome and other Chromium-based browsers, pressing the mouse button to the right of the text in a list item and dragging did not select any content. {productname} 8.7.0 added a workaround for a Chromium bug that placed the caret at the start of a list item when clicking to the right of its text. The workaround ran when the mouse button was pressed and blocked the default browser behavior, which also prevented drag selection.
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+In {productname} {release-version}, the workaround runs when the click completes instead. Pressing the mouse button to the right of a list item and dragging selects content, and clicking to the right of a list item still places the caret where expected.
 
-// CCFR here.
+=== Clicking to the right of an `+&nbsp;+` at the end of an element could make the selection jump when the content contained an empty formatting element
+// #TINYMCE-14724
 
+Previously, when the content contained an empty formatting element, for example one left after a format such as a font size was applied with no text selected, clicking to the right of a line that ended in a non-breaking space (`+&nbsp;+`) moved the caret away from the click position. {productname} removed the empty formatting element and placed the caret where that element had been, such as at the start of another paragraph.
 
-[[deprecated]]
-== Deprecated
+In {productname} {release-version}, {productname} moves the caret only when the empty formatting element it removes is next to the selection. Clicking to the right of a line that ends in a non-breaking space places the caret at the end of that line.
 
-{productname} {release-version} includes the following deprecation<s>:
+=== Opening or closing a view no longer scrolls the editor to the caret position
+// #TINYMCE-14905
 
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
+Previously, opening or closing a view, such as a xref:custom-view.adoc[custom view] or the **Revision History** view, scrolled the editor content to the caret, even when the user had scrolled to a different part of the document. Users lost their place in the document each time a view was opened or closed, which was most noticeable when the caret was far outside the visible area.
 
-// placeholder here.
+In {productname} {release-version}, opening or closing a view keeps the editor scroll position. The editor still receives focus when a view closes, and the caret and selection do not change.
 
+=== Clicking to the right of a list item's text in an unfocused editor scrolled the content back to the top in Chrome
+// #TINYMCE-14856
 
-[[known-issues]]
-== Known issues
+Previously, in Chrome and other Chromium-based browsers, when the editor was not focused, scrolling down the editor content and clicking to the right of the text in a list item scrolled the content back to the top. The caret was placed in the list item, but the list item was no longer in view.
 
-This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
+In {productname} {release-version}, clicking to the right of the text in a list item in an unfocused editor keeps the scroll position and places the caret where the user clicked.
 
-There <is one | are <number> known issue<s> in {productname} {release-version}.
+=== Applying a list style did not change the markers, and the toolbar showed the wrong active style, on list items that had their own inline `+list-style-type+`
+// #TINYMCE-14565
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+Previously, some list items had their own inline `+list-style-type+`, for example after content was pasted from Microsoft Word with **PowerPaste**. When the selection was in such an item, choosing a style from the `+numlist+` or `+bullist+` toolbar button menu did not change the item's marker, because the item's own style overrode the style that {productname} applied to the list. The menu also showed **Default** as the active style instead of the item's actual style.
 
-// CCFR here.
+In {productname} {release-version}, the list style menu shows the style of the selected list item when the item has its own `+list-style-type+`. Applying a list style removes the inline `+list-style-type+` from the selected list items and applies the chosen style to the whole list. Other list items that have their own `+list-style-type+` keep it until they are selected and changed.

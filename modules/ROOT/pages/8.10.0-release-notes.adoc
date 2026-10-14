@@ -279,6 +279,13 @@ Previously, while **TinyMCE AI** suggestions were displayed in the editor, for e
 
 In {productname} {release-version}, opening a view while suggestions are displayed shows the same confirmation dialog: _Leaving this AI flow will discard current suggestions and reset applied changes. Continue?_ Canceling keeps the suggestions and the current view. Confirming discards the suggestions and opens the view.
 
+==== Pressing Enter in the AI Chat prompt before the models loaded caused a "No model selected" error
+// #TINYMCE-14827
+
+Previously, when a user opened the Chat sidebar, typed a prompt, and pressed Enter before the list of AI models had loaded, the **TinyMCE AI** plugin sent the prompt without a model. An error notification appeared, and the browser console logged `+TinyMCE AI Error: No model selected+`. The send button was already disabled until a model was selected, but pressing Enter bypassed that check.
+
+In {productname} {release-version}, pressing Enter does nothing until a model is selected. The prompt text stays in the prompt field, no error appears, and the user can send the prompt once the models have loaded.
+
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 
 === Spell Checker

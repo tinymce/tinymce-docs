@@ -250,12 +250,12 @@ Previously, the **TinyMCE AI** plugin did not check the value returned by the xr
 
 In {productname} {release-version}, the **TinyMCE AI** plugin checks the returned value against the formats that the option supports. When the value does not match, the browser console logs a `+DecodingError+` that includes the value the function returned.
 
-==== Opening an editor view now asks for confirmation before discarding AI suggestions
+==== Opening Suggested Edits now asks for confirmation before discarding AI suggestions
 // #TINYMCE-14893
 
-Previously, while **TinyMCE AI** suggestions were displayed in the editor, for example after running a quick action, opening an editor view such as the **Suggested Edits** review discarded the suggestions without warning. Switching to the Chat sidebar or the Review sidebar already asked for confirmation, but opening a view did not.
+Previously, while **TinyMCE AI** suggestions were displayed in the editor, for example after running a quick action, opening **Suggested Edits** discarded the suggestions without warning. Switching to the Chat sidebar or the Review sidebar already asked for confirmation, but opening **Suggested Edits** did not.
 
-In {productname} {release-version}, opening a view while suggestions are displayed shows the same confirmation dialog: _Leaving this AI flow will discard current suggestions and reset applied changes. Continue?_ Canceling keeps the suggestions and the current view. Confirming discards the suggestions and opens the view.
+In {productname} {release-version}, opening **Suggested Edits** while suggestions are displayed shows the same confirmation dialog: _Leaving this AI flow will discard current suggestions and reset applied changes. Continue?_ Canceling keeps the suggestions in the editor. Confirming discards the suggestions and opens **Suggested Edits**.
 
 ==== Pressing Enter in the AI Chat prompt before the models loaded caused a "No model selected" error
 // #TINYMCE-14827
@@ -432,6 +432,13 @@ In {productname} {release-version}, clicking to the right of the text in a list 
 === Applying a list style did not change the markers, and the toolbar showed the wrong active style, on list items that had their own inline `+list-style-type+`
 // #TINYMCE-14565
 
-Previously, some list items had their own inline `+list-style-type+`, for example after content was pasted from Microsoft Word with **PowerPaste**. When the selection was in such an item, choosing a style from the `+numlist+` or `+bullist+` toolbar button menu did not change the item's marker, because the item's own style overrode the style that {productname} applied to the list. The menu also showed **Default** as the active style instead of the item's actual style.
+Previously, some list items had their own inline `+list-style-type+`, for example after content was pasted from Microsoft Word with **PowerPaste**. When the selection was in such an item, choosing a style from the `+numlist+` or `+bullist+` toolbar button menu did not change the item's marker, because the item's own style overrode the style that {productname} applied to the list. The menu also showed the style of the list as the active style instead of the style of the list item.
 
 In {productname} {release-version}, the list style menu shows the style of the selected list item when the item has its own `+list-style-type+`. Applying a list style removes the inline `+list-style-type+` from the selected list items and applies the chosen style to the whole list. Other list items that have their own `+list-style-type+` keep it until they are selected and changed.
+
+=== Text typed while resizing a table column or row went into the resize bar and was lost
+// #TINYMCE-14594
+
+Previously, pressing the mouse button on a table column or row resize bar moved the selection into the resize bar. Text typed while resizing went into the resize bar, which {productname} removes when resizing ends, so the typed text was lost. Resizing a table with the corner resize handles was not affected.
+
+In {productname} {release-version}, pressing the mouse button on a column or row resize bar does not move the selection. Text typed while resizing is inserted at the selection, and the caret stays at the end of the typed text when resizing ends.

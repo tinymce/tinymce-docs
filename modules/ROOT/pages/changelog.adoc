@@ -30,6 +30,8 @@ NOTE: This is the {productname} Community version changelog. For information abo
 // #TINYMCE-13100
 * Views that keep the toolbar now also keep the statusbar visible.
 // #TINYMCE-14920
+* Typing while resizing a table no longer moves the selection outside the editable area.
+// #TINYMCE-14594
 
 == xref:8.9.3-release-notes.adoc[8.9.3 - 2026-10-06]
 

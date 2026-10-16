@@ -28,7 +28,7 @@ A target describes what {productname} is developed against. It is not a statemen
 
 [NOTE]
 ====
-These targets describe the accessibility of the {productname} user interface. The accessibility of authored content also depends on the author, though the editor determines which accessible structures are available to them, for example table headers, heading levels, and image alternative text. To check authored content against https://www.w3.org/TR/WCAG21/[WCAG 2.1] and https://www.access-board.gov/ict/[Section 508] rules, see the xref:a11ychecker.adoc[Accessibility Checker plugin].
+These targets describe the accessibility of the {productname} user interface. The accessibility of authored content depends on the author, though the editor determines which accessible structures are available to them, for example table headers, heading levels, and image alternative text. To check authored content against https://www.w3.org/TR/WCAG21/[WCAG 2.1] and https://www.access-board.gov/ict/[Section 508] rules, see the xref:a11ychecker.adoc[Accessibility Checker plugin].
 ====
 
 [[accessibility-conformance-report-vpat]]
@@ -36,25 +36,26 @@ These targets describe the accessibility of the {productname} user interface. Th
 
 An Accessibility Conformance Report (ACR) records how a product measures against a set of accessibility standards. {companyname} publishes these reports using the https://www.itic.org/policy/accessibility/vpat[Information Technology Industry Council (ITI) Voluntary Product Accessibility Template (VPAT)].
 
-Each report uses the WCAG edition of the template and covers Level A and Level AA. The reports do not cover Section 508 or EN 301 549. The WCAG editions covered depend on the version of {productname}:
+Each report uses the WCAG edition of the template and covers Level A and Level AA. The reports do not cover Section 508 or EN 301 549.
 
-* The {productname} 8 report covers WCAG 2.0, 2.1, and 2.2.
-* The {productname} 6 report covers WCAG 2.0 and 2.1.
-
-[cols="1,2",options="header"]
+[cols="1,1,2",options="header"]
 |===
-|Version |Report
+|Version |WCAG versions covered |Report
 
 |{productname} 8
+|WCAG 2.0, 2.1, and 2.2
 |xref:attachment$vpat/TinyMCE_VPAT2.5_WCAG.pdf[Download the Accessibility Conformance Report for {productname} 8] (PDF)
 
 |{productname} 6
+|WCAG 2.0 and 2.1
 |xref:attachment$vpat/TinyMCE_6.7_VPAT2.4Rev_WCAG.pdf[Download the Accessibility Conformance Report for {productname} 6] (PDF)
 |===
 
-Each report was produced by expert evaluation through Axess Lab, together with testing across a range of assistive technologies. For the {productname} 8 report, the {companyname} accessibility team also evaluated the WCAG 2.2 success criteria and reviewed all previously reported findings.
+Each report was produced by expert evaluation, together with testing across a range of assistive technologies. For the {productname} 8 report, the {companyname} accessibility team also evaluated the WCAG 2.2 success criteria and reviewed all previously reported findings.
 
-Reports are reviewed twice a year and republished alongside a release. The table lists the latest report for each major version of {productname}. When a newer report is published for a major version, it replaces the earlier report for that version. For the security and compliance documentation that {companyname} maintains outside of accessibility, see xref:security.adoc#security-assurance-and-compliance[Security assurance and compliance].
+Reports are reviewed twice a year and republished alongside a release. The table lists the latest report for each major version of {productname}. When a newer report is published for a major version, it replaces the earlier report for that version.
+
+For the security and compliance documentation that {companyname} maintains outside of accessibility, see xref:security.adoc#security-assurance-and-compliance[Security assurance and compliance].
 
 [[reporting-an-accessibility-issue]]
 == Reporting an accessibility issue

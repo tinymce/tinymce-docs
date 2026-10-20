@@ -21,179 +21,207 @@ The `agent-1` model automatically selects the best AI model for requests based o
 [[supported-models-table]]
 === Supported Models
 
-The following is a detailed list of available models with their capabilities:
+The following is a detailed list of available models with their capabilities. In the *Status* column, ✓ marks an active model and ⚠ marks a deprecated model, with its removal date.
 
-[cols="1,2,1,1,2"]
+[cols="1,2,1,1,2,1"]
 |===
-|Model |Description |xref:tinymceai-chat.adoc#web-search[Web Search] |xref:tinymceai-chat.adoc#reasoning[Reasoning] |Configuration id
+|Model |Description |xref:tinymceai-chat.adoc#web-search[Web Search] |xref:tinymceai-chat.adoc#reasoning[Reasoning] |Configuration id |Status
 
 |**Auto (default)**
 |Automatically selects best model for speed, quality, and cost.
 |Yes
 |Yes
 |`'auto'` (also `'agent-1'`, learn more about xref:tinymceai-models.adoc#model-compatibility-versions[compatibility versions])
+|✓
 
 |**GPT-5.6 Sol**
 |OpenAI's frontier model for complex professional work and advanced reasoning
 |Yes
 |Yes
 |`'gpt-5.6-sol'`
+|✓
 
 |**GPT-5.6 Terra**
 |Balances intelligence, speed, and cost for everyday tasks
 |Yes
 |Yes
 |`'gpt-5.6-terra'`
+|✓
 
 |**GPT-5.6 Luna**
 |OpenAI's most cost-efficient GPT-5.6 model for high-volume tasks
 |Yes
 |Yes
 |`'gpt-5.6-luna'`
+|✓
 
 |**GPT-5.5**
 |OpenAI's flagship model for advanced reasoning, creativity, and complex tasks
 |Yes
 |Yes
 |`'gpt-5.5'`
+|✓
 
 |**GPT-5.4**
 |OpenAI's flagship model for advanced reasoning, creativity, and complex tasks
 |Yes
 |Yes
 |`'gpt-5.4'`
+|✓
 
 |**GPT-5.2**
 |OpenAI's flagship model for advanced reasoning, creativity, and complex tasks
 |Yes
 |Yes
 |`'gpt-5.2'`
+|✓
 
 |**GPT-5.1**
 |OpenAI's flagship model for advanced reasoning, creativity, and complex tasks
 |Yes
 |Yes
 |`'gpt-5.1'`
+|✓
 
 |**GPT-5**
 |OpenAI's flagship model for advanced reasoning, creativity, and complex tasks
 |Yes
 |Yes
 |`'gpt-5'`
+|✓
 
 |**GPT-4.1**
 |OpenAI's model for reliable reasoning, speed, and versatility
 |Yes
 |No
 |`'gpt-4.1'`
+|✓
 
 |**GPT-5 Mini**
 |A lightweight version of GPT-5 for faster, more cost-efficient responses
 |Yes
 |Yes
 |`'gpt-5-mini'`
+|✓
 
 |**GPT-5.4 Mini**
 |A lighter variant of GPT-5.4 that balances speed and cost while maintaining solid accuracy
 |Yes
 |Yes
 |`'gpt-5.4-mini'`
+|✓
 
 |**GPT-4.1 Mini**
 |A lighter variant of GPT-4.1 that balances speed and cost while maintaining solid accuracy
 |Yes
 |No
 |`'gpt-4.1-mini'`
+|✓
 
 |**Claude Opus 4.8**
 |Anthropic's most capable model for extended reasoning and complex tasks
 |Yes
 |Yes
 |`'claude-opus-4-8'`
+|✓
 
 |**Claude Opus 5**
 |Anthropic's most capable model for extended reasoning and complex tasks
 |Yes
 |Yes
 |`'claude-opus-5'`
+|✓
 
 |**Claude Fable 5**
 |Anthropic's most capable model for extended reasoning and complex tasks
 |Yes
 |Yes
 |`'claude-fable-5'`
+|✓
 
 |**Claude Opus 4.7**
 |Anthropic's most capable model for extended reasoning and complex tasks
 |Yes
 |Yes
 |`'claude-opus-4-7'`
+|✓
 
 |**Claude 5 Sonnet**
 |Advanced model with improved creativity, reliability, and reasoning
 |Yes
 |Yes
 |`'claude-5-sonnet'`
+|✓
 
 |**Claude 4.6 Sonnet**
 |Advanced model with improved creativity, reliability, and reasoning
 |Yes
 |Yes
 |`'claude-4-6-sonnet'`
+|✓
 
 |**Claude 4.5 Sonnet**
-|Advanced model with improved creativity, reliability, and reasoning. Deprecated: scheduled for removal on October 30, 2026. See xref:tinymceai-models.adoc#model-deprecation[Model Deprecation].
+|Advanced model with improved creativity, reliability, and reasoning
 |Yes
 |Yes
 |`'claude-4-5-sonnet'`
+|⚠ xref:tinymceai-models.adoc#model-deprecation[Removal on October 30, 2026]
 
 |**Claude 4.5 Haiku**
 |Cost-efficient model for quick interactions with improved reasoning
 |Yes
 |Yes
 |`'claude-4-5-haiku'`
+|✓
 
 |**Gemini 3.1 Pro**
 |Google's advanced model for versatile problem-solving and research
 |Yes
 |Yes
 |`'gemini-3-1-pro'`
+|✓
 
 |**Gemini 2.5 Flash**
 |Lightweight Gemini model for fast, cost-efficient interactions
 |Yes
 |Yes
 |`'gemini-2-5-flash'`
+|✓
 
 |**Gemini 3 Flash**
 |Lightweight Gemini model for fast, cost-efficient interactions
 |Yes
 |Yes
 |`'gemini-3-flash'`
+|✓
 
 |**Gemini 3.5 Flash**
 |Lightweight Gemini model for fast, cost-efficient interactions
 |Yes
 |Yes
 |`'gemini-3-5-flash'`
+|✓
 
 |**Gemini 3.6 Flash**
 |Lightweight Gemini model for fast, cost-efficient interactions
 |Yes
 |Yes
 |`'gemini-3-6-flash'`
+|✓
 
 |**Gemini 3.7 Flash**
 |Lightweight Gemini model for fast, cost-efficient interactions
 |Yes
 |Yes
 |`'gemini-3-7-flash'`
+|✓
 
 |**Gemini 3.8 Flash**
 |Lightweight Gemini model for fast, cost-efficient interactions
 |Yes
 |Yes
 |`'gemini-3-8-flash'`
+|✓
 |===
 
 [[limitations]]
@@ -345,15 +373,9 @@ If the application requires translated model descriptions (the text returned by 
 
 Models scheduled for removal will include a `removal` field with an ISO 8601 date (for example, `"removal": "2025-11-17T00:00:00.000Z"`). When a model is removed, API requests will fail with error code `MODEL_NOT_FOUND` and the models endpoint will stop returning that particular model.
 
-The following models are scheduled for removal:
+Models scheduled for removal are marked with ⚠ and their removal date in the *Status* column of the xref:tinymceai-models.adoc#supported-models-table[Supported Models] table.
 
-[cols="1,1,1",options="header"]
-|===
-|Model |Configuration id |Removal date
-|Claude 4.5 Sonnet |`'claude-4-5-sonnet'` |October 30, 2026
-|===
-
-Integrations that set a scheduled model in xref:tinymceai.adoc#tinymceai_default_model[`+tinymceai_default_model+`], in the `model` field of API requests, or in per-action options such as xref:tinymceai-actions.adoc#custom-actions[custom Quick Actions] should switch to another model from the xref:tinymceai-models.adoc#supported-models-table[Supported Models] table, or to `'auto'`, before the removal date.
+Integrations that set a deprecated model in xref:tinymceai.adoc#tinymceai_default_model[`+tinymceai_default_model+`], in the `model` field of API requests, or in per-action options such as xref:tinymceai-actions.adoc#custom-actions[custom Quick Actions] should switch to another model from the xref:tinymceai-models.adoc#supported-models-table[Supported Models] table, or to `'auto'`, before the removal date.
 
 [[api-examples]]
 == API Examples

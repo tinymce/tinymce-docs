@@ -39,7 +39,7 @@ tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   init_instance_callback: (editor) => {
     // Replace myService with the analytics or logging service used by the application.
-    // The object passed to the service can contain any data the application needs to track.
+    // Add any other editor properties the application needs to track.
     myService.log({
       event: 'editor-load',
       editorId: editor.id,
@@ -48,6 +48,8 @@ tinymce.init({
   }
 });
 ----
+
+The callback receives the xref:apis/tinymce.editor.adoc[Editor] instance, so the object sent to the service can include any of the editor's xref:apis/tinymce.editor.adoc#properties[properties]. The example uses `+editor.id+` because it identifies which editor on the page loaded.
 
 The `+editor.id+` value is the `+id+` attribute of the element the editor replaces. When that element has no `+id+`, the editor uses its `+name+` attribute if no other element on the page has that `+id+`, and otherwise generates an identifier such as `+mce_0+`. Generated identifiers can change between page loads, so assign a unique `+id+` to each target element to track loads for a specific editor.
 

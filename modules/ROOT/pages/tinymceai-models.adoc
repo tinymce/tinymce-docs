@@ -142,7 +142,7 @@ The following is a detailed list of available models with their capabilities:
 |`'claude-4-6-sonnet'`
 
 |**Claude 4.5 Sonnet**
-|Advanced model with improved creativity, reliability, and reasoning
+|Advanced model with improved creativity, reliability, and reasoning. Deprecated: scheduled for removal on October 30, 2026. See xref:tinymceai-models.adoc#model-deprecation[Model Deprecation].
 |Yes
 |Yes
 |`'claude-4-5-sonnet'`
@@ -344,6 +344,16 @@ If the application requires translated model descriptions (the text returned by 
 === Model Deprecation
 
 Models scheduled for removal will include a `removal` field with an ISO 8601 date (for example, `"removal": "2025-11-17T00:00:00.000Z"`). When a model is removed, API requests will fail with error code `MODEL_NOT_FOUND` and the models endpoint will stop returning that particular model.
+
+The following models are scheduled for removal:
+
+[cols="1,1,1",options="header"]
+|===
+|Model |Configuration id |Removal date
+|Claude 4.5 Sonnet |`'claude-4-5-sonnet'` |October 30, 2026
+|===
+
+Integrations that set a scheduled model in xref:tinymceai.adoc#tinymceai_default_model[`+tinymceai_default_model+`], in the `model` field of API requests, or in per-action options such as xref:tinymceai-actions.adoc#custom-actions[custom Quick Actions] should switch to another model from the xref:tinymceai-models.adoc#supported-models-table[Supported Models] table, or to `'auto'`, before the removal date.
 
 [[api-examples]]
 == API Examples

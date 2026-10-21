@@ -1,7 +1,7 @@
 = Understanding editor loads
 :navtitle: Understanding editor loads
 :description: Relevant information for Tiny Cloud users to help understand editor loads for {productname}.
-:keywords: invalid-api-key, API, {productname}, cloud, frequently asked questions
+:keywords: invalid-api-key, API, {productname}, cloud, frequently asked questions, editor loads, init, init_instance_callback, setup, analytics, track editor loads
 
 == Understanding editor loads for {productname}
 
@@ -27,6 +27,33 @@ An editor load is counted each time a new {productname} editor instance complete
 == What happens if I have multiple editors on a page?
 
 Each individual editor instance on a page is counted as one editor load. For example, if a page has ten editors, a single refresh of that page results in ten editor loads.
+
+[[how-can-i-track-editor-loads]]
+== How can I track editor loads?
+
+To record editor loads in an external analytics or logging service, use the xref:editor-important-options.adoc#init_instance_callback[`+init_instance_callback+`] option. The callback runs once for each editor instance, immediately after the editor dispatches the `init` event, so each call corresponds to one editor load.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  init_instance_callback: (editor) => {
+    // Replace myService with the analytics or logging service used by the application.
+    // Add any other editor properties the application needs to track.
+    myService.log({
+      event: 'editor-load',
+      editorId: editor.id,
+      page: window.location.pathname
+    });
+  }
+});
+----
+
+The callback receives the xref:apis/tinymce.editor.adoc[Editor] instance, so the object sent to the service can include any of the editor's xref:apis/tinymce.editor.adoc#properties[properties]. The example uses `+editor.id+` because it identifies which editor on the page loaded.
+
+The `+editor.id+` value is the `+id+` attribute of the element the editor replaces. When that element has no `+id+`, the editor uses its `+name+` attribute if no other element on the page has that `+id+`, and otherwise generates an identifier such as `+mce_0+`. Generated identifiers can change between page loads, so assign a unique `+id+` to each target element to track loads for a specific editor.
+
+The same result can be achieved by binding a listener to the `init` event in the xref:editor-important-options.adoc#setup[`+setup+`] option, for example `+editor.once('init', () => myService.log({ editorId: editor.id }))+`. The `+init_instance_callback+` option is simpler when the only requirement is to record the load.
 
 == What can contribute to a high number of editor loads?
 

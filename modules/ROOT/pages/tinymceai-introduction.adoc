@@ -22,13 +22,11 @@ liveDemo::tinymceai[]
 {pluginname} is an AI-powered writing assistant platform with two core components:
 
 * **xref:tinymceai.adoc[{pluginname} plugin]**: Integrates the AI directly into {productname}, providing instant text rewriting, summarization, correction, and contextual chat help based on organizational style guides. It includes automated review tools and enterprise-ready functionality that integrates with existing systems without requiring custom infrastructure. The plugin is available for both {cloudname} and self-hosted {productname}; from {productname} 8.7.0, it can be installed from the `+tinymce-premium+` NPM package or as an addon `.zip`.
-* **xref:tinymceai-api-overview.adoc[TinyMCE AI API]**: A state-of-the-art back-end AI engine that incorporates multiple models and delivers high-quality content. Any functionality available in the plugin is also available in the API, plus more, and the API can be used anywhere in your application -- not just in {productname}. *The hosted AI service is currently available in Cloud setup only.*
+* **xref:tinymceai-api-overview.adoc[TinyMCE AI API]**: A state-of-the-art back-end AI engine that incorporates multiple models and delivers high-quality content. Any functionality available in the plugin is also available in the API, plus more, and the API can be used anywhere in your application -- not just in {productname}. *The hosted AI service is currently available in Cloud setup only.* The API is also available from the self-hosted xref:tinymceai-on-premises.adoc[on-premises service].
 
 These components enable teams to implement a full suite of AI writing tools quickly, delivering efficient content workflows that maintain brand consistency and integrate smoothly with document management systems. In addition, the plugin and API use the same authorisation mechanisms and share conversation history, enabling ease of integration with your application's broader content authoring workflow -- not just within {productname}.
 
 Both components support multiple AI models, enabling a unified UI and API across the models your application needs. See xref:tinymceai-models.adoc[AI Models] for more information.
-
-include::partial$misc/tinymceai-on-premises-early-access-note.adoc[]
 
 [[features]]
 == {pluginname} features
@@ -79,9 +77,7 @@ All data is encrypted in transit and at rest with end-to-end encryption. Convers
 [[on-premises-deployment]]
 == On-Premises Deployment
 
-On-premises deployment allows the AI service to run within an organization's infrastructure, giving teams more control over data and infrastructure.
-
-include::partial$misc/tinymceai-on-premises-early-access-note.adoc[]
+On-premises deployment allows the AI service to run within an organization's infrastructure, giving teams more control over data and infrastructure. See xref:tinymceai-on-premises.adoc[{pluginname} on-premises] for the architecture, prerequisites, and deployment guides.
 
 [[next-steps]]
 == Next steps

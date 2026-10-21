@@ -375,7 +375,19 @@ Models scheduled for removal will include a `removal` field with an ISO 8601 dat
 
 Models scheduled for removal are marked with ⚠ and their removal date in the *Status* column of the xref:tinymceai-models.adoc#supported-models-table[Supported Models] table.
 
-Integrations that set a deprecated model in xref:tinymceai.adoc#tinymceai_default_model[`+tinymceai_default_model+`], in the `model` field of API requests, or in per-action options such as xref:tinymceai-actions.adoc#custom-actions[custom Quick Actions] should switch to another model from the xref:tinymceai-models.adoc#supported-models-table[Supported Models] table, or to `'auto'`, before the removal date.
+[IMPORTANT]
+====
+After the removal date, features that name a removed model stop working. The result depends on where the model is set:
+
+* The `model` option of xref:tinymceai-actions.adoc#custom-actions[custom Quick Actions] or xref:tinymceai.adoc#integrator-defined-reviews[integrator-defined reviews], or the `model` field of API requests: the model ID is sent unchanged, and every request fails with error code `MODEL_NOT_FOUND`.
+* xref:tinymceai.adoc#tinymceai_default_model[`+tinymceai_default_model+`]: the removed model is no longer in the list of available models, so {pluginname} uses the first available model instead and logs a warning to the browser console.
+
+Built-in Quick Actions and built-in reviews do not set a model and are not affected.
+====
+
+Before the removal date, switch each of these settings to another model from the xref:tinymceai-models.adoc#supported-models-table[Supported Models] table, or to `'auto'`.
+
+To check for deprecated models programmatically, read the model list from `GET /v1/models/\{version}`. Each model scheduled for removal includes its `removal` date, and the same list can be used to choose a replacement model. See xref:tinymceai-models.adoc#model-information[Model Information] for an example request.
 
 [[api-examples]]
 == API Examples

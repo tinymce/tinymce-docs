@@ -32,7 +32,7 @@ The xref:tinymceai.adoc[`tinymceai`] plugin registers the following editor comma
 
 |`+TinyMCEAIQuickActionImproveWriting+` | |Runs the **Improve writing** quick action.
 |`+TinyMCEAIQuickActionContinueWriting+` | |Runs the **Continue writing** quick action.
-|`+TinyMCEAIQuickActionCheckGrammar+` | |Runs the **Fix grammar** quick action.
+|`+TinyMCEAIQuickActionCheckGrammar+` | |Runs the **Fix grammar & spelling** quick action.
 |`+TinyMCEAIQuickActionMakeShorter+` | |Runs **Make shorter**.
 |`+TinyMCEAIQuickActionMakeLonger+` | |Runs **Make longer**.
 |`+TinyMCEAIQuickActionToneCasual+` | |Runs **More casual** tone.
@@ -99,7 +99,7 @@ tinymce.activeEditor.execCommand('TinyMCEAIReviewToneProfessional');
 
 The `+TinyMCEAIReviewCustom+` command accepts three forms of third argument.
 
-A `+String+` runs a review from that prompt on the default model, titled **Custom review**:
+A `+String+` runs a review from that prompt on the model selected in the Review sidebar, titled **Custom review**:
 
 [source,js]
 ----
@@ -109,7 +109,7 @@ tinymce.activeEditor.execCommand('TinyMCEAIReviewCustom', false, 'Check for pass
 An object with a `+prompt+` property runs a review from a custom prompt:
 
 * `+prompt+` (`+String+`): The prompt sent to the model. This property is required.
-* `+model+` (optional `+String+`): The model that runs the review. When omitted, the review runs on the model set by xref:tinymceai.adoc#tinymceai_default_model[`+tinymceai_default_model+`]. For the available model identifiers, see xref:tinymceai-models.adoc[AI Models].
+* `+model+` (optional `+String+`): The model that runs the review. When omitted, the review runs on the model selected in the Review sidebar, which is initially the default model set by xref:tinymceai.adoc#tinymceai_default_model[`+tinymceai_default_model+`]. For the available model identifiers, see xref:tinymceai-models.adoc[AI Models].
 * `+name+` (optional `+String+`): The title shown above the review. When omitted, the title is **Custom review**.
 
 [source,js]

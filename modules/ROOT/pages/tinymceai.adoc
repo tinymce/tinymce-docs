@@ -162,3 +162,32 @@ The {pluginname} plugin provides the following {productname} commands.
 
 include::partial$commands/{plugincode}-cmds.adoc[]
 
+[[detecting-ai-changes]]
+== Detecting content written by the plugin
+
+When the {pluginname} plugin writes AI changes to the editor, it sets the `+ai+` property to `+true+` on the core `+BeforeSetContent+` and `+SetContent+` events. Event handlers can check this property to tell AI changes apart from other content changes.
+
+Other premium plugins use this property:
+
+* xref:suggestededits.adoc[Suggested Edits] records the edits as AI-assisted and shows an AI badge on their cards. See xref:suggestededits.adoc#suggestededits_ai_attribution[`+suggestededits_ai_attribution+`].
+* xref:revisionhistory.adoc[Revision History] can attribute revisions to AI when the application saves them from these events.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to the HTML
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  },
+  setup: (editor) => {
+    editor.on('SetContent', (e) => {
+      if (e.ai === true) {
+        console.log('The AI changes are now part of the editor content.');
+      }
+    });
+  }
+});
+----
+

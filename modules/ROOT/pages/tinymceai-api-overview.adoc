@@ -1,8 +1,10 @@
 = TinyMCE AI API Overview
 :navtitle: API overview
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
 :description: Overview of TinyMCE AI service features and capabilities
 :description_short: API Overview
-:keywords: AI, API, AI service, overview, tinymceai
+:keywords: AI, API, AI service, overview, tinymceai, pagination, error codes, versioning
 
 The TinyMCE AI REST API enables AI integration within your application using the same infrastructure as the TinyMCE AI plugin, but without being tied to the editor. Integrate with multiple AI agents via one API, accessing all functionality from the Chat, Review, and Quick Actions features, with your own custom UI and workflows. 
 
@@ -12,12 +14,12 @@ The TinyMCE AI REST API enables AI integration within your application using the
 ====
 
 [[getting-started]]
-== Getting Started
+== Getting started
 
-New to TinyMCE AI? Start with the xref:tinymceai-api-quick-start.adoc[Quick Start] guide to set up the environment, generate access credentials, and make the first API call.
+New to {pluginname}? Start with the xref:tinymceai-api-quick-start.adoc[Quick Start] guide to set up the environment, generate access credentials, and make the first API call.
 
 [[tinymce-ai-features]]
-== TinyMCE AI features
+== {pluginname} features
 
 * xref:tinymceai-chat.adoc[**Chat**]: Interactive AI chats with history and persistent context.
 * xref:tinymceai-review.adoc[**Review**]: Content analysis and proofreading, optimized for larger content.
@@ -33,8 +35,74 @@ The following pages cover the AI service architecture and configuration.
 * xref:tinymceai-permissions.adoc[**Permissions**]: How to control user access to features.
 * xref:tinymceai-limits.adoc[**Limits**]: Rate limits, context size limits, and file restrictions.
 
+[[versioning]]
+== Versioning
+
+The version of each endpoint is part of its path, for example `+/v1/conversations+`. The {pluginname} plugin calls the `+/v1+` endpoints, and requests the model list with compatibility version `+1+`. The compatibility version is separate from the endpoint version. See xref:tinymceai-models.adoc#model-compatibility-versions[Model compatibility versions].
+
+[[pagination]]
+== Pagination
+
+List endpoints use cursor pagination. These include the conversation list, and the documents, files, and web resources of a conversation. The API reference documents the pagination parameters on each list operation, for example https://tinymceai.api.tiny.cloud/docs#tag/Conversations/operation/getConversations[Fetch multiple conversations].
+
+[[error-responses]]
+== Error responses
+
+Errors returned by the AI service use a JSON body with these fields:
+
+[cols="1,3",options="header"]
+|===
+|Field |Description
+
+|`+statusCode+`
+|The HTTP status code.
+
+|`+code+`
+|A machine-readable error code, for example `+missing-permissions+`.
+
+|`+message+`
+|A short description of the error.
+
+|`+traceId+`
+|A unique identifier for the request. Include it when contacting {supportname}.
+
+|`+data+`
+|Optional. An object with details specific to the error.
+
+|`+explanation+`
+|Optional. More detail about why the error occurred.
+
+|`+action+`
+|Optional. A suggested next step.
+|===
+
+For example, a token without the permission a request needs returns:
+
+[source,json]
+----
+{
+  "statusCode": 403,
+  "code": "missing-permissions",
+  "message": "The user is missing permissions",
+  "traceId": "8f3c1c2e-5b7a-4d0e-9a61-2f4c8e0b7d13",
+  "data": {
+    "missingPermissions": ["ai:conversations:write"]
+  }
+}
+----
+
+[[error-codes]]
+=== Error codes
+
+The API reference lists every code in its https://tinymceai.api.tiny.cloud/docs#section/Overview/Error-codes[Error codes] section. For token errors, see xref:tinymceai-jwt-authentication-intro.adoc#troubleshooting[JWT troubleshooting]. For a `+missing-permissions+` response, see xref:tinymceai-permissions.adoc[Permissions].
+
+[[rate-limit-errors]]
+=== Rate limit errors
+
+For `+429+` responses with the code `+rate-limits-exceeded+`, see xref:tinymceai-limits.adoc#handling-rate-limit-errors[Handling rate limit errors].
+
 [[resources-and-support]]
-== Resources and Support
+== Resources and support
 
 * **API Documentation**: link:https://tinymceai.api.tiny.cloud/docs[Complete API reference for TinyMCE AI].
 * **Customer Support**: link:https://www.tiny.cloud/contact/[Contact us] to get help from the support team or speak with sales.

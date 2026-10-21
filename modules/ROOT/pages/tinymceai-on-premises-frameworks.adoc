@@ -45,7 +45,7 @@ The plugin calls the token provider on initialization and again before the cache
 |Include one or more of `tinymceai-chat`, `tinymceai-review`, `tinymceai-quickactions`.
 
 |`tinymceai_service_url`
-|The origin of the AI service (no trailing slash, no path), for example `\https://ai.yourcompany.com`.
+|The base URL of the AI service, for example `\https://ai.yourcompany.com`, or `\https://www.yourcompany.com/ai` when a reverse proxy serves the AI service under a path. See xref:tinymceai.adoc#tinymceai_service_url[`+tinymceai_service_url+`].
 
 |`tinymceai_token_provider`
 |A function returning `Promise<{ token: string }>`. See <<token-provider>> below.
@@ -121,7 +121,7 @@ tinymceai_token_provider: () => {
 |The plugin calls the provider on initialization and again when the cached token nears expiry (60-second safety margin). Do not cache the JWT inside the provider.
 
 |Error handling
-|If the function rejects or the endpoint returns a non-OK response, the plugin surfaces an error in the editor UI.
+|If the function rejects or the endpoint returns a non-OK response, the plugin surfaces an error in the editor UI. A provider that does not return a `Promise` fails with `JWT token provider did not return a promise`. A `Promise` that resolves to anything other than an object with a string `token` fails with `Invalid JWT token provider result`.
 
 |Token lifetime
 |Tokens should be short-lived (5-15 minutes recommended). See xref:tinymceai-on-premises-jwt.adoc[JWT authentication] for signing key, payload structure, and lifetime guidance.
@@ -278,7 +278,7 @@ Set the `ALLOWED_ORIGINS` environment variable on the AI service container to a 
 |`*` is accepted but not recommended for production. It allows any origin to call the AI service endpoints.
 
 |Preflight (OPTIONS)
-|The service handles `OPTIONS` preflight requests internally and responds with the appropriate `Access-Control-Allow-Methods` and `Access-Control-Allow-Headers`. No reverse proxy configuration is required for OPTIONS.
+|The service handles `OPTIONS` preflight requests internally and responds with the appropriate `Access-Control-Allow-Methods` and `Access-Control-Allow-Headers`. No reverse proxy configuration is required for OPTIONS. The plugin sends the `Authorization`, `Content-Type`, and `x-editor-version` request headers, so the preflight response must allow all three.
 
 |Credentials
 |The service responds with `Access-Control-Allow-Credentials: true` when the requesting origin matches an entry in `ALLOWED_ORIGINS`.
@@ -291,7 +291,7 @@ Set the `ALLOWED_ORIGINS` environment variable on the AI service container to a 
 curl -i -X OPTIONS https://ai.yourcompany.com/v1/conversations \
   -H 'Origin: https://app.yourcompany.com' \
   -H 'Access-Control-Request-Method: POST' \
-  -H 'Access-Control-Request-Headers: authorization,content-type'
+  -H 'Access-Control-Request-Headers: authorization,content-type,x-editor-version'
 ----
 
 The response should include `Access-Control-Allow-Origin: \https://app.yourcompany.com`. If it shows `*` or no CORS header, update `ALLOWED_ORIGINS` on the AI service container and restart.

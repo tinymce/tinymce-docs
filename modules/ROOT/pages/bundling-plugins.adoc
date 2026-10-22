@@ -5,11 +5,11 @@
 
 == Overview
 
-{productname} plugins can be bundled using a module bundler such as Webpack, Rollup, or Vite. This guide covers how to include both community and premium plugins in your application bundle.
+{productname} plugins can be bundled using a module bundler such as Webpack, Rollup, or Vite. This guide covers how to include both open source and premium plugins in your application bundle.
 
-{productname} includes both community and premium plugins:
+{productname} includes both open source and premium plugins:
 
-* **Community plugins**: Available with all {productname} installations
+* **Open source plugins**: Available with all {productname} installations
 * **Premium plugins**: Available with paid {productname} subscriptions via the `+tinymce-premium+` package
 
 :editorcomponent: plugin
@@ -27,7 +27,7 @@ The following examples show the syntax for including plugins in a bundle. The ex
 |Module Syntax |Source |Example
 
 .4+|ES6+
-|npm (community plugins)
+|npm (open source plugins)
 a|
 [source, js]
 ----
@@ -41,7 +41,7 @@ a|
 import 'tinymce-premium/plugins/<plugincode>';
 ----
 
-|`.zip` (community plugins)
+|`.zip` (open source plugins)
 a|
 [source, js]
 ----
@@ -56,7 +56,7 @@ import '<path_to_tinymce_premium_zip>/plugins/<plugincode>';
 ----
 
 .4+|Common JS
-|npm (community plugins)
+|npm (open source plugins)
 a|
 [source, js]
 ----
@@ -70,7 +70,7 @@ a|
 require('tinymce-premium/plugins/<plugincode>');
 ----
 
-|`.zip` (community plugins)
+|`.zip` (open source plugins)
 a|
 [source, js]
 ----
@@ -143,7 +143,7 @@ tinymce.init({
 });
 ----
 
-For complete bundling examples, see the <<premium-plugins,Premium plugins>> and <<community-plugins,Community plugins>> sections below.
+For complete bundling examples, see the <<premium-plugins,Premium plugins>> and <<open-source-plugins,Open source plugins>> sections below.
 
 [[using-external-plugins]]
 === Loading with external_plugins

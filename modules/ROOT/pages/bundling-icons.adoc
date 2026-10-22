@@ -7,9 +7,9 @@
 
 Icon packs provide visual styling for {productname}'s toolbar buttons, menu items, and contextual toolbars. When bundling {productname} with a module loader, icon packs can be included to customize the editor's appearance.
 
-{productname} includes both community and premium icon packs:
+{productname} includes both open source and premium icon packs:
 
-* **Community icon packs**: Available with all {productname} installations
+* **Open source icon packs**: Available with all {productname} installations
 * **Premium icon packs**: Available with paid {productname} subscriptions
 
 The default icon pack is always required and provides the base set of icons. Additional icon packs can be bundled to extend or replace the default icons.
@@ -27,7 +27,7 @@ The following examples show how to bundle icon packs using different module synt
 |Module Syntax |Source |Example
 
 .3+|ES6+
-|npm (community)
+|npm (open source)
 a|
 [source, js]
 ----
@@ -49,7 +49,7 @@ import '../tinymce/icons/material/icons';
 ----
 
 .3+|Common JS
-|npm (community)
+|npm (open source)
 a|
 [source, js]
 ----

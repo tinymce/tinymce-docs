@@ -56,9 +56,9 @@ For more information on:
 
 == Importing plugins
 
-Most plugins can be imported directly using their plugin code. The import path depends on whether the plugin is a community or premium plugin:
+Most plugins can be imported directly using their plugin code. The import path depends on whether the plugin is an open source or premium plugin:
 
-=== Community plugins
+=== Open source plugins
 
 [source,js]
 ----
@@ -129,7 +129,7 @@ Language files are optional and used for localizing the {productname} UI and plu
 
 === Core UI language files
 
-For community packages:
+For open source packages:
 
 [source,js]
 ----
@@ -149,7 +149,7 @@ Plugin language files are separate from the main UI language files. The editor's
 
 [source,js]
 ----
-// Community plugin language file
+// Open source plugin language file
 import 'tinymce/plugins/<plugincode>/langs/<language>.js';
 
 // Premium plugin language file

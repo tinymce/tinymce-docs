@@ -2,7 +2,7 @@
 :navtitle: Icons
 :description: Configure the editor's toolbar button and menu item icons.
 
-{productname} icons come from icon packs. {productname} includes both community and premium icon packs, but also allows integrators to add custom icons or override {productname} icons with their own.
+{productname} icons come from icon packs. {productname} includes both open source and premium icon packs, but also allows integrators to add custom icons or override {productname} icons with their own.
 
 The default icon pack is shipped with {productname} and does not require any configuration, though it must be imported when bundling for deployment: For example:
 
@@ -15,9 +15,9 @@ Replacing the default icon can be done using the `+icons+` and `+icons_url+` set
 
 == Available icon packs
 
-{productname} includes both community and premium icon packs:
+{productname} includes both open source and premium icon packs:
 
-* **Community**: `default` (always required)
+* **Open source**: `default` (always required)
 * **Premium**: `bootstrap`, `jam`, `material`, `small`, `thin` (available with paid subscriptions)
 
 For information on which icon packs work best with which skins, see: xref:enhanced-skins-and-icon-packs.adoc#icon-pack-compatibility-matrix[Icon pack compatibility matrix].

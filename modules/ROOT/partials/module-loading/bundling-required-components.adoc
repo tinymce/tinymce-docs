@@ -5,14 +5,14 @@ The following components are required to bundle {productname}:
 - The `silver` theme
 - The `dom` model
 - The `default` icon pack. This is always required and provides the base set of icons for all {productname} functionality. The default icons can be extended or overridden using additional icon packs.
-- A _skin_ for styling the user interface, including toolbars and menus. This can be a community, premium or custom skin.
-- A _content skin_ for styling UI features within the content such as table and image resizing. This can be a community, premium or custom skin.
+- A _skin_ for styling the user interface, including toolbars and menus. This can be an open source, premium or custom skin.
+- A _content skin_ for styling UI features within the content such as table and image resizing. This can be an open source, premium or custom skin.
 
 The global must be first, the rest can be in any order. When using premium plugins with a commercial license, the `licensekeymanager` plugin is also required.
 
 Additional components that are optional but recommended:
 
-- _Content CSS_ for styling editor content. There are community and premium style skins available, or use custom content CSS.
+- _Content CSS_ for styling editor content. There are open source and premium style skins available, or use custom content CSS.
 - Plugins to be used with the editor.
 - A custom or premium _icon pack_ to extend or override the default icons for toolbar buttons, including contextual toolbars.
 --

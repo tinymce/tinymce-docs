@@ -875,9 +875,9 @@ When debugging, start here. Most "auth failures" reflect wrong claim values rath
 |`invalid-jwt-signature` |API Secret mismatch |Verify `AI_API_SECRET` matches the value displayed at access-key creation. If lost, create a new access key and rotate.
 |`invalid-jwt-signature` (after copying cloud guide) |Token signed with RS256 |Switch to HS256 with the API Secret. See top-of-page warning.
 |`invalid-jwt-payload` |`aud` does not match a real Environment ID |Confirm the Environment ID from the Management Panel matches `aud` exactly.
-|`invalid-jwt-payload` (env "exists") |Environment created through the management API without the `ai-assistant` service attached |Recreate through the panel. See xref:tinymceai-on-premises-getting-started.adoc#create-an-environment-and-access-key[Create an environment and access key].
+|`invalid-jwt-payload` (env "exists") |Environment created through the management API without the AI service attached to it |Recreate through the panel. See xref:tinymceai-on-premises-getting-started.adoc#create-an-environment-and-access-key[Create an environment and access key].
 |`invalid-jwt` (not `jwt-expired`) |Token is past `exp` by more than 60 seconds |Request a new token. The server allows 60-second clock-skew leeway; anything beyond is rejected with `invalid-jwt`.
-|`Environment not found` |Environment is in `environments__environment` / `security__environment` but not in `ai_assistant_environments`, because no `ai-assistant` service is attached to it. |Recreate through Management Panel UI.
+|`Environment not found` |Environment is in `environments__environment` / `security__environment` but not in `ai_assistant_environments`, because the AI service is not attached to the environment |Recreate through Management Panel UI.
 |`allowed: false` on every endpoint |Wrong shape for `auth.ai.permissions` |Must be ``string[]``. Not a single string. Not `useAllFeatures`. Not `ai:admin`.
 |`allowed: false` on specific endpoints only |Missing the specific permission |Decode token, check the `auth.ai.permissions` array against the table above.
 |Token silently rejected, no decoded error |RS256 signature |Re-sign with HS256.

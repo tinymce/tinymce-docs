@@ -31,7 +31,7 @@ Quick Actions fit transforming a selection or section (for example grammar fixes
 
 Both Quick Actions and Review can propose edits that apply only after acceptance or rejection. The main differences are scope and where the work happens in the editor:
 
-* *Quick Actions*: Operate on a selection or section. When nothing is selected, a preview Quick Action (including a custom action of type `+action+`) runs on the whole document. When table cells are selected, the action runs on the selected cells. The Quick Actions menu runs one-off operations such as Chat with a pre-filled prompt, preview transformations, translation, and custom actions.
+* *Quick Actions*: Operate on a selection or section. When nothing is selected, a preview action runs on the whole document. Preview actions, including custom actions of type `+action+`, show suggested edits in a preview of the document instead of opening Chat. When table cells are selected, the action runs on the selected cells. The Quick Actions menu runs one-off operations such as Chat with a pre-filled prompt, preview transformations, translation, and custom actions. See xref:#types-of-actions[Types of actions].
 * *Review*: Always analyzes the entire document in read-only Review mode. Suggestions appear in the Review sidebar and in the document. See xref:tinymceai-review.adoc[Review] for details.
 
 [[integration]]

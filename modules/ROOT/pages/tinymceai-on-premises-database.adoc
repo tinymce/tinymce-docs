@@ -172,7 +172,7 @@ GRANT ALL ON SCHEMA "cs-on-premises" TO ai_service;
 
 == Database setup
 
-The sections below provide ready-to-use configuration for each database engine. Use the Docker Compose files for local evaluation; for production, provision managed database services (Amazon RDS, Azure Database, Cloud SQL) and pass the connection details as environment variables (see <<connecting-the-ai-service>>).
+The sections below provide ready-to-use configuration for each database engine. Use the Docker Compose files for local evaluation; for production, provision managed database services (Amazon RDS, Azure Database, Cloud SQL) and pass the connection details as environment variables (see xref:#connecting-the-ai-service[Connecting the AI service]).
 
 === Docker Compose (recommended for evaluation)
 

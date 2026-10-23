@@ -15,7 +15,7 @@ In a group, Chat, Review, and Quick Actions work across the content of every edi
 [[demo]]
 == Demo
 
-The demo below splits an article across an Introduction editor and a Body editor in one group. Select the image:icons-premium/ai-assistant.svg[Chat icon,24px] Chat toolbar button in either editor to open the shared Chat sidebar, which the first editor hosts. Then ask the AI to change both parts of the article, or run a review over both editors.
+The demo below splits a hiring pack across three editors in one group: a Role description editor, an Interview questions editor, and a Notes for HR editor. The shared Chat sidebar opens when the demo loads, and the image:icons-premium/ai-assistant.svg[Chat icon,24px] Chat toolbar button in any of the three editors opens or closes it. Select one of the suggested actions to add interview questions, draft notes for HR, or flag unclear or biased wording across the hiring pack, or run a review over all three editors.
 
 liveDemo::tinymceai-multi-editor[]
 

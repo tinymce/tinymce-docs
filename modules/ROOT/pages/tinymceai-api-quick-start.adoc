@@ -15,7 +15,7 @@ Sign up for the link:{accountsignup}[{productname} Premium Features 14-day free 
 The {productname} Premium Features free trial allows for testing SaaS services. For on-premises solutions, link:{contactpage}[contact us].
 ====
 
-== Getting Started
+== Getting started
 
 Every request to the {pluginname} APIs must include a JWT signed with a keypair from the Customer Portal. Signing must run on the application server so private keys are never exposed to the browser. The editor supplies each token by calling xref:tinymceai.adoc#tinymceai_token_provider[+tinymceai_token_provider+], which is typically implemented as a `fetch` to a backend URL that returns a signed JWT for the signed-in user.
 
@@ -64,7 +64,7 @@ Once the keypair is created, use it to sign JWTs in the token endpoint. For step
 * xref:tinymceai-with-jwt-authentication-php.adoc[JWT authentication (PHP)]: Complete PHP implementation guide
 
 [[api-integration]]
-== API Integration
+== API integration
 
 All features are accessible through the API at `https://tinymceai.api.tiny.cloud` with xref:tinymceai-jwt-authentication-intro.adoc[JWT authentication].
 
@@ -80,7 +80,7 @@ For feature documentation and API access information, see:
 link:https://tinymceai.api.tiny.cloud/docs[Complete API Documentation]: Full API reference with interactive examples for all endpoints.
 
 [[next-steps]]
-== Next Steps
+== Next steps
 
 After setting up the JWT endpoint, continue with:
 
@@ -91,4 +91,4 @@ After setting up the JWT endpoint, continue with:
 * xref:tinymceai-chat.adoc#conversations-api[Chat API]: Start with interactive AI discussions.
 * xref:tinymceai-review.adoc#reviews-api[Review API]: Add content improvement features.
 * xref:tinymceai-actions.adoc#actions-api[Quick Actions API]: Implement content transformation.
-* xref:tinymceai-api-overview.adoc[API Overview]: Optional high-level map of Chat, Review, Quick Actions, and related resources.
+* xref:tinymceai-api-overview.adoc[API overview]: Optional high-level map of Chat, Review, Quick Actions, and related resources.

@@ -32,6 +32,8 @@ This is the syntax for the `addView` function: `+editor.ui.registry.addView(name
 
 | `+buttons+` | `+Array+` | The `+buttons+` property specifies an array of buttons to be displayed in the top right corner of the view.
 
+| [[keeptoolbar]]`+keepToolbar+` | `+Boolean+` | The `+keepToolbar+` property specifies whether the editor menu bar, toolbar, and status bar stay visible while the view is open. When set to `+true+`, the view fills the space below the toolbar, opening the view closes any open sidebar, and the element path in the status bar is disabled until the view closes. Toolbar buttons and menu items are not disabled. Default value: `+false+`, where the view replaces the whole editor.
+
 | `+onShow+` | `+Function+` | The `+onShow+` property specifies a function to be called when the view is displayed. It receives an API object.
 
 | `+onHide+` | `+Function+` | The `+onHide+` property specifies a function to be called when the view is hidden. It receives an API object.

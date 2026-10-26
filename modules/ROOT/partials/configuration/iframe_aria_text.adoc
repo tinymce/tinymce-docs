@@ -1,13 +1,21 @@
 [[iframe_aria_text]]
 == `+iframe_aria_text+`
 
-This option sets the accessible name for the editable content area inside the {productname} `+iframe+`. The value is read by screen readers to help users identify the editor.
+This option sets the accessible name for the {productname} `+iframe+` and its editable content area. The value is read by screen readers to help users identify the editor.
 
-On most browsers, the value is applied as an `+aria-label+` on the `+<body>+` element inside the iframe document. For example:
+{productname} applies the value as follows:
+
+* **All operating systems**: {productname} sets the value as the `+title+` attribute of the iframe element.
+* **macOS and iOS**: {productname} also sets the value as an `+aria-label+` on the `+<body>+` element inside the iframe document, together with `+role="textbox"+` and `+aria-multiline="true"+`. The VoiceOver screen reader does not announce the iframe `+title+`, so the `+<body>+` element carries the accessible name on these operating systems.
+
+For example, on macOS:
 
 [source,html]
 ----
-<body aria-label="Rich Text Area"></body>
+<iframe title="Rich Text Area">
+  <!-- Inside the iframe document -->
+  <body role="textbox" aria-multiline="true" aria-label="Rich Text Area"></body>
+</iframe>
 ----
 
 This option only applies to {productname} classic (iframe) mode and has no effect on xref:inline-editor-options.adoc#inline[`+inline+` editors].
@@ -27,11 +35,3 @@ tinymce.init({
   iframe_aria_text: 'Text Editor'
 });
 ----
-
-[NOTE]
-====
-The `+iframe_aria_text+` option is applied differently depending on the browser to ensure consistent screen reader announcements:
-
-* **Firefox**: The `+title+` attribute is set on the iframe element. The `+aria-label+` on the body is not set.
-* **Other browsers**: The `+aria-label+` is set on the body inside the iframe. The `+title+` is not set on the iframe.
-====

@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== The `+editor.insertContent+` API removed inline formatting when the selection covered the entire block content and the content was wrapped in an inline format element
+// #TINYMCE-11317
+
+Previously, when the selection covered all of the content in a block and an inline format element wrapped that content, the xref:apis/tinymce.editor.adoc#insertContent[`+editor.insertContent()+`] API removed the formatting. For example, selecting all of the text in `+<p><strong>I am bold</strong></p>+` and inserting new text produced plain text instead of bold text. When the selection covered only part of the formatted text, the API kept the formatting, so the result depended on how much of the block the selection covered.
+
+In {productname} {release-version}, the `+editor.insertContent()+` API keeps the inline formatting that wraps the whole selection, including nested formats such as bold and italic together. When part of the selection has an additional format, such as one italic word inside bold text, the inserted content keeps only the format that wraps the whole selection. Inserting a block element, such as a paragraph, still replaces the content without the inline formatting.
+
 
 [[security-fixes]]
 == Security fixes

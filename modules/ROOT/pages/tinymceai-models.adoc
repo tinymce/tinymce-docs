@@ -24,9 +24,7 @@ The `agent-1` model automatically selects the best AI model for requests based o
 [[supported-models-table]]
 === Supported Models
 
-[[supported-models]]The following is a detailed list of available models with their capabilities:
-
-The following is a detailed list of available models with their capabilities. In the *Status* column, ✓ marks an active model and ⚠ marks a deprecated model, with its removal date.
+[[supported-models]]The following is a detailed list of available models with their capabilities. In the *Status* column, ✓ marks an active model and ⚠ marks a deprecated model, with its removal date.
 
 
 [cols="1,2,1,1,2,1"]
@@ -38,7 +36,6 @@ The following is a detailed list of available models with their capabilities. In
 |Yes
 |Yes
 |`+'agent-1'+` (learn more about xref:tinymceai-models.adoc#model-compatibility-versions[compatibility versions])
-|`'auto'` (also `'agent-1'`, learn more about xref:tinymceai-models.adoc#model-compatibility-versions[compatibility versions])
 |✓
 
 |**GPT-5.6 Sol**
@@ -88,7 +85,7 @@ The following is a detailed list of available models with their capabilities. In
 |Yes
 |Yes
 |`'gpt-5.1'`
-|✓
+|⚠ xref:tinymceai-models.adoc#model-deprecation[Removal on April 1, 2027]
 
 |**GPT-5**
 |OpenAI's flagship model for advanced reasoning, creativity, and complex tasks
@@ -166,13 +163,6 @@ The following is a detailed list of available models with their capabilities. In
 |Yes
 |`'claude-4-6-sonnet'`
 |✓
-
-|**Claude 4.5 Sonnet**
-|Advanced model with improved creativity, reliability, and reasoning
-|Yes
-|Yes
-|`'claude-4-5-sonnet'`
-|⚠ xref:tinymceai-models.adoc#model-deprecation[Removal on October 30, 2026]
 
 |**Claude 4.5 Haiku**
 |Cost-efficient model for quick interactions with improved reasoning
@@ -316,7 +306,7 @@ Follow these steps to read limits and capabilities for the model the integration
 
 [TIP]
 ====
-Ready-to-run `fetch` (browser console) and `curl` examples appear under xref:tinymceai-models.adoc#model-information[Model Information]. For field names and schema changes over time, use the https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API] OpenAPI document.
+Ready-to-run `fetch` (browser console) and `curl` examples appear under xref:tinymceai-models.adoc#model-information[Model Information]. For field names and schema changes over time, use the https://tinymceai.api.tiny.cloud/v1/docs#tag/Models[Models API] OpenAPI document.
 ====
 
 [[model-capabilities]]
@@ -346,7 +336,7 @@ The API does not return the reasoning text. The stream sends `+reasoning+` event
 
 To determine if a model has always-on reasoning, check the API response when listing models or refer to the model capabilities in the plugin UI. Models with mandatory reasoning will indicate this in their capability structure.
 
-NOTE: Model names such as `+gpt-5+`, `+claude-4-sonnet+`, and similar are examples. Actual available models depend on the service compatibility version. Use the `+GET /v1/models/1+` API endpoint or check the plugin model selection dropdown to see current available models for the environment.
+NOTE: Model names such as `+gpt-5+`, `+claude-5-sonnet+`, and similar are examples. Actual available models depend on the service compatibility version. Use the `+GET /v1/models/1+` API endpoint or check the plugin model selection dropdown to see current available models for the environment.
 
 [[web-scraping]]
 === Web Scraping
@@ -363,14 +353,14 @@ The sections below cover moderation, descriptions, and deprecation. Attachment l
 [[file-processing-limits]]
 === File Processing Limits
 
-{pluginname} supports common attachment types in Chat conversations, including PDF, DOCX, images, Markdown, HTML, and plain text. Per-file and per-conversation ceilings—including maximum sizes, attachment counts, and PDF page totals—are returned per model in the `limits` object from `GET /v1/models/\{version}`. Those numbers are **the current limits the service applies**; they can change with the service and vary by model, so read the `+limits+` object from that response at runtime for each model the integration uses. Field names, units, and schema updates are defined in the https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API] OpenAPI documentation.
+{pluginname} supports common attachment types in Chat conversations, including PDF, DOCX, images, Markdown, HTML, and plain text. Per-file and per-conversation ceilings—including maximum sizes, attachment counts, and PDF page totals—are returned per model in the `limits` object from `GET /v1/models/\{version}`. Those numbers are **the current limits the service applies**; they can change with the service and vary by model, so read the `+limits+` object from that response at runtime for each model the integration uses. Field names, units, and schema updates are defined in the https://tinymceai.api.tiny.cloud/v1/docs#tag/Models[Models API] OpenAPI documentation.
 
-For the request flow and how to match a configured model id to the correct `items[]` entry, see xref:tinymceai-models.adoc#verifying-model-limits-for-integration[Verifying limits for a configured model]. The https://tinymceai.api.tiny.cloud/docs#tag/Models/operation/getAiModels[Models API reference] defines each `+limits+` key.
+For the request flow and how to match a configured model id to the correct `items[]` entry, see xref:tinymceai-models.adoc#verifying-model-limits-for-integration[Verifying limits for a configured model]. The https://tinymceai.api.tiny.cloud/v1/docs#tag/Models/operation/getAiModels[Models API reference] defines each `+limits+` key.
 
 [[content-moderation]]
 === Content Moderation
 
-All models include moderation for inappropriate content, harmful instructions, personal information, copyrighted material, misinformation, sensitive topics, and security threats. When moderation flags the content, the request fails with HTTP status `+422 Unprocessable Content+` and the error code `+unsafe-content-detected+`. The `+data.flaggedCategories+` array in the error body lists the categories that were flagged. For the error body, see xref:tinymceai-api-overview.adoc#error-responses[Error responses]. For the operations that can return this error, see the https://tinymceai.api.tiny.cloud/docs[API reference]. Moderation is applied automatically and cannot be disabled.
+All models include moderation for inappropriate content, harmful instructions, personal information, copyrighted material, misinformation, sensitive topics, and security threats. When moderation flags the content, the request fails with HTTP status `+422 Unprocessable Content+` and the error code `+unsafe-content-detected+`. The `+data.flaggedCategories+` array in the error body lists the categories that were flagged. For the error body, see xref:tinymceai-api-overview.adoc#error-responses[Error responses]. For the operations that can return this error, see the https://tinymceai.api.tiny.cloud/v1/docs[API reference]. Moderation is applied automatically and cannot be disabled.
 
 [[model-descriptions]]
 === Model Descriptions
@@ -380,7 +370,7 @@ Model descriptions returned by the API are provided in English by default and ma
 [[translation-and-localization]]
 === Translation and Localization
 
-The models endpoints accept an optional `+languageCode+` query parameter, for example `+GET /v1/models/1?languageCode=de+`, and then return translated model descriptions. For the supported language codes, see the https://tinymceai.api.tiny.cloud/docs#tag/Models/operation/getAiModels[Models API] reference.
+The models endpoints accept an optional `+languageCode+` query parameter, for example `+GET /v1/models/1?languageCode=de+`, and then return translated model descriptions. For the supported language codes, see the https://tinymceai.api.tiny.cloud/v1/docs#tag/Models/operation/getAiModels[Models API] reference.
 
 In the {pluginname} plugin, model descriptions follow the primary language subtag of the editor language, for example `+fr+` for `+fr-FR+`, `+pt+` for `+pt-BR+`, and `+zh+` for `+zh-TW+`. Descriptions are in English when no editor language is set.
 
@@ -396,17 +386,19 @@ Each model in the models response can include two dates:
 
 Models scheduled for removal are marked with ⚠ and their removal date in the *Status* column of the xref:tinymceai-models.adoc#supported-models-table[Supported Models] table.
 
+GPT-5.1 (`+'gpt-5.1'+`) is scheduled for removal on April 1, 2027.
+
 [IMPORTANT]
 ====
 After the removal date, features that name a removed model stop working. The result depends on where the model is set:
 
-* The `model` option of xref:tinymceai-actions.adoc#custom-actions[custom Quick Actions] or xref:tinymceai.adoc#integrator-defined-reviews[integrator-defined reviews], or the `model` field of API requests: the model ID is sent unchanged, and every request fails with error code `MODEL_NOT_FOUND`.
+* The `model` option of xref:tinymceai-actions.adoc#custom-actions[custom Quick Actions] or xref:tinymceai.adoc#integrator-defined-reviews[integrator-defined reviews], or the `model` field of API requests: the model ID is sent unchanged, and every request fails with the error code `+model-not-found+`.
 * xref:tinymceai.adoc#tinymceai_default_model[`+tinymceai_default_model+`]: the removed model is no longer in the list of available models, so {pluginname} uses the first available model instead and logs a warning to the browser console.
 
 Built-in Quick Actions and built-in reviews do not set a model and are not affected.
 ====
 
-Before the removal date, switch each of these settings to another model from the xref:tinymceai-models.adoc#supported-models-table[Supported Models] table, or to `'auto'`.
+Before the removal date, switch each of these settings to another model from the xref:tinymceai-models.adoc#supported-models-table[Supported Models] table, or to the Agent model, `+'agent-1'+`.
 
 To check for deprecated models programmatically, read the model list from `GET /v1/models/\{version}`. Each model scheduled for removal includes its `removal` date, and the same list can be used to choose a replacement model. See xref:tinymceai-models.adoc#model-information[Model Information] for an example request.
 
@@ -447,7 +439,7 @@ Authorization: Bearer <your-token>
 
 {
   "prompt": "Research the latest developments in AI",
-  "model": "gpt-5.1",
+  "model": "gpt-5.5",
   "capabilities": {
     "webSearch": {},
     "reasoning": {}
@@ -491,7 +483,7 @@ Authorization: Bearer <your-token>
 
 NOTE: If `fetch` fails with a CORS error in the console, run the curl example from a terminal instead, or call the API from the application backend.
 
-Response (shape illustrated; field names and numeric limits follow the live service and https://tinymceai.api.tiny.cloud/docs#tag/Models[OpenAPI] for the environment):
+Response (shape illustrated; field names and numeric limits follow the live service and https://tinymceai.api.tiny.cloud/v1/docs#tag/Models[OpenAPI] for the environment):
 
 [source,json]
 ----
@@ -529,7 +521,7 @@ Response (shape illustrated; field names and numeric limits follow the live serv
 * **`id`**: Model identifier for xref:tinymceai.adoc#tinymceai_default_model[`+tinymceai_default_model+`] and API `+model+` fields.
 * **`allowed`**: Whether the token's scopes allow the model.
 * **`recommended`**: Whether the service recommends the model.
-* **`limits`**: Per-model numeric caps. Sizes are in bytes, and `+maxContextLength+` is a number of characters. The https://tinymceai.api.tiny.cloud/docs#tag/Models/operation/getAiModels[Models API reference] defines each key.
+* **`limits`**: Per-model numeric caps. Sizes are in bytes, and `+maxContextLength+` is a number of characters. The https://tinymceai.api.tiny.cloud/v1/docs#tag/Models/operation/getAiModels[Models API reference] defines each key.
 * **`capabilities`**: For `+webSearch+` and `+reasoning+`, whether the model supports the capability (`+enabled+`) and whether the token permits it (`+allowed+`).
 * **`+addition+`** and **`+removal+`** (optional): The dates the model becomes available and is removed. See xref:#model-deprecation[Model deprecation].
 
@@ -538,7 +530,7 @@ After xref:tinymceai-models.adoc#verifying-model-limits-for-integration[locating
 [[api-reference]]
 == API Reference
 
-The https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API] section of the https://tinymceai.api.tiny.cloud/docs[interactive API documentation] covers model listing, compatibility versions, and capability schemas, along with the rest of the {pluginname} endpoints.
+The https://tinymceai.api.tiny.cloud/v1/docs#tag/Models[Models API] section of the https://tinymceai.api.tiny.cloud/v1/docs[interactive API documentation] covers model listing, compatibility versions, and capability schemas, along with the rest of the {pluginname} endpoints.
 
 [[related-features]]
 == Related Features

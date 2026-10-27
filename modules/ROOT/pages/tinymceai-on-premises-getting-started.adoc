@@ -68,7 +68,7 @@ All accounts authenticate with the username `tiny`. Replace `[access-token]` wit
 docker pull registry.containers.tiny.cloud/ai-service-tiny:latest
 ----
 
-For Podman, substitute `podman pull`. For production, pin a specific version tag (for example `:5.1.0`) rather than `:latest` for repeatable deployments and to avoid unexpected breaking changes.
+For Podman, substitute `podman pull`. For production, pin a specific version tag (for example `:1.2.1`) rather than `:latest` for repeatable deployments and to avoid unexpected breaking changes. To view all available image versions, refer to the changelog at link:https://registry.containers.tiny.cloud/api/changelogs/ai-service-tiny[ai-service-tiny].
 
 === Create `docker-compose.yml` (data layer)
 
@@ -112,11 +112,6 @@ TIP: Pin `mysql:8.0`, not `mysql:8`. The `:8` tag resolves to MySQL 8.4, which r
 
 PostgreSQL is equally supported. See xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage] for an equivalent compose file. Review the xref:tinymceai-on-premises-database.adoc#postgresql-schema-prerequisite[PostgreSQL schema prerequisite] before switching.
 
-[NOTE]
---
-If the AI service needs to reach the host machine (for example a self-hosted Ollama running on the host), add `--add-host=host.docker.internal:host-gateway` to the `docker run` command in the Launch section below. Docker Desktop (macOS, Windows) and Podman 4{plus} auto-inject this alias; native Linux Docker does not.
---
-
 === Create the `.env` file
 
 [source,bash]
@@ -154,7 +149,7 @@ AI_API_SECRET='paste-api-secret-here'
 docker compose up -d
 ----
 
-Wait ~15 seconds for MySQL to initialize, then verify:
+Wait about 15 seconds for MySQL to initialize, then verify:
 
 [source,bash]
 ----
@@ -174,12 +169,14 @@ First, find the Docker Compose network name (Docker creates it from the folder n
 docker network ls --format '{{.Name}}' | grep default
 ----
 
-Use the matching network name in `--network` below. First, load the `.env` file:
+The name already includes the `_default` suffix, for example `tinymceai-onpremise_default`. Use the full name as-is in `--network` below. Next, load the `.env` file:
 
 [source,bash]
 ----
 set -a && source .env && set +a
 ----
+
+If an `ai-service` container exists from a previous attempt, remove it with `docker rm -f ai-service`.
 
 Then start the AI service container. The `docker run` command maps the friendly `.env` names onto the service's own environment variables — for example, `AI_LICENSE_KEY` is passed to the container as `LICENSE_KEY`, and `MANAGEMENT_SECRET` as `ENVIRONMENTS_MANAGEMENT_SECRET_KEY`:
 
@@ -205,20 +202,19 @@ docker run --init -d -p 8000:8000 \
 
 [IMPORTANT]
 ====
-This launch command configures a single OpenAI provider, through the `PROVIDERS` value and `$OPENAI_API_KEY`. The AI service only receives the environment variables explicitly passed in the `docker run` command, so adding `PROVIDERS`, `MODELS`, or other provider settings to the `.env` file alone has no effect.
-
-To use any other provider — `openai-compatible` (for example Databricks, Ollama, or vLLM), Azure, Amazon Bedrock, or Google Vertex — edit the `docker run` command directly: replace the `PROVIDERS` value and add a `MODELS` array. The `MODELS` variable is required for every provider except direct OpenAI, Anthropic, and Google, which have built-in model routing. See xref:tinymceai-on-premises-providers.adoc[LLM providers] for the full `PROVIDERS` and `MODELS` configuration.
+The AI service receives only the environment variables passed in the `docker run` command. Adding `PROVIDERS`, `MODELS`, or other settings to the `.env` file alone has no effect.
 ====
 
-NOTE: The AI service contacts `license.containers.tiny.cloud` on startup to validate the license key. Ensure this endpoint is reachable from the container. No customer data is sent during this check.
+This command configures one OpenAI provider, through the `PROVIDERS` value and `$OPENAI_API_KEY`, and basic conversation support. To change what the AI service runs with, edit the `docker run` command:
 
-TIP: If the container already exists from a previous attempt, remove it first with `docker rm -f ai-service`.
+* *Other LLM providers*: replace the `PROVIDERS` value, or add providers to it, for example `{"openai":{...},"anthropic":{...}}`. Azure, Amazon Bedrock, Google Vertex, and `openai-compatible` providers (for example Databricks, Ollama, or vLLM) also need a `MODELS` array. See xref:tinymceai-on-premises-providers.adoc#models-required[Defining the model list].
+* *Services on the host machine*: to reach a service that runs on the host, such as a self-hosted Ollama, add `--add-host=host.docker.internal:host-gateway`. Docker Desktop (macOS, Windows) and Podman 4{plus} add this alias automatically; native Linux Docker does not.
+* *Web search*: add `WEBSEARCH_ENABLED='true'` and `WEBSEARCH_ENDPOINT`, pointing to a search back end. See xref:tinymceai-on-premises-mcp.adoc#web-search[Web search] for the full configuration, the endpoint contract, and a SerpAPI example.
+* *Content moderation*: with an `openai` provider, the AI service also sends prompts and uploaded images to the OpenAI moderation API. See xref:tinymceai-on-premises-moderation.adoc[Content moderation] to change or turn off this check.
 
-TIP: The network name returned by `docker network ls` already includes the `_default` suffix (e.g., `tinymceai-onpremise_default`). Use the full name as-is in `--network`. For multiple LLM providers, extend the `PROVIDERS` JSON: `{"openai":{...},"anthropic":{...}}`.
+On startup, the AI service validates the license key with `license.containers.tiny.cloud`. This endpoint must be reachable from the container. No customer data is sent during this check.
 
-NOTE: The launch command above starts the AI service with basic conversation support. To enable *web search* in conversations, add `WEBSEARCH_ENABLED='true'` and `WEBSEARCH_ENDPOINT` (pointing to a search backend) to the `docker run` command. See xref:tinymceai-on-premises-mcp.adoc#web-search[Web search] for the full configuration, endpoint contract, and a SerpAPI example.
-
-For Podman, replace `docker run` with `podman run` and use a Podman pod instead of a compose network. See xref:tinymceai-on-premises-production.adoc[Production deployment] for Podman-specific guidance. See xref:tinymceai-on-premises-production.adoc#podman-deployment[Podman deployment] for a full example.
+For Podman, replace `docker run` with `podman run` and use a Podman pod instead of a compose network. See xref:tinymceai-on-premises-production.adoc#podman-deployment[Podman deployment] for a full example.
 
 For native databases (the database runs on the host or in a managed service rather than in Docker), drop the `--network` flag and set `DATABASE_HOST=host.docker.internal` (Docker Desktop and Podman 4{plus}). On native Linux Docker, additionally pass `--add-host=host.docker.internal:host-gateway`.
 
@@ -466,7 +462,7 @@ curl -s -X POST http://localhost:8000/v1/conversations \
   -d '{"id":"verify-1","title":"Verification"}'
 ----
 
-NOTE: The command below uses the built-in `agent-1` model. If `MODELS` has been explicitly configured, replace `agent-1` with the `id` of one of the configured models. See xref:tinymceai-on-premises-providers.adoc#models-required[Defining the model list].
+NOTE: The command below uses `agent-1`, the recommended model from the default model list of the OpenAI, Anthropic, and Google providers. If `MODELS` has been explicitly configured, replace `agent-1` with the `id` of one of the configured models. See xref:tinymceai-on-premises-providers.adoc#models-required[Defining the model list].
 
 [source,bash]
 ----

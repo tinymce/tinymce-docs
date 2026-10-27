@@ -1,0 +1,817 @@
+= TinyMCE AI on-premises hooks
+:navtitle: Hooks
+:description: Connect a signed hook endpoint to chat turns in the TinyMCE AI on-premises service
+:description_short: Chat hooks that call an integrator-hosted endpoint.
+:keywords: AI, on-premises, hooks, HOOKS, turn.start, webhook, HMAC, signature, agent, policy, screening
+:pluginname: TinyMCE AI
+
+A hook calls an HTTPS endpoint hosted by the integrator at a fixed point in a chat turn. A chat turn is one user message and the reply to it. The hook endpoint reads the turn and returns a decision: answer the user itself, or let the AI service answer, optionally with added context and instructions.
+
+The `+HOOKS+` environment variable configures hooks on the AI service container.
+
+== Requirements
+
+* *An HTTPS endpoint hosted by the integrator.* The AI service does not include a hook endpoint. The endpoint accepts a `+POST+` request with a JSON body and responds with a decision.
+* *A response within the timeout.* Every chat turn waits for the endpoint. Measure the response time of the hook service before enabling hooks.
+* *A shared secret.* The AI service signs every request with it, and the endpoint uses it to reject requests that did not come from the AI service. See <<request-signing>>.
+
+[[scope]]
+=== Scope
+
+* Hooks run for chat messages only. Quick actions, reviews, and Document Processing do not call hooks.
+* One event exists: `+turn.start+`. It fires after the user sends a chat message and before the AI service calls a model.
+* One endpoint and one shared secret serve the whole deployment. Every environment calls the same URL, and each request carries the `+environmentId+` of the turn.
+* Hooks run only for the events listed in `+enabled+`. When `+HOOKS+` is not set, no hooks run.
+
+[WARNING]
+====
+Hooks fail closed. When the hook endpoint returns an error, redirects, times out, or responds outside the contract on this page, the chat turn fails. The AI service does not fall back to answering the turn itself. While the endpoint is unavailable, no chat turn completes.
+====
+
+[[configuration]]
+== Configuration
+
+`+HOOKS+` holds a JSON object as a string. The following example sends every chat turn to the endpoint and waits up to 30 seconds for a decision:
+
+[source,bash]
+----
+docker run --init -d -p 8000:8000 \
+  --name ai-service \
+  --env-file ai-service.env \
+  -e HOOKS='{
+    "endpoint": "https://ai-hooks.example.com/turn",
+    "enabled": ["turn.start"],
+    "timeoutMs": 30000,
+    "auth": {
+      "type": "shared-secret",
+      "secret": "whsec_<base64-encoded-secret>"
+    }
+  }' \
+  registry.containers.tiny.cloud/ai-service-tiny:<version>
+----
+
+The `+ai-service.env+` file holds the rest of the service configuration, such as the license key, database, Redis, and provider settings. See xref:tinymceai-on-premises-reference.adoc#environment-variable-reference[Environment variable reference].
+
+To turn hooks off without removing the configuration, set `+enabled+` to an empty array.
+
+In a xref:tinymceai-on-premises-reference.adoc#configuration-file[configuration file], set the same object as the value of the `+hooks+` key.
+
+[[options]]
+=== Options
+
+[cols="1,1,1,3",options="header"]
+|===
+|Option |Required |Default |Description
+
+|`+endpoint+`
+|Yes
+|-
+|The URL that the AI service calls. Must use `+https+`, unless `+allowPlaintextHttp+` is `+true+`.
+
+|`+enabled+`
+|Yes
+|-
+|The events that call the endpoint, as an array. Currently only `+"turn.start"+`. An empty array configures the endpoint but calls nothing.
+
+|`+auth+`
+|Yes
+|-
+|The signing configuration: `+type+` is `+shared-secret+`, and `+secret+` is the shared secret. See <<request-signing>>.
+
+|`+responseMode+`
+|No
+|`+json+`
+|`+json+` for a single JSON response, or `+stream+` for a newline-delimited JSON (NDJSON) stream. See <<response-modes>>.
+
+|`+timeoutMs+`
+|No
+|`+30000+`
+|The time allowed for the whole exchange, in milliseconds. Minimum `+1000+`, maximum `+600000+`. Applies to both response modes.
+
+|`+streamIdleTimeoutMs+`
+|No
+|`+30000+`
+|The longest silence allowed in `+stream+` mode, in milliseconds: the wait for the response headers, and each gap between lines. Minimum `+1000+`, maximum `+60000+`. Ignored in `+json+` mode.
+
+|`+outcomeMaxEntries+`
+|No
+|`+50+`
+|The maximum number of entries in each of `+forward.instructions+` and `+forward.context+`. Minimum `+1+`, maximum `+500+`.
+
+|`+outcomeMaxCharacters+`
+|No
+|`+20000+`
+|The maximum total characters in each of `+reply+`, `+forward.instructions+`, and `+forward.context+`, and in each streamed channel. Minimum `+1000+`, maximum `+100000+`.
+
+|`+allowPlaintextHttp+`
+|No
+|`+false+`
+|Allows an `+http://+` endpoint. See <<endpoint-requirements>>.
+|===
+
+The AI service does not start when the `+HOOKS+` configuration breaks any of these rules.
+
+[[endpoint-requirements]]
+=== Endpoint requirements
+
+* *HTTPS.* The AI service does not start with an `+http://+` endpoint unless `+allowPlaintextHttp+` is `+true+`.
+* *No redirects.* A `+3xx+` response fails the turn. Configure the final URL.
+* *Private addresses are allowed.* The endpoint can be a host that is not reachable from the Internet. The AI service does not filter endpoint addresses.
+* *No gateway credential.* The request signature is the only credential that the AI service sends. When the endpoint sits behind a gateway that requires an API key, expose the hook route on a path that does not require that key.
+* *Response time.* Set `+timeoutMs+` above the response time of the hook service under load. The hook call adds to the duration of the chat response, so the reverse proxy in front of the AI service must keep the response open for both. See xref:tinymceai-on-premises-production.adoc#proxy-requirements[Proxy requirements].
+
+CAUTION: Set `+allowPlaintextHttp+` only when hook traffic never leaves a network under the operator's control. The request body carries the user's prompt, the names and URLs of attachments, `+delegation-context+` data and attributes, and the user and document IDs. None of it is redacted, and plain HTTP sends it unencrypted.
+
+[[request-signing]]
+== Request signing
+
+The AI service signs every hook request with HMAC-SHA256. The key is the shared secret without its `+whsec_+` prefix, decoded from base64 to bytes. The endpoint must verify the signature and reject any request that fails verification.
+
+Each request carries these headers:
+
+[cols="1,3",options="header"]
+|===
+|Header |Value
+
+|`+webhook-id+`
+|The `+requestId+` of the request, which is also in the body.
+
+|`+webhook-timestamp+`
+|The Unix time in seconds, as a decimal string.
+
+|`+webhook-signature+`
+|`+v1,+` followed by the base64-encoded signature. The header can hold several space-separated entries.
+|===
+
+The AI service computes the signature over `+{webhook-id}.{webhook-timestamp}.{body}+`, where `+body+` is the raw request body exactly as sent. The signature does not cover the URL or the HTTP method, so a proxy that rewrites the path does not break verification.
+
+To prevent replay attacks, the endpoint must also:
+
+* Reject a request whose `+webhook-timestamp+` differs from the endpoint's clock by more than five minutes.
+* Reject a `+webhook-id+` that it has already processed.
+
+[[shared-secret]]
+=== The shared secret
+
+The secret is `+whsec_+` followed by standard, padded base64 that decodes to at least 24 bytes. Generate one with OpenSSL:
+
+[source,bash]
+----
+echo "whsec_$(openssl rand -base64 32)"
+----
+
+Give the same value to the hook endpoint. Nothing needs to be registered elsewhere. There is no key rotation, so change the secret in `+HOOKS+` and in the endpoint at the same time.
+
+When the secret is missing or malformed, the AI service sends no request and the turn fails. The log reason is `+signing-failed+`, which distinguishes a configuration mistake from an endpoint outage.
+
+IMPORTANT: The service configuration holds the secret as plain text, in the same way as LLM provider API keys. Store it in a secrets manager and protect it accordingly.
+
+[[example-endpoint]]
+=== Example endpoint in Node.js
+
+The following Express endpoint verifies each request, rejects replays, and returns a decision. It refuses chat messages that mention payroll, and lets the AI service answer every other message with an added instruction. It requires Node.js 18 or later and the `+express+` package.
+
+Create `+package.json+`:
+
+[source,json]
+----
+{
+  "name": "tinymceai-hook-endpoint",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "express": "^4.18.0"
+  }
+}
+----
+
+Create `+hook-server.js+`:
+
+[source,js]
+----
+// hook-server.js
+import express from 'express';
+import { createHmac, timingSafeEqual } from 'node:crypto';
+
+const HOOK_SECRET = process.env.AI_HOOK_SECRET; // whsec_<base64-encoded-secret>
+const PORT = Number(process.env.PORT ?? 3001);
+const MAX_CLOCK_SKEW_SECONDS = 300;
+const REPLAY_WINDOW_MS = 10 * 60 * 1000;
+
+if (!HOOK_SECRET || !HOOK_SECRET.startsWith('whsec_')) {
+  throw new Error('Set AI_HOOK_SECRET to the whsec_ value from the HOOKS configuration.');
+}
+const signingKey = Buffer.from(HOOK_SECRET.slice('whsec_'.length), 'base64');
+
+// Request IDs seen recently, with the time each was seen.
+// In production, keep these in a shared store with a time-to-live, such as Redis.
+const seenRequestIds = new Map();
+
+const isFreshRequest = (requestId) => {
+  const now = Date.now();
+  for (const [ id, seenAt ] of seenRequestIds) {
+    if (now - seenAt > REPLAY_WINDOW_MS) {
+      seenRequestIds.delete(id);
+    }
+  }
+  if (seenRequestIds.has(requestId)) {
+    return false;
+  }
+  seenRequestIds.set(requestId, now);
+  return true;
+};
+
+const hasValidSignature = (headers, rawBody) => {
+  if (!Buffer.isBuffer(rawBody)) {
+    return false;
+  }
+  const id = headers['webhook-id'];
+  const timestamp = headers['webhook-timestamp'];
+  const signatures = headers['webhook-signature'];
+  if (typeof id !== 'string' || typeof timestamp !== 'string' || typeof signatures !== 'string') {
+    return false;
+  }
+
+  const skew = Math.abs(Math.floor(Date.now() / 1000) - Number(timestamp));
+  if (!Number.isFinite(skew) || skew > MAX_CLOCK_SKEW_SECONDS) {
+    return false;
+  }
+
+  const expected = createHmac('sha256', signingKey)
+    .update(`${id}.${timestamp}.`)
+    .update(rawBody)
+    .digest();
+
+  // The header holds one or more space-separated "v1,<base64>" entries.
+  return signatures.split(' ').some((entry) => {
+    const [ version, value ] = entry.split(',');
+    if (version !== 'v1' || !value) {
+      return false;
+    }
+    const received = Buffer.from(value, 'base64');
+    return received.length === expected.length && timingSafeEqual(received, expected);
+  });
+};
+
+const app = express();
+
+// Read the body as raw bytes. Re-serializing parsed JSON changes the bytes and breaks verification.
+app.post('/turn', express.raw({ type: 'application/json', limit: '32mb' }), (req, res) => {
+  if (!hasValidSignature(req.headers, req.body)) {
+    res.sendStatus(401);
+    return;
+  }
+  if (!isFreshRequest(req.headers['webhook-id'])) {
+    res.sendStatus(409);
+    return;
+  }
+
+  const envelope = JSON.parse(req.body.toString('utf8'));
+  console.log(`requestId=${envelope.requestId} environment=${envelope.environmentId}`);
+
+  if (/\bpayroll\b/i.test(envelope.turn.prompt)) {
+    res.json({
+      directive: 'halt',
+      reply: [ 'Payroll questions are handled by the HR service desk.' ]
+    });
+    return;
+  }
+
+  res.json({
+    directive: 'continue',
+    forward: {
+      instructions: [ 'Use US English spelling.' ]
+    }
+  });
+});
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Hook endpoint listening on port ${PORT}`);
+});
+----
+
+Install the dependencies and start the endpoint with the shared secret:
+
+[source,bash]
+----
+npm install
+AI_HOOK_SECRET='whsec_<base64-encoded-secret>' node hook-server.js
+----
+
+Publish the endpoint behind HTTPS, for example at `+https://ai-hooks.example.com/turn+`, and set that URL as `+endpoint+` in `+HOOKS+`.
+
+Log the `+requestId+` of every request. The AI service logs the same value, so it links the endpoint's logs to the service logs for the same turn.
+
+[[turn-start-request]]
+== The `+turn.start+` request
+
+The AI service sends a `+POST+` request with a JSON body. The following example shows a turn with an open document, an attached file, and custom front-end data:
+
+[source,json]
+----
+{
+  "contractVersion": "1",
+  "event": "turn.start",
+  "requestId": "6b1f0c2e-8d4a-4f61-9a7e-3c5d2b1a0f98",
+  "environmentId": "<environment-id>",
+  "conversationId": "tiny-2f6c1d0e-5b7a-4c3d-8e9f-1a2b3c4d5e6f",
+  "userId": "user-42",
+  "turn": {
+    "prompt": "Summarize the attached brief in three bullet points.",
+    "content": [
+      { "type": "document", "id": "doc-1", "selection": [] },
+      { "type": "file", "id": "file-1", "name": "brief.pdf", "mediaType": "application/pdf", "size": 48213 },
+      { "type": "delegation-context", "id": "ctx-1", "data": { "ticketId": "SUP-1024" } }
+    ],
+    "attributes": { "locale": "en-US" }
+  }
+}
+----
+
+[cols="1,3",options="header"]
+|===
+|Field |Description
+
+|`+contractVersion+`
+|The envelope version. Currently `+"1"+`. See <<contract-versioning>>.
+
+|`+event+`
+|The event that fired: `+turn.start+`.
+
+|`+requestId+`
+|The ID of this call. Also sent as the `+webhook-id+` header, and included in every error that the AI service reports for the turn.
+
+|`+environmentId+`
+|The environment of the turn.
+
+|`+conversationId+`
+|The conversation. Stable across all turns of the conversation.
+
+|`+userId+`
+|The user, as identified by the JSON Web Token (JWT) from the token endpoint.
+
+|`+turn.prompt+`
+|The text that the user sent.
+
+|`+turn.content+`
+|Everything the turn works with, as an array of typed parts. See <<content-parts>>.
+
+|`+turn.attributes+`
+|Optional. Attributes that the client attached to the message. Absent when the client attached none. They reach the hook endpoint and never reach the prompt.
+|===
+
+[[content-parts]]
+=== Content parts
+
+[cols="1,2,3",options="header"]
+|===
+|`+type+` |Meaning |Fields
+
+|`+document+`
+|A document open in the editor
+|`+id+`, `+selection+` (an empty array when nothing is selected), optional `+editorConfig+`. The part is a reference only. Read the document text through the API.
+
+|`+file+`
+|A file in the conversation
+|`+id+`, `+name+`, `+mediaType+`, `+size+`. The part describes the file and carries no content. Read the file through the API.
+
+|`+web-resource+`
+|A web page in the conversation
+|`+id+`, `+url+`, `+mediaType+`, `+size+`. The part describes the web page and carries no content. Read the page through the API.
+
+|`+delegation-context+`
+|Data that the client attached to the message for the hook endpoint
+|`+id+`, `+data+`. The AI service passes `+data+` to the hook endpoint unchanged, and never sends it to the model.
+|===
+
+`+turn.content+` lists every document, file, and web resource that the turn works on, each one once. The list includes the ones that an earlier message in the conversation attached. With a multi-root editor, the list can contain around a hundred entries.
+
+A `+delegation-context+` part stops at the hook endpoint. To pass that data to the model, return it in `+forward.context+` on a `+continue+` decision.
+
+A request body larger than 32 MB is never sent, and the turn fails. This limit cannot be changed.
+
+[[reading-attachments-and-documents]]
+=== Reading attachments and documents
+
+The request carries no credential for the {pluginname} API, and no attachment content, document text, or earlier messages. To read them, the hook service calls the REST API with its own token for the same user and environment. The token needs the `+ai:conversations:read+` permission. See xref:tinymceai-on-premises-jwt.adoc#permissions-reference[Permissions reference].
+
+Key each call on the `+conversationId+` from the request and the `+id+` of the part:
+
+* `+GET /v1/conversations/{conversationId}/files/{fileId}/content+` returns the bytes of a file. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Files/operation/getFileContent[Download file content].
+* `+GET /v1/conversations/{conversationId}/web-resources/{webResourceId}/content+` returns the bytes of a web resource. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Web-Resources/operation/getWebResourceContent[Download web resource content].
+* `+GET /v1/conversations/{conversationId}/documents/{documentId}+` returns the text of a document. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Documents/operation/getDocument[Fetch a document].
+* `+GET /v1/conversations/{conversationId}/messages+` returns the earlier messages. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/getMessages[Fetch conversation messages].
+
+[[decisions]]
+== Decisions
+
+The endpoint responds with HTTP status `+200+` and a decision in the body. Do not use the HTTP status to signal the outcome: a refusal is a `+200+` response with a `+halt+` decision.
+
+[[halt]]
+=== `+halt+`: the hook endpoint answers
+
+[source,json]
+----
+{
+  "directive": "halt",
+  "reply": ["Payroll questions are handled by the HR service desk."],
+  "attributes": { "handledBy": "policy-service" }
+}
+----
+
+The reply becomes the assistant message, and the AI service does not call a model. The AI service stores the reply like any other message, and later turns see it in the conversation history. Use `+halt+` for every answer that the hook service gives itself, including refusals.
+
+[[continue]]
+=== `+continue+`: the AI service answers
+
+[source,json]
+----
+{
+  "directive": "continue",
+  "reply": ["Checked the ticket history. Drafting a summary now."],
+  "forward": {
+    "context": ["Ticket SUP-1024 is a migration request with a deadline of 30 November."],
+    "instructions": ["Use US English spelling.", "Do not name individual customers."]
+  },
+  "attributes": { "ticketId": "SUP-1024" }
+}
+----
+
+The AI service answers the turn, shaped by the decision:
+
+* `+forward.context+` is background information. The AI service presents it to the model as information, not as user input or an instruction.
+* `+forward.instructions+` apply to this turn only. Where they conflict with the custom instructions in the system prompt, `+forward.instructions+` take precedence. They cannot override the scope and safety rules of the system prompt.
+* `+reply+` is a preamble. It streams to the user before the model's response, and the AI service stores it as the start of the assistant message.
+
+The AI service places `+forward.context+` and `+forward.instructions+` in the prompt before the user's question. The AI service does not store either field or carry it to the next turn. A later turn that needs the same context must send it again.
+
+[[turn-outcome]]
+=== Stating the turn outcome
+
+A `+continue+` turn ends in a chat answer, document edits, or both. By default, a classifier decides from the user's question, the documents of the turn, recent messages, and the `+forward+` fields:
+
+* The classifier treats `+forward.context+` as evidence of what the turn is for, never as a request to change the document.
+* `+forward.instructions+` take precedence over the user's question. An instruction to rewrite part of the document makes the turn an edit. An instruction that rules out document changes makes it a chat answer.
+
+The classifier runs on a small model with a two-second time limit. A turn with no document ends in a chat answer without a classifier call. When the classifier times out or fails, the turn is unclassified: the model keeps every document-editing tool and receives no language instruction.
+
+To skip the classifier, state the outcome in `+forward.intent+`:
+
+[source,json]
+----
+{
+  "directive": "continue",
+  "forward": {
+    "context": ["Ticket SUP-1024 is a migration request."],
+    "intent": {
+      "expectedOutput": "chat",
+      "responseLanguage": "en"
+    }
+  }
+}
+----
+
+[cols="1,1,3",options="header"]
+|===
+|Field |Required |Description
+
+|`+expectedOutput+`
+|Yes
+|`+chat+` (answer in chat; document-editing tools are withheld), `+document-modification+` (edit the document, with brief explanations of the edits at most), `+selection-modification+` (edit only the selection), or `+both+` (edit the document and answer in chat).
+
+|`+responseLanguage+`
+|No
+|ISO 639-1 code for the chat answer.
+
+|`+documentModificationLanguage+`
+|No
+|ISO 639-1 code for document edits. A language different from the document language translates the document.
+
+|`+requiresReasoning+`
+|No
+|Boolean. `+false+` turns reasoning off for the turn, unless the user turned it on in the editor.
+|===
+
+Only `+chat+` withholds tools. The other three values keep the editing tools available and do not force an edit. The model still reads the prompt, so it can answer a general question in chat only.
+
+A stated intent replaces the classification entirely. The AI service does not fill in omitted fields, so state the languages together with `+expectedOutput+`. The AI service does not validate the intent against the turn: for example, `+selection-modification+` on a turn with no selection reaches the model as sent. An intent without `+expectedOutput+` fails the turn.
+
+[[decision-fields]]
+=== Decision fields
+
+[cols="1,1,1,3",options="header"]
+|===
+|Field |`+halt+` |`+continue+` |Type and limits
+
+|`+directive+`
+|Required
+|Required
+|`+"halt"+` or `+"continue"+`. Any other value fails the turn.
+
+|`+reply+`
+|Required in `+json+` mode
+|Optional
+|Array of strings, joined with newlines. Up to `+outcomeMaxCharacters+` in total. In `+stream+` mode, `+reply-delta+` lines can carry a `+halt+` reply instead. A blank `+halt+` reply fails the turn.
+
+|`+forward.instructions+`
+|-
+|Optional
+|Array of strings. Up to `+outcomeMaxEntries+` entries and `+outcomeMaxCharacters+` in total.
+
+|`+forward.context+`
+|-
+|Optional
+|Array of strings. Up to `+outcomeMaxEntries+` entries and `+outcomeMaxCharacters+` in total.
+
+|`+forward.intent+`
+|-
+|Optional
+|Object. Replaces the classification for this turn. Not size-checked.
+
+|`+attributes+`
+|Optional
+|Optional
+|Object with string keys. Merged into the metadata of the stored message, replacing client attributes with the same key. Not size-checked, and never sent to the model.
+|===
+
+A decision that exceeds a limit fails the turn. Keep instructions short regardless of the limit, because they enter the prompt on every turn that the hook sends them on.
+
+Only `+reply+` enters the conversation history. The AI service logs and traces the request and decision bodies, but does not store them as messages. See xref:tinymceai-on-premises-production.adoc#opentelemetry[OpenTelemetry].
+
+[[response-modes]]
+== Response modes
+
+`+responseMode+` selects how the endpoint returns its decision. Both modes carry the same decision.
+
+`+json+` (default)::
+Respond with `+content-type: application/json+` and the decision as the whole body. The chat waits with no progress shown. `+timeoutMs+` limits the whole response. When the exchange fails, the user sees only an error.
+
+`+stream+`::
+Respond with `+content-type: application/x-ndjson+` and write one JSON object per line, flushing each line. The AI service sends `+accept: application/x-ndjson+` in this mode. Any other response content type fails the turn. `+timeoutMs+` limits the whole exchange, and `+streamIdleTimeoutMs+` limits the wait for the response headers and each gap between lines. When the exchange fails partway, the progress lines and reply text already sent stay in the reply stream, followed by an `+error+` event. See <<troubleshooting>>.
+
+Use `+json+` when the endpoint answers in a second or two. Use `+stream+` when it takes longer, or to show progress to the user.
+
+[[stream-lines]]
+=== Stream lines
+
+[source,json]
+----
+{"type":"progress","text":"Looking up ticket SUP-1024"}
+{"type":"steering","forward":{"context":["Ticket SUP-1024 is a migration request."]}}
+{"type":"reply-delta","text":"Here is a summary "}
+{"type":"reply-delta","text":"of the ticket."}
+{"directive":"halt"}
+----
+
+[cols="1,3",options="header"]
+|===
+|Line |Effect
+
+|`+{"type":"progress","text":"<text>"}+`
+|A status line in the chat, separate from the reply. The AI service sends it to the chat client as a `+hook-progress+` Server-Sent Event (SSE).
+
+|`+{"type":"reply-delta","text":"<text>"}+`
+|Part of the reply, shown as it arrives. A streamed `+halt+` can carry its reply this way instead of in `+reply+`.
+
+|`+{"type":"steering","forward":{},"attributes":{}}+`
+|Adds to `+forward+` and `+attributes+` while the stream runs. Never shown to the user.
+
+|A line with `+directive+`
+|The decision, in the same shape as a `+json+` response body. It ends the stream. A stream that ends without a decision fails the turn, even after a complete reply.
+|===
+
+A `+steering+` line can arrive at any point in the stream. The endpoint can send the whole `+forward+` on the decision line, send it in pieces on `+steering+` lines as the data becomes available, or combine both. Each `+steering+` line adds to the earlier ones, so do not repeat an entry.
+
+Merge rules for `+steering+` lines:
+
+* `+context+` and `+instructions+` are concatenated in arrival order, with the decision line last.
+* `+intent+` is replaced, not merged. The last stated `+intent+`, including one on the decision line, applies in full. Fields from an earlier `+intent+` do not carry over.
+* `+attributes+` are merged key by key. A later line takes precedence, including the decision line.
+* Limits apply to each line and again after merging. An oversized field in one line is dropped. An oversized merged `+forward+` fails the turn. `+intent+` is not size-checked, but when a `+forward+` is dropped, its `+intent+` is dropped with it.
+* A `+halt+` decision discards every streamed `+forward+`. Streamed `+attributes+` are still stored.
+* A malformed `+steering+` fragment is dropped, and the stream continues. Each field is checked separately.
+
+The `+progress+`, `+reply-delta+`, and `+steering+` lines each have a limit of `+outcomeMaxCharacters+` across the whole stream. A stream that exceeds a limit fails the turn. The AI service ignores unrecognized lines, but counts them toward the `+steering+` limit at their full length.
+
+[[limits]]
+== Limits
+
+[cols="2,1,1",options="header"]
+|===
+|Limit |Default and maximum |Option
+
+|Whole exchange, both modes
+|30 s, up to 600 s
+|`+timeoutMs+`
+
+|Wait for the response headers, and each gap between streamed lines
+|30 s, up to 60 s
+|`+streamIdleTimeoutMs+`
+
+|Request body
+|32 MB
+|Not configurable
+
+|Response body in `+json+` mode
+|32 MB
+|Not configurable
+
+|Entries in `+instructions+` and `+context+`
+|50 for each array, up to 500
+|`+outcomeMaxEntries+`
+
+|Characters in `+reply+`, `+instructions+`, and `+context+`
+|20,000 for each array, up to 100,000
+|`+outcomeMaxCharacters+`
+
+|Streamed characters for each channel
+|20,000, up to 100,000
+|`+outcomeMaxCharacters+`
+|===
+
+[[contract-versioning]]
+== Contract versioning
+
+`+contractVersion+` is `+"1"+`. Within a version, the contract only gains fields, such as new envelope fields and new stream line types. To stay compatible:
+
+* Ignore unrecognized fields in the request.
+* Put custom bookkeeping in `+attributes+`. The AI service ignores unrecognized decision fields without failing the turn.
+
+A change that breaks version `+1+` handlers comes with a new `+contractVersion+`.
+
+[[integration-patterns]]
+== Integration patterns
+
+[[screening-chat-messages]]
+=== Screening chat messages
+
+A hook can check every chat message against organization rules and refuse the messages that break them. The endpoint returns `+halt+` with the refusal text for a message that breaks a rule, and `+continue+` for every other message. The example endpoint in <<example-endpoint>> follows this pattern.
+
+* Screen `+turn.prompt+`. A `+file+` or `+web-resource+` part carries no content, so to screen an attachment, read it through the API as described in <<reading-attachments-and-documents>>.
+* When the rules call another service that is unavailable, do not respond with `+continue+`. Respond with `+halt+` and a refusal that the user can read, or with an error status, which fails the turn with the general chat error message. Both keep the check fail-closed.
+* Hooks do not screen quick actions, reviews, or Document Processing. To apply the policy to every request from a group of users, grant only chat permissions in their tokens:
+
+[source,json]
+----
+{
+  "auth": {
+    "ai": {
+      "permissions": [
+        "ai:conversations:read",
+        "ai:conversations:write",
+        "ai:models:openai:gpt-4.1"
+      ]
+    }
+  }
+}
+----
+
+Replace `+ai:models:openai:gpt-4.1+` with the model permissions for the deployment. See xref:tinymceai-on-premises-jwt.adoc#permissions-reference[Permissions reference]. Token permissions are the control; hiding a toolbar button in the editor does not enforce anything.
+
+A hook does not replace xref:tinymceai-on-premises-moderation.adoc[content moderation]. A hook applies the integrator's own rules to chat messages only, and fails closed. Moderation checks requests against a fixed set of harm categories, and fails open. See xref:tinymceai-on-premises-moderation.adoc#what-moderation-checks[What moderation checks] and xref:tinymceai-on-premises-moderation.adoc#failure-behavior[Failure behavior].
+
+[[routing-to-an-existing-agent]]
+=== Routing chat messages to an existing agent
+
+A hook can pass each chat message to an existing in-house agent. The agent answers some messages itself with `+halt+`, for example a request to open a change request. For other messages, it returns `+continue+` with the data it looked up in `+forward.context+`, house style rules in `+forward.instructions+`, and, when the agent already knows the user wants a document edit, a `+forward.intent+`:
+
+[source,json]
+----
+{
+  "directive": "continue",
+  "reply": ["Found the timeline for INC-2291."],
+  "forward": {
+    "context": [
+      "Timeline of INC-2291: 09:12 UTC error rate on the checkout service rose above 5%. 09:41 UTC configuration change rolled back. 09:55 UTC incident resolved."
+    ],
+    "instructions": ["Write times in UTC with the 24-hour clock."],
+    "intent": {
+      "expectedOutput": "document-modification",
+      "responseLanguage": "en",
+      "documentModificationLanguage": "en"
+    }
+  },
+  "attributes": { "incidentId": "INC-2291" }
+}
+----
+
+When the agent takes more than a second or two, set `+"responseMode": "stream"+` and send `+progress+` lines while the agent works. When the agent fails, respond with an error status. The turn fails with `+502 hook-failed+`, and the AI service does not answer the message itself.
+
+[[security-considerations]]
+== Security considerations
+
+[WARNING]
+====
+The AI service calls the hook endpoint before xref:tinymceai-on-premises-moderation.adoc[content moderation] checks the prompt and before the `+message+` xref:tinymceai-on-premises-guardrails.adoc[guardrail] runs. These checks protect the model, not the hook endpoint, so the prompt reaches the hook unscreened. Attachments that the hook service reads through the API have passed only the checks that run when content is added, when those checks are turned on. Screen everything in the hook service.
+====
+
+* Verify the signature on every request, and reject stale timestamps and repeated `+webhook-id+` values.
+* Use HTTPS for the endpoint.
+* Treat the hook endpoint as a dependency of every chat turn. Monitor its availability and response time, because an outage stops all chat turns. Run more than one instance, and keep request IDs for replay protection in a shared store.
+
+[[hooks-and-the-plugin]]
+== Hooks and the {pluginname} plugin
+
+The {pluginname} plugin needs no configuration for hooks. A `+halt+` reply and a `+continue+` reply both appear in the chat as assistant messages.
+
+* The plugin does not display `+hook-progress+` events. The Chat sidebar shows its default status message, such as `+AI is preparing a response…+`, for the whole streaming response instead. A custom chat interface built on the REST API can read the events and show each line. See xref:tinymceai-streaming.adoc[Streaming].
+* The plugin does not attach `+delegation-context+` parts to messages. Integrations that need custom front-end data in the hook request must call the conversation API directly.
+
+[[troubleshooting]]
+== Troubleshooting
+
+When a hook call fails, the user's request ends with an error, and the AI service stores no assistant message.
+
+[cols="2,1,1",options="header"]
+|===
+|Cause |HTTP status |Error code
+
+|The endpoint did not respond within `+timeoutMs+`
+|`+504+`
+|`+hook-timeout+`
+
+|In `+stream+` mode, the endpoint sent no response headers within `+streamIdleTimeoutMs+`
+|`+504+`
+|`+hook-timeout+`
+
+|The AI service could not reach the endpoint
+|`+502+`
+|`+hook-failed+`
+
+|The endpoint responded with a redirect or a status outside `+2xx+`
+|`+502+`
+|`+hook-failed+`
+
+|The response body is not valid JSON, or in `+stream+` mode the content type is not `+application/x-ndjson+`
+|`+502+`
+|`+hook-failed+`
+
+|The request body or the response body is larger than 32 MB
+|`+502+`
+|`+hook-failed+`
+
+|The decision is outside the contract: an unknown `+directive+`, a missing required field, or a value over a limit
+|`+502+`
+|`+hook-failed+`
+
+|The AI service cannot read the shared secret to sign the request
+|`+502+`
+|`+hook-failed+`
+|===
+
+The error response body carries the error code and the `+requestId+`, the same value as the `+webhook-id+` header and the `+requestId+` in the request body, so a failed turn can be matched to the logs of the hook endpoint. The service log records the reason for the failure with the same `+requestId+`.
+
+In `+stream+` mode, the table applies until the endpoint responds with `+200+` and the NDJSON content type. After that, a failure, such as a timeout, a stalled stream, or a decision outside the contract, reaches the user as an `+error+` event in the reply stream, after the progress lines and the reply text already sent.
+
+In the {pluginname} plugin, a failed hook call shows the general chat error message, `+An error occurred while processing the AI response.+` For an `+error+` event, the message replaces the partial reply. The browser console shows more detail:
+
+* For `+hook-failed+` (HTTP `+502+`), the console shows `+TinyMCE AI Error:+` followed by the error message, the status code, the trace ID, and the error code.
+* For `+hook-timeout+` (HTTP `+504+`), the console shows `+Unexpected status code: 504+`, without the trace ID or the error code.
+* For an `+error+` event in the reply stream, the console shows `+TinyMCE AI Error:+` followed by the message of the event.
+
+The console does not show the `+requestId+`. For a `+502+` or `+504+` response, read it from the response body in the network panel of the browser developer tools.
+
+[[when-the-user-cancels]]
+=== When the user cancels
+
+When the user stops the request before the endpoint responds, the AI service closes the connection to the endpoint at once, in both response modes, and the endpoint sees the request abort. The AI service logs a cancellation, not a failure, and stores no message for the turn.
+
+[[troubleshooting-symptoms]]
+=== Symptoms
+
+[cols="1,2",options="header"]
+|===
+|Symptom |Resolution
+
+|The AI service does not start after setting `+HOOKS+`
+|The configuration breaks a rule in <<options>>, for example an `+http://+` endpoint without `+allowPlaintextHttp+`, or a value outside the allowed range. Check the start-up entries in the service log.
+
+|Every chat turn fails with `+502 hook-failed+` and the log reason is `+signing-failed+`
+|The secret in `+auth.secret+` is missing or malformed. Generate a new secret as shown in <<shared-secret>>, and set it in `+HOOKS+` and in the endpoint.
+
+|The endpoint rejects every request with `+401+`
+|The endpoint verifies a re-serialized body, or uses a different secret. Verify the signature over the raw request body, and confirm that the endpoint and `+HOOKS+` use the same secret.
+
+|Every chat turn fails with `+504 hook-timeout+`
+|Raise `+timeoutMs+` above the response time of the endpoint. In `+stream+` mode, also send the response headers within `+streamIdleTimeoutMs+`.
+
+|Chat turns fail with `+502 hook-failed+`, and the endpoint URL responds with a `+3xx+` redirect
+|Redirects are not followed. Set `+endpoint+` to the final URL.
+
+|Chat turns fail with `+502 hook-failed+` when the decision carries long instructions, context, or reply text
+|The decision exceeds `+outcomeMaxEntries+` or `+outcomeMaxCharacters+`. Shorten the decision or raise the limits.
+
+|In `+stream+` mode, chat turns fail after the endpoint responded with `+200+`
+|The stream failed after the response headers: it stalled for longer than `+streamIdleTimeoutMs+`, ran past `+timeoutMs+`, or ended with a decision outside the contract. Find the reason in the service log by the `+requestId+`.
+
+|Every chat turn fails, while quick actions and reviews still work
+|Hooks fail closed, and the hook endpoint is unavailable. Restore the endpoint, or set `+enabled+` to an empty array in `+HOOKS+` and restart the AI service to bypass hooks.
+|===
+
+== Related pages
+
+* xref:tinymceai-on-premises-moderation.adoc[Content moderation]
+* xref:tinymceai-on-premises-guardrails.adoc[Guardrails]
+* xref:tinymceai-on-premises-jwt.adoc[JWT authentication]
+* xref:tinymceai-on-premises-reference.adoc#error-code-reference[Error code reference]
+* xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting]

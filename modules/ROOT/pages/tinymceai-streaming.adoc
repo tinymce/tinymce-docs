@@ -16,13 +16,14 @@ Real-time AI interactions using Server-Sent Events (SSE) for immediate feedback 
 [[sse-event-types]]
 == SSE event types
 
-Conversations, Reviews, and Actions each use different event names and JSON payloads in the SSE stream. Those payloads are documented on each streaming operation in the https://tinymceai.api.tiny.cloud/docs[interactive API documentation], not on the feature overview pages (which only summarize that SSE is used).
+Conversations, Reviews, Actions, and Document Processing each use their own set of events and JSON payloads in the SSE stream. Those payloads are documented on each streaming operation in the https://tinymceai.api.tiny.cloud/v1/docs[interactive API documentation], not on the feature overview pages (which only summarize that SSE is used).
 
 Use the API reference for the operation being called—for example:
 
-* https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages[Conversation Messages] and related Conversation tags for chat streaming, sources, and reasoning.
-* https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for review streaming responses.
-* https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API] for action streaming responses.
+* https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages[Conversation Messages] and related Conversation tags for chat streaming, sources, and reasoning.
+* https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews[Reviews API] for review streaming responses.
+* https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions[Actions API] for action streaming responses.
+* https://tinymceai.api.tiny.cloud/v1/docs#tag/Document-processing/operation/streamProcessDocument[Process a document (streaming)] for Document Processing streaming responses. See also xref:tinymceai-document-processing.adoc#streaming[Document Processing streaming].
 
 The shared wire format and client-side parsing are covered in <<sse-wire-format,SSE wire format>> and <<basic-implementation,Basic implementation>> on this page.
 
@@ -73,7 +74,7 @@ const parser = createParser({
         break;
       default:
         // Handle all other events — event names vary by API; see
-        // https://tinymceai.api.tiny.cloud/docs for each operation's schema.
+        // https://tinymceai.api.tiny.cloud/v1/docs for each operation's schema.
         // Examples: Conversations (text-delta, source, reasoning, modification-delta),
         // Reviews (review-delta, review-metadata), Actions (modification-delta, action-metadata)
         console.log('Event:', event.event, payload);
@@ -107,12 +108,12 @@ if (event.event === 'error') {
 [[progress-tracking]]
 == Progress tracking
 
-Use metadata events to show progress. Event names and fields for review streaming are defined in the https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] operations that return SSE responses, not in the Review plugin overview.
+Use metadata events to show progress. Event names and fields for review streaming are defined in the https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews[Reviews API] operations that return SSE responses, not in the Review plugin overview.
 
 [[api-reference]]
 == API reference
 
-The https://tinymceai.api.tiny.cloud/docs[interactive API documentation] describes streaming endpoints, event shapes, and errors for each feature area.
+The https://tinymceai.api.tiny.cloud/v1/docs[interactive API documentation] describes streaming endpoints, event shapes, and errors for each feature area.
 
 [[next-steps]]
 == Next steps

@@ -1,0 +1,46 @@
+= TinyMCE AI Usage API
+:navtitle: Usage API
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
+:description: Retrieve the TinyMCE AI credits consumed by an environment and by each of its users over a period, from a back end.
+:description_short: Usage API
+:keywords: AI, API, usage, billing, credits, getBillingUsage, ai:admin, tinymceai
+
+The Usage API returns the credits that the {pluginname} service recorded for an environment over a period of time. A request can also return the credits for each listed user, or for every user with activity in the period.
+
+The endpoint is `+POST /v1/admin/billing/usage+`. It is an administration endpoint: back-end code calls it with an administration token. The `+tinymceai+` plugin does not call it.
+
+[[requirements]]
+== Requirements
+
+* *Deployment*: the {cloudname}-hosted {pluginname} service. The usage is reported for the environment that the token identifies in its `+aud+` claim.
+* *Token*: a token that grants `+ai:admin+`, signed and used only on a back end. See xref:tinymceai-permissions.adoc#admin-permissions[Admin permissions].
+
+[[get-usage]]
+== Get usage
+
+. Sign an administration token on the back end. Sign it with a JWT signing key of the {cloudname} API key, in the same way as user tokens (see xref:tinymceai-jwt-authentication-intro.adoc[JWT authentication]), and include `+ai:admin+` in the permissions.
+. Send `+POST /v1/admin/billing/usage+` to `+https://tinymceai.api.tiny.cloud+` with the period to report on. Set `+users+` to the string `+"*"+` to report on every user with activity in the period:
++
+[source,json]
+----
+{
+  "from": "2026-06-01T00:00:00Z",
+  "to": "2026-06-30T23:59:59Z",
+  "users": "*"
+}
+----
+. Read the `+environment+` object for the environment total, and the `+users+` array for the credits of each user.
+
+A user ID in the request and the response is the `+sub+` claim of the tokens of that user.
+
+For the request and response fields and the error codes, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Billing/operation/getBillingUsage[Get billing usage] in the API reference. Errors use the body described in xref:tinymceai-api-overview.adoc#error-responses[Error responses].
+
+[[related-features]]
+== Related features
+
+* xref:tinymceai-permissions.adoc#admin-permissions[Admin permissions]: The `+ai:admin+` permission and how to handle administration tokens.
+* xref:tinymceai-jwt-authentication-intro.adoc[JWT authentication]: Token claims, including `+aud+` and `+sub+`.
+* xref:tinymceai-limits.adoc[Limits]: Rate limits, context limits, and file limits.
+* xref:tinymceai-api-overview.adoc[API overview]: The features of the {pluginname} REST API and the conventions they share.
+* https://tinymceai.api.tiny.cloud/v1/docs#tag/Billing[Billing API]: Request and response schemas, and error codes.

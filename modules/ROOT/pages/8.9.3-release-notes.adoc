@@ -26,7 +26,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 A stored cross-site scripting (XSS) vulnerability was identified in the media plugin. Elements crafted through the `data-mce-object` attribute were created before sanitization, which allowed event handler scripts on those elements to run. {productname} {release-version} ensures that, when the media plugin is in use, any content created through the `data-mce-object` attribute is sanitized first.
 
-CVE: _pending_
+CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-116675[CVE-2026-116675]
 
 GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-mf2p-h6hf-fcwm[GitHub Advisories].
 

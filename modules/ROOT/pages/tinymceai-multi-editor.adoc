@@ -8,14 +8,12 @@
 
 include::partial$misc/admon-requires-8.10v.adoc[]
 
-Multi-editor mode groups several {productname} editors on the same page so that they share one Chat sidebar and one Review sidebar. Use multi-editor mode when a page splits related content across several editors, for example a form with separate editors for a summary and a body, or a page that edits several related articles side by side.
-
-In a group, Chat, Review, and Quick Actions work across the content of every editor. The {pluginname} plugin identifies the content of each editor by name, and previews and applies each change in the editor it belongs to.
+Multi-editor mode groups several {productname} editors on one page, such as the sections of a form, so that they share one Chat sidebar and one Review sidebar. Chat, Review, and Quick Actions work across the content of every editor in the group.
 
 [[demo]]
 == Demo
 
-The demo below splits a hiring pack across three editors in one group: a Role description editor, an Interview questions editor, and a Notes for HR editor. The shared Chat sidebar opens when the demo loads, and the image:icons-premium/ai-assistant.svg[Chat icon,24px] Chat toolbar button in any of the three editors opens or closes it. Select one of the suggested actions to add interview questions, draft notes for HR, or flag unclear or biased wording across the hiring pack, or run a review over all three editors.
+The demo below groups the three sections of a hiring pack, and the shared Chat sidebar opens when the demo loads. Select a suggested action, or run a review across all three editors.
 
 liveDemo::tinymceai-multi-editor[]
 

@@ -7,7 +7,9 @@ NOTE: This is the {productname} Community version changelog. For information abo
 
 == xref:8.10.1-release-notes.adoc[8.10.1 - 2026-10-28]
 
-//TODO
+### Fixed
+* The `editor.insertContent` API removed inline formatting when the selection covered the entire block content and the content was wrapped in an inline format element.
+// #TINYMCE-11317
 
 == xref:8.10.0-release-notes.adoc[8.10.0 - 2026-10-14]
 

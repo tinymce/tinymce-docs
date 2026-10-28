@@ -75,7 +75,7 @@ For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following fix.
+**TinyMCE AI** includes the following fixes.
 
 ==== AI edits to nested elements were not always applied correctly and could cause duplicated content
 // #TINYMCE-14715
@@ -83,6 +83,13 @@ The {productname} {release-version} release includes an accompanying release of 
 Previously, when an AI response changed content inside nested elements, such as content inside a `+div+`, a list, or a table, the **TinyMCE AI** plugin did not always apply the change correctly. For example, when Chat modified the whole document, the first element of the document could appear twice. After a user accepted the AI response, the document contained duplicated or misplaced content that the user had to correct manually.
 
 In {productname} {release-version}, the **TinyMCE AI** plugin applies each change to nested content as an update to the top-level block that contains it. The plugin now applies AI changes to nested content as expected, without duplicating content.
+
+==== When the AI changed the same block more than once in a single response, the AI preview showed the later change compared against the earlier one instead of the original content
+// #TINYMCE-15091
+
+Previously, when the AI service changed the same block more than once in a single Chat response, the **TinyMCE AI** plugin compared the later change against the earlier AI version of the block instead of the original content. **Diff mode** and **Preview** showed wording from the earlier AI version as removed or unchanged text. When a change also converted the block to a different type, such as a paragraph to a heading, the original block appeared as deleted twice. The changes recorded in the Chat sidebar could also list the same block more than once. The highlighted differences did not match what the AI service had changed, so users found it harder to review the suggestions before applying them.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin compares every change to a block against the original content, regardless of how many times the AI service changes that block in a response. The preview shows one change for each block, from the original content to the final version, and the Chat sidebar records each block once.
 
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 

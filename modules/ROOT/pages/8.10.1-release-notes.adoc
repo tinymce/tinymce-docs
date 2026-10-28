@@ -75,7 +75,14 @@ For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following fix.
+**TinyMCE AI** includes the following fixes.
+
+==== AI edits to nested elements were not always applied correctly and could cause duplicated content
+// #TINYMCE-14715
+
+Previously, when an AI response changed content inside nested elements, such as content inside a `+div+`, a list, or a table, the **TinyMCE AI** plugin did not always apply the change correctly. For example, when Chat modified the whole document, the first element of the document could appear twice. After a user accepted the AI response, the document contained duplicated or misplaced content that the user had to correct manually.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin applies each change to nested content as an update to the top-level block that contains it. The plugin now applies AI changes to nested content as expected, without duplicating content.
 
 ==== When the AI changed the same block more than once in a single response, the AI preview showed the later change compared against the earlier one instead of the original content
 // #TINYMCE-15091

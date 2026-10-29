@@ -714,8 +714,8 @@ The AI service calls the hook endpoint before xref:tinymceai-on-premises-moderat
 
 The {pluginname} plugin needs no configuration for hooks. A `+halt+` reply and a `+continue+` reply both appear in the chat as assistant messages.
 
-* The plugin does not display `+hook-progress+` events. The Chat sidebar shows its default status message, such as `+AI is preparing a response…+`, for the whole streaming response instead. A custom chat interface built on the REST API can read the events and show each line. See xref:tinymceai-streaming.adoc[Streaming].
-* The plugin does not attach `+delegation-context+` parts to messages. Integrations that need custom front-end data in the hook request must call the conversation API directly.
+* A custom chat interface built on the REST API can read `+hook-progress+` events and show each line. See xref:tinymceai-streaming.adoc[Streaming].
+* To send custom front-end data in the hook request, attach `+delegation-context+` parts to messages through the conversation API.
 
 [[troubleshooting]]
 == Troubleshooting

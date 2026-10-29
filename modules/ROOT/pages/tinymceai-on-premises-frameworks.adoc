@@ -355,7 +355,7 @@ If using the Tiny CDN instead of self-hosted assets, also add the {cloudname} do
 |Update `ALLOWED_ORIGINS` and restart the AI service.
 
 |Editor shows an error, and the browser console logs `TinyMCE AI Error:` with the cause, for example `Invalid JWT token provider result` or `Invalid JWT token payload`
-|Token endpoint returns invalid JSON or non-200. See xref:tinymceai-on-premises-jwt.adoc#common-failure-modes[Common failure modes]
+|Token endpoint returned a response without a `token` string, for example a non-200 error body, or a token without the required claims. See xref:tinymceai-on-premises-jwt.adoc#common-failure-modes[Common failure modes]
 |Validate: `curl -X POST http://localhost:3000/api/ai-token` should return `pass:c[{"token":"eyJ..."}]` with HTTP 200.
 |===
 

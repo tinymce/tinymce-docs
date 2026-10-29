@@ -188,7 +188,7 @@ Quick Actions that open in Chat, such as *Explain*, *Summarize*, and *Highlight 
 |Ability to call the xref:tinymceai-document-processing.adoc[Document Processing] endpoints, `+POST /v1/documents/process+` and `+POST /v1/documents/process/stream+`.
 |===
 
-A Document Processing request that references a context also requires the `+ai:contexts:<contextId>+` permission, or `+ai:contexts:*+`, for each referenced context. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Document-processing/operation/processDocument[Process a document] in the API reference.
+A request that references a context, in a conversation message, an action, a review, or a Document Processing request, also requires the `+ai:contexts:<contextId>+` permission, or `+ai:contexts:*+`, for each referenced context. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Document-processing/operation/processDocument[Process a document] in the API reference.
 
 Contexts are created with the Context Admin operations, which require xref:#admin-permissions[`+ai:admin+`]. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Context-Admin/operation/adminCreateContext[Create a context] in the API reference.
 

@@ -881,7 +881,7 @@ When debugging, start here. Most "auth failures" reflect wrong claim values rath
 |`allowed: false` on specific endpoints only |Missing the specific permission |Decode token, check the `auth.ai.permissions` array against the table above.
 |Token silently rejected, no decoded error |RS256 signature |Re-sign with HS256.
 |`aud` claim type mismatch |`aud` issued as array instead of string |Some JWT libraries default to array `aud`. Force string.
-|Editor shows an error, and the browser console logs `TinyMCE AI Error:` with the cause, for example `Invalid JWT token provider result` or `Invalid JWT token payload` |Token endpoint returned non-JSON, returned `token` as a nested object, returned a token without the required claims, or Cross-Origin Resource Sharing (CORS) blocked the request |Open browser devtools → Network → inspect the response from `/api/ai-token`.
+|Editor shows an error, and the browser console logs `TinyMCE AI Error:` with the cause, for example `Invalid JWT token provider result` or `Invalid JWT token payload` |Token endpoint returned `token` as a nested object, returned a token without the required claims, or Cross-Origin Resource Sharing (CORS) blocked the request |Open browser devtools → Network → inspect the response from `/api/ai-token`.
 |===
 
 === Sanity-check a token manually

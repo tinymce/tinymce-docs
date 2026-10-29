@@ -359,6 +359,7 @@ In image version 1.1.0 and later, an Azure OpenAI provider can authenticate with
   "azure-entra": {
     "type": "azure",
     "baseUrl": "https://YOUR_RESOURCE_NAME.openai.azure.com",
+    "apiVersion": "2024-10-21",
     "authentication": {
       "type": "entra-id",
       "scope": "https://cognitiveservices.azure.com/.default"

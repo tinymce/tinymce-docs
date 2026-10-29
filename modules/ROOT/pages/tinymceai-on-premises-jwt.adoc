@@ -136,7 +136,7 @@ For Bedrock models with an inference profile prefix (`us.`, `eu.`, `apac.`) and 
 [cols=",",options="header",]
 |===
 |Do not use |Reason
-|`ai:admin` |In image version 1.2.0 and later, the xref:tinymceai-on-premises-mcp.adoc#mcp-admin-api[MCP server admin API] requires `ai:admin` for back-end administration requests. `ai:admin` passes every permission check, so never include it in a token returned to the editor.
+|`ai:admin` |Back-end administration requests need `ai:admin`: the Context Admin operations of the xref:tinymceai-api-overview.adoc#contexts[context library] (image version 1.1.0 and later) and the xref:tinymceai-on-premises-mcp.adoc#mcp-admin-api[MCP server admin API] (image version 1.2.0 and later). `ai:admin` passes every permission check, so never include it in a token returned to the editor.
 |`"*"` (the bare string) |Rejected. The verifier requires structured permission strings.
 |`useAllFeatures: true` |The on-premises service requires the explicit `auth.ai.permissions` array.
 |A single string instead of an array |Rejected. `auth.ai.permissions` must be ``string[]``.
@@ -881,7 +881,7 @@ When debugging, start here. Most "auth failures" reflect wrong claim values rath
 |`allowed: false` on specific endpoints only |Missing the specific permission |Decode token, check the `auth.ai.permissions` array against the table above.
 |Token silently rejected, no decoded error |RS256 signature |Re-sign with HS256.
 |`aud` claim type mismatch |`aud` issued as array instead of string |Some JWT libraries default to array `aud`. Force string.
-|Editor shows an error, and the browser console logs `TinyMCE AI Error:` with the cause, for example `Invalid JWT token provider result` or `Invalid JWT token payload` |Token endpoint returned `token` as a nested object, returned a token without the required claims, or Cross-Origin Resource Sharing (CORS) blocked the request |Open browser devtools → Network → inspect the response from `/api/ai-token`.
+|Editor shows an error, and the browser console logs `TinyMCE AI Error:` with the cause, for example `Invalid JWT token provider result` or `Invalid JWT token payload` |Token endpoint returned `token` as a nested object, or returned a token without the required claims |Open browser devtools → Network → inspect the response from `/api/ai-token`.
 |===
 
 === Sanity-check a token manually

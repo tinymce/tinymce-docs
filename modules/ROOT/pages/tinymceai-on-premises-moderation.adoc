@@ -331,7 +331,7 @@ To block chat messages while the screening service is down, use a xref:tinymceai
 [[what-happens-when-content-is-flagged]]
 == What happens when content is flagged
 
-The AI service rejects the request with HTTP status `+422+` and the error code `+unsafe-content-detected+`. The `+data.flaggedCategories+` array lists the categories that triggered the rejection.
+For chat messages, quick actions, reviews, and uploads, the AI service rejects the request with HTTP status `+422+` and the error code `+unsafe-content-detected+`. The `+data.flaggedCategories+` array lists the categories that triggered the rejection. For the error codes of Document Processing requests, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Document-processing/operation/processDocument[Process a document] in the API reference.
 
 For the error response shape, see xref:tinymceai-api-overview.adoc#error-responses[Error responses].
 
@@ -340,14 +340,14 @@ A blocked request leaves no record that can be retrieved through the API: the AI
 [[moderation-and-the-plugin]]
 === What the {pluginname} plugin shows
 
-The {pluginname} plugin never shows the flagged categories. Only a flagged review tells the user that the content was flagged:
+A flagged request shows the following in the plugin:
 
 * A flagged chat message shows the general chat error message, `+An error occurred while processing the AI response.+`
 * A flagged quick action shows the same general message, as an editor notification, or in the chat for a quick action that opens the chat.
 * A flagged review shows the message of the error response, `+Unsafe content was detected and the request cannot be processed+`.
 * A flagged image upload shows the general file upload error message, `+This file can't be added. Try a smaller file, or a different file type.+`
 
-In each case, the browser console shows `+TinyMCE AI Error:+` followed by the error message, the status code, the trace ID, and the error code `+unsafe-content-detected+`. The console output does not include the flagged categories. To see them, read the response in the browser network tab, or find the service log entry by its trace ID.
+In each case, the browser console shows `+TinyMCE AI Error:+` followed by the error message, the status code, the trace ID, and the error code `+unsafe-content-detected+`. To see the flagged categories, read the response in the browser network tab, or find the service log entry by its trace ID.
 
 [[network-requirements]]
 == Network requirements

@@ -277,7 +277,7 @@ Every error response carries a `+traceId+`. See xref:tinymceai-on-premises-troub
 |`Wrong license key.` |AI service startup |Truncated or whitespace-padded license key |Re-paste as a single line
 |License error with a reason |License check |In image version 1.2.0 and later, a license error in an API response states its reason |Act on the stated reason, or contact Tiny support with it
 |`content-rejected` (HTTP 422) |Guardrails |A guardrail classified the content as an attack, such as prompt injection, or the content matched a blocklist phrase |Review the content, or adjust the guardrail configuration. See xref:tinymceai-on-premises-guardrails.adoc[Guardrails]
-|`unsafe-content-detected` (HTTP 422) |Content moderation |The moderation provider flagged the prompt or an uploaded image. `data.flaggedCategories` lists the categories |Change the content, or adjust the moderation configuration. See xref:tinymceai-on-premises-moderation.adoc[Content moderation]
+|`unsafe-content-detected` (HTTP 422) |Content moderation |The moderation provider flagged the prompt, an image uploaded to a conversation, or a file uploaded to the context library. `data.flaggedCategories` lists the categories |Change the content, or adjust the moderation configuration. See xref:tinymceai-on-premises-moderation.adoc[Content moderation]
 |`hook-failed` (HTTP 502) |Hooks |The configured hook endpoint did not complete successfully |Check the hook endpoint logs using the `requestId` value. See xref:tinymceai-on-premises-hooks.adoc[Hooks]
 |`hook-timeout` (HTTP 504) |Hooks |The configured hook endpoint did not respond in time |Check the hook endpoint availability and the hook timeout settings. See xref:tinymceai-on-premises-hooks.adoc[Hooks]
 |===
@@ -293,7 +293,7 @@ Every error response carries a `+traceId+`. See xref:tinymceai-on-premises-troub
 |Stream-abort recovery |Stop button leaves stale state |The next message returns `409 conversation in use` then `404 conversation does not exist`. Recovery: start a new conversation or reload.
 |Built-in rate limiting |None |Front the service with nginx `limit_req` or ALB rate-limit rules. See xref:tinymceai-on-premises-production.adoc#rate-limiting[Rate limiting].
 |File support (OpenAI-compatible providers) |Images only (`image/*`) |PDFs, text, and Office files are not forwarded to OpenAI-compatible providers. Use a non-OpenAI-compatible provider for non-image file attachments.
-|MCP tool availability |Conversations and Document Processing |MCP tools are not available in reviews or quick actions. Document Processing skips OAuth-enabled servers.
+|MCP tool availability |Conversations, and Document Processing in image version 1.1.0 and later |MCP tools are not available in reviews or quick actions. Document Processing skips OAuth-enabled servers.
 |MCP authentication |Static token or OAuth 2.0, configured independently for each server |Static tokens use the `headers` field (shared across all users, fixed at deploy time). Per-user authentication is supported through OAuth 2.0 (Authorization Code with PKCE). See xref:tinymceai-on-premises-mcp.adoc#mcp-oauth[OAuth 2.0 authentication].
 |PostgreSQL default schema |`cs-on-premises` (with hyphen) |Pre-create with `CREATE SCHEMA "cs-on-premises";` or set `DATABASE_SCHEMA=public`.
 |`/v1/models/\{compatibilityVersion}` |Only accepts `1` |Values such as `v1`, `v2`, or `latest` return 400.

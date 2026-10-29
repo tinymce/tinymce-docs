@@ -314,13 +314,13 @@ In every case, the AI service logs a short reason for the decision. The reason i
 
 The {pluginname} plugin needs no configuration for guardrails. When a chat message has the editor content as context, the plugin uploads that content as a conversation document before it sends the message, so the `+uploadDocument+` operation inspects the editor content of each such message.
 
-The plugin does not show the reason for a rejection:
+A rejected request shows the following in the plugin:
 
 * A rejected chat message shows the general chat error message, `+An error occurred while processing the AI response.+`
 * A rejected file upload shows the general file upload error message, `+This file can't be added. Try a smaller file, or a different file type.+`
 * A rejected quick action shows the same general message, as an editor notification, or in the chat for a quick action that opens the chat.
 * A rejected review shows the message of the error response, `+The provided content could not be processed+`.
-* A rejected editor document upload also shows the general chat error message. The browser console reports `+Unexpected status code: 422+` without the trace ID or the error code.
+* A rejected editor document upload also shows the general chat error message. The browser console reports `+Unexpected status code: 422+`.
 
 For the other rejected requests, the browser console shows `+TinyMCE AI Error:+` followed by the error message, the status code, the trace ID, and the error code. Use the trace ID to find the matching entry in the service logs.
 

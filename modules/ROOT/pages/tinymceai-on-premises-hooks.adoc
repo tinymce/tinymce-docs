@@ -549,7 +549,7 @@ Respond with `+content-type: application/json+` and the decision as the whole bo
 `+stream+`::
 Respond with `+content-type: application/x-ndjson+` and write one JSON object per line, flushing each line. The AI service sends `+accept: application/x-ndjson+` in this mode. Any other response content type fails the turn. `+timeoutMs+` limits the whole exchange, and `+streamIdleTimeoutMs+` limits the wait for the response headers and each gap between lines. When the exchange fails partway, the progress lines and reply text already sent stay in the reply stream, followed by an `+error+` event. See <<troubleshooting>>.
 
-Use `+json+` when the endpoint answers in a second or two. Use `+stream+` when it takes longer, or to show progress to the user.
+Use `+json+` when the endpoint answers in a second or two. Use `+stream+` when it takes longer, or to stream progress lines to the client.
 
 [[stream-lines]]
 === Stream lines
@@ -568,7 +568,7 @@ Use `+json+` when the endpoint answers in a second or two. Use `+stream+` when i
 |Line |Effect
 
 |`+{"type":"progress","text":"<text>"}+`
-|A status line in the chat, separate from the reply. The AI service sends it to the chat client as a `+hook-progress+` Server-Sent Event (SSE).
+|A status line, separate from the reply. The AI service sends it to the client as a `+hook-progress+` Server-Sent Event (SSE). See <<hooks-and-the-plugin>>.
 
 |`+{"type":"reply-delta","text":"<text>"}+`
 |Part of the reply, shown as it arrives. A streamed `+halt+` can carry its reply this way instead of in `+reply+`.

@@ -6,7 +6,7 @@ If you use a form handler, once the `+<form>+` is submitted, {productname} {prod
 
 === Get and set content programmatically
 
-Use the xref:apis/tinymce.editor.adoc#getContent[`+getContent+`] and xref:apis/tinymce.editor.adoc#setContent[`+setContent+`] APIs to read and write editor content from JavaScript.
+Use the xref:apis/tinymce.editor.adoc#getContent[`+getContent+`] and xref:apis/tinymce.editor.adoc#setContent[`+setContent+`] APIs to read and write editor content from JavaScript. For the `+setContent+` arguments, undo behavior, and how to change content before it is set, see: xref:editor-save-and-submit.adoc#setting-editor-content[Setting editor content].
 
 ==== Example: retrieve editor content as HTML
 

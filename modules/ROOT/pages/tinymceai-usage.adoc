@@ -20,16 +20,7 @@ The endpoint is `+POST /v1/admin/billing/usage+`. It is an administration endpoi
 == Get usage
 
 . Sign an administration token on the back end. Sign it with a JWT signing key of the {cloudname} API key, in the same way as user tokens (see xref:tinymceai-jwt-authentication-intro.adoc[JWT authentication]), and include `+ai:admin+` in the permissions.
-. Send `+POST /v1/admin/billing/usage+` to `+https://tinymceai.api.tiny.cloud+` with the period to report on. Set `+users+` to the string `+"*"+` to report on every user with activity in the period:
-+
-[source,json]
-----
-{
-  "from": "2026-06-01T00:00:00Z",
-  "to": "2026-06-30T23:59:59Z",
-  "users": "*"
-}
-----
+. Send `+POST /v1/admin/billing/usage+` to `+https://tinymceai.api.tiny.cloud+` with the period to report on. Set `+users+` to the string `+"*"+` to report on every user with activity in the period.
 . Read the `+environment+` object for the environment total, and the `+users+` array for the credits of each user.
 
 A user ID in the request and the response is the `+sub+` claim of the tokens of that user.

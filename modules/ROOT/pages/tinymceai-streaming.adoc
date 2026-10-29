@@ -16,7 +16,7 @@ Real-time AI interactions using Server-Sent Events (SSE) for immediate feedback 
 [[sse-event-types]]
 == SSE event types
 
-Conversations, Reviews, Actions, and Document Processing each use their own set of events and JSON payloads in the SSE stream. Those payloads are documented on each streaming operation in the https://tinymceai.api.tiny.cloud/v1/docs[interactive API documentation], not on the feature overview pages (which only summarize that SSE is used).
+Conversations, Reviews, Actions, and Document Processing each use their own set of events and JSON payloads in the SSE stream. Those payloads are documented on each streaming operation in the https://tinymceai.api.tiny.cloud/v1/docs[interactive API documentation].
 
 Use the API reference for the operation being called—for example:
 

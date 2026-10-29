@@ -11,7 +11,7 @@ The `+GUARDRAILS+` environment variable configures guardrails on the AI service 
 
 == Requirements
 
-* AI service version 1.0.0 or later. The `+rules+` and `+extraRules+` options require version 1.1.0 or later.
+* The `+rules+` and `+extraRules+` options require AI service version 1.1.0 or later.
 * At least one model that the guardrail checks can use: a model from the default model list of a configured provider, or an entry in `+MODELS+`. See <<model-selection>>.
 
 Guardrails are off by default. When `+GUARDRAILS+` is not set, the AI service inspects no content for attacks.
@@ -302,16 +302,6 @@ When a guardrail flags content and `+blockOnDetection+` is `+true+`:
 * *File uploads and document uploads* fail with HTTP status `+422+` and the error code `+content-rejected+`. Nothing is stored.
 * *Web page downloads* end with a failed status, and the AI service does not attach the page content to the conversation.
 * *AI features* (chat messages, quick actions, reviews, and Document Processing) fail with HTTP status `+422+` and the error code `+content-rejected+` before the model responds.
-
-[source,json]
-----
-{
-  "statusCode": 422,
-  "traceId": "<trace-id>",
-  "code": "content-rejected",
-  "message": "The provided content could not be processed"
-}
-----
 
 In every case, the AI service logs a short reason for the decision. The reason is for diagnostics and is not shown to end users. The `+traceId+` in the response identifies the request in the service logs. See xref:tinymceai-on-premises-troubleshooting.adoc#tracing-a-failed-request[Tracing a failed request]. For the error response shape, see xref:tinymceai-api-overview.adoc#error-responses[Error responses].
 

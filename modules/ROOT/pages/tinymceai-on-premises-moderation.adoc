@@ -294,7 +294,7 @@ Any response other than `+200+` lets the content through, including the `+401+` 
 
 Moderation runs on the following input:
 
-* The prompt of each AI request: chat messages, quick actions, and reviews.
+* The prompt of each AI request: chat messages, quick actions, reviews, and Document Processing requests.
 * Images, when a user uploads them to a conversation.
 
 Moderation does not check the response of the model. It also does not check other attachments, such as PDF files, editor documents, or fetched web pages. To screen that content for prompt-injection attacks, use xref:tinymceai-on-premises-guardrails.adoc[guardrails].
@@ -330,20 +330,7 @@ To block chat messages while the screening service is down, use a xref:tinymceai
 [[what-happens-when-content-is-flagged]]
 == What happens when content is flagged
 
-The AI service rejects the request with HTTP status `+422+` and the error code `+unsafe-content-detected+`. The `+data.flaggedCategories+` array lists the categories that triggered the rejection:
-
-[source,json]
-----
-{
-  "statusCode": 422,
-  "traceId": "<trace-id>",
-  "code": "unsafe-content-detected",
-  "message": "Unsafe content was detected and the request cannot be processed",
-  "data": {
-    "flaggedCategories": ["violence"]
-  }
-}
-----
+The AI service rejects the request with HTTP status `+422+` and the error code `+unsafe-content-detected+`. The `+data.flaggedCategories+` array lists the categories that triggered the rejection.
 
 For the error response shape, see xref:tinymceai-api-overview.adoc#error-responses[Error responses].
 

@@ -241,7 +241,7 @@ Confirm `/health` is OK and a direct `curl` to `/v1/conversations` works before 
 |Editor renders then disappears (Next.js / Nuxt / SvelteKit)
 |{productname} references `window` at load time. Load the editor client-only: `dynamic(() => import('./Editor'), { ssr: false })` in Next.js, `<ClientOnly>` in Nuxt, `onMount` in SvelteKit. See xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration].
 
-|`tinymceai_token_provider` called in a tight loop
+|Editor shows an error, and the browser console logs `TinyMCE AI Error:` with the cause, for example `Invalid JWT token provider result` or `Invalid JWT token payload`
 |Token endpoint is returning an invalid JWT or non-JSON response. Test with `curl -X POST http://localhost:3000/api/ai-token` and verify the response is `pass:c[{"token":"eyJ..."}]`.
 |===
 
@@ -366,7 +366,7 @@ Start-up failures are logged with the prefix `[FATAL]` and stop the AI service. 
 
 Every error response from the AI service carries a `traceId` that identifies the request. For the error response shape, see xref:tinymceai-api-overview.adoc#error-responses[Error responses].
 
-The {pluginname} plugin prints each error in the browser console as a `TinyMCE AI Error:` entry, followed by the status code, a `Trace ID:` line, and the error code.
+The {pluginname} plugin prints each error in the browser console as a `TinyMCE AI Error:` entry, followed by the status code and, when the response carries them, a `Trace ID:` line and the error code.
 
 [[diagnostic-recipes]]
 == Diagnostic recipes

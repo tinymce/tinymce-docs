@@ -146,7 +146,7 @@ docker run --init -d -p 8000:8000 \
   -e REDIS_HOST='<redis-host>' \
   -e REDIS_PORT='6379' \
   -e PROVIDERS='{"openai":{"type":"openai","apiKeys":["<openai-api-key>"]}}' \
-  -e MODELS='[{"id":"gpt-4.1","provider":"openai","name":"GPT-4.1","features":["conversations","reviews","actions"]}]' \
+  -e MODELS='[{"id":"gpt-4.1","provider":"openai","name":"GPT-4.1","description":"OpenAI GPT-4.1","features":["conversations","reviews","actions"]}]' \
   -e STORAGE_DRIVER='s3' \
   -e STORAGE_BUCKET='<s3-bucket-name>' \
   -e STORAGE_REGION='<aws-region>' \

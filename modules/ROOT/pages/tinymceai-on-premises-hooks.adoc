@@ -384,7 +384,7 @@ The AI service sends a `+POST+` request with a JSON body. The following example 
 |`+id+`, `+data+`. The AI service passes `+data+` to the hook endpoint unchanged, and never sends it to the model.
 |===
 
-`+turn.content+` lists every document, file, and web resource that the turn works on, each one once. The list includes the ones that an earlier message in the conversation attached. In xref:tinymceai-multi-editor.adoc[multi-editor mode], the list can contain around a hundred entries.
+`+turn.content+` lists every document, file, and web resource that the turn works on, each one once. The list includes the ones that an earlier message in the conversation attached.
 
 A `+delegation-context+` part stops at the hook endpoint. To pass that data to the model, return it in `+forward.context+` on a `+continue+` decision.
 

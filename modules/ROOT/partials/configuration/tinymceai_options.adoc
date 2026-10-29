@@ -47,7 +47,7 @@ The JWT payload must include these required claims:
 
 * `+iat+`: Issued at time (provided by JWT libraries)
 * `+exp+`: Expiration time (tokens cannot exceed 24 hours; 5-15 minutes recommended)
-* `+aud+`: The {productname} API key
+* `+aud+`: The {productname} API key for the {cloudname} AI service, or the Environment ID for the on-premises AI service (see xref:tinymceai-on-premises-jwt.adoc[JWT authentication for the on-premises AI service])
 * `+auth+`: Authentication object
 * `+sub+`: Unique user ID
 

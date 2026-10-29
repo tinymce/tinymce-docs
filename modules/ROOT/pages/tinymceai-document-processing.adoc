@@ -60,7 +60,7 @@ Requests are stateless: each request carries the documents, the model, and the i
 * turn on web search and reasoning with `+capabilities+`;
 * send headers for images that require authentication with `+extraHttpHeaders+`.
 
-A `+context+` part references a context that already exists. Contexts are created with the Context Admin operations, which require the `+ai:admin+` permission. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Context-Admin/operation/adminCreateContext[Create a context] in the API reference.
+A `+context+` part references a context that already exists. See xref:tinymceai-api-overview.adoc#contexts[Contexts].
 
 Not every model supports web search and reasoning. See xref:tinymceai-models.adoc#model-capabilities[Model capabilities]. For each field, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Document-processing/operation/processDocument[Process a document] in the API reference.
 

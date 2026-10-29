@@ -79,6 +79,10 @@ Inspect the request when a user calls an AI feature. They look at the prompt tog
 |Content
 |Each editor document that a user attaches as context.
 
+|`+contextPrompt+`
+|Content
+|Each prompt that a user saves to the context library. Requires AI service version 1.1.0 or later. See xref:tinymceai-api-overview.adoc#contexts[Contexts].
+
 |`+message+`
 |Feature
 |Each chat message.

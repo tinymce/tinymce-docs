@@ -26,6 +26,7 @@ New to {pluginname}? Start with the xref:tinymceai-api-quick-start.adoc[Quick St
 * xref:tinymceai-actions.adoc[**Quick Actions**]: Fast, stateless operations for specific tasks.
 * xref:tinymceai-document-processing.adoc[**Document Processing**]: One prompt applied to one or more HTML documents, with the full edited documents or only the changed elements returned.
 * xref:tinymceai-usage.adoc[**Usage**]: The credits consumed by the environment and by each requested user over a period, for back-end reporting.
+* [[contexts]]**Contexts** (the context library): Reusable sets of prompts and files stored in the AI service. Contexts are available through the REST API only. They are created and managed with the Context Admin operations, which require the `+ai:admin+` permission, and are referenced by ID in API requests to the conversation messages, actions, reviews, and Document Processing endpoints. The {pluginname} plugin does not apply contexts. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Context-Admin/operation/adminCreateContext[Create a context] in the API reference.
 
 [[architecture]]
 == Architecture

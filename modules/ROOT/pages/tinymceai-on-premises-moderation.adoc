@@ -296,6 +296,7 @@ Moderation runs on the following input:
 
 * The prompt of each AI request: chat messages, quick actions, reviews, and Document Processing requests.
 * Images, when a user uploads them to a conversation.
+* Files, when they are uploaded to the context library. See xref:tinymceai-api-overview.adoc#contexts[Contexts] and https://tinymceai.api.tiny.cloud/v1/docs#tag/Context-Admin/operation/adminUploadContextFile[Upload a file to a context] in the API reference.
 
 Moderation does not check the response of the model. It also does not check other attachments, such as PDF files, editor documents, or fetched web pages. To screen that content for prompt-injection attacks, use xref:tinymceai-on-premises-guardrails.adoc[guardrails].
 

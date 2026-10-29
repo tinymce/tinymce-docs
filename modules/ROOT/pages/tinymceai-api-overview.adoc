@@ -10,7 +10,7 @@ The TinyMCE AI REST API enables AI integration within your application using the
 
 [NOTE]
 ====
-**API Reference**: The complete API documentation with all endpoints, parameters, request/response schemas, and interactive examples is available at link:https://tinymceai.api.tiny.cloud/v1/docs[TinyMCE AI API Documentation]
+**API Reference**: The complete API documentation with all endpoints, parameters, request/response schemas, and interactive examples is available at link:https://tinymceai.api.tiny.cloud/v1/docs[{pluginname} API documentation]
 ====
 
 [[getting-started]]
@@ -26,7 +26,7 @@ New to {pluginname}? Start with the xref:tinymceai-api-quick-start.adoc[Quick St
 * xref:tinymceai-actions.adoc[**Quick Actions**]: Fast, stateless operations for specific tasks.
 * xref:tinymceai-document-processing.adoc[**Document Processing**]: One prompt applied to one or more HTML documents, with the full edited documents or only the changed elements returned.
 * xref:tinymceai-usage.adoc[**Usage**]: The credits consumed by the environment and by each requested user over a period, for back-end reporting.
-* [[contexts]]**Contexts** (the context library): Reusable sets of prompts and files stored in the AI service. Contexts are available through the REST API only. They are created and managed with the Context Admin operations, which require the `+ai:admin+` permission, and are referenced by ID in API requests to the conversation messages, actions, reviews, and Document Processing endpoints. The {pluginname} plugin does not apply contexts. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Context-Admin/operation/adminCreateContext[Create a context] in the API reference.
+* [[contexts]]**Contexts** (the context library): Reusable sets of prompts and files stored in the AI service. Contexts are available through the REST API only. They are created and managed with the Context Admin operations, which require the `+ai:admin+` permission, and are referenced by ID in API requests to the conversation messages, actions, reviews, and Document Processing endpoints. The {pluginname} plugin does not reference contexts by ID. A context created with `+autoApply+` applies to qualifying plugin requests as well. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Context-Admin/operation/adminCreateContext[Create a context] in the API reference.
 
 [[architecture]]
 == Architecture
@@ -46,7 +46,7 @@ The version of each endpoint is part of its path, for example `+/v1/conversation
 [[pagination]]
 == Pagination
 
-List endpoints use cursor pagination. These include the conversation list, and the documents, files, and web resources of a conversation. The API reference documents the pagination parameters on each list operation, for example https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/getConversations[Fetch multiple conversations].
+Most list endpoints use cursor pagination. These include the conversation list, and the documents, files, and web resources of a conversation. The API reference documents the pagination parameters on each list operation, for example https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/getConversations[Fetch multiple conversations].
 
 [[error-responses]]
 == Error responses
@@ -107,5 +107,5 @@ For `+429+` responses with the code `+rate-limits-exceeded+`, see xref:tinymceai
 [[resources-and-support]]
 == Resources and support
 
-* **API Documentation**: link:https://tinymceai.api.tiny.cloud/v1/docs[Complete API reference for TinyMCE AI].
+* **API Documentation**: link:https://tinymceai.api.tiny.cloud/v1/docs[Complete API reference for {pluginname}].
 * **Customer Support**: link:https://www.tiny.cloud/contact/[Contact us] to get help from the support team or speak with sales.

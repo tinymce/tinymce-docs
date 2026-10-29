@@ -89,7 +89,7 @@ The service validates `PROVIDERS` and `MODELS` when the container starts:
 * The service does not start without at least one provider in `PROVIDERS`.
 * The service does not start until each conversation, review, and action feature has at least one model to serve it. List `conversations`, `reviews`, and `actions` on at least one model each, or cover each of their sub-features.
 * A `MODELS` entry that names a provider key that is not defined in `PROVIDERS` stops startup. See <<multiple-providers-coexistence>>.
-* Some features need a model that supports structured output. Models of the same class as the latest major releases from the supported providers give the best results.
+* Some features need a model that supports structured output. Models of the same class as the latest major releases from Anthropic, Google, or OpenAI give the best results.
 ====
 
 .Details: `agent-1` behavior and limitations

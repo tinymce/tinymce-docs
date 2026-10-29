@@ -66,11 +66,12 @@ const parser = createParser({
   onEvent: (event) => {
     // event.event is the SSE event name
     // event.data is the reassembled data string for this event
-    const payload = JSON.parse(event.data);
+    // Some events, such as web-search and reasoning, have an empty data line
+    const payload = event.data ? JSON.parse(event.data) : null;
 
     switch (event.event) {
       case 'error':
-        console.error('Error:', payload.message);
+        console.error('Error:', payload?.message);
         break;
       default:
         // Handle all other events — event names vary by API; see

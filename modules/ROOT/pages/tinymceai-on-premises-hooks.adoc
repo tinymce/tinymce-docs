@@ -766,10 +766,10 @@ In `+stream+` mode, the table applies until the endpoint responds with `+200+` a
 In the {pluginname} plugin, a failed hook call shows the general chat error message, `+An error occurred while processing the AI response.+` For an `+error+` event, the message replaces the partial reply. The browser console shows more detail:
 
 * For `+hook-failed+` (HTTP `+502+`), the console shows `+TinyMCE AI Error:+` followed by the error message, the status code, the trace ID, and the error code.
-* For `+hook-timeout+` (HTTP `+504+`), the console shows `+Unexpected status code: 504+`, without the trace ID or the error code.
+* For `+hook-timeout+` (HTTP `+504+`), the console shows `+TinyMCE AI Error:+` followed by `+Unexpected status code: 504+`.
 * For an `+error+` event in the reply stream, the console shows `+TinyMCE AI Error:+` followed by the message of the event.
 
-The console does not show the `+requestId+`. For a `+502+` or `+504+` response, read it from the response body in the network panel of the browser developer tools.
+For a `+502+` or `+504+` response, read the `+requestId+` from the response body in the network panel of the browser developer tools.
 
 [[when-the-user-cancels]]
 === When the user cancels

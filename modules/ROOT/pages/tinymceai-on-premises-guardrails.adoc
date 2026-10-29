@@ -303,7 +303,7 @@ A xref:tinymceai-on-premises-hooks.adoc[hook] is called for each chat message be
 
 When a guardrail flags content and `+blockOnDetection+` is `+true+`:
 
-* *File uploads and document uploads* fail with HTTP status `+422+` and the error code `+content-rejected+`. Nothing is stored.
+* *File uploads, document uploads, and context library prompts* fail with HTTP status `+422+` and the error code `+content-rejected+`. Nothing is stored.
 * *Web page downloads* end with a failed status, and the AI service does not attach the page content to the conversation.
 * *AI features* (chat messages, quick actions, reviews, and Document Processing) fail with HTTP status `+422+` and the error code `+content-rejected+` before the model responds.
 

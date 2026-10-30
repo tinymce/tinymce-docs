@@ -455,11 +455,11 @@ NOTE: The AI service is I/O-bound (waiting on LLM provider responses). CPU-based
 ----
 ====
 
-NOTE: The AI service does not use ECS task role credentials for S3 access. Add `STORAGE_ACCESS_KEY_ID` and `STORAGE_SECRET_ACCESS_KEY` as secrets entries from AWS Secrets Manager.
+NOTE: S3 storage authenticates with `STORAGE_ACCESS_KEY_ID` and `STORAGE_SECRET_ACCESS_KEY`. Add both as secrets entries from AWS Secrets Manager.
 
 [IMPORTANT]
 --
-The AI service does not use platform-native credential chains. AWS IRSA, EC2 instance profiles, GCP Workload Identity, and Azure Managed Identity are all ignored. All provider credentials (LLM keys, S3 access keys, Vertex service accounts) must be supplied explicitly as environment variables. This is a known limitation that applies across all deployment targets.
+Amazon Bedrock and Google Vertex AI can use the credentials of the host in image version 1.2.0 and later, and Azure OpenAI can use Microsoft Entra ID in image version 1.1.0 and later. See xref:tinymceai-on-premises-providers.adoc[LLM providers]. All other credentials, including the LLM provider API keys for OpenAI, Anthropic, and Google and the S3 storage access keys, must be supplied explicitly.
 --
 
 === Infrastructure recommendations
@@ -483,7 +483,7 @@ Deploy on Azure Kubernetes Service with Azure Database for PostgreSQL Flexible S
 
 * `STORAGE_DRIVER=azure` is the recommended storage backend on Azure.
 * PostgreSQL Flexible Server defaults to enforcing TLS — see the xref:tinymceai-on-premises-database.adoc#managed-database-tls[known TLS error surface].
-* The AI service does not use Workload Identity or managed identity for LLM credentials — inline Azure OpenAI credentials in `PROVIDERS` (see xref:tinymceai-on-premises-providers.adoc#azure-openai[Azure OpenAI]).
+* In image version 1.1.0 and later, an Azure OpenAI provider can authenticate through Microsoft Entra ID, using a managed identity or a workload identity. In earlier image versions, inline Azure OpenAI credentials in `PROVIDERS`. See xref:tinymceai-on-premises-providers.adoc#azure-authentication[Authentication and URL options].
 
 For AKS cluster setup, node pools, and networking, refer to the https://learn.microsoft.com/en-us/azure/aks/[Azure Kubernetes Service documentation].
 
@@ -492,14 +492,14 @@ For AKS cluster setup, node pools, and networking, refer to the https://learn.mi
 Deploy on Google Kubernetes Engine (Standard mode — not Autopilot) with Cloud SQL for PostgreSQL, Memorystore for Redis, and GCS for file storage. Service-shape considerations:
 
 * No native GCS driver exists. Use GCS via S3-interop (`STORAGE_DRIVER=s3` with HMAC credentials). The bucket must have `uniform_bucket_level_access` disabled (the SDK sends `x-amz-acl` headers).
-* The AI service does not use GKE Workload Identity or Application Default Credentials — inline Vertex SA credentials in `PROVIDERS` (see xref:tinymceai-on-premises-providers.adoc#google-vertex-ai[Google Vertex AI]).
+* In image version 1.2.0 and later, a Vertex AI provider can use GKE Workload Identity through Application Default Credentials. In earlier image versions, inline Vertex SA credentials in `PROVIDERS`. See xref:tinymceai-on-premises-providers.adoc#google-vertex-ai[Google Vertex AI].
 * Cloud SQL for PostgreSQL defaults to enforcing TLS — see the xref:tinymceai-on-premises-database.adoc#managed-database-tls[known TLS error surface].
 
 For GKE cluster creation and node pool configuration, refer to the https://cloud.google.com/kubernetes-engine/docs[Google Kubernetes Engine documentation].
 
 == Network requirements
 
-The AI service requires outbound HTTPS access to the following endpoints. Configure firewall rules and security groups to allow this traffic:
+The AI service requires outbound access to the following endpoints, depending on the configuration. The hosted endpoints use HTTPS. Endpoints provided by the deployment use the host and port configured for them. Configure firewall rules and security groups to allow this traffic:
 
 [cols="1,2,2",options="header"]
 |===
@@ -516,6 +516,22 @@ The AI service requires outbound HTTPS access to the following endpoints. Config
 |`registry.containers.tiny.cloud`
 |Pull container image updates
 |Yes (at deploy time)
+
+|`api.openai.com` (moderation)
+|Check prompts and uploaded images with the OpenAI moderation API before they reach a model
+|By default, when `PROVIDERS` includes an OpenAI provider and `MODERATION` does not configure a custom endpoint or turn the check off. See xref:tinymceai-on-premises-moderation.adoc[Content moderation].
+
+|MCP servers
+|Call the tools of the connected Model Context Protocol (MCP) servers
+|Only when configured. See xref:tinymceai-on-premises-mcp.adoc#mcp-integration[MCP integration].
+
+|Web search and web scraping endpoints
+|Run searches and fetch web pages
+|Only when configured. See xref:tinymceai-on-premises-mcp.adoc#web-search[Web search] and xref:tinymceai-on-premises-mcp.adoc#web-scraping[Web scraping].
+
+|OTLP collector, and `cloud.langfuse.com` or a self-hosted Langfuse instance
+|Export traces
+|Only when configured. See <<observability>>.
 |===
 
 TIP: If the deployment environment blocks all outbound traffic by default, add these to the egress allowlist before starting the service.
@@ -591,8 +607,8 @@ TIP: Inspect the first few entries with `docker logs ai-service --tail 5 | jq .`
 [cols="1,1,1,3",options="header"]
 |===
 |Variable |Required |Default |Description
-|`LLM_TELEMETRY_ENABLED` |Yes |`false` |Primary telemetry switch
-|`OTEL_EXPORTER_OTLP_TRACES_ENDPOINT` |Yes |- |OpenTelemetry Protocol (OTLP) endpoint URL
+|`LLM_TELEMETRY_ENABLED` |No |`false` |Records AI spans: models, tools, token usage, and the prompt and response of each call, with the reasoning text when the model reasons. Without it, the OTLP export carries only HTTP and database spans, and Langfuse receives no data. AI spans contain user documents, so choose the tracing back end and its retention period with that in mind.
+|`OTEL_EXPORTER_OTLP_TRACES_ENDPOINT` |Yes (for OTLP export) |- |OpenTelemetry Protocol (OTLP) endpoint URL
 |`OTEL_TRACES_SAMPLER_ARG` |No |`1.0` |Sampling rate (0.0 to 1.0)
 |`OTEL_DEBUG` |No |- |Verbose OTLP diagnostic logging
 |===
@@ -601,7 +617,7 @@ Compatible with Jaeger, Grafana Tempo, Datadog, New Relic, Honeycomb, and any ht
 
 === Langfuse
 
-Langfuse provides AI-specific observability: token usage, latency per LLM call, prompt quality scores, and cost tracking.
+Langfuse provides AI-specific observability: token usage, latency per LLM call, prompt quality scores, and cost tracking. Langfuse receives AI operations only. HTTP and database spans go to the OTLP export only.
 
 [source,bash]
 ----
@@ -620,7 +636,9 @@ Langfuse provides AI-specific observability: token usage, latency per LLM call, 
 |`LANGFUSE_DEBUG` |No |- |Verbose Langfuse logging
 |===
 
-Langfuse also requires `LLM_TELEMETRY_ENABLED=true`. If the service version uses the OTLP pipeline for Langfuse export, a valid `OTEL_EXPORTER_OTLP_TRACES_ENDPOINT` is also required; check the release notes for the deployed version.
+Langfuse also requires `LLM_TELEMETRY_ENABLED=true`. The Langfuse export does not need `OTEL_EXPORTER_OTLP_TRACES_ENDPOINT`: the service sends spans to Langfuse directly.
+
+When the other options come from a configuration file, pass the `OTEL_` and `LANGFUSE_` variables as environment variables. See xref:tinymceai-on-premises-reference.adoc#configuration-file[Configuration file].
 
 OpenTelemetry and Langfuse can run at the same time. The service emits to both without conflict.
 
@@ -636,6 +654,7 @@ The following checks help catch common issues early:
 * *Error rate*: monitor the HTTP 5xx rate in the metric logs or traces; a sustained increase may indicate an LLM provider outage or a misconfigured environment.
 * *Latency*: track request duration; a sudden increase typically points to LLM provider throttling or network issues.
 * *Container restarts*: alert on repeated container restarts, which may indicate a missing environment variable or a database connectivity problem.
+* *Content check failures*: content moderation and guardrails fail open, and hooks fail closed. Alert on `Error moderating the prompt` warnings, which mean that content passed through unscreened, on guardrail warnings, and on `hook-timeout` (HTTP `504`) and `hook-failed` (HTTP `502`) responses. See xref:tinymceai-on-premises-moderation.adoc[Content moderation], xref:tinymceai-on-premises-guardrails.adoc[Guardrails], and xref:tinymceai-on-premises-hooks.adoc[Hooks].
 
 For troubleshooting specific error patterns, see xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting].
 
@@ -651,6 +670,8 @@ The database contains environments, access keys, conversations, messages, and fi
 * *PostgreSQL:* `pg_dump` or managed snapshots.
 
 Enable point-in-time recovery.
+
+A scheduled cleanup job removes stored conversations after one year. In image version 1.1.0 and later, the same job also removes stored actions and reviews after one year. Where records must be kept longer, keep database backups for the required period.
 
 === File storage
 
@@ -681,7 +702,7 @@ docker pull registry.containers.tiny.cloud/ai-service-tiny:NEW_VERSION
 . For Kubernetes: update the image tag in the Deployment. Set `strategy.rollingUpdate.maxSurge: 1` and `maxUnavailable: 0` to ensure at least one old pod remains available during migrations. The default `RollingUpdate` strategy handles zero-downtime upgrades, provided the first new pod becomes Ready before the rollout continues.
 . Verify `/health` on every replica before declaring the upgrade complete.
 
-Review the release notes for the target version and take a database backup before upgrading.
+Review the link:https://registry.containers.tiny.cloud/api/changelogs/ai-service-tiny[changelog] for the versions between the current and target image versions, and take a database backup before upgrading.
 
 License keys are per-deployment, not per-replica. One key covers any number of replicas of a single deployment.
 

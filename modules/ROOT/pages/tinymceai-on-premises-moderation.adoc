@@ -1,0 +1,388 @@
+= TinyMCE AI on-premises content moderation
+:navtitle: Content moderation
+:description: Configure, redirect, or turn off content moderation in the TinyMCE AI on-premises service
+:description_short: Content moderation provider settings.
+:keywords: AI, on-premises, moderation, content moderation, MODERATION, OpenAI, omni-moderation-latest, unsafe content, custom moderation endpoint
+:pluginname: TinyMCE AI
+
+Content moderation screens the input of an AI request before the AI service sends it to a large language model (LLM) provider. When the moderation provider classifies the input as unsafe, the AI service rejects the request instead of forwarding it.
+
+The `+MODERATION+` environment variable configures moderation on the AI service container. This page covers the on-premises service only, apart from the <<categories,categories>>, which the hosted service reports as well. For moderation on the hosted service, see xref:tinymceai-models.adoc#content-moderation[Content moderation] on the Models page.
+
+== Requirements
+
+* The `+openai+` moderation provider requires an OpenAI provider in `+PROVIDERS+`. See xref:tinymceai-on-premises-providers.adoc#openai[OpenAI].
+* The `+custom+` moderation provider requires AI service version 1.1.0 or later, and a moderation endpoint hosted by the integrator. See <<custom-moderation-endpoint>>.
+
+[IMPORTANT]
+====
+Moderation is on by default. When `+MODERATION+` is not set, the AI service runs moderation with the `+openai+` provider, which uses the API key of the OpenAI provider in `+PROVIDERS+`. The AI service then sends prompts and uploaded images to `+api.openai.com+`, in addition to the configured LLM providers.
+
+To keep all content inside the host network, set a <<custom-moderation-endpoint,custom moderation endpoint>> or <<disabling-moderation,turn moderation off>>.
+====
+
+[[configuration]]
+== Configuration
+
+`+MODERATION+` holds a JSON object as a string:
+
+[cols="1,1,1,3",options="header"]
+|===
+|Field |Required |Default |Description
+
+|`+enabled+`
+|Yes
+|-
+|Whether moderation runs. When `+false+`, `+provider+` is not needed.
+
+|`+provider+`
+|When `+enabled+` is `+true+`
+|-
+|The moderation provider. `+type+` is `+openai+` or `+custom+`.
+|===
+
+When `+MODERATION+` is not set, moderation runs with the `+openai+` provider and its default settings.
+
+In a xref:tinymceai-on-premises-reference.adoc#configuration-file[configuration file], set the same object as the value of the `+moderation+` key.
+
+[[openai-moderation-provider]]
+=== OpenAI moderation provider
+
+The `+openai+` provider calls the OpenAI moderation API. It authenticates with the API key of the OpenAI provider in `+PROVIDERS+`.
+
+[source,bash]
+----
+-e MODERATION='{
+  "enabled": true,
+  "provider": {
+    "type": "openai",
+    "modelId": "omni-moderation-latest"
+  }
+}'
+----
+
+[cols="1,1,3",options="header"]
+|===
+|Field |Default |Description
+
+|`+type+`
+|-
+|`+openai+`.
+
+|`+modelId+`
+|`+omni-moderation-latest+`
+|The OpenAI moderation model to call.
+
+|`+url+`
+|`+https://api.openai.com/v1/moderations+`
+|The moderation API endpoint. Set it to route moderation calls through a proxy or a gateway.
+|===
+
+A request to the OpenAI moderation API times out after 2 seconds. This timeout cannot be changed.
+
+[WARNING]
+====
+A deployment that defines no OpenAI provider, for example one that uses only Anthropic, AWS Bedrock, Google Vertex AI, or a self-hosted model, inspects nothing when `+MODERATION+` is not set. Every request passes, and the only record is a single entry at `+debug+` log level. The default log level writes only warnings and more severe entries, so in practice nothing records that moderation is inactive.
+
+To screen content in such a deployment, configure a <<custom-moderation-endpoint,custom moderation endpoint>>. To make the absence of moderation explicit, set `+enabled+` to `+false+`.
+====
+
+[[disabling-moderation]]
+=== Disabling moderation
+
+Set `+enabled+` to `+false+`:
+
+[source,bash]
+----
+-e MODERATION='{"enabled": false}'
+----
+
+With moderation off, the AI service sends prompts and images to the LLM provider without screening them. The usage policies of the LLM provider still apply, and the provider can reject content itself.
+
+Turning moderation off does not affect xref:tinymceai-on-premises-guardrails.adoc[guardrails], which are configured separately through `+GUARDRAILS+`.
+
+[[custom-moderation-endpoint]]
+=== Custom moderation endpoint
+
+To screen content with a service hosted inside the deployment network, set the provider `+type+` to `+custom+`. The endpoint must accept the <<request-format,request format>> and return the <<response-format,response format>> described below.
+
+[source,bash]
+----
+-e MODERATION='{
+  "enabled": true,
+  "provider": {
+    "type": "custom",
+    "endpoint": "https://moderation.internal.example.com/check",
+    "extraHttpHeaders": {
+      "Authorization": "Bearer <moderation-token>"
+    },
+    "requestTimeout": 2000
+  }
+}'
+----
+
+[cols="1,1,1,3",options="header"]
+|===
+|Field |Required |Default |Description
+
+|`+type+`
+|Yes
+|-
+|`+custom+`.
+
+|`+endpoint+`
+|Yes
+|-
+|The URL of the moderation endpoint.
+
+|`+extraHttpHeaders+`
+|Yes
+|-
+|An object of string header values that the AI service adds to every moderation request. Use `+{}+` when no headers are needed.
+
+|`+requestTimeout+`
+|No
+|`+2000+`
+|The request timeout, in milliseconds.
+|===
+
+A custom endpoint keeps the fail-open behavior described in <<failure-behavior>>.
+
+[[request-format]]
+==== Request format
+
+The AI service sends a `+POST+` request with a JSON body. Text and images use different body shapes.
+
+.Text content
+[source,json]
+----
+{
+  "type": "text",
+  "text": "Content to check."
+}
+----
+
+.Image content
+[source,json]
+----
+{
+  "type": "image",
+  "mediaType": "image/png",
+  "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
+}
+----
+
+[cols="1,1,3",options="header"]
+|===
+|Field |Required |Description
+
+|`+type+`
+|Yes
+|`+text+` or `+image+`.
+
+|`+text+`
+|For `+text+`
+|The text to check.
+
+|`+mediaType+`
+|For `+image+`
+|The Multipurpose Internet Mail Extensions (MIME) type of the image, for example `+image/png+`.
+
+|`+image+`
+|For `+image+`
+|The image as a base64 data URL.
+|===
+
+[[response-format]]
+==== Response format
+
+The endpoint must respond with HTTP status `+200+` and a JSON body:
+
+[source,json]
+----
+{
+  "flagged": true,
+  "categories": {
+    "sexual": false,
+    "harassment": false,
+    "hate": false,
+    "illicit": false,
+    "selfHarm": false,
+    "violence": true
+  }
+}
+----
+
+[cols="1,1,3",options="header"]
+|===
+|Field |Required |Description
+
+|`+flagged+`
+|Yes
+|`+true+` rejects the request.
+
+|`+categories+`
+|No
+|One boolean for each of the six <<categories,categories>>. An omitted category counts as `+false+`. A rejected request lists the flagged categories in `+data.flaggedCategories+` of the error response.
+|===
+
+[[example-endpoint]]
+==== Example endpoint in Node.js
+
+The following Express endpoint checks the bearer token from `+extraHttpHeaders+`, flags text that contains a listed phrase in the `+violence+` category, and passes every image. It requires Node.js 18 or later, the `+express+` package, and a `+package.json+` with `+"type": "module"+`. The example listens over HTTP on port `+3004+`, so set `+endpoint+` to the URL at which the AI service reaches it. Replace the phrase list with a call to the screening service of the organization.
+
+[source,js]
+----
+// moderation-server.js
+import express from 'express';
+
+const PORT = Number(process.env.PORT ?? 3004);
+const MODERATION_TOKEN = process.env.MODERATION_TOKEN;
+const VIOLENCE_PHRASES = [ 'build a weapon', 'hurt someone' ];
+
+if (!MODERATION_TOKEN) {
+  throw new Error('Set MODERATION_TOKEN to the bearer token from the MODERATION configuration.');
+}
+
+const app = express();
+
+// Image requests carry the whole image as a base64 data URL.
+app.use(express.json({ limit: '25mb' }));
+
+app.post('/check', (req, res) => {
+  if (req.headers.authorization !== `Bearer ${MODERATION_TOKEN}`) {
+    res.sendStatus(401);
+    return;
+  }
+
+  const { type, text } = req.body;
+  if (type !== 'text') {
+    res.json({ flagged: false });
+    return;
+  }
+
+  const lowerText = text.toLowerCase();
+  const violence = VIOLENCE_PHRASES.some((phrase) => lowerText.includes(phrase));
+  res.json({
+    flagged: violence,
+    categories: { violence }
+  });
+});
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Moderation endpoint listening on port ${PORT}`);
+});
+----
+
+Install the dependencies and start the endpoint:
+
+[source,bash]
+----
+npm init -y
+npm pkg set type=module
+npm install express
+MODERATION_TOKEN='<moderation-token>' node moderation-server.js
+----
+
+Any response other than `+200+` lets the content through, including the `+401+` response for a wrong token. Monitor the endpoint for rejected requests and alert on the AI service warning described in <<failure-behavior>>.
+
+[[behavior]]
+== Behavior
+
+[[what-moderation-checks]]
+=== What moderation checks
+
+Moderation runs on the following input:
+
+* The prompt of each AI request: chat messages, quick actions, reviews, and Document Processing requests.
+* Images, when a user uploads them to a conversation.
+* Files, when they are uploaded to the context library. See xref:tinymceai-api-overview.adoc#contexts[Contexts] and https://tinymceai.api.tiny.cloud/v1/docs#tag/Context-Admin/operation/adminUploadContextFile[Upload a file to a context] in the API reference.
+* Prompts, when they are saved to the context library.
+* Text files from the context library, when an action, a review, or a Document Processing request attaches them.
+
+Moderation does not check the response of the model. It also does not check other attachments, such as PDF files, editor documents, or fetched web pages. To screen that content for prompt-injection attacks, use xref:tinymceai-on-premises-guardrails.adoc[guardrails].
+
+[[categories]]
+=== Categories
+
+The moderation provider reports six categories:
+
+* `+sexual+`
+* `+harassment+`
+* `+hate+`
+* `+illicit+`
+* `+selfHarm+`
+* `+violence+`
+
+A single flagged category is enough to reject the request.
+
+[[failure-behavior]]
+=== Failure behavior
+
+[WARNING]
+====
+Moderation fails open. When a check cannot complete, the content passes through to the LLM provider. This happens when the moderation endpoint is unreachable, exceeds the timeout, responds with a status other than `+200+`, or returns a body that the AI service cannot parse.
+
+For each such request, the AI service logs a warning. For prompt checks, the warning reads `+Error moderating the prompt+`. End users see normal responses during an outage, so the warning is the only sign that moderation is not running. Alert on it. See xref:tinymceai-on-premises-production.adoc#recommended-monitoring[Recommended monitoring].
+====
+
+Moderation is probabilistic. The provider uses a model to judge the content, and its accuracy depends on that model. Do not rely on moderation as the only protection for sensitive content.
+
+To block chat messages while the screening service is down, use a xref:tinymceai-on-premises-hooks.adoc[hook] instead. Hooks fail closed: a chat turn fails while the hook endpoint is unavailable. Hooks cover chat messages only, and they run before moderation, so the hook endpoint receives unscreened content. See xref:tinymceai-on-premises-hooks.adoc#screening-chat-messages[Screening chat messages].
+
+[[what-happens-when-content-is-flagged]]
+== What happens when content is flagged
+
+For chat messages, quick actions, reviews, and uploads, the AI service rejects the request with HTTP status `+422+` and the error code `+unsafe-content-detected+`. The `+data.flaggedCategories+` array lists the categories that triggered the rejection. For the error codes of Document Processing requests, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Document-processing/operation/processDocument[Process a document] in the API reference.
+
+For the error response shape, see xref:tinymceai-api-overview.adoc#error-responses[Error responses].
+
+A blocked request leaves no record that can be retrieved through the API: the AI service writes a log entry, and no API endpoint or export lists blocked requests. See xref:tinymceai-on-premises-troubleshooting.adoc#tracing-a-failed-request[Tracing a failed request].
+
+[[moderation-and-the-plugin]]
+=== What the {pluginname} plugin shows
+
+A flagged request shows the following in the plugin:
+
+* A flagged chat message shows the general chat error message, `+An error occurred while processing the AI response.+`
+* A flagged quick action shows the same general message, as an editor notification, or in the chat for a quick action that opens the chat.
+* A flagged review shows the message of the error response, `+Unsafe content was detected and the request cannot be processed+`.
+* A flagged image upload shows the general file upload error message, `+This file can't be added. Try a smaller file, or a different file type.+`
+
+In each case, the browser console shows `+TinyMCE AI Error:+` followed by the error message, the status code, the trace ID, and the error code `+unsafe-content-detected+`. To see the flagged categories, read the response in the browser network tab, or find the service log entry by its trace ID.
+
+[[network-requirements]]
+== Network requirements
+
+The `+openai+` provider adds `+api.openai.com+`, or the configured `+url+`, to the outbound destinations of the AI service. This applies by default when `+PROVIDERS+` includes an OpenAI provider and `+MODERATION+` is not set. A custom endpoint adds its own host instead. See xref:tinymceai-on-premises-production.adoc#network-requirements[Network requirements].
+
+[[troubleshooting]]
+== Troubleshooting
+
+[cols="1,2",options="header"]
+|===
+|Symptom |Resolution
+
+|Outbound traffic to `+api.openai.com+` appears in a deployment that uses another LLM provider for chat
+|Moderation runs with the `+openai+` provider by default when `+PROVIDERS+` includes an OpenAI provider, even when chat uses another provider. Configure a <<custom-moderation-endpoint,custom moderation endpoint>> or <<disabling-moderation,turn moderation off>>.
+
+|Content that breaks the usage policy reaches the model, and the deployment has no OpenAI provider
+|Moderation inspects nothing without an OpenAI provider. Configure a <<custom-moderation-endpoint,custom moderation endpoint>>.
+
+|The service log shows `+Error moderating the prompt+`
+|The moderation check did not complete, and the content passed through. Check that the moderation endpoint is reachable from the AI service container, responds with `+200+` within the timeout, and returns the <<response-format,response format>>.
+
+|Requests fail with `+422 unsafe-content-detected+` for legitimate content
+|Read `+data.flaggedCategories+` in the response, or the service log entry for the `+traceId+`. With a custom endpoint, adjust the rules in the endpoint. The `+openai+` provider has no settings for individual categories.
+
+|Moderation settings have no effect after setting `+MODERATION+`
+|When the options come from a xref:tinymceai-on-premises-reference.adoc#configuration-file[configuration file], set the `+moderation+` key in the file instead. Restart the AI service after each change.
+|===
+
+== Related pages
+
+* xref:tinymceai-on-premises-guardrails.adoc[Guardrails]
+* xref:tinymceai-on-premises-hooks.adoc[Hooks]
+* xref:tinymceai-on-premises-providers.adoc[LLM providers]
+* xref:tinymceai-on-premises-reference.adoc#error-code-reference[Error code reference]
+* xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting]

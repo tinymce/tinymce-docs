@@ -67,7 +67,7 @@ The *key* (not the `type`) is what gets referenced from:
 [.text-center]
 image::tinymceai-on-premises/providers-guide-fig-1.svg[alt="PROVIDERS JSON structure mapping provider keys to OpenAI Anthropic Azure Bedrock Vertex and self-hosted endpoints",width=100%]
 
-The diagram reflects three stacked layers: *how to authenticate* with each upstream (`PROVIDERS`), *what to expose* to clients (`MODELS`), and *who can use which model* (JWT permissions). The same provider key string ties all three together.
+The diagram reflects three stacked layers: *how to authenticate* with each provider (`PROVIDERS`), *what to expose* to clients (`MODELS`), and *who can use which model* (JWT permissions). The same provider key string ties all three together.
 
 
 
@@ -76,38 +76,38 @@ The diagram reflects three stacked layers: *how to authenticate* with each upstr
 
 === Default model behavior (`agent-1`)
 
-Without an explicit `MODELS` variable, the service exposes a single built-in placeholder called `agent-1`. This works only for OpenAI, Anthropic, and Google direct providers (the service has built-in routing for those three). Azure, Bedrock, Vertex, and openai-compatible providers do not work without `MODELS`.
+The OpenAI, Anthropic, and Google providers come with a default list of models. The default list includes `agent-1`, the recommended agent model. Set `MODELS` to replace the default list, and to declare the models of Azure OpenAI, Amazon Bedrock, Google Vertex AI, and openai-compatible providers, which have no default list.
 
-IMPORTANT: Always set `MODELS` explicitly for production. Without it, the editor model picker shows only a generic `agent-1` entry, JWT permissions cannot target specific models, and non-native providers are non-functional.
+IMPORTANT: Set `MODELS` explicitly for production. Image versions can add models to the default list, so a deployment without `MODELS` can offer different models after an upgrade.
+
+[[startup-validation]]
+.Startup validation
+[%collapsible]
+====
+The service validates `PROVIDERS` and `MODELS` when the container starts:
+
+* The service does not start without at least one provider in `PROVIDERS`.
+* The service does not start until each conversation, review, and action feature has at least one model to serve it. List `conversations`, `reviews`, and `actions` on at least one model each, or cover each of their sub-features.
+* A `MODELS` entry that names a provider key that is not defined in `PROVIDERS` stops startup. See <<multiple-providers-coexistence>>.
+* Some features need a model that supports structured output. Models of the same class as the latest major releases from Anthropic, Google, or OpenAI give the best results.
+====
 
 .Details: `agent-1` behavior and limitations
 [%collapsible]
 ====
 * The `/v1/models/1` endpoint reports `agent-1` with `allowed: false` unless the JWT includes the `ai:models:agent` permission.
-* The {productname} editor model picker does not display real model names.
-* Setting `MODELS` explicitly makes the editor display meaningful names, routes to the correct provider, and enables per-model JWT permissions (`ai:models:<provider>:<model-id>`).
+* Setting `MODELS` explicitly routes each model to the correct provider.
 * See xref:tinymceai-on-premises-jwt.adoc[JWT authentication] for permission syntax.
 ====
 
-When `MODELS` is omitted, a `GET /v1/models/1` call returns:
-
-[source,json]
-----
-{
-  "models": [
-    { "id": "agent-1", "allowed": false, "features": [] }
-  ]
-}
-----
-
-Clients (the {productname} editor included) will then fall back to the disabled agent and every AI request will fail with no useful error in the UI. The model list endpoint also only accepts the literal version `1`:
+For the response format of the model list endpoint, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Models/operation/getAiModels[Fetch all models for a compatibility version] in the API reference. The endpoint only accepts the literal version `1`. Other values return `400 Bad Request`:
 
 [source,bash]
 ----
 # Works
 curl http://localhost:8000/v1/models/1
 
-# All 500
+# All 400
 curl http://localhost:8000/v1/models/v1
 curl http://localhost:8000/v1/models/v2
 curl http://localhost:8000/v1/models/latest
@@ -119,9 +119,9 @@ curl http://localhost:8000/v1/models/latest
 ----
 [
   {
-    "id": "gpt-4o-mini",
+    "id": "gpt-5-mini",
     "provider": "my-openai-key",
-    "description": "OpenAI GPT-4o mini",
+    "description": "OpenAI GPT-5 mini",
     "features": ["conversations", "reviews", "actions"]
   }
 ]
@@ -135,7 +135,7 @@ A full field reference for `MODELS` is at the end of this page.
 
 == OpenAI
 
-API key from https://platform.openai.com/api-keys[platform.openai.com]. The built-in routing handles OpenAI models without an explicit `MODELS` definition, but defining `MODELS` is recommended for production (see <<models-required>>).
+API key from https://platform.openai.com/api-keys[platform.openai.com]. The OpenAI provider comes with a default model list, so it works without an explicit `MODELS` definition, but defining `MODELS` is recommended for production (see <<models-required>>).
 
 .Configuration details
 [%collapsible]
@@ -191,7 +191,7 @@ curl -s -H "Authorization: Bearer sk-proj-YOUR_KEY_HERE" \
 
 When that `curl` call succeeds from the host, the same key in `PROVIDERS` works inside the container.
 
-IMPORTANT: *Project-scoped keys* (`sk-proj-...`) only work for models the project has been granted access to. A 404 on `gpt-4o` usually means the key's project is restricted. *Org-level keys* require the org header, which the service does not send; use a project key instead.
+IMPORTANT: *Project-scoped keys* (`sk-proj-...`) only work for models the project has been granted access to. A 404 on `gpt-5.5` usually means the key's project is restricted. *Org-level keys* require the org header, which the service does not send; use a project key instead.
 ====
 
 
@@ -226,14 +226,14 @@ API key from https://console.anthropic.com/[console.anthropic.com]. Same shape a
 
 *Reasoning models:*
 
-Claude 4.x models (Sonnet 4, Opus 4) support extended thinking. To surface the reasoning toggle in the {productname} UI, add `capabilities.reasoning: true` to the model entry in `MODELS`:
+Claude models support reasoning. To surface the reasoning toggle in the {productname} UI, add `capabilities.reasoning: true` to the model entry in `MODELS`:
 
 [source,json]
 ----
 {
-  "id": "claude-sonnet-4-5",
+  "id": "claude-sonnet-5",
   "provider": "anthropic",
-  "description": "Anthropic Claude Sonnet 4.5 with extended thinking",
+  "description": "Anthropic Claude Sonnet 5 with reasoning",
   "capabilities": { "reasoning": true },
   "features": ["conversations", "reviews", "actions"]
 }
@@ -318,7 +318,7 @@ Azure-hosted OpenAI models. Requires an Azure subscription, an Azure OpenAI reso
 
 . Create an Azure OpenAI resource. Note the *resource name*; this is the subdomain prefix in `https://<RESOURCE_NAME>.openai.azure.com`.
 . Apply for model access if required by the region.
-. In Azure AI Studio, create a *deployment* for each model to expose. The deployment name is arbitrary (for example `prod-gpt4o`, `cheap-mini`).
+. In Azure AI Studio, create a *deployment* for each model to expose. Start each deployment name with the ID of the OpenAI model behind it, followed by any suffix (for example `gpt-5-mini-prod`, `gpt-4.1-mini-low-cost`).
 . Copy one of the two API keys from *Keys and Endpoint* in the resource overview.
 
 *JSON shape:*
@@ -341,12 +341,45 @@ Azure-hosted OpenAI models. Requires an Azure subscription, an Azure OpenAI reso
 |===
 |Field |Required |Notes
 |`type` |Yes |Literal `"azure"`
-|`resourceName` |Yes |The `*.openai.azure.com` prefix only, not the full URL.
-|`apiKeys` |Yes |Array. Azure issues two keys per resource for zero-downtime key rotation.
-|`apiVersion` |Yes |Always set explicitly. Omitting it produces a confusing SDK error about a missing query string parameter. Refer to https://learn.microsoft.com/azure/ai-services/openai/reference[Microsoft's API version matrix] for current stable values.
+|`resourceName` |Yes, unless `baseUrl` is set |The `*.openai.azure.com` prefix only, not the full URL.
+|`apiKeys` |Yes, unless `authentication` is set (image version 1.1.0 and later) |Array. Azure issues two keys per resource for zero-downtime key rotation. Set either `apiKeys` or `authentication`, not both.
+|`apiVersion` |Yes |The Azure OpenAI API version, sent as the `api-version` query parameter. Always set it explicitly: omitting it produces an SDK error about a missing query string parameter. Refer to https://learn.microsoft.com/azure/ai-services/openai/reference[Microsoft's API version matrix] for current stable values.
 |===
 
-IMPORTANT: The ``MODELS[].id`` value must match the Azure *deployment name* exactly. A mismatch produces a `DeploymentNotFound` error. Use human-readable deployment names because the ID also appears in JWT permission strings and the editor model picker.
+IMPORTANT: The ``MODELS[].id`` value must match the Azure *deployment name* exactly, and the deployment name must start with the ID of the OpenAI model it serves, for example `gpt-4.1-editorial` for a `gpt-4.1` deployment. The service reads that prefix to recognize the model family and choose the request options. A `MODELS[].id` that does not match the deployment name produces a `DeploymentNotFound` error.
+
+[[azure-authentication]]
+*Authentication and URL options in image version 1.1.0 and later:*
+
+In image version 1.1.0 and later, an Azure OpenAI provider can authenticate with a token instead of API keys. The following example defines a provider that authenticates with Microsoft Entra ID:
+
+[source,json]
+----
+{
+  "azure-entra": {
+    "type": "azure",
+    "baseUrl": "https://YOUR_RESOURCE_NAME.openai.azure.com",
+    "apiVersion": "2024-10-21",
+    "authentication": {
+      "type": "entra-id",
+      "scope": "https://cognitiveservices.azure.com/.default"
+    }
+  }
+}
+----
+
+.Additional Azure OpenAI fields
+[cols="1,1,3",options="header"]
+|===
+|Field |Required |Notes
+|`baseUrl` |No |Endpoint of the Azure resource, for example `+https://YOUR_RESOURCE_NAME.openai.azure.com+`. Use it instead of `resourceName`.
+|`useDeploymentBasedUrls` |No |Defaults to `false`, which sends requests to the Responses API URLs under `+{baseUrl}/v1+`. Set to `true` when the resource exposes only the deployment-based Chat Completions endpoint, `+{baseUrl}/deployments/{model id}/chat/completions+`.
+|`authentication.type` |If not using `apiKeys` |`bearer-token` or `entra-id`.
+|`authentication.tokenSecret` |For `bearer-token` |Token sent with every request to the Azure endpoint.
+|`authentication.scope` |For `entra-id` |Scope requested from Microsoft Entra ID, for example `+https://cognitiveservices.azure.com/.default+`.
+|===
+
+With `bearer-token`, the service sends the configured token. With `entra-id`, the service obtains and refreshes tokens through the Azure default credential chain, so the identity comes from the host: environment variables, a managed identity, or a workload identity.
 
 *Two-deployment example:*
 
@@ -363,18 +396,18 @@ IMPORTANT: The ``MODELS[].id`` value must match the Azure *deployment name* exac
 
 -e MODELS='[
   {
-    "id": "prod-gpt4o",
+    "id": "gpt-5-mini-prod",
     "provider": "azure",
-    "name": "GPT-4o (production)",
-    "description": "Azure deployment of GPT-4o for production traffic",
+    "name": "GPT-5 mini (production)",
+    "description": "Azure deployment of GPT-5 mini for production traffic",
     "recommended": true,
     "features": ["conversations", "reviews", "actions"]
   },
   {
-    "id": "cheap-mini",
+    "id": "gpt-4.1-mini-low-cost",
     "provider": "azure",
-    "name": "GPT-4o mini (low cost)",
-    "description": "Azure deployment of GPT-4o mini for cheap actions",
+    "name": "GPT-4.1 mini (low cost)",
+    "description": "Azure deployment of GPT-4.1 mini for cheap actions",
     "features": ["reviews", "actions"]
   }
 ]'
@@ -397,12 +430,14 @@ IMPORTANT: *Wrong region quota:* each Azure region has independent quotas. Burst
 
 == AWS Bedrock
 
-Amazon's hosted-model marketplace (Anthropic, Meta, Mistral, Cohere, Amazon Titan). Credentials must be inlined; the AWS SDK default credential chain is not used.
+Amazon's hosted-model marketplace (Anthropic, Meta, Mistral, Cohere, Amazon Titan).
+
+In image versions earlier than 1.2.0, inline the credentials in the `PROVIDERS` JSON: the AWS SDK default credential chain is not used. Image version 1.2.0 and later can also use an assumed role or the credentials of the host. See <<bedrock-newer-credentials>>.
 
 .Configuration details
 [%collapsible]
 ====
-IMPORTANT: The AI service does *not* use the AWS SDK default credential chain. `AWS_PROFILE`, `~/.aws/credentials`, IAM Roles for Service Accounts (IRSA), EC2 instance profiles, ECS task roles, and web identity tokens are all ignored. Inline the credentials in the `PROVIDERS` JSON.
+WARNING: The AWS SDK reads the `AWS_BEARER_TOKEN_BEDROCK` environment variable as a Bedrock API key, and it takes precedence over `assumedRole` and `credentials`. Leave it unset unless it is the intended identity.
 
 *JSON shape:*
 
@@ -425,7 +460,48 @@ The `sessionToken` field is optional but required for STS-issued short-lived cre
 
 Instead of `+credentials+`, a Bedrock provider can set `+apiKeys+` to a Bedrock API key issued in the AWS console.
 
-NOTE: Bedrock console-issued API keys have a separate billing entitlement check that can return `INVALID_PAYMENT_INSTRUMENT` on accounts where the IAM-credential path works fine. Prefer the `credentials` block (IAM user with `accessKeyId` / `secretAccessKey`) for production.
+NOTE: Bedrock console-issued API keys have a separate billing entitlement check that can return `INVALID_PAYMENT_INSTRUMENT` on accounts where the IAM-credential path works fine. Prefer IAM credentials (the `credentials` block, or in image version 1.2.0 and later, an assumed role or the credentials of the host) for production.
+
+[[bedrock-newer-credentials]]
+*Assumed role and host credentials in image version 1.2.0 and later:*
+
+The following example defines a provider that assumes a role and a provider that uses the credentials of the host:
+
+[source,json]
+----
+{
+  "bedrock-role": {
+    "type": "bedrock",
+    "region": "us-east-1",
+    "assumedRole": {
+      "roleArn": "arn:aws:iam::123456789012:role/tinymce-ai-bedrock",
+      "externalId": "YOUR_EXTERNAL_ID",
+      "sessionDurationSeconds": 3600
+    }
+  },
+  "bedrock-host": {
+    "type": "bedrock",
+    "region": "us-east-1"
+  }
+}
+----
+
+.`assumedRole` fields
+[cols="1,1,3",options="header"]
+|===
+|Field |Required |Notes
+|`assumedRole.roleArn` |Yes, when `assumedRole` is set |ARN of the IAM role that the service assumes through AWS Security Token Service (STS) before calling Bedrock.
+|`assumedRole.externalId` |No |External ID required by the trust policy of the role.
+|`assumedRole.sessionDurationSeconds` |No |Lifetime of the temporary credentials, from 900 to 43200 seconds, capped by the maximum session duration of the role. Defaults to the AWS default.
+|`assumedRole.roleSessionName` |No |Session name recorded in AWS CloudTrail. Must match `+++^[\w+=,.@-]{2,64}$+++`.
+|===
+
+The service authenticates with the first of the following that is configured:
+
+. `assumedRole`: the service calls `sts:AssumeRole` and signs Bedrock requests with the temporary credentials, renewing them before they expire. The `AssumeRole` call uses `credentials` when both are set, and the credentials of the host when `assumedRole` is set on its own. Use this for cross-account access, with the Bedrock permissions attached to the role.
+. `credentials`: the service signs requests with the configured access key. Temporary keys also need `sessionToken`, and the service does not renew them.
+. `apiKeys`: the service sends the Bedrock API key as a bearer token, with no request signing.
+. The credentials of the host: when none of the options above is set, or `apiKeys` resolves to an empty string, the AWS SDK resolves the identity of the machine in its standard order (environment variables, shared AWS configuration files, a web identity token file, the container credentials endpoint, and the instance metadata service). A container on EC2, ECS, or EKS can then reach Bedrock with no secret in `PROVIDERS`.
 
 *Prerequisites checklist:*
 
@@ -458,19 +534,13 @@ NOTE: Bedrock console-issued API keys have a separate billing entitlement check 
 
 The service uses both `InvokeModel` and `Converse` paths depending on the model family, so include both.
 
-*Claude 4.x cross-region inference profiles:*
+*Claude cross-region inference profiles:*
 
-Claude 4.x on Bedrock uses *cross-region inference profiles* rather than per-region model IDs. The ``MODELS[].id`` must be the inference profile ID, prefixed with the regional group:
+Recent Claude models on Bedrock use *cross-region inference profiles* rather than per-region model IDs. The ``MODELS[].id`` must be the inference profile ID, prefixed with the regional group. For example, the US profile ID for Claude Sonnet 5 is `us.anthropic.claude-sonnet-5`.
 
-[cols=",",options="header",]
-|===
-|Region group |Example profile ID
-|US |`us.anthropic.claude-sonnet-4-5-20250929-v1:0`
-|EU |`eu.anthropic.claude-sonnet-4-5-20250929-v1:0`
-|APAC |`apac.anthropic.claude-sonnet-4-5-20250929-v1:0`
-|===
+The region groups and profile IDs differ for each model. Check the model card in the Amazon Bedrock documentation for the profiles of the model in use.
 
-Using the bare model ID (`anthropic.claude-sonnet-4-5-...`) returns `ValidationException`.
+Using the bare model ID (`anthropic.claude-sonnet-5`) returns `ValidationException`.
 
 *Minimal example:*
 
@@ -489,10 +559,10 @@ Using the bare model ID (`anthropic.claude-sonnet-4-5-...`) returns `ValidationE
 
 -e MODELS='[
   {
-    "id": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+    "id": "us.anthropic.claude-sonnet-5",
     "provider": "bedrock",
-    "name": "Claude Sonnet 4.5 (Bedrock)",
-    "description": "Anthropic Claude Sonnet 4.5 through AWS Bedrock cross-region inference",
+    "name": "Claude Sonnet 5 (Bedrock)",
+    "description": "Anthropic Claude Sonnet 5 through AWS Bedrock cross-region inference",
     "recommended": true,
     "capabilities": { "reasoning": true },
     "features": ["conversations", "reviews", "actions"]
@@ -513,7 +583,7 @@ aws bedrock list-foundation-models --region us-east-1 \
 ----
 aws bedrock-runtime converse \
   --region us-east-1 \
-  --model-id us.anthropic.claude-sonnet-4-5-20250929-v1:0 \
+  --model-id us.anthropic.claude-sonnet-5 \
   --messages '[{"role":"user","content":[{"text":"Say hello in five words."}]}]'
 ----
 
@@ -527,12 +597,14 @@ IMPORTANT: *`AccessDeniedException`* almost always means missing model access in
 [[google-vertex-ai]]
 == Google Vertex AI
 
-Google's enterprise model surface. Project-scoped, IAM-driven, GCP-billed. Credentials must be inlined (same limitation as Bedrock).
+Google's enterprise model surface. Project-scoped, IAM-driven, GCP-billed.
+
+In image versions earlier than 1.2.0, inline a service account key or an account-bound API key in the `PROVIDERS` JSON: Application Default Credentials are not used. Image version 1.2.0 and later can also use impersonation or the credentials of the host. See <<vertex-newer-credentials>>.
 
 .Configuration details
 [%collapsible]
 ====
-IMPORTANT: The Vertex adapter ignores Application Default Credentials (ADC), `GOOGLE_APPLICATION_CREDENTIALS`, GKE Workload Identity, and Compute Engine metadata server credentials. Inline either a service-account key or an account-bound API key in the `PROVIDERS` JSON.
+IMPORTANT: An API key authenticates Gemini models only. Requests to Claude models on Vertex AI always need a Google OAuth token. Give a provider that serves Claude models `credentials`. In image version 1.2.0 and later, `impersonation` or a host with Application Default Credentials also work.
 
 *JSON shape (service account):*
 
@@ -571,12 +643,52 @@ IMPORTANT: The Vertex adapter ignores Application Default Credentials (ADC), `GO
 |===
 |Field |Required |Notes
 |`type` |Yes |Literal `"vertex"`
-|`project` |Yes |GCP project ID, not the project number.
-|`location` |Yes |Region, for example `us-central1`, `europe-west4`. Must support the model family.
+|`project` |Yes |GCP project ID, not the project number. Can also come from the `GOOGLE_VERTEX_PROJECT` environment variable.
+|`location` |Yes |Region, for example `us-central1`, `europe-west4`. Must support the model family. Can also come from the `GOOGLE_VERTEX_LOCATION` environment variable.
 |`credentials.clientEmail` |If using SA |The `client_email` field from the SA JSON key.
 |`credentials.privateKey` |If using SA |The `private_key` field from the SA JSON key. See the newline escaping note below.
 |`apiKeys` |If using account-bound key |Array of one or more Vertex-bound API keys.
 |===
+
+[[vertex-newer-credentials]]
+*Impersonation and host credentials in image version 1.2.0 and later:*
+
+The following example defines a provider that impersonates a service account and a provider that uses the credentials of the host:
+
+[source,json]
+----
+{
+  "vertex-impersonation": {
+    "type": "vertex",
+    "project": "YOUR_GCP_PROJECT_ID",
+    "location": "us-central1",
+    "impersonation": {
+      "targetPrincipal": "ai-service@YOUR_GCP_PROJECT_ID.iam.gserviceaccount.com",
+      "lifetimeSeconds": 3600
+    }
+  },
+  "vertex-host": {
+    "type": "vertex",
+    "project": "YOUR_GCP_PROJECT_ID",
+    "location": "us-central1"
+  }
+}
+----
+
+.`impersonation` fields
+[cols="1,1,3",options="header"]
+|===
+|Field |Required |Notes
+|`impersonation.targetPrincipal` |Yes, when `impersonation` is set |Email of the service account to impersonate.
+|`impersonation.lifetimeSeconds` |No |Lifetime of the access tokens issued for that service account. Defaults to `3600`, maximum `43200`.
+|===
+
+The service authenticates with the first of the following that is configured:
+
+. `impersonation`: the service requests a short-lived access token for `targetPrincipal` from the IAM Credentials API, scoped to `+https://www.googleapis.com/auth/cloud-platform+`, and renews it as it expires. The token request uses `credentials` when both are set, and the credentials of the host when `impersonation` is set on its own. Grant the source identity `roles/iam.serviceAccountTokenCreator` on the target service account.
+. `credentials`: the service signs a JWT with the service account key and exchanges it for an access token.
+. `apiKeys`: the service calls Vertex AI in express mode with the API key (Gemini models only).
+. The credentials of the host: when none of the options above is set, the Google auth library resolves Application Default Credentials in its standard order (the file that `GOOGLE_APPLICATION_CREDENTIALS` points to, the file written by `gcloud auth application-default login`, and the service account attached to the host). A container on Google Cloud can then reach Vertex AI with no secret in `PROVIDERS`.
 
 *`private_key` newline escaping:*
 
@@ -638,10 +750,10 @@ When a GCP org enforces any of these, the security or cloud team must grant a pr
 
 -e MODELS='[
   {
-    "id": "gemini-2.0-flash-001",
+    "id": "gemini-3.8-flash",
     "provider": "vertex",
-    "name": "Gemini 2.0 Flash (Vertex)",
-    "description": "Google Gemini 2.0 Flash through Vertex AI",
+    "name": "Gemini 3.8 Flash (Vertex)",
+    "description": "Google Gemini 3.8 Flash through Vertex AI",
     "features": ["conversations", "reviews", "actions"]
   }
 ]'
@@ -858,7 +970,7 @@ A successful response confirms the AI service can forward requests to the local 
 
 `PROVIDERS` is a single JSON object that may contain any number of entries. Each entry is independent; the service maintains a separate client pool per provider. There is no limit beyond JSON-in-env-var size constraints (many shells allow 64 KB{plus} or more in a single variable).
 
-A `MODELS` array routes individual models to specific providers using the `provider` field, which must match a `PROVIDERS` key *exactly* (case-sensitive).
+A `MODELS` array routes individual models to specific providers using the `provider` field, which must match a `PROVIDERS` key.
 
 === Example: three providers, mixed routing
 
@@ -882,17 +994,17 @@ A `MODELS` array routes individual models to specific providers using the `provi
 
 -e MODELS='[
   {
-    "id": "gpt-4o",
+    "id": "gpt-5.5",
     "provider": "openai",
-    "name": "GPT-4o",
-    "description": "OpenAI flagship model for conversations",
+    "name": "GPT-5.5",
+    "description": "OpenAI GPT-5.5 for conversations",
     "recommended": true,
     "features": ["conversations"]
   },
   {
-    "id": "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+    "id": "us.anthropic.claude-sonnet-5",
     "provider": "bedrock-us",
-    "name": "Claude Sonnet 4.5 (Bedrock)",
+    "name": "Claude Sonnet 5 (Bedrock)",
     "description": "Claude on Bedrock for reviews",
     "capabilities": { "reasoning": true },
     "features": ["reviews"]
@@ -910,7 +1022,16 @@ A `MODELS` array routes individual models to specific providers using the `provi
 
 This wires conversations to OpenAI, reviews to Bedrock-hosted Claude, and quick actions to a local Ollama model. The {productname} editor will pick the appropriate provider for each feature based on which models declare which `features`.
 
-A `MODELS` entry with a `provider` value that does not exist in `PROVIDERS` stops the service at startup with `[FATAL] Following models have invalid provider:` followed by the affected model IDs. Check the spelling of each `provider` field against the keys in `PROVIDERS` (case-sensitive). See xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting] for additional debugging steps.
+A `MODELS` entry with a `provider` value that does not exist in `PROVIDERS` stops the service at startup with `[FATAL] Following models have invalid provider:` followed by the affected model IDs. Check the spelling of each `provider` field against the keys in `PROVIDERS`. See xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting] for additional debugging steps.
+
+[[model-resolution-order]]
+=== Model resolution order
+
+Feature strings form a dot-separated hierarchy: in `reviews.correctness`, the parent feature is `reviews`. The service routes a request as follows:
+
+* A request goes to a model that declares the most specific matching feature. A request for `reviews.correctness` goes to a model that declares `reviews.correctness`, even when a model that declares `reviews` comes earlier in `MODELS`.
+* A feature with no exact match falls back to its parent. When models declare only `reviews` and `reviews.correctness`, a `reviews.clarity` request goes to the model that declares `reviews`.
+* When several models declare the same feature, the order of `MODELS` ranks them. When the service picks the model for a feature, the first model serves the request, and the next one serves it when the first model is unavailable (see <<model-availability>>).
 
 
 
@@ -921,15 +1042,17 @@ A `MODELS` entry with a `provider` value that does not exist in `PROVIDERS` stop
 [cols=",,,,",options="header",]
 |===
 |Field |Required |Type |Default |Notes
-|`id` |Yes |string |- |Model identifier sent to the upstream provider. For Azure, this must match the deployment name. For Bedrock, this must match the model ID or inference profile.
-|`provider` |Yes |string |- |Must match a key in `PROVIDERS` exactly.
-|`description` |Yes |string |- |Shown in model picker tooltips.
+|`id` |Yes |string |- |Model identifier sent to the provider. For Azure, this must match the deployment name, which starts with the ID of the OpenAI model. For Bedrock, this must match the model ID or inference profile. Must be unique across all models. No model can use an `id` that starts with the reserved `agent-` prefix.
+|`type` |No |string |`standard` |`standard` or `agent`. See <<agent-models>>.
+|`fallbackOrder` |For agent models |`string[]` |- |Ordered list of standard model IDs that an agent model routes to. See <<agent-models>>.
+|`provider` |Yes (standard models) |string |- |Must match a key in `PROVIDERS`. The match is case-insensitive. Ignored for agent models.
+|`description` |Yes |string |- |Shown under the model name in the model picker.
 |`name` |No |string |value of `id` |Display name in the model picker.
-|`recommended` |No |boolean |`false` |If `true`, marks the model as recommended in the picker. Only one model should be flagged per environment.
+|`recommended` |No |boolean |`false` |If `true`, marks the model as recommended. Several models can be recommended. The {pluginname} plugin does not use this flag: it selects the model set in xref:tinymceai.adoc#tinymceai_default_model[`+tinymceai_default_model+`], or the first model returned.
 |`capabilities.webSearch` |No |boolean |`false` |Whether to allow the web search toggle for this model. Requires `WEBSEARCH_ENABLED`.
-|`capabilities.reasoning` |No |boolean |`false` |Whether to expose a reasoning/extended-thinking toggle. Supported providers include Anthropic, Bedrock-Claude, and OpenAI o-series. Cosmetic for Ollama (see openai-compatible section).
+|`capabilities.reasoning` |No |boolean |`false` |Whether to expose a reasoning toggle. Supported providers include Anthropic, Bedrock-Claude, and OpenAI o-series. Cosmetic for Ollama (see openai-compatible section).
 |`contextLimits` |No |object |see below |Per-model context constraints.
-|`features` |Yes |`string[]` |- |Which features the model is eligible for. Must contain at least one usable feature.
+|`features` |No |`string[]` |- |Which features the model serves. A standard model without `features` is not offered for any feature directly, but an agent model can list it in `fallbackOrder`. See <<startup-validation>>.
 |===
 
 === `contextLimits` defaults
@@ -943,6 +1066,8 @@ A `MODELS` entry with a `provider` value that does not exist in `PROVIDERS` stop
 |`maxTotalFileSize` |`31457280` |bytes
 |`maxTotalPdfFilePages` |`100` |pages
 |===
+
+Values set in `contextLimits` are in bytes, characters, or counts, as listed above. To read the limits that the running image applies, call `GET /v1/models/1` and check the `limits` object of each model. `contextLimits` caps only what the model accepts. When a model cannot accept file input, remove the file upload permission from the users who can select that model.
 
 Override `contextLimits` only when necessary, for example when a model has a smaller real context window than the default 256K character budget, or when a deployment policy restricts file size.
 
@@ -986,9 +1111,68 @@ A model with no `features` entry, or with only sub-features the editor does not 
 
 
 
+[[agent-models]]
+== Custom agent models
+
+`MODELS` can define custom agent models. A custom agent model is a virtual model that calls no provider itself. It lists standard models in `fallbackOrder`, and each request goes to the first model on that list that is available. When none of them is available, the request fails.
+
+[source,bash]
+----
+-e MODELS='[
+  {
+    "id": "claude-sonnet-5",
+    "provider": "anthropic",
+    "description": "Anthropic Claude Sonnet 5",
+    "capabilities": { "reasoning": true }
+  },
+  {
+    "id": "gpt-5-mini",
+    "provider": "openai",
+    "description": "OpenAI GPT-5 mini",
+    "capabilities": { "reasoning": true }
+  },
+  {
+    "type": "agent",
+    "id": "writing-assistant",
+    "name": "Writing assistant",
+    "description": "Uses the first available model from two providers",
+    "recommended": true,
+    "capabilities": { "reasoning": true },
+    "features": ["conversations", "reviews", "actions"],
+    "fallbackOrder": ["claude-sonnet-5", "gpt-5-mini"]
+  }
+]'
+----
+
+An agent model accepts the same fields as a standard model (`id`, `name`, `description`, `recommended`, `capabilities`, `contextLimits`, and `features`), with these differences:
+
+* `type` must be `agent`.
+* `fallbackOrder` is required. It is a non-empty, ordered array of `id` values of standard models in the same `MODELS` array.
+* The service ignores `provider`. Each request uses the provider of the standard model that serves it.
+
+When an agent model sets `capabilities.webSearch` or `capabilities.reasoning` to `true`, every model in its `fallbackOrder` must set the same capability. Otherwise the service fails to start with a validation error.
+
+Clients see an agent model as an ordinary model in the model list. The list never includes its `fallbackOrder` or the providers of the models behind it.
+
+Agent models can replace or reorder the models behind a stable model ID, for example to roll out a newer model or retire an old one, without changing editor configuration or JWT permissions. They also keep the choice of models and providers private to the deployment, and continue to answer during a provider outage when they list models from more than one provider.
+
+[[model-availability]]
+=== Model availability
+
+The service tracks the health of every model and takes an unhealthy model out of rotation for 60 seconds. All replicas share this state through Redis, so a model that is out of rotation is out of rotation on every replica.
+
+* A model leaves rotation after three failed requests, or three responses that took more than 10 seconds to produce the first token, within 5 minutes. The service counts failures and slow responses separately, and one healthy response resets both counts.
+* After 60 seconds, the service sends one probe request to the model. If it succeeds, the model returns to rotation. If it fails, the model stays out for another 60 seconds.
+* The service picks the model before it sends a request, and does not switch models during a request.
+
+A request to a standard model that is out of rotation fails, because there is nothing to fall back to. An agent model uses the first model in its `fallbackOrder` that is in rotation, and fails only when none is. To keep requests working during a provider outage, offer an agent model that lists models from at least two providers.
+
+
+
+[[rotating-api-keys]]
 == Rotating API keys without downtime
 
-The `apiKeys` field on every provider type that has one is an *array*. The service treats all entries as valid for incoming requests, which allows rotating keys with zero downtime:
+The `apiKeys` field on every provider type that has one is an *array*. The service uses the first key, and if the provider rejects that key as invalid, the next one. To rotate a key without downtime, add the new key after the current one, restart, then remove the old key:
 
 . Append the new key to the array:
 +
@@ -997,7 +1181,7 @@ The `apiKeys` field on every provider type that has one is an *array*. The servi
 "apiKeys": ["sk-proj-OLD_KEY", "sk-proj-NEW_KEY"]
 ----
 . Restart the AI service container so it picks up the new `PROVIDERS` value.
-. Verify the new key works (run a chat completion through the service).
+. Verify the new key directly against the provider, with the *Verify* command in the provider section above. The service keeps using the first key until the provider rejects it.
 . Revoke the old key in the provider console.
 . Remove the old key from `apiKeys`:
 +
@@ -1007,7 +1191,7 @@ The `apiKeys` field on every provider type that has one is an *array*. The servi
 ----
 . Restart the AI service container again.
 
-The same procedure works for `anthropic`, `google`, `azure`, and `openai-compatible` provider types. For Bedrock and Vertex, swap the `credentials` object atomically; there is no array of credential objects, so plan a short maintenance window or run two AI service replicas behind a load balancer for a no-downtime swap.
+The same procedure works for `anthropic`, `google`, `azure`, and `openai-compatible` provider types. For Bedrock and Vertex, swap the `credentials` object atomically; there is no array of credential objects, so plan a short maintenance window or run two AI service replicas behind a load balancer for a no-downtime swap. In image version 1.2.0 and later, a Bedrock or Vertex AI provider that uses an assumed role, impersonation, or the credentials of the host has no static keys in `PROVIDERS` to rotate, unless the assumed role or impersonation also uses `credentials`.
 
 
 
@@ -1016,11 +1200,11 @@ The same procedure works for `anthropic`, `google`, `azure`, and `openai-compati
 [cols=",,",options="header",]
 |===
 |Symptom |Most likely cause |Section
-|Editor shows "model unavailable" / `agent-1 allowed:false` |`MODELS` not set |<<models-required,Defining the model list>>
-|`GET /v1/models/v1` returns 500 |Wrong compatibility version |<<models-required,Defining the model list>>
-|Bedrock returns `NoValidApiKeysFoundError` |Relying on the AWS default credential chain |Bedrock
+|Editor shows "model unavailable" / `agent-1 allowed:false` |The token lacks `ai:models:agent` |<<models-required,Defining the model list>>
+|`GET /v1/models/v1` returns 400 |Wrong compatibility version |<<models-required,Defining the model list>>
+|Bedrock returns `NoValidApiKeysFoundError` |No credentials that the service can use. In image versions earlier than 1.2.0, relying on the AWS default credential chain |Bedrock
 |Bedrock returns `AccessDeniedException` |Model access not enabled in console |Bedrock prerequisites
-|Bedrock returns `ValidationException` on Claude 4 |Bare model ID used instead of cross-region inference profile |Bedrock
+|Bedrock returns `ValidationException` on a Claude model |Bare model ID used instead of a cross-region inference profile |Bedrock
 |Bedrock returns `INVALID_PAYMENT_INSTRUMENT` |Missing AWS Marketplace subscription for the model family |Bedrock prerequisites
 |Vertex returns `invalid_grant` |`private_key` newline escaping mangled |Vertex
 |Vertex returns `SERVICE_DISABLED` |aiplatform.googleapis.com not enabled |Vertex

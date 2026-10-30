@@ -17,7 +17,7 @@ The infrastructure consists of three layers:
 * The *application layer* runs the token endpoint (which signs JWTs), the AI service container, and a load balancer or reverse proxy. It may consist of one or more AI service instances behind the load balancer (round-robin recommended). Each instance runs the same stateless container image and listens on port `8000`.
 * The *data layer* consists of a SQL database, a Redis instance, and file storage:
 ** *SQL database*: stores persistent data such as configurations and conversations.
-** *Redis*: caching and coordination (SSE delivery, rate limits, pub/sub). Enables the AI service to remain stateless.
+** *Redis*: caching and coordination (shared caches and in-progress SSE responses). Enables the AI service to remain stateless.
 ** *File storage*: stores uploaded files and documents (S3, Azure Blob, filesystem, or the database itself).
 
 [.text-center]
@@ -119,10 +119,10 @@ NOTE: The service license key (`LICENSE_KEY`) and the {productname} editor licen
 |Docker 20.10{plus}, Podman 4{plus}, or any OCI-compatible runtime. Kubernetes, AWS ECS, or Azure Container Apps are also supported.
 
 |SQL database
-|MySQL 8.0 or PostgreSQL 13{plus} (16 recommended).
+|MySQL 8.0 or PostgreSQL 12{plus} (18 recommended).
 
-|Redis
-|3.2.6{plus} (7.x recommended). Single node or Cluster mode supported. Sentinel not supported.
+|Redis or Valkey
+|Redis 6.2{plus} (8.10 recommended) or Valkey 9.0{plus}. Single node or Cluster mode supported. Sentinel not supported.
 
 |LLM access
 |At least one provider. Multiple providers can coexist.
@@ -173,11 +173,20 @@ For a first-time deployment, progress through the guides in order. Each guide ca
 |xref:tinymceai-on-premises-mcp.adoc[MCP and web integrations (optional)]
 |Model Context Protocol (MCP) tool integration, web scraping endpoints, and web search endpoints. Not required for initial setup.
 
+|xref:tinymceai-on-premises-moderation.adoc[Content moderation]
+|Content moderation configuration: the default moderation provider, a custom moderation endpoint, or turning the check off.
+
+|xref:tinymceai-on-premises-guardrails.adoc[Guardrails (optional)]
+|Per-operation content checks for prompt injection and other attacks, with blocklists and custom classification rules.
+
+|xref:tinymceai-on-premises-hooks.adoc[Hooks (optional)]
+|Calls to an endpoint hosted by the integrating application at fixed points of a chat turn.
+
 |xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting]
 |Quick triage, container startup failures, JWT errors, LLM provider errors, editor issues, performance, and diagnostic recipes.
 
 |xref:tinymceai-on-premises-reference.adoc[Reference]
-|Environment variable reference, API endpoint reference, Server-Sent Events reference, and error code reference.
+|Environment variable reference, configuration file, API endpoint reference, Server-Sent Events reference, and error code reference.
 |===
 
 == Support

@@ -339,7 +339,7 @@ If the plugin reports that the JWT token claims (`+sub+` or `+aud+`) have change
 [[error-codes]]
 === Error codes
 
-For the error response shape, see xref:tinymceai-api-overview.adoc#error-responses[Error responses]. For the full list of error codes, see the link:https://tinymceai.api.tiny.cloud/docs#section/Overview/Error-codes[API reference]. The token-related fixes are in xref:#invalid-token-error[Invalid token] and xref:#insufficient-permissions-error[Insufficient permissions].
+For the error response shape, see xref:tinymceai-api-overview.adoc#error-responses[Error responses]. For the full list of error codes, see the link:https://tinymceai.api.tiny.cloud/v1/docs#section/Overview/Error-codes[API reference]. The token-related fixes are in xref:#invalid-token-error[Invalid token] and xref:#insufficient-permissions-error[Insufficient permissions].
 
 [[related-features]]
 == Related Features
@@ -349,4 +349,4 @@ For the error response shape, see xref:tinymceai-api-overview.adoc#error-respons
 * xref:tinymceai-chat.adoc[Chat]: Interactive AI discussions.
 * xref:tinymceai-review.adoc[Review]: Content improvement.
 * xref:tinymceai-actions.adoc[Quick Actions]: Content transformation.
-* link:https://tinymceai.api.tiny.cloud/docs[API Documentation]: Complete API reference for {pluginname}.
+* link:https://tinymceai.api.tiny.cloud/v1/docs[API Documentation]: Complete API reference for {pluginname}.

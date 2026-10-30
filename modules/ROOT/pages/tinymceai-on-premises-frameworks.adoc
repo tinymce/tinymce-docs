@@ -131,7 +131,7 @@ tinymceai_token_provider: () => {
 
 == Framework-specific examples
 
-The examples below show the minimum configuration needed to connect the {pluginname} plugin to the on-premises service. Each uses the framework wrapper's `init` prop to pass the same options documented above.
+The examples below show the minimum configuration needed to connect the {pluginname} plugin to the on-premises service. Each uses the framework wrapper's `init` prop to pass the same options documented above. The examples omit the props that load {productname}. Set `+apiKey+` when loading from {cloudname}, or the self-hosted script source: xref:react-ref.adoc#tinymcescriptsrc[`+tinymceScriptSrc+`] for React, xref:vue-ref.adoc#tinymce-script-src[`+tinymce-script-src+`] for Vue, or the `+TINYMCE_SCRIPT_SRC+` provider for Angular.
 
 === React
 
@@ -309,7 +309,7 @@ The response should include `Access-Control-Allow-Origin: \https://app.yourcompa
 |Include the port in `ALLOWED_ORIGINS`.
 
 |`ALLOWED_ORIGINS` not set at all
-|All cross-origin requests fail silently. Add the editor origin.
+|All cross-origin requests fail with a CORS error in the browser console. Add the editor origin.
 
 |Reverse proxy stripping `Origin` header
 |Configure the proxy to pass the `Origin` header to the AI service.
@@ -327,7 +327,7 @@ Content-Security-Policy:
   script-src 'self';
 ....
 
-If using the Tiny CDN instead of self-hosted assets, also add `\https://cdn.tiny.cloud` to `script-src`.
+If using the Tiny CDN instead of self-hosted assets, also add the {cloudname} domains to the directives listed in xref:tinymce-and-csp.adoc[Content Security Policy].
 
 
 
@@ -354,8 +354,8 @@ If using the Tiny CDN instead of self-hosted assets, also add `\https://cdn.tiny
 |`ALLOWED_ORIGINS` does not include the editor origin
 |Update `ALLOWED_ORIGINS` and restart the AI service.
 
-|`tinymceai_token_provider` called in a tight loop
-|Token endpoint returns invalid JSON or non-200
+|Editor shows an error, and the browser console logs `TinyMCE AI Error:` with the cause, for example `Invalid JWT token provider result` or `Invalid JWT token payload`
+|Token endpoint returned a response without a `token` string, for example a non-200 error body, or a token without the required claims. See xref:tinymceai-on-premises-jwt.adoc#common-failure-modes[Common failure modes]
 |Validate: `curl -X POST http://localhost:3000/api/ai-token` should return `pass:c[{"token":"eyJ..."}]` with HTTP 200.
 |===
 

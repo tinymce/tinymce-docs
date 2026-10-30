@@ -6,9 +6,9 @@
 :pluginname: TinyMCE AI
 :page-role: -toc
 
-The AI service extends model capabilities through two integration points: the https://modelcontextprotocol.io/[Model Context Protocol] (MCP) for tool calling, and pluggable web endpoints for page fetching and search. Both features operate within AI conversations only. Web search and scraping allow the AI to reference live internet content during conversations, and for most deployments, enabling at least web search improves response quality.
+The AI service extends model capabilities through two integration points: the https://modelcontextprotocol.io/[Model Context Protocol] (MCP) for tool calling, and pluggable web endpoints for page fetching and search. AI conversations use both features, and Document Processing requests use MCP tools and web search. Reviews and quick actions use neither. Web search and scraping allow the AI to reference live internet content during conversations, and for most deployments, enabling at least web search improves response quality.
 
-These features are configured entirely through environment variables on the AI service container. No additional infrastructure is required beyond a search endpoint and a scrape endpoint.
+These features are configured through environment variables on the AI service container, or through a xref:tinymceai-on-premises-reference.adoc#configuration-file[configuration file]. In image version 1.2.0 and later, MCP servers can also be registered for one environment at runtime through the <<mcp-admin-api,MCP server admin API>>. No additional infrastructure is required beyond a search endpoint and a scrape endpoint.
 
 [.text-center]
 image::tinymceai-on-premises/mcp-web-integrations-architecture.svg[MCP and web integrations architecture: TinyMCE editor connects to AI Service through SSE conversations. AI Service connects to LLM provider for inference and to MCP servers and web search and scrape endpoints for tool calling and live web content.,width=100%]
@@ -39,7 +39,7 @@ MCP allows the AI service to call external tools (internal wikis, API specificat
 
 Only Streamable HTTP transport is supported. Stdio-based MCP servers cannot connect directly to the AI service. Wrap them with the SDK's HTTP transport adapter (for example, `StreamableHTTPServerTransport` in the TypeScript SDK or `StreamableHTTPServer` in the Python SDK) before use.
 
-MCP tools are available in AI *conversations* only. Reviews and quick actions do not invoke MCP tools. For <<mcp-oauth,OAuth-enabled>> MCP servers, each user must complete the authorization flow before the server's tools become available.
+MCP tools are available in AI *conversations* and, in image version 1.1.0 and later, in xref:tinymceai-document-processing.adoc[Document Processing] requests. Reviews and quick actions do not invoke MCP tools. Document Processing runs with no signed-in user, so it skips OAuth-enabled MCP servers. For <<mcp-oauth,OAuth-enabled>> MCP servers, each user must complete the authorization flow before the server's tools become available.
 
 === Configuration
 
@@ -63,6 +63,8 @@ Set the `MCP_SERVERS` environment variable to a JSON object. Each key is a serve
 |`oauth` |OAuth 2.0 configuration block. Enables per-user authorization for MCP servers that require it. See <<mcp-oauth>>.
 |`tools.disabled` |Array of tool names to exclude from LLM access.
 |`options.callToolTimeout` |Per-tool-call timeout in seconds (default 60).
+|`allowedEnvironments` |Array of environment IDs that can use the server. See <<mcp-allowed-environments>>.
+|`pool` |Connection pool limits for the server. See <<mcp-connection-pooling>>.
 |===
 
 `MCP_SERVERS` supports multiple server entries. Add additional keys to the same JSON object:
@@ -80,6 +82,64 @@ Set the `MCP_SERVERS` environment variable to a JSON object. Each key is a serve
 ----
 
 Each server's tools are namespaced independently (for example, `knowledge-hub-search_docs` and `compliance-checker-run_check`).
+
+[[mcp-allowed-environments]]
+=== Environment allowlist
+
+By default, every environment can use a server defined in `MCP_SERVERS`. The `allowedEnvironments` field limits a server to the listed environment IDs. The service matches IDs exactly, and there is no wildcard value. In an environment that is not on the list, the service behaves as if the server were not configured.
+
+[source,bash]
+----
+-e MCP_SERVERS='{
+  "knowledge-hub": {
+    "url": "http://host.docker.internal:3001/mcp",
+    "allowedEnvironments": ["<environment-id>"]
+  }
+}'
+----
+
+[[mcp-connection-pooling]]
+=== Connection pooling
+
+The service keeps MCP connections open and reuses them for later tool calls. A server that uses static `headers` shares one connection. An <<mcp-oauth,OAuth-enabled>> server holds one connection for each user and environment, because each user connects with their own token. The `pool` object limits these connections for each server:
+
+[cols="1,1,3",options="header"]
+|===
+|Field |Default |Description
+|`pool.maxClients` |`10` |Maximum number of open connections for the server. At the limit, the service closes the connection that has been idle the longest. When every connection is busy, the request fails instead of waiting.
+|`pool.maxIdleTime` |`300000` (5 minutes) |How long an unused connection is kept, in milliseconds.
+|`pool.maxLifetime` |`1800000` (30 minutes) |Maximum age of a connection, in milliseconds. The service closes an older connection once it is no longer in use, and the next request opens a new one.
+|`pool.healthCheckInterval` |`10000` |How often the service pings idle connections, in milliseconds. The service closes a connection that does not respond, or that has reached `maxIdleTime` or `maxLifetime`. Set to `0` to stop the check. Without the check, `maxIdleTime` and `maxLifetime` have no effect.
+|===
+
+[source,bash]
+----
+-e MCP_SERVERS='{
+  "knowledge-hub": {
+    "url": "http://host.docker.internal:3001/mcp",
+    "pool": {
+      "maxClients": 25,
+      "maxIdleTime": 600000,
+      "maxLifetime": 1800000,
+      "healthCheckInterval": 10000
+    }
+  }
+}'
+----
+
+NOTE: The `pool` values are in milliseconds, while `options.callToolTimeout` is in seconds.
+
+[[mcp-admin-api]]
+=== MCP server admin API
+
+In image version 1.2.0 and later, MCP servers can also be registered for one environment at runtime, without redeploying the container. Tokens for the admin endpoints need the `ai:admin` permission, and the service takes the environment from the token. See xref:tinymceai-on-premises-jwt.adoc#permissions-reference[Permissions reference], and for the endpoints, see https://tinymceai.api.tiny.cloud/v1/docs#tag/MCP-Server-Admin[MCP Server Admin] in the API reference.
+
+Servers defined in `MCP_SERVERS` and servers registered through the admin API share one namespace, and `MCP_SERVERS` takes priority:
+
+* The admin API rejects a server name that `MCP_SERVERS` already uses.
+* When `MCP_SERVERS` later adds a name that was first registered through the admin API, the `MCP_SERVERS` entry replaces the registered server.
+
+Conversations and Document Processing requests use servers connected either way.
 
 [[mcp-docker-networking]]
 === Docker networking
@@ -366,7 +426,7 @@ Web search requires three components configured together:
 |The model's `MODELS` entry must include `capabilities.webSearch: true` (boolean) for the web search toggle to appear in the editor. See xref:tinymceai-on-premises-providers.adoc#models-required[MODELS configuration].
 
 |JWT permission
-|The JWT must include `ai:conversations:webSearch` in the `auth.ai.permissions` array. See xref:tinymceai-on-premises-jwt.adoc#permissions-reference[JWT permissions]. Without this permission, the toggle remains grayed out even when the environment variables and MODELS entry are correct.
+|The JWT must include `ai:conversations:websearch` in the `auth.ai.permissions` array. See xref:tinymceai-on-premises-jwt.adoc#permissions-reference[JWT permissions]. Without this permission, the toggle remains grayed out even when the environment variables and MODELS entry are correct.
 |===
 
 [source,bash]
@@ -378,6 +438,8 @@ Web search requires three components configured together:
 ----
 
 IMPORTANT: `WEBSEARCH_HEADERS` uses **colon-CSV format** (`Header-Name: value, Another: value`), not JSON. Passing a JSON object produces `ERR_INVALID_HTTP_TOKEN` and silently prevents all outbound search requests.
+
+In a xref:tinymceai-on-premises-reference.adoc#configuration-file[configuration file], the `websearch_headers` option can also be a JSON object. The environment variable always takes the colon-CSV string.
 
 [[websearch-per-message]]
 === Per-message activation (custom integrations)
@@ -551,7 +613,7 @@ Custom streaming UI integrations can use the following Server-Sent Events (SSE) 
 |`source` |Emitted with source citations from the model response.
 |===
 
-For every event and its payload, see the https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages/operation/createMessage[API reference].
+For every event and its payload, see the https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/createMessage[API reference].
 
 
 
@@ -589,7 +651,7 @@ For production clusters, the MCP server Deployments should have dedicated resour
 |`WEBSEARCH_ENABLED` and `WEBRESOURCES_ENABLED` both default to `false`. Set them to `true` in the AI service environment and provide the corresponding `_ENDPOINT` values. Without these flags enabled, the AI service disables all web integration features regardless of JWT permissions or MODELS configuration.
 
 |Web search toggle is grayed out in the editor
-|The JWT is missing the `ai:conversations:webSearch` permission. Add it to the `auth.ai.permissions` array in the token (or use the wildcard `ai:conversations:*`). See xref:tinymceai-on-premises-jwt.adoc#permissions-reference[JWT permissions].
+|The JWT is missing the `ai:conversations:websearch` permission. Add it to the `auth.ai.permissions` array in the token (or use the wildcard `ai:conversations:*`). See xref:tinymceai-on-premises-jwt.adoc#permissions-reference[JWT permissions].
 
 |Web search is toggled on but the model never uses it
 |The per-message request body is missing `"capabilities": {"webSearch": {}}`. The {productname} editor sends this when the toggle is active. Custom integrations must include it in each request body. See <<websearch-per-message>>.

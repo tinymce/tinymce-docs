@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Image and table resize handles are now hidden from screen readers with `+aria-hidden="true"+`
+// #TINYMCE-14927
+
+Previously, the resize handles that appear when an image or table is selected were not hidden from assistive technologies. The same applied to the label that shows the new dimensions during a resize. Screen readers could reach and announce these elements, even though they exist only as visual aids.
+
+In {productname} {release-version}, the resize handles and the other elements shown during a resize have the `+aria-hidden="true"+` attribute, so screen readers ignore them. Image and table dimensions can still be changed without a mouse from the *Insert/Edit Image* and *Table Properties* dialogs.
+
 
 [[security-fixes]]
 == Security fixes

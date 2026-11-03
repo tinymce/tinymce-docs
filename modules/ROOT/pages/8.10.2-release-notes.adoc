@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Underline applied around subscript or superscript text was drawn at the baseline of the surrounding text instead of under the subscript or superscript text
+// #TINYMCE-15001
+
+Previously, when underline and subscript or superscript formatting were combined, {productname} could place the subscript (`+<sub>+`) or superscript (`+<sup>+`) element inside the underline element. Browsers then drew the underline at the baseline of the surrounding text. Under subscript text, the underline appeared only in the gaps between words, as dots in Chrome and as short dashes in Firefox and Safari. Under superscript text, the underline sat below the raised text instead of directly under it. This output did not match how desktop word processors underline subscript and superscript text.
+
+In {productname} {release-version}, the editor moves the underline inside the `+<sub>+` and `+<sup>+` elements, as it already does for strikethrough. The underline now sits directly under subscript and superscript text, whichever format is applied first. The same correction applies to underline `+<span>+` and `+<u>+` elements when subscript or superscript content is inserted into underlined text. The editor does not change underline applied around text with a different font size.
+
 
 [[security-fixes]]
 == Security fixes

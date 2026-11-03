@@ -15,6 +15,8 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 * xref:security-fixes[Security fixes]
 
+IMPORTANT: {productname} {release-version} is a commercial-only release. It is available to commercial customers through the customer portal and {cloudname}, and is not published to npm or other community package managers. To receive this security fix in the community version of {productname}, upgrade to {productname} 8. For upgrade steps, see https://www.tiny.cloud/docs/tinymce/latest/migration-from-7x/[Migrating from {productname} 7].
+
 
 [[security-fixes]]
 == Security fixes

@@ -554,7 +554,7 @@ The license validation request transmits only the license key and a service iden
 |Least-privilege JSON Web Tokens (JWTs) |Grant only the permissions each user role requires. Avoid full-access tokens in production.
 |API secret rotation |Periodically create a new access key, add the new key to the configuration, then revoke the old key. The token endpoint reads the secret at request time.
 |Audit logging |Enable `ENABLE_METRIC_LOGS=true` and ship logs to a Security Information and Event Management (SIEM).
-|Large language model (LLM) API key rotation |Add the new key to the `PROVIDERS` array, restart the service, then revoke the old key after confirming the new one works.
+|Large language model (LLM) API key rotation |Add the new key to the `apiKeys` array of the provider in `PROVIDERS`, restart the service, then revoke the old key after confirming the new one works. See xref:tinymceai-on-premises-providers.adoc[LLM providers].
 |===
 
 NOTE: The secrets management, encryption, and observability recommendations above apply across all cloud providers including Azure (AKS, Azure Database, Azure Cache) and GCP (GKE, Cloud SQL, Memorystore).

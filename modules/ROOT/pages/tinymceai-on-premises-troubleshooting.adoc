@@ -120,9 +120,9 @@ These assume the container is running and `/health` returns OK.
 |Stream abort left temporary state blocking the conversation
 |Start a new conversation or reload the page. Custom UIs should create a fresh conversation after cancel.
 
-|`allowed: false` on every endpoint
-|`auth.ai.permissions` is a string, shorthand, or wrong shape
-a|Use the explicit array form:
+|HTTP 500 error on every endpoint
+|`auth.ai.permissions` is not an array of strings, for example a single string, an object, or an array that contains a non-string value
+a|Use an array of strings:
 
 [source,json]
 ----
@@ -140,7 +140,7 @@ a|Use the explicit array form:
 }
 ----
 
-Common mistakes: `"permissions": "ai:admin"` (string shorthand), `"permissions": "*"`, `"useAllFeatures": true`, or a single permission as a string instead of an array. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication] for the full permission catalog.
+Common mistakes: `"permissions": "ai:admin"` (string shorthand), `"permissions": "*"`, `"useAllFeatures": true`, or a single permission as a string instead of an array. A `["*"]` array is accepted but grants no permissions. A token with no `auth` claim, no `permissions` key, or an empty array returns HTTP 403 `no-permissions-defined` instead. See xref:tinymceai-permissions.adoc[Permissions] for every permission.
 |===
 
 

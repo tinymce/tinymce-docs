@@ -271,7 +271,7 @@ Always create environments through the Management Panel UI. See the xref:tinymce
 
 === Create the token server
 
-The token server signs JSON Web Tokens (JWTs) for the editor. The Node.js example below is for the demo only; the xref:tinymceai-on-premises-jwt.adoc[JWT authentication] guide contains production-ready endpoints in 8 languages (Node, Django, Flask, Laravel, Rails, .NET, Go, Spring Boot).
+The token server signs JSON Web Tokens (JWTs) for the editor. The Node.js example below is for the demo only; the xref:tinymceai-on-premises-jwt.adoc[JWT authentication] guide contains production-ready endpoints for Node.js (Express), Python (Django and Flask), PHP (Laravel), Ruby (Rails), C# (.NET), Go, and Java (Spring Boot).
 
 Create `package.json`:
 

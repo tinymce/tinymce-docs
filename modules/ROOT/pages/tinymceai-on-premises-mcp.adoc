@@ -41,6 +41,8 @@ Only Streamable HTTP transport is supported. Stdio-based MCP servers cannot conn
 
 MCP tools are available in AI *conversations* and, in image version 1.1.0 and later, in xref:tinymceai-document-processing.adoc[Document Processing] requests. Reviews and quick actions do not invoke MCP tools. Document Processing runs with no signed-in user, so it skips OAuth-enabled MCP servers. For <<mcp-oauth,OAuth-enabled>> MCP servers, each user must complete the authorization flow before the server's tools become available.
 
+The AI service does not offer the resources of an MCP server to the model. To use them, connect the server to a context. See <<mcp-resources>>.
+
 === Configuration
 
 Set the `MCP_SERVERS` environment variable to a JSON object. Each key is a server identifier; each value describes the connection. For OAuth-enabled servers, also set `MCP_OAUTH_CALLBACK_URL` (see <<mcp-oauth>>).
@@ -140,6 +142,17 @@ Servers defined in `MCP_SERVERS` and servers registered through the admin API sh
 * When `MCP_SERVERS` later adds a name that was first registered through the admin API, the `MCP_SERVERS` entry replaces the registered server.
 
 Conversations and Document Processing requests use servers connected either way.
+
+[[mcp-resources]]
+=== MCP resources
+
+An MCP server can publish resources, such as documents and files, as well as tools. The AI service calls the tools of a connected server, but it does not offer the resources to the model. In image version 1.1.0 and later, resources are used through the xref:tinymceai-api-overview.adoc#contexts[context library]:
+
+* Connect the MCP server through `+MCP_SERVERS+` or the <<mcp-admin-api,MCP server admin API>>.
+* Set `+mcpServerId+` to the server name when creating or updating a context. The resources of the server become file items of that context, alongside its prompts and uploaded files. Connecting a context to an unavailable server is rejected. Set `+mcpServerId+` to `+null+` in an update to disconnect the server.
+* Reference the context in requests, or create it with `+autoApply+`. Each request needs the `+ai:contexts:<contextId>+` permission, or `+ai:contexts:*+`, for the context. See xref:tinymceai-on-premises-jwt.adoc#permissions-reference[Permissions reference].
+
+The Context Admin operations require the `+ai:admin+` permission. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Context-Admin/operation/adminCreateContext[Create a context] in the API reference.
 
 [[mcp-docker-networking]]
 === Docker networking

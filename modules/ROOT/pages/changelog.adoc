@@ -6,6 +6,8 @@ NOTE: This is the {productname} Community version changelog. For information abo
 
 == xref:7.9.4-release-notes.adoc[7.9.4 - 2026-10-06]
 
+IMPORTANT: {productname} 7.9.4 is a commercial-only release. It is available to commercial customers through the customer portal and {cloudname}, and is not published to npm or other community package managers. To receive this security fix in the community version of {productname}, upgrade to {productname} 8. For upgrade steps, see https://www.tiny.cloud/docs/tinymce/latest/migration-from-7x/[Migrating from {productname} 7].
+
 === Security
 
 * Fixed stored XSS vulnerability using media plugin `data-mce-object` serialization.

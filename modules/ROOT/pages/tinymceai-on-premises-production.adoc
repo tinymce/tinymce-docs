@@ -584,12 +584,25 @@ Set the `ENABLE_METRIC_LOGS` environment variable to enable request-level JSON l
 -e ENABLE_METRIC_LOGS='true'
 ----
 
-When enabled, the service writes a structured JSON entry for each request. Key fields include the request duration and HTTP status code. These entries are suitable for ingestion into any log aggregator that supports JSON parsing.
+When enabled, the service writes a `+Request summary+` line, tagged `+metrics+`, for each request it serves. Summary lines are written at level `+30+`, including for failed requests, so filter on `+data.status+` or `+data.statusCode+` to find failed requests.
 
-.Example metric log entry
+Each summary contains the following fields:
+
+* `+handler+`: the API operation that served the request, for example `+createMessage+`.
+* `+traceId+`: the request identifier. Search for it to find every log line for the same request.
+* `+data.duration+`: the request duration in milliseconds.
+* `+data.transport+`: the request transport, `+http+`.
+* `+data.status+`: the request outcome, for example `+success+` for a successful request, or `+warning+` for a 400 or 401 response.
+* `+data.statusCode+`: the HTTP status code of the response.
+* `+data.environmentId+`: the environment the request was made for, or `+unknown+` when the request has no environment. Requests that fail authentication and management API requests report `+unknown+`.
+* `+data.url+`: the request URL.
+* `+data.method+`: the request method.
+* `+data.message+`: the error message, when the request ends with an error.
+
+.Example metric log entry for a message sent to a conversation
 [source,json]
 ----
-{"timestamp":"2026-05-19T10:30:00.123Z","method":"POST","path":"/v1/conversations/abc123/messages","statusCode":200,"durationMs":3421}
+{"level":30,"time":"2026-11-03T03:41:44.879Z","msg":"Request summary","handler":"createMessage","traceId":"5cd27baad742edcce2a780831a7bf505","data":{"duration":2382,"transport":"http","statusCode":200,"environmentId":"<env-id>","status":"success","url":"/v1/conversations/abc123/messages","method":"POST"},"tags":"metrics"}
 ----
 
 TIP: Inspect the first few entries with `docker logs ai-service --tail 5 | jq .` to discover all available fields for the current service version.

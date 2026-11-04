@@ -51,7 +51,7 @@ Review suggestions can be individually skipped or applied by clicking the corres
 [[built-in-reviews]]
 == Built-in reviews
 
-Built-in system reviews are listed below. The **Editor** column is the label in the Review sidebar when that review is available in the editor. The **API review** column lists the `+reviewName+` values that the https://tinymceai.api.tiny.cloud/docs#tag/Reviews/operation/callSystemReview[Reviews API] accepts in the `+/v1/reviews/system/{reviewName}/calls+` path. Editor reviews with several options map to one API review for each option.
+Built-in system reviews are listed below. The **Editor** column is the label in the Review sidebar when that review is available in the editor. The **API review** column lists the `+reviewName+` values that the https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/callSystemReview[Reviews API] accepts in the `+/v1/reviews/system/{reviewName}/calls+` path. Editor reviews with several options map to one API review for each option.
 
 [cols="1,1,3,^,^",options="header"]
 |===
@@ -115,18 +115,18 @@ Reviews use streaming output with Server-Sent Events for real-time feedback as s
 [[reviews-system-reviews-api]]
 === System reviews
 
-System reviews are built-in reviews for common use cases, and the request does not name a model. The API includes one endpoint for running system reviews, https://tinymceai.api.tiny.cloud/docs#tag/Reviews/operation/callSystemReview[Call a system review], which takes the review name from the xref:tinymceai-review.adoc#built-in-reviews[API review] column in its path. Each HTML element in the request content needs a unique `+data-id+` attribute.
+System reviews are built-in reviews for common use cases, and the request does not name a model. The API includes one endpoint for running system reviews, https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/callSystemReview[Call a system review], which takes the review name from the xref:tinymceai-review.adoc#built-in-reviews[API review] column in its path. Each HTML element in the request content needs a unique `+data-id+` attribute.
 
 Built-in system reviews including API names, descriptions, and whether each type is available in the Review sidebar or only through the API—are summarized in xref:tinymceai-review.adoc#built-in-reviews[Built-in reviews].
 
 For the token scopes that each system review needs, see xref:tinymceai-permissions.adoc#reviews-permissions[Reviews permissions].
 
-For endpoint details, request and response schemas, authentication, and streaming behavior, see https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API].
+For endpoint details, request and response schemas, authentication, and streaming behavior, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews[Reviews API].
 
 [[reviews-custom-reviews]]
 === Custom reviews (API)
 
-Integrators can also call the https://tinymceai.api.tiny.cloud/docs#tag/Reviews/operation/callCustomReview[Custom Review API endpoint] directly. It streams suggestions in the same way as system reviews but takes a custom `prompt` (and `model`) with document `content` in the request body. Custom reviews can be as simple as checking for specific words or phrases, or as complex as applying a company style guide that includes business logic, specific terminology, and more. See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the endpoint, parameters, and examples.
+Integrators can also call the https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/callCustomReview[Custom Review API endpoint] directly. It streams suggestions in the same way as system reviews but takes a custom `prompt` (and `model`) with document `content` in the request body. Custom reviews can be as simple as checking for specific words or phrases, or as complex as applying a company style guide that includes business logic, specific terminology, and more. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews[Reviews API] for the endpoint, parameters, and examples.
 
 Users can also run custom reviews directly from the editor through the xref:tinymceai-review.adoc#custom-review-choose-review[Custom review] category in the Review sidebar.
 
@@ -135,12 +135,12 @@ Custom reviews require the `ai:reviews:custom` permission in the JWT token. See 
 [[reviews-streaming]]
 === Streaming responses
 
-Reviews use Server-Sent Events (SSE) for real-time streaming results. See the xref:tinymceai-streaming.adoc[Streaming responses guide] for detailed implementation information. For the events and their payloads, see https://tinymceai.api.tiny.cloud/docs#tag/Reviews/operation/callSystemReview[Call a system review] and https://tinymceai.api.tiny.cloud/docs#tag/Reviews/operation/callCustomReview[Call a custom review] in the API reference.
+Reviews use Server-Sent Events (SSE) for real-time streaming results. See the xref:tinymceai-streaming.adoc[Streaming responses guide] for detailed implementation information. For the events and their payloads, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/callSystemReview[Call a system review] and https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/callCustomReview[Call a custom review] in the API reference.
 
 [[reviews-api-reference]]
 === API reference
 
-The https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] reference (interactive OpenAPI documentation) is the full source for endpoints, request and response schemas, authentication, system and custom review calls, worked examples, and streaming review responses.
+The https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews[Reviews API] reference (interactive OpenAPI documentation) is the full source for endpoints, request and response schemas, authentication, system and custom review calls, worked examples, and streaming review responses.
 
 [[related-features]]
 == Related features

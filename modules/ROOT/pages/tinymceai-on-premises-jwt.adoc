@@ -71,7 +71,7 @@ Every token MUST contain the following claims.
 |`aud` |string |The Environment ID, copied from the Management Panel (for example `viOu8BnjJHb0HGK091p`). Type *must be string*, not array; the verifier rejects array-shaped `aud` (the default in some JWT libraries) with `invalid-jwt-payload`.
 |`iat` |number |Issued-at, seconds since epoch (UTC).
 |`exp` |number |Expiry, seconds since epoch (UTC). Recommend `iat {plus} 3600` for demos, `iat {plus} 900` for production. The server applies 60 seconds of clock-skew leeway; tokens up to 60 seconds past `exp` still verify.
-|`sub` |string |Unique, stable user identifier. Conversation history is isolated per-`sub`; do not reuse one `sub` across users or conversations will leak between them.
+|`sub` |string |Unique, stable user identifier. Conversation history is isolated per-`sub`; do not reuse one `sub` across users or conversations will leak between them. Do not include personally identifiable information (PII), such as names or email addresses, in the `sub` value, because the AI service logs it. Use an opaque identifier, such as an internal user ID.
 |`auth.ai.permissions` |`string[]` |Array of feature permission strings. See the permissions reference below. Wildcards (`+*+`) are accepted only in the documented positions; the bare string `"*"` is rejected.
 |===
 
@@ -92,23 +92,23 @@ The verifier ignores additional unknown claims. Standard JWT claims (`iss`, `nbf
 
 == Permissions reference
 
-This is the canonical permission list for the AI service.
+The following table lists the permissions that most on-premises tokens use. For every permission, including model wildcards, custom actions and reviews, individual system actions and reviews, conversation file and URL context, and Document Processing, see xref:tinymceai-permissions.adoc[Permissions].
 
 === Conversation and global features
 
 [cols=",",options="header",]
 |===
 |Permission |Grants
-|`ai:conversations:*` |All conversation operations: create, list, send message, delete, and web search
-|`ai:conversations:create` |Create new conversations
+|`ai:conversations:*` |All conversation operations: create, list, send message, delete, web search, and reasoning
 |`ai:conversations:read` |List and read existing conversations
-|`+ai:conversations:write+` |Create conversations and send messages
-|`ai:conversations:delete` |Delete conversations
-|`ai:conversations:webSearch` |Enable the web search toggle in conversations. Without this permission, `GET /v1/models/1` reports `capabilities.webSearch.allowed: false` even when `WEBSEARCH_ENABLED=true` and `capabilities.webSearch: true` is set on the model.
+|`+ai:conversations:write+` |Create, update, and delete conversations, and send messages. Also requires `+ai:conversations:read+`.
+|`ai:conversations:websearch` |Enable the web search toggle in conversations. Without this permission, `GET /v1/models/1` reports `capabilities.webSearch.allowed: false` even when `WEBSEARCH_ENABLED=true` and `capabilities.webSearch: true` is set on the model.
+|`ai:conversations:reasoning` |Enable the reasoning toggle in conversations
 |`ai:models:agent` |Access the built-in agent model (model ID `agent-1`)
 |`ai:models:<provider>:<model-id>` |Access a specific custom model configured through the `MODELS` env var
-|`ai:actions:system:*` |All built-in quick actions (rewrite, summarize, expand, translate, change tone, and related operations)
+|`ai:actions:system:*` |All system actions: `continue`, `fix-grammar`, `improve-writing`, `make-longer`, `make-shorter`, the `make-tone-*` actions, and `translate`. Chat actions, such as Summarize and Explain, use the conversation permissions instead. See xref:tinymceai-actions.adoc#default-actions[Default actions].
 |`ai:reviews:system:*` |All built-in review features (correctness, clarity, readability, tone, and related checks)
+|`ai:contexts:<contextId>` |Use one context from the xref:tinymceai-api-overview.adoc#contexts[context library]. `ai:contexts:*` covers every context. A context created with `autoApply` applies only to requests whose token covers it. For any other request, the service skips the context and returns no error.
 |===
 
 === Model permission syntax
@@ -119,11 +119,11 @@ Examples:
 
 ....
 ai:models:openai:gpt-5-mini
-ai:models:openai:gpt-4o
-ai:models:anthropic:claude-sonnet-4-5
-ai:models:bedrock:us.anthropic.claude-sonnet-4-20250514-v1:0
-ai:models:vertex:gemini-2.5-pro
-ai:models:azure:my-gpt5-deployment
+ai:models:openai:gpt-5.5
+ai:models:anthropic:claude-sonnet-5
+ai:models:bedrock:us.anthropic.claude-sonnet-5
+ai:models:vertex:gemini-3.8-flash
+ai:models:azure:gpt-5-mini-prod
 ....
 
 `<provider>` is the key of the provider in `PROVIDERS`, not its `name`. The `+provider+` field of each model in `GET /v1/models/1` shows the display `name`, so do not build permission strings from that field.
@@ -137,10 +137,10 @@ For Bedrock models with an inference profile prefix (`us.`, `eu.`, `apac.`) and 
 [cols=",",options="header",]
 |===
 |Do not use |Reason
-|`ai:admin` |Appears in the *cloud* JWT doc. The on-premises service rejects this with `allowed: false` on every endpoint. There is no admin scope in on-premises deployments; admin actions go through the Management Panel.
-|`"*"` (the bare string) |Rejected. The verifier requires structured permission strings.
+|`ai:admin` |Back-end administration requests need `ai:admin`: the Context Admin operations of the xref:tinymceai-api-overview.adoc#contexts[context library] (image version 1.1.0 and later) and the xref:tinymceai-on-premises-mcp.adoc#mcp-admin-api[MCP server admin API] (image version 1.2.0 and later). `ai:admin` passes every permission check, so never include it in a token returned to the editor.
+|`"*"` (the bare string) |Fails with an HTTP 500 error on every endpoint, like any other value that is not an array of strings. In an array, `["*"]` is accepted but grants no permissions, because the service ignores strings that are not in the `ai:<permission-type>:<permission-value>` form.
 |`useAllFeatures: true` |The on-premises service requires the explicit `auth.ai.permissions` array.
-|A single string instead of an array |Rejected. `auth.ai.permissions` must be ``string[]``.
+|A single string, an object, a number, `null`, or an array that contains a non-string value |Fails with an HTTP 500 error on every endpoint. `auth.ai.permissions` must be an array of strings (``string[]``).
 |===
 
 === Full-access set
@@ -812,7 +812,7 @@ function permissionsFor(user) {
         'ai:reviews:system:*',
         'ai:models:agent',
         'ai:models:openai:gpt-5-mini',
-        'ai:models:openai:gpt-4o',
+        'ai:models:openai:gpt-5.5',
       ];
 
     case 'enterprise':
@@ -821,9 +821,9 @@ function permissionsFor(user) {
         'ai:reviews:system:*',
         'ai:models:agent',
         'ai:models:openai:gpt-5-mini',
-        'ai:models:openai:gpt-4o',
-        'ai:models:anthropic:claude-sonnet-4-5',
-        'ai:models:bedrock:us.anthropic.claude-sonnet-4-20250514-v1:0',
+        'ai:models:openai:gpt-5.5',
+        'ai:models:anthropic:claude-sonnet-5',
+        'ai:models:bedrock:us.anthropic.claude-sonnet-5',
       ];
 
     default:
@@ -878,11 +878,12 @@ When debugging, start here. Most "auth failures" reflect wrong claim values rath
 |`invalid-jwt-payload` (env "exists") |Environment created through the management API without the AI service attached to it |Recreate through the panel. See xref:tinymceai-on-premises-getting-started.adoc#create-an-environment-and-access-key[Create an environment and access key].
 |`invalid-jwt` (not `jwt-expired`) |Token is past `exp` by more than 60 seconds |Request a new token. The server allows 60-second clock-skew leeway; anything beyond is rejected with `invalid-jwt`.
 |`Environment not found` |Environment is in `environments__environment` / `security__environment` but not in `ai_assistant_environments`, because the AI service is not attached to the environment |Recreate through Management Panel UI.
-|`allowed: false` on every endpoint |Wrong shape for `auth.ai.permissions` |Must be ``string[]``. Not a single string. Not `useAllFeatures`. Not `ai:admin`.
+|HTTP 500 error on every endpoint |`auth.ai.permissions` is not an array of strings |Must be ``string[]``. Not a single string. Not `useAllFeatures`.
+|HTTP 403 `no-permissions-defined` |The token has no `auth` claim, no `permissions` key, or an empty `permissions` array |Add the permissions the user needs to `auth.ai.permissions`.
 |`allowed: false` on specific endpoints only |Missing the specific permission |Decode token, check the `auth.ai.permissions` array against the table above.
 |Token silently rejected, no decoded error |RS256 signature |Re-sign with HS256.
 |`aud` claim type mismatch |`aud` issued as array instead of string |Some JWT libraries default to array `aud`. Force string.
-|Editor shows an error, and the browser console logs `TinyMCE AI Error:` with the cause, for example `Invalid JWT token provider result` or `Invalid JWT token payload` |Token endpoint returned non-JSON, returned `token` as a nested object, returned a token without the required claims, or Cross-Origin Resource Sharing (CORS) blocked the request |Open browser devtools → Network → inspect the response from `/api/ai-token`.
+|Editor shows an error, and the browser console logs `TinyMCE AI Error:` with the cause, for example `Invalid JWT token provider result` or `Invalid JWT token payload` |Token endpoint returned `token` as a nested object, or returned a token without the required claims |Open browser devtools → Network → inspect the response from `/api/ai-token`.
 |===
 
 === Sanity-check a token manually

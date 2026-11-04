@@ -169,7 +169,7 @@ a|
 * The `+ai-quickactions-custom+` identifier (labeled **Other**) lists the custom actions set in xref:tinymceai.adoc#tinymceai_quickactions_custom[`+tinymceai_quickactions_custom+`]. See xref:tinymceai-actions.adoc#custom-actions[Custom Actions].
 ====
 
-For system action endpoints, schemas, and streaming details, see the https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API] reference.
+For system action endpoints, schemas, and streaming details, see the https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions[Actions API] reference.
 
 [[custom-actions]]
 == Custom Actions
@@ -261,28 +261,28 @@ Actions use streaming output with Server-Sent Events for real-time feedback as r
 
 Built-in Quick Actions—including identifiers, descriptions, and whether each command uses the system Actions API or Chat (Conversations API)—are summarized in xref:tinymceai-actions.adoc#quick-actions-reference-table[Default Actions].
 
-To run a system action, use https://tinymceai.api.tiny.cloud/docs#tag/Actions/operation/callSystemAction[Call a system action] with an `+actionName+` from the rows that have a checkmark in the **API** column of the table above. System actions use built-in prompts, so the request needs no prompt or model. For the token scopes that each system action needs, see xref:tinymceai-permissions.adoc#actions-permissions[Actions permissions].
+To run a system action, use https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions/operation/callSystemAction[Call a system action] with an `+actionName+` from the rows that have a checkmark in the **API** column of the table above. System actions use built-in prompts, so the request needs no prompt or model. For the token scopes that each system action needs, see xref:tinymceai-permissions.adoc#actions-permissions[Actions permissions].
 
-For endpoint details, request and response schemas, authentication, and streaming behavior for system `actionName` calls, see https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API].
+For endpoint details, request and response schemas, authentication, and streaming behavior for system `actionName` calls, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions[Actions API].
 
 [[actions-custom-actions-api]]
 === Custom Actions through the API
 
 In addition to system actions, custom actions can be created for specific use cases through the API. Custom actions allow specialized content transformations using custom prompts to control AI behavior.
 
-Unlike system actions that use default identifiers, custom actions use a unified endpoint, https://tinymceai.api.tiny.cloud/docs#tag/Actions/operation/callCustomAction[Call a custom action], where the transformation behavior is defined through a prompt parameter. See https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API] for the custom actions endpoint and implementation details.
+Unlike system actions that use default identifiers, custom actions use a unified endpoint, https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions/operation/callCustomAction[Call a custom action], where the transformation behavior is defined through a prompt parameter. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions[Actions API] for the custom actions endpoint and implementation details.
 
 Custom actions require the `ai:actions:custom` permission in the JWT token. See xref:tinymceai-permissions.adoc#actions-permissions[Actions permissions].
 
 [[actions-streaming]]
 === Streaming Responses
 
-Actions use Server-Sent Events (SSE) for real-time streaming results. See the xref:tinymceai-streaming.adoc[Streaming Responses guide] for detailed implementation information. For the events and their payloads, see https://tinymceai.api.tiny.cloud/docs#tag/Actions/operation/callSystemAction[Call a system action] and https://tinymceai.api.tiny.cloud/docs#tag/Actions/operation/callCustomAction[Call a custom action] in the API reference.
+Actions use Server-Sent Events (SSE) for real-time streaming results. See the xref:tinymceai-streaming.adoc[Streaming Responses guide] for detailed implementation information. For the events and their payloads, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions/operation/callSystemAction[Call a system action] and https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions/operation/callCustomAction[Call a custom action] in the API reference.
 
 [[actions-api-reference]]
 === API Reference
 
-The https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API] reference (interactive OpenAPI documentation) is the full source for system and custom action endpoints, request and response schemas, authentication, worked examples, and streaming action responses.
+The https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions[Actions API] reference (interactive OpenAPI documentation) is the full source for system and custom action endpoints, request and response schemas, authentication, worked examples, and streaming action responses.
 
 [[related-features]]
 == Related Features

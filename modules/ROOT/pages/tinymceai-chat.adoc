@@ -9,7 +9,7 @@
 
 The {pluginname} Chat is a conversational AI feature that facilitates rich, multi-turn interactions between users and an AI Assistant. It provides context setting, model selection, chat history, and capabilities for web search and reasoning.
 
-The Chat feature is available as part of the `+tinymceai+` plugin for {productname} and through the https://tinymceai.api.tiny.cloud/docs#tag/Conversations[Conversations API]. This page covers both:
+The Chat feature is available as part of the `+tinymceai+` plugin for {productname} and through the https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations[Conversations API]. This page covers both:
 
 * Plugin sections describe built-in user-facing features and configuration (xref:tinymceai.adoc#options-chat[Chat configuration]).
 * API sections cover REST API access (starting at xref:tinymceai-chat.adoc#conversations-api[Conversations API]).
@@ -265,9 +265,9 @@ After a full page load or new browser session, reopening Chat does not automatic
 [[conversations-api]]
 == Conversations API
 
-The Chat plugin feature is built on top of the https://tinymceai.api.tiny.cloud/docs#tag/Conversations[Conversations API], which provides REST access to the same conversation functionality described in xref:tinymceai-api-overview.adoc[API Overview]. Conversations support multiple messages with shared context, optional files and web resources, and suggestions that can update editor content.
+The Chat plugin feature is built on top of the https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations[Conversations API], which provides REST access to the same conversation functionality described in xref:tinymceai-api-overview.adoc[API Overview]. Conversations support multiple messages with shared context, optional files and web resources, and suggestions that can update editor content.
 
-For endpoint listings and request or response schemas, start with xref:tinymceai-api-overview.adoc[API Overview] and xref:tinymceai-api-quick-start.adoc[API Quick Start], then use the https://tinymceai.api.tiny.cloud/docs[interactive API documentation] (for example the https://tinymceai.api.tiny.cloud/docs#tag/Conversations[Conversations] operations).
+For endpoint listings and request or response schemas, start with xref:tinymceai-api-overview.adoc[API Overview] and xref:tinymceai-api-quick-start.adoc[API Quick Start], then use the https://tinymceai.api.tiny.cloud/v1/docs[interactive API documentation] (for example the https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations[Conversations] operations).
 
 [[conversations-key-features]]
 === Key Features
@@ -291,35 +291,35 @@ The AI remembers everything that has been shared and builds on it throughout the
 
 Sending a message through the API takes three requests. The token needs the conversation permissions for each request. See xref:tinymceai-permissions.adoc#conversation-permissions[Conversation permissions].
 
-. https://tinymceai.api.tiny.cloud/docs#tag/Conversations/operation/createConversation[Create the conversation].
-. Attach content: an https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Documents/operation/createDocument[HTML document], a https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Files/operation/uploadFile[file], or a https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Web-Resources/operation/downloadWebResources[web page]. File size limits are listed in xref:tinymceai-limits.adoc#file-limits[File limits].
-. https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages/operation/createMessage[Send the message]. The service streams the reply with Server-Sent Events (SSE). See xref:tinymceai-chat.adoc#conversations-streaming[Streaming responses].
+. https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/createConversation[Create the conversation].
+. Attach content: an https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Documents/operation/createDocument[HTML document], a https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Files/operation/uploadFile[file], or a https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Web-Resources/operation/downloadWebResources[web page]. File size limits are listed in xref:tinymceai-limits.adoc#file-limits[File limits].
+. https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/createMessage[Send the message]. The service streams the reply with Server-Sent Events (SSE). See xref:tinymceai-chat.adoc#conversations-streaming[Streaming responses].
 
 [[conversations-api-capabilities]]
 === API capabilities
 
-The `+capabilities+` object of a https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages/operation/createMessage[message request] enables web search (`+webSearch+`) and reasoning (`+reasoning+`) for that message. See xref:tinymceai-models.adoc#model-capabilities[Model capabilities] and xref:tinymceai-models.adoc#reasoning[Reasoning].
+The `+capabilities+` object of a https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/createMessage[message request] enables web search (`+webSearch+`) and reasoning (`+reasoning+`) for that message. See xref:tinymceai-models.adoc#model-capabilities[Model capabilities] and xref:tinymceai-models.adoc#reasoning[Reasoning].
 
-Web search is separate from the https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Web-Resources[Conversation Web Resources] endpoints, which attach the content of one known URL to the conversation.
+Web search is separate from the https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Web-Resources[Conversation Web Resources] endpoints, which attach the content of one known URL to the conversation.
 
 [[conversations-api-stored]]
 === Working with stored conversations
 
 The Chat history in the sidebar shows the conversations and messages that the AI service stores. The following operations read and manage the same data:
 
-* https://tinymceai.api.tiny.cloud/docs#tag/Conversations/operation/getConversations[List conversations].
-* https://tinymceai.api.tiny.cloud/docs#tag/Conversations/operation/getConversation[Get a conversation], https://tinymceai.api.tiny.cloud/docs#tag/Conversations/operation/updateConversation[update a conversation] (for example, to rename or pin it), or https://tinymceai.api.tiny.cloud/docs#tag/Conversations/operation/deleteConversation[delete a conversation].
-* https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages/operation/getMessages[List the messages in a conversation].
+* https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/getConversations[List conversations].
+* https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/getConversation[Get a conversation], https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/updateConversation[update a conversation] (for example, to rename or pin it), or https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/deleteConversation[delete a conversation].
+* https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/getMessages[List the messages in a conversation].
 
 [[conversations-streaming]]
 === Streaming Responses
 
-Conversations use Server-Sent Events (SSE) for real-time streaming responses. See the xref:tinymceai-streaming.adoc[Streaming Responses guide] for detailed implementation information and code examples. For the events and their payloads, see https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages/operation/createMessage[Send a message] in the API reference.
+Conversations use Server-Sent Events (SSE) for real-time streaming responses. See the xref:tinymceai-streaming.adoc[Streaming Responses guide] for detailed implementation information and code examples. For the events and their payloads, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/createMessage[Send a message] in the API reference.
 
 [[conversations-api-reference]]
 === API Reference
 
-The https://tinymceai.api.tiny.cloud/docs[interactive API documentation] lists every conversation endpoint, parameter, schema, and example. In that UI, related operations are grouped under tags such as https://tinymceai.api.tiny.cloud/docs#tag/Conversations[Conversations], https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Documents[Conversation Documents], https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Files[Conversation Files], https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Web-Resources[Conversation Web Resources], and https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages[Conversation Messages] (including streaming, web search, and reasoning options where applicable).
+The https://tinymceai.api.tiny.cloud/v1/docs[interactive API documentation] lists every conversation endpoint, parameter, schema, and example. In that UI, related operations are grouped under tags such as https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations[Conversations], https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Documents[Conversation Documents], https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Files[Conversation Files], https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Web-Resources[Conversation Web Resources], and https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages[Conversation Messages] (including streaming, web search, and reasoning options where applicable).
 
 [[related-features]]
 == Related Features

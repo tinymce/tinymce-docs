@@ -34,6 +34,9 @@ For information about JWT authentication setup and required claims, see xref:tin
 
 |Reviews
 |`ai:reviews:*`, `ai:reviews:custom`, `ai:reviews:system:*`, `ai:reviews:system:<review-name>`
+
+|Document Processing
+|`ai:documents:process`
 |===
 
 [[use-cases]]
@@ -47,7 +50,7 @@ For information about JWT authentication setup and required claims, see xref:tin
 [[permission-format]]
 == Permission format
 
-Permissions are an array of strings in the `+auth.ai.permissions+` claim of the JWT. Each string has the form `+ai:<permission-type>:<permission-value>+`, where `+<permission-type>+` is one of `+models+`, `+conversations+`, `+actions+`, `+reviews+`, or `+admin+`. The `+<permission-value>+` can contain the `+*+` wildcard. The service ignores any string that does not match this format.
+Permissions are an array of strings in the `+auth.ai.permissions+` claim of the JWT. Each string has the form `+ai:<permission-type>:<permission-value>+`, where `+<permission-type>+` is one of `+models+`, `+conversations+`, `+documents+`, `+contexts+`, `+actions+`, `+reviews+`, or `+admin+`. The `+<permission-value>+` can contain the `+*+` wildcard. The service ignores any string that does not match this format.
 
 [[admin-permissions]]
 == Admin permissions
@@ -57,8 +60,13 @@ Permissions are an array of strings in the `+auth.ai.permissions+` claim of the 
 |Permission |Description
 
 |`ai:admin`
-|Grants full access to all {pluginname} features, models, and capabilities. Use with caution in production environments.
+|Grants full access to all {pluginname} features, models, and capabilities, and passes every permission check in the service. Required by the administration endpoints, such as the xref:tinymceai-usage.adoc[Usage API].
 |===
+
+[CAUTION]
+====
+`+ai:admin+` is for back-end use only. Sign administration tokens on a back end and use them only for back-end requests. Never include `+ai:admin+` in the tokens that the token endpoint returns to the editor through xref:tinymceai.adoc#tinymceai_token_provider[`+tinymceai_token_provider+`], and never send an administration token to a browser.
+====
 
 [[model-permissions]]
 == Model permissions
@@ -74,7 +82,7 @@ Permissions are an array of strings in the `+auth.ai.permissions+` claim of the 
 |Access to all models from a specific provider (for example, `ai:models:openai:*`, `ai:models:anthropic:*`).
 
 |`ai:models:<provider>:<model-name>`
-|Access to a specific model (for example, `ai:models:openai:gpt-4o`, `ai:models:anthropic:claude-3-sonnet`).
+|Access to a specific model (for example, `ai:models:openai:gpt-5.5`, `ai:models:anthropic:claude-5-sonnet`).
 
 |`ai:models:agent` ⭐ Recommended
 |Access to the agent model which automatically selects the best model for each request. This is the recommended permission for most use cases.
@@ -169,6 +177,21 @@ Quick Actions that open in Chat, such as *Explain*, *Summarize*, and *Highlight 
 |Access to specific system reviews. Examples: `ai:reviews:system:correctness`, `ai:reviews:system:clarity`, `ai:reviews:system:make-tone-professional`
 |===
 
+[[document-processing-permissions]]
+== Document Processing permissions
+
+[cols="2,3"]
+|===
+|Permission |Description
+
+|`ai:documents:process`
+|Ability to call the xref:tinymceai-document-processing.adoc[Document Processing] endpoints, `+POST /v1/documents/process+` and `+POST /v1/documents/process/stream+`.
+|===
+
+A request that references a context, in a conversation message, an action, a review, or a Document Processing request, also requires the `+ai:contexts:<contextId>+` permission, or `+ai:contexts:*+`, for each referenced context. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Document-processing/operation/processDocument[Process a document] in the API reference.
+
+Contexts are created with the Context Admin operations, which require xref:#admin-permissions[`+ai:admin+`]. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Context-Admin/operation/adminCreateContext[Create a context] in the API reference.
+
 [[permission-examples]]
 == Permission examples
 
@@ -239,6 +262,8 @@ This set covers Chat with web search, reasoning, and attachments, plus system an
 [[enterprise-admin]]
 === Enterprise admin
 
+A token for back-end administration requests only. See xref:#admin-permissions[Admin permissions].
+
 [source,json]
 ----
 {
@@ -294,3 +319,5 @@ When a user lacks required permissions, the API returns a `403 Forbidden` error 
 * xref:tinymceai-chat.adoc[Chat]: Interactive AI discussions.
 * xref:tinymceai-review.adoc[Review]: Content improvement.
 * xref:tinymceai-actions.adoc[Quick Actions]: Content transformation.
+* xref:tinymceai-document-processing.adoc[Document Processing]: Prompt-driven edits to HTML documents through the API.
+* xref:tinymceai-usage.adoc[Usage API]: Credit usage reports, which require `+ai:admin+`.

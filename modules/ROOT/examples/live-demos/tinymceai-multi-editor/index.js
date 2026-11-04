@@ -48,22 +48,49 @@ const createRevisionHistoryFetch = (selector) => () => {
 
 // Share one TinyMCE AI configuration between every editor in the group.
 const sharedSettings = {
-  height: '400px',
   plugins: [
     'autolink', 'link', 'emoticons', 'lists', 'table', 'advlist', 'searchreplace', 'wordcount', 'autocorrect', 'tinymcespellchecker', 'charmap', 'fullscreen', 'advcode', 'accordion', 'anchor', 'footnotes', 'powerpaste', 'importword', 'exportpdf', 'exportword', 'markdown', 'a11ychecker', 'typography', 'casechange', 'checklist', 'advtable', 'formatpainter', 'permanentpen', 'tableofcontents', 'help', 'math', 'linkchecker', 'media', 'mediaembed',
     'quickbars', 'tinymceai', 'tinycomments', 'mentions', 'revisionhistory', 'suggestededits', 'uploadcare'
   ],
-  toolbar: 'undo redo | tinymceai-chat tinymceai-review ai-quickactions-translate | styles | bold italic | bullist numlist | link',
+  toolbar: 'undo redo | tinymceai-chat tinymceai-review ai-quickactions-translate spellchecker | styles | bold italic underline forecolor backcolor casechange | link uploadcare table addcomment | align bullist numlist checklist removeformat | code fullscreen help',
+  menubar: false,
   tinymceai_sidebar_type: 'floating',
   quickbars_selection_toolbar: 'tinymceai-quickactions addcomment',
-  tinymceai_chat_welcome_message: '<p>Welcome to TinyMCE AI. Pick an action below or type your own prompt.</p>',
+  tinymceai_chat_welcome_message: '<p>Hi! I’m your writing assistant.</p><p>I can read and write across all three sections of this hiring pack — refine the role, generate interview questions, or draft notes for HR.</p>',
+  // Every welcome action uses the empty 'no-icon' icon registered in setup, so the buttons show text only.
   tinymceai_chat_welcome_actions: [
-    { text: 'Here are some actions to get started:' },
-    { title: 'Summarize the document', command: 'TinyMCEAIQuickActionsSummarize' },
-    { title: 'Continue writing', command: 'TinyMCEAIQuickActionContinueWriting' },
-    { title: 'Translate to Spanish', command: 'TinyMCEAIQuickActionTranslate', value: 'spanish' },
-    { title: 'Review my document', command: 'ToggleSidebar', value: 'tinymceai-review' }
+    { text: '**Try one of these:**' },
+    {
+      title: 'Suggest more interview questions',
+      command: 'TinyMCEAIChatPrompt',
+      value: {
+        prompt: 'Based on the Role description, suggest three or four more interview questions and add them to the end of the numbered list in the Interview questions section. Match the style of the existing questions.',
+        displayedPrompt: 'Suggest more interview questions'
+      },
+      icon: 'no-icon'
+    },
+    {
+      title: 'Draft notes for HR',
+      command: 'TinyMCEAIChatPrompt',
+      value: {
+        prompt: 'Based on the Role description and the Interview questions, draft additional notes for HR about scheduling and running the interviews for this role, and add them to the Notes for HR section.',
+        displayedPrompt: 'Draft notes for HR'
+      },
+      icon: 'no-icon'
+    },
+    {
+      title: 'Flag any unclear or biased wording',
+      command: 'TinyMCEAIChatPrompt',
+      value: {
+        prompt: 'Check all three sections of this hiring pack for unclear or biased wording. For each phrase, explain the problem and suggest clearer, more inclusive wording.',
+        displayedPrompt: 'Flag any unclear or biased wording'
+      },
+      icon: 'no-icon'
+    }
   ],
+  setup: (editor) => {
+    editor.ui.registry.addIcon('no-icon', '');
+  },
   toolbar_mode: 'sliding',
   visual: false,
   images_file_types: 'jpeg,jpg,jpe,jfi,jif,jfif,png,gif,bmp,webp,svg',
@@ -128,18 +155,31 @@ const sharedSettings = {
 
 tinymce.init({
   ...sharedSettings,
-  selector: 'textarea#tinymceai-multi-editor-introduction',
-  revisionhistory_fetch: createRevisionHistoryFetch('textarea#tinymceai-multi-editor-introduction'),
-  tinymceai_group: 'article',
-  tinymceai_document_name: 'Introduction',
-  tinymceai_document_description: 'The introduction of the article. A title, a short paragraph that sets out the topic, and a figure.'
+  selector: 'textarea#tinymceai-multi-editor-role-description',
+  height: '270px',
+  sidebar_show: 'tinymceai-chat',
+  revisionhistory_fetch: createRevisionHistoryFetch('textarea#tinymceai-multi-editor-role-description'),
+  tinymceai_group: 'hiring-pack',
+  tinymceai_document_name: 'Role description',
+  tinymceai_document_description: 'The job advert for the role: the job title and location, what the role involves, and the requirements for candidates.'
 });
 
 tinymce.init({
   ...sharedSettings,
-  selector: 'textarea#tinymceai-multi-editor-body',
-  revisionhistory_fetch: createRevisionHistoryFetch('textarea#tinymceai-multi-editor-body'),
-  tinymceai_group: 'article',
-  tinymceai_document_name: 'Body',
-  tinymceai_document_description: 'The main body of the article. Uses h2 and h3 subheadings, short paragraphs, a bulleted list, and a comparison table.'
+  selector: 'textarea#tinymceai-multi-editor-interview-questions',
+  height: '340px',
+  revisionhistory_fetch: createRevisionHistoryFetch('textarea#tinymceai-multi-editor-interview-questions'),
+  tinymceai_group: 'hiring-pack',
+  tinymceai_document_name: 'Interview questions',
+  tinymceai_document_description: 'The interview guide for the role: a heading followed by a numbered list of interview questions.'
+});
+
+tinymce.init({
+  ...sharedSettings,
+  selector: 'textarea#tinymceai-multi-editor-notes-for-hr',
+  height: '260px',
+  revisionhistory_fetch: createRevisionHistoryFetch('textarea#tinymceai-multi-editor-notes-for-hr'),
+  tinymceai_group: 'hiring-pack',
+  tinymceai_document_name: 'Notes for HR',
+  tinymceai_document_description: 'Notes for the HR team about scheduling and running the hiring process for the role.'
 });

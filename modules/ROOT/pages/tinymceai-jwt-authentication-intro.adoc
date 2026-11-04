@@ -148,7 +148,7 @@ The JWT payload is a JSON object containing claims that identify the user, speci
 The following properties **must** be included in the payload:
 
 * `aud`: The API key that has entitlements to use {pluginname}.
-* `sub`: The user ID. This should be a unique identifier for the user making the request. This identifier is used to lock down conversation history, AI-generated content, and other user-specific data to individual users, ensuring privacy and data isolation. The user ID must not exceed 96 characters.
+* `sub`: The user ID. This should be a unique identifier for the user making the request. This identifier is used to lock down conversation history, AI-generated content, and other user-specific data to individual users, ensuring privacy and data isolation. The user ID must not exceed 96 characters. Do not include personally identifiable information (PII), such as names or email addresses, in the `sub` value, because the AI service logs it. Use an opaque identifier, such as an internal user ID.
 * `iat`: "Issued at". Ensure `iat` is present and contains a correct time stated in seconds. Some JWT implementations do not include it by default. Sometimes the system time may also be invalid, causing issues.
 * `exp`: Token expiration time. Identifies the expiration time after which the JWT will not be accepted. {pluginname} only accepts tokens no older than 24 hours. This field can be used to shorten the token validity time.
 * `auth`: The `auth.ai.permissions` array inside is required. This defines which AI features the user can access. See xref:#permissions[Permissions] below for details.

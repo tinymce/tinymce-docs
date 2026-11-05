@@ -252,7 +252,7 @@ Plugin configuration, API parameters, and per-feature options do not grant acces
 
 [NOTE]
 ====
-The set of models and capabilities can change between major {productname} releases. That kind of change is not treated as a breaking change for the editor. Use the plugin's model selection dropdown or `GET /v1/models/\{version}` to see what the environment offers and the model limitations.
+The set of models and capabilities can change with AI service releases, independent of {productname} releases. That kind of change is not treated as a breaking change for the editor. Use the plugin's model selection dropdown or `GET /v1/models/\{version}` to see what the environment offers and the model limitations.
 ====
 
 .Example: Set default model in plugin configuration
@@ -296,7 +296,7 @@ Follow these steps to read limits and capabilities for the model the integration
 * *Align base URL and credentials*
 ** Call the same HTTP base URL the editor uses for {pluginname} requests. If the base URL and JWT do not belong to the same environment, the response is an authorization error rather than model metadata.
 * *List models for the compatibility version*
-** Request `+GET /v1/models/1+`, the compatibility version that the {pluginname} plugin uses. To read a single model, request `+GET /v1/models/1/{id}+`.
+** Request `+GET /v1/models/1+`, the compatibility version that the {pluginname} plugin uses. To read a single model, request `+GET /v1/models/1/{id}+`. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Models/operation/getAiModel[Fetch a model].
 * *Pick the matching `items[]` entry*
 ** In the JSON `items` array, select the object whose `id` matches the model in configuration (`tinymceai_default_model`) or in API bodies (`model`).
 * *Read `limits` and `capabilities`*
@@ -448,6 +448,8 @@ Authorization: Bearer <your-token>
 ----
 
 See xref:#model-capabilities[Model capabilities] for the model support and token scopes that each capability needs.
+
+The `+reasoning+` capability accepts an optional `+level+`. Without it, the service uses the `+balanced+` level. For the accepted values, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/createMessage[Send a message].
 
 [[model-information]]
 === Model Information

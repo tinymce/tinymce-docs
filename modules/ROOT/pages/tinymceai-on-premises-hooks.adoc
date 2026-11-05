@@ -11,6 +11,7 @@ The `+HOOKS+` environment variable configures hooks on the AI service container.
 
 == Requirements
 
+* *AI service image version 1.3.0 or later.* Hooks were added in image version 1.3.0.
 * *An HTTPS endpoint hosted by the integrator.* The AI service does not include a hook endpoint. The endpoint accepts a `+POST+` request with a JSON body and responds with a decision.
 * *A response within the timeout.* Every chat turn waits for the endpoint. Measure the response time of the hook service before enabling hooks.
 * *A shared secret.* The AI service signs every request with it, and the endpoint uses it to reject requests that did not come from the AI service. See <<request-signing>>.
@@ -715,7 +716,7 @@ The AI service calls the hook endpoint before xref:tinymceai-on-premises-moderat
 The {pluginname} plugin needs no configuration for hooks. A `+halt+` reply and a `+continue+` reply both appear in the chat as assistant messages.
 
 * A custom chat interface built on the REST API can read `+hook-progress+` events and show each line. See xref:tinymceai-streaming.adoc[Streaming].
-* To send custom front-end data in the hook request, attach `+delegation-context+` parts to messages through the conversation API.
+* To send custom front-end data in the hook request, attach `+delegation-context+` parts to messages through the conversation API. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/createMessage[Send a message] in the API reference.
 
 [[troubleshooting]]
 == Troubleshooting

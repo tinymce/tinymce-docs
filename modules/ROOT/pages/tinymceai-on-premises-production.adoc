@@ -620,7 +620,7 @@ TIP: Inspect the first few entries with `docker logs ai-service --tail 5 | jq .`
 [cols="1,1,1,3",options="header"]
 |===
 |Variable |Required |Default |Description
-|`LLM_TELEMETRY_ENABLED` |No |`false` |Records AI spans: models, tools, token usage, and the prompt and response of each call, with the reasoning text when the model reasons. Without it, the OTLP export carries only HTTP and database spans, and Langfuse receives no data. AI spans contain user documents, so choose the tracing back end and its retention period with that in mind.
+|`LLM_TELEMETRY_ENABLED` |No |`true` in image version 1.3.0 and later; `false` in earlier versions |Records AI spans: models, tools, token usage, and the prompt and response of each call, with the reasoning text when the model reasons. The same records feed <<ai-diagnostics>>. Set to `false` to stop recording AI requests: the OTLP export then carries only HTTP and database spans, and Langfuse receives no data. AI spans contain user documents, so choose the tracing back end and its retention period with that in mind.
 |`OTEL_EXPORTER_OTLP_TRACES_ENDPOINT` |Yes (for OTLP export) |- |OpenTelemetry Protocol (OTLP) endpoint URL
 |`OTEL_TRACES_SAMPLER_ARG` |No |`1.0` |Sampling rate (0.0 to 1.0)
 |`OTEL_DEBUG` |No |- |Verbose OTLP diagnostic logging
@@ -649,11 +649,22 @@ Langfuse provides AI-specific observability: token usage, latency per LLM call, 
 |`LANGFUSE_DEBUG` |No |- |Verbose Langfuse logging
 |===
 
-Langfuse also requires `LLM_TELEMETRY_ENABLED=true`. The Langfuse export does not need `OTEL_EXPORTER_OTLP_TRACES_ENDPOINT`: the service sends spans to Langfuse directly.
+Langfuse also requires `LLM_TELEMETRY_ENABLED=true`, the default in image version 1.3.0 and later. The Langfuse export does not need `OTEL_EXPORTER_OTLP_TRACES_ENDPOINT`: the service sends spans to Langfuse directly.
 
 When the other options come from a configuration file, pass the `OTEL_` and `LANGFUSE_` variables as environment variables. See xref:tinymceai-on-premises-reference.adoc#configuration-file[Configuration file].
 
 OpenTelemetry and Langfuse can run at the same time. The service emits to both without conflict.
+
+[[ai-diagnostics]]
+=== AI Diagnostics
+
+In image version 1.3.0 and later, the Management Panel includes an AI Diagnostics view. It shows the traces and turns of each AI request: chat messages, actions, reviews, and Document Processing requests, with the prompt, the response, the model, token usage, and timing. Use it to investigate failed or unexpected responses without running a separate tracing back end.
+
+To open it, sign in to the Management Panel at `/panel/`, open the environment, and select the *AI diagnostics* tab. The view can export the records for a time range, a user, or a conversation. When escalating an issue, send the exported file to the Tiny Customer Success team.
+
+AI Diagnostics is on by default. The records are stored in the service database and removed after 30 days. Set `LLM_TELEMETRY_ENABLED` to `false` and restart the service to stop recording.
+
+IMPORTANT: The records contain prompts, responses, and document content. Anyone who can sign in to the Management Panel can read them.
 
 === Distributed logging
 

@@ -32,6 +32,6 @@ For the request and response fields and the error codes, see https://tinymceai.a
 
 * xref:tinymceai-permissions.adoc#admin-permissions[Admin permissions]: The `+ai:admin+` permission and how to handle administration tokens.
 * xref:tinymceai-jwt-authentication-intro.adoc[JWT authentication]: Token claims, including `+aud+` and `+sub+`.
-* xref:tinymceai-limits.adoc[Limits]: Rate limits, context limits, and file limits.
+* xref:tinymceai-limits.adoc[Limits]: Rate limits, context limits, and file limits, and the xref:tinymceai-limits.adoc#usage-limits[error returned when usage exceeds the limit] for the billing period.
 * xref:tinymceai-api-overview.adoc[API overview]: The features of the {pluginname} REST API and the conventions they share.
 * https://tinymceai.api.tiny.cloud/v1/docs#tag/Billing[Billing API]: Request and response schemas, and error codes.

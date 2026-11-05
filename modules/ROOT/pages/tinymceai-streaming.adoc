@@ -42,6 +42,16 @@ data: <data2>
 
 Parsing this format correctly (including chunk boundaries, multi-line `+data:+` fields, and comments) is easy to get wrong in hand-written loops. For production code, use a maintained SSE parser such as the https://www.npmjs.com/package/eventsource-parser[`eventsource-parser`] package.
 
+[[resumable-streams]]
+=== Resumable reply streams
+
+Version 1.1 of the conversation message endpoints, under `+/v1.1+`, makes the reply stream more resilient. When replay is available for a reply, a client can:
+
+* https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages-V1.1/operation/resumeStream[Resume an interrupted reply] with `+GET /v1.1/conversations/{conversationId}/messages/{messageId}/stream+`. Set `+lastEventId+` to the ID of the last SSE event the client processed, or to `+0-0+` to replay the whole reply.
+* https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages-V1.1/operation/cancelStream[Cancel a reply in progress] with `+DELETE+` on the same path. The content already generated is kept, and the stored message status becomes `+cancelled+`.
+
+Some replies stream without replay support. The reply still streams, but the resume and cancel operations are not available for it. For the request that starts a version 1.1 reply, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages-V1.1/operation/createMessageV2[Send a message (V1.1)].
+
 [[basic-implementation]]
 == Basic implementation
 
@@ -95,6 +105,8 @@ while (true) {
 
 [[error-handling]]
 == Error handling
+
+A request that the service rejects before the stream opens returns an HTTP error status with the JSON body described in xref:tinymceai-api-overview.adoc#error-responses[Error responses]. Errors after the stream opens arrive as an `+error+` event.
 
 Always handle errors gracefully:
 

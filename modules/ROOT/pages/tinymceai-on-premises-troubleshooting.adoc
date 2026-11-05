@@ -5,7 +5,7 @@
 :keywords: AI, on-premises, troubleshooting, errors, debugging, diagnostics, JWT, container, LLM
 :pluginname: TinyMCE AI
 
-Match the symptom to the fix below. If the symptom does not fit any section, escalate to link:{supporturl}/[{supportname}] with the output of `docker logs ai-service --tail 200` and a redacted copy of the `PROVIDERS` value.
+Match the symptom to the fix below. If the symptom does not fit any section, escalate to link:{supporturl}/[{supportname}] with the output of `docker logs ai-service --tail 200` and a redacted copy of the `PROVIDERS` value. In image version 1.3.0 and later, also attach an export from xref:tinymceai-on-premises-production.adoc#ai-diagnostics[AI Diagnostics], which shows the prompt, response, and model of each failed AI request.
 
 == Quick triage
 
@@ -224,7 +224,7 @@ Confirm `/health` is OK and a direct `curl` to `/v1/conversations` works before 
 |Symptom |Fix
 
 |No AI buttons in the toolbar
-|Ensure {productname} 8{plus} is loaded, `plugins: 'tinymceai'` is set, and the toolbar string includes `tinymceai`. Verify the API key has the AI feature enabled.
+|Ensure {productname} 8{plus} is loaded, `plugins: 'tinymceai'` is set, and the toolbar string includes the {pluginname} toolbar buttons, for example `tinymceai-chat tinymceai-review tinymceai-quickactions`. See xref:tinymceai.adoc#toolbar-buttons[Toolbar buttons]. Verify the API key has the AI feature enabled.
 
 |Token fetch returns 401
 |The token endpoint's own authentication middleware is rejecting the request. Check session cookies, Cross-Origin Resource Sharing (CORS) credentials, and bearer tokens in the browser network tab.

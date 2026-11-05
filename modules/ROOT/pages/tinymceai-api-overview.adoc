@@ -41,7 +41,7 @@ The following pages cover the AI service architecture and configuration.
 [[versioning]]
 == Versioning
 
-The version of each endpoint is part of its path, for example `+/v1/conversations+`. The {pluginname} plugin calls the `+/v1+` endpoints, and requests the model list with compatibility version `+1+`. The compatibility version is separate from the endpoint version. See xref:tinymceai-models.adoc#model-compatibility-versions[Model compatibility versions].
+The version of each endpoint is part of its path, for example `+/v1/conversations+`. The {pluginname} plugin calls the `+/v1+` endpoints, and requests the model list with compatibility version `+1+`. The compatibility version is separate from the endpoint version. Conversation messages also have version 1.1 endpoints under `+/v1.1+`, which can resume and cancel a reply stream. See xref:tinymceai-streaming.adoc#resumable-streams[Resumable reply streams]. See xref:tinymceai-models.adoc#model-compatibility-versions[Model compatibility versions].
 
 [[pagination]]
 == Pagination
@@ -102,7 +102,7 @@ The API reference lists every code in its https://tinymceai.api.tiny.cloud/v1/do
 [[rate-limit-errors]]
 === Rate limit errors
 
-For `+429+` responses with the code `+rate-limits-exceeded+`, see xref:tinymceai-limits.adoc#handling-rate-limit-errors[Handling rate limit errors].
+For `+429+` responses with the code `+rate-limits-exceeded+`, see xref:tinymceai-limits.adoc#handling-rate-limit-errors[Handling rate limit errors]. For `+403+` responses with the code `+usage-limits-exceeded+`, see xref:tinymceai-limits.adoc#usage-limits[Usage limits].
 
 [[resources-and-support]]
 == Resources and support

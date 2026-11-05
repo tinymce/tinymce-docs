@@ -252,7 +252,7 @@ The AI service isolates users into Environments. Each environment has its own ac
 . Open the Management Panel: *http://localhost:8000/panel/*
 . Sign in using the `MANAGEMENT_SECRET` from `.env`.
 . Click *Create Environment* and give it a name (for example "Development").
-. Note the *Environment ID* displayed (a short identifier like `viOu8BnjJHb0HGK091p`).
+. Note the *Environment ID* displayed (an identifier of 20 to 60 characters, such as `viOu8BnjJHb0HGK091pQ`).
 . Inside the environment, click *Create a new access key*.
 . *Copy the Environment ID and Access Key*.
 

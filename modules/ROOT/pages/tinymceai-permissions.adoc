@@ -60,7 +60,7 @@ Permissions are an array of strings in the `+auth.ai.permissions+` claim of the 
 |Permission |Description
 
 |`ai:admin`
-|Grants full access to all {pluginname} features, models, and capabilities, and passes every permission check in the service. Required by the administration endpoints, such as the xref:tinymceai-usage.adoc[Usage API].
+|Grants full access to all {pluginname} features, models, and capabilities, and passes every permission check in the service. Required by the administration endpoints, such as the xref:tinymceai-usage.adoc[Usage API] and the https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Admin[Conversation Admin] operations, which list, get, and delete the conversations of any user.
 |===
 
 [CAUTION]
@@ -127,7 +127,7 @@ Conversation messages, custom actions, and custom reviews also require the permi
 |Access to all file types for context.
 
 |`ai:conversations:context:files:<format>`
-|Access to specific file formats (for example, `ai:conversations:context:files:pdf`, `ai:conversations:context:files:docx`).
+|Access to specific file formats (for example, `ai:conversations:context:files:pdf`, `ai:conversations:context:files:docx`). Each upload format that the API accepts has its own permission: PDF, DOCX, PNG, JPEG, Markdown, HTML, and plain text. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Files/operation/uploadFile[Upload a file].
 
 |`ai:conversations:context:urls`
 |Ability to use web URLs as context sources.

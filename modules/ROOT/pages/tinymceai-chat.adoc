@@ -96,7 +96,7 @@ tinymce.init({
 
 Web search in Chat allows the AI to access and retrieve real-time information from the internet. Instead of relying only on pre-trained knowledge, the model can search the web to find up-to-date facts, verify details, and provide more accurate, current answers.
 
-Some models use web search automatically, while others may require manual activation. Whether the **Web search** toggle image:icons-premium/web-search.svg[Web search icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support web search, use the toggle button to enable it.
+The model searches the web only when web search is enabled for the message. For models that support web search, turn on the **Web search** toggle image:icons-premium/web-search.svg[Web search icon,24px] below the prompt input.
 
 [[reasoning]]
 === Reasoning
@@ -302,6 +302,8 @@ The `+capabilities+` object of a https://tinymceai.api.tiny.cloud/v1/docs#tag/Co
 
 Web search is separate from the https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Web-Resources[Conversation Web Resources] endpoints, which attach the content of one known URL to the conversation.
 
+A message request can also pass `+extraHttpHeaders+` so the service can download images in the message content that require authentication.
+
 [[conversations-api-stored]]
 === Working with stored conversations
 
@@ -310,11 +312,15 @@ The Chat history in the sidebar shows the conversations and messages that the AI
 * https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/getConversations[List conversations].
 * https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/getConversation[Get a conversation], https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/updateConversation[update a conversation] (for example, to rename or pin it), or https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/deleteConversation[delete a conversation].
 * https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/getMessages[List the messages in a conversation].
+* https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/addConversationMessageRating[Rate a reply] or https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/updateMessage[update a message].
+* For back-end administration, a token with the `+ai:admin+` permission can https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Admin/operation/adminListConversations[list], https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Admin/operation/AdminGetConversation[get], and https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Admin/operation/adminDeleteConversation[delete] the conversations of any user. Never return an `+ai:admin+` token to the editor. See xref:tinymceai-permissions.adoc#admin-permissions[Admin permissions].
 
 [[conversations-streaming]]
 === Streaming Responses
 
 Conversations use Server-Sent Events (SSE) for real-time streaming responses. See the xref:tinymceai-streaming.adoc[Streaming Responses guide] for detailed implementation information and code examples. For the events and their payloads, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/createMessage[Send a message] in the API reference.
+
+With version 1.1 of the message endpoints, a client can resume an interrupted reply or cancel one in progress, when replay is available for that reply. See xref:tinymceai-streaming.adoc#resumable-streams[Resumable reply streams].
 
 [[conversations-api-reference]]
 === API Reference

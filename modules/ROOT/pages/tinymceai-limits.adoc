@@ -20,7 +20,12 @@ NOTE: Specific rate limit values are subject to change and may vary based on the
 [[handling-rate-limit-errors]]
 === Handling rate limit errors
 
-A request over a rate limit fails with HTTP status `+429 Too Many Requests+` and the error code `+rate-limits-exceeded+`. The `+data.limits+` array in the error body names each limit that the request exceeded, for example `+[{ "name": "messages-per-minute" }]+`, and the `+action+` field reads `+Try again later.+` For the other fields of the error body, see xref:tinymceai-api-overview.adoc#error-responses[Error responses]. The API reference lists this response for https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/createMessage[sending conversation messages] and for https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Web-Resources/operation/downloadWebResources[adding web resources to a conversation].
+A request over a rate limit fails with HTTP status `+429 Too Many Requests+` and the error code `+rate-limits-exceeded+`. The `+data.limits+` array in the error body names each limit that the request exceeded, for example `+[{ "name": "messages-per-minute" }]+`, and the `+action+` field reads `+Try again later.+` For the other fields of the error body, see xref:tinymceai-api-overview.adoc#error-responses[Error responses]. The API reference lists this response for https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/createMessage[sending conversation messages], for https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages-V1.1/operation/createMessageV2[sending conversation messages (V1.1)], and for https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Web-Resources/operation/downloadWebResources[adding web resources to a conversation].
+
+[[usage-limits]]
+=== Usage limits
+
+When the usage of an environment exceeds its limit for the current billing period, the service blocks the environment. Requests then fail with HTTP status `+403+` and the error code `+usage-limits-exceeded+`. The error body includes the environment ID and a `+data.usageExceededTo+` timestamp, and the `+action+` field asks to contact customer support or upgrade the plan. To track usage before the limit is reached, see xref:tinymceai-usage.adoc[Usage].
 
 [[context-limits]]
 == Context Limits
@@ -32,7 +37,7 @@ Context limits control how much content can be attached to conversations to ensu
 
 Supported attachment types include PDF, DOCX, PNG, JPEG, Markdown, HTML, and plain text. The API accepts files of up to 25 MB in a single upload to a conversation. Exact per-file, per-conversation, and PDF page limits also depend on the model in use. Read the `+limits+` object for that model from `GET /v1/models/\{version}` (see xref:tinymceai-models.adoc#verifying-model-limits-for-integration[Verifying limits for a configured model] and xref:tinymceai-models.adoc#model-information[Model Information]). For schema details, see the https://tinymceai.api.tiny.cloud/v1/docs#tag/Models[Models API] OpenAPI documentation.
 
-The file picker in the {pluginname} plugin offers only the supported attachment types. The service enforces the file size and page count limits.
+The file picker in the {pluginname} plugin offers only the supported attachment types. The service enforces the file size and page count limits. A request over these limits fails with HTTP status `+413+`. See xref:tinymceai-api-overview.adoc#error-codes[Error codes].
 
 [[context-optimization-tips]]
 === Context Optimization Tips

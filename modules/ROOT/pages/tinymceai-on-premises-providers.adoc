@@ -921,6 +921,7 @@ a|[source,json]
   "id": "meta-llama/Llama-3.1-8B-Instruct",
   "provider": "vllm",
   "name": "Llama 3.1 8B (vLLM)",
+  "description": "Self-hosted Llama model served by vLLM",
   "features": ["conversations", "reviews", "actions"]
 }
 ----
@@ -941,6 +942,7 @@ a|[source,json]
   "id": "lmstudio-community/Meta-Llama-3.1-8B-Instruct-GGUF",
   "provider": "lmstudio",
   "name": "Llama 3.1 8B (LM Studio)",
+  "description": "Local Llama model served by LM Studio",
   "features": ["conversations", "reviews", "actions"]
 }
 ----
@@ -948,21 +950,16 @@ a|[source,json]
 
 === Verify
 
-After starting the AI service with an openai-compatible provider configured, confirm it can reach the runtime:
+The AI service does not expose an OpenAI-compatible endpoint of its own. It appends `/chat/completions` to the `baseUrl` of the provider. To verify the setup, first confirm that the runtime answers at that path prefix. For the Ollama example, run on the host:
 
 [source,bash]
 ----
-curl -s http://localhost:8000/v1/chat/completions \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer <your-jwt-token>" \
-  -d '{
-    "model": "qwen3:0.6b",
-    "messages": [{"role":"user","content":"Say hello in five words."}],
-    "stream": false
-  }'
+curl -s http://localhost:11434/v1/models
 ----
 
-A successful response confirms the AI service can forward requests to the local runtime.
+The response lists the models that the runtime serves. Each `id` in `MODELS` must match one of them.
+
+Then open the editor, select the local model in Chat, and send a message. If the reply fails, the AI service log contains the URL that the service called on the runtime. A `404` response from that URL usually means that the `baseUrl` is missing the `/v1` path prefix.
 
 
 
@@ -1020,7 +1017,7 @@ A `MODELS` array routes individual models to specific providers using the `provi
 ----
 ====
 
-This wires conversations to OpenAI, reviews to Bedrock-hosted Claude, and quick actions to a local Ollama model. The {productname} editor will pick the appropriate provider for each feature based on which models declare which `features`.
+This wires conversations to OpenAI, reviews to Bedrock-hosted Claude, and quick actions to a local Ollama model. The AI service picks the appropriate provider for each feature based on which models declare which `features`. See <<model-resolution-order>>.
 
 A `MODELS` entry with a `provider` value that does not exist in `PROVIDERS` stops the service at startup with `[FATAL] Following models have invalid provider:` followed by the affected model IDs. Check the spelling of each `provider` field against the keys in `PROVIDERS`. See xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting] for additional debugging steps.
 

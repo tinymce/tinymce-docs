@@ -272,7 +272,7 @@ In addition to system actions, custom actions can be created for specific use ca
 
 Unlike system actions that use default identifiers, custom actions use a unified endpoint, https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions/operation/callCustomAction[Call a custom action], where the transformation behavior is defined through a prompt parameter. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions[Actions API] for the custom actions endpoint and implementation details.
 
-Custom actions require the `ai:actions:custom` permission in the JWT token. See xref:tinymceai-permissions.adoc#actions-permissions[Actions permissions].
+Custom actions require the `ai:actions:custom` permission and the permission for the requested model in the JWT token. See xref:tinymceai-permissions.adoc#actions-permissions[Actions permissions] and xref:tinymceai-permissions.adoc#model-permissions[Model permissions].
 
 [[actions-streaming]]
 === Streaming Responses
@@ -283,6 +283,8 @@ Actions use Server-Sent Events (SSE) for real-time streaming results. See the xr
 === API Reference
 
 The https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions[Actions API] reference (interactive OpenAPI documentation) is the full source for system and custom action endpoints, request and response schemas, authentication, worked examples, and streaming action responses.
+
+To record user feedback on a result, https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions/operation/addSystemActionRating[rate a system action call] or https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions/operation/addCustomActionRating[rate a custom action call] with the `+callId+` from the `+action-metadata+` event of the action stream.
 
 [[related-features]]
 == Related Features

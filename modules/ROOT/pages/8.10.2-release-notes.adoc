@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Leaving a list with Enter copied the list item's styles onto the new paragraph.
+// #TINYMCE-13035
+
+Previously, when a user pressed Enter on an empty list item to leave a list, {productname} copied the styles of the list item to the new paragraph. For example, when a user applied bold to the entire content of a list item and pressed Enter twice to leave the list, the new paragraph inherited the `+font-weight+` style. Text typed in the paragraph stayed bold after the user turned bold off, and applying bold again added the bold format a second time. Color, font size, and font family set on a list item carried over to the new paragraph in the same way.
+
+In {productname} {release-version}, the editor copies the styles of an empty list item only when the new block is also a list item. A paragraph created by leaving a list no longer inherits the list item styles, so bold, italic, and other formats toggle as expected.
+
 
 [[security-fixes]]
 == Security fixes

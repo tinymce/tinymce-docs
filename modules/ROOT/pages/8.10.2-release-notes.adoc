@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== The image dialog got stuck on "Uploading image" when an empty or unreadable file was selected on the Upload tab.
+// #TINYMCE-7202
+
+Previously, when a user selected an empty file, such as a 0-byte `+.png+` file, on the Upload tab of the image dialog, the dialog stayed on the "Uploading image" message, and the browser console showed an error. The dialog remained blocked and displayed no message about the problem.
+
+In {productname} {release-version}, when the image dialog cannot read the selected file or convert it to image data, the dialog cancels the upload and displays a "Failed to upload image" alert. After the user closes the alert, the dialog accepts input again, and the user can select a different file.
+
 
 [[security-fixes]]
 == Security fixes

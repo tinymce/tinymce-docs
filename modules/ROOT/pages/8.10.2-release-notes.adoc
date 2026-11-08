@@ -71,6 +71,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Format Painter
+
+The {productname} {release-version} release includes an accompanying release of the **Format Painter** premium plugin.
+
+**Format Painter** includes the following fix.
+
+==== Format Painter did not copy inline styles, such as text color, background color or font size, applied directly to block elements
+// #TINYMCE-14938
+
+Previously, the **Format Painter** plugin did not copy inline styles applied directly to a block element, such as a `+color+` style on an `+h2+` element. When a user copied the formatting of text inside a red heading and applied it to a word in a paragraph, the word did not turn red. Users had to apply the missing styles again manually.
+
+In {productname} {release-version}, the **Format Painter** plugin also copies inline styles applied directly to a block element when those styles match an inline format registered in the editor, such as text color, background color, font family, or font size. The plugin applies these styles to the goal content in a `+span+` element. When the same style is set on more than one element around the source content, the plugin uses the value from the closest element. The plugin does not copy formats listed in the xref:formatpainter.adoc#formatpainter_ignored_formats[`+formatpainter_ignored_formats+`] option.
+
+For information on the **Format Painter** plugin, see: xref:formatpainter.adoc[Format Painter].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

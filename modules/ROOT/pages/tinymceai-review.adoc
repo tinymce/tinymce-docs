@@ -48,7 +48,7 @@ Review suggestions can be individually skipped or applied by clicking the corres
 - Completing the review with the currently applied suggestions (and skipping the rest)
 - Aborting the review and exiting (with all applied changes reverted)
 
-While a review has pending suggestions, switching to the Chat sidebar or running a Quick Action opens a confirmation dialog. If the user confirms, the plugin discards the pending suggestions and returns the editor to normal editing. If the user cancels, the plugin keeps the pending suggestions. For the same behavior across several editors, see xref:tinymceai-multi-editor.adoc#discarding-suggestions[Discarding pending suggestions].
+While a review has pending suggestions, switching to the Chat sidebar or running a Quick Action opens a confirmation dialog. If the user confirms, the plugin discards the suggestions, resets the changes applied in the review, and returns the editor to normal editing. If the user cancels, the plugin keeps the pending suggestions. For the same behavior across several editors, see xref:tinymceai-multi-editor.adoc#discarding-suggestions[Discarding pending suggestions].
 
 [[built-in-reviews]]
 == Built-in reviews
@@ -82,7 +82,7 @@ a|
 
 |**Custom review** |— |xref:tinymceai-review.adoc#custom-review-choose-review[Custom review]: custom prompt and model; streams like other reviews. |✓ |✓ (custom review calls endpoint)
 
-| |`+translate+` |Translate between languages with cultural adaptation. The request sets the target language in `+args.language+`. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/callSystemReview[Call a system review]. | |✓
+| |`+translate+` |Translate the content to another language. The request sets the target language in `+args.language+`. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/callSystemReview[Call a system review]. | |✓
 |===
 
 [NOTE]
@@ -114,10 +114,12 @@ The Review plugin feature is built on top of the Reviews API, which provides RES
 
 Reviews use streaming output with Server-Sent Events for real-time feedback as suggestions are generated. Each review type is optimized for specific improvement tasks, providing consistent, high-quality analysis of text structure, style, and quality. Reviews provide specific, actionable recommendations for content improvement.
 
+Each HTML element in the request content of a system or custom review needs a unique `+data-id+` attribute. Elements without a `+data-id+` are ignored.
+
 [[reviews-system-reviews-api]]
 === System reviews
 
-System reviews are built-in reviews for common use cases, and the request does not name a model. The API includes one endpoint for running system reviews, https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/callSystemReview[Call a system review], which takes the review name from the xref:tinymceai-review.adoc#built-in-reviews[API review] column in its path. Each HTML element in the request content needs a unique `+data-id+` attribute.
+System reviews are built-in reviews for common use cases, and the request does not name a model. The API includes one endpoint for running system reviews, https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/callSystemReview[Call a system review], which takes the review name from the xref:tinymceai-review.adoc#built-in-reviews[API review] column in its path.
 
 Built-in system reviews including API names, descriptions, and whether each type is available in the Review sidebar or only through the API—are summarized in xref:tinymceai-review.adoc#built-in-reviews[Built-in reviews].
 

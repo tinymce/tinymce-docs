@@ -37,7 +37,7 @@ Context limits control how much content can be attached to conversations to ensu
 
 Supported attachment types include PDF, DOCX, PNG, JPEG, Markdown, HTML, and plain text. The API accepts files of up to 25 MB in a single upload to a conversation. Exact per-file, per-conversation, and PDF page limits also depend on the model in use. Read the `+limits+` object for that model from `GET /v1/models/\{version}` (see xref:tinymceai-models.adoc#verifying-model-limits-for-integration[Verifying limits for a configured model] and xref:tinymceai-models.adoc#model-information[Model Information]). For schema details, see the https://tinymceai.api.tiny.cloud/v1/docs#tag/Models[Models API] OpenAPI documentation.
 
-The file picker in the {pluginname} plugin offers only the supported attachment types. The service enforces the file size and page count limits. A request over these limits fails with HTTP status `+413+`. See xref:tinymceai-api-overview.adoc#error-codes[Error codes].
+The file picker in the {pluginname} plugin offers only the supported attachment types. The service enforces the file size and page count limits. A file upload over these limits fails with HTTP status `+413+` and the code `+file-too-large+` or `+file-too-many-pages+`. Prompts and request bodies also have size limits. A conversation message, action, or review over them fails with HTTP status `+413+` and the code `+prompt-size-limits-exceeded+` or `+content-too-large+`. See xref:tinymceai-api-overview.adoc#error-codes[Error codes].
 
 [[context-optimization-tips]]
 === Context Optimization Tips

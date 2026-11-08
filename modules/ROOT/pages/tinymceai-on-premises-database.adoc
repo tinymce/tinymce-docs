@@ -7,7 +7,7 @@
 
 This page covers the *data layer*: the SQL database, Redis, and file storage. These components must be running and accessible before the AI service container can start — the service connects to them on boot and will not proceed without them.
 
-* *SQL database*: stores persistent data such as configurations, conversations, files, and documents.
+* *SQL database*: stores persistent data such as configurations, conversations, file metadata, and documents. With `STORAGE_DRIVER` set to `database`, it also stores the uploaded files (see <<file-storage>>). In image version 1.3.0 and later, it also stores the records of xref:tinymceai-on-premises-production.adoc#ai-diagnostics[AI Diagnostics].
 * *Redis*: caching and coordination (shared caches and in-progress SSE responses). Enables the AI service to remain stateless.
 * *File storage*: stores uploaded files and documents.
 

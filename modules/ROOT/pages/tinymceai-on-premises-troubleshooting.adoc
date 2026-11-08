@@ -252,7 +252,7 @@ Confirm `/health` is OK and a direct `curl` to `/v1/conversations` works before 
 [cols="2,3",options="header"]
 |===
 |Symptom |Fix
-|Self-hosted model is slow through the AI service compared with raw `curl` |Co-locate the inference server with the AI service. Use a smaller or more quantized model. Disable telemetry during development (`LLM_TELEMETRY_ENABLED=false`).
+|Self-hosted model is slow through the AI service compared with raw `curl` |Co-locate the inference server with the AI service. Use a smaller or more quantized model. Disable telemetry during development (`LLM_TELEMETRY_ENABLED=false`). This also stops AI Diagnostics recording. See xref:tinymceai-on-premises-production.adoc#ai-diagnostics[AI Diagnostics].
 |Containers OOM or MySQL takes 60{plus} seconds to start (Colima) |Default Colima VM is too small. Run `colima stop && colima start --cpu 4 --memory 8 --disk 100`.
 |===
 

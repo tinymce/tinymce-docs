@@ -383,7 +383,7 @@ NOTE: Replace `'your-license-key'` in the `token-server.js` listing with the {pr
 npm install
 ----
 
-The {pluginname} plugin must be present in the {productname} plugins directory before starting the demo. Copy the `tinymceai` folder into `node_modules/tinymce/plugins/`, or use the xref:editor-important-options.adoc#external_plugins[`external_plugins`] option to load it from a separate path.
+The {pluginname} plugin and the `licensekeymanager` plugin must be present in the {productname} plugins directory before starting the demo. With a commercial `license_key`, the editor disables itself when the `licensekeymanager` plugin is missing. Copy the `tinymceai` and `licensekeymanager` folders into `node_modules/tinymce/plugins/`, or use the xref:editor-important-options.adoc#external_plugins[`external_plugins`] option to load them from a separate path. For where to get the plugins, see xref:tinymceai.adoc#availability[Availability] and xref:npm-projects.adoc#install-premium-plugins[Install premium plugins from NPM].
 
 [source,bash]
 ----

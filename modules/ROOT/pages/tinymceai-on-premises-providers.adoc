@@ -137,6 +137,8 @@ A full field reference for `MODELS` is at the end of this page.
 
 API key from https://platform.openai.com/api-keys[platform.openai.com]. The OpenAI provider comes with a default model list, so it works without an explicit `MODELS` definition, but defining `MODELS` is recommended for production (see <<models-required>>).
 
+NOTE: When `MODERATION` is not set, the AI service also uses the API key of the OpenAI provider in `PROVIDERS` for content moderation, and sends prompts and uploaded images to the OpenAI moderation API even when other providers serve the models. See xref:tinymceai-on-premises-moderation.adoc[Content moderation].
+
 .Configuration details
 [%collapsible]
 ====
@@ -782,7 +784,7 @@ IMPORTANT: *Region mismatch:* set `location` to a region that hosts the model. *
 
 Use this provider type for any runtime or aggregator that is not listed as a native provider above but exposes an OpenAI-compatible `/v1/chat/completions` endpoint — including Ollama, vLLM, LM Studio, OpenRouter, Together, Groq, and Fireworks.
 
-The `baseUrl` *must* include the `/v1` suffix.
+The `baseUrl` *must* include the OpenAI-compatible path prefix of the runtime, typically `/v1`. The AI service appends `/chat/completions` to the `baseUrl`.
 
 === Configuration
 
@@ -802,7 +804,7 @@ The `baseUrl` *must* include the `/v1` suffix.
 |===
 |Field |Required |Notes
 |`type` |Yes |Literal `"openai-compatible"`
-|`baseUrl` |Yes |*Must include the `/v1` suffix.* Without it, every request fails with a misleading "Not Found" Server-Sent Events (SSE) error.
+|`baseUrl` |Yes |*Must include the OpenAI-compatible path prefix of the runtime, typically `/v1`.* Without it, every request fails with a misleading "Not Found" Server-Sent Events (SSE) error.
 |`apiKeys` |No |Sent as `Authorization: Bearer <key>`. Most local runtimes ignore it.
 |`headers` |No |Additional headers such as auth tokens or tenant IDs.
 |===
@@ -1017,7 +1019,7 @@ A `MODELS` array routes individual models to specific providers using the `provi
 ----
 ====
 
-This wires conversations to OpenAI, reviews to Bedrock-hosted Claude, and quick actions to a local Ollama model. The AI service picks the appropriate provider for each feature based on which models declare which `features`. See <<model-resolution-order>>.
+This wires conversations to OpenAI, reviews to Bedrock-hosted Claude, and quick actions to a local Ollama model. The AI service picks the model for system reviews, system actions, and conversation title generation from the models that declare each feature in `features`. Chat messages, custom actions, and custom reviews use the model that the request names. See <<model-resolution-order>>.
 
 A `MODELS` entry with a `provider` value that does not exist in `PROVIDERS` stops the service at startup with `[FATAL] Following models have invalid provider:` followed by the affected model IDs. Check the spelling of each `provider` field against the keys in `PROVIDERS`. See xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting] for additional debugging steps.
 
@@ -1197,7 +1199,7 @@ The same procedure works for `anthropic`, `google`, `azure`, and `openai-compati
 [cols=",,",options="header",]
 |===
 |Symptom |Most likely cause |Section
-|Editor shows "model unavailable" / `agent-1 allowed:false` |The token lacks `ai:models:agent` |<<models-required,Defining the model list>>
+|Requests return HTTP 403 `missing-permissions` listing `ai:models:agent` / `agent-1 allowed:false` |The token lacks `ai:models:agent` |<<models-required,Defining the model list>>
 |`GET /v1/models/v1` returns 400 |Wrong compatibility version |<<models-required,Defining the model list>>
 |Bedrock returns `NoValidApiKeysFoundError` |No credentials that the service can use. In image versions earlier than 1.2.0, relying on the AWS default credential chain |Bedrock
 |Bedrock returns `AccessDeniedException` |Model access not enabled in console |Bedrock prerequisites

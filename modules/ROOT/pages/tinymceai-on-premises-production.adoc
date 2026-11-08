@@ -145,7 +145,7 @@ IMPORTANT: Pin to `mysql:8.0`. The `mysql:8` tag floats to the latest MySQL, whi
 
 == Kubernetes deployment
 
-Deploy the AI service to Kubernetes in five steps: create a namespace, store secrets, apply the Deployment, expose as a Service, and verify.
+Deploy the AI service to Kubernetes in five steps: create a namespace, store secrets, apply the Deployment, expose as a Service, and bootstrap the environment.
 
 === Step 1: Namespace and image pull secret
 
@@ -520,6 +520,14 @@ The AI service requires outbound access to the following endpoints, depending on
 |`api.openai.com` (moderation)
 |Check prompts and uploaded images with the OpenAI moderation API before they reach a model
 |By default, when `PROVIDERS` includes an OpenAI provider and `MODERATION` does not configure a custom endpoint or turn the check off. See xref:tinymceai-on-premises-moderation.adoc[Content moderation].
+
+|Custom moderation endpoint
+|Screen content with a moderation service hosted by the deployment
+|Only when `MODERATION` uses the `custom` provider, in image version 1.1.0 and later. See xref:tinymceai-on-premises-moderation.adoc#custom-moderation-endpoint[Custom moderation endpoint].
+
+|Hook endpoint
+|Send chat turns to an endpoint hosted by the integrator before the model runs
+|Only when `HOOKS` is configured, in image version 1.3.0 and later. See xref:tinymceai-on-premises-hooks.adoc[Hooks].
 
 |MCP servers
 |Call the tools of the connected Model Context Protocol (MCP) servers

@@ -119,7 +119,7 @@ Custom actions can be added to the list, and default actions can be removed or r
 The following table lists built-in Quick Actions. 
 
 * The **Editor** column is the label in the Quick Actions menu when that action is available in the editor.
-* The **Menu or control ID** column lists values for `tinymceai_quickactions_menu`, `tinymceai_quickactions_chat_prompts`, `tinymceai_quickactions_change_tone_menu`, and the toolbar when adding individual controls (see xref:tinymceai-actions.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu]).
+* The **Menu or control ID** column lists values for `tinymceai_quickactions_menu`, `tinymceai_quickactions_chat_prompts`, `tinymceai_quickactions_change_tone_menu`, and the toolbar when adding individual controls (see xref:tinymceai-actions.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu]). The `ai-quickactions-tone-*` identifiers are menu items only and cannot be added to the toolbar.
 * The **System `actionName` or quick-action prompt id** column is the service identifier. Preview actions use a system `actionName` with the xref:tinymceai-actions.adoc#actions-api[Actions API]. Chat actions use a quick-action prompt id and xref:tinymceai-chat.adoc[Chat] with a pre-filled prompt, not the system actions API.
 
 [cols="1,3,2,3,1,1",options="header"]
@@ -261,7 +261,7 @@ Actions use streaming output with Server-Sent Events for real-time feedback as r
 
 Built-in Quick Actions—including identifiers, descriptions, and whether each command uses the system Actions API or Chat (Conversations API)—are summarized in xref:tinymceai-actions.adoc#quick-actions-reference-table[Default Actions].
 
-To run a system action, use https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions/operation/callSystemAction[Call a system action] with an `+actionName+` from the rows that have a checkmark in the **API** column of the table above. System actions use built-in prompts, so the request needs no prompt or model. For the token scopes that each system action needs, see xref:tinymceai-permissions.adoc#actions-permissions[Actions permissions].
+To run a system action, use https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions/operation/callSystemAction[Call a system action] with an `+actionName+` from the rows that have a checkmark in the **API** column of the table above. System actions use built-in prompts, so the request needs no prompt or model. The `+translate+` action also takes the target language in `+args.language+`. For the token scopes that each system action needs, see xref:tinymceai-permissions.adoc#actions-permissions[Actions permissions].
 
 For endpoint details, request and response schemas, authentication, and streaming behavior for system `actionName` calls, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions[Actions API].
 

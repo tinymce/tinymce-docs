@@ -233,7 +233,7 @@ If the page and the token endpoint share an origin (or a parent domain), the bro
 fetch('/api/ai-token', { method: 'POST', credentials: 'include' })
 ----
 
-For cross-origin token endpoints, the back end must respond with `Access-Control-Allow-Origin: <editor-origin>` (not `*`) and `Access-Control-Allow-Credentials: true`, and the session cookie must be set with `SameSite=None; Secure`.
+For cross-origin token endpoints, the back end must respond with `Access-Control-Allow-Origin: <editor-origin>` (not `*`) and `Access-Control-Allow-Credentials: true`. When the token endpoint is on a different site, not only a different subdomain, the session cookie must also be set with `SameSite=None; Secure`.
 
 === Bearer header
 

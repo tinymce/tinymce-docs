@@ -238,6 +238,8 @@ The agent model (`agent-1`) automatically selects the best underlying model base
 
 When no model can process the request, the service returns a `+502 Bad Gateway+` error with the code `+no-available-models+`. Retry the request after a few minutes.
 
+When the provider of the requested model does not respond, the service returns a `+502 Bad Gateway+` error with the code `+ai-provider-unavailable+`. Switch to another model or retry the request after a few minutes.
+
 [[model-configuration]]
 === Model Configuration
 
@@ -246,7 +248,7 @@ The JWT `auth.ai.permissions` array includes xref:tinymceai-permissions.adoc#mod
 Plugin configuration, API parameters, and per-feature options do not grant access to models that the JWT disallows; they only choose which *allowed* model to use in a given context:
 
 * **JWT model permissions**: Set `ai:models:*`, `ai:models:agent`, `ai:models:<provider>:*`, or `ai:models:<provider>:<model-name>` as required. See xref:tinymceai-permissions.adoc#model-permissions[Model permissions] and xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication].
-* **Plugin configuration**: `tinymceai_default_model` sets the default model, and `tinymceai_allow_model_selection` controls whether end users can choose among allowed models in the UI. See xref:tinymceai.adoc#options-chat[Chat configuration options].
+* **Plugin configuration**: `tinymceai_default_model` sets the default model, and `tinymceai_allow_model_selection` controls whether end users can choose a model in the UI. The model selector lists every model that the models endpoint returns, and a model that the JWT does not allow fails when used. See xref:tinymceai.adoc#options-chat[Chat configuration options].
 * **API requests**: The `model` field in request bodies selects the model for that call. See xref:tinymceai-models.adoc#api-examples[API Examples] below.
 * **Custom Quick Actions and similar**: Per-item options such as the `model` property on xref:tinymceai-actions.adoc#custom-actions[custom Quick Actions] select a model for that action; the value must be among the models allowed by the JWT.
 
@@ -348,7 +350,7 @@ Web scraping extracts and processes content from web pages so the AI can analyze
 
 Per-model caps (context length, attachment sizes, PDF page totals, and similar) are returned in the `+limits+` object for each entry in `GET /v1/models/\{version}`. Those values are **the limits the service applies at runtime** and can differ by model. See xref:tinymceai-models.adoc#verifying-model-limits-for-integration[Verifying limits for a configured model] for how to match the integration’s model id to the correct `+items[]+` entry.
 
-The sections below cover moderation, descriptions, and deprecation. Attachment limits are documented only under xref:tinymceai-models.adoc#file-processing-limits[File processing limits], using the live models API so values stay aligned with the service.
+The sections below cover moderation, descriptions, and deprecation. Attachment limits are documented under xref:tinymceai-models.adoc#file-processing-limits[File processing limits], using the live models API so values stay aligned with the service.
 
 [[file-processing-limits]]
 === File Processing Limits
@@ -406,6 +408,8 @@ To check for deprecated models programmatically, read the model list from `GET /
 == API Examples
 
 The following examples show how to configure models when using the REST API directly. For plugin configuration, see xref:tinymceai-chat.adoc#model-selection-configuration[Chat model configuration].
+
+The examples post to an existing conversation and reference an existing document. To create them, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/createConversation[Create a new conversation] and https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Documents/operation/createDocument[Create a document].
 
 [[model-selection]]
 === Model Selection
@@ -523,7 +527,7 @@ Response (shape illustrated; field names and numeric limits follow the live serv
 * **`id`**: Model identifier for xref:tinymceai.adoc#tinymceai_default_model[`+tinymceai_default_model+`] and API `+model+` fields.
 * **`allowed`**: Whether the token's scopes allow the model.
 * **`recommended`**: Whether the service recommends the model.
-* **`limits`**: Per-model numeric caps. Sizes are in bytes, and `+maxContextLength+` is a number of characters. The https://tinymceai.api.tiny.cloud/v1/docs#tag/Models/operation/getAiModels[Models API reference] defines each key.
+* **`limits`**: Per-model numeric caps. Sizes are in bytes, and `+maxContextLength+` is a number of characters, counted as UTF-16 code units. The https://tinymceai.api.tiny.cloud/v1/docs#tag/Models/operation/getAiModels[Models API reference] defines each key.
 * **`capabilities`**: For `+webSearch+` and `+reasoning+`, whether the model supports the capability (`+enabled+`) and whether the token permits it (`+allowed+`).
 * **`+addition+`** and **`+removal+`** (optional): The dates the model becomes available and is removed. See xref:#model-deprecation[Model deprecation].
 

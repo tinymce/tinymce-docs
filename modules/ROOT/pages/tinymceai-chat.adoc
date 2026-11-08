@@ -103,7 +103,7 @@ The model searches the web only when web search is enabled for the message. For 
 
 Reasoning in Chat models turns on the ability to think through problems, draw logical conclusions, and make sense of complex information. It enables the model to analyze context, connect ideas, and produce well-structured, coherent answers beyond simple pattern matching.
 
-Some models use reasoning automatically, while others may require manual activation. Whether the **Reasoning** toggle image:icons-premium/reasoning.svg[Reasoning icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support reasoning, use the toggle button to enable it.
+The model reasons only when reasoning is enabled for the message, except for models that have xref:tinymceai-models.adoc#reasoning[reasoning always enabled]. For models that support reasoning, use the **Reasoning** toggle image:icons-premium/reasoning.svg[Reasoning icon,24px] below the prompt input to enable it.
 
 [[welcome-chat-actions]]
 == Customizing the welcome message
@@ -246,7 +246,7 @@ image::tinymceai/tinymce-ai-chat-diff-mode-reject-suggestion-overlay.png[{plugin
 [[chat-history]]
 == Chat history
 
-All past conversations appear in the Chat history. Click the image:icons/restore-draft.svg[Chat history icon,24px] button in the chat header to open the list. Click a conversation to reopen it, or use the menu on each entry to pin, rename, or delete it. Click **AI Chat** to return from the history view to the active conversation.
+All past conversations appear in the Chat history. To show only the conversations for one document, set xref:tinymceai.adoc#content_id[`+content_id+`]. Click the image:icons/restore-draft.svg[Chat history icon,24px] button in the chat header to open the list. Click a conversation to reopen it, or use the menu on each entry to pin, rename, or delete it. Click **AI Chat** to return from the history view to the active conversation.
 
 The list shows pinned conversations under **Pinned**, and the other conversations under **History**.
 
@@ -259,7 +259,7 @@ Any conversation from the chat history can be continued as long as the AI model 
 
 [NOTE]
 ====
-After a full page load or new browser session, reopening Chat does not automatically reconnect the editor to pending suggestions from an older conversation. Open that conversation again from Chat history so pending suggestions are linked to the current editor session before accepting or dismissing them.
+After a full page load or new browser session, reopening Chat does not automatically reconnect the editor to pending suggestions from an older conversation. Changes proposed in a conversation loaded from Chat history are shown as history and cannot be applied. Ask again in the current session to get new suggestions.
 ====
 
 [[conversations-api]]
@@ -293,7 +293,7 @@ Sending a message through the API takes three requests. The token needs the conv
 
 . https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/createConversation[Create the conversation].
 . Attach content: an https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Documents/operation/createDocument[HTML document], a https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Files/operation/uploadFile[file], or a https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Web-Resources/operation/downloadWebResources[web page]. File size limits are listed in xref:tinymceai-limits.adoc#file-limits[File limits].
-. https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/createMessage[Send the message]. The service streams the reply with Server-Sent Events (SSE). See xref:tinymceai-chat.adoc#conversations-streaming[Streaming responses].
+. https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/createMessage[Send the message]. The message lists each attached item by its ID in the `+content+` array. See the example in xref:tinymceai-models.adoc#model-selection[Model Selection]. The service streams the reply with Server-Sent Events (SSE). See xref:tinymceai-chat.adoc#conversations-streaming[Streaming responses].
 
 [[conversations-api-capabilities]]
 === API capabilities

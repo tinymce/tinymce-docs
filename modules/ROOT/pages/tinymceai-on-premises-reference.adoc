@@ -187,6 +187,8 @@ For PostgreSQL, change `DATABASE_DRIVER` to `'postgres'` and add `-e DATABASE_SC
 |POST |`/v1/reviews/system/\{reviewName}/calls` |JWT |Run a built-in review, for example `+correctness+`. Returns an SSE stream. For the content format, see the https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/callSystemReview[API reference].
 |POST |`/v1/actions/custom/calls` |JWT |Run a custom action with a prompt and a model. Returns an SSE stream.
 |POST |`/v1/reviews/custom/calls` |JWT |Run a custom review with a prompt and a model. Returns an SSE stream.
+|POST |`/v1/documents/process` |JWT |Apply a prompt to an HTML document, or to several documents in image version 1.1.0 and later. See xref:tinymceai-document-processing.adoc[Document Processing].
+|POST |`/v1/documents/process/stream` |JWT |Streaming variant of `/v1/documents/process`. Returns an SSE stream. Image version 1.1.0 and later. See xref:tinymceai-document-processing.adoc#streaming[Streaming].
 |GET |`/v1/mcp/oauth/status` |JWT |Connection status for all OAuth-enabled MCP servers. See xref:tinymceai-on-premises-mcp.adoc#mcp-oauth-endpoints[OAuth REST endpoints].
 |POST |`/v1/mcp/oauth/\{serverName}/initialize` |JWT |Start the OAuth authorization flow.
 |POST |`/v1/mcp/oauth/\{serverName}/complete` |JWT |Complete the OAuth flow with the authorization code.
@@ -249,7 +251,7 @@ The action and review endpoints also return SSE streams, with their own events. 
 
 == Error code reference
 
-Error codes returned in HTTP 4xx and 5xx responses and inside SSE `event: error` payloads.
+Error codes returned in HTTP 4xx and 5xx responses and inside SSE `event: error` payloads. For every error code, see the https://tinymceai.api.tiny.cloud/v1/docs#section/Overview/Error-codes[Error codes] section of the API reference.
 
 Every error response carries a `+traceId+`. See xref:tinymceai-on-premises-troubleshooting.adoc#tracing-a-failed-request[Tracing a failed request].
 
@@ -264,7 +266,7 @@ Every error response carries a `+traceId+`. See xref:tinymceai-on-premises-troub
 |`invalid-request-data` |Input validator |Field validation failed (most commonly the 100,000 char prompt cap) |Fix the request body. See error message
 |`environment-not-found` |AI runtime |Same as `Environment not found`. The editor displays this error as `Invalid API key provided in JWT token (aud) claim`. |Recreate through Panel UI
 |`conversation in use` |Conversation runtime |Stream-abort left stale state |Start a new conversation
-|`conversation-not-found` (HTTP 404) |Conversation runtime |The conversation does not exist, for example as a follow-up to `conversation in use` |Start a new conversation
+|`conversation-not-found` (HTTP 404) |Conversation runtime |The conversation does not exist |Start a new conversation
 |`NoValidApiKeysFoundError` (HTTP 500) |Bedrock / Vertex adapter |No credentials that the service can use |See xref:tinymceai-on-premises-providers.adoc#aws-bedrock[AWS Bedrock] or xref:tinymceai-on-premises-providers.adoc#google-vertex-ai[Google Vertex AI]
 |`AccessDeniedException` |Bedrock |Missing model access or IAM permissions |Enable Bedrock model access; attach the IAM policy from xref:tinymceai-on-premises-providers.adoc[LLM providers]
 |`INVALID_PAYMENT_INSTRUMENT` |Bedrock |Anthropic on Bedrock without Marketplace subscription |Subscribe through AWS Marketplace
@@ -301,5 +303,5 @@ Every error response carries a `+traceId+`. See xref:tinymceai-on-premises-troub
 |Bedrock credentials |Inline only, in image versions earlier than 1.2.0 |See xref:tinymceai-on-premises-providers.adoc#bedrock-newer-credentials[Assumed role and host credentials].
 |Vertex credentials |Inline only, in image versions earlier than 1.2.0 |See xref:tinymceai-on-premises-providers.adoc#vertex-newer-credentials[Impersonation and host credentials].
 |Azure `MODELS[].id` |Must equal deployment name |There is no separate `deploymentName` field. The ID is the deployment name. Start the deployment name with the ID of the OpenAI model it serves: the service reads that prefix to choose the request options for the model.
-|OpenAI-compatible `baseUrl` |Must include `/v1` suffix |Omitting it produces a "Not Found" SSE error.
+|OpenAI-compatible `baseUrl` |Must include the OpenAI-compatible path prefix of the runtime, typically `/v1` |Omitting it produces a "Not Found" SSE error.
 |===

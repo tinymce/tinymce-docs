@@ -190,6 +190,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== A new line inside an indented TD prevented the `+Decrease Indent+` of the content
+// #TINYMCE-8693
+
+Previously, when content placed directly inside a table cell was indented, {productname} applied the indentation to the table cell (`+<td>+`) element. When a new line was then added in the cell, for example by pressing Enter, {productname} wrapped the content in paragraph (`+<p>+`) elements that did not carry the indentation. As a result, the *Decrease indent* toolbar button was disabled and the indented content could not be outdented.
+
+In {productname} {release-version}, when the content of a table cell is indented, {productname} wraps the inline content in paragraph elements and applies the indentation to those paragraphs instead of to the cell. The new line keeps the indentation, and the *Decrease indent* toolbar button remains enabled, so the content can be outdented as expected.
+
 === Underline applied around subscript or superscript text was drawn at the baseline of the surrounding text instead of under the subscript or superscript text
 // #TINYMCE-15001
 

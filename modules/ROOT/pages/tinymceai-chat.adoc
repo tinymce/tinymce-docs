@@ -291,11 +291,11 @@ The AI remembers everything that has been shared and builds on it throughout the
 [[conversations-api-flow]]
 === Sending a message through the API
 
-Sending a message through the API takes three requests. The token needs the conversation permissions for each request. See xref:tinymceai-permissions.adoc#conversation-permissions[Conversation permissions].
+To send a message through the API, follow these steps. The token needs the conversation permissions for each request. See xref:tinymceai-permissions.adoc#conversation-permissions[Conversation permissions].
 
 . https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/createConversation[Create the conversation].
-. Attach content: an https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Documents/operation/createDocument[HTML document], a https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Files/operation/uploadFile[file], or a https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Web-Resources/operation/downloadWebResources[web page]. File size limits are listed in xref:tinymceai-limits.adoc#file-limits[File limits].
-. https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/createMessage[Send the message]. The message lists each attached item by its ID in the `+content+` array. See the example in xref:tinymceai-models.adoc#model-selection[Model Selection]. The service streams the reply with Server-Sent Events (SSE). See xref:tinymceai-chat.adoc#conversations-streaming[Streaming responses].
+. Optional: attach content to the conversation, with one request for each item. Attach an https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Documents/operation/createDocument[HTML document], a https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Files/operation/uploadFile[file], or a https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Web-Resources/operation/downloadWebResources[web page]. Each request returns the `+id+` of the attached item. File size limits are listed in xref:tinymceai-limits.adoc#file-limits[File limits].
+. https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/createMessage[Send the message], with each attached item in the `+content+` array as its type and `+id+`. See the example in xref:tinymceai-models.adoc#model-selection[Model Selection]. The service streams the reply with Server-Sent Events (SSE). See xref:tinymceai-chat.adoc#conversations-streaming[Streaming responses].
 
 [[conversations-api-capabilities]]
 === API capabilities

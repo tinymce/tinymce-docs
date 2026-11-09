@@ -175,6 +175,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Node positioned context toolbars repositioned above the editor when the node width was less than the toolbar.
+// #TINYMCE-13900
+
+Previously, in inline mode, a context toolbar that used `+position: 'node'+` moved above the editor when the selected node was narrower than the toolbar. For example, when a user resized an image to a width smaller than the context toolbar, the toolbar jumped from the image to a position above the editor. The toolbar then appeared detached from the node it applied to.
+
+In {productname} {release-version}, a context toolbar that uses `+position: 'node'+` stays attached to the selected node, even when the node is narrower than the toolbar. When a user resizes an image to a width narrower than the context toolbar, the toolbar remains above the image.
+
 === Following an anchor link to a target inside a collapsed `+details+` element, such as a closed accordion, now expands it, as browsers do when navigating to an in-page link
 // #TINYMCE-14737
 

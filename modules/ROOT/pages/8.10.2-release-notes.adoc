@@ -167,6 +167,20 @@ Previously, when a user pressed Enter on an empty list item to leave a list, {pr
 
 In {productname} {release-version}, the editor copies the styles of an empty list item only when the new block is also a list item. A paragraph created by leaving a list no longer inherits the list item styles, so bold, italic, and other formats toggle as expected.
 
+=== The image dialog got stuck on "Uploading image" when an empty or unreadable file was selected on the Upload tab.
+// #TINYMCE-7202
+
+Previously, when a user selected an empty file, such as a 0-byte `+.png+` file, on the Upload tab of the image dialog, the dialog stayed on the "Uploading image" message, and the browser console showed an error. The dialog remained blocked and displayed no message about the problem.
+
+In {productname} {release-version}, when the image dialog cannot read the selected file or convert it to image data, the dialog cancels the upload and displays a "Failed to upload image" alert. After the user closes the alert, the dialog accepts input again, and the user can select a different file.
+
+=== Long item text in dialog listboxes overflowed the dialog
+// #TINYMCE-14261
+
+Previously, the menu of a listbox in a dialog grew to fit the longest item in the list. When an item had long text, such as an anchor with a long `+id+` in the *Anchors* field of the *Insert/Edit Link* dialog, the open menu extended past the edge of the dialog. The selected value also overflowed the field. The dialog displayed a horizontal scrollbar and the layout broke, which made the dialog difficult to read and use.
+
+In {productname} {release-version}, the menu of a dialog listbox matches the width of the field, and long items wrap onto several lines. When the selected value is too long for the field, the listbox truncates the value with an ellipsis. Long listbox items no longer break the dialog layout or add a horizontal scrollbar.
+
 
 [[security-fixes]]
 == Security fixes

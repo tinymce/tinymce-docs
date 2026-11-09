@@ -307,13 +307,13 @@ A message request can also pass `+extraHttpHeaders+` so the service can download
 [[conversations-api-stored]]
 === Working with stored conversations
 
-The Chat history in the sidebar shows the conversations and messages that the AI service stores. The following operations read and manage the same data:
+The AI service stores each conversation and its messages. The Chat history in the sidebar shows the same data. Back-end code can work with the stored conversations for tasks such as:
 
-* https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/getConversations[List conversations].
-* https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/getConversation[Get a conversation], https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/updateConversation[update a conversation] (for example, to rename or pin it), or https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/deleteConversation[delete a conversation].
-* https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/getMessages[List the messages in a conversation].
-* https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/addConversationMessageRating[Rate a reply] or https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/updateMessage[update a message].
-* For back-end administration, a token with the `+ai:admin+` permission can https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Admin/operation/adminListConversations[list], https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Admin/operation/AdminGetConversation[get], and https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Admin/operation/adminDeleteConversation[delete] the conversations of any user. Never return an `+ai:admin+` token to the editor. See xref:tinymceai-permissions.adoc#admin-permissions[Admin permissions].
+* *Finding the conversations for one document.* When xref:tinymceai.adoc#content_id[`+content_id+`] is set, the plugin creates each conversation in a group with that value. Pass the same value as `+group+` to https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations/operation/getConversations[list conversations] to get only the conversations for that document.
+* *Collecting feedback on replies.* https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/addConversationMessageRating[Rate a reply] to record whether a user found it useful.
+* *Managing conversations across users.* A token with the `+ai:admin+` permission can read and delete the conversations of any user through the https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Admin[Conversation Admin] operations. Never return an `+ai:admin+` token to the editor. See xref:tinymceai-permissions.adoc#admin-permissions[Admin permissions].
+
+For every operation and its parameters, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversations[Conversations] and https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages[Conversation Messages] in the API reference.
 
 [[conversations-streaming]]
 === Streaming Responses

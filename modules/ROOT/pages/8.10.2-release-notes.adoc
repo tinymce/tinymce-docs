@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Long item text in dialog listboxes overflowed the dialog
+// #TINYMCE-14261
+
+Previously, the menu of a listbox in a dialog grew to fit the longest item in the list. When an item had long text, such as an anchor with a long `+id+` in the *Anchors* field of the *Insert/Edit Link* dialog, the open menu extended past the edge of the dialog. The selected value also overflowed the field. The dialog displayed a horizontal scrollbar and the layout broke, which made the dialog difficult to read and use.
+
+In {productname} {release-version}, the menu of a dialog listbox matches the width of the field, and long items wrap onto several lines. When the selected value is too long for the field, the listbox truncates the value with an ellipsis. Long listbox items no longer break the dialog layout or add a horizontal scrollbar.
+
 
 [[security-fixes]]
 == Security fixes

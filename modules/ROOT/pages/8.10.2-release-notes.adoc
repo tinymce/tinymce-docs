@@ -163,7 +163,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Following an anchor link to a target inside a collapsed `+details+` element, such as a closed accordion, now expands it, as browsers do when navigating to an in-page link
 // #TINYMCE-14737
 
-Previously, when a link to an anchor inside a closed accordion was followed, {productname} scrolled to the target but left the accordion closed. The target content stayed hidden. Browsers open the enclosing `+<details>+` element when navigating to an in-page link, so the editor behaved differently from the browser.
+Previously, when a link to an anchor inside a closed accordion was followed, {productname} scrolled to the target but left the accordion closed, so the target content stayed hidden.
 
 In {productname} {release-version}, the editor opens every closed `+<details>+` element that hides the target, including accordions, before scrolling to it. This applies when a link is followed with Ctrl+click (Cmd+click on macOS), with the Alt+Enter keyboard shortcut (⌥+Enter on macOS), with the *Open link* context menu item or toolbar button, or with a click in a disabled editor. For the full list of editor shortcuts, see xref:keyboard-shortcuts.adoc#editor-keyboard-shortcuts[Editor keyboard shortcuts]. In design mode, the accordion stays open in the editor content. In read-only and disabled modes, the accordion opens on screen only, and the editor content does not change.
 

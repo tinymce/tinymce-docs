@@ -71,6 +71,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== The review sidebar could get stuck initializing when it was opened before the TinyMCE AI interface finished loading, for example by using the `+sidebar_show+` option
+// #TINYMCE-15165
+
+Previously, when the xref:tinymceai.adoc#tinymceai_sidebar_type[`+tinymceai_sidebar_type+`] option had its default value of `+'static'+`, the Review sidebar could open before the plugin interface finished loading. For example, setting the xref:customsidebar.adoc#sidebar_show[`+sidebar_show+`] option to `+'tinymceai-review'+` opened the Review sidebar on editor load. The sidebar then displayed the `+Initializing review mode...+` message, and users had to close and reopen the sidebar before they could use it.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin records which sidebar opens while the interface loads and displays that sidebar once loading completes. The Review sidebar and the Chat sidebar open as expected on editor load, including when a user switches between them or closes one before the interface finishes loading.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 === Spell Checker
 
 The {productname} {release-version} release includes an accompanying release of the **Spell Checker** premium plugin.

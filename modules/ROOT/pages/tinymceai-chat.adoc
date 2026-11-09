@@ -96,7 +96,7 @@ tinymce.init({
 
 Web search in Chat allows the AI to access and retrieve real-time information from the internet. Instead of relying only on pre-trained knowledge, the model can search the web to find up-to-date facts, verify details, and provide more accurate, current answers.
 
-The model searches the web only when web search is enabled for the message. For models that support web search, turn on the **Web search** toggle image:icons-premium/web-search.svg[Web search icon,24px] below the prompt input.
+To make web search available, turn on the **Web search** toggle image:icons-premium/web-search.svg[Web search icon,24px] below the prompt input. The toggle is available only when the selected model supports web search and the token includes the web search permission. See xref:tinymceai-permissions.adoc#conversation-permissions[Conversation permissions]. With the toggle on, the model decides from the prompt whether to search the web. A reply that used web search shows **Searched the internet for insights**. With the toggle off, the model does not search the web.
 
 [[reasoning]]
 === Reasoning

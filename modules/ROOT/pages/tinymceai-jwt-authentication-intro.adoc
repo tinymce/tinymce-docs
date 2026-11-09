@@ -10,7 +10,7 @@
 
 [NOTE]
 ====
-This page covers JWT authentication for the *{cloudname}-hosted* AI service, where the `aud` claim is set to the Tiny Cloud API key and tokens are signed with RS256. For on-premises deployments, the `aud` claim is the Environment ID from the Management Panel and tokens are signed with HS256. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication for the on-premises AI service].
+This page covers JWT authentication for the *{cloudname}-hosted* AI service, where the `aud` claim is set to the {cloudname} API key and tokens are signed with RS256. For on-premises deployments, the `aud` claim is the Environment ID from the Management Panel and tokens are signed with HS256. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication for the on-premises AI service].
 ====
 
 {productname} recommends using the libraries listed on link:https://www.jwt.io/libraries[jwt.io/libraries] to create JWT tokens. These libraries support the algorithms required by {pluginname}. For details on supported algorithms, see xref:#supported-algorithms[Supported Algorithms].
@@ -219,7 +219,7 @@ The signature is created by encoding the header and payload using Base64URL, the
 [[supported-algorithms]]
 === Supported Algorithms
 
-The {productname} AI service does not support symmetrical encryption algorithms, such as `HS256`. The xref:tinymceai-on-premises-jwt.adoc[on-premises service] uses `HS256`. {companyname} recommends using the `RS256` algorithm. The following algorithms are supported:
+The {cloudname}-hosted AI service does not support symmetric signing algorithms, such as `HS256`. {companyname} recommends signing tokens with `RS256`. The following algorithms are supported:
 
 * RS256
 * RS384
@@ -227,6 +227,8 @@ The {productname} AI service does not support symmetrical encryption algorithms,
 * PS256
 * PS384
 * PS512
+
+On-premises deployments use different signing: tokens are signed with `HS256` using the API Secret, and the `aud` claim is the Environment ID. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication for the on-premises AI service].
 
 For details on each of these algorithms, visit: link:https://tools.ietf.org/html/rfc7518#section-3[RFC 7518, JSON Web Algorithms (JWA) Section 3 - Cryptographic Algorithms for Digital Signatures and MACs].
 

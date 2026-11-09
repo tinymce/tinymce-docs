@@ -246,7 +246,9 @@ image::tinymceai/tinymce-ai-chat-diff-mode-reject-suggestion-overlay.png[{plugin
 [[chat-history]]
 == Chat history
 
-All past conversations appear in the Chat history. To show only the conversations for one document, set xref:tinymceai.adoc#content_id[`+content_id+`]. Click the image:icons/restore-draft.svg[Chat history icon,24px] button in the chat header to open the list. Click a conversation to reopen it, or use the menu on each entry to pin, rename, or delete it. Click **AI Chat** to return from the history view to the active conversation.
+Set xref:tinymceai.adoc#content_id[`+content_id+`] to a unique ID for each document, such as the ID of the document in the application. The plugin then stores each conversation with that ID, and the Chat history lists only the conversations for the open document, so a user who reopens the document finds its earlier conversations there. Without `+content_id+`, the Chat history lists all of the user's conversations, from every document.
+
+Click the image:icons/restore-draft.svg[Chat history icon,24px] button in the chat header to open the list. Click a conversation to reopen it, or use the menu on each entry to pin, rename, or delete it. Click **AI Chat** to return from the history view to the active conversation.
 
 The list shows pinned conversations under **Pinned**, and the other conversations under **History**.
 

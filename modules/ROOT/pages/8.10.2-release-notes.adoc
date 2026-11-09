@@ -71,6 +71,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Spell Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Spell Checker** premium plugin.
+
+**Spell Checker** includes the following fix.
+
+==== Words inside a `script` element were spellchecked when the `script` was the only content of the editor.
+// #TINYMCE-15087
+
+Previously, when a `+<script>+` element was the only content of the editor, the **Spell Checker** plugin sent the words inside the element for spell checking. The plugin skipped `+<script>+` elements elsewhere in the content, but did not skip the element when all of the text to check was inside the element. As a result, the plugin checked script code as if it were editor content.
+
+In {productname} {release-version}, the **Spell Checker** plugin skips the content of a `+<script>+` element, including when the element is the only content of the editor. The plugin checks only the editor content outside the element.
+
+For information on the **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

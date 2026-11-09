@@ -1,7 +1,97 @@
-= Editor save and submit options
-:navtitle: Save and submit
-:description: Editor options related to saving or submitting editor content
-:keywords:
+= Getting, setting, and saving editor content
+:navtitle: Getting, setting, and saving content
+:description: How to get and set editor content with the getContent() and setContent() APIs, change content before it is set, and save or submit editor content.
+:keywords: getContent, setContent, BeforeSetContent, SetContent, no_events, no_selection, undoManager, undo level, save, submit, hidden_input
+
+Use the `+editor.getContent()+` and `+editor.setContent()+` APIs to read and write editor content from JavaScript. Use these APIs instead of reading or writing the editor's Document Object Model (DOM) directly, so that {productname} can filter, sanitize, and track the content.
+
+[[getting-editor-content]]
+== Getting editor content
+
+`+editor.getContent()+` returns the editor content as HTML, with editor-only markup removed. For the available arguments, see: xref:apis/tinymce.editor.adoc#getContent[getContent()].
+
+[source,js]
+----
+const html = tinymce.activeEditor.getContent();
+----
+
+[[setting-editor-content]]
+== Setting editor content
+
+`+editor.setContent()+` replaces the entire editor content. Before the content is set, {productname} parses it, filters it against the editor schema, and sanitizes it. For information on content filtering and sanitization, see: xref:content-filtering.adoc[Content filtering] and xref:security.adoc#xss_sanitization-option[`+xss_sanitization+`]. For the API reference, see: xref:apis/tinymce.editor.adoc#setContent[setContent()].
+
+When the editor has focus, `+setContent()+` moves the caret to the start of the new content.
+
+[source,js]
+----
+tinymce.activeEditor.setContent('<p>New content</p>');
+----
+
+To insert content at the current selection instead of replacing the entire editor content, use xref:apis/tinymce.editor.adoc#insertContent[insertContent()].
+
+[[setcontent-arguments]]
+=== Arguments for `+setContent()+`
+
+`+setContent()+` accepts an optional second argument, an object with the following properties.
+
+[cols="1,1,1,3",options="header"]
+|===
+|Property |Type |Default value |Description
+|`+no_events+` |`+Boolean+` |`+false+` |When `+true+`, the `+BeforeSetContent+` and `+SetContent+` events are not dispatched.
+|`+no_selection+` |`+Boolean+` |`+false+` |When `+true+`, the caret is not moved to the start of the new content.
+|===
+
+NOTE: Editor features and plugins that respond to the `+SetContent+` event do not run for content set with `+no_events: true+`. For example, xref:content-appearance.adoc#visual[visual aids] are not applied to the new content, and xref:file-image-upload.adoc#automatic_uploads[automatic image uploads] are not started.
+
+==== Example: setting content without moving the caret
+
+[source,js]
+----
+tinymce.activeEditor.setContent('<p>New content</p>', { no_selection: true });
+----
+
+[[adding-an-undo-level]]
+=== Adding an undo level
+
+`+setContent()+` does not add an undo level, so the change is not recorded in the undo history. To allow users to undo the change, call xref:apis/tinymce.undomanager.adoc#add[undoManager.add()] after setting the content.
+
+[source,js]
+----
+const editor = tinymce.activeEditor;
+editor.setContent('<p>New content</p>');
+editor.undoManager.add();
+----
+
+[[changing-content-before-it-is-set]]
+=== Changing content before it is set
+
+To change content before {productname} sets it, update the `+content+` property in a `+BeforeSetContent+` event handler. The updated content is still parsed, filtered, and sanitized before it is set. To cancel the change, call `+preventDefault()+` on the event. The `+SetContent+` event is still dispatched when the change is canceled.
+
+Changing the `+content+` property in a `+SetContent+` event handler has no effect, as the content has already been set. The `+content+` property of the `+SetContent+` event is deprecated.
+
+The `+BeforeSetContent+` event is also dispatched when content is inserted at the selection, and when undo and redo restore content. When content is inserted at the selection, the `+selection+` property of the event is `+true+`. Write the handler so that running it more than once on the same content does not change the result.
+
+==== Example: replacing a placeholder before content is set
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  setup: (editor) => {
+    editor.on('BeforeSetContent', (e) => {
+      if (!e.selection) {
+        e.content = e.content.replace(/\{\{year\}\}/g, String(new Date().getFullYear()));
+      }
+    });
+  }
+});
+----
+
+[[what-to-avoid]]
+== What to avoid when getting or setting content
+
+* *Do not write HTML directly into the editor after it has loaded.* For example, do not set `+editor.getBody().innerHTML+`, the body of the editor's `+iframe+`, or the element used by an inline editor. Content written this way skips parsing, filtering, and sanitization, does not dispatch the `+BeforeSetContent+` or `+SetContent+` events, and does not add an undo level. Use `+editor.setContent()+` or `+editor.insertContent()+` instead. Setting HTML on the target element before the editor loads is supported.
+* *Do not read HTML directly from the editor.* For example, do not read `+editor.getBody().innerHTML+`. The editor DOM contains editor-only markup, such as `+data-mce-bogus+` elements and editor-only classes. This markup can display incorrectly when the content is published, and can cause unexpected results when the content is loaded back into the editor. Use `+editor.getContent()+` instead.
 
 == HTML forms options
 

@@ -195,8 +195,8 @@ The following events are provided by the {productname} editor.
 |AfterSetSelectionRange |`+{ range: Range, forward: boolean }+` |Fired after the selection range is set in the editor.
 |BeforeGetContent |`+{ format: string, source_view?: boolean, selection?: boolean, save?: boolean }+` |Fired before the content is serialized from the editor.
 |GetContent |`+{ content: string, format: string, source_view?: boolean, selection?: boolean, save?: boolean }+` |Fired after the content is serialized from the editor.
-|BeforeSetContent |`+{ content: string, format?: string, paste?: boolean, selection?: boolean }+` |Fired before the content is parsed and rendered in the editor.
-|SetContent |`+{ content: string, format?: string, paste?: boolean, selection?: boolean }+` |Fired after the content is parsed and rendered in the editor. NOTE: The `+content+` property has been deprecated and will be removed in the next major release.
+|BeforeSetContent |`+{ content: string, format?: string, paste?: boolean, selection?: boolean }+` |Fired before the content is parsed and rendered in the editor. Event handlers can change the `+content+` property, or call `+preventDefault()+` to cancel the change. For details, see: xref:editor-save-and-submit.adoc#changing-content-before-it-is-set[Changing content before it is set].
+|SetContent |`+{ content: string, format?: string, paste?: boolean, selection?: boolean }+` |Fired after the content is parsed and rendered in the editor. NOTE: The `+content+` property has been deprecated and will be removed in the next major release. To change content before it is set, use the `+BeforeSetContent+` event.
 |LoadContent |N/A |Fired after the initial content has loaded into the editor.
 |PreviewFormats |N/A |Fired before a formats CSS is generated when the format is being previewed in the editor.
 |AfterPreviewFormats |N/A |Fired after a formats CSS is generated when the format is being previewed in the editor.

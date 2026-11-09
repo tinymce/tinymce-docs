@@ -1,7 +1,7 @@
 [[revisionhistory_allow_restore]]
 == `revisionhistory_allow_restore`
 
-The `revisionhistory_allow_restore` option enables or disables the ability to restore a revision.
+The `revisionhistory_allow_restore` option enables or disables the ability to restore a revision. When set to `+false+`, the `Restore this version` button is hidden from the {pluginname} view header, rather than shown as disabled.
 
 *Type:* `+Boolean+`
 

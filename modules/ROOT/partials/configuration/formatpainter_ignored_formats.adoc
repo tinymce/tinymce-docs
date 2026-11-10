@@ -3,6 +3,8 @@
 
 This option makes it possible to block the unwanted formats in the format painter.
 
+Ignored formats are also not copied from inline styles applied directly to block elements. For example, adding `+forecolor+` to this option stops the format painter copying the text color of a heading or paragraph. For more information, see xref:formatpainter.adoc#how-formats-are-copied-and-applied[How formats are copied and applied].
+
 *Type:* `+String+`
 
 *Default value:* `+'link,address,removeformat,formatpainter_removeformat'+`

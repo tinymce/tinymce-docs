@@ -111,6 +111,8 @@ Installing MoxieManager should be fairly simple, but mastering all the options c
 
 === Requirements
 
+CAUTION: Microsoft .NET Framework 4.5 is no longer supported by Microsoft, and security updates will not be issued for MoxieManager for .NET installations.
+
 * MoxieManager will only work with *.NET 4.5 Framework*, download http://www.microsoft.com/en-us/download/details.aspx?id=30653[here].
 * A modern *HTML5 or HTML4 Strict doctype* (<!DOCTYPE html>) is required to get the UI to render properly.
 

@@ -81,7 +81,7 @@ It is also possible to have many rootpath, if you wish to list local folder as w
 |Option |Description
 |`+publickey+` |The public key that you get from the Amazon S3 service.
 |`+secretkey+` |The secret key that you get from the Amazon S3 service.
-|`+urlprefix+` |Url prefix to add infront of the urls when selecting files this can for example be http://mycustom.domain or //mycustom.domain. If you do not have a custom domain, you will need to configure the bucketname into the normal s3 url.
+|`+urlprefix+` |Url prefix to add infront of the urls when selecting files this can for example be https://www.example.com or //www.example.com. If you do not have a custom domain, you will need to configure the bucketname into the normal s3 url.
 |`+cache-control+` |Enables you to control how the files are to be cached in the users browser when the request the file. The values that can be specified for this option can be found in the http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9[HTTP RFC].
 |`+endpoint+` |Enables you to configure a specific endpoint for the API calls this can be an URL to a http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region[specific region] or a custom domain.
 |===
@@ -508,7 +508,7 @@ Then you need to add a snipplet into your web.config file.
  </configuration
 ----
 
-See http://support.godaddy.com/help/article/2531/what-trust-level-can-i-use-when-running-aspnet[this Godaddy support page] for more information.
+See https://web.archive.org/web/20130920050616/http://support.godaddy.com:80/help/article/2531/what-trust-level-can-i-use-when-running-aspnet[this Godaddy support page] for more information.
 
 [[file-management]]
 == File management

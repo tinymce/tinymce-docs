@@ -71,7 +71,7 @@ $moxieManagerConfig['filesystem.local.urlprefix'] = '{proto}://{host}/virtupload
 <add key="filesystem.local.urlprefix" value="{proto}://{host}/virtupload/" />
 ----
 
-Will take an absolute path like c:\www\inetpub\upload\images\my.gif crop away c:\www\inetpub\upload producing /images/my.gif then add http://www.site.com/virtupload before it producing http://www.site.com/virtupload/images/my.gif
+Will take an absolute path like c:\www\inetpub\upload\images\my.gif crop away c:\www\inetpub\upload producing /images/my.gif then add `+http://www.example.com/virtupload+` before it producing `+http://www.example.com/virtupload/images/my.gif+`
 
 === Session is destroyed at random
 

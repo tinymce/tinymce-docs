@@ -1,0 +1,200 @@
+= MoxieManager FAQ
+:navtitle: FAQ
+:description: Frequently asked questions and troubleshooting for MoxieManager.
+:keywords: moxiemanager, faq, troubleshooting, support
+
+MoxieManager if created to be easy to integrate with existing server applications such as CMS systems, web hosting controllers or LMS systems.
+
+== License questions
+
+=== Contact our support
+
+If you have any questions in regards to our licensing, please contact link:{supporturl}/[{supportname}].
+
+== Installation/Configuration
+
+=== Basic installation
+
+The MoxieManager is made to work right out of the box, just unzip the files into a publicly available folder on your website, and navigate to the folder using your web browser. You can read more about the installation steps on the xref:moxiemanager-installation.adoc[installation] wiki page.
+
+=== {productname} integration
+
+. Locate your {productname} folder and {productname} configuration options
+. Unpack MoxieManager into `+tinymce/plugins+` folder, so it should be in `+tinymce/plugins/moxiemanager+`.
+. Edit the {productname} configuration, and add `+moxiemanager+` to the plugins config option.
++
+[source,js]
+----
+tinymce.init({
+    plugins: "image moxiemanager",
+    toolbar: "image insertimage insertfile",
+});
+----
+
+That's it.
+
+=== What should i put in the filesystem.rootpath config option?
+
+An absolute or relative path to your website
+
+The root path is the folder where the MoxieManager should start to list your files, no folder above this in the folder structure will be accessible. So it should be something like `+c:\Inetpub\wwwroot\images+` or `+/var/www/htdocs/mywebsite.com/images+` if you are on Linux. It can also be a relative path, such as `+../../images+`.
+
+=== Authentication/Security
+
+Do not run MoxieManager without making sure its secure from public access, unless specifically configured to run in that environment.
+
+After getting MoxieManager to work, you will probably want to configure some sort of Authenticator, if you are integrating into some other system, check out the SessionAuthenticator in the xref:moxiemanager-security.adoc[Documentation] section. The simplest setup is to have your system set a session like `+loggedInKey+` to simply `+true+` and then have the SessionAuthenticator look for that session with correct value.
+
+For other options on how to configure Authentication/Security, check the xref:moxiemanager-security.adoc[Documentation].
+
+=== Virtual directories
+
+When virtual directories are configured, the public path can not be resolved automatically, and it requires some extra configuration.
+
+Example setup if your virtual directory is named "virtupload" pointing to c:\www\inetpub\upload:
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['filesystem.rootpath'] = 'c:\www\inetpub\upload';
+$moxieManagerConfig['filesystem.local.wwwroot'] = 'c:\www\inetpub\upload';
+$moxieManagerConfig['filesystem.local.urlprefix'] = '{proto}://{host}/virtupload/';
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="filesystem.rootpath" value="c:\www\inetpub\upload" />
+<add key="filesystem.local.wwwroot" value="c:\www\inetpub\upload" />
+<add key="filesystem.local.urlprefix" value="{proto}://{host}/virtupload/" />
+----
+
+Will take an absolute path like c:\www\inetpub\upload\images\my.gif crop away c:\www\inetpub\upload producing /images/my.gif then add http://www.site.com/virtupload before it producing http://www.site.com/virtupload/images/my.gif
+
+=== Session is destroyed at random
+
+Microsoft have a great "feature" where it auto reloads the application if you do many file/directory changes inside an application this can however be disables as of version 4.5. So add this to your Web.Config to see if the automatic recycling stops.
+
+[source,xml]
+----
+<httpRuntime fcnMode="Disabled" />
+----
+
+=== How do I get help/support?
+
+First, please look through the FAQ Troubleshooting section below.
+
+If you still need help, link:https://support.tiny.cloud/hc/en-us/requests/new[open a support ticket].
+
+== Troubleshooting
+
+=== Thumbnails are not centered in the thumbnail view
+
+This is due to the wrong doctype in the page opening MoxieManager, set the HTML5 doctype or HTML4 strict and it will look as it should.
+
+[source,html]
+----
+<!DOCTYPE html>
+----
+
+=== Javascript error while loading MoxieManager, uploading files or inserting files
+
+By default, there should not be any javacscript errors, this is usually not due to any frontend issue, but rather the response the interface gets from the backend. Make sure you check write permissions to temp folders, storage folder and your root folder structure if you plan on uploading files to it. Also check log files for clues to why the backend isn't responding properly.
+
+=== Insert image only inserts thumbnail not full size image
+
+You can change this behavior by modifying the moxiemanager_insert_template init option.
+
+=== Thumbnails does not get generated
+
+Verify write access to the images folder, also verify your config options and if on PHP, make sure GD is installed on the server.
+
+=== Uploading to directories fails
+
+Some PHP hosting companies have incorrect settings on their servers these issues can be resolved by:
+
+* Setting the safe_mode_gid setting to true for your host in the vhost config. Since this is the main problem the group is normally correct but not the user.
+* Using the open_basedir is much more efficient to restrict file access across domains than safe_mode.
+* Change the user that apache is running under so it's matched the ftp server or vice versa.
+
+=== I can't upload larger files
+
+Make sure that your application runtime is configured correctly:
+
+PHP settings needed in php.ini you can check this with a phpinfo call.
+
+[source,php]
+----
+; Maximum allowed size for uploaded files.
+upload_max_filesize = 50M
+
+; Maximum size of POST data that PHP will accept.
+post_max_size = 50M
+----
+
+In .NET you need to specify this in your web.config:
+
+[source,xml]
+----
+<system.web>
+<!-- Enable 32MB uploads -->
+<httpRuntime maxRequestLength="32768" />
+</system.web>
+----
+
+=== Could not resolve path
+
+This can be caused by a few different reasons, but often it is related to the path being encoded wrong.
+
+The reason for this is the Prototype javascript library, upgrade to the latest version for the problem to go away.
+
+[source,js]
+----
+// Error/response looks like this
+{"jsonrpc":"2.0","error":{"code":0,"message":"Could not resolve path: [\"\/sub\/folders\/file.png\"]","data":null},"id":"i2"}
+----
+
+=== Images won't display in preview or as thumbnails
+
+On some hosts the preview of images doesn't work as expected there are two common reasons for this to fail. The first one is that the xref:moxiemanager-options.adoc#filesystem-local-wwwroot[filesystem.local.wwwroot] setting can't be auto detected, the second is that the MoxieManager is inside a virtual directory.
+
+* The more common issue with filesystem.local.wwwroot not being auto detected is fairy easy to resolve just set the absolute file system path to where the root of your site is located on disk in that option. For example: `+filesystem.local.wwwroot=/var/www+` or `+filesystem.local.wwwroot=c:/inetpub/wwwroot+` this setting is located in config.php/web.config depending on if you use the PHP or .NET version.
+* The less common issue is when you have a virtual directory for the MoxieManager then you need to set the filesystem.local.wwwroot to where the root of this virtual directory is on disk. For example: `+filesystem.local.wwwroot=/var/www/virtualdir+` and the set the xref:moxiemanager-options.adoc#filesystem-local-urlprefix[filesystem.local.urlprefix] to include the virtual name `+{proto}://{host}/virtualname+`.
+
+If any of these solutions above shouldn't work try enabling logging by setting log.enabled=true and log.level=debug in the config.php/web.config file. This will write a log with the details used to produce an url out of a file system path into the logs directory.
+
+=== Upload and create folder buttons are missing
+
+This is probably due to no write access in the folder being listed.
+
+=== Paths returned are not as I wish to have them
+
+For stand-alone mode, check the xref:moxiemanager-api.adoc#js-browse[API docs], specifically the relative_path and no_host option if you wish to have a site absolute path.
+
+=== Path returned contains only domain or is empty!
+
+This is probably due to the path can not be resolved automatically, usually happens when someone uses aliases/virtual directories or symlinks.
+
+* Try to configure filesystem.local.wwwroot to the root path of your webserver folder (/www/domain/public_html for example). Should be a path, not an URL.
+* If you are using virtual directories, check the above FAQ items under "installation" for tips on how to get that working.
+* If all else fails, use our support ticket system and ask for help, also check the Debugging FAQ item below.
+
+=== Safari upload does not work, "No input file specified"
+
+This is usually due to old Safari versions, or use of Safari on Windows, a browser that is discontinued. Please use the latest version (on Mac), or a different browser (on PC).
+
+=== MoxieManager is not rendered correct or starting up correctly
+
+Go to the moxiemanager/examples.html file and see if the same problem exists there, if it does not, it probably means a buggy or badly written javascript causes issues, try removing them one by one on your page until things work to find out what script might be causing it.
+
+=== Debugging (PHP)
+
+If you enable xref:moxiemanager-options.adoc#general-debug[general.debug] in your config options, then go to moxiemanager/api.php?action=debug you can view the output of some debugging points, if you request support through our ticket system, be sure to include this information in the ticket.
+
+=== SessionAuthenticator/Sessions not working (.NET)
+
+One common mistake is when you copy the configuration values from the MoxieManager Web.config file into a global Web.config file and forget to remote the MoxieManager Web.config. In this case, the settings you change in the global Web.config file will be overwritten by the Web.config in the MoxieManager folder, either keep the MoxieManager Web.config in its folder and reconfigure that, or remove it alltogether and just use the settings from the global Web.config.
+
+The moxiemanager needs to be in the same application as the rest of your site/system to be able to share session data.

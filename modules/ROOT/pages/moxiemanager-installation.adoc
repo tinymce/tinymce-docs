@@ -1,0 +1,223 @@
+= MoxieManager installation
+:navtitle: Installation
+:description: Install MoxieManager for PHP or .NET, as a standalone file manager or as a {productname} plugin.
+:keywords: moxiemanager, installation, php, .net, upgrading, troubleshooting
+
+Installing MoxieManager should be fairly simple, but mastering all the options can be harder.
+
+And if you have problems, xref:moxiemanager-faq.adoc[check out the FAQ] and if that doesn't work, use the ticket system from your account.
+
+PHP and .NET have the same features.
+
+* xref:#installation-php[Read this for PHP installation instructions.]
+* xref:#installation-net[Read this for .NET installation instructions.]
+
+NOTE: Please note that a lot of the documentation is still for the PHP version, all config examples that looks like $moxieManagerConfig[""]; is of course edited in the Web.config file for .NET.
+
+[[installation-php]]
+== PHP installation
+
+Installing MoxieManager should be fairly simple, but mastering all the options can be harder.
+
+=== Requirements
+
+* PHP version of at least *8* is required for MoxieManager 3.0.0 and later. Version 3.0.0 added support for PHP 8.2 and removed support for PHP 7.x.
+* Earlier versions of MoxieManager require PHP version of at least *5.3*. For PHP 7, you need at least version 2.0.10 of MoxieManager.
+* As for other PHP extensions, *GD image library* is required if you wish to use any image editing capabilities.
+* *Exif extension* is also recommended but Exif features can be turned off, basically only used to extract a thumbnail if it exists.
+* *Any "normal" browser* that isn't to old should work just fine with MoxieManager, older browser versions might have a different look though.
+* A modern *HTML5 or HTML4 Strict doctype* (<!DOCTYPE html>) is required to get the UI to render properly.
+* Weird shared hosting PHP security settings (mostly really bad shared hosting setups) can cause various permission issues.
+
+=== Basic installation
+
+Here are the basic steps for installing the moxiemanager in standalone mode.
+
+. Unpack the zip file and upload it to your web server. For example: c:/inetpub/wwwroot/moxiemanager
+. Open the moxiemanager in a browser for example http://localhost/moxiemanager/
+. Follow the instructions in the installer, it will create the config.php file for you.
+
+The next step is to configure it exactly as you might want it.
+
+=== {productname} installation
+
+Installing as a plugin to {productname} is also fairly simple.
+
+. Locate your {productname} folder
+. Locate your {productname} config options (wherever they may be in whatever system you are using), should look something like this `+tinymce.init{/*... lots of config options ...*/}+`
+. Unpack MoxieManager into your tinymce/plugins folder, so it ends up in tinymce/plugins/moxiemanager.
+. Edit the tinymce.init\{} and insert "moxiemanager" into the plugins list, should look something like this:
++
+[source,js]
+----
+tinymce.init({
+    selector: "textarea",
+    plugins: "link table code save moxiemanager",
+});
+----
+
+That should really be it, next step would be to fine tune the xref:moxiemanager-options.adoc[config] options.
+
+==== Custom MoxieManager location
+
+If you wish to put MoxieManager in a different folder, or are running the CDN version of {productname}, you can use the xref:editor-important-options.adoc#external_plugins[external_plugins] option in {productname}.
+
+[source,js]
+----
+tinymce.init({
+    ...
+    external_plugins: {
+        "moxiemanager": "/moxiemanager/plugin.min.js"
+    }
+});
+----
+
+The path in this case is the root of the website, for example, if MoxieManager where installed in c:/inetpub/wwwroot/moxiemanager and c:/inetpub/wwwroot is the root of the website.
+
+=== Next step - configuration
+
+After the installation, standalone or in tinymce, you probably want to change some config options.
+
+The most important configuration option (*config.php*) is this:
+
+[source,php]
+----
+$moxieManagerConfig['filesystem.rootpath'] = "";
+----
+
+xref:moxiemanager-options.adoc#filesystem-rootpath[Read more about this option here]
+
+This is where your files are listed from, this can be an absolute or relative Path from the MoxieManager folder.
+
+`+Absolute: /var/htdocs/mydomain/html+`
+
+`+Relative: ../../../documents+`
+
+NOTE: Please note that if you are using *symlinks/aliases/virtual directories*, you might need additional configuration, but the rootpath should be *set to the actuall path on server*, not the path including the symlink/alias/virtual dir.
+
+Add a name to your path:
+
+`+MyName=../path/to/files+`
+
+* You probably want some form of authentication, check out the xref:moxiemanager-security.adoc[Authentication integration help]. If you wish to turn off the authenticator, only recommended for testing or if you are behind basic authentication already, you simply set the `+$moxieManagerConfig["authenticator"] = "";+` to an empty string.
+* Now, if you wish to configure plugins, you should check out the xref:moxiemanager-options.adoc#general-plugins[general.plugins] option.
+* If you wish to use mc_access to set folder specific options, xref:moxiemanager-how-to-guides.adoc#how-to-use-mc-access[check out our how to].
+* And if you have problems, xref:moxiemanager-faq.adoc[check out the FAQ] of course!
+
+[[installation-net]]
+== .NET installation
+
+Installing MoxieManager should be fairly simple, but mastering all the options can be harder.
+
+=== Requirements
+
+* MoxieManager will only work with *.NET 4.5 Framework*, download http://www.microsoft.com/en-us/download/details.aspx?id=30653[here].
+* A modern *HTML5 or HTML4 Strict doctype* (<!DOCTYPE html>) is required to get the UI to render properly.
+
+=== Basic installation
+
+Here are the basic steps for installing the moxiemanager in standalone mode.
+
+NOTE: Please note, there is no Visual Studio Building required to make this software work.
+
+. Unpack the zip file and upload it to your web server. For example: c:/inetpub/wwwroot/moxiemanager
+. Copy all the DLL files moxiemanager/bin to your root bin folder.
+. Open up moxiemanager/Web.config (you need all values in this file)
+.. Insert your license key into "xref:moxiemanager-options.adoc#general-license[general.license]"
+.. Configure your "xref:moxiemanager-options.adoc#filesystem-rootpath[filesystem.rootpath]" if you wish to change the default
+.. Configure an "xref:moxiemanager-options.adoc#authenticator[authenticator]", check the xref:moxiemanager-plugins.adoc[plugins page for more info].
+. Check write access to xref:moxiemanager-options.adoc#filesystem-rootpath[filesystem.rootpath] you configured above (for IIS_IUSRS), if you want upload to work.
+. Add a mimetype for icon fonts to your IIS settings if its not already done, add for .woff (application/font-woff) files.
+. Direct your browser to the moxiemanager installation folder to try it out.
+
+NOTE: Please note that if you move the *Web.config* settings into a global website Web.config, *do not forget to remove the original* in the MoxieManager folder, or all configurations will be overwritten by the local ones.
+
+If you get a 500 internal server error, first, check your .NET version, only .NET 4.5 Framework is supported. Next, make sure you copied the DLL files to the root bin folder.
+
+If you encounter any problems, check the xref:moxiemanager-faq.adoc[FAQ] or use the support ticket system to submit tickets.
+
+=== {productname} installation
+
+Installing as a plugin to {productname} is also fairly simple.
+
+. Locate your {productname} folder
+. Locate your {productname} config options (wherever they may be in whatever system you are using), should look something like this `+tinymce.init{/*... lots of config options ...*/}+`
+. Unpack MoxieManager into your tinymce/plugins folder, so it ends up in tinymce/plugins/moxiemanager.
+. *Follow section 2 to 4* in the above basic installation.
+. Edit the tinymce.init\{} and insert "moxiemanager" into the plugins list, should look something like this:
++
+[source,js]
+----
+tinymce.init({
+    selector: "textarea",
+    plugins: "link table code save moxiemanager",
+});
+----
+
+* For more detailed authentication info, check out the xref:moxiemanager-security.adoc[Authentication integration help]. If you wish to turn off the authenticator, only recommended for testing or if you are behind basic authentication already, you simply set the `+$moxieManagerConfig["authenticator"] = "";+` to an empty string.
+* Now, if you wish to configure plugins, you should check out the xref:moxiemanager-options.adoc#general-plugins[general.plugins] option.
+* If you wish to use mc_access to set folder specific options, xref:moxiemanager-how-to-guides.adoc#how-to-use-mc-access[check out our how to].
+* And if you have problems, xref:moxiemanager-faq.adoc[check out the FAQ] of course!
+
+==== Custom MoxieManager location
+
+If you wish to put MoxieManager in a different folder, or are running the CDN version of {productname}, you can use the xref:editor-important-options.adoc#external_plugins[external_plugins] option in {productname}.
+
+[source,js]
+----
+tinymce.init({
+    ...
+    external_plugins: {
+        "moxiemanager": "/moxiemanager/plugin.min.js"
+    }
+});
+----
+
+The path in this case is the root of the website, for example, if MoxieManager where installed in c:/inetpub/wwwroot/moxiemanager and c:/inetpub/wwwroot is the root of the website.
+
+== Upgrading
+
+Usually, you should just replace the old files with all the new files in the updated package, making sure to overwrite. With the exception of the config file, most of the times (perhaps not on major updates) you should be able to save your config file, but if you have some trouble after upgrading, replacing and re-doing the configuration might help you solve some issues.
+
+There might also be updates to the UI and Javascript files of MoxieManager, then you need to make sure you clear your browser cache. If you use MoxieManager with {productname}, you can use the cache suffix and change that, to force a reload of the cached files.
+
+Check out the xref:editor-important-options.adoc#cache_suffix[cache_suffix option] in the {productname} configuration.
+
+If you use MoxieManager standalone, you can add or change the loader.min.js script file querystring, and it should drop the cache files loaded.
+
+`+<script src="moxiemanager/loader.min.js?v=2"></script>+`
+
+== Troubleshooting
+
+If you are having issues, first thing to check is *write permissions*, make sure you can write to the *temp folder*, by default, it uses system temp folder, but you can reconfigure that using xref:moxiemanager-options.adoc#general-temp-dir[general.temp_dir]. If you want upload/create folder to work, make sure write access to the listed folder is also correct. You may also need *write permissions to the storage folder* (moxiemanager/data/storage by default) if you wish to use those features.
+
+Another common issue is that *thumbnails aren't shown centered in the thumbnail view* of MoxieManager, this is due to wrong doctype in the document opening MoxieManager, set the HTML5 (or HTML4 Strict) doctype and it will work.
+
+[source,html]
+----
+<!DOCTYPE html>
+----
+
+Also check the xref:moxiemanager-faq.adoc[FAQ] for common issues!
+
+*Advanced debugging*, you can access the debugging tool by setting xref:moxiemanager-options.adoc#general-debug[general.debug] to true in your config, then go directly to the following url with your browser (moxiemanager is the folder where you have installed it ofc):
+
+.Example for PHP integrations
+
+[source,php]
+----
+moxiemanager/api.php?action=debug
+----
+
+.Example for .NET integrations
+
+[source]
+----
+moxiemanager/api.ashx?action=debug
+----
+
+This should give you some information about your system.
+
+== Support
+
+To get support, link:https://support.tiny.cloud/hc/en-us/requests/new[open a support ticket] with link:{supporturl}/[{supportname}].

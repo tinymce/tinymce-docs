@@ -1,0 +1,2661 @@
+= MoxieManager options
+:navtitle: Options
+:description: Reference for MoxieManager client-side and server-side configuration options.
+:keywords: moxiemanager, options, configuration, config.php, web.config
+
+Here is a complete reference to all available configuration options.
+
+[[tinymce-specific-options]]
+== {productname}-specific options
+
+[[moxiemanager-file-template]]
+=== `+moxiemanager_file_template+`
+
+This {productname} specific option enables you to insert the selected files as custom HTML. The option expects an HTML string with variables that gets replaced with file data.  This template is used by the insertfile toolbar button and gets used when you insert non image files such as pdf files this would normally be a link to that document.
+
+==== Variables
+
+[cols=",",options="header",]
+|===
+|Variable |Description
+|`+url+` |Url to the selected file.
+|`+name+` |Name of the selected file.
+|`+path+` |Absolute path to the selected file.
+|`+size+` |Size of the selected file in bytes.
+|`+parentPath+` |Absolute path to the parent directory of the selected file.
+|===
+
+==== Encoders
+
+Variable values can also be encoded to various formats. These are the built in encoders:
+
+[cols=",",options="header",]
+|===
+|Name |Description
+|`+urlencode+` |Encodes the variable in url encoding format.
+|`+xmlEncode+` |Encodes the variable in XML encoding. For example these: < > & " '.
+|`+sizeSuffix+` |Adds a suffix to sizes for kb/mb etc.
+|===
+
+==== Examples
+
+Insert file with name and size suffix:
+
+[source,js]
+----
+moxiemanager_file_template: '<a href="{$url}">{$name} {$size|sizeSuffix}</a>'
+----
+
+[[moxiemanager-image-template]]
+=== `+moxiemanager_image_template+`
+
+This {productname} specific option enables you to insert the selected images as custom HTML. The option expects an HTML string with variables that gets replaced with file data. This template is used by the insertfile toolbar button and gets used when you insert images.
+
+==== Variables
+
+[cols=",",options="header",]
+|===
+|Variable |Description
+|`+url+` |Url to the selected file.
+|`+name+` |Name of the selected file.
+|`+path+` |Absolute path to the selected file.
+|`+size+` |Size of the selected file in bytes.
+|`+parentPath+` |Absolute path to the parent directory of the selected file.
+|`+meta.width+` |Width of the selected image.
+|`+meta.height+` |Height of the selected image.
+|`+meta.thumb_url+` |Url to the thumbnail for the selected image.
+|`+meta.thumb_width+` |Width of the thumbnail for the selected image.
+|`+meta.thumb_height+` |Height of the thumbnail for the selected image.
+|===
+
+==== Encoders
+
+Variable values can also be encoded to various formats. These are the built in encoders:
+
+[cols=",",options="header",]
+|===
+|Name |Description
+|`+urlencode+` |Encodes the variable in url encoding format.
+|`+xmlEncode+` |Encodes the variable in XML encoding. For example these: < > & " '.
+|`+sizeSuffix+` |Adds a suffix to sizes for kb/mb etc.
+|===
+
+==== Examples
+
+Insert image thumbnail with lightbox link to fullsize image:
+
+[source,js]
+----
+tinymce.init({
+    ...
+    moxiemanager_image_template: '<a href="{$url}" rel="lightbox"><img src="{$meta.thumb_url}" /></a>'
+});
+----
+
+[[tinymce-and-moxman-options]]
+== {productname} and MoxMan options
+
+[[date-format]]
+=== `+date_format+`
+
+The date_format settings allows you to set the format string to be used when producing strings out of date objects returned from the server. This option can be used both in standalone mode and integrated with {productname} it will default to the current language pack format.
+
+==== Example of usage in {productname}
+
+[source,js]
+----
+tinymce.init({
+    ...,
+    moxiemanager_date_format: '%Y-%d-%m %H:%M:%S'
+});
+----
+
+==== Example of usage in standalone mode
+
+[source,js]
+----
+moxman.browse({
+    date_format: '%Y-%d-%m %H:%M:%S'
+});
+----
+
+==== Date format items
+
+[cols=",",options="header",]
+|===
+|Item |Description
+|`+%D+` |mm/dd/yy (same as %m/%d/%y)
+|`+%r+` |12-hour clock time hh:mm:ss with AM or PM (same as %I:%M:%S %p)
+|`+%y+` |year as a decimal number without a century (range 00 to 99)
+|`+%Y+` |year as a decimal number including the century
+|`+%m+` |month as a decimal number (range 01 to 12)
+|`+%B+` |full localised month name (e.g. "January")
+|`+%b+` |abbreviated localised month name (e.g. "Jan")
+|`+%d+` |day of the month as a decimal number (range 01 to 31)
+|`+%A+` |full localised weekday name (e.g. "Monday")
+|`+%a+` |abbreviated localised weekday name (e.g. "Mon")
+|`+%H+` |hour as a decimal number using a 24-hour clock (range 00 to 23)
+|`+%I+` |hour as a decimal number using a 12-hour clock (range 01 to 12)
+|`+%M+` |minute as a decimal number (range 00-59)
+|`+%S+` |second as a decimal number (range 00-59)
+|`+%p+` |either "am" or "pm" according to the given time value
+|`+%%+` |a literal "%" character
+|===
+
+[[editimage-actions-toolbar]]
+=== `+editimage_actions_toolbar+`
+
+This option enables you to configure what xref:#controls[buttons] to display in the actions toolbar of the edit image view. The defaults for this config option is "resize crop fliprotate brightness contrast exposure gamma hue saturate sepia vibrance triangleblur colorize grayscale invert sharpen emboss" see the examples below on how to configure it.
+
+==== Example of usage in {productname}
+
+[source,js]
+----
+tinymce.init({
+    ...
+    moxiemanager_editimage_actions_toolbar: 'resize crop fliprotate brightness contrast exposure gamma hue saturate sepia vibrance triangleblur colorize grayscale invert sharpen emboss'
+});
+----
+
+==== Example of usage in standalone mode
+
+[source,js]
+----
+moxman.edit({
+    ...
+    editimage_actions_toolbar: 'resize crop fliprotate brightness contrast exposure gamma hue saturat sepia vibrance triangleblur colorize grayscale invert sharpen emboss'
+});
+----
+
+[[editimage-main-toolbar]]
+=== `+editimage_main_toolbar+`
+
+This option enables you to configure what xref:#controls[buttons] to display in the main toolbar of the edit image view. The defaults for this config option is "save revert undo redo" see the examples below on how to configure it.
+
+==== Example of usage in {productname}
+
+[source,js]
+----
+tinymce.init({
+    ...
+    moxiemanager_editimage_main_toolbar: 'save revert undo redo'
+});
+----
+
+==== Example of usage in standalone mode
+
+[source,js]
+----
+moxman.edit({
+    ...
+    editimage_main_toolbar: 'save revert undo redo'
+});
+----
+
+[[editimage-zoom-toolbar]]
+=== `+editimage_zoom_toolbar+`
+
+This option enables you to configure what xref:#controls[buttons] to display in the zoom toolbar of the edit image view. The defaults for this config option is "zoomfit zoom" see the examples below on how to configure it.
+
+==== Example of usage in {productname}
+
+[source,js]
+----
+tinymce.init({
+    ...
+    moxiemanager_editimage_zoom_toolbar: 'zoomfit zoom'
+});
+----
+
+==== Example of usage in standalone mode
+
+[source,js]
+----
+moxman.edit({
+    ...
+    editimage_zoom_toolbar: 'zoomfit zoom'
+});
+----
+
+[[filelist-main-toolbar]]
+=== `+filelist_main_toolbar+`
+
+This option enables you to configure what to xref:#controls[buttons] to display in the main toolbar of the filelist browse view. The defaults for this config option is "create upload manage" see the examples below on how to configure it.
+
+==== Example of usage in {productname}
+
+[source,js]
+----
+tinymce.init({
+    ...
+    moxiemanager_filelist_main_toolbar: 'create upload manage'
+});
+----
+
+==== Example of usage in standalone mode
+
+[source,js]
+----
+moxman.browse({
+    ...
+    filelist_main_toolbar: 'create upload manage'
+});
+----
+
+[[filelist-insert-toolbar]]
+=== `+filelist_insert_toolbar+`
+
+This option enables you to configure what xref:#controls[buttons] to display in the insert/close toolbar of the filelist browse view. The defaults for this config option is "insert close" see the examples below on how to configure it.
+
+==== Example of usage in {productname}
+
+[source,js]
+----
+tinymce.init({
+    ...
+    moxiemanager_filelist_insert_toolbar: 'insert close'
+});
+----
+
+==== Example of usage in standalone mode
+
+[source,js]
+----
+moxman.browse({
+    ...
+    filelist_insert_toolbar: 'insert close'
+});
+----
+
+[[filelist-utils-toolbar]]
+=== `+filelist_utils_toolbar+`
+
+This option enables you to configure what xref:#controls[buttons] to display in the utils toolbar of the filelist browse view. The defaults for this config option is "refresh viewmode sort filter" see the examples below on how to configure it.
+
+==== Example of usage in {productname}
+
+[source,js]
+----
+tinymce.init({
+    ...
+    moxiemanager_filelist_utils_toolbar: 'refresh viewmode sort filter'
+});
+----
+
+==== Example of usage in standalone mode
+
+[source,js]
+----
+moxman.browse({
+    ...
+    filelist_utils_toolbar: 'refresh viewmode sort filter'
+});
+----
+
+[[filelist-manage-menu]]
+=== `+filelist_manage_menu+`
+
+This option enables you to configure what xref:#controls[menu items] to display in the menu for the manage button in the main toolbar of the filelist browse view. The defaults for this config option is "cut copy paste | view edit rename download addfavorite | zip unzip | remove" see the examples below on how to configure it.
+
+==== Example of usage in {productname}
+
+[source,js]
+----
+tinymce.init({
+    ...
+    moxiemanager_filelist_manage_menu: 'cut copy paste | view edit rename download addfavorite | zip unzip | remove'
+});
+----
+
+==== Example of usage in standalone mode
+
+[source,js]
+----
+moxman.browse({
+    ...
+    filelist_manage_menu: 'cut copy paste | view edit rename download addfavorite | zip unzip | remove'
+});
+----
+
+[[filelist-context-menu]]
+=== `+filelist_context_menu+`
+
+This option enables you to configure what xref:#controls[menu items] to display in the contextmenu of the filelist browse view. The defaults for this config option is "cut copy paste | view edit rename download addfavorite | zip unzip | remove" see the examples below on how to configure it.
+
+==== Example of usage in {productname}
+
+[source,js]
+----
+tinymce.init({
+    ...
+    moxiemanager_filelist_context_menu: 'cut copy paste | view edit rename download addfavorite | zip unzip | remove'
+});
+----
+
+==== Example of usage in standalone mode
+
+[source,js]
+----
+moxman.browse({
+    ...
+    filelist_context_menu: 'cut copy paste | view edit rename download addfavorite | zip unzip | remove'
+});
+----
+
+[[insert-filter]]
+=== `+insert_filter+`
+
+This option allows you to alter the contents of the JSON that gets inserted into the editor or form field. You can for example change the url to something that matches your needs. See the example below on how to change the url of the inserted file.
+
+==== Example of usage in {productname}
+
+[source,js]
+----
+tinymce.init({
+    ...,
+    moxiemanager_insert_filter: function(file) {
+        // Url is located both at the root level and the meta level
+        file.url += '?id=42';
+        file.meta.url = file.url;
+
+        // Override the size
+        file.size = file.size * 2;
+    }
+});
+----
+
+==== Example of usage in standalone mode
+
+[source,js]
+----
+moxman.browse({
+    ...
+    insert_filter: function(file) {
+        // Url is located both at the root level and the meta level
+        file.url += '?id=42';
+        file.meta.url = file.url;
+
+        // Override the size
+        file.size = file.size * 2;
+    }
+});
+----
+
+[[remember-last-path]]
+=== `+remember_last_path+`
+
+When this option is sets the MoxieManager to open the last path the user was in when a file was inserted. This won't be persistent when the page reloads.
+
+==== Example of usage in {productname}
+
+[source,js]
+----
+tinymce.init({
+    ...
+    moxiemanager_remember_last_path: true
+});
+----
+
+==== Example of usage in standalone mode
+
+[source,js]
+----
+moxman.browse({
+    ...
+    remember_last_path: true
+});
+----
+
+[[sort-by]]
+=== `+sort_by+`
+
+When this option lets you change the column to sort the files by this defaults to "name". Valid options are name, size, extension, lastModified. You can also change the xref:#sort-order[sort order].
+
+==== Example of usage in {productname}
+
+[source,js]
+----
+tinymce.init({
+    ...
+    moxiemanager_sort_by: "size"
+});
+----
+
+==== Example of usage in standalone mode
+
+[source,js]
+----
+moxman.browse({
+    ...
+    sort_by: "size"
+});
+----
+
+[[sort-order]]
+=== `+sort_order+`
+
+When this option lets you change the order sort the files by this defaults to "asc" but can be set to "desc" for descending order. You can also change column to xref:#sort-by[sort by].
+
+==== Example of usage in {productname}
+
+[source,js]
+----
+tinymce.init({
+    ...
+    moxiemanager_sort_order: "desc"
+});
+----
+
+==== Example of usage in standalone mode
+
+[source,js]
+----
+moxman.browse({
+    ...
+    sort_order: "desc"
+});
+----
+
+[[unique-urls]]
+=== `+unique_urls+`
+
+This option allows to generate unique urls from files based on their file size and their last modification date. This will help you bust the browser cache where it would normally cache every image.
+
+==== Example of usage in {productname}
+
+[source,js]
+----
+tinymce.init({
+    ...,
+    moxiemanager_unique_urls: true
+});
+----
+
+==== Example of usage in standalone mode
+
+[source,js]
+----
+moxman.browse({
+    ...
+    unique_urls: true
+});
+----
+
+[[controls]]
+== Controls
+
+=== File list controls
+
+[cols=",",options="header",]
+|===
+|Control name |Description
+|`+create+` |Create folder/document menu button. Displays a list of folder and document templates.
+|`+upload+` |Upload menu button. Lets you select files from local file system or external locations.
+|`+manage+` |Manage menu button. Displays a list of manage options for the current selection.
+|`+refresh+` |Refreshes the current file list.
+|`+viewmode+` |Switches the current viewmode from thumbnails to a file list.
+|`+sort+` |Changes the sorting of the current file list/thumbnail list
+|`+filter+` |Lets you filter the current file list.
+|`+insert+` |Insets the currently selected files.
+|`+close+` |Closes the current dialog.
+|`+fileinfo+` |Displays a dialog with the file paths.
+|===
+
+=== Edit image controls
+
+[cols=",",options="header",]
+|===
+|Control name |Description
+|`+save+` |Saves the current image to a user defined file name.
+|`+revert+` |Reverts all changes to the current image.
+|`+undo+` |Undoes the last action.
+|`+redo+` |Redoes the previous action.
+|`+zoomfit+` |Zooms the current image to fit the editor view.
+|`+zoom+` |Lets the user dynamically change the zoom level.
+|`+resize+` |Resizes the current image.
+|`+crop+` |Crops the current image.
+|`+fliprotate+` |Flips or rotates the current image.
+|`+brightness+` |Changes the brightness of the current image.
+|`+contrast+` |Changes the contrast of the current image.
+|`+exposure+` |Changes the exposure of the current image.
+|`+gamma+` |Changes the gamma of the current image.
+|`+hue+` |Changes the hue of the current image.
+|`+saturate+` |Saturates the current image.
+|`+sepia+` |Changes the sepcia of the current image.
+|`+vibrance+` |Changes the vibrance of the current image.
+|`+triangleblur+` |Adds triangle blur to the current image.
+|`+colorize+` |Colorizes the current image.
+|`+grayscale+` |Changes the current image to grayscale.
+|`+invert+` |Inverts the current image.
+|`+sharpen+` |Sharpens the current image.
+|`+emboss+` |Applies embross to the current image.
+|===
+
+[[general]]
+== General
+
+[[general-allow-override]]
+=== `+general.allow_override+`
+
+Allow override of config options using mc_access files.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['general.allow_override'] = 'hidden_tools,disabled_tools';
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="general.allow_override" value="hidden_tools,disabled_tools" />
+----
+
+xref:moxiemanager-how-to-guides.adoc#how-to-use-mc-access[Read more about mc_access files here.]
+
+[[general-debug]]
+=== `+general.debug+`
+
+More details error messages, enable this if you are troubleshooting the software.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['general.debug'] = true;
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="general.debug" value="true" />
+----
+
+[[general-demo]]
+=== `+general.demo+`
+
+Demo mode, boolean option, usefull for safe public demo.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['general.demo'] = false;
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="general.demo" value="false" />
+----
+
+[[general-disabled-tools]]
+=== `+general.disabled_tools+`
+
+Disable tools from the user interface.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig["general.disabled_tools"] = "upload";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="general.disabled_tools" value="upload" />
+----
+
+A list of tools:
+
+* upload
+* create
+* manage
+* filter
+
+[[general-hidden-tools]]
+=== `+general.hidden_tools+`
+
+Hide tools from the user interface.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig["general.hidden_tools"] = "upload";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="general.hidden_tools" value="upload" />
+----
+
+A list of tools:
+
+* upload
+* create
+* manage
+* filter
+
+[[general-language]]
+=== `+general.language+`
+
+Set default xref:moxiemanager-languages.adoc[language] loaded, default language is English.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['general.language'] = 'en';
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="general.language" value="en" />
+----
+
+[[general-license]]
+=== `+general.license+`
+
+This is where you should put your license key you get from purchasing our software.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['general.license'] = false;
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="general.license" value="false" />
+----
+
+[[general-plugins]]
+=== `+general.plugins+`
+
+This is only for PHP
+
+A string controling the plugins loaded and used.
+
+[source,php]
+----
+$moxieManagerConfig['general.plugins'] = 'Favorites,History,Uploaded,Ftp';
+----
+
+xref:moxiemanager-plugins.adoc[Read more about plugins] here, but note that Authenticators are not suppose to be configured in the general.plugins option, but rather in the authenticator option.
+
+==== .NET plugins
+
+You need to configure the .NET plugins in your Web.Config file, example follows:
+
+[source,xml]
+----
+<plugins>
+  <plugin type="MoxieManager.Plugins.SessionAuthenticator.Plugin" />
+  <plugin type="MoxieManager.Plugins.Favorites.Plugin" />
+ <plugin type="MoxieManager.Plugins.History.Plugin" />
+   <plugin type="MoxieManager.Plugins.Uploaded.Plugin" />
+</plugins>
+----
+
+[[general-temp-dir]]
+=== `+general.temp_dir+`
+
+This should point to a writable temp directory, does not need to be accessible through the server, in fact, we recommend you set this to something above your webroot.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['general.temp_dir'] = '../data/temp';
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="general.temp_dir" value="../data/temp" />
+----
+
+[[authentication]]
+== Authentication
+
+[[authenticator]]
+=== authenticator
+
+Set this to whatever authenticator you are planing to use.
+
+The most common are:
+
+* xref:moxiemanager-security.adoc#basicauthenticator[BasicAuthenticator]
+* xref:moxiemanager-security.adoc#sessionauthenticator[SessionAuthenticator]
+* xref:moxiemanager-security.adoc#external-authentication[ExternalAuthenticator]
+
+==== PHP example
+
+[source,php]
+----
+$moxieManagerConfig["authenticator"] = "";
+----
+
+==== .NET example
+
+[source,xml]
+----
+<add key="authenticator" value="BasicAuthenticator" />
+----
+
+If you wish to use no authenticator/login, you can set the config option to an empty string, but please note that your opening your files up to external users
+
+[[filesystem]]
+== Filesystem
+
+[[filesystem-rootpath]]
+=== `+filesystem.rootpath+`
+
+This is the most important thing to configure, the path where files will be listed/shown, it can be an absolute or relative path (relative from the moxiemanager installation folder).
+
+==== Named paths
+
+You can also set a name for the path, this name will show up in the list on the right side instead of the last foldername, useful when you have ID's as names etc. You simply construct your rootpath like so: `+myname=/path/to/files+`
+
+.Example for PHP integrations
+
+[source,php]
+----
+// Single path
+$moxieManagerConfig['filesystem.rootpath'] = "/var/www/htdocs/mysite.com/files";
+
+// Multiple named paths
+$moxieManagerConfig['filesystem.rootpath'] = "Myfiles=../myfiles;YourFiles=../yourfiles";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<!-- Single path -->
+<add key="filesystem.rootpath" value="C:/Inetpub/wwwroot/mysite" />
+
+<!-- Multiple named paths -->
+<add key="filesystem.rootpath" value="Myfiles=../myfiles;YourFiles=../yourfiles" />
+----
+
+[[filesystem-include-directory-pattern]]
+=== `+filesystem.include_directory_pattern+`
+
+Match a directory to always include with REGEX, default is empty.
+
+[source,php]
+----
+$moxieManagerConfig['filesystem.include_directory_pattern'] = '/^(myfolder|yourfolder)$/i';
+----
+
+[[filesystem-exclude-directory-pattern]]
+=== `+filesystem.exclude_directory_pattern+`
+
+Exclude one of more directories matching a regual expression.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['filesystem.exclude_directory_pattern'] = '/^(mcith|secret)$/i';
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="filesystem.exclude_directory_pattern" value="/^(mcith|secret)$/i" />
+----
+
+[[filesystem-include-file-pattern]]
+=== `+filesystem.include_file_pattern+`
+
+Include files by a REGEX pattern.
+
+[source,php]
+----
+$moxieManagerConfig['filesystem.include_file_pattern'] = '/(\.gif|\.jpg\.png)$/i';
+----
+
+This example matches only gif, jpg and png file extensions.
+
+[[filesystem-exclude-file-pattern]]
+=== `+filesystem.exclude_file_pattern+`
+
+Exlcude files by REGEX pattern.
+
+[source,php]
+----
+$moxieManagerConfig['filesystem.exclude_file_pattern'] = '/\.php$/i';
+----
+
+This example excludes all PHP files.
+
+[[filesystem-extensions]]
+=== `+filesystem.extensions+`
+
+A list of extensions that gets listed inside the MoxieManager this will also restrict what the user may upload. You can restict uploads further using the xref:#upload-extensions[upload.extensions] config option.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['filesystem.extensions'] = 'jpg,png,gif,zip,pdf,doc';
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="filesystem.extensions" value="jpg,png,gif,zip,pdf,doc" />
+----
+
+[[filesystem-readable]]
+=== `+filesystem.readable+`
+
+Set readable true/false, usefull if you want to disable read access.
+
+[source,php]
+----
+$moxieManagerConfig['filesystem.readable'] = true;
+----
+
+[[filesystem-writable]]
+=== `+filesystem.writable+`
+
+Control write access to folder.
+
+[source,php]
+----
+$moxieManagerConfig['filesystem.writable'] = true;
+----
+
+[[filesystem-directories]]
+=== `+filesystem.directories+`
+
+This config option enables you to override global config options on directories matching a specific pattern. This pattern can either be a public file system path like "/files/documents" or a directory name like "images".
+
+If a public file system path is specified that specific path and all directories below it would get the new option. If you specify only a directory name any directory anywhere matching that exact name would have the speicifed config options.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['filesystem.directories'] = array(
+    "images" => array(
+        "upload.extensions" => "gif,jpg,png"
+    ),
+
+    "/files/documents" => array(
+        "upload.extensions" => "docx,pdf"
+    )
+);
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="filesystem.directories">
+    <directory pattern="images">
+        <add key="upload.extensions" value="gif,jpg,png" />
+    </directory>
+
+    <directory pattern="/files/documents">
+        <add key="upload.extensions" value="docx,pdf" />
+    </directory>
+</add>
+----
+
+[[filesystem-overwrite-action]]
+=== `+filesystem.overwrite_action+`
+
+This option lets you specify a default action to execute instead of asking the user what to do if a file already exists on for example upload.
+
+==== Options for this setting
+
+[cols="1,3"]
+|===
+|`+rename+` |Generate an unique name for the file by adding a number to the end of it.
+|`+skip+` |Skip the file and move on to the next one.
+|`+overwrite+` |Overwrite the file.
+|`+ask+` |Ask the user what it's supposed to do.
+|===
+
+[[filesystem-allow-override]]
+=== `+filesystem.allow_override+`
+
+Allow specific settings to be overriden by mc_access files.
+
+[source,php]
+----
+$moxieManagerConfig['filesystem.allow_override'] = '*';
+----
+
+[[local-filesystem]]
+== Local filesystem
+
+[[filesystem-local-wwwroot]]
+=== `+filesystem.local.wwwroot+`
+
+This option should contain the local file system path to the web servers wwwroot.
+
+It will automatically detect the wwwroot by default but some very specific server setups might need this one to be defined.
+
+The wwwroot should be the point http://www.site.com/ points to in windows this is normally `+c:/Inetpub/wwwroot+` or in Linux it might be `+/var/www+` this depends on the server setup.
+
+This setting is used to map file paths such as `+c:/Inetpub/wwwroot/somedir/somefile.gif+` into URLs such as `+http://www.mysite.com/somedir/somefile.gif+` it's doing this by taking the path and removing the wwwroot part.
+
+So for example if the preview.wwwroot is configured to `+c:/Inetpub/wwwroot+` it will then take a path like this `+c:/Inetpub/wwwroot/somedir/somefile.gif+` and convert it by removing the first part and the result would be `+/somedir/somefile.gif+` it will then use other options such as `+filesystem.local.urlprefix+` and `+filesystem.local.urlsuffix+` to build a complete URL such as `+http://www.mysite.com/mydir/myfile.gif?somesuffix=x+`
+
+If you are using virtual directories, you must configure this option to the point where the files for the virtual directory is stored. For example d:/myroot/mydir if the virtual directory points to d:/myroot/mydir
+
+If you are using an Apache Alias the value for this option is the alias file system location
+
+==== Advanced WWWROOT configuration
+
+If you are using multiple rootpaths and need multiple wwwroot options, you can set this instead of the standard options.
+
+[source,php]
+----
+$moxieManagerConfig['filesystem.rootpath'] = "c:/inetpub/wwwroot/files;d:/inetpub/public/files";
+----
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['filesystem.local.wwwroot'] = array(
+    "c:/inetpub/wwwroot" => array(
+        "urlprefix" => "http://www.domain.com/",
+        "urlsuffix" => "?suffix"
+    ),
+    "d:/inetpub/public" => array(
+        "urlprefix" => "http://www.otherdomain.com/",
+        "urlsuffix" => "?suffix"
+    )
+);
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="filesystem.local.wwwroot">
+    <root name="root1" path="c:/inetpub/wwwroot" urlprefix="http://www.domain.com/" urlsuffix="?suffix" />
+    <root name="root2" path="d:/inetpub/public" urlprefix="http://www.otherdomain.com/" urlsuffix="?suffix" />
+</add>
+----
+
+Use this only in really special cases.
+
+[[filesystem-local-urlprefix]]
+=== `+filesystem.local.urlprefix+`
+
+This option should contain the URL prefix, by default this prefix is the current protocol and host such as http://mysite.com/. But some times preview should be passed through a PHP page or similar to stream a file and then you want to alter this option.
+
+Variable names (including the curly braces) are replaced as follows. Multiple instances of the same variable can be used, and are replaced. `+filesystem.local.urlprefix+` is currently the only setting in which these variables are replaced.
+
+[cols=",",]
+|===
+|\{proto} |Replaced with the protocol of the site (usually http).
+|\{host} |Replaced with the host name of the site (for example, www.mysite.com).
+|\{port} |Replaced with the port number of the site, which is 80 for most production Web sites.
+|===
+
+[source,php]
+----
+$moxieManagerConfig['filesystem.local.urlprefix'] = "http://somesite.com/somepreviewpage.php?path=";
+----
+
+[[filesystem-local-urlsuffix]]
+=== `+filesystem.local.urlsuffix+`
+
+This option enables you to add a suffix of parameters to the end of the preview URL this can be useful if you need to handle preview in a special way.
+
+[source,php]
+----
+$moxieManagerConfig['filesystem.local.urlsuffix'] = "?someparam=somevalue";
+----
+
+[[filesystem-local-access-file-name]]
+=== `+filesystem.local.access_file_name+`
+
+This option enables you to specify the file name that is used to load directory specific MoxieManager options.
+
+The default name is `+mc_access+`
+
+[source,php]
+----
+$moxieManagerConfig['filesystem.local.access_file_name'] = "mc_access_file";
+----
+
+[[filesystem-local-cache]]
+=== `+filesystem.local.cache+`
+
+This option enables you to turn on persistent database caching. This boosts performance by listing files from a database that is kept in sync with your local file system. You can always refresh this cached filesystem by pressing the refresh button.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['filesystem.local.cache'] = true;
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="filesystem.local.cache" value="true" />
+----
+
+[[filesystem-local-allow-override]]
+=== `+filesystem.local.allow_override+`
+
+Allow to override options using mc_access files.
+
+[source,php]
+----
+$moxieManagerConfig['filesystem.local.allow_override'] = "";
+----
+
+[[createdir]]
+== Createdir
+
+[[createdir-templates]]
+=== `+createdir.templates+`
+
+This option is used by the create directory dialog, the files specified in this comma separated list will be used as templates for creating new directories. This enables users to select the template from a drop list and create a instance of that directory.
+
+This option can be very useful when for example a index.html file and a images directory is to be auto created for the user.
+
+There are a few built in variables that gets auto replaced when this option is used, these variables are:
+
+[cols=",",]
+|===
+|$\{path} |The current path.
+|$\{rootpath} |The current root path.
+|$\{configpath} |The current mc_access path.
+|===
+
+[source,php]
+----
+$moxieManagerConfig['creatdir.templates'] = '${rootpath}/templates/dir1,${rootpath}/templates/dir2';
+----
+
+[[createdir-include-directory-pattern]]
+=== `+createdir.include_directory_pattern+`
+
+Only allow a specific set of directory names to be created using REGEX matching.
+
+[source,php]
+----
+$moxieManagerConfig['createdir.include_directory_pattern'] = '';
+----
+
+[[createdir-exclude-directory-pattern]]
+=== `+createdir.exclude_directory_pattern+`
+
+Exclude a specific set of folder names using a REGEX pattern.
+
+[source,php]
+----
+$moxieManagerConfig['createdir.exclude_directory_pattern'] = '';
+----
+
+[[createdir-allow-override]]
+=== `+createdir.allow_override+`
+
+Allow override for mc_access files.
+
+[source,php]
+----
+$moxieManagerConfig['createdir.allow_override'] = '*';
+----
+
+[[createdoc]]
+== Createdoc
+
+[[createdoc-templates]]
+=== `+createdoc.templates+`
+
+This option is used by the create file dialog, the files specified in this comma separated list will be used as templates for creating new files.
+
+There are a few built in variables that gets auto replaced when this option is used, these variables are:
+
+[cols=",",]
+|===
+|$\{path} |The current path.
+|$\{rootpath} |The current root path.
+|$\{configpath} |The current mc_access path.
+|===
+
+[source,php]
+----
+$moxieManagerConfig["createdoc.templates"] = '${rootpath}/templates/file1.html';
+----
+
+[[createdoc-fields]]
+=== `+createdoc.fields+`
+
+This option enables you to specify search/replace fields to be added to the create document dialog. This option should contain a comma separated list of fields where even item are the title of the field and the odd items are the variable names.
+
+These fields will then be search/replaced within the template for example a field called title will search for $\{title} and replace that with the contents specified by the user. This can be very useful when you want to setup specific fields like title, keywords and description.
+
+[source,php]
+----
+$moxieManagerConfig['createdoc.fields'] = "title,Document title,keywords,Keywords";
+----
+
+[[createdoc-include-file-pattern]]
+=== `+createdoc.include_file_pattern+`
+
+This option can be used to exclude all file names but those matching the specified regexp pattern.
+
+[source,php]
+----
+$moxieManagerConfig["createdoc.include_file_pattern"] = "/^onefolder|twofolder$/i";
+----
+
+[[createdoc-exclude-file-pattern]]
+=== `+createdoc.exclude_file_pattern+`
+
+This option can be used to exclude all file names but those matching the specified regexp pattern.
+
+[source,php]
+----
+$moxieManagerConfig["createdoc.exclude_file_pattern"] = "/^notthis|notthat$/i";
+----
+
+[[createdoc-extensions]]
+=== `+createdoc.extensions+`
+
+Limit the extensions type of files one can create using createdoc.
+
+Comma seperated list of extensions.
+
+[source,php]
+----
+$moxieManagerConfig["createdoc.extensions"] = "htm,html,txt";
+----
+
+[[createdoc-allow-override]]
+=== `+createdoc.allow_override+`
+
+[[upload]]
+== Upload
+
+[[upload-allow-override]]
+=== `+upload.allow_override+`
+
+Set what options can be use in mc_access files.
+
+[source,php]
+----
+$moxieManagerConfig['upload.allow_override'] = "chunk_size";
+----
+
+[[upload-autoresize]]
+=== `+upload.autoresize+`
+
+Auto resize images uploaded.
+
+[source,php]
+----
+$moxieManagerConfig['upload.autoresize'] = true;
+----
+
+[[upload-autoresize-jpeg-quality]]
+=== `+upload.autoresize_jpeg_quality+`
+
+This option enables you specify the autoresize jpeg quality in percent 0-100.
+
+[source,php]
+----
+$moxieManagerConfig['upload.autoresize_jpeg_quality'] = "90";
+----
+
+[[upload-chunk-size]]
+=== `+upload.chunk_size+`
+
+This option will enable you to specify the chunk size that the multiple upload feature will use. Chunking enables you to upload very large files regardless of post/upload restrictions set by the hosting provider. Notice that you can use mb, kb suffixes.
+
+[source,php]
+----
+$moxieManagerConfig['upload.chunk_size'] = "10MB";
+----
+
+[[upload-exclude-file-pattern]]
+=== `+upload.exclude_file_pattern+`
+
+Files matching this regex pattern will be rejected.
+
+[source,php]
+----
+$moxieManagerConfig["upload.exclude_file_pattern"] = "/^test|old$/i";
+----
+
+[[upload-extensions]]
+=== `+upload.extensions+`
+
+This option should contain a comma separated list of valid extensions that can be uploaded. Also this will further restrict the filtering of the xref:#filesystem-extensions[filesystem.extensions] config option. So you can for example let the user list more file types than the user can upload. This is especially useful when you want to restict image uploads only to a specific directory.
+
+Remember that in addition to this setting, all file extensions must also be allowed in the xref:#filesystem-extensions[filesystem.extensions] setting.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['upload.extensions'] = 'gif,jpg,png';
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="upload.extensions" value="gif,jpg,png" />
+----
+
+[[upload-include-file-pattern]]
+=== `+upload.include_file_pattern+`
+
+Only filenames matching this regex patterns may be uploaded.
+
+[source,php]
+----
+$moxieManagerConfig["upload.include_file_pattern"] = "/^myfile|yourfile$/i";
+----
+
+[[upload-max-height]]
+=== `+upload.max_height+`
+
+Use this option to specify a max height of images, files with a greater height that this value will not be accepted.
+
+[source,php]
+----
+$moxieManagerConfig['upload.max_height'] = 768;
+----
+
+If `+upload.autoresize+` is set to true, files will be resized down to max width/max height.
+
+[[upload-maxsize]]
+=== `+upload.maxsize+`
+
+This option enables you specify the max upload file size, files larger than this size will be denied. Large files will be split into blocks and multiple requests this can be controlled by the xref:#upload-chunk-size[chunk_size] config option.
+
+The format of this option is <number>MB or KB or b, so you may write 100Kb or 10MB or 10b.
+
+[source,php]
+----
+$moxieManagerConfig['upload.maxsize'] = "10MB";
+----
+
+[[upload-max-width]]
+=== `+upload.max_width+`
+
+Use this option to specify a max width of images, files with a greater width that this value will not be accepted.
+
+[source,php]
+----
+$moxieManagerConfig['upload.max_width'] = 1024;
+----
+
+If `+upload.autoresize+` is set to true, files will be resized down to max width/max height.
+
+[[upload-overwrite]]
+=== `+upload.overwrite+`
+
+This options controls if you allow files to be overwritten or not.
+
+You can also configure it to "rename", and if a file with the same name already exists, it will rename it to <filename>_2.<extension>
+
+[source,php]
+----
+$moxieManagerConfig['upload.overwrite'] = true;
+----
+
+Possible values:
+
+[cols=",",]
+|===
+|true |If a file with same name exists, it will be overwritten.
+|false |If a file with same name exists, error will be given and file not overwritten.
+|rename |If a file with same name exists, new file will be renamed to unique file name.
+|===
+
+Default value is FALSE.
+
+[[delete]]
+== Delete
+
+[[delete-include-file-pattern]]
+=== `+delete.include_file_pattern+`
+
+This option can be used to exclude all file names but those matching the specified regexp pattern.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['delete.include_file_pattern'] = "/^file|morefile$/i";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="delete.include_file_pattern" value="/^file|morefile$/i" />
+----
+
+[[delete-exclude-file-pattern]]
+=== `+delete.exclude_file_pattern+`
+
+This option can be used to exclude all file names matching the specified regexp pattern.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['delete.exclude_file_pattern'] = "/^notthis$|^notthat$/i";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="delete.exclude_file_pattern" value="/^notthis$|^notthat$/i" />
+----
+
+[[delete-include-directory-pattern]]
+=== `+delete.include_directory_pattern+`
+
+This option can be used to exclude all dir names but those matching the specified regexp pattern.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['delete.include_directory_pattern'] = "/^dir|moredir$/i";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="delete.include_directory_pattern" value="/^dir|moredir$/i" />
+----
+
+[[delete-exclude-directory-pattern]]
+=== `+delete.exclude_directory_pattern+`
+
+This option can be used to exclude all dir names matching the specified regexp pattern.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['delete.exclude_directory_pattern'] = "/^notthis$|^notthat$/i";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="delete.exclude_directory_pattern" value="/^notthis$|^notthat$/i" />
+----
+
+[[delete-extensions]]
+=== `+delete.extensions+`
+
+This option enables you to restrict rename to only the matching file extensions.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['delete.extensions'] = "gif,jpg";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="delete.extensions" value="gif,jpg" />
+----
+
+[[delete-allow-override]]
+=== `+delete.allow_override+`
+
+Enable options to be configured in mc_access files.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['delete.allow_override'] = "*";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="delete.allow_override" value="*" />
+----
+
+[[rename]]
+== Rename
+
+[[rename-allow-override]]
+=== `+rename.allow_override+`
+
+Enable options to be configured in mc_access files.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['rename.allow_override'] = "*";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="rename.allow_override" value="*" />
+----
+
+[[rename-exclude-directory-pattern]]
+=== `+rename.exclude_directory_pattern+`
+
+This option can be used to exclude all dir names matching the specified regexp pattern.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['rename.exclude_directory_pattern'] = "/^notthis$|^notthat$/i";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="rename.exclude_directory_pattern" value="/^notthis$|^notthat$/i" />
+----
+
+[[rename-exclude-file-pattern]]
+=== `+rename.exclude_file_pattern+`
+
+This option can be used to exclude all file names matching the specified regexp pattern.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['rename.exclude_file_pattern'] = "/^notthis$|^notthat$/i";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="rename.exclude_file_pattern" value="/^notthis$|^notthat$/i" />
+----
+
+[[rename-extensions]]
+=== `+rename.extensions+`
+
+This option enables you to restrict rename to only the matching file extensions.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['rename.extensions'] = "gif,jpg";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="rename.extensions" value="gif,jpg" />
+----
+
+[[rename-include-directory-pattern]]
+=== `+rename.include_directory_pattern+`
+
+This option can be used to exclude all dir names but those matching the specified regexp pattern.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['rename.include_directory_pattern'] = "/^dir|moredir$/i";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="rename.include_directory_pattern" value="/^dir|moredir$/i" />
+----
+
+[[rename-include-file-pattern]]
+=== `+rename.include_file_pattern+`
+
+This option can be used to exclude all file names but those matching the specified regexp pattern.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['rename.include_file_pattern'] = "/^file|morefile$/i";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="rename.include_file_pattern" value="/^file|morefile$/i" />
+----
+
+[[edit]]
+== Edit
+
+[[edit-allow-override]]
+=== `+edit.allow_override+`
+
+Allow to override options in mc_access
+
+[source,php]
+----
+$moxieManagerConfig['edit.allow_override'] = "extensions";
+----
+
+[[edit-encoding]]
+=== `+edit.encoding+`
+
+This option enables you to force a specific encoding when editing text files. This can be either "utf-8" or "iso-8859-1".
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['edit.encoding'] = "utf-8";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="edit.encoding" value="utf-8" />
+----
+
+[[edit-exclude-file-pattern]]
+=== `+edit.exclude_file_pattern+`
+
+This option can be used to exclude editing of file names matching the specified regexp pattern.
+
+[source,php]
+----
+$moxieManagerConfig['edit.exclude_file_pattern'] = "/^nofile|noesfile$/i";
+----
+
+[[edit-extensions]]
+=== `+edit.extensions+`
+
+Allow these certain extensions to be edited.
+
+[source,php]
+----
+$moxieManagerConfig['edit.extensions'] = "txt,htm,html,jpg,gif,png";
+----
+
+[[edit-include-file-pattern]]
+=== `+edit.include_file_pattern+`
+
+This option can be used to include editing of file names matching the specified regexp pattern.
+
+[source,php]
+----
+$moxieManagerConfig['edit.include_file_pattern'] = "/^file|morefile$/i";
+----
+
+[[edit-jpeg-quality]]
+=== `+edit.jpeg_quality+`
+
+Set the jpeg quality of edited images.
+
+[source,php]
+----
+$moxieManagerConfig['edit.jpeg_quality'] = "90";
+----
+
+[[edit-line-endings]]
+=== `+edit.line_endings+`
+
+This option enables you to force the line endings to a specific format when editing text files. Possible values for this option is "crlf" for windows style line endings or "lf" for unix style line endings.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['edit.line_endings'] = "crlf";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="edit.line_endings" value="crlf" />
+----
+
+[[view]]
+== View
+
+[[view-allow-override]]
+=== `+view.allow_override+`
+
+Enable options to be set in mc_access.
+
+[source,php]
+----
+$moxieManagerConfig['view.allow_override'] = "extensions";
+----
+
+[[view-exclude-file-pattern]]
+=== `+view.exclude_file_pattern+`
+
+Exclude files to be viewable by a REGEX pattern.
+
+[source,php]
+----
+$moxieManagerConfig['view.exclude_file_pattern'] = '/(nothis|notthat)/i';
+----
+
+[[view-extensions]]
+=== `+view.extensions+`
+
+Extensions allowed to be viewed in viewer.
+
+[source,php]
+----
+$moxieManagerConfig['view.extensions'] = "jpg,gif,png";
+----
+
+[[view-include-file-pattern]]
+=== `+view.include_file_pattern+`
+
+Include files to be viewable by a REGEX pattern.
+
+[source,php]
+----
+$moxieManagerConfig['view.include_file_pattern'] = '/(myfile|morefile)/i';
+----
+
+[[download]]
+== Download
+
+[[download-include-file-pattern]]
+=== `+download.include_file_pattern+`
+
+Only filenames matching this regex patterns may be downloaded.
+
+[source,php]
+----
+$moxieManagerConfig["download.include_file_pattern"] = "/^myfile|yourfile$/i";
+----
+
+[[download-exclude-file-pattern]]
+=== `+download.exclude_file_pattern+`
+
+Filenames matching this regex pattern can not be downloaded.
+
+[source,php]
+----
+$moxieManagerConfig["download.exclude_file_pattern"] = "/^myfile|yourfile$/i";
+----
+
+[[download-extensions]]
+=== `+download.extensions+`
+
+Only files with these extensions may be downloaded.
+
+[source,php]
+----
+$moxieManagerConfig['download.extensions'] = "jpg,gif,png,txt,doc,pdf";
+----
+
+[[download-allow-override]]
+=== `+download.allow_override+`
+
+Allow only certain options to be used in mc_access files.
+
+[source,php]
+----
+$moxieManagerConfig['download.allow_override'] = "extensions";
+----
+
+[[thumbnail]]
+== Thumbnail
+
+[[thumbnail-allow-override]]
+=== `+thumbnail.allow_override+`
+
+Allow certain options to be used in mc_access files.
+
+[source,php]
+----
+$moxieManagerConfig['thumbnail.allow_override'] = "enabled";
+----
+
+[[thumbnail-auto-generate]]
+=== `+thumbnail.auto_generate+`
+
+Enable auto generation of thumbnails.
+
+[source,php]
+----
+$moxieManagerConfig['thumbnail.auto_generate'] = true;
+----
+
+[[thumbnail-delete]]
+=== `+thumbnail.delete+`
+
+This option enables you to control if thumbnails should be deleted when the main image is deleted or not.
+
+Default value is TRUE.
+
+[source,php]
+----
+$moxieManagerConfig['thumbnail.delete'] = true;
+----
+
+[[thumbnail-enabled]]
+=== `+thumbnail.enabled+`
+
+This option enables you to tell the MoxieManager to use generated thumbnails if they exists.
+
+[source,php]
+----
+$moxieManagerConfig['thumbnail.enabled'] = true;
+----
+
+[[thumbnail-folder]]
+=== `+thumbnail.folder+`
+
+This is a relative path to where the generated thumbnails should be stored and retrieved from, as default, it uses "mcith" folder. This folder will be created if it does not exist, the folder will be created as a sub folder to the folder where the image is.
+
+If you do not wish to show this folder, you can filter it out using the `+filesystem.exclude_directory_pattern+` option.
+
+NOTE: Please note that this is a required configuration if you want to use the thumbnail save functionality.
+
+[source,php]
+----
+$moxieManagerConfig['thumbnail.folder'] = "mcith";
+----
+
+[[thumbnail-height]]
+=== `+thumbnail.height+`
+
+Set the height of generated thumbnails.
+
+[source,php]
+----
+$moxieManagerConfig['thumbnail.height'] = 150;
+----
+
+[[thumbnail-jpeg-quality]]
+=== `+thumbnail.jpeg_quality+`
+
+The jpeg quality setting for thumbnails.
+
+[source,php]
+----
+$moxieManagerConfig['thumbnail.jpeg_quality'] = "90";
+----
+
+[[thumbnail-mode]]
+=== `+thumbnail.mode+`
+
+Set thumbnail mode to either *resize* (default) or *crop*.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig["thumbnail.mode"] = "crop";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="thumbnail.mode" value="crop" />
+----
+
+We recommend using the default "resize".
+
+[[thumbnail-prefix]]
+=== `+thumbnail.prefix+`
+
+This is an optional prefix for the name of the thumbnail file created by auto generation. The default of this setting is "mcith_".
+
+[source,php]
+----
+$moxieManagerConfig["thumbnail.prefix"] = "mcith_";
+----
+
+[[thumbnail-use-exif]]
+=== `+thumbnail.use_exif+`
+
+Boolean option for enabling the use of EXIF data for the display of thumbnails. Many jpg, jpeg or tiff images contains a thumbnail version of the image, this options enables MoxieManager to extract and use that thumbnail. The thumbnail will not be saved down, it is extracted every time the image is viewed inside MoxieManager.
+
+NOTE: Please note that the size of this thumbnail will be stretched to the size specified in the MoxieManager configuration options.
+
+Default value of this option is false.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['thumbnail.use_exif'] = true;
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="thumbnail.use_exif" value="true">
+----
+
+[[thumbnail-width]]
+=== `+thumbnail.width+`
+
+Set the width of generated thumbnails.
+
+[source,php]
+----
+$moxieManagerConfig['thumbnail.width'] = 150;
+----
+
+[[cache]]
+== Cache
+
+[[cache-connection]]
+=== `+cache.connection+`
+
+As of PHP version 1.2.2 we introduced a caching layer for speeding up remote filesystems mainly.
+
+`+cache.connection+` should contain your SQLite or MySQL connection string.
+
+In the case of SQLite:
+
+`+sqlite:./data/storage/cache.s3db+`
+
+In the case of MySQL:
+
+`+mysql:host=localhost;dbname=moxmancache;username=user;password=pass+`
+
+You can find the *schemas* for MySQL and SQLite in the *moxiemanger/classes/Vfs/Cache* folder.
+
+There is a known issue of an error message if logging is disabled, you can enable logging and set the level to "info" and it should work.
+
+NOTE: Note that this feature is not available fully for .NET just yet, only a memory caching layer, full feature coming.
+
+[[sql]]
+== SQL
+
+[[sql-connection]]
+=== `+sql.connection+`
+
+Sql connection for storing data such as metadata etc.
+
+[source,php]
+----
+$moxieManagerConfig['sql.connection'] = 'sqlite:../data/storage/moxman.s3db';
+----
+
+or
+
+[source,php]
+----
+$moxieManagerConfig['sql.connection'] = 'mysql:host=localhost;dbname=moxiemanager';
+----
+
+Should not be publicly accessible, but no real critical data is stored in this.
+
+[[sql-username]]
+=== `+sql.username+`
+
+Username of sql user.
+
+[source,php]
+----
+$moxieManagerConfig['sql.username'] = 'moxmanuser';
+----
+
+[[sql-password]]
+=== `+sql.password+`
+
+Password of SQL user.
+
+[source,php]
+----
+$moxieManagerConfig['sql.password'] = 'mytopsecretpasswordnooneknows';
+----
+
+[[sql-table-prefix]]
+=== `+sql.table_prefix+`
+
+A simple and short table prefix.
+
+[source,php]
+----
+$moxieManagerConfig['sql.table_prefix'] = 'moxman_';
+----
+
+[[storage]]
+== Storage
+
+[[storage-engine]]
+=== `+storage.engine+`
+
+Storage engine, used for anything needing storage, mostly user specific data.
+
+[source,php]
+----
+$moxieManagerConfig['storage.engine'] = 'json';
+----
+
+Possible options are
+
+[cols=",",]
+|===
+| json |Recommended
+| mysql |Experimental
+| sqlite |Experimental
+|===
+
+NOTE: Please note, we recommend using the default json engine for this storage operation.
+
+If you want extra security, configure the path to a directory above the wwwroot of your website.
+
+[[storage-path]]
+=== `+storage.path+`
+
+The path of the storage engine for JSON options.
+
+[source,php]
+----
+$moxieManagerConfig['storage.path'] = './data/storage';
+----
+
+[[log]]
+== Log
+
+[[log-enabled]]
+=== `+log.enabled+`
+
+This boolean value will enable (true) or disable (false) the file logging.
+
+[source,php]
+----
+$moxieManagerConfig['log.enabled'] = true;
+----
+
+[[log-filename]]
+=== `+log.filename+`
+
+This option enables you to specify the file name format for the log files. The `+{level}+` will be replaced with the current log level. So for example if you want all messages in one file you can specify something like `+messages.log+` if you want separate files for each log level (recommended) you can specify `+{level}.log+`.
+
+[source,php]
+----
+$moxieManagerConfig['log.filename'] = "{level}.log";
+----
+
+[[log-filter]]
+=== `+log.filter+`
+
+Match only logging on specific REGEX filter, for example, you might want to filter a specific plugin.
+
+[source,php]
+----
+$moxieManagerConfig['log.filter'] = "/auth/i";
+----
+
+[[log-format]]
+=== `+log.format+`
+
+This option enables you to specify the message format for each log row.
+
+Variables that gets automatically replaced.
+
+[cols="1,3",]
+|===
+|+{time}+ |Will be the current time when the message was created.
+|+{level}+ |Will be a string representation of the current log level.
+|+{message}+ |Will contain the log message body.
+|===
+
+[source,php]
+----
+$moxieManagerConfig['log.format'] = "[{time}] [{level}] {message}";
+----
+
+[[log-level]]
+=== `+log.level+`
+
+This option enables you to specify the current log level. The levels are:
+
+* debug
+* info
+* warn
+* error
+* fatal
+
+[source,php]
+----
+$moxieManagerConfig['log.level'] = "error";
+----
+
+[[log-max-files]]
+=== `+log.max_files+`
+
+This option enables you to specify the max files in rotation when a log file gets bigger than the specified xref:#log-max-size[log.max_size] it will be rotated.
+
+This feature is very useful to keep the logs at a fixed size.
+
+[source,php]
+----
+$moxieManagerConfig['log.max_files'] = "10";
+----
+
+[[log-max-size]]
+=== `+log.max_size+`
+
+This option enables you to specify the max size of the log file before it rotates it. This size can use prefixes for example: 10mb or 100k is valid.
+
+[source,php]
+----
+$moxieManagerConfig['log.max_size'] = "100k";
+----
+
+[[log-path]]
+=== `+log.path+`
+
+This option should contain the relative or absolute path to where the log files is to be stored.
+
+Remember: You need to make sure that this directory is writable by the Web server.
+
+[source,php]
+----
+$moxieManagerConfig['log.path'] = "logs";
+----
+
+[[sessionauthenticator]]
+== SessionAuthenticator
+
+[[sessionauthenticator-config-prefix]]
+=== `+SessionAuthenticator.config_prefix+`
+
+This option enables override any config option from a session, the value of this option will be used as a prefix when it looks though the sessions for config options.
+
+NOTE: Please note that the prefix is REQUIRED and set to moxiemanager by default in the config file.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['SessionAuthenticator.config_prefix'] = "moxiemanager";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="SessionAuthenticator.config_prefix" value="moxiemanager" />
+----
+
+So if you wish to overwrite the rootpath using sessions.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$_SESSION["moxiemanager.filesystem.rootpath"] = "/some/root";
+----
+
+.Example for .NET integrations
+
+[source]
+----
+Session["moxiemanager.filesystem.rootpath"] = "c:\some\site";
+----
+
+[[sessionauthenticator-logged-in-key]]
+=== `+SessionAuthenticator.logged_in_key+`
+
+This option enables you specify what session key to check for if the user is logged in or not. The session value of this key should be set to true if the user is to access the MoxieManager.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['SessionAuthenticator.logged_in_key'] = "IsLoggedIn";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="SessionAuthenticator.logged_in_key" value="IsLoggedIn" />
+----
+
+In your own application simply set the session variable to the above key, and it should authenticate that user.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$_SESSION["IsLoggedIn"] = true;
+----
+
+.Example for .NET integrations
+
+[source]
+----
+Session["IsLoggedIn"] = true;
+----
+
+The SessionAuthenticator will check for that session to validate the user, so in your login page, set and everything should work just fine.
+
+[[sessionauthenticator-user-key]]
+=== `+SessionAuthenticator.user_key+`
+
+This option enables you specify what session key to grab the user/login name from. The value of this session can then be substituted with the $\{user} in any of the config parameters. Most common is to place it in the filesystem.rootpath config value, see below for a example. Notice a any \, / or : will be removed form the user name for security reasons.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['SessionAuthenticator.user_key'] = "UserName";
+$moxieManagerConfig['filesystem.rootpath'] = 'users/${user}'; // Override root by username
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="SessionAuthenticator.user_key" value="UserName" />
+<add key="filesystem.rootpath" value="UserName" />
+----
+
+Then you can set the session in your application and the variable in the rootpath will be replaced.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$_SESSION["UserName"] = "Tony";
+----
+
+.Example for .NET integrations
+
+[source]
+----
+Session["UserName"] = "Tony";
+----
+
+[[externalauthenticator]]
+== ExternalAuthenticator
+
+[[externalauthenticator-external-auth-url]]
+=== `+ExternalAuthenticator.external_auth_url+`
+
+This option enables you to specify a URL to a external authentication page this page can be located on a remote server or be written in another language than PHP. So it makes it possible to install and use the software on a ASP or JSP site and authenticate against that sites sessions.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['ExternalAuthenticator.external_auth_url'] = "auth_example.jsp";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="ExternalAuthenticator.external_auth_url" value="auth_example.asp" />
+----
+
+Check the ExternalAuthenticator folder in your install for examples for many languages.
+
+[[externalauthenticator-secret-key]]
+=== `+ExternalAuthenticator.secret_key+`
+
+This option should include a secret key, this key will be used in the authentication mechanism so the remote page specified with the `+ExternalAuthenticator.external_auth_url+` needs to match this key.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['ExternalAuthenticator.secret_key'] = "replacemewithsomerandomkeyandkeepitsecret";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="ExternalAuthenticator.secret_key" value="replacemewithsomerandomkey" />
+----
+
+[[ipauthenticator]]
+== IpAuthenticator
+
+[[ipauthenticator-ip-numbers]]
+=== `+IpAuthenticator.ip_numbers+`
+
+This option enables you valid IP numbers that may access the application. Both individual IP numbers and IP ranges are accepted.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['IpAuthenticator.ip_numbers'] = "10.0.0.1,10.0.0.2,192.168.1.1-192.168.1.255";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="IpAuthenticator.ip_numbers" value="10.0.0.1,10.0.0.2,192.168.1.1-192.168.1.255" />
+----
+
+[[cakeauthenticator]]
+== CakeAuthenticator
+
+[[cakeauthenticator-logged-in-key]]
+=== `+CakeAuthenticator.logged_in_key+`
+
+This enables you to specify the session key to look for when authenticating the user with Cake PHP. This option defaults to "isloggedin"
+
+[source,php]
+----
+$moxieManagerConfig['CakeAuthenticator.logged_in_key'] = "MyLoggedInKey";
+----
+
+You can then use this code to authenticate the user:
+
+[source,php]
+----
+// Login the user and override the filesystem.rootpath setting
+CakeSession::write('MyLoggedInKey', "true");
+CakeSession::write('moxiemanager.filesystem.rootpath', "/var/www/myroot");
+----
+
+[[cakeauthenticator-user-key]]
+=== `+CakeAuthenticator.user_key+`
+
+This enables you to specify the key to look for in the sessions to override the user variable. The $\{user} will be replaced in all config options if you set the Cake PHP user session key
+
+[source,php]
+----
+// Change the user key too look for
+$moxieManagerConfig['CakeAuthenticator.user_key'] = 'user';
+
+// User specific path in moxiemanager/config.php
+$moxieManagerConfig['filesystem.rootpath'] = 'users/${user}';
+----
+
+Override the user by setting:
+
+[source,php]
+----
+// Override user
+CakeSession::write("user", "someuser");
+----
+
+[[cakeauthenticator-config-prefix]]
+=== `+CakeAuthenticator.config_prefix+`
+
+This enables you to specify the prefix to look for when overriding config options. This default to "moxiemanager".
+
+You can then use this code to authenticate the user:
+
+[source,php]
+----
+// Override the filesystem.rootpath
+CakeSession::write('moxiemanager.filesystem.rootpath', "/var/www/myroot");
+----
+
+[[codeigniterauthenticator-options]]
+== CodeIgniterAuthenticator
+
+[[codeigniterauthenticator-logged-in-key]]
+=== `+CodeIgniterAuthenticator.logged_in_key+`
+
+This enables you to specify the session key to look for when authenticating the user with CodeIgniter PHP. This option defaults to "isloggedin"
+
+[source,php]
+----
+$moxieManagerConfig['CodeIgniterAuthenticator.logged_in_key'] = "MyLoggedInKey";
+----
+
+You can then use this code to authenticate the user:
+
+[source,php]
+----
+// Login the user and override the filesystem.rootpath setting in your controller
+$this->session->set_userdata('MyLoggedInKey', "true");
+$this->session->set_userdata('moxiemanager.filesystem.rootpath', "/var/www/myroot");
+----
+
+[[codeigniterauthenticator-user-key]]
+=== `+CodeIgniterAuthenticator.user_key+`
+
+This enables you to specify the key to look for in the sessions to override the user variable. The $\{user} will be replaced in all config options if you set the CodeIgniter PHP user session key
+
+[source,php]
+----
+// Change the user key too look for
+$moxieManagerConfig['CodeIgniterAuthenticator.user_key'] = 'user';
+
+// User specific path in moxiemanager/config.php
+$moxieManagerConfig['filesystem.rootpath'] = 'users/${user}';
+----
+
+Override the user by setting:
+
+[source,php]
+----
+// Override user
+$this->session->set_userdata("user", "someuser");
+----
+
+[[codeigniterauthenticator-environment]]
+=== `+CodeIgniterAuthenticator.environment+`
+
+This option enables you to switch environment from "development" to "production". Sessions are not shared between different environments so this is an important config option to change,
+
+[source,php]
+----
+$moxieManagerConfig['CodeIgniterAuthenticator.environment'] = "production";
+----
+
+[[codeigniterauthenticator-config-prefix]]
+=== `+CodeIgniterAuthenticator.config_prefix+`
+
+This enables you to specify the prefix to look for when overriding config options. This default to "moxiemanager".
+
+You can then use this code to authenticate the user:
+
+[source,php]
+----
+// Override the filesystem.rootpath
+$this->session->set_userdata('moxiemanager.filesystem.rootpath', "/var/www/myroot");
+----
+
+[[zendauthenticator-options]]
+== ZendAuthenticator
+
+[[zendauthenticator-config-prefix]]
+=== `+ZendAuthenticator.config_prefix+`
+
+This enables you to specify the prefix to look for when overriding config options. This default to "moxiemanager".
+
+You can then use this code to authenticate the user:
+
+[source,php]
+----
+// Override the filesystem.rootpath
+$session = new Zend\Session\Container();
+$session->{"moxiemanager.filesystem.rootpath"} = "/var/www/myroot";
+----
+
+[[zendauthenticator-library-path]]
+=== `+ZendAuthenticator.library_path+`
+
+This lets you specify a custom installation path for the zend framework.
+
+[source,php]
+----
+// Set the container name
+$moxieManagerConfig['ZendAuthenticator.library_path'] = '/path/to/zendframework';
+----
+
+[[zendauthenticator-logged-in-key]]
+=== `+ZendAuthenticator.logged_in_key+`
+
+This enables you to specify the session key to look for when authenticating the user with Zend 2 framework. This option defaults to "loggedin"
+
+[source,php]
+----
+$moxieManagerConfig['ZendAuthenticator.logged_in_key'] = "MyLoggedInKey";
+----
+
+You can then use this code to authenticate the user:
+
+[source,php]
+----
+// Login the user and override the filesystem.rootpath setting in your controller
+$session = new Zend\Session\Container();
+$session->{"MyLoggedInKey"} = true;
+$session->{"moxiemanager.filesystem.rootpath"} = "/var/www/myroot";
+----
+
+[[zendauthenticator-session-container]]
+=== `+ZendAuthenticator.session_container+`
+
+This enables you to specify the session container name.
+
+[source,php]
+----
+// Set the container name
+$moxieManagerConfig['ZendAuthenticator.session_container'] = 'mycontainer';
+----
+
+Override the user by setting:
+
+[source,php]
+----
+// Override user in using the Zend 2 session container
+$this->session = new Zend\Session\Container("mycontainer");
+$this->session->user = "username";
+----
+
+[[zendauthenticator-user-key]]
+=== `+ZendAuthenticator.user_key+`
+
+This enables you to specify the key to look for in the sessions to override the user variable. The $\{user} will be replaced in all config options if you set the CodeIgniter PHP user session key
+
+[source,php]
+----
+// Change the user key too look for
+$moxieManagerConfig['ZendAuthenticator.user_key'] = 'user';
+
+// User specific path in moxiemanager/config.php
+$moxieManagerConfig['filesystem.rootpath'] = 'users/${user}';
+----
+
+Override the user by setting:
+
+[source,php]
+----
+// Override user in using Zend 2
+$this->session = new Zend\Session\Container();
+$this->session->user = "username";
+----
+
+[[azure-plugin]]
+== Azure plugin
+
+[[azure-containers]]
+=== `+azure.containers+`
+
+This option enables you to configure azure containers. We have a detailed how to called "xref:moxiemanager-how-to-guides.adoc#how-to-configure-for-azure[How to configure for Azure]" so read that for details on how to use this option.
+
+[[amazon-plugin]]
+== Amazon plugin
+
+[[amazons3-buckets]]
+=== `+amazons3.buckets+`
+
+This option enables you to configure Amazon S3 buckets. We have a detailed how to called "xref:moxiemanager-how-to-guides.adoc#how-to-configure-for-amazons3[How to configure for AmazonS3]" so read that for details on how to use this option.
+
+[[dropbox]]
+== DropBox
+
+[[dropbox-app-id]]
+=== `+dropbox.app_id+`
+
+NOTE: Please note that this is only available for Professional and Enterprise customers.
+
+Dropbox Application id.
+
+. First, get a Dropbox account, then go to: https://www.dropbox.com/developers/apps
+. Click on the "Create App" button, choose a name for your app, select "Dropbox Chooser" and the domain(s) you want this to function on.
+. When you have created your app, get the "App key" and paste it into the dropbox.app_id settings.
+
+[source,php]
+----
+$moxieManagerConfig['dropbox.app_id'] = "";
+----
+
+Check the xref:moxiemanager-how-to-guides.adoc#how-to-use-dropbox[DropBox Howto] for details integration steps.
+
+[[autoformat-plugin]]
+== AutoFormat plugin
+
+[[autoformat-rules]]
+=== `+autoformat.rules+`
+
+This option enables you to auto resize or convert images when they get uploaded. For example you when you upload a image you can generate 3 fixed sizes of the images all resizing will be proportional.
+
+The parameter is in the following format:`+{width}x{height}|{format}={filename},..+` Both the resize part and format path is optional. So you can for example only change the image format with this pattern: gif=%f.gif or only resize it by this pattern: `+320x240=%f_320x240.%e+`
+
+Here is a more complex pattern: `+320x240|gif=gifs/%f_%w_%h.gif,320x240=%f_%w_%h.%e+` It will generate a 320x240 large gif in the gifs directory it will auto create the directory. It will also make a 320x240 image in the same directory as the uploaded file.
+
+Available formats are: gif,jpg,png
+
+==== Filename parameters
+
+[cols=",",options="header",]
+|===
+|Name |Summary
+|`+%f+` |Filename without extension for example "myimage".
+|`+%e+` |Extension the extension part of the image for example "gif".
+|`+%w+` |Output image width, the proportional value.
+|`+%h+` |Output image height, the proportional valie.
+|`+%tw+` |Target width/specified width by the resize option.
+|`+%th+` |Target height/specified height by the resize option.
+|`+%ow+` |Original width, before the image gets resized.
+|`+%oh+` |Original height, before the image gets resize.
+|===
+
+===== Example
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['autoformat.rules'] = '320x240|gif=%f_%w_%h.gif,320x240=%f_%w_%h.%e';
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="autoformat.rules" value="320x240|gif=%f_%w_%h.gif,320x240=%f_%w_%h.%e" />
+----
+
+[[autoformat-delete-format-images]]
+=== `+autoformat.delete_format_images+`
+
+When original image gets deleted, should the formatted rules be followed and also deleted?
+
+Basically, MoxieManager will resolve the format syntax and look for resulting files, if they exist, they will be deleted if this option is set to true.
+
+[source,php]
+----
+$moxieManagerConfig['autoformat.delete_format_images'] = true;
+----
+
+[[autoformat-jpeg-quality]]
+=== `+autoformat.jpeg_quality+`
+
+Jpeg quality setting, 0-100.
+
+[source,php]
+----
+$moxieManagerConfig['autoformat.jpeg_quality'] = "";
+----
+
+[[favorites-plugin]]
+== Favorites plugin
+
+[[favorites-max]]
+=== `+favorites.max+`
+
+Max amount of favorites to store.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['favorites.max'] = "100";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="favorites.max" value="100" />
+----
+
+[[history-plugin]]
+== History plugin
+
+[[history-max]]
+=== `+history.max+`
+
+Max amount of items stored in history.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['history.max'] = "10";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="history.max" value="10" />
+----
+
+[[autorename-plugin]]
+== AutoRename plugin
+
+* xref:moxiemanager-how-to-guides.adoc#how-to-use-autorename[autorename.enabled]
+* xref:moxiemanager-how-to-guides.adoc#how-to-use-autorename[autorename.space]
+* xref:moxiemanager-how-to-guides.adoc#how-to-use-autorename[autorename.custom_pattern]
+* xref:moxiemanager-how-to-guides.adoc#how-to-use-autorename[autorename.custom_replace]
+* xref:moxiemanager-how-to-guides.adoc#how-to-use-autorename[autorename.lowercase]

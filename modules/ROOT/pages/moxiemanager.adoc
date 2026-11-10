@@ -9,8 +9,20 @@ MoxieManager is a premium {productname} plugin and server system that enables us
 
 MoxieManager is an application separate from {productname} that includes .NET or PHP server components. Being built by the team behind {productname} it has tight integration with the editor via a toolbar control. It is designed to work with {productname} configuration settings such as `+relative_urls+`.
 
-MoxieManager is a paid addition to {productname}. It is included in link:{pricingpage}/[{enterpriseversion} subscriptions].
+NOTE: MoxieManager is a paid addition to {productname}. It is included in link:{pricingpage}/[{enterpriseversion} subscriptions].
 
-Full documentation on MoxieManager, including how to http://www.moxiemanager.com/documentation/index.php/TinyMCE_Integration[integrate with {productname}], can be http://www.moxiemanager.com/documentation/[found] on the MoxieManager website.
+[[getting-started]]
+== Getting started
 
-Documentation is archived for the deprecated http://archive.tinymce.com/wiki.php/MCImageManager[MCImageManager] and http://archive.tinymce.com/wiki.php/MCFileManager[MCFileManager].
+Full documentation on MoxieManager, including xref:moxiemanager-installation.adoc[installation] and how to xref:moxiemanager-integration.adoc#tinymce-integration[integrate with {productname}], is provided in the following pages.
+
+This documentation will show you how to install, configure and customize MoxieManager to fit your needs.
+
+If your here for the first time, we recommend these sections first.
+
+. xref:moxiemanager-installation.adoc[Installation]
+. xref:moxiemanager-integration.adoc[Integration]
+
+The configuration can seem daunting at first, but its very powerfull, and the use of *xref:moxiemanager-how-to-guides.adoc#how-to-use-mc-access[mc_access]* files can really increase the power of configuration by a lot. Template folders also enables you to copy pre-configured folder configs (by including an mc_access file) to have a really custom experience.
+
+Also, check out the xref:moxiemanager-how-to-guides.adoc[How-to section] for some advanced info on how to configure certain things, such as upload.format and other powerfull options.

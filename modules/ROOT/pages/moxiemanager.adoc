@@ -7,7 +7,7 @@ include::partial$misc/admon-moxiemanager-not-on-cloud.adoc[]
 
 MoxieManager is a premium {productname} plugin and server system that enables users to insert files located externally to the editor (e.g. on their client desktop) into their document.
 
-MoxieManager is an application separate from {productname} that includes .NET or PHP server components. Being built by the team behind {productname} it has tight integration with the editor via a toolbar control. It is designed to work with {productname} configuration settings such as `+relative_urls+`.
+MoxieManager is an application separate from {productname} that includes PHP or .NET  server components. Being built by the team behind {productname} it has tight integration with the editor via a toolbar control. It is designed to work with {productname} configuration settings such as `+relative_urls+`.
 
 NOTE: MoxieManager is a paid addition to {productname}. It is included in link:{pricingpage}/[{enterpriseversion} subscriptions].
 

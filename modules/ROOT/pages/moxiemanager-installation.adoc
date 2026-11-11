@@ -134,7 +134,7 @@ NOTE: Please note, there is no Visual Studio Building required to make this soft
 
 NOTE: Please note that if you move the *Web.config* settings into a global website Web.config, *do not forget to remove the original* in the MoxieManager folder, or all configurations will be overwritten by the local ones.
 
-If you get a 500 internal server error, first, check your .NET version, only .NET 4.5 Framework is supported. Next, make sure you copied the DLL files to the root bin folder.
+If you get a 500 internal server error, first, check your .NET version, only .NET 4.5 Framework has been verified to work. Next, make sure you copied the DLL files to the root bin folder.
 
 If you encounter any problems, check the xref:moxiemanager-faq.adoc[FAQ] or use the support ticket system to submit tickets.
 

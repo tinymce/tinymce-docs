@@ -1,7 +1,7 @@
 = tinymce.dom.Selection
 :navtitle: tinymce.dom.Selection
 :description: This class handles text and control selection it&#x27;s an crossbrowser utility class. Consult the TinyMCE API Documentation for more details and examples on how to use this class.
-:keywords: Selection, collapse, expand, getBookmark, getContent, getEnd, getNode, getRng, getSel, getStart, isCollapsed, isEditable, moveToBookmark, select, selectorChanged, setContent, setCursorLocation, setNode, setRng
+:keywords: Selection, collapse, expand, getBookmark, getContent, getEnd, getFullySelectedBlocks, getNode, getRng, getSel, getStart, isCollapsed, isEditable, moveToBookmark, select, selectorChanged, setContent, setCursorLocation, setNode, setRng
 :moxie-type: api
 
 This class handles text and control selection it's an crossbrowser utility class. Consult the TinyMCE API Documentation for more details and examples on how to use this class.
@@ -37,6 +37,8 @@ can then be used to restore the selection after some content modification to the
 |xref:#getContent[getContent()]|Returns the selected contents using the DOM serializer passed in to this class.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
 |xref:#getEnd[getEnd()]|Returns the end element of a selection range. If the end is in a text
 node the parent element will be returned.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|xref:#getFullySelectedBlocks[getFullySelectedBlocks()]|Returns the blocks whose whole content is inside the current selection. Blocks that are only
+partially selected are not included, and a collapsed selection returns an empty array.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
 |xref:#getNode[getNode()]|Returns the currently selected element or the common ancestor element for both start and end of the selection.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
 |xref:#getRng[getRng()]|Returns the browsers internal range object.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
 |xref:#getSel[getSel()]|Returns the browsers internal selection object.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
@@ -184,6 +186,28 @@ node the parent element will be returned.
 ==== Return value
 
 * `Element` - End element of selection range.
+
+'''
+
+[[getFullySelectedBlocks]]
+=== getFullySelectedBlocks()
+[source, javascript]
+----
+getFullySelectedBlocks(): Array
+----
+Returns the blocks whose whole content is inside the current selection. Blocks that are only
+partially selected are not included, and a collapsed selection returns an empty array.
+
+==== Examples
+[source, javascript]
+----
+// Alerts the number of blocks that are entirely selected
+alert(tinymce.activeEditor.selection.getFullySelectedBlocks().length);
+----
+
+==== Return value
+
+* `Array` - Array with the fully selected block elements.
 
 '''
 

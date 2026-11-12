@@ -11,6 +11,7 @@ The `+HOOKS+` environment variable configures hooks on the AI service container.
 
 == Requirements
 
+* *AI service image version 1.3.0 or later.* Hooks were added in image version 1.3.0.
 * *An HTTPS endpoint hosted by the integrator.* The AI service does not include a hook endpoint. The endpoint accepts a `+POST+` request with a JSON body and responds with a decision.
 * *A response within the timeout.* Every chat turn waits for the endpoint. Measure the response time of the hook service before enabling hooks.
 * *A shared secret.* The AI service signs every request with it, and the endpoint uses it to reject requests that did not come from the AI service. See <<request-signing>>.
@@ -18,7 +19,7 @@ The `+HOOKS+` environment variable configures hooks on the AI service container.
 [[scope]]
 === Scope
 
-* Hooks run for chat messages only. Quick actions, reviews, and Document Processing do not call hooks.
+* Hooks run for chat messages only, including xref:tinymceai-actions.adoc#quick-actions-reference-table[Quick Actions that open in Chat] (*Explain*, *Summarize*, *Highlight key points*, and custom actions with `+type: 'chat'+`). Other quick actions, reviews, and Document Processing do not call hooks.
 * One event exists: `+turn.start+`. It fires after the user sends a chat message and before the AI service calls a model.
 * One endpoint and one shared secret serve the whole deployment. Every environment calls the same URL, and each request carries the `+environmentId+` of the turn.
 * Hooks run only for the events listed in `+enabled+`. When `+HOOKS+` is not set, no hooks run.
@@ -534,6 +535,8 @@ A stated intent replaces the classification entirely. The AI service does not fi
 |Object with string keys. Merged into the metadata of the stored message, replacing client attributes with the same key. Not size-checked, and never sent to the model.
 |===
 
+Clients set message attributes in the `+attributes+` field of https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/createMessage[Send a message], and read the stored attributes back with https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/getMessages[Fetch conversation messages].
+
 A decision that exceeds a limit fails the turn. Keep instructions short regardless of the limit, because they enter the prompt on every turn that the hook sends them on.
 
 Only `+reply+` enters the conversation history. The AI service logs and traces the request and decision bodies, but does not store them as messages. See xref:tinymceai-on-premises-production.adoc#opentelemetry[OpenTelemetry].
@@ -549,7 +552,7 @@ Respond with `+content-type: application/json+` and the decision as the whole bo
 `+stream+`::
 Respond with `+content-type: application/x-ndjson+` and write one JSON object per line, flushing each line. The AI service sends `+accept: application/x-ndjson+` in this mode. Any other response content type fails the turn. `+timeoutMs+` limits the whole exchange, and `+streamIdleTimeoutMs+` limits the wait for the response headers and each gap between lines. When the exchange fails partway, the progress lines and reply text already sent stay in the reply stream, followed by an `+error+` event. See <<troubleshooting>>.
 
-Use `+json+` when the endpoint answers in a second or two. Use `+stream+` when it takes longer, or to stream progress lines to the client.
+Use `+json+` when the endpoint answers in a second or two. Use `+stream+` when it takes longer, or to stream progress lines to a custom chat interface.
 
 [[stream-lines]]
 === Stream lines
@@ -649,7 +652,7 @@ A hook can check every chat message against organization rules and refuse the me
 
 * Screen `+turn.prompt+`. A `+file+` or `+web-resource+` part carries no content, so to screen an attachment, read it through the API as described in <<reading-attachments-and-documents>>.
 * When the rules call another service that is unavailable, do not respond with `+continue+`. Respond with `+halt+` and a refusal that the user can read, or with an error status, which fails the turn with the general chat error message. Both keep the check fail-closed.
-* Hooks do not screen quick actions, reviews, or Document Processing. To apply the policy to every request from a group of users, grant only chat permissions in their tokens:
+* Hooks screen every chat message, including Quick Actions that open in Chat. Other quick actions, reviews, and Document Processing do not call hooks. To apply the policy to every request from a group of users, grant only chat permissions in their tokens:
 
 [source,json]
 ----
@@ -659,14 +662,14 @@ A hook can check every chat message against organization rules and refuse the me
       "permissions": [
         "ai:conversations:read",
         "ai:conversations:write",
-        "ai:models:openai:gpt-4.1"
+        "ai:models:agent"
       ]
     }
   }
 }
 ----
 
-Replace `+ai:models:openai:gpt-4.1+` with the model permissions for the deployment. See xref:tinymceai-on-premises-jwt.adoc#permissions-reference[Permissions reference]. Token permissions are the control; hiding a toolbar button in the editor does not enforce anything.
+Replace `+ai:models:agent+` with the model permissions for the deployment. See xref:tinymceai-on-premises-jwt.adoc#permissions-reference[Permissions reference]. Token permissions are the control; hiding a toolbar button in the editor does not enforce anything.
 
 A hook does not replace xref:tinymceai-on-premises-moderation.adoc[content moderation]. A hook applies the integrator's own rules to chat messages only, and fails closed. Moderation checks requests against a fixed set of harm categories, and fails open. See xref:tinymceai-on-premises-moderation.adoc#what-moderation-checks[What moderation checks] and xref:tinymceai-on-premises-moderation.adoc#failure-behavior[Failure behavior].
 
@@ -714,8 +717,9 @@ The AI service calls the hook endpoint before xref:tinymceai-on-premises-moderat
 
 The {pluginname} plugin needs no configuration for hooks. A `+halt+` reply and a `+continue+` reply both appear in the chat as assistant messages.
 
+* The {pluginname} plugin does not show `+progress+` lines: it ignores `+hook-progress+` events.
 * A custom chat interface built on the REST API can read `+hook-progress+` events and show each line. See xref:tinymceai-streaming.adoc[Streaming].
-* To send custom front-end data in the hook request, attach `+delegation-context+` parts to messages through the conversation API.
+* To send custom front-end data in the hook request, attach `+delegation-context+` parts to messages through the conversation API. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/createMessage[Send a message] in the API reference.
 
 [[troubleshooting]]
 == Troubleshooting
@@ -804,7 +808,7 @@ When the user stops the request before the endpoint responds, the AI service clo
 |In `+stream+` mode, chat turns fail after the endpoint responded with `+200+`
 |The stream failed after the response headers: it stalled for longer than `+streamIdleTimeoutMs+`, ran past `+timeoutMs+`, or ended with a decision outside the contract. Find the reason in the service log by the `+requestId+`.
 
-|Every chat turn fails, while quick actions and reviews still work
+|Every chat turn fails, including Quick Actions that open in Chat, while other quick actions and reviews still work
 |Hooks fail closed, and the hook endpoint is unavailable. Restore the endpoint, or set `+enabled+` to an empty array in `+HOOKS+` and restart the AI service to bypass hooks.
 |===
 

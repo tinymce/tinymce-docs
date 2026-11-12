@@ -54,6 +54,9 @@ The shared secret (API Secret) exists only in the application back end (token en
 |Quick actions
 |Continue writing, improve writing, fix grammar, make shorter or longer, change tone, and translate. Chat actions, such as Summarize and Explain, run as conversations.
 
+|Document Processing
+|Apply one prompt to one or more HTML documents through the API. See xref:tinymceai-document-processing.adoc[Document Processing].
+
 |LLM provider flexibility
 |OpenAI, Anthropic, Google Gemini, Azure OpenAI, AWS Bedrock, Google Vertex AI, or any self-hosted OpenAI-compatible endpoint. Multiple providers can coexist.
 
@@ -79,7 +82,7 @@ The shared secret (API Secret) exists only in the application back end (token en
 |Use additional files as context for AI conversations. Storage options include database, filesystem, Amazon S3, or Azure Blob Storage.
 
 |Observability
-|Structured request logs, OpenTelemetry, and Langfuse. All three run as independent simultaneous pipelines.
+|Structured request logs, OpenTelemetry, and Langfuse. All three run as independent simultaneous pipelines. In image version 1.3.0 and later, the Management Panel also shows recorded AI requests in xref:tinymceai-on-premises-production.adoc#ai-diagnostics[AI Diagnostics].
 
 |Horizontal scaling
 |The service is stateless; add replicas behind a load balancer without shared local state.
@@ -165,7 +168,7 @@ For a first-time deployment, progress through the guides in order. Each guide ca
 |HS256 signing model, required and optional claims, permissions reference, token endpoint examples for Express, Django, Flask, Laravel, Rails, .NET, Go, and Spring Boot, and multi-tenant deployment patterns.
 
 |xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration]
-|Editor-side configuration: plugin options, token provider, authentication patterns, Cross-Origin Resource Sharing (CORS), and deployment checklists.
+|Editor-side configuration: plugin options, token provider, authentication patterns, and Cross-Origin Resource Sharing (CORS).
 
 |xref:tinymceai-on-premises-production.adoc[Production deployment]
 |Kubernetes manifests, AWS ECS task definitions, horizontal scaling, security hardening, rate limiting, observability, backup and recovery, and upgrades.

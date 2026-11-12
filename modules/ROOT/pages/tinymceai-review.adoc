@@ -34,7 +34,7 @@ To start using the Review feature, add `+tinymceai+` to the plugins configuratio
  
 See xref:tinymceai.adoc[Plugin Reference] for more information regarding installation and enabling AI features.
 
-After picking one of the available reviews in the Review Mode tab, the AI will analyze the document and propose a series of suggestions:
+After picking one of the available reviews in the Review sidebar, the AI will analyze the document and propose a series of suggestions:
 
 image::tinymceai/tinymce-ai-review-mode-suggestions-underlined-in-editor-content.png[{pluginname} Review suggestion in content,width=80%]
 
@@ -47,6 +47,8 @@ Review suggestions can be individually skipped or applied by clicking the corres
 - Skipping or applying the remaining suggestions in bulk
 - Completing the review with the currently applied suggestions (and skipping the rest)
 - Aborting the review and exiting (with all applied changes reverted)
+
+While a review has pending suggestions, switching to the Chat sidebar or running a Quick Action opens a confirmation dialog. If the user confirms, the plugin discards the suggestions, resets the changes applied in the review, and returns the editor to normal editing. If the user cancels, the plugin keeps the pending suggestions. For the same behavior across several editors, see xref:tinymceai-multi-editor.adoc#discarding-suggestions[Discarding pending suggestions].
 
 [[built-in-reviews]]
 == Built-in reviews
@@ -80,7 +82,7 @@ a|
 
 |**Custom review** |— |xref:tinymceai-review.adoc#custom-review-choose-review[Custom review]: custom prompt and model; streams like other reviews. |✓ |✓ (custom review calls endpoint)
 
-| |`+translate+` |Translate between languages with cultural adaptation. | |✓
+| |`+translate+` |Translate the content to another language. The request sets the target language in `+args.language+`. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/callSystemReview[Call a system review]. | |✓
 |===
 
 [NOTE]
@@ -112,10 +114,12 @@ The Review plugin feature is built on top of the Reviews API, which provides RES
 
 Reviews use streaming output with Server-Sent Events for real-time feedback as suggestions are generated. Each review type is optimized for specific improvement tasks, providing consistent, high-quality analysis of text structure, style, and quality. Reviews provide specific, actionable recommendations for content improvement.
 
+Each HTML element in the request content of a system or custom review needs a unique `+data-id+` attribute. Elements without a `+data-id+` are ignored.
+
 [[reviews-system-reviews-api]]
 === System reviews
 
-System reviews are built-in reviews for common use cases, and the request does not name a model. The API includes one endpoint for running system reviews, https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/callSystemReview[Call a system review], which takes the review name from the xref:tinymceai-review.adoc#built-in-reviews[API review] column in its path. Each HTML element in the request content needs a unique `+data-id+` attribute.
+System reviews are built-in reviews for common use cases, and the request does not name a model. The API includes one endpoint for running system reviews, https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/callSystemReview[Call a system review], which takes the review name from the xref:tinymceai-review.adoc#built-in-reviews[API review] column in its path.
 
 Built-in system reviews including API names, descriptions, and whether each type is available in the Review sidebar or only through the API—are summarized in xref:tinymceai-review.adoc#built-in-reviews[Built-in reviews].
 
@@ -130,17 +134,19 @@ Integrators can also call the https://tinymceai.api.tiny.cloud/v1/docs#tag/Revie
 
 Users can also run custom reviews directly from the editor through the xref:tinymceai-review.adoc#custom-review-choose-review[Custom review] category in the Review sidebar.
 
-Custom reviews require the `ai:reviews:custom` permission in the JWT token. See xref:tinymceai-permissions.adoc#reviews-permissions[Reviews permissions].
+Custom reviews require the `ai:reviews:custom` permission and the permission for the requested model in the JWT token. See xref:tinymceai-permissions.adoc#reviews-permissions[Reviews permissions] and xref:tinymceai-permissions.adoc#model-permissions[Model permissions].
 
 [[reviews-streaming]]
 === Streaming responses
 
-Reviews use Server-Sent Events (SSE) for real-time streaming results. See the xref:tinymceai-streaming.adoc[Streaming responses guide] for detailed implementation information. For the events and their payloads, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/callSystemReview[Call a system review] and https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/callCustomReview[Call a custom review] in the API reference.
+Reviews use Server-Sent Events (SSE) for real-time streaming results. See the xref:tinymceai-streaming.adoc[Streaming responses guide] for detailed implementation information. A system review suggestion can come from a cache; its `+review-delta+` event then carries `+cached: true+`. For the events and their payloads, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/callSystemReview[Call a system review] and https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/callCustomReview[Call a custom review] in the API reference.
 
 [[reviews-api-reference]]
 === API reference
 
 The https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews[Reviews API] reference (interactive OpenAPI documentation) is the full source for endpoints, request and response schemas, authentication, system and custom review calls, worked examples, and streaming review responses.
+
+To record user feedback on a result, https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/addSystemReviewRating[rate a system review call] or https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews/operation/addCustomReviewRating[rate a custom review call] with the `+callId+` from the `+review-metadata+` event of the review stream.
 
 [[related-features]]
 == Related features

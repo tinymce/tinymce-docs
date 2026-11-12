@@ -10,7 +10,7 @@
 
 [NOTE]
 ====
-This page covers JWT authentication for the *{cloudname}-hosted* AI service, where the `aud` claim is set to the Tiny Cloud API key and tokens are signed with RS256. For on-premises deployments, the `aud` claim is the Environment ID from the Management Panel and tokens are signed with HS256. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication for the on-premises AI service].
+This page covers JWT authentication for the *{cloudname}-hosted* AI service, where the `aud` claim is set to the {cloudname} API key and tokens are signed with RS256. For on-premises deployments, the `aud` claim is the Environment ID from the Management Panel and tokens are signed with HS256. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication for the on-premises AI service].
 ====
 
 {productname} recommends using the libraries listed on link:https://www.jwt.io/libraries[jwt.io/libraries] to create JWT tokens. These libraries support the algorithms required by {pluginname}. For details on supported algorithms, see xref:#supported-algorithms[Supported Algorithms].
@@ -23,7 +23,7 @@ During a {cloudname} trial, a demo identity service is available for the {plugin
 [[trial-quick-start]]
 === Quick start
 
-The following is the simplest way to use the demo identity service. Replace `\{apiKey}` with the trial API key from the link:{accountpageurl}[Customer Portal].
+The following is the simplest way to use the demo identity service. Replace `+no-api-key+` with the trial API key from the link:{accountpageurl}[Customer Portal].
 
 [NOTE]
 ====
@@ -91,6 +91,8 @@ To connect {productname} with {pluginname}, a token endpoint must be created in 
 To authenticate users, {pluginname} uses tokens. The purpose of tokens is to inform the AI service that the user has access to AI features and which API key the user should connect to. The authenticity of tokens is provided by a digital signature.
 
 *The token endpoint* is where {productname} makes a request to get the token. It is required to return the token only if the user proves their identity. It should be placed inside the system, not exposed as a public endpoint without proper authentication.
+
+The plugin sends the token to the AI service in the `+Authorization+` header, as `+Bearer <token>+`. Back-end code that calls the API directly sends the token the same way. A request without it fails with HTTP status `+401+` and the code `+missing-credentials+`.
 
 The following diagram shows how {pluginname} uses tokens:
 
@@ -217,7 +219,7 @@ The signature is created by encoding the header and payload using Base64URL, the
 [[supported-algorithms]]
 === Supported Algorithms
 
-{productname} does not support symmetrical encryption algorithms, such as `HS256`. {companyname} recommends using the `RS256` algorithm. The following algorithms are supported:
+The {cloudname}-hosted AI service does not support symmetric signing algorithms, such as `HS256`. {companyname} recommends signing tokens with `RS256`. The following algorithms are supported:
 
 * RS256
 * RS384
@@ -225,6 +227,8 @@ The signature is created by encoding the header and payload using Base64URL, the
 * PS256
 * PS384
 * PS512
+
+On-premises deployments use different signing: tokens are signed with `HS256` using the API Secret, and the `aud` claim is the Environment ID. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication for the on-premises AI service].
 
 For details on each of these algorithms, visit: link:https://tools.ietf.org/html/rfc7518#section-3[RFC 7518, JSON Web Algorithms (JWA) Section 3 - Cryptographic Algorithms for Digital Signatures and MACs].
 

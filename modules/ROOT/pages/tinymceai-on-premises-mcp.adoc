@@ -18,7 +18,7 @@ image::tinymceai-on-premises/mcp-web-integrations-architecture.svg[MCP and web i
 
 The following demo shows the editor experience that <<mcp-integration,MCP configuration>> enables. The AI service backing the demo has an MCP server connected to a sample database of acquisition deals and company records. Choosing one of the suggested actions in the Chat sidebar prompts the model to call the MCP server's tools, then either fill in the document placeholders or answer in Chat.
 
-The editor configuration shown in the *JS* tab applies to on-premises deployments without change. MCP servers are declared on the AI service through <<mcp-integration,`+MCP_SERVERS+`>>; the editor requires only the `+tinymceai+` plugin and a token provider.
+On premises, the editor configuration shown in the *JS* tab also needs xref:tinymceai.adoc#tinymceai_service_url[`+tinymceai_service_url+`] set to the AI service URL, and xref:tinymceai.adoc#tinymceai_default_model[`+tinymceai_default_model+`] set to a model ID defined in `+MODELS+`. MCP servers are declared on the AI service through <<mcp-integration,`+MCP_SERVERS+`>>, not in the editor configuration.
 
 liveDemo::tinymceai-mcp[script_url_override="{tinymceai_mcp_live_demo_url}"]
 
@@ -141,6 +141,8 @@ Servers defined in `MCP_SERVERS` and servers registered through the admin API sh
 * The admin API rejects a server name that `MCP_SERVERS` already uses.
 * When `MCP_SERVERS` later adds a name that was first registered through the admin API, the `MCP_SERVERS` entry replaces the registered server.
 
+A server registered through the admin API with an `oauth` block must set `oauth.callbackUrl`. Changing the `url` or the `oauth` settings of a registered server, or deleting the server, revokes the OAuth tokens stored for it, and each user must authorize the server again.
+
 Conversations and Document Processing requests use servers connected either way.
 
 [[mcp-resources]]
@@ -179,7 +181,7 @@ The `headers` field sends a fixed set of HTTP headers with every request to the 
 }'
 ----
 
-If the MCP server requires per-user context without OAuth, encode identity in the conversation prompt or in a header that the MCP server resolves to a per-user identity on its own side.
+The `headers` field is the same for every user, so it cannot carry a per-user identity. For per-user identity, use <<mcp-oauth,OAuth 2.0 authentication>>. Custom integrations built on the REST API can also pass per-request data to one MCP server, or to one of its tools, with an `mcp-tool-context` message content part. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages/operation/createMessage[Send a message] in the API reference.
 
 [[mcp-oauth]]
 === OAuth 2.0 authentication
@@ -294,7 +296,7 @@ A typical integration requires four proxy routes:
 [[mcp-oauth-endpoints]]
 ==== REST endpoints
 
-All endpoints are authenticated with the same JWT used for other AI service endpoints. The acting user is identified by the token; each user has an independent connection state per MCP server.
+All endpoints are authenticated with the same JWT used for other AI service endpoints, and the token needs the `ai:conversations:read` and `ai:conversations:write` permissions. The acting user is identified by the token; each user has an independent connection state per MCP server. For requests, responses, and errors, see https://tinymceai.api.tiny.cloud/v1/docs#tag/MCP-OAuth[MCP OAuth] in the API reference.
 
 [cols="1,2,3",options="header"]
 |===
@@ -436,7 +438,7 @@ Web search requires three components configured together:
 |Set `WEBSEARCH_ENABLED='true'` and `WEBSEARCH_ENDPOINT` on the AI service container. Optionally set `WEBSEARCH_REQUEST_TIMEOUT` (default 10000ms) and `WEBSEARCH_HEADERS` for authenticated search backends.
 
 |MODELS entry
-|The model's `MODELS` entry must include `capabilities.webSearch: true` (boolean) for the web search toggle to appear in the editor. See xref:tinymceai-on-premises-providers.adoc#models-required[MODELS configuration].
+|The model's `MODELS` entry must include `capabilities.webSearch: true` (boolean) for the web search toggle to be enabled in the editor. See xref:tinymceai-on-premises-providers.adoc#models-required[MODELS configuration].
 
 |JWT permission
 |The JWT must include `ai:conversations:websearch` in the `auth.ai.permissions` array. See xref:tinymceai-on-premises-jwt.adoc#permissions-reference[JWT permissions]. Without this permission, the toggle remains grayed out even when the environment variables and MODELS entry are correct.
@@ -621,7 +623,8 @@ Custom streaming UI integrations can use the following Server-Sent Events (SSE) 
 [cols="1,3",options="header"]
 |===
 |Event name |Description
-|`mcp-tool-result` |Emitted when an MCP tool call completes. Contains the tool result. There is no pre-call event; clients receive no signal until the tool call finishes.
+|`mcp-tool-result` |Emitted when an MCP tool call completes. Contains the tool result. There is no pre-call event.
+|`mcp-tool-notification` |Emitted when an MCP tool sends a notification while the call runs. Contains the tool name, the severity level, and the notification data.
 |`web-search` |Sent when a web search runs. The payload is an empty object, and the event is also sent when the search back end fails (see <<web-search-troubleshooting,Troubleshooting>>).
 |`source` |Emitted with source citations from the model response.
 |===
@@ -660,11 +663,11 @@ For production clusters, the MCP server Deployments should have dedicated resour
 |===
 |Symptom |Resolution
 
-|Web search or web scraping features do not appear at all
+|Web search or web scraping features do not work
 |`WEBSEARCH_ENABLED` and `WEBRESOURCES_ENABLED` both default to `false`. Set them to `true` in the AI service environment and provide the corresponding `_ENDPOINT` values. Without these flags enabled, the AI service disables all web integration features regardless of JWT permissions or MODELS configuration.
 
 |Web search toggle is grayed out in the editor
-|The JWT is missing the `ai:conversations:websearch` permission. Add it to the `auth.ai.permissions` array in the token (or use the wildcard `ai:conversations:*`). See xref:tinymceai-on-premises-jwt.adoc#permissions-reference[JWT permissions].
+|The JWT is missing the `ai:conversations:websearch` permission. Add it to the `auth.ai.permissions` array in the token (or use the wildcard `ai:conversations:*`). See xref:tinymceai-on-premises-jwt.adoc#permissions-reference[JWT permissions]. The toggle is also grayed out when the selected model's `MODELS` entry does not include `capabilities.webSearch: true`. See xref:tinymceai-on-premises-providers.adoc#models-required[MODELS configuration].
 
 |Web search is toggled on but the model never uses it
 |The per-message request body is missing `"capabilities": {"webSearch": {}}`. The {productname} editor sends this when the toggle is active. Custom integrations must include it in each request body. See <<websearch-per-message>>.
@@ -683,6 +686,9 @@ For production clusters, the MCP server Deployments should have dedicated resour
 
 |`422 web-resource-download-error` from the web-resources endpoint
 |This single error code covers multiple failure modes: the scrape endpoint returned 5xx, returned non-JSON, returned an empty `data` field, or returned an unsupported `type` (anything other than `text/html` or `text/markdown`). Check AI service container logs for the underlying cause.
+
+|`504 web-resource-download-timeout` from the web-resources endpoint
+|The scrape endpoint did not respond in time. Check that the scraper is reachable from the AI service and the `WEBRESOURCES_REQUEST_TIMEOUT` value. For the other errors of this endpoint, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Web-Resources/operation/downloadWebResources[Download a web resource] in the API reference.
 
 |`mcp-oauth-invalid-state` error from the `complete` endpoint
 |The authorization session expired. Sessions are valid for ten minutes after calling `initialize`. Restart the flow from `POST /v1/mcp/oauth/\{serverName}/initialize`.

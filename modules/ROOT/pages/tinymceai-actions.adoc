@@ -119,7 +119,7 @@ Custom actions can be added to the list, and default actions can be removed or r
 The following table lists built-in Quick Actions. 
 
 * The **Editor** column is the label in the Quick Actions menu when that action is available in the editor.
-* The **Menu or control ID** column lists values for `tinymceai_quickactions_menu`, `tinymceai_quickactions_chat_prompts`, `tinymceai_quickactions_change_tone_menu`, and the toolbar when adding individual controls (see xref:tinymceai-actions.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu]).
+* The **Menu or control ID** column lists values for `tinymceai_quickactions_menu`, `tinymceai_quickactions_chat_prompts`, `tinymceai_quickactions_change_tone_menu`, and the toolbar when adding individual controls (see xref:tinymceai-actions.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu]). To put tones on the toolbar, add the `ai-quickactions-change-tone` menu button. It opens the tones set in xref:tinymceai.adoc#tinymceai_quickactions_change_tone_menu[`+tinymceai_quickactions_change_tone_menu+`]. The individual `ai-quickactions-tone-*` identifiers are menu items only, so they cannot be added to the toolbar.
 * The **System `actionName` or quick-action prompt id** column is the service identifier. Preview actions use a system `actionName` with the xref:tinymceai-actions.adoc#actions-api[Actions API]. Chat actions use a quick-action prompt id and xref:tinymceai-chat.adoc[Chat] with a pre-filled prompt, not the system actions API.
 
 [cols="1,3,2,3,1,1",options="header"]
@@ -261,7 +261,7 @@ Actions use streaming output with Server-Sent Events for real-time feedback as r
 
 Built-in Quick Actions—including identifiers, descriptions, and whether each command uses the system Actions API or Chat (Conversations API)—are summarized in xref:tinymceai-actions.adoc#quick-actions-reference-table[Default Actions].
 
-To run a system action, use https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions/operation/callSystemAction[Call a system action] with an `+actionName+` from the rows that have a checkmark in the **API** column of the table above. System actions use built-in prompts, so the request needs no prompt or model. For the token scopes that each system action needs, see xref:tinymceai-permissions.adoc#actions-permissions[Actions permissions].
+To run a system action, use https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions/operation/callSystemAction[Call a system action] with an `+actionName+` from the rows that have a checkmark in the **API** column of the table above. System actions use built-in prompts, so the request needs no prompt or model. The `+translate+` action also takes the target language in `+args.language+`. For the token scopes that each system action needs, see xref:tinymceai-permissions.adoc#actions-permissions[Actions permissions].
 
 For endpoint details, request and response schemas, authentication, and streaming behavior for system `actionName` calls, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions[Actions API].
 
@@ -272,7 +272,7 @@ In addition to system actions, custom actions can be created for specific use ca
 
 Unlike system actions that use default identifiers, custom actions use a unified endpoint, https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions/operation/callCustomAction[Call a custom action], where the transformation behavior is defined through a prompt parameter. See https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions[Actions API] for the custom actions endpoint and implementation details.
 
-Custom actions require the `ai:actions:custom` permission in the JWT token. See xref:tinymceai-permissions.adoc#actions-permissions[Actions permissions].
+Custom actions require the `ai:actions:custom` permission and the permission for the requested model in the JWT token. See xref:tinymceai-permissions.adoc#actions-permissions[Actions permissions] and xref:tinymceai-permissions.adoc#model-permissions[Model permissions].
 
 [[actions-streaming]]
 === Streaming Responses
@@ -283,6 +283,8 @@ Actions use Server-Sent Events (SSE) for real-time streaming results. See the xr
 === API Reference
 
 The https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions[Actions API] reference (interactive OpenAPI documentation) is the full source for system and custom action endpoints, request and response schemas, authentication, worked examples, and streaming action responses.
+
+To record user feedback on a result, https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions/operation/addSystemActionRating[rate a system action call] or https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions/operation/addCustomActionRating[rate a custom action call] with the `+callId+` from the `+action-metadata+` event of the action stream.
 
 [[related-features]]
 == Related Features

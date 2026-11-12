@@ -9,7 +9,7 @@ This page covers *authentication between the application back end and the AI ser
 
 Before configuring JWT, complete the xref:tinymceai-on-premises-database.adoc[data layer] and xref:tinymceai-on-premises-providers.adoc[LLM provider] setup. After JWT, proceed to xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration] to wire the editor to the token endpoint.
 
-The on-premises AI service uses *HS256* (HMAC-SHA256, symmetric shared secret) for JSON Web Token (JWT) authentication. This is different from the Tiny Cloud AI service, which uses RS256.
+The on-premises AI service uses *HS256* (HMAC-SHA256, symmetric shared secret) for JSON Web Token (JWT) authentication, and the `aud` claim is the Environment ID. This is different from the {cloudname}-hosted AI service, where tokens are signed with RS256 and the `aud` claim is the {cloudname} API key.
 
 [WARNING]
 --
@@ -23,7 +23,7 @@ Do not follow the xref:tinymceai-jwt-authentication-intro.adoc[Cloud JWT guide] 
 [.text-center]
 image::tinymceai-on-premises/jwt-authentication-fig-1.svg[alt="JWT token exchange sequence between user application back end and AI service with error branches",width=100%]
 
-The shared secret (API Secret) never leaves the application back end. The editor only ever sees signed tokens, and the AI service only ever sees signed tokens; neither has direct access to the secret.
+The shared secret (API Secret) never reaches the browser. The editor only ever sees signed tokens.
 
 
 
@@ -68,10 +68,10 @@ Every token MUST contain the following claims.
 [cols=",,",options="header",]
 |===
 |Claim |Type |Description
-|`aud` |string |The Environment ID, copied from the Management Panel (for example `viOu8BnjJHb0HGK091p`). Type *must be string*, not array; the verifier rejects array-shaped `aud` (the default in some JWT libraries) with `invalid-jwt-payload`.
+|`aud` |string |The Environment ID, copied from the Management Panel (for example `viOu8BnjJHb0HGK091pQ`). Type *must be string*, not array; the verifier rejects array-shaped `aud` (the default in some JWT libraries) with `invalid-jwt-payload`.
 |`iat` |number |Issued-at, seconds since epoch (UTC).
 |`exp` |number |Expiry, seconds since epoch (UTC). Recommend `iat {plus} 3600` for demos, `iat {plus} 900` for production. The server applies 60 seconds of clock-skew leeway; tokens up to 60 seconds past `exp` still verify.
-|`sub` |string |Unique, stable user identifier. Conversation history is isolated per-`sub`; do not reuse one `sub` across users or conversations will leak between them. Do not include personally identifiable information (PII), such as names or email addresses, in the `sub` value, because the AI service logs it. Use an opaque identifier, such as an internal user ID.
+|`sub` |string |Unique, stable user identifier, at most 96 characters. Conversation history is isolated per-`sub`; do not reuse one `sub` across users or conversations will leak between them. Do not include personally identifiable information (PII), such as names or email addresses, in the `sub` value, because the AI service logs it. Use an opaque identifier, such as an internal user ID.
 |`auth.ai.permissions` |`string[]` |Array of feature permission strings. See the permissions reference below. Wildcards (`+*+`) are accepted only in the documented positions; the bare string `"*"` is rejected.
 |===
 
@@ -105,7 +105,7 @@ The following table lists the permissions that most on-premises tokens use. For 
 |`ai:conversations:websearch` |Enable the web search toggle in conversations. Without this permission, `GET /v1/models/1` reports `capabilities.webSearch.allowed: false` even when `WEBSEARCH_ENABLED=true` and `capabilities.webSearch: true` is set on the model.
 |`ai:conversations:reasoning` |Enable the reasoning toggle in conversations
 |`ai:models:agent` |Access the built-in agent model (model ID `agent-1`)
-|`ai:models:<provider>:<model-id>` |Access a specific custom model configured through the `MODELS` env var
+|`ai:models:<provider>:<model-id>` |Access one specific model, from the default configuration or from the `MODELS` env var
 |`ai:actions:system:*` |All system actions: `continue`, `fix-grammar`, `improve-writing`, `make-longer`, `make-shorter`, the `make-tone-*` actions, and `translate`. Chat actions, such as Summarize and Explain, use the conversation permissions instead. See xref:tinymceai-actions.adoc#default-actions[Default actions].
 |`ai:reviews:system:*` |All built-in review features (correctness, clarity, readability, tone, and related checks)
 |`ai:contexts:<contextId>` |Use one context from the xref:tinymceai-api-overview.adoc#contexts[context library]. `ai:contexts:*` covers every context. A context created with `autoApply` applies only to requests whose token covers it. For any other request, the service skips the context and returns no error.
@@ -113,7 +113,7 @@ The following table lists the permissions that most on-premises tokens use. For 
 
 === Model permission syntax
 
-`ai:models:<provider>:<model-id>` selects a specific custom model. The parser is *not* a greedy colon-split; it understands that `<model-id>` may itself contain colons and dots.
+`ai:models:<provider>:<model-id>` selects a specific model. The parser is *not* a greedy colon-split; it understands that `<model-id>` may itself contain colons and dots.
 
 Examples:
 
@@ -153,7 +153,10 @@ For demos and admin-tier users, this is the standard grant:
   "ai:conversations:*",
   "ai:models:agent",
   "ai:actions:system:*",
-  "ai:reviews:system:*"
+  "ai:actions:custom",
+  "ai:reviews:system:*",
+  "ai:reviews:custom",
+  "ai:documents:process"
 ]
 ----
 
@@ -204,7 +207,7 @@ The service allows up to 60 seconds of clock skew on the `exp` claim. Keep the t
 
 == Production token endpoint examples
 
-Each example reads `AI_ENV_ID` and `AI_API_SECRET` from environment variables, authenticates the user through the framework's session/auth layer, signs an HS256 token, and returns `{"token": "..."}` as JSON. The endpoint runs in the application back end; the AI service never sees the API Secret directly.
+Each example reads `AI_ENV_ID` and `AI_API_SECRET` from environment variables, authenticates the user through the framework's session/auth layer, signs an HS256 token, and returns `{"token": "..."}` as JSON. The endpoint runs in the application back end.
 
 [cols="1,1",options="header"]
 |===
@@ -880,8 +883,8 @@ When debugging, start here. Most "auth failures" reflect wrong claim values rath
 |`Environment not found` |Environment is in `environments__environment` / `security__environment` but not in `ai_assistant_environments`, because the AI service is not attached to the environment |Recreate through Management Panel UI.
 |HTTP 500 error on every endpoint |`auth.ai.permissions` is not an array of strings |Must be ``string[]``. Not a single string. Not `useAllFeatures`.
 |HTTP 403 `no-permissions-defined` |The token has no `auth` claim, no `permissions` key, or an empty `permissions` array |Add the permissions the user needs to `auth.ai.permissions`.
-|`allowed: false` on specific endpoints only |Missing the specific permission |Decode token, check the `auth.ai.permissions` array against the table above.
-|Token silently rejected, no decoded error |RS256 signature |Re-sign with HS256.
+|HTTP 403 `missing-permissions`, or `allowed: false` for a model or capability in `GET /v1/models/1` |Missing the specific permission |Add the permissions listed in `data.missingPermissions` to the `auth.ai.permissions` array. See the table above.
+|HTTP 401 `missing-credentials` |No `Authorization` header, or a scheme other than `Bearer` |Send the token as `Authorization: Bearer <token>`.
 |`aud` claim type mismatch |`aud` issued as array instead of string |Some JWT libraries default to array `aud`. Force string.
 |Editor shows an error, and the browser console logs `TinyMCE AI Error:` with the cause, for example `Invalid JWT token provider result` or `Invalid JWT token payload` |Token endpoint returned `token` as a nested object, or returned a token without the required claims |Open browser devtools → Network → inspect the response from `/api/ai-token`.
 |===
@@ -890,7 +893,9 @@ When debugging, start here. Most "auth failures" reflect wrong claim values rath
 
 [source,bash]
 ----
-TOKEN=$(curl -s -X POST http://localhost:3000/api/ai-token | jq -r .token)
+# The token endpoint requires a signed-in session. Pass the session cookie from a signed-in browser.
+TOKEN=$(curl -s -X POST http://localhost:3000/api/ai-token \
+  -H "Cookie: <session-cookie>" | jq -r .token)
 
 curl -i https://ai.example.com/v1/conversations \
   -H "Authorization: Bearer $TOKEN" \
@@ -970,8 +975,9 @@ function getPermissionsForPlan(plan) {
     case 'enterprise':
       return ['ai:conversations:*', 'ai:models:agent', 'ai:actions:system:*', 'ai:reviews:system:*'];
     case 'pro':
-      return ['ai:conversations:*', 'ai:actions:system:*'];
+      return ['ai:conversations:*', 'ai:models:agent', 'ai:actions:system:*'];
     case 'basic':
+    default:
       return ['ai:actions:system:*'];
   }
 }
@@ -979,7 +985,8 @@ function getPermissionsForPlan(plan) {
 function getCustomerConfig(tenantId) {
   return {
     envId:     process.env[`AI_ENV_ID_${tenantId}`],
-    apiSecret: process.env[`AI_API_SECRET_${tenantId}`]
+    apiSecret: process.env[`AI_API_SECRET_${tenantId}`],
+    plan:      process.env[`AI_PLAN_${tenantId}`]
   };
 }
 ----

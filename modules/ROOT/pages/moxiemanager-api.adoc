@@ -1,0 +1,507 @@
+= MoxieManager API
+:navtitle: API
+:description: MoxieManager JavaScript API methods and callbacks.
+:keywords: moxiemanager, api, javascript, moxman, browse, upload, edit, view
+
+== Javascript API
+
+Here are some of the basic Javascript API integration methods.
+
+[cols=",",options="header",]
+|===
+|Method |Description
+|xref:#js-browse[browse] |Displays the file browser view.
+|xref:#js-upload[upload] |Displays the upload view.
+|xref:#js-edit[edit] |Displays the edit view.
+|xref:#js-view[view] |Displays the gallery view.
+|xref:#js-createdir[createDir] |Displays the create directory view.
+|xref:#js-createdoc[createDoc] |Displays the create document view.
+|===
+
+If you are configuring this from in a {productname} init config you need to xref:moxiemanager-integration.adoc#tinymce-integration[check out the API here].
+
+If you are using MoxieManager Stand-alone, first include this script.
+
+[source,html]
+----
+<script src="<yourpath>/moxiemanager/js/moxman.loader.min.js"></script>
+----
+
+Then you can use these snipplets, either on buttons or wherever you like.
+
+[[js-browse]]
+== `+browse+`
+
+This method allows you to browse for files in the MoxieManager and insert these into form fields or to a custom callback function.
+
+=== Parameters
+
+[cols="1,3",options="header"]
+|===
+| Name | Description
+|`+path+` a|
+Public file system path to display by default. For example: `+/files/images +`
+
+In order to configure a different start path from the rootpath, the first part of the path needs to be the last part of the rootpath. So if your rootpath is `+/www/domain/myfiles+` then your path needs to be set to `+/myfiles/subfolder+`
+
+|`+rootpath+` |Public file system path to use as the root. This option needs to be within the configured backend `+filesystem.rootpath+` for security reasons. If you have xref:moxiemanager-options.adoc#filesystem-rootpath[filesystem.rootpath] configured to `+c:/inetpub/wwwroot+`, and want to constrict users to accessing `+c:/inetpub/wwwroot/files/images+`, you need to set this option to: `+/wwwroot/files/images+`
+|`+fields+` |Comma separated list of field ID's to populate with selected file url. *If you are using oninsert you can not use fields option and the other way around.*
+|`+view+` |Default view to open. Defaults to `+files+` but can also be configured to `+thumbs+`.
+|`+insert+` |Boolean option that allows you to disable the insert functionallity. Can be used when the moxiemanager is used in standalone mode.
+|`+filter+` |Initial filter to apply to file selection. This option will fill the filter input field with the value specified.
+|`+extensions+` |Comma separated list of file extensions to display for.
+|`+include_file_pattern+` |Regexp pattern that the files need to match inorder to be displayed.
+|`+exclude_file_pattern+` |Regexp pattern that will be excluded from file list if it matches.
+|`+include_directory_pattern+` |Regexp pattern that the directories need to mathc inorder to be displayed.
+|`+exclude_directory_pattern+` |Regexp pattern that will be exluded from file list if it matches.
+|`+disabled_tools+` |Comma separated list of tools to disable.
+|`+hidden_tools+` |Comma separated list of tools to hide.
+|`+url+` |Url of input file. If this is specified the MoxieManager will try to resolve the URL into a local file system path and the open the parent directory of that file and select the file.
+|`+relative_urls+` |If this option is set to true, all URLs returned from the MoxieManager will be relative from the specified document_base_url. This option is set to false by default.
+|`+document_base_url+` |Document base URL defaults to the current page. This is the point relative URLs will be relative to.
+|`+no_host+` |Enables you to remove scheme/protocol and host name from urls produced.
+|`+multiple+` |Boolean value, enable inserting multiple files or not, default true.
+|`+width+` |Set the default width of the window, note that a to small value may break the UI. Should be a number pixel value only, example: width: 600
+|`+height+` |Set the default height of the window, note that a to small value may break the UI. Should be a number pixel value only, example: height: 400
+|`+fullscreen+` |Boolean value, set to true to open in fullscreen, default false.
+|`+title+` |Sets the title of the main screen, replaces "MoxieManager" default title.
+|`+leftpanel+` |Boolean value, display or hide the left filesystems panel, true by default.
+|xref:moxiemanager-options.adoc#insert-filter[insert_filter] |Callback that gets executed when files are selected and inserted. This callback allows you to alter the JSON data before it gets inserted into a form field or passed to the oninsert callback.
+|`+skin+` |Enables you to set a custom skin to be used.
+|xref:moxiemanager-options.adoc#filelist-main-toolbar[filelist_main_toolbar] |Enables you to control what to display in the main toolbar of the filelist browse dialog.
+|xref:moxiemanager-options.adoc#filelist-utils-toolbar[filelist_utils_toolbar] |Enables you to control what to display in the utils toolbar of the filelist browse dialog.
+|xref:moxiemanager-options.adoc#filelist-manage-menu[filelist_manage_menu] |Enables you to configure what to display in the manage button menu.
+|xref:moxiemanager-options.adoc#filelist-context-menu[filelist_context_menu] |Enables you to configure what to display in the context menu.
+|xref:moxiemanager-options.adoc#filelist-insert-toolbar[filelist_insert_toolbar] |Enables you to configure what to display in the insert/cancel toolbar.
+|xref:moxiemanager-options.adoc#editimage-main-toolbar[editimage_main_toolbar] |Enables you to control what to display in the main toolbar of the edit image dialog.
+|xref:moxiemanager-options.adoc#editimage-zoom-toolbar[editimage_zoom_toolbar] |Enables you to control what to display in the zoom toobar of the edit image dialog.
+|xref:moxiemanager-options.adoc#editimage-actions-toolbar[editimage_actions_toolbar] |Enables you to control what to display in the actions toolbar/pabel of the edit image dialog.
+|`+fileinfo_fields+` |Space separated list of fields to display currently "path" and "url".
+|xref:moxiemanager-options.adoc#remember-last-path[remember_last_path] |When enabled the MoxieManager will remember the last path the user was in when a file was selected.
+|xref:moxiemanager-options.adoc#sort-by[sort_by] |Changes the default sort by column for file listings.
+|xref:moxiemanager-options.adoc#sort-by[sort_order] |Changed the default sort order asc/desc.
+|`+filelist_insert_event+` |Lets you specify an event to insert on can be click, dblclick or none.
+|===
+
+=== Events
+
+In version 2.0 of MoxieManager, some events where removed and added by requestion from the users, this is a list of these events.
+
+[cols="1,3",options="header"]
+|===
+|Name |Description
+|`+onopen+` |Event triggered when opening.
+|`+onclose+` |Event triggered when closing.
+|`+onupload+` |Event triggered when an upload is completed.
+|`+onsave+` |Event triggered when a text file or image is edited.
+|xref:#js-browse-oninsert[oninsert] |Event triggered when file is inserted.
+|`+oncreate+` |Event triggered when folder is created.
+|===
+
+=== Examples
+
+==== Default path to browse files from
+
+[source,js]
+----
+moxman.browse({
+    path: '/files/images'
+});
+----
+
+==== Custom oninsert callback function
+
+[source,js]
+----
+moxman.browse({
+    oninsert: function(args) {
+        console.log(args.focusedFile);
+    }
+});
+----
+
+.On create event testing
+[source,js]
+----
+moxman.browse({
+    oncreate: function(args) {
+        console.log(args);
+    }
+});
+----
+
+.You can also use events when calling createDoc (or other dialogs) directly
+[source,js]
+----
+moxman.createDir({path: '/files', oncreate: alert('File created')});
+----
+
+==== Browse files
+
+[source,html]
+----
+<script>moxman.browse();</script>
+----
+
+==== Pick files for input
+
+[source,js]
+----
+moxman.browse({fields: 'url'});
+----
+
+==== Pick files with callback
+
+[source,js]
+----
+moxman.browse({
+  oninsert: function(args) {
+    console.log(args.files[0].url);
+  }
+});
+----
+
+==== Get absolute urls
+
+[source,js]
+----
+moxman.browse({fields: 'absurl', no_host: true});
+----
+
+==== Browse images only
+
+[source,js]
+----
+moxman.browse({
+  view: 'thumbs',
+  fields: 'url',
+  extensions:'jpg,gif,png'
+});
+----
+
+==== Browse files only
+
+[source,js]
+----
+moxman.browse({
+  view: 'files',
+  fields: 'url',
+  extensions: 'txt'
+});
+----
+
+[[js-browse-oninsert]]
+=== `+oninsert+` callback
+
+This callback function gets executed when users select files to be inserted. The callback has one argument with some properties.
+
+==== Properties
+
+List of properties for the callback args.
+
+[cols=",",options="header",]
+|===
+| Name | Description
+|`+focusedFile+` |File object for the currently focused file. This would normally be the first selected file if the user selects multiple files.
+|`+files+` |FileCollection containing all files selected.
+|===
+
+Object returned is also an event.
+
+==== Example
+
+[source,js]
+----
+moxman.browse({
+    oninsert: function(args) {
+        console.log(args.focusedFile);
+    }
+});
+----
+
+Since its an event, you can prevent the window to close using this method:
+
+[source,js]
+----
+moxman.browse({
+    oninsert : function(args) {
+        console.log(args.focusedFile);
+        args.preventDefault();
+    }
+});
+----
+
+[[js-upload]]
+== `+upload+`
+
+This method allows you to upload files directly to the specified path. It also enables you to get the path and urls to those uploaded files.
+
+=== Parameters
+
+[cols=",",options="header",]
+|===
+|Name |Description
+|`+path+` |Public file system path to upload files to.
+|`+onopen+` |Fires after the dialog has been opened. Can be used to produce a custom throbber.
+|xref:#js-upload-onupload[onupload] |Callback that gets executed when files are uploaded.
+|`+relative_urls+` |If this option is set to true, all URLs returned from the MoxieManager will be relative from the specified document_base_url. This option is set to false by default.
+|`+document_base_url+` |Document base URL defaults to the current page. This is the point relative URLs will be relative to.
+|`+remove_script_host+` |Enables you to remove scheme/protocol and host name from urls produced.
+|`+upload_auto_close+` |Automatically closes the upload dialog if all files where successfully uploaded. Disabled by default.
+|===
+
+=== Example
+
+[source,js]
+----
+moxman.upload({
+    path: '/files/images',
+    onupload: function(args) {
+       console.log(args.files);
+    }
+});
+----
+
+[[js-upload-onupload]]
+=== `+onupload+` callback
+
+This callback enables you to intercept the uploaded files.
+
+==== Parameters
+
+[cols=",",options="header",]
+|===
+|Name |Description
+|`+files+` |FileCollection instance with all the uploaded files.
+|===
+
+==== Example
+
+[source,js]
+----
+moxman.upload({
+    path: '/files/images',
+    onupload: function(args) {
+       console.log(args.files);
+    }
+});
+----
+
+[[js-edit]]
+== `+edit+`
+
+This method enables you to edit images or text files directly by passing in a public path to a file.
+
+=== Parameters
+
+[cols=",",options="header",]
+|===
+|Name |Description
+|`+path+` |Public path to the file to edit. For example: `+/files/images/image.jpg+`
+|`+onopen+` |Fires after the dialog has been opened. Can be used to produce a custom throbber.
+|xref:#js-edit-onsave[onsave] |Callback that gets executed when an image or text file is saved.
+|===
+
+=== Example
+
+[source,js]
+----
+moxman.edit({
+    path: '/files/images/image.jpg',
+    onsave: function(args) {
+        console.log(args.file);
+    }
+});
+----
+
+==== Edit image
+
+[source,js]
+----
+moxman.edit({
+  path: '/files/teddybear.jpg',
+  onsave: function(result) {
+    alert(result.file.url);
+  }
+});
+----
+
+==== Edit text file
+
+[source,js]
+----
+moxman.edit({
+  path: '/files/test.txt',
+  onsave: function(result) {
+    alert(result.file.url);
+  }
+});
+----
+
+[[js-edit-onsave]]
+=== `+onsave+` callback
+
+This callback gets executed when files are saves by the edit dialog.
+
+==== Parameters
+
+[cols=",",options="header",]
+|===
+|Name |Description
+|`+file+` | File instance of the file being saved.
+|===
+
+==== Example
+
+[source,js]
+----
+moxman.edit({
+    path: '/files/images/image.jpg',
+    onsave: function(args) {
+        console.log(args.file);
+    }
+});
+----
+
+[[js-view]]
+== `+view+`
+
+This method enables you to view images in a specific path.
+
+=== Parameters
+
+[cols=",",options="header",]
+|===
+|Name |Description
+|`+path+` |Public file system path to the file to view.
+|`+paths+` |Array of public file system paths to display.
+|`+onopen+` |Fires after the dialog has been opened. Can be used to produce a custom throbber.
+|===
+
+=== Example
+
+[source,js]
+----
+// View the specified image
+moxman.view({
+    path: '/files/images/image.jpg'
+});
+
+// View the specified images
+moxman.view({
+    paths: ['/files/images/image.jpg', '/files/images/otherimage.jpg']
+});
+----
+
+==== View image
+
+[source,js]
+----
+moxman.view({
+  path: '/testfiles/camera.jpg'
+});
+----
+
+[[js-createdir]]
+== `+createDir+`
+
+This method enables you to create a directory in the specified path.
+
+=== Parameters
+
+[cols=",",options="header",]
+|===
+|Name |Description
+|`+path+` |Public file system path where the dir should be created.
+|xref:#js-createdir-oncreate[oncreate] |Callback that gets executed when the directory is created.
+|`+onopen+` |Fires after the dialog has been opened. Can be used to produce a custom throbber.
+|===
+
+=== Example
+
+[source,js]
+----
+moxman.createDir({
+    path: '/files/images',
+    oncreate: function(args) {
+        console.log(args.file);
+    }
+});
+----
+
+[[js-createdir-oncreate]]
+=== `+oncreate+` callback
+
+This callback gets executed when a directory is created by the createDir method.
+
+==== Parameters
+
+[cols=",",options="header",]
+|===
+|Name |Description
+|`+file+` |File instance of the created directory.
+|===
+
+==== Example
+
+[source,js]
+----
+moxman.createDir({
+    path: '/files/images',
+    oncreate: function(args) {
+        console.log(args.file);
+    }
+});
+----
+
+[[js-createdoc]]
+== `+createDoc+`
+
+This method enables you to create a document in the specified path.
+
+=== Parameters
+
+[cols=",",options="header",]
+|===
+|Name |Description
+|`+path+` |Public file system path where the document should be created.
+|xref:#js-createdoc-oncreate[oncreate] |Callback that gets executed when the document is created.
+|`+onopen+` |Fires after the dialog has been opened. Can be used to produce a custom throbber.
+|===
+
+=== Example
+
+[source,js]
+----
+moxman.createDoc({
+    path: '/files/images',
+    oncreate: function(args) {
+        console.log(args.file);
+    }
+});
+----
+
+[[js-createdoc-oncreate]]
+=== `+oncreate+` callback
+
+This callback gets executed when a document is created by the createDoc method.
+
+==== Parameters
+
+[cols=",",options="header",]
+|===
+|Name |Description
+|`+file+` |File instance of the created document.
+|===
+
+==== Example
+
+[source,js]
+----
+moxman.createDoc({
+    path: '/files/images',
+    oncreate: function(args) {
+        console.log(args.file);
+    }
+});
+----

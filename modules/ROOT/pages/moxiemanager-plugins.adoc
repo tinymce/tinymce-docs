@@ -1,0 +1,41 @@
+= MoxieManager plugins
+:navtitle: Plugins
+:description: MoxieManager plugins and the license each plugin requires.
+:keywords: moxiemanager, plugins, authenticator, filesystem
+
+Some plugins are only available in certain licenses, as noted by the last column in the table.
+
+[cols=",,",options="header",]
+|===
+|Plugin |Description |License
+|xref:moxiemanager-how-to-guides.adoc#how-to-configure-for-amazons3[AmazonS3] |FileSystem implementation for Amazon S3 cloud storage. |Enterprise
+|xref:moxiemanager-how-to-guides.adoc#how-to-configure-for-azure[Azure] |FileSystem implementation for Azure Blob Storage. |Enterprise
+|xref:moxiemanager-options.adoc#autoformat-rules[AutoFormat] |Automatically formats images when uploaded. |All
+|xref:moxiemanager-how-to-guides.adoc#how-to-use-autorename[AutoRename] |Auto Rename files on upload. |All
+|xref:moxiemanager-security.adoc#basicauthenticator[BasicAuthenticator] |Authenticator with basic login config for small sets of users. |All
+|xref:moxiemanager-how-to-guides.adoc#how-to-use-dropbox[Dropbox] |Import files from Dropbox into your file system. |Professional, Enterprise
+|xref:moxiemanager-options.adoc#favorites-max[Favorites] |List with favorites you can add/remove from at a user level. |All
+|xref:moxiemanager-how-to-guides.adoc#how-to-use-ftp[Ftp] |FileSystem implementation for FTP. |Professional, Enterprise
+|xref:moxiemanager-options.adoc#history-max[History] |List of latest inserted files stored at user level. |All
+|xref:moxiemanager-options.adoc#ipauthenticator-ip-numbers[IpAuthenticator] |Authenticator for specific ip addresses or ranges. |All
+|xref:moxiemanager-how-to-guides.adoc#how-to-use-quota[Quota] |Quota plugin, limit user upload capabilities. |Professional, Enterprise
+|xref:moxiemanager-security.adoc#sessionauthenticator[SessionAuthenticator] |Authenticator that checks sessions for option overrides etc. |All
+|Uploaded |List of latest uploaded files. |All
+|xref:moxiemanager-security.adoc#symfonyauthenticator[SymfonyAuthenticator] |Authenticator for Symfony > 2.x |All
+|xref:moxiemanager-security.adoc#cakeauthenticator[CakeAuthenticator] |Authenticator for CakePHP |All
+|xref:moxiemanager-security.adoc#codeigniterauthenticator[CodeIgniterAuthenticator] |Authentication for the CodeIgniter PHP framework. |All
+|xref:moxiemanager-how-to-guides.adoc#how-to-install-in-joomla[JoomlaAuthenciator] |Authenticator for the Joomla CMS system. |All
+|DrupalAuthenticator |Authenticator for the Drupal CMS system. |All
+|xref:moxiemanager-security.adoc#zendauthenticator[ZendAuthenticator] |Authenticator for the Zend 2 framework. |All
+|===
+
+== .NET example plugin
+
+You can download an example plugin for .NET here, this is a Visual Studio 2012 solution, to build a custom plugin, follow these steps:
+
+. Unpack the zip and open up the solution in Visual Studio (2012 recommended).
+. Add a reference to the MoxieManager.Core.dll file before building, modify/add/remove any code you wish.
+. Build and copy the resulting DLL into the same bin folder as the other DLL files for MoxieManager.
+. Add the appropriate line to your Web.Config file so the plugin gets included, make note of the name so it matches yours.
+
+xref:attachment$moxiemanager/moxiemanager-example-plugin.zip[Moxiemanager .NET Example Plugin]

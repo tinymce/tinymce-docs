@@ -1,0 +1,32 @@
+[cols="1,2,4",options="header"]
+|===
+|Name |Arguments |Description
+
+|`+find+` |`+text+`: `+String+`, `+matchCase+`: `+Boolean+`, `+wholeWord+`: `+Boolean+`, `+inSelection+` (optional): `+Boolean+` |Highlights every match of `+text+` in the editor content and makes the first match the current match. Returns the number of matches as a `+Number+`, or `+0+` if there are no matches. Set `+matchCase+` to `+true+` for a case-sensitive search, `+wholeWord+` to `+true+` to match whole words only, and `+inSelection+` to `+true+` to search only within the current selection. `+inSelection+` defaults to `+false+`.
+|`+next+` |None |Makes the next match the current match. After the last match, moves to the first match.
+|`+prev+` |None |Makes the previous match the current match. Before the first match, moves to the last match.
+|`+replace+` |`+text+`: `+String+`, `+forward+` (optional): `+Boolean+`, `+all+` (optional): `+Boolean+` |Replaces the current match with `+text+`, then moves to the next match, or to the previous match when `+forward+` is `+false+`. An empty `+text+` string removes the match. Set `+all+` to `+true+` to replace every match. Returns `+true+` if matches remain, otherwise `+false+`. `+forward+` defaults to `+true+` and `+all+` defaults to `+false+`.
+|`+done+` |`+keepEditorSelection+` (optional): `+Boolean+` |Ends the search and removes the match highlighting. Returns the current match as a `+Range+`, or `+undefined+` if there is no current match. By default, the current match is also selected in the editor. Set `+keepEditorSelection+` to `+false+` to leave the editor selection unchanged.
+|===
+
+.Examples
+[source,js]
+----
+// Highlight all matches of 'cat', ignoring case and matching partial words, and return the number of matches
+const count = tinymce.activeEditor.plugins.searchreplace.find('cat', false, false);
+
+// Make the next match the current match
+tinymce.activeEditor.plugins.searchreplace.next();
+
+// Make the previous match the current match
+tinymce.activeEditor.plugins.searchreplace.prev();
+
+// Replace the current match with 'dog' and move to the next match
+tinymce.activeEditor.plugins.searchreplace.replace('dog');
+
+// Replace every match with 'dog'
+tinymce.activeEditor.plugins.searchreplace.replace('dog', true, true);
+
+// End the search, remove the match highlighting, and select the current match
+tinymce.activeEditor.plugins.searchreplace.done();
+----

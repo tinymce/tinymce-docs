@@ -30,3 +30,11 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 The Search and Replace plugin provides the following {productname} command.
 
 include::partial$commands/searchreplace-cmds.adoc[]
+
+When the dialog opens, the *Find* field is pre-filled with the text currently selected in the editor. To open the dialog with a search term, select the text before running the `+SearchReplace+` command. To search without opening the dialog, use the xref:#apis[{pluginname} APIs].
+
+== APIs
+
+The {pluginname} plugin provides the following APIs.
+
+include::partial$plugin-apis/searchreplace-apis.adoc[]

@@ -18,6 +18,7 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |active |boolean |optional |default: `false` - Represents the button's active state. When `true`, the button is highlighted. Can be changed using `+setActive+` from the button's API.
 |onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function invoked when the button is rendered. For details, see: xref:using-onsetup[Using `+onSetup+`].
 |onAction |`+(api) => void+` |required |Function invoked when the button is clicked.
+|onDoubleClick |`+(api) => void+` |optional |Function invoked when the button is double-clicked. Not invoked when the button is disabled. The browser registers each click of a double-click, so `+onAction+` runs twice before `+onDoubleClick+` runs. Requires {productname} 8.11 or newer.
 |shortcut |string |optional |Shortcut to display in the tooltip. To register a shortcut, see: xref:shortcuts.adoc[Add custom shortcuts to {productname}].
 |context |string |optional |default: `mode:design` - The context property dynamically enables or disables the button based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===

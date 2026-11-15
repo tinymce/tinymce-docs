@@ -71,6 +71,28 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Format Painter
+
+The {productname} {release-version} release includes an accompanying release of the **Format Painter** premium plugin.
+
+**Format Painter** includes the following additions.
+
+==== Double-clicking the format painter toolbar button now enables sticky mode, keeping the format painter active to apply the copied formatting multiple times
+// #TINYMCE-15104
+
+Previously, the format painter turned off after applying the copied formatting once. To apply the same formatting to several pieces of content with the toolbar button, users had to copy the formatting again before each application.
+
+In {productname} {release-version}, double-clicking the format painter toolbar button turns on sticky mode. In sticky mode, the format painter stays active and applies the copied formatting to each piece of content the user selects. Clicking the toolbar button again or pressing `+Esc+` turns off sticky mode. For the steps, see: xref:formatpainter.adoc#using-format-painter[Using Format Painter].
+
+==== New `+mceToggleStickyFormatPainter+` command to toggle the format painter sticky mode
+// #TINYMCE-15104
+
+Previously, no command turned on sticky mode in the format painter, so integrations could not start sticky mode programmatically.
+
+In {productname} {release-version}, the new xref:formatpainter.adoc#commands[`+mceToggleStickyFormatPainter+`] command copies the formatting from the current selection and turns on sticky mode. Running the `+mceToggleFormatPainter+` command turns off sticky mode.
+
+For information on the **Format Painter** plugin, see: xref:formatpainter.adoc[Format Painter].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
@@ -126,6 +148,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== New `+onDoubleClick+` option for toolbar toggle buttons, called when the button is double clicked
+// #TINYMCE-15104
+
+Previously, a custom toolbar toggle button could respond only to single clicks, through its `+onAction+` function.
+
+In {productname} {release-version}, toggle buttons registered with `+editor.ui.registry.addToggleButton+` accept a new optional xref:custom-toggle-toolbar-button.adoc#options[`+onDoubleClick+`] function. {productname} calls the function with the button API when the user double-clicks the button, unless the button is disabled. The browser registers each click of a double-click, so the `+onAction+` function runs twice before the `+onDoubleClick+` function runs.
 
 
 [[changes]]

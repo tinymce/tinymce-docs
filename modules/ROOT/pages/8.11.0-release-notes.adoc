@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Pressing Tab could move focus into a disabled editor, which showed no focus indicator
+// #TINYMCE-13514
+
+Previously, when the xref:editor-important-options.adoc#disabled[`+disabled+`] option disabled the editor, pressing Tab could still move focus into the editor content area. The disabled editor showed no focus indicator. As a result, keyboard and screen reader users reached an editor they could not use, and they could not tell where focus had gone. The xref:editor-important-options.adoc#auto_focus[`+auto_focus+`] option could also focus a disabled editor when the page loaded.
+
+In {productname} {release-version}, pressing Tab moves focus past a disabled editor, and the `+auto_focus+` option no longer focuses a disabled editor. When the editor becomes enabled again, {productname} returns it to the tab order and restores any existing `+tabindex+` value.
+
 
 [[security-fixes]]
 == Security fixes

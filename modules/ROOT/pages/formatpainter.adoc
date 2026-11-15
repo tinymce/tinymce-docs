@@ -8,7 +8,7 @@
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
-The Format Painter plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats such as inline and block formats and styles such as table styles.
+The Format Painter plugin allows a user to copy and paste formatting from one location to another, such as font style and size. The format painter is capable of working with a wide variety of formats such as inline and block formats, table styles, and inline styles applied directly to block elements, such as the text color of a heading.
 
 == Interactive example
 
@@ -57,15 +57,36 @@ The format painter operates in two modes, one for retrieval and one for applicat
 
 TIP: The format painter retains the formatting after application making it possible to apply the same formatting multiple times by using the `+Ctrl+Alt+V+` keyboard shortcut.
 
+[[how-formats-are-copied-and-applied]]
+=== How formats are copied and applied
+
+*Inline styles on block elements*
+
+When the source content is inside a block element that has inline styles applied directly to it, such as `+<h2 style="color: #e03e2d;">+`, the format painter copies each style that matches a registered inline format. The default inline formats that match styles are `+forecolor+` (`+color+`), `+hilitecolor+` (`+background-color+`), `+fontname+` (`+font-family+`), and `+fontsize+` (`+font-size+`). The format painter applies these styles to the goal content as inline formatting in a `+span+` element. When more than one element around the source content sets the same style, the format painter uses the value from the closest element.
+
+Custom formats registered with the xref:content-formatting.adoc#formats[`+formats+`] option are also copied this way when they are inline formats whose styles use only variable values, for example `+{ inline: 'span', styles: { color: '%value' } }+`. Formats listed in xref:#formatpainter_ignored_formats[`+formatpainter_ignored_formats+`] are not copied.
+
+*Block formats*
+
+The format painter applies block formats, such as a heading, when the goal content is one of the following:
+
+* The cursor is placed in a block, with no content selected.
+* The selection crosses a block boundary.
+* The selection covers the entire content of a single block, such as a whole paragraph or a whole list item.
+
+When the selection covers only part of a block, the format painter applies inline formats only.
+
 == Options
 
-The format painter acts upon all xref:content-formatting.adoc#formats[`+formats+`] registered in the editor. In addition to any standard formatting, it will treat *lists* as a block format whenever the xref:lists.adoc[`+lists plugin+`] is made available.
+The format painter acts upon all xref:content-formatting.adoc#formats[`+formats+`] registered in the editor. In addition to any standard formatting, it will treat *lists* as a block format whenever the xref:lists.adoc[`+lists plugin+`] is made available. For how the format painter copies inline styles applied to block elements and when it applies block formats, see xref:#how-formats-are-copied-and-applied[How formats are copied and applied].
 
 include::partial$configuration/formatpainter_formats.adoc[leveloffset=+1]
 
 include::partial$configuration/formatpainter_ignored_formats.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 

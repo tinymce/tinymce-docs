@@ -1,0 +1,157 @@
+= TinyMCE AI Document Processing
+:navtitle: Document Processing
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
+:description: Apply one prompt to one or more HTML documents with the TinyMCE AI Document Processing API, and receive each edited document or only the changed elements.
+:description_short: Document Processing API
+:keywords: AI, API, document processing, processDocument, streamProcessDocument, responseFormat, arf, fragment, data-id, ai:documents:process, tinymceai
+
+Document Processing applies one prompt to one or more HTML documents and returns each edited document with a summary of the changes. No editor is involved: application code, such as a back-end service, sends the HTML to the {pluginname} service and receives the result. The `+tinymceai+` plugin does not call the Document Processing endpoints.
+
+[cols="2,1,3",options="header"]
+|===
+|Endpoint |API reference |Response
+
+|`+POST /v1/documents/process+`
+|https://tinymceai.api.tiny.cloud/v1/docs#tag/Document-processing/operation/processDocument[Process a document]
+|One JSON response when processing is complete.
+
+|`+POST /v1/documents/process/stream+`
+|https://tinymceai.api.tiny.cloud/v1/docs#tag/Document-processing/operation/streamProcessDocument[Process a document (streaming)]
+|Server-Sent Events (SSE) while the model works. See <<streaming,Streaming>>.
+|===
+
+Both endpoints accept the same request body. The request and response schemas, the stream events, and the error codes are documented on each operation in the API reference. This page covers the processing flow and the fragment response format, which the API reference does not describe.
+
+[[requirements]]
+== Requirements
+
+* *Service URL*: the requests on this page go to the {cloudname} service at `+https://tinymceai.api.tiny.cloud+`.
+* *Token*: the token must grant `+ai:documents:process+`. See xref:tinymceai-permissions.adoc#document-processing-permissions[Document Processing permissions] for this permission and the context permissions that a request can also need.
+* *Model*: every request names a model. The Agent model, `+agent-1+`, lets the service choose the model. See xref:tinymceai-models.adoc[AI Models].
+
+[[process-a-document]]
+== Process a document
+
+. Give every element of the HTML a unique `+data-id+` attribute if the request asks for a <<fragment-responses,fragment response>>. A request for the full document does not need them.
+. Send the document, the instruction, and the model. The following request body asks for a fragment with `+responseFormat: "arf"+`:
++
+[source,json]
+----
+{
+  "content": [
+    {
+      "type": "document",
+      "content": "<h2 data-id=\"a1\">Store hours</h2><p data-id=\"a2\">The store opens at 9 AM on weekdays.</p><p data-id=\"a3\">The store closes early on public holidays.</p><p data-id=\"a4\">Contact the front desk with any questions.</p>"
+    }
+  ],
+  "prompt": "Change the weekday opening time to 8 AM, add a weekend opening time of 10 AM after it, and remove the holiday hours.",
+  "model": "agent-1",
+  "responseFormat": "arf"
+}
+----
+. Read the `+documents+` array of the response. It holds one entry for each `+document+` part, in request order, each with the edited `+document+` and a `+summary+` of the changes. With `+responseFormat: "arf"+`, `+document+` is a fragment. See <<fragment-responses,Fragment responses>>.
+
+Requests are stateless: each request carries the documents, the model, and the instruction. The instruction is the `+prompt+`, or a prompt from a referenced context. A context that holds only files is not enough on its own. A request can also:
+
+* set `+selection+` on a `+document+` part, to limit the processing to character ranges of the HTML of that part;
+* set `+editorConfig+` on a `+document+` part, to describe the editing capabilities of the editor;
+* attach the prompts and files of a stored context with a `+context+` part;
+* turn on web search and reasoning with `+capabilities+`;
+* send headers for images that require authentication with `+extraHttpHeaders+`.
+
+A `+context+` part references a context that already exists. See xref:tinymceai-api-overview.adoc#contexts[Contexts].
+
+Not every model supports web search and reasoning. See xref:tinymceai-models.adoc#model-capabilities[Model capabilities]. For each field, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Document-processing/operation/processDocument[Process a document] in the API reference.
+
+[[streaming]]
+== Streaming
+
+`+POST /v1/documents/process/stream+` returns the result as Server-Sent Events. For the events and their payloads, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Document-processing/operation/streamProcessDocument[Process a document (streaming)] in the API reference. For the wire format, see xref:tinymceai-streaming.adoc#sse-wire-format[SSE wire format], and for a parsing example, see xref:tinymceai-streaming.adoc#basic-implementation[Basic implementation].
+
+`+responseFormat+` changes only the events that stream the edits: `+document-delta+` events with `+html+`, and `+modification-delta+` events with `+arf+`. Both formats end with the same `+document+` event, which carries the full edited HTML and the summary. For a request with several documents, that event carries a `+documents+` array instead, with one entry for each document in request order, each with its `+documentId+`. For fragments in a stream, see <<fragments-in-a-stream,Fragments in a stream>>.
+
+[[fragment-responses]]
+== Fragment responses
+
+With `+responseFormat: "arf"+`, the service returns a fragment in place of the whole document. ARF stands for Advanced Response Format. A fragment holds only the elements that changed, with an HTML comment in place of each run of unchanged elements, so a small edit to a long document returns a short response.
+
+[[what-a-fragment-contains]]
+=== What a fragment contains
+
+[cols="1,2,2",options="header"]
+|===
+|Part |Markup |Meaning
+
+|Edited element
+|The element with its new content and the `+data-id+` it has in the sent document.
+|Replace the element that has this `+data-id+`.
+
+|Added element
+|The element with `+data-id="new-element"+`.
+|Insert a new element at this position.
+
+|Removed element
+|`+<!-- removed data-id="a3" -->+`
+|Delete the element that has this `+data-id+`, together with its children.
+
+|Unchanged content
+|`+<!-- existing document -->+` or `+<!-- existing content -->+`
+|Keep one run of unchanged elements, however many elements the run contains.
+|===
+
+[[element-identifiers]]
+=== Element identifiers
+
+Fragments refer to elements by their `+data-id+` attribute. Before sending a document:
+
+* Give every element a `+data-id+` that is unique within the document. Elements without a `+data-id+` cannot be matched to a fragment.
+* Keep an unchanged copy of the document as sent, and apply the fragment to that copy.
+
+After applying a fragment, give each added element a unique `+data-id+` before the next request.
+
+[[applying-a-fragment]]
+=== Applying a fragment
+
+Read the fragment in document order, and apply each part to the copy of the document that was sent:
+
+* Replace each edited element with the element from the fragment. A change inside an element, such as a new link or a bolded word, arrives as the whole element. An edited element can be nested, such as a list item, so match each `+data-id+` wherever the element is in the document.
+* Insert each added element between the elements that the fragment shows around it. An added element at the start of the fragment goes at the start of the document.
+* Delete each removed element.
+* Keep the elements that an unchanged-content comment stands for.
+
+For example, the request in <<process-a-document,Process a document>> can return the following fragment:
+
+[source,html]
+----
+<!-- existing document -->
+<p data-id="a2">The store opens at 8 AM on weekdays.</p>
+<p data-id="new-element">On weekends, the store opens at 10 AM.</p>
+<!-- removed data-id="a3" -->
+<!-- existing document -->
+----
+
+Applied to the sent document, the fragment gives this result, before the new paragraph receives a `+data-id+` of its own:
+
+[source,html]
+----
+<h2 data-id="a1">Store hours</h2>
+<p data-id="a2">The store opens at 8 AM on weekdays.</p>
+<p data-id="new-element">On weekends, the store opens at 10 AM.</p>
+<p data-id="a4">Contact the front desk with any questions.</p>
+----
+
+[[fragments-in-a-stream]]
+=== Fragments in a stream
+
+On `+POST /v1/documents/process/stream+`, a fragment arrives in `+modification-delta+` events. One modification arrives as several events that share an `+id+`, and a chunk can end anywhere, including in the middle of a tag or an attribute. Join the `+textDelta+` values of the events with the same `+id+`, in the order they arrive, before parsing the modification. For a request with several documents, the `+documentId+` of each event names the document that the modification applies to. The `+documents+` array of the final `+document+` event pairs each `+documentId+` with its document, in request order.
+
+[[related-features]]
+== Related features
+
+* xref:tinymceai-permissions.adoc#document-processing-permissions[Document Processing permissions]: The `+ai:documents:process+` permission.
+* xref:tinymceai-permissions.adoc#error-handling[Permissions error handling]: The response when a token lacks a permission.
+* xref:tinymceai-streaming.adoc[Streaming]: Parsing Server-Sent Events.
+* xref:tinymceai-models.adoc[AI Models]: Model IDs and capabilities.
+* xref:tinymceai-api-overview.adoc#error-responses[Error responses]: The error body that every endpoint returns.
+* https://tinymceai.api.tiny.cloud/v1/docs#tag/Document-processing[Document processing API]: Request and response schemas, stream events, and error codes.

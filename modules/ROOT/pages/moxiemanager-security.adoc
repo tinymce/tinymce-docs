@@ -1,0 +1,399 @@
+= MoxieManager security
+:navtitle: Security
+:description: MoxieManager security and authenticators.
+:keywords: moxiemanager, security, authentication, authenticator, session
+
+The MoxieManager requires you to be authorized using a authenticator. There are a few bundled authentications but you can also write your own if you have custom needs.
+
+== Client-side settings
+
+Any settings setup client side, either when using MoxieManager standalone (moxman.browse()) or with {productname} moxiemanager_ settings always asume everything is insecure.
+
+Client side settings and javascript is run on the client and is therefor not to be trusted. Be careful when using client side configuration options such as *rootpath*, make sure your backend (config.php, Web.config) rootpath setting is where you place your security.
+
+== Other settings
+
+There are other potential settings that can cause security issues, such as allowing users to upload executable files (PHP, ASPX etc). If you do not have the knowledge yourself to understand the dangers, please consult a professional developer to help you wih your configuration.
+
+[[authenticators]]
+== Authenticators
+
+[cols="1,3",options="header"]
+|===
+|Authenticator |Description
+|xref:#sessionauthenticator[SessionAuthenticator] |This authenticator will look for a specific session key and check if it's value equals true. This enables you to set this session variable in your systems login page.
+|xref:#basicauthenticator[BasicAuthenticator] |This authenticator will display a login dialog for the user and match the username/password against the configured users. This is normally used when the MoxieManager is used in standalone mode.
+|xref:moxiemanager-options.adoc#ipauthenticator-ip-numbers[IpAuthenticator] |This authenticator will verify that the user has access by checking if their IP number matches a list of valid ones or is within a range of ip numbers.
+|xref:#external-authentication[ExternalAuthenticator] |This authenticator will take all session cookies and pass them on to a backend page. That page will then verify that the user is logged in properly. This is useful when the MoxieManager is to be integrated with other languages like classical asp or jsp.
+|xref:#aspnetauthenticator[AspNetAuthenticator] |This uses the build in authentication method in .NET and is only available in the .NET version.
+|===
+
+[[sessionauthenticator]]
+=== SessionAuthenticator
+
+First, we will show you a simple configuration for getting SessionAuthentication to work, every other implementation or authentication will be a variant of this, simply setting a session in your system and checking for it in the MoxieManager. We highly recommend you take a look at the code in the SessionAuthentication file, its fairly simple and should be easy to understand.
+
+Turn on the SessionAuthenticator
+
+.Example for PHP integrations
+
+[source,php]
+----
+// Change this to switch to SessionAuthenticator
+$moxieManagerConfig['authenticator'] = "SessionAuthenticator";
+
+// Set this SESSION key in your system when a user login, $_SESSION["isLoggedIn"] = true
+$moxieManagerConfig['SessionAuthenticator.logged_in_key'] = "isLoggedIn";
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<!-- First, add the SessionAuthenticator to the plugins list in Web.config -->
+<plugin type="MoxieManager.Plugins.SessionAuthenticator.Plugin" />
+
+<!-- Then edit these keys -->
+<add key="authenticator" value="SessionAuthenticator" />
+<add key="SessionAuthenticator.logged_in_key" value="isLoggedIn" />
+----
+
+This code should go in whatever login logic your system uses.
+
+"moxiemanager" is the default prefix set in the config file.
+
+.Example for PHP integrations
+
+[source,php]
+----
+session_start();
+$_SESSION['isLoggedIn'] = true; // True/false if user is logged in or not, should be same as above
+$_SESSION['moxiemanager.filesystem.rootpath'] = "/var/www/htdocs/myroot"; // Set a root path for this use
+----
+
+.Example for .NET integrations
+
+[source]
+----
+// Write to normal ASP.NET session
+Session["isLoggedIn"] = true;
+Session["moxiemanager.filesystem.rootpath"] = "c:/inetpub/wwwroot/upload";
+----
+
+You can also of course make any modifications this way, so for example, if you have the userid in a variable called $userid you can do this:
+
+.Example for PHP integrations
+
+[source,php]
+----
+$_SESSION['moxiemanager.filesystem.rootpath']="/var/www/htdocs/myroot/". $userid ."/files";
+----
+
+.Example for .NET integrations
+
+[source]
+----
+Session["moxiemanager.filesystem.rootpath"] = "c:/inetpub/wwwroot/"+ UserId +"/uploads";
+----
+
+Make sure your userid is secure, altho MoxieManager have checks for hacks in the path, sanitizing input is always a good idea.
+
+==== Setting AmazonS3 or Azure paths via sessions
+
+If you are using AmazonS3 or Azure, you can set the config options through a flat session structure, like this:
+
+.Example for PHP integrations
+
+[source,php]
+----
+// Amazon
+$_SESSION["moxiemanager.amazons3.buckets.myclient.publickey"] = "pubkey";
+$_SESSION["moxiemanager.amazons3.buckets.myclient.secretkey"] = "seckey";
+$_SESSION["moxiemanager.amazons3.buckets.myclient.urlprefix"] = "http://bucketname.s3.amazonaws.com";
+// Azure
+$_SESSION["azure.containers.myazureclient.container"] = "test";
+$_SESSION["azure.containers.myazureclient.account"] = "moxietest";
+$_SESSION["azure.containers.myazureclient.sharedkey"] = "sharedkey";
+// Setup the rootpath
+$_SESSION["moxiemanager.filesystem.rootpath"] = "s3://myclient;azure://myazureclient";
+----
+
+.Example for .NET integrations
+
+[source]
+----
+/* Amazon S3 */
+Session["moxiemanager.amazons3.buckets.myclient.publickey"] = "pubkey";
+Session["moxiemanager.amazons3.buckets.myclient.secretkey"] = "seckey";
+Session["moxiemanager.amazons3.buckets.myclient.urlprefix"] = "http://bucketname.s3.amazonaws.com";
+
+/* Azure */
+Session["azure.containers.myazureclient.container"] = "testcontainer";
+Session["azure.containers.myazureclient.account"] = "moxietest";
+Session["azure.containers.myazureclient.sharedkey"] = "sharedkey";
+
+/* Setup rootpath */
+Session["moxiemanager.filesystem.rootpath"] = "s3://myclient;azure://myazureclient";
+----
+
+NOTE: Please note the buckets.<name> and containers.<name>, that needs to match your rootpath setup.
+
+If you are using a system that *overrides session management*, you have to initalize the system framework inside the config file, so it will use the systems session storage.
+
+[[basicauthenticator]]
+=== BasicAuthenticator
+
+If you use the installer, you can configure basic authentication, this is how it works if you wish to do it manually.
+
+First, set the authenticator to the correct one in your config file.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['authenticator'] = 'BasicAuthenticator';
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<!-- Make sure the BasicAuthenticator is on the plugins list in web.config first -->
+<plugin type="MoxieManager.Plugins.SessionAuthenticator.Plugin" />
+
+<!-- Then edit this key -->
+<add key="authenticator" value="BasicAuthenticator" />
+----
+
+In config, you can add the following config option to add/remove users.
+
+.Example for PHP integrations
+
+[source,php]
+----
+$moxieManagerConfig['basicauthenticator.users'] = array(
+   array(
+      "username" => "adminuser",
+      "password" => "somerandompassword",
+      "email" => "somemail@somedomainidunno.com",
+      "groups" => array("administrator"))
+);
+----
+
+.Example for .NET integrations
+
+[source,xml]
+----
+<add key="basicauthenticator.users">
+    <user name="adminuser" password="randompassword" email="your@email" groups="administrator" />
+</add>
+----
+
+[[external-authentication]]
+=== External authentication
+
+The External Authenticator should work with almost anything, such as classic ASP, Java, Perl or whatever. It can only authenticate the user on the same server since it takes the session cookie information from the current PHP/.NET domain and passes them to the other runtime for example classical asp.
+
+. Set the Authenticator to ExternalAuthenticator
++
+.Example for PHP integrations
+[source,php]
+----
+$moxieManagerConfig['authenticator'] = "ExternalAuthenticator";
+----
++
+.Example for .NET integrations
+[source,xml]
+----
+<add key="authenticator" value="ExternalAuthenticator" />
+----
+
+. Check the `+moxiemanager/plugins/ExternalAuthenticator+` folder, copy the .jsp, .asp or .php page depending on what you are integrating with. Note for .NET, these files are not shipped with the .NET version, post a ticket in the support system, and we will send you the files.
+
+. Open up the example file you copied above, set the `+SECRET_KEY+` to something unique.
+
+. You should modify the example file to fit your system, for example, checking a specific session for logged in user etc.
+
+. Edit the MoxieManager config file, change the
++
+.Example for PHP integrations
+[source,php]
+----
+$moxieManagerConfig['ExternalAuthenticator.secret_key'] = "someSecretKey";
+----
++
+.Example for .NET integrations
+[source,xml]
+----
+<add key="ExternalAuthenticator.secret_key" value="someSecretKey" />
+----
++
+to the same `+SECRET_KEY+` you set above in Step 3.
+
+. Set the
++
+.Example for PHP integrations
+[source,php]
+----
+$moxieManagerConfig['ExternalAuthenticator.external_auth_url'] = "auth.asp";
+----
++
+.Example for .NET integrations
+[source,xml]
+----
+<add key="ExternalAuthenticator.external_auth_url" value="auth.asp" />
+----
++
+in the configfile to the correct URL for the example file you copied earlier.
++
+NOTE: Please note that the auth.asp file is only an example, you will want to customize that file for whatever you are integrating with.
++
+NOTE: Also note that a remote url does not work here, it should be a relative URL, for PHP its relative from the ExternalAuthenticator folder, for .NET its relative from the root moxiemanager folder.
+
+. Verify that the Authentication works.
++
+IMPORTANT: Remember that the ExternalAuthenticator sets up a local session so that one will not be automatically removed if you logout. +
+So you might need to request a session destroy page.
+
+[[aspnetauthenticator]]
+=== AspNetAuthenticator
+
+This authenticator will use the built in API in .NET you can read more about .NET forms authentication at the http://msdn.microsoft.com/en-us/library/7t6b43z4(v=vs.100).aspx[MSDN website].
+
+==== Simple example of forms authentication
+
+Using the built in AspNetAuthenticator allows you to login using passwords defined in Web.Config or using Active Directory etc. We won't cover all that since the Microsoft documentation covers that. This simple example uses form authentication.
+
+. Change the authenticator option to "AspNetAuthenticator" in Web.Config:
++
+.Example for .NET integrations
+[source,xml]
+----
+<add key="authenticator" value="AspNetAuthenticator" />
+----
+
+. Add this into your Web.Config to enable AspNet forms authentication:
++
+[source,xml]
+----
+<system.web>
+    <authentication mode="Forms">
+       <forms name="MoxieManager" loginUrl="~/AspNetLogin.aspx">
+            <!-- Use SHA1, Clear is just used to make the example simpler -->
+            <credentials passwordFormat="Clear" >
+                <user name="user" password="pass" />
+            </credentials>
+        </forms>
+    </authentication>
+</system.web>
+----
+
+. Create a new login page AspNetLogin.aspx with this code:
++
+[source,xml]
+----
+<%@ Page Language="C#" %>
+<%@ Import Namespace="System.Web.Security" %>
+<script runat="server">
+void Logon_Click(object sender, EventArgs e) {
+    if (FormsAuthentication.Authenticate(Username.Text, Password.Text)) {
+        FormsAuthentication.RedirectFromLoginPage(Username.Text, true);
+    } else {
+        Msg.Text = "Invalid credentials. Please try again.";
+    }
+}
+</script>
+<html>
+<body>
+    <form id="login" runat="server">
+        <asp:TextBox ID="Username" runat="server" />
+        <asp:TextBox ID="Password" TextMode="Password" runat="server" />
+        <asp:Button ID="Submit1" OnClick="Logon_Click" Text="Login" runat="server" />
+        <asp:Label ID="Msg" ForeColor="red" runat="server" />
+    </form>
+</body>
+</html>
+----
++
+You can now login using the username "user" and password "pass" by using that on the AspNetLogin.aspx page in your browser.
+
+== 3rd party libraries (PHP)
+
+* For *CodeIgniter*, we recommend using https://github.com/EllisLab/CodeIgniter/wiki/Native-session[Native-sessions] and the xref:#sessionauthenticator[SessionAuthenticator] for integration.
+* For *Symfony*, we recommend using the xref:#symfonyauthenticator[SymfonyAuthenticator] that comes with the package.
+* For *CakePHP*, we recommend using the xref:#cakeauthenticator[CakeAuthenticator] that comes with the package.
+* For *CodeIgniter*, we recommend using the xref:#codeigniterauthenticator[CodeIgniterAuthenticator] that comes with the package.
+* For *Wordpress*, follow xref:moxiemanager-integration.adoc#integration-wordpress[these instructions].
+* For *Zend 2*, we recommend using the xref:#zendauthenticator[ZendAuthenticator] plugin.
+
+[[cakeauthenticator]]
+=== CakeAuthenticator
+
+This authenticator is used to handle the custom sessions used in the Cake PHP framework. It's very similar to the SessionAuthenticator. You need to have the moxiemanager installed in the `+vendors+` directory of your cake application. If you want to install it in some other directory you need to alter the ROOT define in `+moxiemanager/plugins/CakeAuthenticator/Plugin.php+`.
+
+Here the settings available for the Cake authenticator:
+
+[cols=",",options="header",]
+|===
+|Setting |Description
+|xref:moxiemanager-options.adoc#cakeauthenticator-logged-in-key[CakeAuthenticator.logged_in_key] |Name of the session key to check for. Defaults to "loggedin".
+|xref:moxiemanager-options.adoc#cakeauthenticator-config-prefix[CakeAuthenticator.config_prefix] |Prefix of config options defaults to "moxiemanager".
+|xref:moxiemanager-options.adoc#cakeauthenticator-user-key[CakeAuthenticator.user_key] |Name of the session key to use as a replacement for $\{user} variables.
+|===
+
+[[codeigniterauthenticator]]
+=== CodeIgniterAuthenticator
+
+This authenticator is used to handle the custom sessions used in the CodeIgniter PHP framework. It's very similar to the SessionAuthenticator. You need to specify the environment to use "development/testing/production" in the MoxieManager config.php file. You also need to set the logged in key in CodeIgniter to true when the user loggs in so the moxiemanager can check for that.
+
+Here the settings available for the Cake authenticator:
+
+[cols=",",options="header",]
+|===
+|Setting |Description
+|xref:moxiemanager-options.adoc#codeigniterauthenticator-environment[CodeIgniterAuthenticator.environment] |The current environment for the site "development" or "production".
+|xref:moxiemanager-options.adoc#codeigniterauthenticator-logged-in-key[CodeIgniterAuthenticator.logged_in_key] |Name of the session key to check for. Defaults to "loggedin".
+|xref:moxiemanager-options.adoc#codeigniterauthenticator-config-prefix[CodeIgniterAuthenticator.config_prefix] |Prefix of config options defaults to "moxiemanager".
+|xref:moxiemanager-options.adoc#codeigniterauthenticator-user-key[CodeIgniterAuthenticator.user_key] |Name of the session key to use as a replacement for $\{user} variables.
+|===
+
+[[symfonyauthenticator]]
+=== SymfonyAuthenticator
+
+This Authenticator should make it easy to use with *Symfony > 2.x* framework.
+
+Setup these options in your config.php file for MoxieManager.
+
+[source,php]
+----
+$moxieManagerConfig['optionname'] = 'value';
+----
+
+[cols="1,3",options="header"]
+|===
+|Option |Description
+|`+SymfonyAuthenticator.environment+` |Name of your the environment you want to use. Defaults to "prod" but can be "development".
+|`+SymfonyAuthenticator.logged_in_key+` |Logged in key that it checks for when doing authentication. Defaults to "isLoggedIn".
+|`+SymfonyAuthenticator.config_prefix+` |Configuration prefix to use when overriding config options. Defaults to "moxiemanager".
+|`+SymfonyAuthenticator.user_key+` |User config key to override the logged in user name with. Defaults to "user".
+|===
+
+[[zendauthenticator]]
+=== ZendAuthenticator
+
+This authenticator is used to handle the custom sessions used in the Zend 2 PHP framework. It's very similar to the SessionAuthenticator. You can enable this authenticator by setting the "authenticator" config option.
+
+[source,php]
+----
+$moxieManagerConfig['authenticator'] = 'ZendAuthenticator';
+----
+
+[cols=",",options="header",]
+|===
+|Setting |Description
+|xref:moxiemanager-options.adoc#zendauthenticator-logged-in-key[ZendAuthenticator.logged_in_key] |Name of the session key to check for. Defaults to "loggedin".
+|xref:moxiemanager-options.adoc#zendauthenticator-config-prefix[ZendAuthenticator.config_prefix] |Prefix of config options defaults to "moxiemanager".
+|xref:moxiemanager-options.adoc#zendauthenticator-user-key[ZendAuthenticator.user_key] |Name of the session key to use as a replacement for $\{user} variables.
+|xref:moxiemanager-options.adoc#zendauthenticator-session-container[ZendAuthenticator.session_container] |Session container name if it's not set the default container will be used.
+|xref:moxiemanager-options.adoc#zendauthenticator-library-path[ZendAuthenticator.library_path] |Path to the zend framework directory. This will be automatically detected by default.
+|===

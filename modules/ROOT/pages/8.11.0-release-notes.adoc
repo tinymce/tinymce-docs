@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Removing bold or italic from a nested list item no longer leaves it styled through inheritance from its parent list item
+// #TINYMCE-14935
+
+Previously, when a user made a whole list item bold or italic, any list nested inside it also appeared bold or italic. Removing the formatting from a nested list item had no visible effect, because the nested item still inherited the style from the list item that contained it.
+
+In {productname} {release-version}, removing bold or italic from a nested list item takes effect. The nested item no longer appears bold or italic, and the list item that contains it keeps its formatting.
+
 
 [[security-fixes]]
 == Security fixes

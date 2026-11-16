@@ -116,6 +116,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Inserting an accordion at the end of the content now adds an empty paragraph after it, so the caret can be placed below the accordion
+// #TINYMCE-9955
+
+Previously, inserting an accordion at the end of the content left no block below it. Clicking below the accordion did not place the caret, so users had to press Down Arrow from inside the accordion before they could add content after it.
+
+In {productname} {release-version}, the xref:accordion.adoc[Accordion plugin] adds an empty block after an accordion that it inserts at the end of the content. The block uses the element and attributes set by the xref:content-filtering.adoc#forced_root_block[`+forced_root_block+`] and xref:content-filtering.adoc#forced_root_block_attrs[`+forced_root_block_attrs+`] options. By default, the block is a paragraph. Clicking below the accordion places the caret in the new block. Inserting an accordion between existing blocks does not add an empty block.
+
 
 [[additions]]
 == Additions
@@ -159,6 +166,27 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== Clicking to the left or right of an accordion did not place the caret before or after it
+// #TINYMCE-9955
+
+Previously, clicking to the left or right of an accordion did not place the caret beside it. Users could not use the mouse to add content directly before or after an accordion, or between two adjacent accordions.
+
+In {productname} {release-version}, clicking to the left or right of an accordion places the caret before or after it, as clicking beside a table does. Typing at that position adds a new paragraph before or after the accordion.
+
+=== It was not possible to place the caret between two adjacent accordions using the arrow keys
+// #TINYMCE-9955
+
+Previously, when two accordions were next to each other, pressing Right Arrow at the end of the first accordion moved the caret into the second accordion, and pressing Left Arrow at the start of the second accordion moved the caret into the first. Keyboard users could not place the caret between the accordions to add content there.
+
+In {productname} {release-version}, pressing Left Arrow or Right Arrow to leave an accordion places the caret beside the accordion when another accordion is next to it or when the accordion is at the start or end of the content. From that position, Up Arrow and Down Arrow move the caret into the adjacent accordion or to the adjacent line, and pressing Enter adds a new paragraph.
+
+=== Pressing Delete or Backspace did not remove an empty block before or after an accordion
+// #TINYMCE-9955
+
+Previously, pressing Delete in an empty first block directly before an accordion, such as an empty block at the start of the content, did not remove the block. Pressing Backspace in an empty last block directly after an accordion, such as an empty block at the end of the content, also did not remove the block. Users could not remove these empty blocks.
+
+In {productname} {release-version}, pressing Delete in an empty block before an accordion removes the block and moves the caret into the accordion summary. Pressing Backspace in an empty block after an accordion removes the block and moves the caret to the end of the accordion content. When the empty block is inside a container with no other content, such as a list, the editor removes the container as well. The editor never removes a table cell that contains the empty block.
 
 
 [[security-fixes]]

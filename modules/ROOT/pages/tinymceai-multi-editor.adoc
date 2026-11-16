@@ -15,7 +15,7 @@ In a group, Chat, Review, and Quick Actions work across the content of every edi
 [[demo]]
 == Demo
 
-The demo below splits an article across an Introduction editor and a Body editor in one group. Select the image:icons-premium/ai-assistant.svg[Chat icon,24px] Chat toolbar button in either editor to open the shared Chat sidebar, which the first editor hosts. Then ask the AI to change both parts of the article, or run a review over both editors.
+The demo below splits an article across an Introduction editor and a Body editor in one group. The group uses xref:tinymceai.adoc#decoupled-mode[decoupled mode], so AI Chat and AI Review open in a panel next to the editors, and AI Chat opens when the page loads. Select the image:icons-premium/ai-assistant.svg[Chat icon,24px] Chat or image:icons-premium/ai-review.svg[Review icon,24px] Review toolbar button in either editor to open and close the apps in the panel. Then ask the AI to change both parts of the article, or run a review over both editors.
 
 liveDemo::tinymceai-multi-editor[]
 
@@ -28,6 +28,8 @@ include::partial$misc/admon-inline-not-supported.adoc[]
 === Shared sidebar
 
 The first editor of the group to be created hosts the shared Chat sidebar and Review sidebar. The Chat and Review toolbar buttons and menu items in every other editor of the group open, close, and focus that shared sidebar.
+
+In xref:tinymceai.adoc#decoupled-mode[decoupled mode], the first editor of the group hosts AI Chat and AI Review in the element set by its xref:tinymceai.adoc#tinymceai_decoupled_container[`+tinymceai_decoupled_container+`] value. The Chat and Review toolbar buttons and menu items in every editor of the group open and close AI Chat and AI Review in that element, and the keyboard shortcuts in every editor open them.
 
 [[chat]]
 === Chat
@@ -71,7 +73,7 @@ While the {pluginname} plugin previews changes from Chat or Quick Actions, each 
 [[discarding-suggestions]]
 === Discarding pending suggestions
 
-When any editor in the group has pending suggestions, the {pluginname} plugin asks for confirmation before it discards them and starts a different AI task. For example, the confirmation dialog appears when the user switches between the Chat sidebar and the Review sidebar, or runs a Quick Action while a review has pending suggestions.
+With the floating sidebar, when any editor in the group has pending suggestions, the {pluginname} plugin asks for confirmation before it discards them and starts a different AI task. For example, the confirmation dialog appears when the user switches between the Chat sidebar and the Review sidebar, or runs a Quick Action while a review has pending suggestions.
 
 If the user confirms, the plugin discards the pending suggestions in every editor of the group and returns each editor to normal editing. If the user cancels, the plugin keeps every preview and pending suggestion.
 
@@ -80,7 +82,7 @@ If the user confirms, the plugin discards the pending suggestions in every edito
 
 To group editors, load the `+tinymceai+` plugin in each editor and set the same xref:tinymceai.adoc#tinymceai_group[`+tinymceai_group+`] value on each editor in the group. Give each editor a unique xref:tinymceai.adoc#tinymceai_document_name[`+tinymceai_document_name+`] value, and optionally a xref:tinymceai.adoc#tinymceai_document_description[`+tinymceai_document_description+`] value that describes the content to the AI.
 
-Multi-editor mode is supported with the floating sidebar. Set xref:tinymceai.adoc#tinymceai_sidebar_type[`+tinymceai_sidebar_type+`] to `+'floating'+` for every editor in the group.
+The floating sidebar and xref:tinymceai.adoc#decoupled-mode[decoupled mode] both support multi-editor mode. For the floating sidebar, set xref:tinymceai.adoc#tinymceai_sidebar_type[`+tinymceai_sidebar_type+`] to `+'floating'+` for every editor in the group. For decoupled mode, see xref:#decoupled-mode-group[Grouped editors in decoupled mode].
 
 Use the same {pluginname} configuration for every editor in a group, for example by sharing a settings object between the `+tinymce.init+` calls:
 
@@ -116,10 +118,57 @@ Grouped editors must be on the same page and use the same `+tinymce+` instance. 
 
 For information about installing the plugin and enabling AI features, see xref:tinymceai.adoc[Plugin Reference].
 
+[[decoupled-mode-group]]
+=== Grouped editors in decoupled mode
+
+include::partial$misc/admon-requires-8.11v.adoc[]
+
+To use xref:tinymceai.adoc#decoupled-mode[decoupled mode] with a group, add one element for the group to the page and set xref:tinymceai.adoc#tinymceai_decoupled_container[`+tinymceai_decoupled_container+`] to a CSS selector that matches it. The plugin uses the value set on the first editor created in the group, so the option can go in the shared settings object. To open AI Chat or AI Review when the page loads, set xref:tinymceai.adoc#tinymceai_decoupled_show[`+tinymceai_decoupled_show+`].
+
+[source,html]
+----
+<div style="display: flex; gap: 16px;">
+  <div style="flex: 1;">
+    <textarea id="introduction"></textarea>
+    <textarea id="body"></textarea>
+  </div>
+  <div id="ai-panel" style="width: 400px; height: 800px; box-sizing: border-box; border: 2px solid #eee; border-radius: 10px;"></div>
+</div>
+----
+
+[source,js]
+----
+const sharedSettings = {
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_group: 'article',
+  tinymceai_decoupled_container: '#ai-panel', // change this value according to the HTML
+  tinymceai_decoupled_show: 'tinymceai-chat',
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
+  }
+};
+
+tinymce.init({
+  ...sharedSettings,
+  selector: 'textarea#introduction', // change this value according to the HTML
+  tinymceai_document_name: 'Introduction'
+});
+
+tinymce.init({
+  ...sharedSettings,
+  selector: 'textarea#body', // change this value according to the HTML
+  tinymceai_document_name: 'Body'
+});
+----
+
+To open or close AI Chat and AI Review programmatically, see xref:tinymceai.adoc#tinymceai-toggling-apps-decoupled[`+TinyMCEAIToggleApp+`].
+
 [[multiple-groups]]
 === Multiple groups on one page
 
-A page can contain several independent groups, each with a different xref:tinymceai.adoc#tinymceai_group[`+tinymceai_group+`] value. Each group has its own shared sidebar, and an editor in one group never receives the content of an editor in another group. For a configuration with two groups, see the xref:tinymceai.adoc#tinymceai_group[two-group example].
+A page can contain several independent groups, each with a different xref:tinymceai.adoc#tinymceai_group[`+tinymceai_group+`] value. Each group has its own shared sidebar, and an editor in one group never receives the content of an editor in another group. In decoupled mode, give each group its own element and set a different xref:tinymceai.adoc#tinymceai_decoupled_container[`+tinymceai_decoupled_container+`] value for each group. For a configuration with two groups, see the xref:tinymceai.adoc#tinymceai_group[two-group example].
 
 [[configuration]]
 == Configuration

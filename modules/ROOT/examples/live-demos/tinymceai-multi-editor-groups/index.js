@@ -54,7 +54,6 @@ const sharedSettings = {
     'quickbars', 'tinymceai', 'tinycomments', 'mentions', 'revisionhistory', 'suggestededits', 'uploadcare'
   ],
   toolbar: 'undo redo | tinymceai-chat tinymceai-review ai-quickactions-translate | styles | bold italic | bullist numlist | link',
-  tinymceai_sidebar_type: 'floating',
   quickbars_selection_toolbar: 'tinymceai-quickactions addcomment',
   tinymceai_chat_welcome_message: '<p>Welcome to TinyMCE AI. Pick an action below or type your own prompt.</p>',
   tinymceai_chat_welcome_actions: [
@@ -62,7 +61,7 @@ const sharedSettings = {
     { title: 'Summarize the document', command: 'TinyMCEAIQuickActionsSummarize' },
     { title: 'Continue writing', command: 'TinyMCEAIQuickActionContinueWriting' },
     { title: 'Translate to Spanish', command: 'TinyMCEAIQuickActionTranslate', value: 'spanish' },
-    { title: 'Review my document', command: 'ToggleSidebar', value: 'tinymceai-review' }
+    { title: 'Review my document', command: 'TinyMCEAIToggleApp', value: 'tinymceai-review', icon: 'ai-review' }
   ],
   toolbar_mode: 'sliding',
   visual: false,
@@ -126,12 +125,13 @@ const sharedSettings = {
   ]
 };
 
-// Group 1: the Introduction and Native integration editors share one AI sidebar.
+// Group 1: the Introduction and Native integration editors share AI Chat and AI Review in one panel.
 tinymce.init({
   ...sharedSettings,
   selector: 'textarea#tinymceai-multi-editor-groups-introduction',
   revisionhistory_fetch: createRevisionHistoryFetch('textarea#tinymceai-multi-editor-groups-introduction'),
   tinymceai_group: 'article-opening',
+  tinymceai_decoupled_container: '#tinymceai-multi-editor-groups-opening-panel', // Decoupled mode: each group renders AI Chat and AI Review in its own panel.
   tinymceai_document_name: 'Introduction',
   tinymceai_document_description: 'The introduction of the article. A title, a short paragraph that sets out the topic, and a figure.'
 });
@@ -141,16 +141,18 @@ tinymce.init({
   selector: 'textarea#tinymceai-multi-editor-groups-native-integration',
   revisionhistory_fetch: createRevisionHistoryFetch('textarea#tinymceai-multi-editor-groups-native-integration'),
   tinymceai_group: 'article-opening',
+  tinymceai_decoupled_container: '#tinymceai-multi-editor-groups-opening-panel', // Decoupled mode: each group renders AI Chat and AI Review in its own panel.
   tinymceai_document_name: 'Native integration',
   tinymceai_document_description: 'The section on moving from external AI tools to AI built into the editor, with a bulleted list of benefits.'
 });
 
-// Group 2: the Workflow comparison and Adoption challenges editors share a separate AI sidebar and never see the content of group 1.
+// Group 2: the Workflow comparison and Adoption challenges editors share a separate panel and never see the content of group 1.
 tinymce.init({
   ...sharedSettings,
   selector: 'textarea#tinymceai-multi-editor-groups-workflow-comparison',
   revisionhistory_fetch: createRevisionHistoryFetch('textarea#tinymceai-multi-editor-groups-workflow-comparison'),
   tinymceai_group: 'article-analysis',
+  tinymceai_decoupled_container: '#tinymceai-multi-editor-groups-analysis-panel', // Decoupled mode: each group renders AI Chat and AI Review in its own panel.
   tinymceai_document_name: 'Workflow comparison',
   tinymceai_document_description: 'The section that compares traditional and AI-enhanced workflows. Keep the comparison table.'
 });
@@ -160,6 +162,7 @@ tinymce.init({
   selector: 'textarea#tinymceai-multi-editor-groups-adoption-challenges',
   revisionhistory_fetch: createRevisionHistoryFetch('textarea#tinymceai-multi-editor-groups-adoption-challenges'),
   tinymceai_group: 'article-analysis',
+  tinymceai_decoupled_container: '#tinymceai-multi-editor-groups-analysis-panel', // Decoupled mode: each group renders AI Chat and AI Review in its own panel.
   tinymceai_document_name: 'Adoption challenges',
   tinymceai_document_description: 'The closing section on adoption challenges. Two short paragraphs.'
 });

@@ -4,14 +4,16 @@ const sharedSettings = {
   height: '400px',
   plugins: ['tinymceai', 'advlist', 'lists', 'link', 'autolink', 'table', 'wordcount'],
   toolbar: 'undo redo | tinymceai-chat tinymceai-review ai-quickactions-translate | styles | bold italic | bullist numlist | link',
-  tinymceai_sidebar_type: 'floating',
+  // Decoupled mode: AI Chat and AI Review render in the panel next to the editors instead of in a sidebar.
+  tinymceai_decoupled_container: '#tinymceai-multi-editor-panel',
+  tinymceai_decoupled_show: 'tinymceai-chat',
   tinymceai_chat_welcome_message: '<p>Welcome to TinyMCE AI. Pick an action below or type your own prompt.</p>',
   tinymceai_chat_welcome_actions: [
     { text: 'Here are some actions to get started:' },
     { title: 'Summarize the document', command: 'TinyMCEAIQuickActionsSummarize' },
     { title: 'Continue writing', command: 'TinyMCEAIQuickActionContinueWriting' },
     { title: 'Translate to Spanish', command: 'TinyMCEAIQuickActionTranslate', value: 'spanish' },
-    { title: 'Review my document', command: 'ToggleSidebar', value: 'tinymceai-review' }
+    { title: 'Review my document', command: 'TinyMCEAIToggleApp', value: 'tinymceai-review', icon: 'ai-review' }
   ],
   tinymceai_token_provider: async () => {
     return fetch('/api/token', { credentials: 'include' })

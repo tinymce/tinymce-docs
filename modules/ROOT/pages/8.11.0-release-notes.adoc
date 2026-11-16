@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Formatting text in Firefox 158 and later removed quotes around font names that contain spaces
+// #TINYMCE-15130
+
+Previously, in Firefox 158 and later, formatting text that used a font name containing spaces removed the quotes around the font name. For example, applying a text color to a `+span+` element with the style `+font-family: 'arial black'+` changed the style to `+font-family: arial black+`. The cause is a change in Firefox 158: the browser no longer quotes multi-word font names when it rewrites a style attribute, while Chrome and earlier versions of Firefox keep the quotes. Both forms are valid CSS and display the same font, but the HTML returned by xref:apis/tinymce.editor.adoc#getContent[`+editor.getContent()+`] and shown in the source code view depended on the browser. Integrations that compared or stored editor content as text could get different HTML for the same content in different browsers, even though the difference had no visible effect.
+
+In {productname} {release-version}, {productname} adds single quotes around any unquoted font name that contains spaces, so formatted content keeps `+font-family: 'arial black'+` in every browser. {productname} leaves font names that are already quoted, values that use a CSS function such as `+var()+`, and values marked `+!important+` unchanged. Generic font families, such as `+sans-serif+`, are single words and stay unquoted.
+
 
 [[security-fixes]]
 == Security fixes

@@ -71,6 +71,36 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following fix.
+
+==== The red X overlay on deleted media could be missing in Diff mode, or stay visible in Preview mode, after switching modes when the switch did not change the height of the content
+// #TINYMCE-15198
+
+Previously, switching between **Diff mode** and **Preview** in the Review edits view could leave the red X that marks a deleted image, video, or embedded frame in the wrong state. The **Suggested Edits** plugin updated the position of the red X when the content changed size or when a reviewer selected a different suggestion, but not when the reviewer switched modes. When a switch did not change the height of the content, such as when the deleted media was a small inline image, the red X stayed in its old position. In **Preview**, the red X could remain over the text where the hidden image had been. In **Diff mode**, the deleted image could appear without its red X. Reviewers saw deleted media marked in the wrong place, or not marked at all, until they selected another suggestion.
+
+In {productname} {release-version}, the **Suggested Edits** plugin repositions the red X every time a reviewer switches between **Diff mode** and **Preview**. In **Diff mode**, the red X marks each deleted image, video, and embedded frame. In **Preview**, the red X no longer appears where deleted media is hidden.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc#document[Document].
+
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== The red X overlay on deleted media in the AI preview could be missing in Diff mode, or stay visible in Preview mode, after switching modes when the switch did not change the height of the content
+// #TINYMCE-15198
+
+Previously, when the **TinyMCE AI** plugin previewed suggested changes, switching between **Diff mode** and **Preview** in the review bar could leave the red X that marks a deleted image, video, or embedded frame in the wrong state. The plugin updated the position of the red X when the content changed size or when a user selected a different suggestion, but not when the user switched modes. When a switch did not change the height of the content, such as when the deleted media was a small inline image, the red X stayed in its old position. In **Preview**, the red X could remain over the text where the hidden image had been. In **Diff mode**, the deleted image could appear without its red X. Users saw deleted media marked in the wrong place, or not marked at all, until they selected another suggestion.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin repositions the red X every time a user switches between **Diff mode** and **Preview**. In **Diff mode**, the red X marks each deleted image, video, and embedded frame. In **Preview**, the red X no longer appears where deleted media is hidden.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai-chat.adoc#previewing-changes[Previewing changes].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

@@ -71,6 +71,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Adding an editor to a group did not add its document to the chat context
+// #TINYMCE-15102
+
+Previously, when an editor joined a xref:tinymceai-multi-editor.adoc[multi-editor group] after the group was already in use, the **TinyMCE AI** plugin did not add that editor to the chat context. No context tag appeared for the new editor, and the **Add context source** menu did not list it. Users could not include the content of the new editor in a chat or a group review without reloading the page.
+
+In {productname} {release-version}, when an editor joins a group, the plugin adds a context tag for that editor to the chat immediately, including during a conversation that is already in progress. The **Add context source** menu also lists the new editor, and the next review of the group covers the content of that editor. The chat context stays up to date whenever an editor joins a group.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai-multi-editor.adoc#chat[Chat].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

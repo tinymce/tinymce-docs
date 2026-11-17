@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Saving the Table Properties dialog with `+table_appearance_options+` hiding fields no longer removes the table's existing cell spacing, border width or caption
+// #TINYMCE-15197
+
+Previously, when the xref:table.adoc#table_appearance_options[`+table_appearance_options+`] option hid fields in the Table Properties dialog, saving the dialog cleared the existing values of the hidden fields on the table. For example, with **Cell spacing**, **Border width**, and **Caption** hidden, changing only the **Width** of a table and clicking **Save** removed the cell spacing of the table and its border width, reset a `+border+` attribute such as `+border="3"+` to `+1+`, and deleted the table caption. The dialog did not show the hidden fields, so users could not see the change or restore the lost values from the dialog.
+
+In {productname} {release-version}, saving the Table Properties dialog leaves the values of hidden fields unchanged on the table. {productname} also no longer applies the xref:table-options.adoc#table_default_styles[`+table_default_styles+`] and xref:table-options.adoc#table_default_attributes[`+table_default_attributes+`] values for a hidden field over the existing value. Saving the dialog changes only the fields that the dialog shows, and the cell spacing, border width, cell padding, and caption of the table stay as they were.
+
 
 [[security-fixes]]
 == Security fixes

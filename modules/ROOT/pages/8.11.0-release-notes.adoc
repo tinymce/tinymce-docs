@@ -163,7 +163,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Image resize handler was not shown on hybrid devices with both a touchscreen and a mouse or trackpad
 // #TINYMCE-14668
 
-Previously, {productname} treated a device as a touch device whenever the browser reported a touchscreen as the primary pointer, even when the device also had a mouse or trackpad. On hybrid devices, such as touchscreen Windows laptops and 2-in-1 devices, {productname} therefore turned off the xref:content-behavior-options.adoc#object_resizing[`+object_resizing+`], xref:table.adoc#table_grid[`+table_grid+`], and xref:editor-size-options.adoc#resize[`+resize+`] options by default, as it does on touch devices. The resize handles did not appear on images and tables, and selecting table cells used the touch selection handles. Users working with a mouse or trackpad had to switch to the touchscreen to select table cells, which interrupted the editing workflow.
+Previously, {productname} treated a hybrid device, such as a Windows 2-in-1 laptop, as touch-only whenever the browser reported a touchscreen as the primary pointer, even when a mouse or trackpad was also present. It hid the resize handles on images and tables, and forced table cell selection to use the touch handles instead of the mouse or trackpad.
 
 In {productname} {release-version}, a device that does not run iOS or Android counts as a touch device only when no mouse, trackpad, or other precise pointer is available. On hybrid devices, these options have the same default values as on desktop devices, so the resize handles appear on images and tables. Users of hybrid devices can resize images and select table cells with the mouse or trackpad, without switching to the touchscreen.
 

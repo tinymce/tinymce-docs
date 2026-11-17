@@ -127,6 +127,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== The `+table_appearance_options+` option now also accepts an object with `+cellspacing+`, `+cellpadding+`, `+borderwidth+` and `+caption+` keys, to hide individual fields in the Table Properties dialog
+// #TINYMCE-11998
+
+Previously, the xref:table.adoc#table_appearance_options[`+table_appearance_options+`] option showed or hid the **Cell spacing**, **Cell padding**, **Border width**, and **Caption** fields of the Table Properties dialog only as a group. Integrators who wanted to stop authors from changing one field, such as **Cell spacing**, also had to hide the other three fields.
+
+In {productname} {release-version}, the option also accepts an object that controls each field separately. A field set to `+false+` is hidden, and a field set to `+true+` or left out stays visible. For example, `+table_appearance_options: { cellspacing: false }+` hides only the **Cell spacing** field. The `+true+` and `+false+` values work as before.
+
 
 [[changes]]
 == Changes

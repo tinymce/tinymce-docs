@@ -155,6 +155,52 @@ tinymce.init({
 });
 ----
 
+[[decoupled-mode]]
+== Decoupled mode
+
+include::partial$misc/admon-requires-8.11v.adoc[]
+
+By default, AI Chat and AI Review open in an editor sidebar. In decoupled mode, the two apps, AI Chat and AI Review, render inside an element on the page instead, outside the editor. Use decoupled mode to place the AI interface in a panel or layout that the application provides.
+
+To turn on decoupled mode, set xref:#tinymceai_decoupled_container[`+tinymceai_decoupled_container+`] to a CSS selector that matches one element on the page, and give that element a width and a height. The plugin does not add a border around AI Chat and AI Review in decoupled mode. To separate the apps from the rest of the page, add a border to the element. The border in the example below matches the default editor border. To open AI Chat or AI Review when the editor initializes, set xref:#tinymceai_decoupled_show[`+tinymceai_decoupled_show+`].
+
+[source,html]
+----
+<div style="display: flex; gap: 16px;">
+  <div style="flex: 1;">
+    <textarea id="editor"></textarea>
+  </div>
+  <div id="ai-panel" style="width: 400px; height: 600px; box-sizing: border-box; border: 2px solid #eee; border-radius: 10px; overflow: hidden;"></div>
+</div>
+----
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea#editor',  // change this value according to the HTML
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_decoupled_container: '#ai-panel', // change this value according to the HTML
+  tinymceai_decoupled_show: 'tinymceai-chat',
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  }
+});
+----
+
+In decoupled mode:
+
+* The `+tinymceai-chat+` and `+tinymceai-review+` toolbar buttons and menu items open and close AI Chat and AI Review in the element.
+* The xref:#keyboard-shortcuts[keyboard shortcuts], pressed in the editor, open the matching app or move focus to it when it is already open. Pressed inside an open app, the shortcut for that app closes it and returns focus to the editor.
+* The element shows one app at a time. When one app opens, the plugin hides the other.
+* The plugin keeps the state of a closed app, so reopening AI Chat shows the same conversation.
+* When the user switches from one app to the other, the plugin stops any request in progress in the hidden app and discards any pending AI suggestions.
+* Chat and review commands, such as `+TinyMCEAIChatPrompt+` and `+TinyMCEAIReviewProofread+`, open the matching app in the element.
+* Use the xref:#tinymceai-toggling-apps-decoupled[`+TinyMCEAIToggleApp+`] command and the xref:#tinymceai_decoupled_show[`+tinymceai_decoupled_show+`] option in place of the core `+ToggleSidebar+` command and the xref:customsidebar.adoc#sidebar_show[`+sidebar_show+`] option.
+
+For a xref:tinymceai-multi-editor.adoc[multi-editor group] in decoupled mode, see xref:tinymceai-multi-editor.adoc#decoupled-mode-group[Grouped editors in decoupled mode].
+
 [[commands]]
 == Commands
 

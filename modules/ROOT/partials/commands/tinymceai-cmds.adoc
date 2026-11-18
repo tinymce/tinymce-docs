@@ -19,7 +19,59 @@ tinymce.activeEditor.execCommand('ToggleSidebar', false, 'tinymceai-chat');
 tinymce.activeEditor.execCommand('ToggleSidebar', false, 'tinymceai-review');
 ----
 
-NOTE: These commands work regardless of xref:tinymceai.adoc#tinymceai_sidebar_type[`tinymceai_sidebar_type`] (`+'static'+` or `+'floating'+`). The `+ToggleSidebar+` event and `+queryCommandValue('ToggleSidebar')+` also behave the same for both sidebar types.
+NOTE: These commands work regardless of xref:tinymceai.adoc#tinymceai_sidebar_type[`tinymceai_sidebar_type`] (`+'static'+` or `+'floating'+`). The `+ToggleSidebar+` event and `+queryCommandValue('ToggleSidebar')+` also behave the same for both sidebar types. In xref:tinymceai.adoc#decoupled-mode[decoupled mode], use the <<tinymceai-toggling-apps-decoupled,`+TinyMCEAIToggleApp+`>> command instead.
+
+[[tinymceai-toggling-apps-decoupled]]
+== Toggling AI Chat and AI Review in decoupled mode
+
+include::partial$misc/admon-requires-8.11v.adoc[]
+
+In xref:tinymceai.adoc#decoupled-mode[decoupled mode], the `+TinyMCEAIToggleApp+` command opens or closes AI Chat or AI Review in the element set by xref:tinymceai.adoc#tinymceai_decoupled_container[`+tinymceai_decoupled_container+`]. The plugin registers this command only in decoupled mode. Pass the app identifier as the third argument:
+
+[cols="1,3",options="header"]
+|===
+|Value |Effect
+|`+'tinymceai-chat'+` |Opens AI Chat, or closes it when it is already open.
+|`+'tinymceai-review'+` |Opens AI Review, or closes it when it is already open.
+|Any other value |Does nothing. The value is case sensitive, so a missing value, an empty string, an unknown identifier, or different capitalization has no effect.
+|===
+
+`+queryCommandValue('TinyMCEAIToggleApp')+` returns the identifier of the open app, or an empty string when neither app is open. It is the decoupled mode equivalent of `+queryCommandValue('ToggleSidebar')+`.
+
+Each time `+TinyMCEAIToggleApp+` runs with a valid value, the editor fires a `+TinyMCEAIToggleApp+` event, whether the command opens, closes, or switches an app. The event has no data. To read the new state, call `+queryCommandValue('TinyMCEAIToggleApp')+` in the event handler. The editor does not fire the event for the app opened by xref:tinymceai.adoc#tinymceai_decoupled_show[`+tinymceai_decoupled_show+`].
+
+In a xref:tinymceai-multi-editor.adoc[multi-editor group], the plugin registers the command and fires the event on the first editor created in the group. Run the command, query the value, and listen for the event on that editor.
+
+.Examples
+[source,js]
+----
+// Open AI Review, or close it if it is already open
+tinymce.activeEditor.execCommand('TinyMCEAIToggleApp', false, 'tinymceai-review');
+
+// Returns 'tinymceai-chat', 'tinymceai-review', or '' when neither app is open
+tinymce.activeEditor.queryCommandValue('TinyMCEAIToggleApp');
+----
+
+.Example: showing an application panel only while an app is open
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to the HTML
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_decoupled_container: '#ai-panel', // change this value according to the HTML
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  },
+  setup: (editor) => {
+    editor.on('TinyMCEAIToggleApp', () => {
+      const openApp = editor.queryCommandValue('TinyMCEAIToggleApp');
+      document.querySelector('#ai-panel').classList.toggle('is-open', openApp !== '');
+    });
+  }
+});
+----
 
 [[tinymceai-plugin-commands]]
 == TinyMCE AI plugin commands
@@ -93,6 +145,22 @@ tinymce.activeEditor.execCommand('TinyMCEAIChatPrompt', false, {
 tinymce.activeEditor.execCommand('TinyMCEAIReviewProofread');
 
 tinymce.activeEditor.execCommand('TinyMCEAIReviewToneProfessional');
+----
+
+[[tinymceai-preview-state]]
+=== Checking for an open preview
+
+include::partial$misc/admon-requires-8.11v.adoc[]
+
+`+queryCommandState('TinyMCEAIPreview')+` returns `+true+` when the editor shows a preview of AI suggestions that the user has not yet resolved, and `+false+` otherwise. A preview that is still loading does not count, and the state returns to `+false+` after the user applies or discards the suggestions.
+
+In a xref:tinymceai-multi-editor.adoc[multi-editor group], each editor reports only its own preview. To check whether any editor in a group shows a preview, query each editor in the group.
+
+[source,js]
+----
+if (tinymce.activeEditor.queryCommandState('TinyMCEAIPreview')) {
+  console.log('The editor has AI suggestions to resolve.');
+}
 ----
 
 [[tinymceai-review-custom-values]]

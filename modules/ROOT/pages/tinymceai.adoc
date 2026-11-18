@@ -170,7 +170,7 @@ To turn on decoupled mode, set xref:#tinymceai_decoupled_container[`+tinymceai_d
   <div style="flex: 1;">
     <textarea id="editor"></textarea>
   </div>
-  <div id="ai-panel" style="width: 400px; height: 600px; box-sizing: border-box; border: 2px solid #eee; border-radius: 10px;"></div>
+  <div id="ai-panel" style="width: 400px; height: 600px; box-sizing: border-box; border: 2px solid #eee; border-radius: 10px; overflow: hidden;"></div>
 </div>
 ----
 

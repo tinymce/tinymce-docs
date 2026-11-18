@@ -71,6 +71,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following addition.
+
+==== New `+TinyMCEAIDiscardSuggestions+` command to discard the AI suggestions previewed in an editor
+// #TINYMCE-15157
+
+Previously, integrations had no public way to discard the AI suggestions previewed in an editor. In decoupled mode, the **TinyMCE AI** plugin does not show its own confirmation dialog before the AI view closes, so an integration that detected pending suggestions could not complete its own prompt to discard them.
+
+In {productname} {release-version}, the new `+TinyMCEAIDiscardSuggestions+` command discards the AI suggestions previewed in the editor it runs on, without applying any of them. The editor keeps the content it had before the preview, and returns to the editor mode it had before the preview. In a xref:tinymceai-multi-editor.adoc[multi-editor group], the command affects only the editor it runs on, so an integration runs the command on each editor in the group to discard every suggestion. For details, see xref:tinymceai.adoc#tinymceai-discard-suggestions[Discarding previewed suggestions].
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

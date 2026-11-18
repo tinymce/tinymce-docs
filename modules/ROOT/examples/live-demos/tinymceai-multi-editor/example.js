@@ -8,7 +8,7 @@ const sharedSettings = {
   // Decoupled mode: AI Chat and AI Review render in the panel next to the editors instead of in a sidebar.
   tinymceai_decoupled_container: '#tinymceai-multi-editor-panel',
   tinymceai_decoupled_show: 'tinymceai-chat',
-  tinymceai_chat_welcome_message: '<p>Hi! I’m your writing assistant.</p><p>I can read and write across all three sections of this hiring pack — refine the role, generate interview questions, or draft notes for HR.</p>',
+  tinymceai_chat_welcome_message: '<p>Hi! I’m your writing assistant.</p><p>I can read and write across both sections of this hiring pack — refine the role or generate interview questions.</p>',
   // Every welcome action uses the empty 'no-icon' icon registered in setup, so the buttons show text only.
   tinymceai_chat_welcome_actions: [
     { text: '**Try one of these:**' },
@@ -22,19 +22,10 @@ const sharedSettings = {
       icon: 'no-icon'
     },
     {
-      title: 'Draft notes for HR',
-      command: 'TinyMCEAIChatPrompt',
-      value: {
-        prompt: 'Based on the Role description and the Interview questions, draft additional notes for HR about scheduling and running the interviews for this role, and add them to the Notes for HR section.',
-        displayedPrompt: 'Draft notes for HR'
-      },
-      icon: 'no-icon'
-    },
-    {
       title: 'Flag any unclear or biased wording',
       command: 'TinyMCEAIChatPrompt',
       value: {
-        prompt: 'Check all three sections of this hiring pack for unclear or biased wording. For each phrase, explain the problem and suggest clearer, more inclusive wording.',
+        prompt: 'Check both sections of this hiring pack for unclear or biased wording. For each phrase, explain the problem and suggest clearer, more inclusive wording.',
         displayedPrompt: 'Flag any unclear or biased wording'
       },
       icon: 'no-icon'
@@ -103,13 +94,4 @@ tinymce.init({
   tinymceai_group: 'hiring-pack',
   tinymceai_document_name: 'Interview questions',
   tinymceai_document_description: 'The interview guide for the role: a heading followed by a numbered list of interview questions.'
-});
-
-tinymce.init({
-  ...sharedSettings,
-  selector: 'textarea#tinymceai-multi-editor-notes-for-hr',
-  height: '260px',
-  tinymceai_group: 'hiring-pack',
-  tinymceai_document_name: 'Notes for HR',
-  tinymceai_document_description: 'Notes for the HR team about scheduling and running the hiring process for the role.'
 });

@@ -75,7 +75,16 @@ For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following addition.
+**TinyMCE AI** includes the following fix and addition.
+
+==== Document context was not restored when resuming a conversation in a single editor with the `+tinymceai_document_name+` option set
+// #TINYMCE-14994
+
+Previously, when the xref:tinymceai.adoc#tinymceai_document_name[`+tinymceai_document_name+`] option was set on an editor that was not part of a multi-editor group, reopening a conversation that included the document from the xref:tinymceai-chat.adoc#chat-history[chat history] did not restore the document. The **TinyMCE AI** plugin tried to match the saved document name against the editors of a group. Without a group, the plugin found no match, so no context tag for the editor content appeared above the prompt input. The next prompt did not include the document, and the plugin could not apply the changes that the AI suggested in reply.
+
+In {productname} {release-version}, when a user resumes a conversation in an editor that is not part of a group, the plugin restores the context tag for the editor content, whether or not `+tinymceai_document_name+` is set. The next prompt includes the document, and the plugin can apply the changes that the AI suggests. In a xref:tinymceai-multi-editor.adoc[multi-editor group], when none of the saved document names match an editor in the group, the plugin now attaches the content of every editor in the group, as it does for a new conversation, instead of attaching no document.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai-chat.adoc#current-document-and-selection[Current document and selection].
 
 ==== New `+TinyMCEAIDiscardSuggestions+` command to discard the AI suggestions previewed in an editor
 // #TINYMCE-15157

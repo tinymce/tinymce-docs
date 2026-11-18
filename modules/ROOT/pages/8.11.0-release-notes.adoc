@@ -75,7 +75,16 @@ For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following fix and addition.
+**TinyMCE AI** includes the following fix and addition and improvement.
+
+==== Focus now stays on the same AI preview toolbar button when the toolbar moves between editors
+// #TINYMCE-14930
+
+Previously, when the **TinyMCE AI** plugin previewed changes in several editors of a xref:tinymceai-multi-editor.adoc[multi-editor group], the shared preview toolbar always focused its first button when it moved to another editor. The toolbar moves when a user steps past the last change in one editor with **Next** or **Previous**, or resolves the last change in an editor with **Apply suggestion** or **Skip suggestion**. Keyboard users then had to move focus back to the button they were using before they could continue, even though the whole group shares a single toolbar.
+
+In {productname} {release-version}, when the preview toolbar moves to another editor, the button the user just pressed receives focus in the new position. Keyboard users can keep pressing the same button to step through, apply, or skip changes across every editor in the group, including when **Next** wraps around from the last change in the group to the first. If that button is disabled in the new position, the toolbar itself receives focus instead. When a user clicks a change in an editor, the toolbar opens with focus on its first button, as before.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai-multi-editor.adoc#previewing-and-applying-changes[Previewing and applying changes].
 
 ==== Document context was not restored when resuming a conversation in a single editor with the `+tinymceai_document_name+` option set
 // #TINYMCE-14994

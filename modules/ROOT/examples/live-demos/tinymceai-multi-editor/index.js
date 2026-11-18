@@ -49,11 +49,12 @@ const createRevisionHistoryFetch = (selector) => () => {
 // Share one TinyMCE AI configuration between every editor in the group.
 const sharedSettings = {
   plugins: [
-    'autolink', 'link', 'emoticons', 'lists', 'table', 'advlist', 'searchreplace', 'wordcount', 'autocorrect', 'tinymcespellchecker', 'charmap', 'fullscreen', 'advcode', 'accordion', 'anchor', 'footnotes', 'powerpaste', 'importword', 'exportpdf', 'exportword', 'markdown', 'a11ychecker', 'typography', 'casechange', 'checklist', 'advtable', 'formatpainter', 'permanentpen', 'tableofcontents', 'help', 'math', 'linkchecker', 'media', 'mediaembed',
+    'autolink', 'link', 'emoticons', 'lists', 'table', 'advlist', 'searchreplace', 'autocorrect', 'tinymcespellchecker', 'charmap', 'fullscreen', 'advcode', 'accordion', 'anchor', 'footnotes', 'powerpaste', 'importword', 'exportpdf', 'exportword', 'markdown', 'a11ychecker', 'typography', 'casechange', 'checklist', 'advtable', 'formatpainter', 'permanentpen', 'tableofcontents', 'help', 'math', 'linkchecker', 'media', 'mediaembed',
     'quickbars', 'tinymceai', 'tinycomments', 'mentions', 'revisionhistory', 'suggestededits', 'uploadcare'
   ],
   toolbar: 'undo redo | tinymceai-chat tinymceai-review ai-quickactions-translate spellchecker | styles | bold italic underline forecolor backcolor casechange | link uploadcare table addcomment | align bullist numlist checklist removeformat | code fullscreen help',
   menubar: false,
+  help_accessibility: false,
   // Decoupled mode: AI Chat and AI Review render in the panel next to the editors instead of in a sidebar.
   tinymceai_decoupled_container: '#tinymceai-multi-editor-panel',
   tinymceai_decoupled_show: 'tinymceai-chat',

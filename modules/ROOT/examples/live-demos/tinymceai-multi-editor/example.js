@@ -1,9 +1,10 @@
 // Open-source plugins below are only for editing the demo HTML (lists, links, tables). TinyMCE AI options are the focus.
 // Share one TinyMCE AI configuration between every editor in the group.
 const sharedSettings = {
-  plugins: ['tinymceai', 'advlist', 'lists', 'link', 'autolink', 'table', 'wordcount'],
+  plugins: ['tinymceai', 'advlist', 'lists', 'link', 'autolink', 'table'],
   toolbar: 'undo redo | tinymceai-chat tinymceai-review ai-quickactions-translate | styles | bold italic underline | bullist numlist | link table',
   menubar: false,
+  help_accessibility: false,
   // Decoupled mode: AI Chat and AI Review render in the panel next to the editors instead of in a sidebar.
   tinymceai_decoupled_container: '#tinymceai-multi-editor-panel',
   tinymceai_decoupled_show: 'tinymceai-chat',

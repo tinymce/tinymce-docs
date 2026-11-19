@@ -214,6 +214,13 @@ In {productname} {release-version}, the option also accepts an object that contr
 
 // CCFR here.
 
+=== Resizing the sidebar in a right-to-left editor resized it in the opposite direction to the drag
+// #TINYMCE-14904
+
+Previously, when the xref:ui-localization.adoc#language[`+language+`] option was set to a right-to-left language, such as Arabic, dragging the resize handle of a sidebar changed the sidebar width in the opposite direction to the pointer. In a right-to-left editor, the sidebar sits on the left and the resize handle is on the edge next to the editor content. Dragging the handle toward the editor content made the sidebar narrower instead of wider. This affected every sidebar registered with the xref:customsidebar.adoc#resizable[`+resizable+`] property set to `+true+`, including the sidebars of the Comments and {productname} AI plugins, so users of right-to-left languages could not resize these sidebars as expected.
+
+In {productname} {release-version}, the resize handle follows the pointer in right-to-left editors, as it does in left-to-right editors. Dragging the handle toward the editor content widens the sidebar, and dragging it away narrows it. The xref:customsidebar.adoc#sidebar_min_width[`+sidebar_min_width+`] and xref:customsidebar.adoc#sidebar_max_width[`+sidebar_max_width+`] options and the minimum width of the editing area still limit the sidebar width.
+
 === Clicking to the left or right of an accordion did not place the caret before or after it
 // #TINYMCE-9955
 

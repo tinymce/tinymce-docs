@@ -238,6 +238,13 @@ In {productname} {release-version}, the option also accepts an object that contr
 
 // CCFR here.
 
+=== Image resize handler was not shown on hybrid devices with both a touchscreen and a mouse or trackpad
+// #TINYMCE-14668
+
+Previously, {productname} treated a hybrid device, such as a Windows 2-in-1 laptop, as touch-only whenever the browser reported a touchscreen as the primary pointer, even when a mouse or trackpad was also present. It hid the resize handles on images and tables, and forced table cell selection to use the touch handles instead of the mouse or trackpad.
+
+In {productname} {release-version}, a device that does not run iOS or Android counts as a touch device only when no mouse, trackpad, or other precise pointer is available. On hybrid devices, these options have the same default values as on desktop devices, so the resize handles appear on images and tables. Users of hybrid devices can resize images and select table cells with the mouse or trackpad, without switching to the touchscreen.
+
 === Formatting text in Firefox 158 and later removed quotes around font names that contain spaces
 // #TINYMCE-15130
 

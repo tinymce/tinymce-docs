@@ -57,6 +57,7 @@ The xref:tinymceai.adoc[`tinymceai`] plugin registers the following editor comma
 |`+TinyMCEAIReviewToneConfident+` | |Runs the **Adjust tone and style** review with the **Confident** tone.
 |`+TinyMCEAIReviewToneProfessional+` | |Runs the **Adjust tone and style** review with the **Professional** tone.
 |`+TinyMCEAIReviewCustom+` |`+String+`, `+{ prompt, model, name }+`, or `+{ id, value }+` |Runs a review from a custom prompt, or runs an xref:tinymceai.adoc#integrator-defined-reviews[integrator-defined review] by identifier. See <<tinymceai-review-custom-values,Values for `+TinyMCEAIReviewCustom+`>>.
+|`+TinyMCEAIDiscardSuggestions+` | |Discards the AI suggestions previewed in the editor without applying them. See <<tinymceai-discard-suggestions,Discarding previewed suggestions>>.
 |===
 
 Each `+TinyMCEAIReview…+` command opens the Review sidebar and runs the review, with the same result as selecting that review in the sidebar. Running a review command while another review is in progress stops the earlier review and starts the requested one.
@@ -135,3 +136,24 @@ tinymce.activeEditor.execCommand('TinyMCEAIReviewCustom', false, {
 ----
 
 When the value does not match any of these forms, {productname} logs an error to the browser console and runs no review. This also applies when the prompt or identifier is blank, when no integrator-defined review matches the identifier, when a `+list+` review value is not one of its options, and when an `+input+` review is run without a value.
+
+[[tinymceai-discard-suggestions]]
+=== Discarding previewed suggestions
+
+include::partial$misc/admon-requires-8.11v.adoc[]
+
+The `+TinyMCEAIDiscardSuggestions+` command discards the AI suggestions previewed in the editor, such as changes proposed in Chat or Review, without applying any of them. The editor keeps the content it had before the preview. If the editor mode changed while the preview was open, the command restores the mode the editor had before the preview. The command takes no third argument.
+
+In a xref:tinymceai-multi-editor.adoc[multi-editor group], the command discards only the suggestions of the editor it runs on. The previews in the other editors of the group stay open, and the Review sidebar keeps the suggestions from those previews. To discard the suggestions of the whole group, run the command on each editor in the group.
+
+.Example: discarding the suggestions previewed in every editor of a group
+[source,js]
+----
+tinymce.get()
+  .filter((editor) => editor.options.get('tinymceai_group') === 'my-group')
+  .forEach((editor) => {
+    if (editor.queryCommandState('TinyMCEAIPreview')) {
+      editor.execCommand('TinyMCEAIDiscardSuggestions');
+    }
+  });
+----

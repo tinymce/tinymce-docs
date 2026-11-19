@@ -71,6 +71,39 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix and addition and improvement.
+
+==== Focus now stays on the same AI preview toolbar button when the toolbar moves between editors
+// #TINYMCE-14930
+
+Previously, when the **TinyMCE AI** plugin previewed changes in several editors of a xref:tinymceai-multi-editor.adoc[multi-editor group], the shared preview toolbar always focused its first button when it moved to another editor. The toolbar moves when a user steps past the last change in one editor with **Next** or **Previous**, or resolves the last change in an editor with **Apply suggestion** or **Skip suggestion**. Keyboard users then had to move focus back to the button they were using before they could continue, even though the whole group shares a single toolbar.
+
+In {productname} {release-version}, when the preview toolbar moves to another editor, the button the user just pressed receives focus in the new position. Keyboard users can keep pressing the same button to step through, apply, or skip changes across every editor in the group, including when **Next** wraps around from the last change in the group to the first. If that button is disabled in the new position, the toolbar itself receives focus instead. When a user clicks a change in an editor, the toolbar opens with focus on its first button, as before.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai-multi-editor.adoc#previewing-and-applying-changes[Previewing and applying changes].
+
+==== Document context was not restored when resuming a conversation in a single editor with the `+tinymceai_document_name+` option set
+// #TINYMCE-14994
+
+Previously, when the xref:tinymceai.adoc#tinymceai_document_name[`+tinymceai_document_name+`] option was set on an editor that was not part of a multi-editor group, reopening a conversation that included the document from the xref:tinymceai-chat.adoc#chat-history[chat history] did not restore the document. The **TinyMCE AI** plugin tried to match the saved document name against the editors of a group. Without a group, the plugin found no match, so no context tag for the editor content appeared above the prompt input. The next prompt did not include the document, and the plugin could not apply the changes that the AI suggested in reply.
+
+In {productname} {release-version}, when a user resumes a conversation in an editor that is not part of a group, the plugin restores the context tag for the editor content, whether or not `+tinymceai_document_name+` is set. The next prompt includes the document, and the plugin can apply the changes that the AI suggests. In a xref:tinymceai-multi-editor.adoc[multi-editor group], when none of the saved document names match an editor in the group, the plugin now attaches the content of every editor in the group, as it does for a new conversation, instead of attaching no document.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai-chat.adoc#current-document-and-selection[Current document and selection].
+
+==== New `+TinyMCEAIDiscardSuggestions+` command to discard the AI suggestions previewed in an editor
+// #TINYMCE-15157
+
+Previously, integrations had no public way to discard the AI suggestions previewed in an editor. In decoupled mode, the **TinyMCE AI** plugin does not show its own confirmation dialog before the AI view closes, so an integration that detected pending suggestions could not complete its own prompt to discard them.
+
+In {productname} {release-version}, the new `+TinyMCEAIDiscardSuggestions+` command discards the AI suggestions previewed in the editor it runs on, without applying any of them. The editor keeps the content it had before the preview, and returns to the editor mode it had before the preview. In a xref:tinymceai-multi-editor.adoc[multi-editor group], the command affects only the editor it runs on, so an integration runs the command on each editor in the group to discard every suggestion. For details, see xref:tinymceai.adoc#tinymceai-discard-suggestions[Discarding previewed suggestions].
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
@@ -134,6 +167,13 @@ In {productname} {release-version}, the xref:accordion.adoc[Accordion plugin] ad
 
 // CCFR here.
 
+=== The `+table_appearance_options+` option now also accepts an object with `+cellspacing+`, `+cellpadding+`, `+borderwidth+` and `+caption+` keys, to hide individual fields in the Table Properties dialog
+// #TINYMCE-11998
+
+Previously, the xref:table.adoc#table_appearance_options[`+table_appearance_options+`] option showed or hid the **Cell spacing**, **Cell padding**, **Border width**, and **Caption** fields of the Table Properties dialog only as a group. Integrators who wanted to stop authors from changing one field, such as **Cell spacing**, also had to hide the other three fields.
+
+In {productname} {release-version}, the option also accepts an object that controls each field separately. A field set to `+false+` is hidden, and a field set to `+true+` or left out stays visible. For example, `+table_appearance_options: { cellspacing: false }+` hides only the **Cell spacing** field. The `+true+` and `+false+` values work as before.
+
 
 [[changes]]
 == Changes
@@ -187,6 +227,20 @@ In {productname} {release-version}, pressing Left Arrow or Right Arrow to leave 
 Previously, pressing Delete in an empty first block directly before an accordion, such as an empty block at the start of the content, did not remove the block. Pressing Backspace in an empty last block directly after an accordion, such as an empty block at the end of the content, also did not remove the block. Users could not remove these empty blocks.
 
 In {productname} {release-version}, pressing Delete in an empty block before an accordion removes the block and moves the caret into the accordion summary. Pressing Backspace in an empty block after an accordion removes the block and moves the caret to the end of the accordion content. When the empty block is inside a container with no other content, such as a list, the editor removes the container as well. The editor never removes a table cell that contains the empty block.
+
+=== Removing bold or italic from a nested list item no longer leaves it styled through inheritance from its parent list item
+// #TINYMCE-14935
+
+Previously, when a user made a whole list item bold or italic, any list nested inside it also appeared bold or italic. Removing the formatting from a nested list item had no visible effect, because the nested item still inherited the style from the list item that contained it.
+
+In {productname} {release-version}, removing bold or italic from a nested list item takes effect. The nested item no longer appears bold or italic, and the list item that contains it keeps its formatting.
+
+=== Saving the Table Properties dialog with `+table_appearance_options+` hiding fields no longer removes the table's existing cell spacing, border width or caption
+// #TINYMCE-15197
+
+Previously, when the xref:table.adoc#table_appearance_options[`+table_appearance_options+`] option hid fields in the Table Properties dialog, saving the dialog cleared the existing values of the hidden fields on the table. For example, with **Cell spacing**, **Border width**, and **Caption** hidden, changing only the **Width** of a table and clicking **Save** removed the cell spacing of the table and its border width, reset a `+border+` attribute such as `+border="3"+` to `+1+`, and deleted the table caption. The dialog did not show the hidden fields, so users could not see the change or restore the lost values from the dialog.
+
+In {productname} {release-version}, saving the Table Properties dialog leaves the values of hidden fields unchanged on the table. {productname} also no longer applies the xref:table-options.adoc#table_default_styles[`+table_default_styles+`] and xref:table-options.adoc#table_default_attributes[`+table_default_attributes+`] values for a hidden field over the existing value. Saving the dialog changes only the fields that the dialog shows, and the cell spacing, border width, cell padding, and caption of the table stay as they were.
 
 
 [[security-fixes]]

@@ -149,6 +149,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Changing the width in the Cell Properties dialog now uses the inline column resize logic to ensure the table width does not change
+// #TINYMCE-13193
+
+Previously, changing the width in the **Cell Properties** dialog set the new width on the column or cell but did not adjust the other columns. The column widths no longer added up to the table width, so the browser rescaled every column to fit. The edited column often did not display at the entered width, and the other columns changed size unpredictably, so users had to correct them manually.
+
+In {productname} {release-version}, changing the width in the **Cell Properties** dialog resizes the column in the same way as dragging the column border. The next column grows or shrinks to make up the difference, or the previous column when the last column is resized, and the table keeps its width. The dialog keeps the table width regardless of the xref:table-options.adoc#table_column_resizing[`+table_column_resizing+`] option. The adjacent column never shrinks below the minimum cell width. The dialog converts a width entered in pixels or as a percentage to the table's unit. When the table has no width, or the width uses a unit other than pixels or percentages, the dialog sets the width of the selected cells only, as in earlier versions.
+
 === Inserting an accordion at the end of the content now adds an empty paragraph after it, so the caret can be placed below the accordion
 // #TINYMCE-9955
 

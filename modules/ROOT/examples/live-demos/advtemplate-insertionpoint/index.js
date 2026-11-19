@@ -1,80 +1,56 @@
 tinymce.init({
-  selector: "textarea#template-insertionpoint",
-  plugins: [ "advtemplate", "mergetags", ],
-  toolbar: "inserttemplate | mergetags",
+  selector: 'textarea#template-insertionpoint',
+  height: 640,
+  plugins: 'advtemplate mergetags lists link advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
+  toolbar: 'inserttemplate | mergetags | undo redo | blocks | bold italic | ' +
+    'bullist numlist | link | backcolor | ' +
+    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
+    'removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   advtemplate_templates: [
-    {
-      title: 'Without an insertion point marker',
-      items: [
-        {
-          title: 'Name entry prompt',
-          content: '<p><strong>Enter your name:</strong></p><p><em>Include both your given and family names, in your preferred order.</em></p>'
-        },
-        {
-          title: 'Letter outline',
-          content: '<p>{{prefix}}Current.Date{{suffix}}</p><p>{{prefix}}Honorific{{suffix}} {{prefix}}Person.Name.Last{{suffix}},</p><p></p><p>&nbsp;</p><p>Regards,</p><p>{{prefix}}staff.digital.signature{{suffix}}</p><p>{{prefix}}Staff.Name{{suffix}}</p><p>{{prefix}}Staff.Email{{suffix}}</p>'
-        },
-      ],
-    },
     {
       title: 'With an insertion point marker',
       items: [
         {
-          title: 'Name entry prompt',
-          content: '<p><strong>Enter your name:</strong>{{prefix}}mce-cursor{{suffix}}</p><p><em>Include both your given and family names, in your preferred order.</em></p>'
+          title: 'Customer letter',
+          content: '<p>{{prefix}}Current.Date{{suffix}}</p><p>Dear {{prefix}}Customer.Honorific{{suffix}} {{prefix}}Customer.LastName{{suffix}},</p><p>{{prefix}}mce-cursor{{suffix}}&nbsp;</p><p>Kind regards,</p><p>{{prefix}}Staff.Name{{suffix}}<br>{{prefix}}Staff.Title{{suffix}}<br>{{prefix}}Staff.Email{{suffix}}</p>'
         },
         {
-          title: 'Letter outline',
-          content: '<p>{{prefix}}Current.Date{{suffix}}</p><p>{{prefix}}Honorific{{suffix}} {{prefix}}Person.Name.Last{{suffix}},</p><p>{{prefix}}mce-cursor{{suffix}}&nbsp;</p><p>Regards,</p><p>{{prefix}}staff.digital.signature{{suffix}}</p><p>{{prefix}}Staff.Name{{suffix}}</p><p>{{prefix}}Staff.Email{{suffix}}</p>'
-        },
-      ],
+          title: 'Meeting notes',
+          content: '<h2>Meeting notes</h2><table><tbody><tr><th>Date</th><td>{{prefix}}Current.Date{{suffix}}</td></tr><tr><th>Attendees</th><td>{{prefix}}mce-cursor{{suffix}}&nbsp;</td></tr><tr><th>Recorded by</th><td>{{prefix}}Staff.Name{{suffix}}</td></tr></tbody></table><h3>Decisions</h3><ul><li>&nbsp;</li></ul><h3>Action items</h3><ul><li>&nbsp;</li></ul>'
+        }
+      ]
     },
+    {
+      title: 'Without an insertion point marker',
+      items: [
+        {
+          title: 'Customer letter',
+          content: '<p>{{prefix}}Current.Date{{suffix}}</p><p>Dear {{prefix}}Customer.Honorific{{suffix}} {{prefix}}Customer.LastName{{suffix}},</p><p>&nbsp;</p><p>Kind regards,</p><p>{{prefix}}Staff.Name{{suffix}}<br>{{prefix}}Staff.Title{{suffix}}<br>{{prefix}}Staff.Email{{suffix}}</p>'
+        },
+        {
+          title: 'Meeting notes',
+          content: '<h2>Meeting notes</h2><table><tbody><tr><th>Date</th><td>{{prefix}}Current.Date{{suffix}}</td></tr><tr><th>Attendees</th><td>&nbsp;</td></tr><tr><th>Recorded by</th><td>{{prefix}}Staff.Name{{suffix}}</td></tr></tbody></table><h3>Decisions</h3><ul><li>&nbsp;</li></ul><h3>Action items</h3><ul><li>&nbsp;</li></ul>'
+        }
+      ]
+    }
   ],
   mergetags_list: [
+    { value: 'Current.Date', title: 'Current date' },
     {
-      value: 'Current.Date',
-      title: 'Current date in DD/MM/YYYY format'
-    },
-    {
-      value: 'Current.Time',
-    },
-    {
-      value: 'Honorific',
-    },
-    {
-      title: 'Person',
+      title: 'Customer',
       menu: [
-        {
-          value: 'Customer.Name.Given',
-          title: 'customer first name'
-        },
-        {
-          value: 'Customer.Name.Family',
-          title: 'customer family name'
-        },
-        {
-          value: 'Customer.Name.Full',
-          title: 'customer full name'
-        },
-        {
-          value: 'Staff.Name.Full',
-          title: 'staff full name'
-        },
-        {
-          value: 'Staff.Digital.Signature',
-          title: 'staff digital signaure'
-        },
-        {
-          title: 'Email',
-          menu: [
-            {
-              value: 'Customer.Email'
-            },
-            {
-              value: 'Staff.Email'
-            }
-          ]
-        }
+        { value: 'Customer.Honorific', title: 'Honorific' },
+        { value: 'Customer.FirstName', title: 'First name' },
+        { value: 'Customer.LastName', title: 'Last name' }
+      ]
+    },
+    {
+      title: 'Staff',
+      menu: [
+        { value: 'Staff.Name', title: 'Full name' },
+        { value: 'Staff.Title', title: 'Job title' },
+        { value: 'Staff.Email', title: 'Email address' }
       ]
     }
   ]

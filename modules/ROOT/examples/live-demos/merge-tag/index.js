@@ -1,39 +1,56 @@
 tinymce.init({
-  selector: "textarea#mergetags",
-  plugins: "powerpaste a11ychecker linkchecker wordcount table advtable editimage autosave advlist anchor advcode image link lists media mediaembed searchreplace visualblocks mergetags",
-  toolbar: "mergetags | undo redo | styles | bold italic underline | link | align bullist numlist",
+  selector: 'textarea#mergetags',
+  height: 640,
+  plugins: 'mergetags link lists advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
+  toolbar: 'mergetags | undo redo | blocks | bold italic | bullist numlist | link | ' +
+    'backcolor | alignleft aligncenter alignright alignjustify | ' +
+    'outdent indent | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   mergetags_prefix: '{*',
   mergetags_suffix: '*}',
   mergetags_list: [
     {
-      title: 'Client',
+      title: 'Customer',
       menu: [
+        { value: 'Customer.FirstName', title: 'First name' },
+        { value: 'Customer.LastName', title: 'Last name' },
+        { value: 'Customer.Company', title: 'Company' },
+        { value: 'Customer.Email', title: 'Email address' },
         {
-          value: 'Client.LastCallDate',
-          title: 'Call date'
-        },
-        {
-          value: 'Client.Name',
-          title: 'Client name'
+          title: 'Billing address',
+          menu: [
+            { value: 'Customer.Address.Street', title: 'Street' },
+            { value: 'Customer.Address.City', title: 'City' },
+            { value: 'Customer.Address.Country', title: 'Country' }
+          ]
         }
       ]
     },
     {
-      title: 'Proposal',
+      title: 'Subscription',
       menu: [
-        {
-          value: 'Proposal.SubmissionDate',
-          title: 'Submission date'
-        }
+        { value: 'Subscription.PlanName', title: 'Plan name' },
+        { value: 'Subscription.Seats', title: 'Number of seats' },
+        { value: 'Subscription.RenewalDate', title: 'Renewal date' }
       ]
     },
     {
-      value: 'Consultant',
-      title: 'Consultant'
+      title: 'Billing',
+      menu: [
+        { value: 'Billing.AmountDue', title: 'Amount due' },
+        { value: 'Billing.CardBrand', title: 'Card brand' },
+        { value: 'Billing.CardLast4', title: 'Card last four digits' },
+        { value: 'Billing.PortalUrl', title: 'Billing portal URL' }
+      ]
     },
     {
-      value: 'Salutation',
-      title: 'Salutation'
-    }
+      title: 'Sender',
+      menu: [
+        { value: 'Sender.Name', title: 'Name' },
+        { value: 'Sender.Title', title: 'Job title' },
+        { value: 'Sender.Phone', title: 'Phone number' }
+      ]
+    },
+    { value: 'Unsubscribe.Link', title: 'Unsubscribe link' }
   ]
 });

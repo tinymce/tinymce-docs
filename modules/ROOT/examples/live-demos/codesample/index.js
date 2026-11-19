@@ -1,7 +1,10 @@
 tinymce.init({
   selector: 'textarea#codesample',
-  height: 500,
-  plugins: 'codesample code',
+  height: 640,
+  plugins: 'codesample code lists link advlist autolink image charmap preview anchor searchreplace visualblocks fullscreen insertdatetime media table help wordcount',
+  toolbar: 'codesample code | undo redo | blocks | bold italic | bullist numlist | ' +
+    'link | backcolor | alignleft aligncenter alignright alignjustify | ' +
+    'outdent indent | removeformat | help',
   codesample_languages: [
     { text: 'HTML/XML', value: 'markup' },
     { text: 'JavaScript', value: 'javascript' },
@@ -14,6 +17,5 @@ tinymce.init({
     { text: 'C#', value: 'csharp' },
     { text: 'C++', value: 'cpp' }
   ],
-  toolbar: 'codesample code',
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

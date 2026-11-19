@@ -1,16 +1,22 @@
 const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
 
-const mentions_fetch = async (query, success) => {
-  const searchPhrase = query.term.toLowerCase();
-  await fetch(`${API_URL}?q=${encodeURIComponent(searchPhrase)}`)
+// The signed-in user. Replace with the ID of the user in your application.
+const user_id = 'james-wilson';
+
+// Mentions: search the user directory and insert a styled span for the selected person.
+// In comments, a mention is stored as @ followed by the user ID.
+const toMentionsUser = (userInfo) => ({
+  id: userInfo.id,
+  name: userInfo.name,
+  image: userInfo.avatar,
+  description: userInfo.custom.role
+});
+
+const mentions_fetch = (query, success) => {
+  fetch(`${API_URL}?q=${encodeURIComponent(query.term.toLowerCase())}&limit=10`)
     .then((response) => response.json())
-    .then((users) => success(users.data.map((userInfo) => ({
-      id: userInfo.id,
-      name: userInfo.name,
-      image: userInfo.avatar,
-      description: userInfo.custom.role
-    }))))
-    .catch((error) => console.log(error));
+    .then((users) => success(users.data.map(toMentionsUser)))
+    .catch((error) => console.error(error));
 };
 
 const mentions_menu_complete = (editor, userInfo) => {
@@ -21,71 +27,54 @@ const mentions_menu_complete = (editor, userInfo) => {
   return span;
 };
 
-const createCard = (userInfo) => {
-  const div = document.createElement('div');
-  div.innerHTML = (
-    '<div class="card">' +
-      '<img class="avatar" src="' + userInfo.image + '">' +
-      '<h1>' + userInfo.name + '</h1>' +
-      '<p>' + userInfo.description + '</p>' +
-    '</div>'
-  );
-  return div;
+const mentions_menu_hover = (userInfo, success) => {
+  success({ type: 'profile', user: userInfo });
 };
 
-const mentions_select = async (mention, success) => {
+const mentions_select = (mention, success) => {
   const id = mention.getAttribute('data-mention-id');
-  await fetch(`${API_URL}/${id}`)
+  fetch(`${API_URL}/${id}`)
     .then((response) => response.json())
-    .then((userInfo) => {
-      const card = createCard({
-        id: userInfo.id,
-        name: userInfo.name,
-        image: userInfo.avatar,
-        description: userInfo.custom.role
-      });
-      success(card);
-    })
+    .then((userInfo) => success({ type: 'profile', user: toMentionsUser(userInfo) }))
     .catch((error) => console.error(error));
 };
 
-const mentions_menu_hover = async (userInfo, success) => {
-  const card = createCard(userInfo);
-  success(card);
-};
-
-const tinycomments_can_resolve = (req, done, _fail) => {
-  const allowed = req.comments.length > 0 && req.comments[0].author === author;
+// In embedded mode, conversations are saved inside the editor content.
+// Users can resolve only the conversations they started.
+const tinycomments_can_resolve = (req, done) => {
+  const allowed = req.comments.length > 0 && req.comments[0].author === user_id;
   done({ canResolve: allowed });
 };
 
-const user_id = 'james-wilson';
-
 tinymce.init({
   selector: 'textarea#comments-embedded-with-mentions',
-  plugins: [ 'tinycomments', 'mentions', 'help', 'code', 'quickbars', 'link', 'lists', 'image' ],
-  toolbar: 'addcomment showcomments code | bold italic underline',
-  menubar: 'file edit view insert format tools tc help',
+  height: 680,
+  plugins: 'tinycomments mentions quickbars lists link advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
+  toolbar: 'addcomment showcomments | undo redo | blocks | bold italic | ' +
+    'bullist numlist | link | backcolor | ' +
+    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
+    'removeformat | help',
+  menubar: 'file edit view insert format tools table comments help',
   menu: {
-    tc: {
-      title: 'TinyComments',
-      items: 'addcomment showcomments deleteallconversations'
-    }
+    comments: { title: 'Comments', items: 'addcomment showcomments deleteallconversations' }
   },
-  quickbars_selection_toolbar: 'alignleft aligncenter alignright | addcomment showcomments',
-  quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions',
+  quickbars_selection_toolbar: 'addcomment | bold italic | quicklink',
+  quickbars_insert_toolbar: false,
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  content_style: '.mymention { color: #174ea6; font-weight: 600; }',
 
   tinycomments_mode: 'embedded',
-  sidebar_show: 'showcomments',
   tinycomments_mentions_enabled: true,
   tinycomments_can_resolve,
+  tinycomments_always_show_highlights: true,
+  sidebar_show: 'showcomments',
 
+  mentions_fetch,
   mentions_item_type: 'profile',
   mentions_min_chars: 0,
-  mentions_selector: '.mymention',
-  mentions_fetch,
-  mentions_menu_hover,
   mentions_menu_complete,
+  mentions_menu_hover,
+  mentions_selector: '.mymention',
   mentions_select,
 
   user_id,

@@ -1,9 +1,14 @@
 tinymce.init({
   selector: 'textarea#spellchecker',
-  plugins: 'code tinymcespellchecker link',
-  toolbar: 'spellchecker language spellcheckdialog',
-  height: 500,
+  height: 660,
+  plugins: 'tinymcespellchecker lists advlist autolink link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
+  toolbar: 'spellchecker spellcheckdialog language | undo redo | blocks | ' +
+    'bold italic | bullist numlist | backcolor | ' +
+    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
+    'removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   spellchecker_language: 'en-US',
+  spellchecker_ignore_list: [ 'Lumora' ],
   content_langs: [
     { title: 'Afrikaans (South Africa)', code: 'af-ZA', customCode: 'af-ZA' },
     { title: 'English (Australia)', code: 'en-AU' },
@@ -27,6 +32,5 @@ tinymce.init({
     { title: 'Spanish', code: 'es' },
     { title: 'Swedish', code: 'sv-SE' },
     { title: 'Swedish (Finland)', code: 'sv-FI' }
-  ],
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  ]
 });

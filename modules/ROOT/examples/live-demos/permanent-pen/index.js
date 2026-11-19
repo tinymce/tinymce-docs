@@ -1,27 +1,26 @@
 tinymce.init({
   selector: 'textarea#permanent-pen',
-  plugins: 'permanentpen code',
-  contextmenu: 'configurepermanentpen',
-  toolbar: 'permanentpen code',
-  menubar: 'file edit view format table tools help',
+  height: 620,
+  plugins: 'permanentpen lists advlist autolink link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
+  toolbar: 'permanentpen | undo redo | blocks | bold italic | bullist numlist | ' +
+    'backcolor | alignleft aligncenter alignright alignjustify | ' +
+    'outdent indent | removeformat | help',
   menu: {
     format: {
       title: 'Format',
-      items: 'configurepermanentpen | bold italic underline strikethrough ' +
-        'superscript subscript codeformat | styles blocks fontfamily ' +
-        'fontsize align | forecolor backcolor | removeformat'
+      items: 'configurepermanentpen permanentpen | bold italic underline strikethrough | forecolor backcolor | removeformat'
     }
   },
+  contextmenu: 'configurepermanentpen',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   permanentpen_properties: {
     fontname: 'arial,helvetica,sans-serif',
-    forecolor: '#E74C3C',
     fontsize: '12pt',
-    hilitecolor: '',
+    forecolor: '#1A56DB',
+    hilitecolor: '#E8F0FE',
     bold: true,
     italic: false,
-    strikethrough: false,
-    underline: false
-  },
-  height: 500,
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+    underline: false,
+    strikethrough: false
+  }
 });

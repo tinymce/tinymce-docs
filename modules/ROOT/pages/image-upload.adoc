@@ -1,0 +1,105 @@
+= Image upload
+:navtitle: Image upload
+:description: Image upload sends local images in the editor, such as pasted or dropped images, to a server and replaces each image source with the URL that the server returns.
+:description_short: Send local images in the editor to a server.
+:keywords: image upload, upload images, uploadImages, automatic_uploads, images_upload_url, images_upload_handler, images_upload_base_path, images_upload_credentials, images_reuse_filename, images_file_types, block_unsupported_drop, blob, data URL, Base64
+
+include::partial$misc/core-feature-summaries.adoc[tag=image-upload]
+Applications can store images on a server instead of keeping them in the content as Base64 data. Image upload is part of the core editor and does not require a plugin, although the *Upload* tab in the image dialog requires the xref:image.adoc[Image] plugin.
+
+[[what-image-upload-does]]
+== What image upload does
+
+* Uploads local images, which are images with a data URL or blob URI as their source. These include images pasted from the clipboard, image files dropped from the desktop, images in content added through the editor application programming interface (API), and images changed with the xref:editimage.adoc[Image Editing] plugin. The editor skips images that already have a remote URL.
+* Inserts pasted and dropped image files only when the xref:copy-and-paste.adoc#paste_data_images[`+paste_data_images+`] option is enabled, which is the default, and the file type is listed in the xref:#images_file_types[`+images_file_types+`] option.
+* Uploads images as soon as they are added to the editor while the xref:#automatic_uploads[`+automatic_uploads+`] option is `+true+`, which is the default. When it is `+false+`, the application starts the upload by calling the xref:apis/tinymce.editor.adoc#uploadImages[`+uploadImages()+`] method, for example, before saving the content.
+* Does nothing until either the xref:#images_upload_url[`+images_upload_url+`] or the xref:#images_upload_handler[`+images_upload_handler+`] option is set. Without either option, images stay in the content as local images.
+* Sends each image to the xref:#images_upload_url[`+images_upload_url+`] address in its own `+POST+` request, as form data in a field named `+file+`. The default uploader expects the server to respond with a JavaScript Object Notation (JSON) object that contains a `+location+` property with the image URL. A response with an error status, or without a `+location+` string, counts as a failed upload.
+* Replaces the default uploader with a custom function set in the xref:#images_upload_handler[`+images_upload_handler+`] option. The function receives the image data and a progress callback, and returns a Promise that resolves with the image URL or rejects with an error. Calling the progress callback shows an *Image uploading...* notification with a progress bar.
+* Prepends the path set in the xref:#images_upload_base_path[`+images_upload_base_path+`] option to each `+location+` returned to the default uploader.
+* Sends credentials such as cookies with cross-origin requests from the default uploader when the xref:#images_upload_credentials[`+images_upload_credentials+`] option is `+true+`.
+* Generates a unique file name for each upload by default. When the xref:#images_reuse_filename[`+images_reuse_filename+`] option is `+true+`, the editor uploads pasted and dropped files with their original file names.
+* Blocks dropped files that the editor cannot insert and shows a *Dropped file type is not supported* message, instead of letting the browser leave the page, while the xref:#block_unsupported_drop[`+block_unsupported_drop+`] option is `+true+`, which is the default.
+* Adds an *Upload* tab to the image dialog of the xref:image.adoc[Image] plugin when either upload option is set and the xref:image.adoc#image_uploadtab[`+image_uploadtab+`] option is `+true+`, which is the default. The tab accepts the file types listed in the xref:#images_file_types[`+images_file_types+`] option. With automatic uploads enabled, the selected file uploads immediately and the *Source* field shows the returned URL. Otherwise, the dialog inserts the image as a local image, which uploads later.
+* Replaces the source of each uploaded image, including in the undo history, with the URL returned by the server or the handler.
+* Shows a *Failed to upload image* notification with the error message when an upload fails. The image stays in the content as a local image, unless a custom handler rejects with an object that sets `+remove: true+`, in which case the editor removes the image.
+* Returns local images as Base64 data URLs when the content is retrieved before their upload finishes.
+
+[[interactive-example]]
+== Interactive example
+
+liveDemo::file-image-upload[]
+
+The demo uses a custom xref:#images_upload_handler[`+images_upload_handler+`] function that simulates an upload with progress and returns the local image address instead of a server URL, so no image leaves the browser. Paste or drop an image into the content, or use the *Upload* tab in the *Insert/edit image* dialog.
+
+[[basic-setup]]
+== Basic setup
+
+To upload images with the default uploader, set the xref:#images_upload_url[`+images_upload_url+`] option to the address of a server-side script that stores the image and returns its location.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'image',
+  toolbar: 'undo redo | image',
+  images_upload_url: 'postAcceptor.php'
+});
+----
+
+To control how images are sent, set the xref:#images_upload_handler[`+images_upload_handler+`] option to a function that uploads the image and resolves with its URL.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'image',
+  toolbar: 'undo redo | image',
+  images_upload_handler: (blobInfo, progress) => {
+    const formData = new FormData();
+    formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+    return fetch('postAcceptor.php', { method: 'POST', body: formData })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('HTTP Error: ' + response.status);
+        }
+        return response.json();
+      })
+      .then((json) => json.location);
+  }
+});
+----
+
+For the server-side requirements, uploading before a form is submitted, and cross-origin considerations, see xref:upload-images.adoc[Handling image uploads]. For an example server-side script, see xref:php-upload-handler.adoc[PHP image upload handler].
+
+[[options]]
+== Options
+
+The following configuration options affect image upload.
+
+include::partial$configuration/automatic_uploads.adoc[leveloffset=+1]
+
+include::partial$configuration/images_upload_url.adoc[leveloffset=+1]
+
+include::partial$configuration/images_upload_handler.adoc[leveloffset=+1]
+
+include::partial$configuration/images_upload_base_path.adoc[leveloffset=+1]
+
+include::partial$configuration/images_upload_credentials.adoc[leveloffset=+1]
+
+include::partial$configuration/images_reuse_filename.adoc[leveloffset=+1]
+
+include::partial$configuration/images_file_types.adoc[leveloffset=+1]
+
+include::partial$configuration/block_unsupported_drop.adoc[leveloffset=+1]
+
+[[toolbar-buttons-and-menu-items]]
+== Toolbar buttons and menu items
+
+Image upload has no toolbar button or menu item of its own. The image dialog, including its *Upload* tab, is provided by the Image plugin. For details, see xref:image.adoc[Image plugin] and the xref:image.adoc#image_uploadtab[`+image_uploadtab+`] option.
+
+[[apis]]
+== APIs
+
+To upload all local images from code, call the `+uploadImages()+` method. For details, see xref:apis/tinymce.editor.adoc#uploadImages[tinymce.Editor.uploadImages()].

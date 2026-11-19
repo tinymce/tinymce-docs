@@ -1,10 +1,21 @@
 <textarea id="template-predefined">
-  <h3>Inserting a template</h3>
-  <p>To insert a template:</p>
-  <ol>
-    <li>select <strong>Template…</strong> from the <strong>Insert</strong> menu or<br />
-    select the <strong>Insert template</strong> toolbar button.</li>
-    <li>select the template to add to the TinyMCE document from the <strong>Templates</strong> dialog that presents.</li>
-    <li>click <strong>Insert</strong> or press <strong>Return</strong>.</li>
-  </ol>
+  <blockquote>
+    <p><strong>Try it:</strong></p>
+    <ul>
+      <li>Place the insertion point at the end of this message, select <strong>Insert template</strong> in the toolbar, expand <strong>Offers</strong>, and select <strong>Offer summary</strong> to preview it. Select <strong>Insert</strong> to add it with its headings, lists, and merge tags.</li>
+      <li>Type part of a name, such as <code>reschedule</code>, in the <strong>Search</strong> box to find a template in any category.</li>
+    </ul>
+  </blockquote>
+  <p>Hi {{prefix}}Candidate.FirstName{{suffix}},</p>
+  <p>Thank you for applying for the {{prefix}}Role.Title{{suffix}} position. The hiring team would like to invite you to an interview.</p>
+  <table>
+    <tbody>
+      <tr><th>Date</th><td>{{prefix}}Interview.Date{{suffix}}</td></tr>
+      <tr><th>Time</th><td>{{prefix}}Interview.Time{{suffix}}</td></tr>
+      <tr><th>Location</th><td>{{prefix}}Interview.Location{{suffix}}</td></tr>
+      <tr><th>Panel</th><td>{{prefix}}Role.HiringManager{{suffix}} and {{prefix}}Recruiter.Name{{suffix}}</td></tr>
+    </tbody>
+  </table>
+  <p>The interview takes about 45 minutes. Please reply to confirm the time.</p>
+  <p>Kind regards,<br>{{prefix}}Recruiter.Name{{suffix}}</p>
 </textarea>

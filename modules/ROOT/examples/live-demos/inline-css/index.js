@@ -1,45 +1,29 @@
-const settings = {
-  plugins: [
-    'advlist', 'anchor', 'autolink', 'charmap', 'code', 'fullscreen',
-    'help', 'image', 'insertdatetime', 'link', 'lists', 'media',
-    'preview', 'searchreplace', 'table', 'visualblocks', 'inlinecss'
-  ],
-  toolbar: 'undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-  content_style: `
-    .red {
-      color: red;
-    }
-    .blue {
-      color: blue;
-    }
-    .blue-background {
-      background-color: blue;
-    }
-    .red-background {
-      background-color: red;
-    }
-  `
-};
-
 tinymce.init({
-  selector: 'textarea.classic',
-  ...settings
+  selector: 'textarea#inline-css',
+  height: 620,
+  plugins: 'inlinecss lists link table advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media help wordcount',
+  toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | ' +
+    'bullist numlist | link table | backcolor | alignjustify | ' +
+    'outdent indent | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  // Newsletter-specific styles. Styles from content_style are always inlined.
+  content_style: `
+    .price { text-align: right; white-space: nowrap; }
+    a.button { display: inline-block; padding: 10px 18px; border-radius: 6px; background-color: #1a73e8; color: #ffffff; font-weight: 600; text-decoration: none; }
+    .small-print { color: #6b7280; font-size: 13px; }
+  `,
+  // Inline rules from the newsletter stylesheet only, not from the default editor content CSS.
+  inlinecss_file_filter: 'demo-content'
 });
 
-const button = document.getElementById('inline-css-btn');
-const outputTextArea = document.getElementById('output-text-area');
+document.getElementById('inline-css-btn').addEventListener('click', () => {
+  const editor = tinymce.get('inline-css');
+  editor.plugins.inlinecss.getContent().then((content) => {
+    document.getElementById('output-text-area').value = content.html;
 
-button.addEventListener('click', () => {
-  const pluginAPI = tinymce.get(0).plugins.inlinecss;
-  const outputIframe = document.getElementById('outputIframe');
-  const rawDoc = outputIframe.contentWindow.document;
-  pluginAPI.getContent().then((content) => {
-    outputTextArea.value = content.html;
-
-    if (rawDoc) {
-      rawDoc.open();
-      rawDoc.write(content.html);
-      rawDoc.close();
-    }
+    const outputDoc = document.getElementById('outputIframe').contentWindow.document;
+    outputDoc.open();
+    outputDoc.write(content.html);
+    outputDoc.close();
   });
 });

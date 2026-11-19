@@ -1,47 +1,73 @@
 <textarea id="format-painter">
-  {{logofordemoshtml}}
-
-  <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
-
-  <h2>Got questions or need help?</h2>
-
-  <ul>
-    <li>Our <a href="{{site-url}}/tinymce/8/">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
-    <li>Have a specific question? Try the <a href="{{communitysupporturl}}" target="_blank" rel="noopener"><code>{{prodnamecode}}</code> tag at Stack Overflow</a>.</li>
-    <li>We also offer enterprise grade support as part of <a href="{{pricingpage}}">TinyMCE premium plans</a>.</li>
-  </ul>
-
-  <h2>A simple table to play with</h2>
-
-  <table style="border-collapse: collapse; width: 100%;" border="1">
+  <blockquote>
+    <p><strong>Try it:</strong> place the insertion point in formatted text, select <strong>Format painter</strong> in the toolbar, then select the text that should match.</p>
+    <ul>
+      <li>Copy the blue <strong>Summary</strong> heading onto the plain &ldquo;Next steps&rdquo; line. Select the whole line so it becomes a matching heading.</li>
+      <li>Copy a colored status, such as <strong>On track</strong>, onto the plain statuses in the table. The text color and the cell shading are copied together.</li>
+      <li>Copy the square bullets of &ldquo;Completed this week&rdquo; onto the &ldquo;Planned for next week&rdquo; list.</li>
+      <li>After copying once, select more text and press Ctrl+Alt+V (Command+Option+V on macOS) to apply the same formatting again.</li>
+    </ul>
+  </blockquote>
+  <h1>Website redesign: weekly status report</h1>
+  <p>Week ending March 6. Prepared by Priya Shah for the project steering group.</p>
+  <h2 style="color: #1a56db;">Summary</h2>
+  <p>Four of five workstreams are on schedule. <span style="background-color: #fef08a;"><strong>Decision needed:</strong></span> the steering group must approve the extra accessibility testing budget by March 13 to keep the April launch date.</p>
+  <h2 style="color: #1a56db;">Workstreams</h2>
+  <table>
     <thead>
       <tr>
-        <th>Product</th>
-        <th>Cost</th>
-        <th>Really?</th>
+        <th>Workstream</th>
+        <th>Owner</th>
+        <th>Due</th>
+        <th>Status</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td style="text-align: center;">TinyMCE</td>
-        <td style="text-align: center;">Free</td>
-        <td style="text-align: center;">YES!</td>
+        <td>Navigation and search</td>
+        <td>Priya Shah</td>
+        <td>March 12</td>
+        <td style="background-color: #dcfce7;"><strong><span style="color: #166534;">On track</span></strong></td>
+      </tr>
+      <tr>
+        <td>Accessibility testing</td>
+        <td>Daniel Okafor</td>
+        <td>March 20</td>
+        <td style="background-color: #fef3c7;"><strong><span style="color: #92400e;">At risk</span></strong></td>
+      </tr>
+      <tr>
+        <td>Product pages</td>
+        <td>Tom Becker</td>
+        <td>March 19</td>
+        <td>On track</td>
+      </tr>
+      <tr>
+        <td>Checkout flow</td>
+        <td>Mei Lin</td>
+        <td>March 26</td>
+        <td>On track</td>
+      </tr>
+      <tr>
+        <td>Content migration</td>
+        <td>Rosa Alvarez</td>
+        <td>April 2</td>
+        <td>On track</td>
       </tr>
     </tbody>
   </table>
-
-  <h2>Found a bug?</h2>
-
-  <p>
-    If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.
-  </p>
-
-  <h2>Finally ...</h2>
-
-  <p>
-    Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.
-  </p>
-  <p>
-    Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.
-  </p>
+  <h2 style="color: #1a56db;">Progress</h2>
+  <p>Completed this week:</p>
+  <ul style="list-style-type: square;">
+    <li>Signed off the new main navigation</li>
+    <li>Finished the product page templates</li>
+    <li>Migrated 340 of 520 help articles</li>
+  </ul>
+  <p>Planned for next week:</p>
+  <ul>
+    <li>Run usability sessions on the checkout flow</li>
+    <li>Start keyboard and screen reader testing</li>
+    <li>Migrate the remaining 180 help articles</li>
+  </ul>
+  <p>Next steps</p>
+  <p>Decision needed: confirm who signs off the final content migration.</p>
 </textarea>

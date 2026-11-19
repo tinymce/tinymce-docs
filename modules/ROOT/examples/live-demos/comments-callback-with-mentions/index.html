@@ -1,32 +1,29 @@
 <textarea id="comments-callback-with-mentions">
-<h2>Welcome to Tiny Comments!</h2>
-<p>Please try out this demo of our Tiny Comments premium plugin with @mentions support.</p>
-<ol>
-  <li>Highlight the content you want to comment on.</li>
-  <li>Click the <em>Add Comment</em> icon in the toolbar.</li>
-  <li>Type your comment into the text field at the bottom of the Comment sidebar, and use <code>@</code> followed by a name to mention a collaborator.</li>
-  <li>Click <strong>Comment</strong>.</li>
-</ol>
-<p>Your comment is <span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_19679600221621399703915" data-mce-annotation="tinycomments">then</span> attached to the text, <span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_420304606321716900864126" data-mce-annotation="tinycomments">exactly like this!</span> You can <span class="mymention" style="color: gray;" data-mention-id="mia-andersson" data-mce-mentions-id="mia-andersson">@Mia Andersson</span> directly in your comments to notify them.</p>
-<p>If you want to take Tiny Comments for a test drive in your own environment, Tiny Comments is one of the premium plugins you can try for free for 14 days by signing up for a Tiny account. Make sure to check out our documentation as well.</p>
-<h2>A simple table to play with</h2>
-<table style="border-collapse: collapse; width: 100%;" border="1">
-  <thead>
-    <tr>
-      <th>Product</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://www.tiny.cloud/">Tiny Cloud</a></td>
-      <td>The easiest and most reliable way to integrate powerful rich text editing into your application.</td>
-    </tr>
-    <tr>
-      <td><a href="https://www.tiny.cloud/drive/">Tiny Drive</a></td>
-      <td>Image and file management for TinyMCE in the cloud.</td>
-    </tr>
-  </tbody>
-</table>
-<p>Thanks for supporting TinyMCE! We hope it helps your users create great content.</p>
+  <blockquote><p><strong>Try it:</strong> select highlighted text to open its conversation in the <strong>Comments</strong> sidebar, then reply and type <kbd>@</kbd> to mention a colleague. Hover over a mention, in a comment or in the text, to see that person's profile card. Select any other text and choose <strong>Add comment</strong> to start a new conversation. The signed-in user is James Wilson, so his comments can be edited or deleted, and his conversation about map tiles can be resolved from the <strong>Conversation Actions</strong> menu.</p></blockquote>
+  <h1>Offline mode: product specification</h1>
+  <p>Status: draft for review. Owner: <span class="mymention" data-mention-id="mia-andersson">@Mia Andersson</span>. Target release: version 4.2.</p>
+  <h2>Problem</h2>
+  <p>Field inspectors often work at sites with no mobile signal. When the connection drops, the app discards unsaved inspection reports. Support logged 214 tickets about lost reports last quarter.</p>
+  <h2>Goals</h2>
+  <ul>
+    <li>Inspectors can create and edit reports, and attach photos, without a connection.</li>
+    <li>Reports <span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_sync-time" data-mce-annotation="tinycomments">sync automatically within 60 seconds</span> of the connection returning.</li>
+    <li>No report is lost or overwritten without a warning.</li>
+  </ul>
+  <h2>Requirements</h2>
+  <table>
+    <thead>
+      <tr><th>Requirement</th><th>Priority</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_report-limit" data-mce-annotation="tinycomments">Store up to 50 reports on the device</span></td><td>Must</td><td>Encrypted at rest</td></tr>
+      <tr><td>Queue changes and retry the upload</td><td>Must</td><td>Retry every 30 seconds</td></tr>
+      <tr><td>Warn when two people edit the same report</td><td>Should</td><td>Show both versions side by side</td></tr>
+      <tr><td><span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_map-tiles" data-mce-annotation="tinycomments">Offline map tiles</span></td><td>Could</td><td>Deferred to a later release</td></tr>
+    </tbody>
+  </table>
+  <h2>Out of scope</h2>
+  <p>Editing the same report on more than one device while offline is not supported in this release.</p>
+  <h2>Timeline</h2>
+  <p>Design review on December 3, beta with two regional teams in January, and general release in version 4.2.</p>
 </textarea>

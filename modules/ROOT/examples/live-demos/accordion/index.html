@@ -1,49 +1,76 @@
 <textarea id="accordion">
-
-  {{logofordemoshtml}}
-
-  <h1 style="text-align: center;">The Accordion plugin</h1>
-
-  <p>This is a demo of the <strong>Accordion</strong> open source plugin.</p>
-
-  <details class="mce-accordion">
-    <summary>What does the <strong>Accordion</strong> plugin do?</summary>
-      <p>The Accordion plugin allows for the creation of collapsible sections in a document that can be expanded or collapsed to show or hide additional content.</p>
+  <blockquote>
+    <p><strong>Try it:</strong></p>
+    <ul>
+      <li>Place the insertion point in a question, then select <strong>Toggle accordion</strong> in the toolbar that appears to open or close it, or <strong>Delete accordion</strong> to remove it.</li>
+      <li>Place the insertion point inside an open answer and select <strong>Insert accordion</strong> in the main toolbar to nest a new section, as in the <strong>How do exchanges work?</strong> answer.</li>
+      <li>Select the text of a paragraph, then select <strong>Insert accordion</strong>. The selected text becomes the title of the new section.</li>
+    </ul>
+  </blockquote>
+  <h1>Returns and exchanges</h1>
+  <p>Northfield Outfitters accepts returns of most items within 30 days of delivery. Open a question below for details.</p>
+  <h2>Returns</h2>
+  <details class="mce-accordion" open="open">
+    <summary class="mce-accordion-summary">What is the return window?</summary>
+    <div class="mce-accordion-body">
+      <p>Unworn items with their original tags can be returned within 30 days of delivery. Sale items can be returned within 14 days.</p>
+      <p>Orders placed between November 15 and December 24 can be returned until January 31.</p>
+    </div>
   </details>
-
   <details class="mce-accordion">
-    <summary>How does it present to an end-user?</summary>
-      <p>By default, when the <code>accordion</code> plugin is loaded, the command is available in the TinyMCE menu at <strong>Insert → Accordion</strong>.</p>
-      <p>Adding <code>accordion</code> to the <code>toolbar</code> in the TinyMCE configuration adds an Accordion icon to the TinyMCE toolbar.</p>
-      <p>And, when a specific collapsible section is selected, a pop-up menu presents offering two controls: one to collapse or expand the selected section; and one to delete the selected section.</p>
+    <summary class="mce-accordion-summary">Which items cannot be returned?</summary>
+    <div class="mce-accordion-body">
+      <ul>
+        <li>Socks, underwear, and swimwear with the hygiene seal removed</li>
+        <li>Gift cards</li>
+        <li>Items marked <strong>Final sale</strong> on the product page</li>
+      </ul>
+    </div>
   </details>
-
   <details class="mce-accordion">
-    <summary>Are there other Accordion options?</summary>
-      <p>The Accordion plugin provides:<br />
-         four commands (<code>InsertAccordion</code>, <code>ToggleAccordion</code>, <code>ToggleAllAccordions</code>, and <code>RemoveAccordion</code>); and<br />
-         two initialization options (<code>details_initial_state</code> and <code>details_serialized_state</code>).</p>
-      <p>See below for details</p>
+    <summary class="mce-accordion-summary">How are refunds paid?</summary>
+    <div class="mce-accordion-body">
+      <p>Refunds go back to the original payment method once the returned item reaches the warehouse.</p>
+      <table>
+        <thead>
+          <tr><th>Payment method</th><th>Time to appear</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Credit or debit card</td><td>3 to 5 business days</td></tr>
+          <tr><td>PayPal</td><td>1 to 2 business days</td></tr>
+          <tr><td>Gift card</td><td>Immediately, as store credit</td></tr>
+        </tbody>
+      </table>
+    </div>
   </details>
-
-
-  <h2>Got questions or need help?</h2>
-
-  <ul>
-    <li>Our <a href="{{site-url}}/tinymce/8/">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
-    <li>Have a specific question? Try the <a href="{{communitysupporturl}}" target="_blank" rel="noopener"><code>{{prodnamecode}}</code> tag at Stack Overflow</a>.</li>
-    <li>We also offer enterprise grade support as part of <a href="{{pricingpage}}">TinyMCE premium plans</a>.</li>
-  </ul>
-
-  <h2>Found a bug?</h2>
-
-  <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
-
-  <h2>Finally…</h2>
-
-  <p>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</p>
-
-  <p>Thanks for supporting TinyMCE. We hope it helps you in creating great content.</p>
-
-  <p>All the best from the TinyMCE team.</p>
+  <h2>Exchanges</h2>
+  <details class="mce-accordion" open="open">
+    <summary class="mce-accordion-summary">How do exchanges work?</summary>
+    <div class="mce-accordion-body">
+      <ol>
+        <li>Start an exchange from the order page and choose the new size or color.</li>
+        <li>Print the prepaid label and drop the parcel at any post office.</li>
+        <li>The replacement ships as soon as the courier scans the parcel.</li>
+      </ol>
+      <details class="mce-accordion">
+        <summary class="mce-accordion-summary">What if the new size is out of stock?</summary>
+        <div class="mce-accordion-body">
+          <p>The exchange is converted to a refund, and an email confirms the change within one business day.</p>
+        </div>
+      </details>
+      <details class="mce-accordion">
+        <summary class="mce-accordion-summary">Can an item be exchanged for a different product?</summary>
+        <div class="mce-accordion-body">
+          <p>Yes. Return the original item for a refund and place a new order for the other product.</p>
+        </div>
+      </details>
+    </div>
+  </details>
+  <details class="mce-accordion">
+    <summary class="mce-accordion-summary">Are international orders eligible?</summary>
+    <div class="mce-accordion-body">
+      <p>International orders can be returned for a refund within 30 days. Exchanges are available for orders shipped within the United States and Canada only.</p>
+    </div>
+  </details>
+  <p>For anything not covered here, contact customer care from the order page.</p>
 </textarea>

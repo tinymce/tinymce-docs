@@ -1,0 +1,29 @@
+<textarea id="block-formats-and-styles">
+  <blockquote><p><strong>Try it:</strong> place the insertion point in a paragraph and choose a block type from the blocks dropdown, which shows <strong>Paragraph</strong> for a plain paragraph. Open the styles dropdown, which shows <strong>Formats</strong> or the name of the current style, and apply a style from the <strong>Article</strong> or <strong>Inline text</strong> submenu, where each item previews its style. Choose an applied style again to remove it. Place the insertion point in the table to show the <strong>Tables</strong> submenu, which is hidden elsewhere.</p></blockquote>
+  <h1>Reset a workspace password</h1>
+  <p class="lead">Workspace owners can reset the password for any member of the workspace. The member receives an email with a reset link that expires after 24 hours.</p>
+  <p><span class="badge badge-updated">Updated</span> This article reflects the new <span class="ui-label">Members</span> page layout.</p>
+  <h2>Steps</h2>
+  <ol>
+    <li>Open <span class="ui-label">Settings</span> and select <span class="ui-label">Members</span>.</li>
+    <li>Find the member, then select <span class="ui-label">Reset password</span>.</li>
+    <li>Press <kbd>Enter</kbd> to confirm, or <kbd>Esc</kbd> to cancel.</li>
+  </ol>
+  <div class="callout tip"><p><strong>Tip:</strong> To find a member quickly, press <kbd>Ctrl</kbd> + <kbd>K</kbd> and type part of the name.</p></div>
+  <div class="callout warning"><p><strong>Warning:</strong> Resetting a password signs the member out of every device.</p></div>
+  <h2>Reset link expiry</h2>
+  <table class="striped">
+    <thead>
+      <tr><th>Plan</th><th>Link expires after</th><th>Who can reset</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Free</td><td>24 hours</td><td>Owners</td></tr>
+      <tr class="row-highlight"><td>Team</td><td>24 hours</td><td>Owners and admins</td></tr>
+      <tr><td>Enterprise</td><td>Set by policy</td><td>Owners, admins, and single sign-on administrators</td></tr>
+      <tr><td>Education</td><td>48 hours</td><td>Owners and admins</td></tr>
+    </tbody>
+  </table>
+  <h2>Command-line reset</h2>
+  <pre>workspace members reset-password --email member@example.com</pre>
+  <p><span class="badge badge-deprecated">Deprecated</span> The <mark>legacy reset form</mark> is removed in the next release.</p>
+</textarea>

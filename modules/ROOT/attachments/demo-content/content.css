@@ -1,0 +1,139 @@
+/*
+ * Shared content styles for documentation live demos.
+ * Loaded inside the editor with:
+ *   content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
+ * The editor body is styled as a centered card on a light gray canvas,
+ * with a soft gradient header band painted on the body itself,
+ * so demo content stays plain, semantic HTML without wrapper classes.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+html {
+  background: #f5f6f8;
+}
+
+body {
+  box-sizing: border-box;
+  max-width: 720px;
+  margin: 24px auto;
+  padding: 36px 40px 40px;
+  background:
+    radial-gradient(1200px 200px at 85% -20%, rgba(26, 115, 232, 0.14), transparent 60%) top / 100% 260px no-repeat,
+    linear-gradient(180deg, #eef1ff 0%, #f6f8ff 60%, #ffffff 100%) top / 100% 260px no-repeat,
+    #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  color: #2b2b2b;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 0;
+    padding: 20px 16px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #141c3a;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+h2 {
+  font-size: 21px;
+  font-weight: 700;
+  margin: 28px 0 10px;
+}
+
+h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 22px 0 8px;
+}
+
+p {
+  margin: 0 0 14px;
+}
+
+a {
+  color: #174ea6;
+}
+
+ul,
+ol {
+  margin: 0 0 14px;
+  padding-left: 24px;
+}
+
+li {
+  margin: 4px 0;
+}
+
+/* A blockquote renders as a highlighted callout box. */
+blockquote {
+  margin: 20px 0;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid #d9deef;
+  border-radius: 10px;
+  color: #2b2f45;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+table {
+  width: 100%;
+  margin: 16px 0;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+caption {
+  margin-bottom: 8px;
+  color: #4b5676;
+  font-weight: 600;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 8px 12px;
+  border: 1px solid #d9deef;
+  text-align: left;
+}
+
+th {
+  background: #eef1ff;
+  color: #141c3a;
+  font-weight: 600;
+}
+
+hr {
+  margin: 24px 0;
+  border: 0;
+  border-top: 1px solid #e3e6ef;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

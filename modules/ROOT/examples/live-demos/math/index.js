@@ -1,9 +1,9 @@
 tinymce.init({
-  selector: "textarea#math_demo",
-  plugins: [
-      "math", "advlist", "anchor", "autolink", "charmap", "code", "codesample", "fullscreen",
-      "help", "image", "insertdatetime", "link", "lists", "media",
-      "preview", "searchreplace", "table", "visualblocks",
-  ],
-  toolbar: "math | codesample | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+  selector: 'textarea#math_demo',
+  height: 640,
+  plugins: 'math lists advlist autolink link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
+  toolbar: 'math | undo redo | blocks | bold italic | bullist numlist | backcolor | ' +
+    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
+    'removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

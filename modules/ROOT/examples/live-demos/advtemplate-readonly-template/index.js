@@ -1,50 +1,68 @@
 const data = [
   {
-    title: 'Quick replies',
+    title: 'Team replies',
     items: [
       {
         title: 'Message received',
-        content: '<p dir="ltr">Hey {{prefix}}Customer.FirstName{{suffix}}!</p>\n<p dir="ltr">Just a quick note to say we&rsquo;ve received your message, and will get back to you within 48 hours.</p>\n<p dir="ltr">For reference, your ticket number is: {{mergetag-open}}Ticket.Number{{suffix}}</p>\n<p dir="ltr">Should you have any questions in the meantime, just reply to this email and it will be attached to this ticket.</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Regards,</p>\n<p dir="ltr">{{prefix}}Agent.FirstName{{suffix}}</p>'
+        content: '<p>Hi {{prefix}}Customer.FirstName{{suffix}},</p><p>Thank you for contacting {{prefix}}Company.Name{{suffix}}. Ticket {{prefix}}Ticket.Number{{suffix}} is now open, and a member of the support team will reply within one business day.</p><p>Regards,<br>{{prefix}}Agent.FirstName{{suffix}}</p>'
       },
       {
-        title: 'Thanks for the feedback',
-        content: '<p dir="ltr">Hi {{prefix}}Customer.FirstName{{suffix}},</p>\n<p dir="ltr">We appreciate you taking the time to provide feedback on {{prefix}}Product.Name{{suffix}}.</p>\n<p dir="ltr">It sounds like it wasn&rsquo;t able to fully meet your expectations, for which we apologize. Rest assured our team looks at each piece of feedback and uses it to decide what to focus on next with {{prefix}}Product.Name{{suffix}}.</p>\n<p dir="ltr"><strong>&nbsp;</strong></p>\n<p dir="ltr">All the best, and let us know if there&rsquo;s anything else we can do to help.</p>\n<p dir="ltr">-{{prefix}}Agent.FirstName{{suffix}}</p>'
-      },
-      {
-        title: 'Still working on case',
-        content: '<p dir="ltr">Hi {{prefix}}Customer.FirstName{{suffix}},</p>\n<p dir="ltr">Just a quick note to let you know we&rsquo;re still working on your case. It&rsquo;s taking a bit longer than we hoped, but we&rsquo;re aiming to get you an answer in the next 48 hours.</p>\n<p dir="ltr">Stay tuned,</p>\n<p dir="ltr">{{prefix}}Agent.FirstName{{suffix}}</p>'
+        title: 'Still investigating',
+        content: '<p>Hi {{prefix}}Customer.FirstName{{suffix}},</p><p>The team is still working on ticket {{prefix}}Ticket.Number{{suffix}}. The next update will follow within 48 hours.</p><p>Regards,<br>{{prefix}}Agent.FirstName{{suffix}}</p>'
       }
     ]
   },
   {
-    title: 'Closing tickets',
-    items: [
-      {
-        title: 'Closing ticket',
-        content: '<p dir="ltr">Hi {{prefix}}Customer.FirstName{{suffix}},</p>\n<p dir="ltr">We haven&rsquo;t heard back from you in over a week, so we have gone ahead and closed your ticket number {{prefix}}Ticket.Number{{suffix}}.</p>\n<p dir="ltr">If you&rsquo;re still running into issues, not to worry, just reply to this email and we will re-open your ticket.</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">All the best,</p>\n<p dir="ltr">{{prefix}}Agent.FirstName{{suffix}}</p>'
-      },
-      {
-        title: 'Post-call survey',
-        content: '<p dir="ltr">Hey {{prefix}}Customer.FirstName{{suffix}}!</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr">How did we do?</p>\n<p dir="ltr">If you have a few moments, we&rsquo;d love you to fill out our post-support survey: {{prefix}}Survey.Link{{suffix}}</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Thanks in advance!<br>{{prefix}}Company.Name{{suffix}} Customer Support</p>'
-      }
-    ]
-  },
-  {
-    title: 'Locked Product support',
+    title: 'Privacy requests',
     locked: true,
     items: [
       {
-        title: 'How to find model number',
-        content: '<p dir="ltr">Hi {{prefix}}Customer.FirstName{{suffix}},</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">My name is {{prefix}}Agent.FirstName{{suffix}} and I will be glad to assist you today.</p>\n<p dir="ltr">To troubleshoot your issue, we first need your model number, which can be found on the underside of your product beneath the safety warning label.&nbsp;</p>\n<p dir="ltr">It should look something like the following: XX.XXXXX.X</p>\n<p dir="ltr">Once you send it over, I will advise on next steps.</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Thanks!</p>\n<p dir="ltr">{{prefix}}Agent.FirstName{{suffix}}</p>'
+        title: 'Data access request',
+        content: '<p>Hi {{prefix}}Customer.FirstName{{suffix}},</p><p>{{prefix}}Company.Name{{suffix}} has received a request for a copy of the personal data held for the account registered to {{prefix}}Customer.Email{{suffix}}.</p><p>The data export will be sent to that address within 30 days of this request. For security, the download link expires seven days after it is sent.</p><p>Regards,<br>{{prefix}}Company.Name{{suffix}} Privacy Team</p>'
       },
       {
-        title: 'Support escalation',
-        content: '<p dir="ltr">Hi {{prefix}}Customer.FirstName{{suffix}},</p>\n<p dir="ltr">We have escalated your ticket {{prefix}}Ticket.Number{{suffix}} to second-level support.</p>\n<p dir="ltr">You should hear back from the new agent on your case, {{prefix}}NewAgent.FirstName{{suffix}}, shortly.</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Thanks,</p>\n<p dir="ltr">{{prefix}}Company.Name{{suffix}} Customer Support</p>'
+        title: 'Data deletion request',
+        content: '<p>Hi {{prefix}}Customer.FirstName{{suffix}},</p><p>{{prefix}}Company.Name{{suffix}} has received a request to delete the account registered to {{prefix}}Customer.Email{{suffix}} and its personal data.</p><ul><li>The account will be closed within 30 days of this request.</li><li>Order and invoice records are kept for seven years to meet tax obligations, then deleted.</li><li>Marketing emails stop immediately.</li></ul><p>Regards,<br>{{prefix}}Company.Name{{suffix}} Privacy Team</p>'
+      }
+    ]
+  },
+  {
+    title: 'Warranty claims',
+    locked: true,
+    items: [
+      {
+        title: 'Warranty claim approved',
+        content: '<p>Hi {{prefix}}Customer.FirstName{{suffix}},</p><p>The warranty claim for order {{prefix}}Order.Number{{suffix}} has been approved. A replacement will be shipped at no cost within five business days.</p><p>This replacement is covered for the remainder of the original two-year warranty period.</p><p>Regards,<br>{{prefix}}Agent.FirstName{{suffix}}</p>'
+      },
+      {
+        title: 'Outside warranty period',
+        content: '<p>Hi {{prefix}}Customer.FirstName{{suffix}},</p><p>Order {{prefix}}Order.Number{{suffix}} was delivered more than two years ago, so it is outside the warranty period. A paid repair is available, and a quote can be provided on request.</p><p>Regards,<br>{{prefix}}Agent.FirstName{{suffix}}</p>'
       }
     ]
   }
 ];
 
+const mergetags_list = [
+  {
+    title: 'Customer',
+    menu: [
+      { value: 'Customer.FirstName', title: 'First name' },
+      { value: 'Customer.Email', title: 'Email address' }
+    ]
+  },
+  {
+    title: 'Support',
+    menu: [
+      { value: 'Ticket.Number', title: 'Ticket number' },
+      { value: 'Order.Number', title: 'Order number' },
+      { value: 'Agent.FirstName', title: 'Agent first name' }
+    ]
+  },
+  { value: 'Company.Name', title: 'Company name' }
+];
+
+// An in-memory template store that stands in for a remote template service.
+// Categories created with `locked: true` are read-only.
 class StoreError extends Error {
   constructor(status, message) {
     super(message);
@@ -177,7 +195,7 @@ const create = (data = []) => {
   const deleteCategory = (id) => {
     const category = getCategory(id);
     category.items.forEach((template) => deleteTemplate(template.id));
-    store.items = filterOut(storeItems.items, id);
+    storeItems.items = filterOut(storeItems.items, id);
     delete categoryIndex[category.id];
   };
 
@@ -327,14 +345,15 @@ const advtemplate_move_category_items = async (id, categoryId) => {
 
 tinymce.init({
   selector: 'textarea#readonly-locked-template',
-  plugins: [
-    'advlist', 'anchor', 'autolink', 'charmap', 'code', 'fullscreen',
-    'help', 'image', 'insertdatetime', 'link', 'lists', 'media',
-    'preview', 'searchreplace', 'table', 'visualblocks', 'advtemplate'
-  ],
+  height: 640,
+  plugins: 'advtemplate mergetags lists link advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
+  toolbar: 'inserttemplate addtemplate | mergetags | undo redo | blocks | ' +
+    'bold italic | bullist numlist | link | backcolor | ' +
+    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
+    'removeformat | help',
   contextmenu: 'advtemplate',
-  toolbar: 'addtemplate inserttemplate | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  mergetags_list,
   advtemplate_list,
   advtemplate_get_template,
   advtemplate_create_category,
@@ -344,5 +363,5 @@ tinymce.init({
   advtemplate_delete_category,
   advtemplate_rename_template,
   advtemplate_move_template,
-  advtemplate_delete_template,
+  advtemplate_delete_template
 });

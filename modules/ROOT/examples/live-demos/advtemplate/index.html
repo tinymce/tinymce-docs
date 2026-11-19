@@ -1,23 +1,16 @@
 <textarea id="template">
-  <h3>Inserting a template</h3>
-  <p>To insert a template</p>
-  <ol>
-    <li>select <strong>Insert template...</strong> from the <strong>Insert</strong> menu or<br />
-    select the <strong>Insert template</strong> toolbar button.</li>
-    <li>select the template to add to the TinyMCE document from the <strong>Templates</strong> dialog that presents.</li>
-    <li>click <strong>Insert</strong> or press <strong>Return</strong>.</li>
-  </ol>
-  <h3>Adding a new template</h3>
-  <p>To add a new template</p>
-  <ol>
-    <li>select the material in the TinyMCE document that is going to be the new template and</li>
-    <li>select <strong>Save as template…</strong> from the <strong>Tools</strong> menu or<br />
-    select the <strong>Save as template</strong> toolbar button.</li>
-  </ol>
-  <p>Then, in the <strong>New template</strong> dialog that presents
-  <ol>
-  <li>enter a name for the new template in the <strong>Template name</strong> field;</li>
-  <li>select a category for the new template from the <strong>Category</strong> pop-up menu; and</li>
-  <li>click <strong>Save</strong> or press <strong>Return</strong>.</li>
-  </ol>
+  <blockquote>
+    <p><strong>Try it:</strong></p>
+    <ul>
+      <li>Select <strong>Insert template</strong> in the toolbar, browse the categories or type in the <strong>Search</strong> box, preview a reply, and select <strong>Insert</strong>.</li>
+      <li>Select the last two paragraphs of this reply, then select <strong>Save as template</strong> in the toolbar (or right-click and select <strong>Save as template...</strong>). Name the template and choose a category.</li>
+      <li>In the <strong>Templates</strong> dialog, select <strong>New category</strong>, or open <strong>Template actions</strong> on a template to rename, move, or delete it. Changes are kept until the page reloads.</li>
+    </ul>
+  </blockquote>
+  <p><strong>To:</strong> {{prefix}}Customer.Email{{suffix}}<br><strong>Subject:</strong> Re: Ticket {{prefix}}Ticket.Number{{suffix}}, {{prefix}}Ticket.Subject{{suffix}}</p>
+  <p>Hi {{prefix}}Customer.FirstName{{suffix}},</p>
+  <p>Sorry that order {{prefix}}Order.Number{{suffix}} arrived damaged. A replacement has been booked and ships within two business days. There is no need to return the damaged item.</p>
+  <p>Track the replacement at {{prefix}}Order.TrackingUrl{{suffix}}.</p>
+  <p>If the replacement has any problems, reply to this email and the ticket reopens automatically.</p>
+  <p>Regards,<br>{{prefix}}Agent.FirstName{{suffix}} {{prefix}}Agent.LastName{{suffix}}<br>{{prefix}}Agent.Title{{suffix}}, {{prefix}}Company.Name{{suffix}}</p>
 </textarea>

@@ -1,11 +1,9 @@
 tinymce.init({
   selector: 'textarea#page-embed',
-  plugins: 'pageembed code preview',
-  toolbar: 'pageembed code preview',
-  tiny_pageembed_classes: [
-    { text: 'Big embed', value: 'my-big-class' },
-    { text: 'Small embed', value: 'my-small-class' }
-  ],
-  height: 500,
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  height: 680,
+  plugins: 'pageembed table lists link advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media help wordcount',
+  toolbar: 'pageembed | undo redo | blocks | bold italic | bullist numlist | ' +
+    'link table | backcolor | alignleft aligncenter alignright alignjustify | ' +
+    'outdent indent | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

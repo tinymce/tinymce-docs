@@ -1,9 +1,76 @@
 <textarea id="math_demo">
-<h2>Computation of Definite Integrals.</h2>
-		<p>In computing definite integrals it is important to observe that when the integral is known to exist the limit can be calculated on any properly chosen subset of the&nbsp;<tiny-math-inline formula="S_\delta"></tiny-math-inline>'s. So we&nbsp;have that if <tiny-math-inline formula="S_{\delta_1}"></tiny-math-inline>,&nbsp;<tiny-math-inline formula="S_{\delta_2}"></tiny-math-inline>, ... is any sequence of sums such that&nbsp;<tiny-math-inline formula="\displaystyle\mathop{L}_{n\doteq\infty}\delta_n=0"></tiny-math-inline>, then</p>
-		<tiny-math-block formula="\mathop{L}_{n\doteq\infty} S_{\delta_n} = \int_a^b f(x)dx."></tiny-math-block>
-		<p>One case of this kind occurs when&nbsp;<tiny-math-inline formula="\xi_k"></tiny-math-inline>&nbsp;is taken as an end-point of the interval <tiny-math-inline formula="{x_{k-1}}{x_k}"></tiny-math-inline> and all the&nbsp;<tiny-math-inline formula="\Delta_kx"></tiny-math-inline>'s are equal. Then we have</p>
-		<tiny-math-block formula="\displaystyle \int_a^b f(x)dx =  \mathop{L}_{n\doteq\infty} \sum_{k=1}^n f(a+k\Delta x)\Delta x,  \text{ where }  \Delta x=\frac{b-a}{n}."></tiny-math-block>
-		<p>A simple example of this principle is the proof of the following&nbsp;theorem.</p>
-		<p><em>Exerpt from <a href="https://www.gutenberg.org/ebooks/18741">Introduction to Infinitesimal Analysis; Functions of One Real Variable by Veblen et al.</a></em></p>	
-	</textarea>
+  <blockquote>
+    <p><strong>Try it:</strong></p>
+    <ul>
+      <li>Click any equation and select <strong>Insert/edit math</strong> in the toolbar to open its LaTeX source, edit it and watch the <strong>Preview</strong> update.</li>
+      <li>Open the maximum height equation the same way. It was written in MathML instead of LaTeX, and the <strong>Language</strong> list shows which one each equation uses.</li>
+      <li>Place the cursor at the end of a paragraph, select <strong>Insert/edit math</strong>, enter <code>v = \sqrt{v_0^2 - 2gh}</code> and set <strong>Text Wrap</strong> to <strong>Inline with text</strong> or <strong>Text above and below</strong>.</li>
+    </ul>
+  </blockquote>
+  <h1>Projectile motion</h1>
+  <p>A projectile launched with speed <tiny-math-inline formula="v_0"></tiny-math-inline> at an angle <tiny-math-inline formula="\theta"></tiny-math-inline> above the horizontal moves under a constant downward acceleration <tiny-math-inline formula="g \approx 9.81\ \text{m/s}^2"></tiny-math-inline>. Ignoring air resistance, the horizontal and vertical motion can be treated separately.</p>
+  <h2>Equations of motion</h2>
+  <p>The horizontal velocity stays constant while the vertical velocity changes at the rate <tiny-math-inline formula="-g"></tiny-math-inline>, so the position at time <tiny-math-inline formula="t"></tiny-math-inline> is:</p>
+  <tiny-math-block formula="\begin{aligned} x(t) &amp;amp;= v_0 \cos\theta \, t \\ y(t) &amp;amp;= v_0 \sin\theta \, t - \tfrac{1}{2} g t^2 \end{aligned}"></tiny-math-block>
+  <h2>Time of flight and range</h2>
+  <p>Setting <tiny-math-inline formula="y(t) = 0"></tiny-math-inline> and solving for <tiny-math-inline formula="t &amp;gt; 0"></tiny-math-inline> gives the time of flight:</p>
+  <tiny-math-block formula="T = \frac{2 v_0 \sin\theta}{g}"></tiny-math-block>
+  <p>Substituting <tiny-math-inline formula="T"></tiny-math-inline> into <tiny-math-inline formula="x(t)"></tiny-math-inline> and using the identity <tiny-math-inline formula="2 \sin\theta \cos\theta = \sin 2\theta"></tiny-math-inline> gives the horizontal range:</p>
+  <tiny-math-block formula="R = \frac{v_0^2 \sin 2\theta}{g}"></tiny-math-block>
+  <p>The range is greatest at 45°, and complementary angles such as 30° and 60° give the same range.</p>
+  <h2>Maximum height</h2>
+  <p>At the highest point the vertical velocity is zero, so the maximum height is:</p>
+  <tiny-math-block><math display="block"><mi>H</mi><mo>=</mo><mfrac><mrow><msubsup><mi>v</mi><mn>0</mn><mn>2</mn></msubsup><msup><mi>sin</mi><mn>2</mn></msup><mi>θ</mi></mrow><mrow><mn>2</mn><mi>g</mi></mrow></mfrac></math></tiny-math-block>
+  <h2>Trajectory</h2>
+  <p>Eliminating <tiny-math-inline formula="t"></tiny-math-inline> from the equations of motion shows that the path is a parabola:</p>
+  <tiny-math-block formula="y = x \tan\theta - \frac{g x^2}{2 v_0^2 \cos^2\theta}"></tiny-math-block>
+  <h2>Worked example</h2>
+  <table>
+    <caption>Launch speed 20 m/s, g = 9.81 m/s²</caption>
+    <thead>
+      <tr>
+        <th scope="col">Launch angle</th>
+        <th scope="col">Time of flight (s)</th>
+        <th scope="col">Range (m)</th>
+        <th scope="col">Maximum height (m)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>15°</td>
+        <td>1.06</td>
+        <td>20.39</td>
+        <td>1.37</td>
+      </tr>
+      <tr>
+        <td>30°</td>
+        <td>2.04</td>
+        <td>35.31</td>
+        <td>5.10</td>
+      </tr>
+      <tr>
+        <td>45°</td>
+        <td>2.88</td>
+        <td>40.77</td>
+        <td>10.19</td>
+      </tr>
+      <tr>
+        <td>60°</td>
+        <td>3.53</td>
+        <td>35.31</td>
+        <td>15.29</td>
+      </tr>
+      <tr>
+        <td>75°</td>
+        <td>3.94</td>
+        <td>20.39</td>
+        <td>19.02</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Adding air resistance</h2>
+  <p>With a drag force proportional to velocity, where <tiny-math-inline formula="m"></tiny-math-inline> is the mass and <tiny-math-inline formula="k"></tiny-math-inline> is the drag coefficient, the motion follows a vector differential equation:</p>
+  <tiny-math-block formula="m \frac{d^2 \vec{r}}{dt^2} = -m g \, \hat{\jmath} - k \frac{d \vec{r}}{dt}"></tiny-math-block>
+  <p>Solving each component shows that the horizontal velocity decays exponentially and the vertical velocity approaches the terminal value <tiny-math-inline formula="-mg/k"></tiny-math-inline>:</p>
+  <tiny-math-block formula="\begin{cases} x(t) = \dfrac{m v_0 \cos\theta}{k} \left(1 - e^{-kt/m}\right) \\[6pt] y(t) = \dfrac{m}{k} \left(v_0 \sin\theta + \dfrac{m g}{k}\right) \left(1 - e^{-kt/m}\right) - \dfrac{m g}{k} \, t \end{cases}"></tiny-math-block>
+</textarea>

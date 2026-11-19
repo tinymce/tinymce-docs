@@ -1,18 +1,36 @@
 const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
+const PAGE_SIZE = 10;
 
-const mentions_fetch = async (query, success) => {
-  const searchPhrase = query.term.toLowerCase();
-  await fetch(`${API_URL}?q=${encodeURIComponent(searchPhrase)}`)
+// Convert a user from the directory into the format the Mentions plugin expects
+const toMentionsUser = (userInfo) => ({
+  id: userInfo.id,
+  name: userInfo.name,
+  image: userInfo.avatar,
+  description: userInfo.custom.role
+});
+
+// Search the directory one page at a time. When more results exist,
+// an extra "Show more people" item reloads the list with the next page.
+const mentions_fetch = (query, success) => {
+  const offset = (query.meta && query.meta.offset) || 0;
+  const params = new URLSearchParams({
+    q: query.term.toLowerCase(),
+    limit: PAGE_SIZE,
+    offset
+  });
+  fetch(`${API_URL}?${params}`)
     .then((response) => response.json())
-    .then((users) => success(users.data.map((userInfo) => ({
-      id: userInfo.id,
-      name: userInfo.name,
-      image: userInfo.avatar,
-      description: userInfo.custom.role
-    }))))
-    .catch((error) => console.log(error));
+    .then((users) => {
+      const nextOffset = offset + users.data.length;
+      const extras = nextOffset < users.meta.total
+        ? [{ text: 'Show more people', meta: { offset: nextOffset } }]
+        : [];
+      success(users.data.map(toMentionsUser), extras);
+    })
+    .catch((error) => console.error(error));
 };
 
+// Insert the selected person as a styled span that stores the user ID
 const mentions_menu_complete = (editor, userInfo) => {
   const span = editor.getDoc().createElement('span');
   span.className = 'mymention';
@@ -21,53 +39,34 @@ const mentions_menu_complete = (editor, userInfo) => {
   return span;
 };
 
-const createCard = (userInfo) => {
-  const div = document.createElement('div');
-  div.innerHTML = (
-    '<div class="card">' +
-      '<img class="avatar" src="' + userInfo.image + '">' +
-      '<h1>' + userInfo.name + '</h1>' +
-      '<p>' + userInfo.description + '</p>' +
-    '</div>'
-  );
-  return div;
+// Show the built-in profile card next to the highlighted item in the list
+const mentions_menu_hover = (userInfo, success) => {
+  success({ type: 'profile', user: userInfo });
 };
 
-const mentions_select = async (mention, success) => {
+// Show the built-in profile card when hovering over a mention in the content
+const mentions_select = (mention, success) => {
   const id = mention.getAttribute('data-mention-id');
-  await fetch(`${API_URL}/${id}`)
+  fetch(`${API_URL}/${id}`)
     .then((response) => response.json())
-    .then((userInfo) => {
-      const card = createCard({
-        id: userInfo.id,
-        name: userInfo.name,
-        image: userInfo.avatar,
-        description: userInfo.custom.role
-      });
-      success(card);
-    })
+    .then((userInfo) => success({ type: 'profile', user: toMentionsUser(userInfo) }))
     .catch((error) => console.error(error));
 };
 
-const mentions_menu_hover = async (userInfo, success) => {
-  const card = createCard(userInfo);
-  success(card);
-};
-
 tinymce.init({
-    selector: "textarea",
-    plugins: [
-      "advlist", "anchor", "autolink", "charmap", "code", "fullscreen",
-      "help", "image", "insertdatetime", "link", "lists", "media",
-      "preview", "searchreplace", "table", "visualblocks", "mentions"
-    ],
-    toolbar: "undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-    content_style: '.mymention{ color: gray; }',
-    mentions_fetch,
-    mentions_item_type: 'profile',
-    mentions_menu_complete,
-    mentions_selector: '.mymention',
-    mentions_select,
-    mentions_menu_hover,
-    tinycomments_mode: 'embedded'
+  selector: 'textarea#mentions',
+  height: 600,
+  plugins: 'mentions lists link advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
+  toolbar: 'undo redo | blocks | bold italic | bullist numlist | link | backcolor | ' +
+    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
+    'removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  content_style: '.mymention { color: #174ea6; font-weight: 600; }',
+  mentions_fetch,
+  mentions_item_type: 'profile',
+  mentions_min_chars: 0,
+  mentions_menu_complete,
+  mentions_menu_hover,
+  mentions_selector: '.mymention',
+  mentions_select
 });

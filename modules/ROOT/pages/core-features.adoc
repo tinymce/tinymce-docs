@@ -1,0 +1,207 @@
+= Core features of {productname}
+:navtitle: Core features
+:description: A list of the editing features built into {productname} that work without adding a plugin.
+:description_short: Editing features built into {productname}.
+:keywords: core features, built-in features, line height, font size, text color, image upload, content filtering
+
+{productname} includes many editing features in the core editor. These features work without loading a plugin, so they do not appear in the xref:plugins.adoc[plugin lists]. Each entry below links to the page that documents the feature and its configuration options.
+
+[[text-and-paragraph-formatting]]
+== Text and paragraph formatting
+
+[cols="1,1"]
+|===
+
+a|
+[.lead]
+xref:block-formats-and-styles.adoc[Block formats and styles]
+
+include::partial$misc/core-feature-summaries.adoc[tag=block-formats-and-styles]
+
+a|
+[.lead]
+xref:font-family.adoc[Font family]
+
+include::partial$misc/core-feature-summaries.adoc[tag=font-family]
+
+a|
+[.lead]
+xref:font-size.adoc[Font size]
+
+include::partial$misc/core-feature-summaries.adoc[tag=font-size]
+
+a|
+[.lead]
+xref:line-height.adoc[Line height]
+
+include::partial$misc/core-feature-summaries.adoc[tag=line-height]
+
+a|
+[.lead]
+xref:text-color.adoc[Text and background color]
+
+include::partial$misc/core-feature-summaries.adoc[tag=text-color]
+
+a|
+[.lead]
+xref:available-toolbar-buttons.adoc#the-core-toolbar-buttons[Bold, italic, and other text formats]
+
+Applies bold, italic, underline, strikethrough, superscript, subscript, code, and text alignment.
+
+a|
+[.lead]
+xref:user-formatting-options.adoc#indentation[Indentation]
+
+Indents and outdents paragraphs by a configurable amount.
+
+a|
+
+|===
+
+[[images-and-files]]
+== Images and files
+
+[cols="1,1"]
+|===
+
+a|
+[.lead]
+xref:image-upload.adoc[Image upload]
+
+include::partial$misc/core-feature-summaries.adoc[tag=image-upload]
+
+a|
+[.lead]
+xref:file-image-upload.adoc#file_picker_callback[File picker]
+
+Adds a browse button to the link, image, and media dialogs that opens a custom file picker.
+
+a|
+[.lead]
+xref:copy-and-paste.adoc[Copy and paste]
+
+Controls how content pasted from other sources is cleaned and inserted.
+
+a|
+
+|===
+
+[[content-control]]
+== Content control
+
+[cols="1,1"]
+|===
+
+a|
+[.lead]
+xref:content-filtering.adoc[Content filtering]
+
+Defines which HTML elements, attributes, classes, and styles the editor keeps or removes.
+
+a|
+[.lead]
+xref:non-editable-content-options.adoc[Non-editable content]
+
+Locks parts of the content so that users cannot change them.
+
+a|
+[.lead]
+xref:annotations.adoc[Annotations]
+
+Marks ranges of content with custom metadata, for example to highlight or flag text.
+
+a|
+[.lead]
+xref:autocompleter.adoc[Autocompleter]
+
+Shows a list of suggestions when a user types a trigger character.
+
+|===
+
+[[editing-experience]]
+== Editing experience
+
+[cols="1,1"]
+|===
+
+a|
+[.lead]
+xref:use-tinymce-inline.adoc[Inline editing]
+
+Edits content in place on the page, with the toolbar shown only when the content has focus.
+
+a|
+[.lead]
+xref:use-tinymce-distraction-free.adoc[Distraction-free editing]
+
+Edits content inline without a menu bar or toolbar, using keyboard shortcuts and contextual toolbars.
+
+a|
+[.lead]
+xref:editor-important-options.adoc#placeholder[Placeholder text]
+
+Shows hint text in an empty editor.
+
+a|
+[.lead]
+xref:toolbar-configuration-options.adoc#toolbar_mode[Toolbar modes]
+
+Controls how toolbar buttons that do not fit are shown: in a floating panel, a sliding drawer, a scrolling row, or wrapped onto more rows.
+
+a|
+[.lead]
+xref:contextmenu.adoc[Context menus]
+
+Shows a menu of relevant actions when a user right-clicks content.
+
+a|
+[.lead]
+xref:contexttoolbar.adoc[Context toolbars]
+
+Shows a small toolbar next to selected content, such as an image or a link.
+
+a|
+[.lead]
+xref:keyboard-shortcuts.adoc[Keyboard shortcuts]
+
+Lists the built-in keyboard shortcuts and explains how to add custom shortcuts.
+
+a|
+[.lead]
+xref:editor-skin.adoc[Skins]
+
+Changes the look of the editor interface, including a dark skin.
+
+|===
+
+[[language-and-accessibility]]
+== Language and accessibility
+
+[cols="1,1"]
+|===
+
+a|
+[.lead]
+xref:content-localization.adoc#content_langs[Content languages]
+
+Marks parts of the content as a different language with the *Language* toolbar button.
+
+a|
+[.lead]
+xref:spelling.adoc#browser_spellcheck[Browser spell checking]
+
+Uses the spell checker built into the browser.
+
+a|
+[.lead]
+xref:ui-localization.adoc[Interface localization]
+
+Translates the editor interface into other languages.
+
+a|
+[.lead]
+xref:tinymce-and-screenreaders.adoc[Accessible navigation]
+
+Explains how to use the editor with a keyboard and a screen reader.
+
+|===

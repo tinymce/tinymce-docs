@@ -1,0 +1,65 @@
+= Line height
+:navtitle: Line height
+:description: Line height sets the spacing between lines of text in paragraphs, headings, list items, and table cells.
+:description_short: Set the spacing between lines of text.
+:keywords: line height, line spacing, leading, lineheight, line_height_formats
+
+include::partial$misc/core-feature-summaries.adoc[tag=line-height]
+Authors can increase the spacing of dense text to make it easier to read, or reduce the spacing to fit more text into a fixed space. Line height is part of the core editor and does not require a plugin.
+
+[[what-line-height-does]]
+== What line height does
+
+* Applies a line height to each selected paragraph, heading, list item, table cell, or `+div+` element.
+* Stores the value as an inline `+line-height+` style on each block, so the spacing is kept when the content is displayed outside the editor.
+* Removes the line height when the value already applied to the selection is chosen again.
+* Offers a configurable list of values through the xref:#line_height_formats[`+line_height_formats+`] option.
+* Is available from the `+lineheight+` toolbar button, the *Line height* item in the *Format* menu, and the `+LineHeight+` command.
+
+[[interactive-example]]
+== Interactive example
+
+liveDemo::line-height[]
+
+[[basic-setup]]
+== Basic setup
+
+The *Line height* item is included in the default *Format* menu. To also show the toolbar button, add `+lineheight+` to the xref:toolbar-configuration-options.adoc#toolbar[`+toolbar+`] option.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  toolbar: 'undo redo | blocks | bold italic | lineheight'
+});
+----
+
+[[options]]
+== Options
+
+The following configuration option affects the line height feature.
+
+include::partial$configuration/line_height_formats.adoc[leveloffset=+1]
+
+[[toolbar-buttons]]
+== Toolbar buttons
+
+[cols="1,3",options="header"]
+|===
+|Toolbar button identifier |Description
+include::partial$toolbar-button-ids/core-toolbar-buttons.adoc[tag=lineheight]
+|===
+
+[[menu-items]]
+== Menu items
+
+[cols="1,1,2",options="header"]
+|===
+|Menu item identifier |Default menu location |Description
+include::partial$menu-item-ids/core-menu-items.adoc[tag=lineheight]
+|===
+
+[[commands]]
+== Commands
+
+To set or read the line height from code, use the `+LineHeight+` command and query value. For details, see xref:editor-command-identifiers.adoc#miscellaneous-core-commands[Miscellaneous core commands].

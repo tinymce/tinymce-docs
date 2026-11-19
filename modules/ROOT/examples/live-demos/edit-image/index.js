@@ -1,11 +1,14 @@
 tinymce.init({
   selector: 'textarea#edit-image',
-  height: 500,
-  plugins: [
-    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
-    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
-    'insertdatetime', 'media', 'table', 'editimage', 'wordcount'
-  ],
-  toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  height: 680,
+  plugins: 'image editimage lists link advlist autolink charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
+  toolbar: 'editimage rotateleft rotateright | image | undo redo | blocks | ' +
+    'bold italic | bullist numlist | link | backcolor | ' +
+    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
+    'removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  image_caption: true,
+  a11y_advanced_options: true,
+  editimage_cors_hosts: ['tiny.ucarecdn.com'],
+  editimage_toolbar: 'rotateleft rotateright | flipv fliph | editimage imageoptions'
 });

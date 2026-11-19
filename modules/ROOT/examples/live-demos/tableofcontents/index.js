@@ -1,11 +1,11 @@
 tinymce.init({
   selector: 'textarea#tableofcontents',
-  height: 600,
-  plugins: [
-    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
-    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
-    'insertdatetime', 'media', 'table', 'tableofcontents', 'wordcount'
-  ],
-  toolbar: 'tableofcontents | undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent',
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  height: 680,
+  plugins: 'tableofcontents lists link advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
+  toolbar: 'tableofcontents | undo redo | blocks | bold italic | bullist numlist | ' +
+    'link | backcolor | alignleft aligncenter alignright alignjustify | ' +
+    'outdent indent | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  tableofcontents_depth: 4,
+  tableofcontents_orderedlist: true
 });

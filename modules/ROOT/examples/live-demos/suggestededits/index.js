@@ -1,20 +1,27 @@
 const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
 
+// The model is saved alongside the content and holds the unreviewed suggestions and their feedback.
+// This demo stores it in an attribute on the textarea.
 const tinymceElement = document.querySelector('textarea#suggestededits');
 const model = JSON.parse(tinymceElement.getAttribute('suggestededits-model'));
 
 tinymce.init({
   selector: 'textarea#suggestededits',
-  height: 500,
-  plugins: 'suggestededits advlist anchor autolink code charmap emoticons fullscreen help image link lists media preview searchreplace table',
-  toolbar: 'undo redo | suggestededits suggestededits-tracking | styles fontsizeinput | bold italic | align bullist numlist | table link image | code',
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
-  
+  height: 720,
+  plugins: 'suggestededits lists link advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
+  toolbar: 'suggestededits suggestededits-tracking | undo redo | blocks | ' +
+    'bold italic | bullist numlist | link | backcolor | ' +
+    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
+    'removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+
   suggestededits_model: model,
-  suggestededits_access: 'full',
   suggestededits_content: 'html',
+  suggestededits_access: 'full',
   view_show: 'suggestededits',
-  user_id: 'kai-nakamura',
+
+  // The signed-in user. Replace with the ID of the user in your application.
+  user_id: 'aarav-joshi',
   fetch_users: (userIds) => Promise.all(userIds
     .map((userId) =>
       fetch(`${API_URL}/${userId}`)

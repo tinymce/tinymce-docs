@@ -79,16 +79,36 @@ const advtemplate_move_category_items = (id, categoryId) =>
     headers,
   }).then(handleResponse('Failed to move all templates to new category'));
 
+const mergetags_list = [
+  {
+    title: 'Customer',
+    menu: [
+      { value: 'Customer.FirstName', title: 'First name' },
+      { value: 'Customer.Email', title: 'Email address' }
+    ]
+  },
+  {
+    title: 'Support',
+    menu: [
+      { value: 'Ticket.Number', title: 'Ticket number' },
+      { value: 'Order.Number', title: 'Order number' },
+      { value: 'Agent.FirstName', title: 'Agent first name' }
+    ]
+  },
+  { value: 'Company.Name', title: 'Company name' }
+];
+
 tinymce.init({
   selector: 'textarea#readonly-locked-template',
-  plugins: [
-    'advlist', 'anchor', 'autolink', 'charmap', 'code', 'fullscreen',
-    'help', 'image', 'insertdatetime', 'link', 'lists', 'media',
-    'preview', 'searchreplace', 'table', 'visualblocks', 'advtemplate'
-  ],
+  height: 640,
+  plugins: 'advtemplate mergetags lists link advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
+  toolbar: 'inserttemplate addtemplate | mergetags | undo redo | blocks | ' +
+    'bold italic | bullist numlist | link | backcolor | ' +
+    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
+    'removeformat | help',
   contextmenu: 'advtemplate',
-  toolbar: 'addtemplate inserttemplate | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  mergetags_list,
   advtemplate_list,
   advtemplate_get_template,
   advtemplate_create_category,
@@ -98,5 +118,5 @@ tinymce.init({
   advtemplate_delete_category,
   advtemplate_rename_template,
   advtemplate_move_template,
-  advtemplate_delete_template,
+  advtemplate_delete_template
 });

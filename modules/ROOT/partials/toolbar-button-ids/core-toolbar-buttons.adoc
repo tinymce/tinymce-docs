@@ -7,29 +7,45 @@
 |`+alignnone+` |Removes the alignment of the current block or image.
 |`+alignright+` |Right aligns the current block or image.
 |`+blockquote+` |Applies block quote format to the current block level element.
+// tag::backcolor[]
 |`+backcolor+` |Applies background color to selection.
+// end::backcolor[]
+// tag::blocks[]
 |`+blocks+` |Dropdown list with block formats to apply to selection.
+// end::blocks[]
 |`+bold+` |Applies the bold format to the current selection.
 |`+copy+` |Copies the current selection into clipboard.
 |`+cut+` |Cuts the current selection into clipboard.
+// tag::fontfamily[]
 |`+fontfamily+` |Dropdown list with font families to apply to selection.
+// end::fontfamily[]
+// tag::fontsize[]
 |`+fontsize+` |Dropdown list with font sizes to apply to selection. +
 The `+fontsize+` and `+fontsizeinput+` toolbar buttons should not be placed in a xref:toolbar-configuration-options.adoc#toolbar_groups[toolbar group] together or otherwise presented together.
+// end::fontsize[]
+// tag::fontsizeinput[]
 |`+fontsizeinput+` |Text entry input field to change font size of selection or current insertion point. Also provides increase and decrease font size buttons on either side of said input field. +
 This toolbar button is commonly used in conjunction with the `xref:user-formatting-options.adoc#font_size_input_default_unit[font_size_input_default]` configuration option. +
 The `+fontsize+` and `+fontsizeinput+` toolbar buttons should not be placed in a xref:toolbar-configuration-options.adoc#toolbar_groups[toolbar group] together or otherwise presented together.
+// end::fontsizeinput[]
+// tag::forecolor[]
 |`+forecolor+` |Applies foreground/text color to selection.
+// end::forecolor[]
+// tag::headings[]
 |`+h1+` |Changes current line to the "Heading 1" style.
 |`+h2+` |Changes current line to the "Heading 2" style.
 |`+h3+` |Changes current line to the "Heading 3" style.
 |`+h4+` |Changes current line to the "Heading 4" style.
 |`+h5+` |Changes current line to the "Heading 5" style.
 |`+h6+` |Changes current line to the "Heading 6" style.
+// end::headings[]
 |`+hr+` |Inserts a horizontal rule into the editor.
 |`+indent+` |Indents the current list item or block element.
 |`+italic+` |Applies the italic format to the current selection.
 |`+language+` |Dropdown list with languages to apply to the selection. This button requires the xref:content-localization.adoc#content_langs[`+content_langs+` option].
+// tag::lineheight[]
 |`+lineheight+` |Dropdown list with line heights to apply to selection.
+// end::lineheight[]
 |`+navigateback+` | Allows navigation between subtoolbar levels for multi-level toolbar configurations.
 |`+newdocument+` |Creates a new document.
 |`+outdent+` |Outdents the current list item or block element.
@@ -41,7 +57,9 @@ The `+fontsize+` and `+fontsizeinput+` toolbar buttons should not be placed in a
 |`+removeformat+` |Removes the formatting from the current selection.
 |`+selectall+` |Selects all content in the editor.
 |`+strikethrough+` |Applies strike though format to the current selection.
+// tag::styles[]
 |`+styles+` |Dropdown list with styles to apply to selection.
+// end::styles[]
 |`+subscript+` |Applies subscript format to the current selection.
 |`+superscript+` |Applies superscript format to the current selection.
 |`+underline+` |Applies the underline format to the current selection.

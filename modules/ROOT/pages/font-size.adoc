@@ -1,0 +1,71 @@
+= Font size
+:navtitle: Font size
+:description: Font size sets the size of selected text, either from a configurable list of sizes or by typing a value.
+:description_short: Set the size of selected text.
+:keywords: font size, text size, fontsize, fontsizeinput, FontSize, font_size_formats, font_size_input_default_unit
+
+include::partial$misc/core-feature-summaries.adoc[tag=font-size]
+Authors can build a clear visual hierarchy, from large headlines to small print, using preset sizes or exact values. Font size is part of the core editor and does not require a plugin.
+
+[[what-font-size-does]]
+== What font size does
+
+* Applies a font size to the selected text, or, when nothing is selected, to the word at the insertion point or the text typed next, as an inline `+font-size+` style on a `+span+` element, so the size is kept when the content is displayed outside the editor.
+* Replaces any other font size applied inside the selection, so one choice sets a single size for the whole selection.
+* Also applies the font size to each list item that is selected in full, so list bullets and numbers match the text.
+* Keeps the font size when the size that is already applied is chosen again. The *Clear formatting* toolbar button and menu item remove it.
+* Offers a configurable list of preset sizes through the xref:#font_size_formats[`+font_size_formats+`] option. The list shows the entry that matches the size at the insertion point, treating pixel sizes as their point equivalents, so text at `+16px+` is shown as `+12pt+` in the default list.
+* Accepts a typed size in the `+fontsizeinput+` field. A number typed without a unit uses the unit set by xref:#font_size_input_default_unit[`+font_size_input_default_unit+`].
+* Changes the typed size in steps with the *Decrease font size* and *Increase font size* buttons on either side of the field, or with the Up and Down arrow keys inside it. Each step is `+1+`, or `+0.1+` for units such as `+em+` and `+cm+`. A step that would make the size negative is not applied.
+* Is available from the `+fontsize+` and `+fontsizeinput+` toolbar buttons, the *Font sizes* item in the *Format* menu, and the `+FontSize+` command.
+
+[[interactive-example]]
+== Interactive example
+
+liveDemo::font-size[]
+
+[[basic-setup]]
+== Basic setup
+
+The *Font sizes* item is included in the default *Format* menu. To also show a toolbar button, add either `+fontsize+` or `+fontsizeinput+` to the xref:toolbar-configuration-options.adoc#toolbar[`+toolbar+`] option.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  toolbar: 'undo redo | blocks | fontsizeinput | bold italic'
+});
+----
+
+[[options]]
+== Options
+
+The following configuration options affect the font size feature.
+
+include::partial$configuration/font_size_formats.adoc[leveloffset=+1]
+
+include::partial$configuration/font_size_input_default_unit.adoc[leveloffset=+1]
+
+[[toolbar-buttons]]
+== Toolbar buttons
+
+[cols="1,3",options="header"]
+|===
+|Toolbar button identifier |Description
+include::partial$toolbar-button-ids/core-toolbar-buttons.adoc[tag=fontsize]
+include::partial$toolbar-button-ids/core-toolbar-buttons.adoc[tag=fontsizeinput]
+|===
+
+[[menu-items]]
+== Menu items
+
+[cols="1,1,2",options="header"]
+|===
+|Menu item identifier |Default menu location |Description
+include::partial$menu-item-ids/core-menu-items.adoc[tag=fontsize]
+|===
+
+[[commands]]
+== Commands
+
+To set the font size from code, use the `+FontSize+` command. For details, see xref:editor-command-identifiers.adoc#core-editor-commands[Core editor commands]. To read the font size of the current selection, use the `+FontSize+` query value. For details, see xref:editor-command-identifiers.adoc#available-query-command-values[Available query command values].

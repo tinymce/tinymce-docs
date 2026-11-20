@@ -123,11 +123,21 @@ In {productname} {release-version}, the **Image Editing** plugin waits for the i
 
 For information on the **Image Editing** plugin, see: xref:editimage.adoc[Image Editing].
 
+
 === TinyMCE AI
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
 **TinyMCE AI** includes the following fixes and additions and improvements.
+
+==== Adding a corrupt file as a context source now shows a message saying the file could not be processed, instead of the generic upload error
+// #TINYMCE-14815
+
+Previously, when a user added a corrupt file, such as a damaged PDF or DOCX file, as a xref:tinymceai-chat.adoc#files-urls-and-external-resources[context source] in the Chat sidebar, the **TinyMCE AI** plugin showed an error message about the size or type of the file, for example `+This file can't be added. Try a smaller file, or a different file type.+` The message did not describe the actual problem, so users could try a smaller file or a different file format and still get the same error.
+
+In {productname} {release-version}, when the AI service cannot process an added file, the plugin shows `+This file couldn't be processed. Try attaching a different file.+` The message identifies the file itself as the cause and tells users what to do next. The messages for files that are too large, have too many pages, or have an unsupported type are unchanged. For the supported file types and the size and page limits that trigger these messages, see xref:tinymceai-models.adoc#file-processing-limits[File processing limits].
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai-chat.adoc#adding-context-to-conversations[Adding context to conversations].
 
 ==== Removing the editor that hosted the sidebar of a group left the AI chat and review buttons of the other editors highlighted
 // #TINYMCE-15057

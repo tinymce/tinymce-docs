@@ -71,6 +71,127 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following fix.
+
+==== The red X overlay on deleted media could be missing in Diff mode, or stay visible in Preview mode, after switching modes when the switch did not change the height of the content
+// #TINYMCE-15198
+
+Previously, switching between **Diff mode** and **Preview** in the Review edits view could leave the red X that marks a deleted image, video, or embedded frame in the wrong state. The **Suggested Edits** plugin updated the position of the red X when the content changed size or when a reviewer selected a different suggestion, but not when the reviewer switched modes. When a switch did not change the height of the content, such as when the deleted media was a small inline image, the red X stayed in its old position. In **Preview**, the red X could remain over the text where the hidden image had been. In **Diff mode**, the deleted image could appear without its red X. Reviewers saw deleted media marked in the wrong place, or not marked at all, until they selected another suggestion.
+
+In {productname} {release-version}, the **Suggested Edits** plugin repositions the red X every time a reviewer switches between **Diff mode** and **Preview**. In **Diff mode**, the red X marks each deleted image, video, and embedded frame. In **Preview**, the red X no longer appears where deleted media is hidden.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc#document[Document].
+
+=== Format Painter
+
+The {productname} {release-version} release includes an accompanying release of the **Format Painter** premium plugin.
+
+**Format Painter** includes the following additions.
+
+==== Double-clicking the format painter toolbar button now enables sticky mode, keeping the format painter active to apply the copied formatting multiple times
+// #TINYMCE-15104
+
+Previously, the format painter turned off after applying the copied formatting once. To apply the same formatting to several pieces of content with the toolbar button, users had to copy the formatting again before each application.
+
+In {productname} {release-version}, double-clicking the format painter toolbar button turns on sticky mode. In sticky mode, the format painter stays active and applies the copied formatting to each piece of content the user selects. Clicking the toolbar button again or pressing `+Esc+` turns off sticky mode. For the steps, see: xref:formatpainter.adoc#using-format-painter[Using Format Painter].
+
+==== New `+mceToggleStickyFormatPainter+` command to toggle the format painter sticky mode
+// #TINYMCE-15104
+
+Previously, no command turned on sticky mode in the format painter, so integrations could not start sticky mode programmatically.
+
+In {productname} {release-version}, the new xref:formatpainter.adoc#commands[`+mceToggleStickyFormatPainter+`] command copies the formatting from the current selection and turns on sticky mode. Running the `+mceToggleFormatPainter+` command turns off sticky mode.
+
+For information on the **Format Painter** plugin, see: xref:formatpainter.adoc[Format Painter].
+
+=== Image Editing
+
+The {productname} {release-version} release includes an accompanying release of the **Image Editing** premium plugin.
+
+**Image Editing** includes the following fix.
+
+==== Editing images or applying updates before the image loaded could lose the change
+// #TINYMCE-3693
+
+Previously, the **Image Editing** plugin did not wait for an image to finish loading before editing it. Opening the **Edit Image** dialog on an image that was still loading in the editor could cause the dialog to fail. For an image that took several seconds to load, clicking **Edit image** did nothing until the image loaded, with no sign that anything was happening. Inside the dialog, clicking **Apply** on an adjustment, such as a rotation or a brightness change, before its preview finished rendering could discard the adjustment. Users could lose an edit without any warning.
+
+In {productname} {release-version}, the **Image Editing** plugin waits for the image to load before showing the editing tools. When an image is slow to load, the **Edit Image** dialog opens immediately with a **Loading...** message and the **Save** button disabled, then shows the editing tools once the image is ready. Clicking **Cancel** while the image loads closes the dialog. When a user clicks **Apply**, the dialog waits for the latest preview to finish rendering and keeps the adjustment.
+
+For information on the **Image Editing** plugin, see: xref:editimage.adoc[Image Editing].
+
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fixes and additions and improvements.
+
+==== Removing the editor that hosted the sidebar of a group left the AI chat and review buttons of the other editors highlighted
+// #TINYMCE-15057
+
+Previously, in a xref:tinymceai-multi-editor.adoc[multi-editor group], removing the editor that hosted the shared Chat and Review sidebar left the group without a sidebar. The Chat and Review toolbar buttons in the other editors of the group stayed highlighted as if the sidebar were still open.
+
+In {productname} {release-version}, when the editor that hosts the sidebar is removed, the sidebar closes. The first remaining editor of the group to be created becomes the new host. The Chat and Review toolbar buttons in the remaining editors are no longer highlighted, and opening Chat or Review from any remaining editor opens the sidebar in the new host. If the group is previewing AI changes, every editor in the group leaves the preview. Removing any other editor of the group leaves the sidebar open.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai-multi-editor.adoc#shared-sidebar[Shared sidebar].
+
+==== The red X overlay on deleted media in the AI preview could be missing in Diff mode, or stay visible in Preview mode, after switching modes when the switch did not change the height of the content
+// #TINYMCE-15198
+
+Previously, when the **TinyMCE AI** plugin previewed suggested changes, switching between **Diff mode** and **Preview** in the review bar could leave the red X that marks a deleted image, video, or embedded frame in the wrong state. The plugin updated the position of the red X when the content changed size or when a user selected a different suggestion, but not when the user switched modes. When a switch did not change the height of the content, such as when the deleted media was a small inline image, the red X stayed in its old position. In **Preview**, the red X could remain over the text where the hidden image had been. In **Diff mode**, the deleted image could appear without its red X. Users saw deleted media marked in the wrong place, or not marked at all, until they selected another suggestion.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin repositions the red X every time a user switches between **Diff mode** and **Preview**. In **Diff mode**, the red X marks each deleted image, video, and embedded frame. In **Preview**, the red X no longer appears where deleted media is hidden.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai-chat.adoc#previewing-changes[Previewing changes].
+
+==== Editors could not be removed dynamically from a group
+// #TINYMCE-15056
+
+Previously, when an application removed an editor from a xref:tinymceai-multi-editor.adoc[multi-editor group], the chat kept the context tag of the removed editor until the user opened the **Add context source** menu. Any open preview also remained, and any request in progress that included the removed editor continued to run. The chat then referred to content that was no longer on the page.
+
+In {productname} {release-version}, when an editor leaves its group, the **TinyMCE AI** plugin removes the context tag of that editor from the chat and stops any chat request in progress. If the group has pending suggestions, the plugin discards them in every editor of the group and returns each editor to normal editing. The context tags of the remaining editors stay in the chat, and users can continue to send prompts.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai-multi-editor.adoc[TinyMCE AI multi-editor mode].
+
+==== Adding an editor to a group did not add its document to the chat context
+// #TINYMCE-15102
+
+Previously, when an editor joined a xref:tinymceai-multi-editor.adoc[multi-editor group] after the group was already in use, the **TinyMCE AI** plugin did not add that editor to the chat context. No context tag appeared for the new editor, and the **Add context source** menu did not list it. Users could not include the content of the new editor in a chat or a group review without reloading the page.
+
+In {productname} {release-version}, when an editor joins a group, the plugin adds a context tag for that editor to the chat immediately, including during a conversation that is already in progress. The **Add context source** menu also lists the new editor, and the next review of the group covers the content of that editor. The chat context stays up to date whenever an editor joins a group.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai-multi-editor.adoc#chat[Chat].
+
+==== Focus now stays on the same AI preview toolbar button when the toolbar moves between editors
+// #TINYMCE-14930
+
+Previously, when the **TinyMCE AI** plugin previewed changes in several editors of a xref:tinymceai-multi-editor.adoc[multi-editor group], the shared preview toolbar always focused its first button when it moved to another editor. The toolbar moves when a user steps past the last change in one editor with **Next** or **Previous**, or resolves the last change in an editor with **Apply suggestion** or **Skip suggestion**. Keyboard users then had to move focus back to the button they were using before they could continue, even though the whole group shares a single toolbar.
+
+In {productname} {release-version}, when the preview toolbar moves to another editor, the button the user just pressed receives focus in the new position. Keyboard users can keep pressing the same button to step through, apply, or skip changes across every editor in the group, including when **Next** wraps around from the last change in the group to the first. If that button is disabled in the new position, the toolbar itself receives focus instead. When a user clicks a change in an editor, the toolbar opens with focus on its first button, as before.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai-multi-editor.adoc#previewing-and-applying-changes[Previewing and applying changes].
+
+==== Document context was not restored when resuming a conversation in a single editor with the `+tinymceai_document_name+` option set
+// #TINYMCE-14994
+
+Previously, when the xref:tinymceai.adoc#tinymceai_document_name[`+tinymceai_document_name+`] option was set on an editor that was not part of a multi-editor group, reopening a conversation that included the document from the xref:tinymceai-chat.adoc#chat-history[chat history] did not restore the document. The **TinyMCE AI** plugin tried to match the saved document name against the editors of a group. Without a group, the plugin found no match, so no context tag for the editor content appeared above the prompt input. The next prompt did not include the document, and the plugin could not apply the changes that the AI suggested in reply.
+
+In {productname} {release-version}, when a user resumes a conversation in an editor that is not part of a group, the plugin restores the context tag for the editor content, whether or not `+tinymceai_document_name+` is set. The next prompt includes the document, and the plugin can apply the changes that the AI suggests. In a xref:tinymceai-multi-editor.adoc[multi-editor group], when none of the saved document names match an editor in the group, the plugin now attaches the content of every editor in the group, as it does for a new conversation, instead of attaching no document.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai-chat.adoc#current-document-and-selection[Current document and selection].
+
+==== New `+TinyMCEAIDiscardSuggestions+` command to discard the AI suggestions previewed in an editor
+// #TINYMCE-15157
+
+Previously, integrations had no public way to discard the AI suggestions previewed in an editor. In decoupled mode, the **TinyMCE AI** plugin does not show its own confirmation dialog before the AI view closes, so an integration that detected pending suggestions could not complete its own prompt to discard them.
+
+In {productname} {release-version}, the new `+TinyMCEAIDiscardSuggestions+` command discards the AI suggestions previewed in the editor it runs on, without applying any of them. The editor keeps the content it had before the preview, and returns to the editor mode it had before the preview. In a xref:tinymceai-multi-editor.adoc[multi-editor group], the command affects only the editor it runs on, so an integration runs the command on each editor in the group to discard every suggestion. For details, see xref:tinymceai.adoc#tinymceai-discard-suggestions[Discarding previewed suggestions].
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
@@ -116,6 +237,20 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Changing the width in the Cell Properties dialog now uses the inline column resize logic to ensure the table width does not change
+// #TINYMCE-13193
+
+Previously, changing the width in the **Cell Properties** dialog set the new width on the column or cell but did not adjust the other columns. The column widths no longer added up to the table width, so the browser rescaled every column to fit. The edited column often did not display at the entered width, and the other columns changed size unpredictably, so users had to correct them manually.
+
+In {productname} {release-version}, changing the width in the **Cell Properties** dialog resizes the column in the same way as dragging the column border. The next column grows or shrinks to make up the difference, or the previous column when the last column is resized, and the table keeps its width. The dialog keeps the table width regardless of the xref:table-options.adoc#table_column_resizing[`+table_column_resizing+`] option. The adjacent column never shrinks below the minimum cell width. The dialog converts a width entered in pixels or as a percentage to the table's unit. When the table has no width, or the width uses a unit other than pixels or percentages, the dialog sets the width of the selected cells only, as in earlier versions.
+
+=== Inserting an accordion at the end of the content now adds an empty paragraph after it, so the caret can be placed below the accordion
+// #TINYMCE-9955
+
+Previously, inserting an accordion at the end of the content left no block below it. Clicking below the accordion did not place the caret, so users had to press Down Arrow from inside the accordion before they could add content after it.
+
+In {productname} {release-version}, the xref:accordion.adoc[Accordion plugin] adds an empty block after an accordion that it inserts at the end of the content. The block uses the element and attributes set by the xref:content-filtering.adoc#forced_root_block[`+forced_root_block+`] and xref:content-filtering.adoc#forced_root_block_attrs[`+forced_root_block_attrs+`] options. By default, the block is a paragraph. Clicking below the accordion places the caret in the new block. Inserting an accordion between existing blocks does not add an empty block.
+
 
 [[additions]]
 == Additions
@@ -126,6 +261,20 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== New `+onDoubleClick+` option for toolbar toggle buttons, called when the button is double clicked
+// #TINYMCE-15104
+
+Previously, a custom toolbar toggle button could respond only to single clicks, through its `+onAction+` function.
+
+In {productname} {release-version}, toggle buttons registered with `+editor.ui.registry.addToggleButton+` accept a new optional xref:custom-toggle-toolbar-button.adoc#options[`+onDoubleClick+`] function. {productname} calls the function with the button API when the user double-clicks the button, unless the button is disabled. The browser registers each click of a double-click, so the `+onAction+` function runs twice before the `+onDoubleClick+` function runs.
+
+=== The `+table_appearance_options+` option now also accepts an object with `+cellspacing+`, `+cellpadding+`, `+borderwidth+` and `+caption+` keys, to hide individual fields in the Table Properties dialog
+// #TINYMCE-11998
+
+Previously, the xref:table.adoc#table_appearance_options[`+table_appearance_options+`] option showed or hid the **Cell spacing**, **Cell padding**, **Border width**, and **Caption** fields of the Table Properties dialog only as a group. Integrators who wanted to stop authors from changing one field, such as **Cell spacing**, also had to hide the other three fields.
+
+In {productname} {release-version}, the option also accepts an object that controls each field separately. A field set to `+false+` is hidden, and a field set to `+true+` or left out stays visible. For example, `+table_appearance_options: { cellspacing: false }+` hides only the **Cell spacing** field. The `+true+` and `+false+` values work as before.
 
 
 [[changes]]
@@ -166,6 +315,76 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 Previously, on a page with more than one inline editor, an integration that replaced the content of one editor and then moved focus to another could find focus back in the first editor. For example, calling xref:apis/tinymce.editor.adoc#setContent[`+editor.setContent()+`] on the focused editor and then xref:apis/tinymce.editor.adoc#focus[`+editor.focus()+`] on a second editor in the same script could leave the first editor focused. As a result the user could end up typing in the wrong editor.
 
 In {productname} {release-version}, an inline editor ignores page selection changes while it does not have focus. When an integration moves focus between inline editors, focus stays on the editor that was focused last. Editors in iframe mode were not affected, because each iframe editor receives selection changes only from its own document.
+
+=== Focusing the editor with `+scrollToSelection: false+` still scrolled on Safari 26 and later
+// #TINYMCE-15097
+
+Previously, calling xref:apis/tinymce.editor.adoc#focus[`+editor.focus({ scrollToSelection: false })+`] in Safari 26 and later still scrolled the selection into view, moving the editor content or, for inline editors, the page. Integrations that used this option to return focus to the editor without moving the view saw the document jump away from the part the user was reading. The cause is a change in Safari 26: the browser now scrolls to the selection whenever an editable element receives focus, and ignores the `+preventScroll+` focus option that {productname} passes.
+
+In {productname} {release-version}, when the editor is focused with `+scrollToSelection: false+`, {productname} records the scroll position before the editor takes focus and restores it immediately afterward. The view stays where it was in Safari 26 and later. The fix applies in all browsers and has no effect where the browser already respects `+preventScroll+`. Calling `+editor.focus()+` without an argument, or with `+scrollToSelection: true+`, still scrolls the selection into view as before.
+
+=== Pressing Tab could move focus into a disabled editor, which showed no focus indicator
+// #TINYMCE-13514
+
+Previously, when the xref:editor-important-options.adoc#disabled[`+disabled+`] option disabled the editor, pressing Tab could still move focus into the editor content area. The disabled editor showed no focus indicator. As a result, keyboard and screen reader users reached an editor they could not use, and they could not tell where focus had gone. The xref:editor-important-options.adoc#auto_focus[`+auto_focus+`] option could also focus a disabled editor when the page loaded.
+
+In {productname} {release-version}, pressing Tab moves focus past a disabled editor, and the `+auto_focus+` option no longer focuses a disabled editor. When the editor becomes enabled again, {productname} returns it to the tab order and restores any existing `+tabindex+` value.
+
+=== Image resize handler was not shown on hybrid devices with both a touchscreen and a mouse or trackpad
+// #TINYMCE-14668
+
+Previously, {productname} treated a hybrid device, such as a Windows 2-in-1 laptop, as touch-only whenever the browser reported a touchscreen as the primary pointer, even when a mouse or trackpad was also present. It hid the resize handles on images and tables, and forced table cell selection to use the touch handles instead of the mouse or trackpad.
+
+In {productname} {release-version}, a device that does not run iOS or Android counts as a touch device only when no mouse, trackpad, or other precise pointer is available. On hybrid devices, these options have the same default values as on desktop devices, so the resize handles appear on images and tables. Users of hybrid devices can resize images and select table cells with the mouse or trackpad, without switching to the touchscreen.
+
+=== Formatting text in Firefox 158 and later removed quotes around font names that contain spaces
+// #TINYMCE-15130
+
+Previously, in Firefox 158 and later, formatting text that used a font name containing spaces removed the quotes around the font name. For example, applying a text color to a `+span+` element with the style `+font-family: 'arial black'+` changed the style to `+font-family: arial black+`. The cause is a change in Firefox 158: the browser no longer quotes multi-word font names when it rewrites a style attribute, while Chrome and earlier versions of Firefox keep the quotes. Both forms are valid CSS and display the same font, but the HTML returned by xref:apis/tinymce.editor.adoc#getContent[`+editor.getContent()+`] and shown in the source code view depended on the browser. Integrations that compared or stored editor content as text could get different HTML for the same content in different browsers, even though the difference had no visible effect.
+
+In {productname} {release-version}, {productname} adds single quotes around any unquoted font name that contains spaces, so formatted content keeps `+font-family: 'arial black'+` in every browser. {productname} leaves font names that are already quoted, values that use a CSS function such as `+var()+`, and values marked `+!important+` unchanged. Generic font families, such as `+sans-serif+`, are single words and stay unquoted.
+
+=== Resizing the sidebar in a right-to-left editor resized it in the opposite direction to the drag
+// #TINYMCE-14904
+
+Previously, when the xref:ui-localization.adoc#language[`+language+`] option was set to a right-to-left language, such as Arabic, dragging the resize handle of a sidebar changed the sidebar width in the opposite direction to the pointer. In a right-to-left editor, the sidebar sits on the left and the resize handle is on the edge next to the editor content. Dragging the handle toward the editor content made the sidebar narrower instead of wider. This affected every sidebar registered with the xref:customsidebar.adoc#resizable[`+resizable+`] property set to `+true+`, including the sidebars of the Comments and {productname} AI plugins, so users of right-to-left languages could not resize these sidebars as expected.
+
+In {productname} {release-version}, the resize handle follows the pointer in right-to-left editors, as it does in left-to-right editors. Dragging the handle toward the editor content widens the sidebar, and dragging it away narrows it. The xref:customsidebar.adoc#sidebar_min_width[`+sidebar_min_width+`] and xref:customsidebar.adoc#sidebar_max_width[`+sidebar_max_width+`] options and the minimum width of the editing area still limit the sidebar width.
+
+=== Clicking to the left or right of an accordion did not place the caret before or after it
+// #TINYMCE-9955
+
+Previously, clicking to the left or right of an accordion did not place the caret beside it. Users could not use the mouse to add content directly before or after an accordion, or between two adjacent accordions.
+
+In {productname} {release-version}, clicking to the left or right of an accordion places the caret before or after it, as clicking beside a table does. Typing at that position adds a new paragraph before or after the accordion.
+
+=== It was not possible to place the caret between two adjacent accordions using the arrow keys
+// #TINYMCE-9955
+
+Previously, when two accordions were next to each other, pressing Right Arrow at the end of the first accordion moved the caret into the second accordion, and pressing Left Arrow at the start of the second accordion moved the caret into the first. Keyboard users could not place the caret between the accordions to add content there.
+
+In {productname} {release-version}, pressing Left Arrow or Right Arrow to leave an accordion places the caret beside the accordion when another accordion is next to it or when the accordion is at the start or end of the content. From that position, Up Arrow and Down Arrow move the caret into the adjacent accordion or to the adjacent line, and pressing Enter adds a new paragraph.
+
+=== Pressing Delete or Backspace did not remove an empty block before or after an accordion
+// #TINYMCE-9955
+
+Previously, pressing Delete in an empty first block directly before an accordion, such as an empty block at the start of the content, did not remove the block. Pressing Backspace in an empty last block directly after an accordion, such as an empty block at the end of the content, also did not remove the block. Users could not remove these empty blocks.
+
+In {productname} {release-version}, pressing Delete in an empty block before an accordion removes the block and moves the caret into the accordion summary. Pressing Backspace in an empty block after an accordion removes the block and moves the caret to the end of the accordion content. When the empty block is inside a container with no other content, such as a list, the editor removes the container as well. The editor never removes a table cell that contains the empty block.
+
+=== Removing bold or italic from a nested list item no longer leaves it styled through inheritance from its parent list item
+// #TINYMCE-14935
+
+Previously, when a user made a whole list item bold or italic, any list nested inside it also appeared bold or italic. Removing the formatting from a nested list item had no visible effect, because the nested item still inherited the style from the list item that contained it.
+
+In {productname} {release-version}, removing bold or italic from a nested list item takes effect. The nested item no longer appears bold or italic, and the list item that contains it keeps its formatting.
+
+=== Saving the Table Properties dialog with `+table_appearance_options+` hiding fields no longer removes the table's existing cell spacing, border width or caption
+// #TINYMCE-15197
+
+Previously, when the xref:table.adoc#table_appearance_options[`+table_appearance_options+`] option hid fields in the Table Properties dialog, saving the dialog cleared the existing values of the hidden fields on the table. For example, with **Cell spacing**, **Border width**, and **Caption** hidden, changing only the **Width** of a table and clicking **Save** removed the cell spacing of the table and its border width, reset a `+border+` attribute such as `+border="3"+` to `+1+`, and deleted the table caption. The dialog did not show the hidden fields, so users could not see the change or restore the lost values from the dialog.
+
+In {productname} {release-version}, saving the Table Properties dialog leaves the values of hidden fields unchanged on the table. {productname} also no longer applies the xref:table-options.adoc#table_default_styles[`+table_default_styles+`] and xref:table-options.adoc#table_default_attributes[`+table_default_attributes+`] values for a hidden field over the existing value. Saving the dialog changes only the fields that the dialog shows, and the cell spacing, border width, cell padding, and caption of the table stay as they were.
 
 
 [[security-fixes]]

@@ -319,6 +319,13 @@ In {productname} {release-version}, the option also accepts an object that contr
 
 // CCFR here.
 
+=== Integrations moving focus between inline editors could revert focus back to the previous editor
+// #TINYMCE-14953
+
+Previously, on a page with more than one inline editor, an integration that replaced the content of one editor and then moved focus to another could find focus back in the first editor. For example, calling xref:apis/tinymce.editor.adoc#setContent[`+editor.setContent()+`] on the focused editor and then xref:apis/tinymce.editor.adoc#focus[`+editor.focus()+`] on a second editor in the same script could leave the first editor focused. As a result the user could end up typing in the wrong editor.
+
+In {productname} {release-version}, an inline editor ignores page selection changes while it does not have focus. When an integration moves focus between inline editors, focus stays on the editor that was focused last. Editors in iframe mode were not affected, because each iframe editor receives selection changes only from its own document.
+
 === Focusing the editor with `+scrollToSelection: false+` still scrolled on Safari 26 and later
 // #TINYMCE-15097
 

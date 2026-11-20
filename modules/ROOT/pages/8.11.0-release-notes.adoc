@@ -276,6 +276,13 @@ In {productname} {release-version}, the option also accepts an object that contr
 
 // CCFR here.
 
+=== Focusing the editor with `+scrollToSelection: false+` still scrolled on Safari 26 and later
+// #TINYMCE-15097
+
+Previously, calling xref:apis/tinymce.editor.adoc#focus[`+editor.focus({ scrollToSelection: false })+`] in Safari 26 and later still scrolled the selection into view, moving the editor content or, for inline editors, the page. Integrations that used this option to return focus to the editor without moving the view saw the document jump away from the part the user was reading. The cause is a change in Safari 26: the browser now scrolls to the selection whenever an editable element receives focus, and ignores the `+preventScroll+` focus option that {productname} passes.
+
+In {productname} {release-version}, when the editor is focused with `+scrollToSelection: false+`, {productname} records the scroll position before the editor takes focus and restores it immediately afterward. The view stays where it was in Safari 26 and later. The fix applies in all browsers and has no effect where the browser already respects `+preventScroll+`. Calling `+editor.focus()+` without an argument, or with `+scrollToSelection: true+`, still scrolls the selection into view as before.
+
 === Pressing Tab could move focus into a disabled editor, which showed no focus indicator
 // #TINYMCE-13514
 

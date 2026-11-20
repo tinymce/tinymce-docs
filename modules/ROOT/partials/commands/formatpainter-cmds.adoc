@@ -4,6 +4,7 @@
 |mceRetrieveFormats |Retrieves the formats from the current selection.
 |mcePaintFormats |Applies the formats retrieved using `+mceRetrieveFormats+` to the current selection.
 |mceToggleFormatPainter |Toggles the Format Painter.
+|mceToggleStickyFormatPainter |Retrieves the formats from the current selection and turns on sticky mode, which keeps the Format Painter active to apply the formats to each selection. To turn off sticky mode, run `+mceToggleFormatPainter+`. Requires {productname} 8.11 or newer.
 |===
 
 .Examples
@@ -12,4 +13,5 @@
 tinymce.activeEditor.execCommand('mceRetrieveFormats');
 tinymce.activeEditor.execCommand('mcePaintFormats');
 tinymce.activeEditor.execCommand('mceToggleFormatPainter');
+tinymce.activeEditor.execCommand('mceToggleStickyFormatPainter');
 ----

@@ -82,7 +82,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 Previously, when an application removed an editor from a xref:tinymceai-multi-editor.adoc[multi-editor group], the chat kept the context tag of the removed editor until the user opened the **Add context source** menu. Any open preview also remained, and any request in progress that included the removed editor continued to run. The chat then referred to content that was no longer on the page.
 
-In {productname} {release-version}, when an editor leaves its group, the **TinyMCE AI** plugin removes the context tag of that editor from the chat and stops any chat request in progress. If the group has an open preview or pending review suggestions, the plugin discards them in every editor of the group and returns each editor to normal editing. The context tags of the remaining editors stay in the chat, and users can continue to send prompts.
+In {productname} {release-version}, when an editor leaves its group, the **TinyMCE AI** plugin removes the context tag of that editor from the chat and stops any chat request in progress. If the group has pending suggestions, the plugin discards them in every editor of the group and returns each editor to normal editing. The context tags of the remaining editors stay in the chat, and users can continue to send prompts.
 
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai-multi-editor.adoc[TinyMCE AI multi-editor mode].
 

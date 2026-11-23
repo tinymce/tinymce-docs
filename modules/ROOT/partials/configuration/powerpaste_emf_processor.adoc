@@ -19,4 +19,4 @@ tinymce.init({
   });
 ----
 
-NOTE: If only the image is selected, pasting it will succeed and the image will be inserted correctly. However, if the image is selected together with other types of content, such as text, the image will not be pasted and an error message will be displayed.
+NOTE: When `+powerpaste_emf_processor+` is not provided, an `emf` image pastes correctly only when it is selected on its own. If the image is selected together with other content, such as text, the other content is pasted, but the image is replaced with a broken image placeholder and the editor displays the error notification "Some images failed to import." To paste `emf` images together with other content, provide a `+powerpaste_emf_processor+` function that converts the images to `png`. Alternatively, select and paste each `emf` image on its own.

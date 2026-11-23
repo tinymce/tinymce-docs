@@ -1,0 +1,151 @@
+= {productname} {release-version}
+:release-version: 8.10.2
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
+:keywords: releasenotes, anew, changes, bugfixes, additions
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, November 11^th^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+* xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
+* xref:additions[Additions]
+* xref:bug-fixes[Bug fixes]
+
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium plugin changes
+
+The following premium plugin updates were released alongside {productname} {release-version}.
+
+=== Format Painter
+
+The {productname} {release-version} release includes an accompanying release of the **Format Painter** premium plugin.
+
+**Format Painter** includes the following fix.
+
+==== Format Painter did not copy inline styles, such as text color, background color or font size, applied directly to block elements
+// #TINYMCE-14938
+
+Previously, the **Format Painter** plugin did not copy inline styles applied directly to a block element, such as a `+color+` style on an `+h2+` element. When a user copied the formatting of text inside a red heading and applied it to a word in a paragraph, the word did not turn red. Users had to apply the missing styles again manually.
+
+In {productname} {release-version}, the **Format Painter** plugin also copies inline styles applied directly to a block element when those styles match an inline format registered in the editor, such as text color, background color, font family, or font size. The plugin applies these styles to the goal content in a `+span+` element. When the same style is set on more than one element around the source content, the plugin uses the value from the closest element. The plugin does not copy formats listed in the xref:formatpainter.adoc#formatpainter_ignored_formats[`+formatpainter_ignored_formats+`] option.
+
+For information on the **Format Painter** plugin, see: xref:formatpainter.adoc[Format Painter].
+
+==== Block formats were not applied when the selection covered the entire content of a single block.
+// #TINYMCE-14939
+
+Previously, the **Format Painter** plugin applied block formats, such as a heading, only when the selection was collapsed or spanned more than one block. When a user selected the entire content of a single block and applied the formatting, the plugin applied only the inline formats and did not apply the block format.
+
+In {productname} {release-version}, the **Format Painter** plugin also applies block formats when the selection covers the entire content of a single block. For example, when a user applies the formatting from a heading to a paragraph with its entire content selected, the plugin converts the paragraph to a heading.
+
+For information on the **Format Painter** plugin, see: xref:formatpainter.adoc[Format Painter].
+
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== The review sidebar could get stuck initializing when it was opened before the TinyMCE AI interface finished loading, for example by using the `+sidebar_show+` option
+// #TINYMCE-15165
+
+Previously, when the xref:tinymceai.adoc#tinymceai_sidebar_type[`+tinymceai_sidebar_type+`] option had its default value of `+'static'+`, the Review sidebar could open before the plugin interface finished loading. For example, setting the xref:customsidebar.adoc#sidebar_show[`+sidebar_show+`] option to `+'tinymceai-review'+` opened the Review sidebar on editor load. The sidebar then displayed the `+Initializing review mode...+` message, and users had to close and reopen the sidebar before they could use it.
+
+In {productname} {release-version}, the **TinyMCE AI** plugin records which sidebar opens while the interface loads and displays that sidebar once loading completes. The Review sidebar and the Chat sidebar open as expected on editor load, including when a user switches between them or closes one before the interface finishes loading.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
+=== Spell Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Spell Checker** premium plugin.
+
+**Spell Checker** includes the following fix.
+
+==== Words inside a `script` element were spellchecked when the `script` was the only content of the editor.
+// #TINYMCE-15087
+
+Previously, when a `+<script>+` element was the only content of the editor, the **Spell Checker** plugin sent the words inside the element for spell checking. The plugin skipped `+<script>+` elements elsewhere in the content, but did not skip the element when all of the text to check was inside the element. As a result, the plugin checked script code as if it were editor content.
+
+In {productname} {release-version}, the **Spell Checker** plugin skips the content of a `+<script>+` element, including when the element is the only content of the editor. The plugin checks only the editor content outside the element.
+
+For information on the **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker].
+
+
+[[additions]]
+== Additions
+
+{productname} {release-version} also includes the following addition:
+
+=== New `getFullySelectedBlocks` function added to `tinymce.selection` which returns the blocks fully covered by the selection.
+// #TINYMCE-14939
+
+{productname} {release-version} adds the xref:apis/tinymce.dom.selection.adoc#getFullySelectedBlocks[`+editor.selection.getFullySelectedBlocks()+`] method. The method returns an array of the block elements whose entire content is inside the current selection. The array does not include blocks that are partially selected. The method returns an empty array when the selection is collapsed.
+
+
+[[bug-fixes]]
+== Bug fixes
+
+{productname} {release-version} also includes the following bug fixes:
+
+=== Image and table resize handles are now hidden from screen readers with `+aria-hidden="true"+`
+// #TINYMCE-14927
+
+Previously, the resize handles that appear when an image or table is selected were not hidden from assistive technologies. The same applied to the label that shows the new dimensions during a resize. Screen readers could reach and announce these elements, even though they exist only as visual aids.
+
+In {productname} {release-version}, the resize handles and the other elements shown during a resize have the `+aria-hidden="true"+` attribute, so screen readers ignore them. Image and table dimensions can still be changed without a mouse from the *Insert/Edit Image* and *Table Properties* dialogs.
+
+=== A new line inside an indented TD prevented the `+Decrease Indent+` of the content
+// #TINYMCE-8693
+
+Previously, when content placed directly inside a table cell was indented, {productname} applied the indentation to the table cell (`+<td>+`) element. When a new line was then added in the cell, for example by pressing Enter, {productname} wrapped the content in paragraph (`+<p>+`) elements that did not carry the indentation. As a result, the *Decrease indent* toolbar button was disabled and the indented content could not be outdented.
+
+In {productname} {release-version}, when the content of a table cell is indented, {productname} wraps the inline content in paragraph elements and applies the indentation to those paragraphs instead of to the cell. The new line keeps the indentation, and the *Decrease indent* toolbar button remains enabled, so the content can be outdented as expected.
+
+=== Underline applied around subscript or superscript text was drawn at the baseline of the surrounding text instead of under the subscript or superscript text
+// #TINYMCE-15001
+
+Previously, when underline and subscript or superscript formatting were combined, {productname} could place the subscript (`+<sub>+`) or superscript (`+<sup>+`) element inside the underline element. Browsers then drew the underline at the baseline of the surrounding text. Under subscript text, the underline appeared only in the gaps between words. Under superscript text, the underline sat below the raised text instead of directly under it. This output did not match how desktop word processors underline subscript and superscript text.
+
+In {productname} {release-version}, the editor moves the underline inside the `+<sub>+` and `+<sup>+` elements, as it already does for strikethrough. The underline now sits directly under subscript and superscript text, whichever format is applied first. The same correction applies to underline `+<span>+` and `+<u>+` elements when subscript or superscript content is inserted into underlined text. The editor does not change underline applied around text with a different font size.
+
+=== Node positioned context toolbars repositioned above the editor when the node width was less than the toolbar.
+// #TINYMCE-13900
+
+Previously, in inline mode, a context toolbar that used `+position: 'node'+` moved above the editor when the selected node was narrower than the toolbar. For example, when a user resized an image to a width smaller than the context toolbar, the toolbar jumped from the image to a position above the editor. The toolbar then appeared detached from the node it applied to.
+
+In {productname} {release-version}, a context toolbar that uses `+position: 'node'+` stays attached to the selected node, even when the node is narrower than the toolbar. When a user resizes an image to a width narrower than the context toolbar, the toolbar remains above the image.
+
+=== Following an anchor link to a target inside a collapsed `+details+` element, such as a closed accordion, now expands it, as browsers do when navigating to an in-page link
+// #TINYMCE-14737
+
+Previously, when a link to an anchor inside a closed accordion was followed, {productname} scrolled to the target but left the accordion closed, so the target content stayed hidden.
+
+In {productname} {release-version}, the editor opens every closed `+<details>+` element that hides the target, including accordions, before scrolling to it. This applies when a link is followed with Ctrl+click (Cmd+click on macOS), with the Alt+Enter keyboard shortcut (⌥+Enter on macOS), with the *Open link* context menu item or toolbar button, or with a click in a disabled editor. For the full list of editor shortcuts, see xref:keyboard-shortcuts.adoc#editor-keyboard-shortcuts[Editor keyboard shortcuts]. In design mode, the accordion stays open in the editor content. In read-only and disabled modes, the accordion opens on screen only, and the editor content does not change.
+
+=== Leaving a list with Enter copied the list item's styles onto the new paragraph.
+// #TINYMCE-13035
+
+Previously, when a user pressed Enter on an empty list item to leave a list, {productname} copied the styles of the list item to the new paragraph. For example, when a user applied bold to the entire content of a list item and pressed Enter twice to leave the list, the new paragraph inherited the `+font-weight+` style. Text typed in the paragraph stayed bold after the user turned bold off, and applying bold again added the bold format a second time. Color, font size, and font family set on a list item carried over to the new paragraph in the same way.
+
+In {productname} {release-version}, the editor copies the styles of an empty list item only when the new block is also a list item. A paragraph created by leaving a list no longer inherits the list item styles, so bold, italic, and other formats toggle as expected.
+
+=== The image dialog got stuck on "Uploading image" when an empty or unreadable file was selected on the Upload tab.
+// #TINYMCE-7202
+
+Previously, when a user selected an empty file, such as a 0-byte `+.png+` file, on the Upload tab of the image dialog, the dialog stayed on the "Uploading image" message, and the browser console showed an error. The dialog remained blocked and displayed no message about the problem.
+
+In {productname} {release-version}, when the image dialog cannot read the selected file or convert it to image data, the dialog cancels the upload and displays a "Failed to upload image" alert. After the user closes the alert, the dialog accepts input again, and the user can select a different file.
+
+=== Long item text in dialog listboxes overflowed the dialog
+// #TINYMCE-14261
+
+Previously, the menu of a listbox in a dialog grew to fit the longest item in the list. When an item had long text, such as an anchor with a long `+id+` in the *Anchors* field of the *Insert/Edit Link* dialog, the open menu extended past the edge of the dialog. The selected value also overflowed the field. The dialog displayed a horizontal scrollbar and the layout broke, which made the dialog difficult to read and use.
+
+In {productname} {release-version}, the menu of a dialog listbox matches the width of the field, and long items wrap onto several lines. When the selected value is too long for the field, the listbox truncates the value with an ellipsis. Long listbox items no longer break the dialog layout or add a horizontal scrollbar.

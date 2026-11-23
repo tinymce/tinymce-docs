@@ -148,7 +148,10 @@ so all events etc that method has will get dispatched as well.|`xref:apis/tinymc
 the different cleanup rules options.
 
 
-__Note: The content return value was deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0.__|`xref:apis/tinymce.editor.adoc[Editor]`
+__Note: This method does not add an undo level. To add one, call `editor.undoManager.add()` after setting the content.__
+
+
+__Note: To change the content before it is set, update the `content` property in a `BeforeSetContent` event handler.__|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#setDirty[setDirty()]|Explicitly sets the dirty state. This will fire the dirty event if the editor dirty state is changed from false to true
 by invoking this method.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#setEditableRoot[setEditableRoot()]|Changes the editable state of the editor's root element.|`xref:apis/tinymce.editor.adoc[Editor]`
@@ -982,13 +985,16 @@ so all events etc that method has will get dispatched as well.
 === setContent()
 [source, javascript]
 ----
-setContent(content: String, args: Object)
+setContent(content: String, args: Object, args.no_events: Boolean, args.no_selection: Boolean)
 ----
 Sets the specified content to the editor instance, this will cleanup the content before it gets set using
 the different cleanup rules options.
 
 
-__Note: The content return value was deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0.__
+__Note: This method does not add an undo level. To add one, call `editor.undoManager.add()` after setting the content.__
+
+
+__Note: To change the content before it is set, update the `content` property in a `BeforeSetContent` event handler.__
 
 ==== Examples
 [source, javascript]
@@ -1001,12 +1007,21 @@ tinymce.get('my_editor').setContent(data);
 
 // Sets the content of the activeEditor editor using the specified format
 tinymce.activeEditor.setContent('<p>Some html</p>', { format: 'html' });
+
+// Sets the content without dispatching the BeforeSetContent and SetContent events
+tinymce.activeEditor.setContent('<p>Some html</p>', { no_events: true });
+
+// Sets the content and adds an undo level so the change can be undone
+tinymce.activeEditor.setContent('<p>Some html</p>');
+tinymce.activeEditor.undoManager.add();
 ----
 
 ==== Parameters
 
-* `content (String)` - Content to set to editor, normally HTML contents but can be other formats as well.
+* `content (String)` - Content to set to editor, normally HTML contents.
 * `args (Object)` - Optional content object, this gets passed around through the whole set process.
+* `args.no_events (Boolean)` - If true, the BeforeSetContent and SetContent events are not dispatched. Defaults to false.
+* `args.no_selection (Boolean)` - If true, the selection is not moved to the start of the new content. Defaults to false.
 
 '''
 

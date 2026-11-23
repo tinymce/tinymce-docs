@@ -1,0 +1,203 @@
+= MoxieManager integration
+:navtitle: Integration
+:description: Integrate MoxieManager with {productname} and other systems.
+:keywords: moxiemanager, integration, tinymce, wordpress
+
+Ok, so you have tested it on your server and have made sure it works, time to integrate it with whatever system you might be using.
+
+This is really the part that can be somewhat tricky, certain system require specific Authenticators or custom Authenticators in order to work properly. It can be especially tricky if you system has some custom managment of Sessions.
+
+[[tinymce-integration]]
+== {productname} integration
+
+MoxieManager picks up certain xref:#tinymce-integration[config options] when integrated into {productname}.
+
+These are setting you should *set in your {productname} configuration* in order to get the setup you want. See below for examples!
+
+If you are using xref:moxiemanager-api.adoc[moxman.browse, check these API docs].
+
+[cols="1,3",options="header"]
+|===
+| Name | Description
+|`+moxiemanager_<type>_settings+` a|
+Configure seperate options for image, media or link dialog, change <type> to either *image*, *file* or *media*. Example Config.
+
+[source,js]
+----
+moxiemanager_image_settings : {
+ view : 'thumbs',
+ extensions : 'jpg,png,gif'
+}
+----
+
+This will override any "global" settings.
+
+|`+moxiemanager_path+` |Public file system path to display by default. For example: `+/files/images+`
+|`+moxiemanager_rootpath+` |Public file system path to use as the root. This option needs to be within the configured backend `+filesystem.rootpath+` for security reasons. For example: `+/files/images+` if the server side rootpath is `+/root/site/files+`.
+|`+moxiemanager_view+` |Default depends on what dialog in {productname} it is opened from, image insert dialog = thumbs, link insert dialog = files. Can be either `+files+` or `+thumbs+`.
+|`+moxiemanager_insert+` |Boolean option that allows you to disable the insert toolbar, but clicking image still works. Note: Option might change behaviour in the future.
+|`+moxiemanager_filter+` |Initial filter to apply to file selection. This option will fill the filter input field with the value specified.
+|`+moxiemanager_extensions+` |Comma separated list of file extensions to display for.
+|`+moxiemanager_include_file_pattern+` |Regexp pattern that the files need to match inorder to be displayed.
+|`+moxiemanager_exclude_file_pattern+` |Regexp pattern that will be excluded from file list if it matches.
+|`+moxiemanager_include_directory_pattern+` |Regexp pattern that the directories need to mathc inorder to be displayed.
+|`+moxiemanager_exclude_directory_pattern+` |Regexp pattern that will be exluded from file list if it matches.
+|`+moxiemanager_disabled_tools+` |Comma separated list of tools to disable. Check out xref:moxiemanager-options.adoc#filelist-main-toolbar[moxiemanager_filelist_main_toolbar] for configuring this instead in newer versions.
+|`+moxiemanager_hidden_tools+` |Comma separated list of tools to hide. Check out xref:moxiemanager-options.adoc#filelist-main-toolbar[moxiemanager_filelist_main_toolbar] for configuring this instead in newer versions.
+|xref:moxiemanager-options.adoc#moxiemanager-image-template[moxiemanager_image_template] |HTML template used when inserting images directly into {productname} using the browse button.
+|xref:moxiemanager-options.adoc#moxiemanager-file-template[moxiemanager_file_template] |HTML template used when inserting non image files directly into {productname} using the browse button.
+|`+moxiemanager_width+` |Set the width of the window, a low value may break the UI.
+|`+moxiemanager_height+` |Set the height of the window, a low value may break the UI.
+|`+moxiemanager_fullscreen+` |Boolean value, true if you wish the window to max width/height.
+|`+moxiemanager_title+` |Sets the title of the main window, replaces "MoxieManager".
+|`+moxiemanager_leftpanel+` |Boolean value, true by default. Show or hide the left filesystems panel.
+|xref:moxiemanager-options.adoc#date-format[moxiemanager_date_format] |Enables you to specify a date format to be used when inserting files.
+|xref:moxiemanager-options.adoc#insert-filter[moxiemanager_insert_filter] |Callback that enables you to filter the data before it gets inserted.
+|`+moxiemanager_skin+` |Enables you to set a custom skin to be used.
+|`+relative_urls+` |*{productname} Option*, if this option is set to true, {productname} will take the path returned from MoxieManager and make it relative.
+|`+document_base_url+` |*{productname} Option*, defaults to the current page. This is the point relative URLs will be relative to.
+|`+remove_script_host+` |*{productname} Option*, Enables you to remove scheme/protocol and host name from urls produced. So `+relative_urls : false+` and `+remove_script_host : true+` will get site absolute paths like `+/my/files/here.jpg+`
+|xref:moxiemanager-options.adoc#unique-urls[moxiemanager_unique_urls] |Appends an unique id to bust client side caches.
+|xref:moxiemanager-options.adoc#filelist-main-toolbar[moxiemanager_filelist_main_toolbar] |Enables you to control what to display in the main toolbar of the filelist browse dialog.
+|xref:moxiemanager-options.adoc#filelist-utils-toolbar[moxiemanager_filelist_utils_toolbar] |Enables you to control what to display in the utils toolbar of the filelist browse dialog.
+|xref:moxiemanager-options.adoc#filelist-manage-menu[moxiemanager_filelist_manage_menu] |Enables you to configure what to display in the manage button menu.
+|xref:moxiemanager-options.adoc#filelist-context-menu[moxiemanager_filelist_context_menu] |Enables you to configure what to display in the context menu.
+|xref:moxiemanager-options.adoc#filelist-insert-toolbar[moxiemanager_filelist_insert_toolbar] |Enables you to configure what to display in the insert/cancel toolbar.
+|xref:moxiemanager-options.adoc#editimage-main-toolbar[moxiemanager_editimage_main_toolbar] |Enables you to control what to display in the main toolbar of the edit image dialog.
+|xref:moxiemanager-options.adoc#editimage-zoom-toolbar[moxiemanager_editimage_zoom_toolbar] |Enables you to control what to display in the zoom toobar of the edit image dialog.
+|xref:moxiemanager-options.adoc#editimage-actions-toolbar[moxiemanager_editimage_actions_toolbar] |Enables you to control what to display in the actions toolbar/pabel of the edit image dialog.
+|xref:moxiemanager-options.adoc#remember-last-path[moxiemanager_remember_last_path] |When enabled the MoxieManager will remember the last path the user was in when a file was selected.
+|xref:moxiemanager-options.adoc#sort-by[moxiemanager_sort_by] |Changes the default sort by column for file listings.
+|xref:moxiemanager-options.adoc#sort-by[moxiemanager_sort_order] |Changes the default sort order asc/desc.
+|`+moxiemanager_unique_urls+` |Appends an unique id to bust client side caches.
+|`+moxiemanager_upload_auto_close+` |Automatically closes the upload dialog if all files where successfully uploaded. Disabled by default.
+|===
+
+=== Examples
+
+[source,js]
+----
+tinymce.init({
+  ...
+  moxiemanager_rootpath : '/files/subfolder'
+});
+----
+
+The rootpath must be within the rootpath set in config.php for security reasons.
+
+[source,php]
+----
+$moxieManagerConfig["filesystem.rootpath"] = "/www/site/files";
+----
+
+`+moxiemanager_rootpath : '/files/subfolder'+` is a valid config option if subfolder exists.
+
+`+moxiemanager_rootpath : '/othersite/files'+` is NOT a valid config option.
+
+[source,js]
+----
+tinymce.init({
+  ...
+  relative_urls : false,
+});
+----
+
+MoxieManager always returns an absolute URL to {productname}, then the {productname} options convert the urls. In this case, relative_urls is set to false, when you save in {productname}, the resulting path will be:
+
+`+/my/absolute/url.jpg+`
+
+Since remove_script_host is false by default.
+
+[source,js]
+----
+tinymce.init({
+  ...
+  relative_urls : false,
+  remove_script_host : false
+});
+----
+
+With this example, urls will be absolute WITH the site domain.
+
+`+http://www.mysite.com/my/absolute/url.jpg+`
+
+NOTE: Note, lets say you have `+admin.mysite.com+`, you can configure `+document_base_url : 'http://www.mysite.com'+`
+
+Then URLs should become just as above, and not `+admin.mysite.com+` absolute.
+
+==== Basic integration
+
+This is how you integrate the MoxieManager into {productname}.
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: "moxiemanager link image",
+  toolbar: "insertfile link image",
+  menubar: false
+});
+----
+
+This is the most basic integration example.
+
+==== Custom settings
+
+These are some examples of custom settings that can be passed from {productname} to MoxieManager.
+
+For more detailed info about configuration options, check out the xref:#tinymce-integration[{productname} integration] page.
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: "moxiemanager link image",
+  toolbar: "insertfile link image",
+  menubar: false,
+  moxiemanager_file_settings: {
+    /* Only list txt files, and remove side navigation. */
+    moxiemanager_extensions : 'txt',
+    moxiemanager_leftpanel : false
+  },
+  moxiemanager_image_settings: {
+    /* Scope to different folder, show thumbnails of selected extensions */
+    moxiemanager_title : 'Images',
+    moxiemanager_extensions : 'jpg,png,gif',
+    moxiemanager_rootpath : '/testfiles/testfolder',
+    moxiemanager_view : 'thumbs'
+  }
+});
+----
+
+==== Using with CDN version of {productname}
+
+In order to load MoxieManager, you need to run it with as an external plugin.
+
+[source,js]
+----
+tinymce.init({
+  ...
+  plugins: "moxiemanager link image",
+  external_plugins: {
+    "moxiemanager": "/moxiemanager/plugin.min.js"
+  }
+});
+----
+
+== Authentication integration
+
+Setup Authentication to integrate with whatever system you might be using, read more in the xref:moxiemanager-security.adoc[Security] section.
+
+[[integration-wordpress]]
+== Wordpress integration
+
+These instructions should work for any Wordpress version above 2.5.
+
+. Download the MoxieManager package from this website.
+. Unzip the package so the Wordpress structure looks like this: `+/wp-includes/js/tinymce/plugins/moxiemanager+`
+. Download xref:attachment$moxiemanager/mce.zip[this Wordpress plugin package] and unzip so the structure looks like this: `+/wp-content/plugins/mce+`
+. Login to Wordpress as administrator, activate the MoxieManager plugin.
+. Create a new post or page, the editor should now have an extra button, click it and follow the installation instructions, choose the SessionAuthenticator and leave the session name intact as isLoggedIn.
+. Continue and save the config and you are done, you might have to logout/login to Wordpress again for it to work.
+
+If you have any issues, please use the support ticket system and we will try to assist you.

@@ -216,7 +216,7 @@
 * xref:initial-configuration.adoc[Initial configuration]
 ** xref:editor-important-options.adoc[Integration options]
 ** xref:editor-size-options.adoc[Size]
-** xref:editor-save-and-submit.adoc[Save and submit]
+** xref:editor-save-and-submit.adoc[Getting, setting, and saving content]
 ** xref:promotions.adoc[Promotions]
 * Interface
 ** Editor modes
@@ -275,6 +275,8 @@
 ****** xref:tinymceai-api-overview.adoc[API overview]
 ****** xref:tinymceai-api-quick-start.adoc[API quick start]
 ****** xref:tinymceai-streaming.adoc[Streaming]
+****** xref:tinymceai-document-processing.adoc[Document Processing]
+****** xref:tinymceai-usage.adoc[Usage API]
 **** xref:tinymceai-jwt-authentication-intro.adoc[JWT authentication]
 ***** xref:tinymceai-permissions.adoc[Permissions]
 ***** Guides
@@ -289,6 +291,9 @@
 ***** xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration]
 ***** xref:tinymceai-on-premises-production.adoc[Production deployment]
 ***** xref:tinymceai-on-premises-mcp.adoc[MCP and web integrations (optional)]
+***** xref:tinymceai-on-premises-guardrails.adoc[Guardrails]
+***** xref:tinymceai-on-premises-hooks.adoc[Hooks]
+***** xref:tinymceai-on-premises-moderation.adoc[Content moderation]
 ***** xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting]
 ***** xref:tinymceai-on-premises-reference.adoc[Reference]
 **** xref:ai.adoc[AI Assistant (legacy)]
@@ -347,6 +352,18 @@
 *** xref:mentions.adoc[Mentions]
 *** xref:mergetags.adoc[Merge Tags]
 *** xref:moxiemanager.adoc[MoxieManager]
+**** xref:moxiemanager-installation.adoc[Installation]
+**** xref:moxiemanager-integration.adoc[Integration]
+**** xref:moxiemanager-options.adoc[Options]
+**** xref:moxiemanager-plugins.adoc[Plugins]
+**** xref:moxiemanager-api.adoc[API]
+**** xref:moxiemanager-security.adoc[Security]
+**** xref:moxiemanager-how-to-guides.adoc[How-to guides]
+**** xref:moxiemanager-languages.adoc[Languages]
+**** xref:moxiemanager-faq.adoc[FAQ]
+**** Release information
+***** xref:moxiemanager-changelog-php.adoc[MoxieManager PHP changelog]
+***** xref:moxiemanager-changelog-dotnet.adoc[MoxieManager .NET changelog]
 *** xref:pageembed.adoc[Page Embed]
 *** xref:permanentpen.adoc[Permanent Pen]
 *** PowerPaste
@@ -447,6 +464,11 @@
 **** xref:8.11.0-release-notes.adoc#security-fixes[Security fixes]
 **** xref:8.11.0-release-notes.adoc#deprecated[Deprecated]
 **** xref:8.11.0-release-notes.adoc#known-issues[Known issues]
+*** {productname} 8.10.2
+**** xref:8.10.2-release-notes.adoc#overview[Overview]
+**** xref:8.10.2-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
+**** xref:8.10.2-release-notes.adoc#additions[Additions]
+**** xref:8.10.2-release-notes.adoc#bug-fixes[Bug fixes]
 *** {productname} 8.10.1
 **** xref:8.10.1-release-notes.adoc#overview[Overview]
 **** xref:8.10.1-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]

@@ -1,0 +1,69 @@
+= MoxieManager languages
+:navtitle: Languages
+:description: Available MoxieManager languages and the language pack download.
+:keywords: moxiemanager, languages, language packs, translation, download
+
+[[download-language-packs]]
+== Download language packs
+
+The ZIP file contains the `+langs+` folder with the language files for every available MoxieManager language.
+
+xref:attachment$moxiemanager/moxiemanager-languages.zip[Download the MoxieManager language packs] (ZIP)
+
+[[available-languages]]
+== Available languages
+
+[cols="3,2,2",options="header"]
+|===
+|Language |Code |Updated
+|Arabic |`+ar+` |2025-03-14 12:21
+|Azerbaijani |`+az+` |2025-03-14 12:21
+|Basque (Spain) |`+eu_ES+` |2025-03-14 12:21
+|Catalan |`+ca+` |2025-03-14 12:21
+|Chinese (China) |`+zh_CN+` |2025-03-14 12:21
+|Chinese (Taiwan) |`+zh_TW+` |2025-03-14 12:21
+|Chinese (Taiwan) (Big5) |`+zh_TW.Big5+` |2025-03-14 12:21
+|Chinese Simplified |`+zh-Hans+` |2025-03-14 12:21
+|Croatian |`+hr+` |2025-03-14 12:21
+|Czech |`+cs+` |2025-03-14 12:21
+|Danish |`+da+` |2025-03-14 12:21
+|Danish (Denmark) |`+da_DK+` |2025-03-14 12:21
+|Dutch (Netherlands) |`+nl_NL+` |2025-03-14 12:21
+|English (United Kingdom) |`+en_GB+` |2025-03-14 12:21
+|Finnish (Finland) |`+fi_FI+` |2025-03-14 12:21
+|French |`+fr+` |2025-03-14 12:21
+|French (Canada) |`+fr_CA+` |2025-03-14 12:21
+|German |`+de+` |2025-03-14 12:21
+|German (Switzerland) |`+de_CH+` |2025-03-14 12:21
+|Greek (Greece) |`+el_GR+` |2025-03-14 12:21
+|Hebrew |`+he+` |2025-03-14 12:21
+|Hungarian (Hungary) |`+hu_HU+` |2025-03-14 12:21
+|Italian (Italy) |`+it_IT+` |2025-03-14 12:21
+|Japanese |`+ja+` |2025-03-14 12:21
+|Kazakh |`+kk+` |2025-03-14 12:21
+|Kurdish |`+ku+` |2025-03-14 12:21
+|Kurdish (Iraq) |`+ku_IQ+` |2025-03-14 12:21
+|Norwegian Bokmål (Norway) |`+nb_NO+` |2025-03-14 12:21
+|Persian |`+fa+` |2025-03-14 12:21
+|Polish |`+pl+` |2025-03-14 12:21
+|Portuguese (Brazil) |`+pt_BR+` |2025-03-14 12:21
+|Romanian |`+ro+` |2025-03-14 12:21
+|Russian |`+ru+` |2025-03-14 12:21
+|Slovak |`+sk+` |2025-03-14 12:21
+|Slovak (Slovakia) |`+sk_SK+` |2025-03-14 12:21
+|Spanish |`+es+` |2025-03-14 12:21
+|Swedish (Sweden) |`+sv_SE+` |2025-03-14 12:21
+|Thai (Thailand) |`+th_TH+` |2025-03-14 12:21
+|Turkish (Turkey) |`+tr_TR+` |2025-03-14 12:21
+|Ukrainian |`+uk+` |2025-03-14 12:21
+|Ukrainian (Ukraine) |`+uk_UA+` |2025-03-14 12:21
+|Vietnamese |`+vi+` |2025-03-14 12:21
+|Welsh |`+cy+` |2025-03-14 12:21
+|===
+
+NOTE: The Chinese (Taiwan) (Big5) language pack (`+zh_TW.Big5+`) is not included in the ZIP file because its download is no longer available.
+
+[[how-to-translate]]
+== How to translate
+
+The translations for every available language are in the xref:#download-language-packs[MoxieManager language packs]. There is one special item called "_dateformatter.datetime" this is the default format string for dates and different languages have different xref:moxiemanager-options.adoc#date-format[formats]. If you need help with the translation process, link:https://support.tiny.cloud/hc/en-us/requests/new[open a support ticket].

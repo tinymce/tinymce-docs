@@ -16,15 +16,18 @@ Real-time AI interactions using Server-Sent Events (SSE) for immediate feedback 
 [[sse-event-types]]
 == SSE event types
 
-Conversations, Reviews, and Actions each use different event names and JSON payloads in the SSE stream. Those payloads are documented on each streaming operation in the https://tinymceai.api.tiny.cloud/docs[interactive API documentation], not on the feature overview pages (which only summarize that SSE is used).
+Conversations, Reviews, Actions, and Document Processing each use their own set of events and JSON payloads in the SSE stream. Those payloads are documented on each streaming operation in the https://tinymceai.api.tiny.cloud/v1/docs[interactive API documentation].
 
 Use the API reference for the operation being called—for example:
 
-* https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages[Conversation Messages] and related Conversation tags for chat streaming, sources, and reasoning.
-* https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for review streaming responses.
-* https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API] for action streaming responses.
+* https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages[Conversation Messages] and related Conversation tags for chat streaming, sources, and reasoning.
+* https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews[Reviews API] for review streaming responses.
+* https://tinymceai.api.tiny.cloud/v1/docs#tag/Actions[Actions API] for action streaming responses.
+* https://tinymceai.api.tiny.cloud/v1/docs#tag/Document-processing/operation/streamProcessDocument[Process a document (streaming)] for Document Processing streaming responses. See also xref:tinymceai-document-processing.adoc#streaming[Document Processing streaming].
 
 The shared wire format and client-side parsing are covered in <<sse-wire-format,SSE wire format>> and <<basic-implementation,Basic implementation>> on this page.
+
+Conversations, actions, and Document Processing can stream a proposed modification as several `+modification-delta+` events. To join them, see xref:tinymceai-document-processing.adoc#fragments-in-a-stream[Fragments in a stream].
 
 [[sse-wire-format]]
 == SSE wire format
@@ -39,7 +42,19 @@ event: <event-name-2>
 data: <data2>
 ....
 
+In version 1.1 reply streams, events also carry an SSE event ID on an `+id:+` line. To resume the stream, record the ID of the last event processed. See <<resumable-streams,Resumable reply streams>>.
+
 Parsing this format correctly (including chunk boundaries, multi-line `+data:+` fields, and comments) is easy to get wrong in hand-written loops. For production code, use a maintained SSE parser such as the https://www.npmjs.com/package/eventsource-parser[`eventsource-parser`] package.
+
+[[resumable-streams]]
+=== Resumable reply streams
+
+Version 1.1 of the conversation message endpoints, under `+/v1.1+`, makes the reply stream more resilient. When replay is available for a reply, a client can:
+
+* https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages-V1.1/operation/resumeStream[Resume an interrupted reply] with `+GET /v1.1/conversations/{conversationId}/messages/{messageId}/stream+`. The `+messageId+` comes from the `+message-metadata+` event of the reply stream. Set `+lastEventId+` to the ID of the last SSE event the client processed, or to `+0-0+` to replay the whole reply.
+* https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages-V1.1/operation/cancelStream[Cancel a reply in progress] with `+DELETE+` on the same path. The stored message status becomes `+cancelled+`. Resuming a cancelled reply ends with a final `+error+` event that closes the stream.
+
+Some replies stream without replay support. The reply still streams, but the resume and cancel operations are not available for it. For the request that starts a version 1.1 reply, see https://tinymceai.api.tiny.cloud/v1/docs#tag/Conversation-Messages-V1.1/operation/createMessageV2[Send a message (V1.1)].
 
 [[basic-implementation]]
 == Basic implementation
@@ -65,15 +80,16 @@ const parser = createParser({
   onEvent: (event) => {
     // event.event is the SSE event name
     // event.data is the reassembled data string for this event
-    const payload = JSON.parse(event.data);
+    // Some events, such as web-search and reasoning, have an empty data line
+    const payload = event.data ? JSON.parse(event.data) : null;
 
     switch (event.event) {
       case 'error':
-        console.error('Error:', payload.message);
+        console.error('Error:', payload?.message);
         break;
       default:
         // Handle all other events — event names vary by API; see
-        // https://tinymceai.api.tiny.cloud/docs for each operation's schema.
+        // https://tinymceai.api.tiny.cloud/v1/docs for each operation's schema.
         // Examples: Conversations (text-delta, source, reasoning, modification-delta),
         // Reviews (review-delta, review-metadata), Actions (modification-delta, action-metadata)
         console.log('Event:', event.event, payload);
@@ -94,6 +110,8 @@ while (true) {
 [[error-handling]]
 == Error handling
 
+A request that the service rejects before the stream opens returns an HTTP error status with the JSON body described in xref:tinymceai-api-overview.adoc#error-responses[Error responses]. Errors after the stream opens arrive as an `+error+` event.
+
 Always handle errors gracefully:
 
 [source,javascript]
@@ -107,12 +125,12 @@ if (event.event === 'error') {
 [[progress-tracking]]
 == Progress tracking
 
-Use metadata events to show progress. Event names and fields for review streaming are defined in the https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] operations that return SSE responses, not in the Review plugin overview.
+Use metadata events to show progress. Event names and fields for review streaming are defined in the https://tinymceai.api.tiny.cloud/v1/docs#tag/Reviews[Reviews API] operations that return SSE responses, not in the Review plugin overview.
 
 [[api-reference]]
 == API reference
 
-The https://tinymceai.api.tiny.cloud/docs[interactive API documentation] describes streaming endpoints, event shapes, and errors for each feature area.
+The https://tinymceai.api.tiny.cloud/v1/docs[interactive API documentation] describes streaming endpoints, event shapes, and errors for each feature area.
 
 [[next-steps]]
 == Next steps

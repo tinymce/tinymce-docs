@@ -1,17 +1,17 @@
 = Connecting AI coding agents to the {productname} documentation
 :navtitle: Connect AI agents to the documentation
-:description: Give AI coding agents access to the {productname} documentation through the documentation MCP server, Context7, markdown pages, and llms.txt files.
+:description: Give AI coding agents access to the {productname} documentation through the documentation MCP server, Context7, markdown pages, AGENTS.md, and llms.txt files.
 :description_short: Give AI coding agents access to the {productname} documentation.
-:keywords: ai, mcp, model context protocol, coding agent, claude code, cursor, codex, copilot, visual studio code, context7, llms.txt, markdown
+:keywords: ai, mcp, model context protocol, coding agent, claude code, cursor, codex, copilot, visual studio code, context7, llms.txt, llms-full.txt, agents.md, sitemap.md, changes.json, markdown manifest, markdown
 
 An AI coding agent works from its training data unless it is given something better. This page describes four ways to put the current {productname} documentation in front of an agent. They are alternatives rather than steps, and any of them can be used together. Each applies to any {productname} installation, whether it is served from the {cloudname} or self-hosted.
 
 * xref:#connect-the-documentation-mcp-server[{productname} documentation MCP server] -- a hosted https://modelcontextprotocol.io/[Model Context Protocol] (MCP) server that serves this documentation and nothing else. Suits any agent that supports MCP.
 * xref:#context7[Context7] -- a general-purpose documentation MCP server that also indexes the {productname} documentation. Suits an agent already using Context7 for other libraries.
 * xref:#read-the-documentation-as-markdown[Markdown pages] -- every documentation page is also published as markdown at its own URL. Suits an agent without MCP support, or a prompt that already names the page.
-* xref:#llms-txt-files[`+llms.txt+` files] -- two plain text summaries of the whole documentation set, for an agent that accepts a single bulk reference.
+* xref:#llms-txt-files[Documentation files for AI tools] -- `+AGENTS.md+`, `+llms.txt+`, `+llms-full.txt+`, and index files that let an agent find, size, and cite pages. Suits an agent that reads the documentation directly, or accepts a single bulk reference.
 
-TIP: To add {productname} to a project with an AI coding agent, see the xref:cloud-quick-start-ai.adoc[{cloudname} AI quick start guide].
+TIP: To add {productname} to a project with an AI coding agent, see the xref:cloud-quick-start-ai.adoc[{cloudname} AI quick start guide]. To teach an agent how to install, configure, upgrade, and troubleshoot {productname} in any project, see xref:tinymce-agent-skill.adoc[Using the {productname} agent skill].
 
 [[connect-the-documentation-mcp-server]]
 == Connect the {productname} documentation MCP server
@@ -182,24 +182,38 @@ Markdown is available for every documented version of {productname}, not only th
 https://www.tiny.cloud/docs/tinymce/7/basic-setup/index.md
 ----
 
-The current major version is always served from `+latest+`. A request for that version by number, such as `+/docs/tinymce/{productmajorversion}/basic-setup/index.md+`, redirects to its `+latest+` address, so an agent retrieving markdown by version number needs to follow redirects. Earlier versions are served directly.
+The current major version is always served from `+latest+`. A request for that version by number, such as `/docs/tinymce/{productmajorversion}/basic-setup/index.md`, redirects to its `+latest+` address, so an agent retrieving markdown by version number needs to follow redirects. Earlier versions are served directly.
+
+Each markdown page starts with front matter that records the page's title, description, canonical address, markdown address, version, last updated date, and token count, so an agent can cite the page and the version it describes.
 
 Each page also includes a *Copy Markdown* button next to the page title, which copies the markdown URL of the current page to the clipboard for pasting into an agent prompt.
 
 [[llms-txt-files]]
-== llms.txt files
+== Documentation files for AI tools
 
-Two plain text files provide the documentation set for agents that accept a single bulk reference. Both files cover the latest release:
+The documentation publishes a set of files for agents and tools that read it directly. Start with `+AGENTS.md+`, which explains how to use the others.
 
 [cols="1,3",options="header"]
 |===
 |File |Contents
 
+|https://www.tiny.cloud/docs/AGENTS.md[`+AGENTS.md+`]
+|A one-page guide for AI agents: the license key requirement, how versions work, how to retrieve any page as markdown and cite it, and how to choose pages without reading everything.
+
 |https://www.tiny.cloud/docs/llms.txt[`+llms.txt+`]
-|A concise overview of {productname}, with key links and code examples.
+|A concise overview of {productname}, with key links and setup examples. It states which versions it covers and links to the other files in this table.
 
 |https://www.tiny.cloud/docs/llms-full.txt[`+llms-full.txt+`]
-|The full content of every documentation page, grouped by topic, with each page's URL and last updated date.
+|The full content of every {productname} {productmajorversion} page in one file, grouped by topic, with each page's URL and last updated date.
+
+|https://www.tiny.cloud/docs/sitemap.md[`+sitemap.md+`]
+|The navigation tree of the {productname} {productmajorversion} documentation, with each page's description and last updated date, for finding the right page.
+
+|https://www.tiny.cloud/docs/_markdown-manifest.json[`+_markdown-manifest.json+`]
+|Every page on every version, with its title, description, markdown URL, last updated date, and token count, for estimating the size of a fetch before making it. The file is large: filter it in code rather than reading it whole.
+
+|https://www.tiny.cloud/docs/changes.json[`+changes.json+`]
+|The 500 most recently changed pages, newest first, for refreshing a cached copy of the documentation without reading every page again.
 |===
 
 [[feedback]]

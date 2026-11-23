@@ -162,7 +162,7 @@ include::partial$misc/admon-requires-8.11v.adoc[]
 
 By default, AI Chat and AI Review open in an editor sidebar. In decoupled mode, the two apps, AI Chat and AI Review, render inside an element on the page instead, outside the editor. Use decoupled mode to place the AI interface in a panel or layout that the application provides.
 
-To turn on decoupled mode, set xref:#tinymceai_decoupled_container[`+tinymceai_decoupled_container+`] to a CSS selector that matches one element on the page, and give that element a width and a height. The plugin does not add a border around AI Chat and AI Review in decoupled mode. To separate the apps from the rest of the page, add a border to the element. The border in the example below matches the default editor border. To open AI Chat or AI Review when the editor initializes, set xref:#tinymceai_decoupled_show[`+tinymceai_decoupled_show+`].
+To turn on decoupled mode, set xref:#tinymceai_decoupled_container[`+tinymceai_decoupled_container+`] to a CSS selector that matches one element on the page, and give that element a width and a height. The plugin does not add a border around AI Chat and AI Review in decoupled mode. To separate the apps from the rest of the page, add a border to the element. To open AI Chat or AI Review when the editor initializes, set xref:#tinymceai_decoupled_show[`+tinymceai_decoupled_show+`].
 
 [source,html]
 ----

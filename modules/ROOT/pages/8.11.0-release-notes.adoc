@@ -87,9 +87,7 @@ In {productname} {release-version}, the new xref:tinymceai.adoc#tinymceai_decoup
 ==== Added `+tinymceai_decoupled_show+` option to set the initial view
 // #TINYMCE-15032
 
-Previously, the core xref:customsidebar.adoc#sidebar_show[`+sidebar_show+`] option could open an AI sidebar when the editor loaded, but no option opened AI Chat or AI Review in decoupled mode.
-
-In {productname} {release-version}, the new xref:tinymceai.adoc#tinymceai_decoupled_show[`+tinymceai_decoupled_show+`] option opens AI Chat or AI Review in the element set by `+tinymceai_decoupled_container+` when the editor initializes.
+In {productname} {release-version}, the new xref:tinymceai.adoc#tinymceai_decoupled_show[`+tinymceai_decoupled_show+`] option opens AI Chat or AI Review in the element set by `+tinymceai_decoupled_container+` when the editor initializes. In decoupled mode, use this option in place of the core xref:customsidebar.adoc#sidebar_show[`+sidebar_show+`] option.
 
 ==== New `+TinyMCEAIPreview+` query command state to check whether an editor has a preview of AI suggestions open
 // #TINYMCE-15033

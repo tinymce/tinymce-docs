@@ -75,6 +75,8 @@ With the floating sidebar, when any editor in the group has pending suggestions,
 
 If the user confirms, the plugin discards the suggestions in every editor of the group, resets the changes already applied, and returns each editor to normal editing. If the user cancels, the plugin keeps every preview and pending suggestion.
 
+In xref:tinymceai.adoc#decoupled-mode[decoupled mode], the confirmation dialog does not appear. When the user switches between AI Chat and AI Review, the plugin discards the pending suggestions without asking.
+
 [[integration]]
 == Integration
 

@@ -128,7 +128,26 @@ For information on the **Image Editing** plugin, see: xref:editimage.adoc[Image 
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following fixes and additions and improvements.
+**TinyMCE AI** includes the following fixe and additions and improvements.
+
+==== Added new `+tinymceai_decoupled_container+` option to render AI Chat and AI Review in an element provided by a CSS selector
+// #TINYMCE-15031
+
+Previously, the **TinyMCE AI** plugin always rendered AI Chat and AI Review in an editor sidebar, either static or floating. Applications that have their own panel or layout for the AI interface could not render AI Chat and AI Review there.
+
+In {productname} {release-version}, the new xref:tinymceai.adoc#tinymceai_decoupled_container[`+tinymceai_decoupled_container+`] option turns on xref:tinymceai.adoc#decoupled-mode[decoupled mode]. The option takes a CSS selector, and the plugin renders AI Chat and AI Review inside the matching element instead of in a sidebar. The new xref:tinymceai.adoc#tinymceai-toggling-apps-decoupled[`+TinyMCEAIToggleApp+`] command opens and closes AI Chat and AI Review in that element, and the matching `+TinyMCEAIToggleApp+` event reports each change. Decoupled mode also works with xref:tinymceai-multi-editor.adoc#decoupled-mode-group[multi-editor groups].
+
+==== Added `+tinymceai_decoupled_show+` option to set the initial view
+// #TINYMCE-15032
+
+In {productname} {release-version}, the new xref:tinymceai.adoc#tinymceai_decoupled_show[`+tinymceai_decoupled_show+`] option opens AI Chat or AI Review in the element set by `+tinymceai_decoupled_container+` when the editor initializes. In decoupled mode, use this option in place of the core xref:customsidebar.adoc#sidebar_show[`+sidebar_show+`] option.
+
+==== New `+TinyMCEAIPreview+` query command state to check whether an editor has a preview of AI suggestions open
+// #TINYMCE-15033
+
+Previously, integrations had no public way to check whether an editor showed a preview of AI suggestions that the user had not yet resolved.
+
+In {productname} {release-version}, `+queryCommandState('TinyMCEAIPreview')+` returns `+true+` while the editor shows a preview of AI suggestions to resolve. For details, see xref:tinymceai.adoc#tinymceai-preview-state[Checking for an open preview].
 
 ==== Adding a corrupt file as a context source now shows a message saying the file could not be processed, instead of the generic upload error
 // #TINYMCE-14815

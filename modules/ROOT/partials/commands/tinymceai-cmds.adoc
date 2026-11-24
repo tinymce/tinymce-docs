@@ -52,13 +52,43 @@ tinymce.activeEditor.execCommand('TinyMCEAIToggleApp', false, 'tinymceai-review'
 tinymce.activeEditor.queryCommandValue('TinyMCEAIToggleApp');
 ----
 
+The following example shows the application panel only while AI Chat or AI Review is open. The plugin does not style the `+is-open+` class. The application CSS hides the panel, then shows it with a set width and height while the class is present.
+
 .Example: showing an application panel only while an app is open
+[source,html]
+----
+<style>
+  /* Hidden until an app opens */
+  #ai-panel {
+    display: none;
+    width: 400px;
+    height: 600px;
+    box-sizing: border-box;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  /* Shown while AI Chat or AI Review is open */
+  #ai-panel.is-open {
+    display: block;
+  }
+</style>
+
+<div style="display: flex; gap: 16px;">
+  <div style="flex: 1;">
+    <textarea></textarea>
+  </div>
+  <div id="ai-panel"></div>
+</div>
+----
+
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to the HTML
   plugins: 'tinymceai',
   toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  height: 600,
   tinymceai_decoupled_container: '#ai-panel', // change this value according to the HTML
   // Required for authentication
   tinymceai_token_provider: () => {

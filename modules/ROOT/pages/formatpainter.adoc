@@ -48,6 +48,17 @@ The format painter operates in two modes, one for retrieval and one for applicat
 
 *Result*: The formatting from the source content is applied to the goal content.
 
+*Usage with toolbar button in sticky mode*
+
+Sticky mode keeps the format painter active to apply the same formatting to several pieces of content.
+
+. Position the cursor at the source content to retrieve the formatting.
+. Double-click the *Format Painter* button to copy the formatting and turn on sticky mode.
+. Select each piece of goal content to apply the formatting.
+. Click the *Format Painter* button or press `+Esc+` to turn off sticky mode.
+
+*Result*: The formatting from the source content is applied to each piece of goal content.
+
 *Usage with keyboard*
 
 . Position the cursor at the source content to retrieve formatting.

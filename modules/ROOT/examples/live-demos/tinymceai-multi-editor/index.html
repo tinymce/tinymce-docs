@@ -1,9 +1,19 @@
 <style>
   /* Hide the empty icon slot so the welcome action buttons show text only. */
   .tox .tox-ai .tox-ai-chat-action-button .tox-icon:empty { display: none; }
+  /* Keep the AI panel next to the editors. Stack it below them only on narrow screens. */
+  .tinymceai-multi-editor-layout { display: flex; gap: 16px; align-items: flex-start; }
+  .tinymceai-multi-editor-editors { flex: 1 1 auto; min-width: 0; }
+  #tinymceai-multi-editor-panel { flex: 0 0 300px; height: 654px; box-sizing: border-box; border: 2px solid #eee; border-radius: 10px; overflow: hidden; }
+  @media (max-width: 600px) {
+    .tinymceai-multi-editor-layout { flex-direction: column; align-items: stretch; }
+    #tinymceai-multi-editor-panel { flex-basis: auto; }
+  }
 </style>
 
 <h3>Role description</h3>
+<div class="tinymceai-multi-editor-layout">
+<div class="tinymceai-multi-editor-editors">
 <textarea id="tinymceai-multi-editor-role-description">
 <h2>Senior product designer, Berlin</h2>
 <p>We’re looking for a strong designer to join our young and fast-moving team shaping the editing experience end to end. You’ll own flows from first sketch to shipped release, working next to engineers and researchers.</p>
@@ -18,9 +28,6 @@
   <li>How do you work with engineering when a constraint appears mid-build?</li>
 </ol>
 </textarea>
-
-<h3>Notes for HR</h3>
-<textarea id="tinymceai-multi-editor-notes-for-hr">
-<p>Schedule the portfolio review before the panel so feedback arrives in time.</p>
-<p>Keep the take-home optional.</p>
-</textarea>
+</div>
+<div id="tinymceai-multi-editor-panel"></div>
+</div>

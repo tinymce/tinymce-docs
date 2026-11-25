@@ -19,7 +19,89 @@ tinymce.activeEditor.execCommand('ToggleSidebar', false, 'tinymceai-chat');
 tinymce.activeEditor.execCommand('ToggleSidebar', false, 'tinymceai-review');
 ----
 
-NOTE: These commands work regardless of xref:tinymceai.adoc#tinymceai_sidebar_type[`tinymceai_sidebar_type`] (`+'static'+` or `+'floating'+`). The `+ToggleSidebar+` event and `+queryCommandValue('ToggleSidebar')+` also behave the same for both sidebar types.
+NOTE: These commands work regardless of xref:tinymceai.adoc#tinymceai_sidebar_type[`tinymceai_sidebar_type`] (`+'static'+` or `+'floating'+`). The `+ToggleSidebar+` event and `+queryCommandValue('ToggleSidebar')+` also behave the same for both sidebar types. In xref:tinymceai.adoc#decoupled-mode[decoupled mode], use the <<tinymceai-toggling-apps-decoupled,`+TinyMCEAIToggleApp+`>> command instead.
+
+[[tinymceai-toggling-apps-decoupled]]
+== Toggling AI Chat and AI Review in decoupled mode
+
+include::partial$misc/admon-requires-8.11v.adoc[]
+
+In xref:tinymceai.adoc#decoupled-mode[decoupled mode], the `+TinyMCEAIToggleApp+` command opens or closes AI Chat or AI Review in the element set by xref:tinymceai.adoc#tinymceai_decoupled_container[`+tinymceai_decoupled_container+`]. The plugin registers this command only in decoupled mode. Pass the app identifier as the third argument:
+
+[cols="1,3",options="header"]
+|===
+|Value |Effect
+|`+'tinymceai-chat'+` |Opens AI Chat, or closes it when it is already open.
+|`+'tinymceai-review'+` |Opens AI Review, or closes it when it is already open.
+|Any other value |Does nothing. The value is case sensitive, so a missing value, an empty string, an unknown identifier, or different capitalization has no effect.
+|===
+
+`+queryCommandValue('TinyMCEAIToggleApp')+` returns the identifier of the open app, or an empty string when neither app is open. It is the decoupled mode equivalent of `+queryCommandValue('ToggleSidebar')+`.
+
+Each time `+TinyMCEAIToggleApp+` runs with a valid value, the editor fires a `+TinyMCEAIToggleApp+` event, whether the command opens, closes, or switches an app. The event has no data. To read the new state, call `+queryCommandValue('TinyMCEAIToggleApp')+` in the event handler. The editor does not fire the event for the app opened by xref:tinymceai.adoc#tinymceai_decoupled_show[`+tinymceai_decoupled_show+`].
+
+In a xref:tinymceai-multi-editor.adoc[multi-editor group], the plugin registers the command and fires the event on the first editor created in the group. Run the command, query the value, and listen for the event on that editor.
+
+.Examples
+[source,js]
+----
+// Open AI Review, or close it if it is already open
+tinymce.activeEditor.execCommand('TinyMCEAIToggleApp', false, 'tinymceai-review');
+
+// Returns 'tinymceai-chat', 'tinymceai-review', or '' when neither app is open
+tinymce.activeEditor.queryCommandValue('TinyMCEAIToggleApp');
+----
+
+The following example shows the application panel only while AI Chat or AI Review is open. The plugin does not style the `+is-open+` class. The application CSS hides the panel, then shows it with a set width and height while the class is present.
+
+.Example: showing an application panel only while an app is open
+[source,html]
+----
+<style>
+  /* Hidden until an app opens */
+  #ai-panel {
+    display: none;
+    width: 400px;
+    height: 600px;
+    box-sizing: border-box;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  /* Shown while AI Chat or AI Review is open */
+  #ai-panel.is-open {
+    display: block;
+  }
+</style>
+
+<div style="display: flex; gap: 16px;">
+  <div style="flex: 1;">
+    <textarea></textarea>
+  </div>
+  <div id="ai-panel"></div>
+</div>
+----
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to the HTML
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  height: 600,
+  tinymceai_decoupled_container: '#ai-panel', // change this value according to the HTML
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  },
+  setup: (editor) => {
+    editor.on('TinyMCEAIToggleApp', () => {
+      const openApp = editor.queryCommandValue('TinyMCEAIToggleApp');
+      document.querySelector('#ai-panel').classList.toggle('is-open', openApp !== '');
+    });
+  }
+});
+----
 
 [[tinymceai-plugin-commands]]
 == TinyMCE AI plugin commands
@@ -57,6 +139,7 @@ The xref:tinymceai.adoc[`tinymceai`] plugin registers the following editor comma
 |`+TinyMCEAIReviewToneConfident+` | |Runs the **Adjust tone and style** review with the **Confident** tone.
 |`+TinyMCEAIReviewToneProfessional+` | |Runs the **Adjust tone and style** review with the **Professional** tone.
 |`+TinyMCEAIReviewCustom+` |`+String+`, `+{ prompt, model, name }+`, or `+{ id, value }+` |Runs a review from a custom prompt, or runs an xref:tinymceai.adoc#integrator-defined-reviews[integrator-defined review] by identifier. See <<tinymceai-review-custom-values,Values for `+TinyMCEAIReviewCustom+`>>.
+|`+TinyMCEAIDiscardSuggestions+` | |Discards the AI suggestions previewed in the editor without applying them. See <<tinymceai-discard-suggestions,Discarding previewed suggestions>>.
 |===
 
 Each `+TinyMCEAIReview…+` command opens the Review sidebar and runs the review, with the same result as selecting that review in the sidebar. Running a review command while another review is in progress stops the earlier review and starts the requested one.
@@ -92,6 +175,22 @@ tinymce.activeEditor.execCommand('TinyMCEAIChatPrompt', false, {
 tinymce.activeEditor.execCommand('TinyMCEAIReviewProofread');
 
 tinymce.activeEditor.execCommand('TinyMCEAIReviewToneProfessional');
+----
+
+[[tinymceai-preview-state]]
+=== Checking for an open preview
+
+include::partial$misc/admon-requires-8.11v.adoc[]
+
+`+queryCommandState('TinyMCEAIPreview')+` returns `+true+` when the editor shows a preview of AI suggestions that the user has not yet resolved, and `+false+` otherwise. A preview that is still loading does not count, and the state returns to `+false+` after the user applies or discards the suggestions.
+
+In a xref:tinymceai-multi-editor.adoc[multi-editor group], each editor reports only its own preview. To check whether any editor in a group shows a preview, query each editor in the group.
+
+[source,js]
+----
+if (tinymce.activeEditor.queryCommandState('TinyMCEAIPreview')) {
+  console.log('The editor has AI suggestions to resolve.');
+}
 ----
 
 [[tinymceai-review-custom-values]]
@@ -135,3 +234,24 @@ tinymce.activeEditor.execCommand('TinyMCEAIReviewCustom', false, {
 ----
 
 When the value does not match any of these forms, {productname} logs an error to the browser console and runs no review. This also applies when the prompt or identifier is blank, when no integrator-defined review matches the identifier, when a `+list+` review value is not one of its options, and when an `+input+` review is run without a value.
+
+[[tinymceai-discard-suggestions]]
+=== Discarding previewed suggestions
+
+include::partial$misc/admon-requires-8.11v.adoc[]
+
+The `+TinyMCEAIDiscardSuggestions+` command discards the AI suggestions previewed in the editor, such as changes proposed in Chat or Review, without applying any of them. The editor keeps the content it had before the preview. If the editor mode changed while the preview was open, the command restores the mode the editor had before the preview. The command takes no third argument.
+
+In a xref:tinymceai-multi-editor.adoc[multi-editor group], the command discards only the suggestions of the editor it runs on. The previews in the other editors of the group stay open, and the Review sidebar keeps the suggestions from those previews. To discard the suggestions of the whole group, run the command on each editor in the group.
+
+.Example: discarding the suggestions previewed in every editor of a group
+[source,js]
+----
+tinymce.get()
+  .filter((editor) => editor.options.get('tinymceai_group') === 'my-group')
+  .forEach((editor) => {
+    if (editor.queryCommandState('TinyMCEAIPreview')) {
+      editor.execCommand('TinyMCEAIDiscardSuggestions');
+    }
+  });
+----

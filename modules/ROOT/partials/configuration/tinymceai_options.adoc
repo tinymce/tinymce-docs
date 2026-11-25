@@ -152,6 +152,74 @@ tinymce.init({
 Changing this property dynamically (after the editor has been initialized) is not supported and can result in unpredictable behavior.
 ====
 
+[[tinymceai_decoupled_container]]
+=== `+tinymceai_decoupled_container+`
+
+include::partial$misc/admon-requires-8.11v.adoc[]
+
+Turns on xref:tinymceai.adoc#decoupled-mode[decoupled mode]. The value is a CSS selector that must match exactly one element on the page. AI Chat and AI Review render inside that element instead of in an editor sidebar.
+
+When this option is set, the plugin registers no AI sidebars and ignores the xref:tinymceai.adoc#tinymceai_sidebar_type[`+tinymceai_sidebar_type+`] option. When the selector matches no element, matches more than one element, or is not a valid CSS selector, {productname} logs a warning to the browser console and the plugin does not render AI Chat or AI Review.
+
+The element must be on the page when the editor initializes. When the editor is removed, the plugin removes AI Chat and AI Review from the element, and the element stays on the page.
+
+For grouped editors, see xref:tinymceai-multi-editor.adoc#decoupled-mode-group[Grouped editors in decoupled mode].
+
+*Type:* `+String+`
+
+*Default value:* `+undefined+`
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to the HTML
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_decoupled_container: '#ai-panel', // change this value according to the HTML
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  }
+});
+----
+
+[NOTE]
+====
+Set this option in the initial configuration of the editor. Changing this option after the editor initializes is not supported.
+====
+
+[[tinymceai_decoupled_show]]
+=== `+tinymceai_decoupled_show+`
+
+include::partial$misc/admon-requires-8.11v.adoc[]
+
+Opens AI Chat or AI Review in the element set by xref:tinymceai.adoc#tinymceai_decoupled_container[`+tinymceai_decoupled_container+`] when the editor initializes. This option is the decoupled mode equivalent of the core xref:customsidebar.adoc#sidebar_show[`+sidebar_show+`] option.
+
+The value is case insensitive. When the value is not valid, {productname} logs a warning to the browser console and the plugin opens neither app. The plugin ignores this option when `+tinymceai_decoupled_container+` is not set.
+
+*Type:* `+String+`
+
+*Possible values:* `+'tinymceai-chat'+`, `+'tinymceai-review'+`
+
+*Default value:* `+undefined+`
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to the HTML
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_decoupled_container: '#ai-panel', // change this value according to the HTML
+  tinymceai_decoupled_show: 'tinymceai-chat',
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  }
+});
+----
+
 [[tinymceai_default_model]]
 === `+tinymceai_default_model+`
 
@@ -370,9 +438,9 @@ Each item in the array is one of the following:
 * A `+String+`, or an object with a `+text+` property (`+{ text: 'string' }+`), shown as descriptive text.
 * An action object, shown as a clickable button, with the following properties:
 ** `+title+` (`+String+`): The label shown on the button.
-** `+command+` (`+String+`): The editor command run when the button is selected. The command runs without moving focus into the editor, so the editor scroll position is preserved. This can be a Quick Action or Chat command, the core `+ToggleSidebar+` command, or any other registered editor command, such as `+Bold+`. For the AI command names, see xref:editor-command-identifiers.adoc#tinymceai[TinyMCE AI].
-** `+value+` (optional): The argument passed to the command. The accepted value matches the command, for example a language label for `+TinyMCEAIQuickActionTranslate+`, a `+{ prompt, displayedPrompt }+` object for `+TinyMCEAIChatPrompt+`, or a sidebar name such as `+'tinymceai-review'+` for `+ToggleSidebar+`.
-** `+icon+` (optional `+String+`): The name of the icon shown on the button, using any editor icon identifier. When omitted, an icon is selected automatically based on the command.
+** `+command+` (`+String+`): The editor command run when the button is selected. The command runs without moving focus into the editor, so the editor scroll position is preserved. This can be a Quick Action or Chat command, the core `+ToggleSidebar+` command (or `+TinyMCEAIToggleApp+` in xref:tinymceai.adoc#decoupled-mode[decoupled mode]), or any other registered editor command, such as `+Bold+`. For the AI command names, see xref:editor-command-identifiers.adoc#tinymceai[TinyMCE AI].
+** `+value+` (optional): The argument passed to the command. The accepted value matches the command, for example a language label for `+TinyMCEAIQuickActionTranslate+`, a `+{ prompt, displayedPrompt }+` object for `+TinyMCEAIChatPrompt+`, or an identifier such as `+'tinymceai-review'+` for `+ToggleSidebar+` or `+TinyMCEAIToggleApp+`.
+** `+icon+` (optional `+String+`): The name of the icon shown on the button, using any editor icon identifier. When omitted, an icon is selected automatically based on the command. For a `+ToggleSidebar+` action, the automatic icon matches the sidebar. For a `+TinyMCEAIToggleApp+` action, set `+icon+`, for example to `+'ai-review'+`, because the automatic icon does not match the app.
 
 Text items and action buttons can be interleaved to group related actions under short headings.
 
@@ -902,7 +970,7 @@ include::partial$misc/admon-requires-8.10v.adoc[]
 [[tinymceai_group]]
 === `+tinymceai_group+`
 
-Adds the editor to a named group. Editors on the same page with the same `+tinymceai_group+` value share one Chat sidebar and one Review sidebar. In a group, Chat, Review, and Quick Actions work across the content of every editor. The editor created first in the group hosts the shared sidebars.
+Adds the editor to a named group. Editors on the same page with the same `+tinymceai_group+` value share one Chat sidebar and one Review sidebar. In a group, Chat, Review, and Quick Actions work across the content of every editor. The editor created first in the group hosts the shared sidebars, or the shared AI Chat and AI Review in xref:tinymceai.adoc#decoupled-mode[decoupled mode].
 
 The plugin uses the group name only to match editors, and never shows the name to users or sends it to the AI service. A page can contain several independent groups, each with a different name. Editors in one group never receive content from another group.
 

@@ -11,18 +11,17 @@
     <span class="demo-guide__tier">Editor setup</span>
   </div>
   <div class="demo-guide__body">
-    <p class="demo-guide__task">These podcast show notes list three timestamps as plain paragraphs. Turn them into a numbered list, link the events calendar, and check the HTML the editor produces.</p>
+    <p class="demo-guide__task">The editor starts with one line, "Hello, World!", where "Hello" is italic and "World!" is bold and underlined. Change its formatting and check the HTML the editor produces.</p>
     <ol class="demo-guide__steps">
-      <li>Select the three timestamp lines under <strong>In this episode</strong> and select <span class="demo-ui">Numbered list</span>. Toolbar buttons that do not fit are under <span class="demo-ui">Reveal or hide additional toolbar items</span> (<strong>&#8230;</strong>) at the end of the toolbar.</li>
-      <li>Select "Eastside Library events calendar", select <span class="demo-ui">Insert/edit link</span>, enter <code>https://www.example.com/events</code> in the <span class="demo-ui">URL</span> field, and select <span class="demo-ui">Save</span>.</li>
-      <li>Select <span class="demo-ui">View HTML Output</span> below the editor. The output now has an <code>&lt;ol&gt;</code> with three <code>&lt;li&gt;</code> items and two links under <strong>Links from the show</strong>.</li>
+      <li>Select <span class="demo-ui">View HTML Output</span> below the editor. The output shows how the editor stores the line: <code>&lt;em&gt;</code> around "Hello", and <code>&lt;strong&gt;</code> inside an underlined <code>&lt;span&gt;</code> around "World!".</li>
+      <li>Select "Hello" and select <span class="demo-ui">Bold</span>. Then open the <span class="demo-ui">Paragraph</span> list on the toolbar and select <span class="demo-ui">Heading 1</span>.</li>
+      <li>Select <span class="demo-ui">View HTML Output</span> again. The line is now an <code>&lt;h1&gt;</code>, and "Hello" is also wrapped in <code>&lt;strong&gt;</code>.</li>
     </ol>
   </div>
   <details class="demo-guide__config">
     <summary class="demo-guide__label">Configured in this demo</summary>
     <ul class="demo-guide__options">
       <li><code>toolbar</code> adds <span class="demo-ui">Underline</span>, <span class="demo-ui">Insert/edit link</span>, and <span class="demo-ui">Insert/edit image</span> to the standard buttons.</li>
-      <li><code>height: 760</code> fits the show notes without scrolling.</li>
       <li>The <span class="demo-ui">View HTML Output</span> button is page code outside the editor. It calls <code>tinymce.get('default-editor').getContent()</code> and prints the result.</li>
     </ul>
   </details>

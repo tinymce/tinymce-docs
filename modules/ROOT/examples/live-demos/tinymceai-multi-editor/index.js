@@ -77,7 +77,7 @@ const sharedSettings = {
       title: 'Flag any unclear or biased wording',
       command: 'TinyMCEAIChatPrompt',
       value: {
-        prompt: 'Check both sections of this hiring pack for unclear or biased wording. For each phrase, explain the problem and suggest clearer, more inclusive wording.',
+        prompt: 'Check both sections of this hiring pack for unclear or biased wording. For each phrase, explain the problem and suggest clearer, more inclusive wording. Answer as a short bulleted list, not a table.',
         displayedPrompt: 'Flag any unclear or biased wording'
       },
       icon: 'no-icon'
@@ -151,7 +151,7 @@ const sharedSettings = {
 tinymce.init({
   ...sharedSettings,
   selector: 'textarea#tinymceai-multi-editor-role-description',
-  height: '270px',
+  height: '400px',
   revisionhistory_fetch: createRevisionHistoryFetch('textarea#tinymceai-multi-editor-role-description'),
   tinymceai_group: 'hiring-pack',
   tinymceai_document_name: 'Role description',
@@ -161,7 +161,7 @@ tinymce.init({
 tinymce.init({
   ...sharedSettings,
   selector: 'textarea#tinymceai-multi-editor-interview-questions',
-  height: '340px',
+  height: '300px',
   revisionhistory_fetch: createRevisionHistoryFetch('textarea#tinymceai-multi-editor-interview-questions'),
   tinymceai_group: 'hiring-pack',
   tinymceai_document_name: 'Interview questions',

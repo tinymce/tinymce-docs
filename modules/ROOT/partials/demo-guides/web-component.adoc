@@ -14,7 +14,7 @@
     <p class="demo-guide__task">This volunteer guide is edited in a <code>tinymce-editor</code> element. Every option is an HTML attribute, and the initial content is escaped HTML inside the element. The cleanup shift now ends at 2:30 PM: update the shift table.</p>
     <ol class="demo-guide__steps">
       <li>In the <strong>Shift times</strong> table, change the Cleanup time to <code>12:30 PM to 2:30 PM</code>.</li>
-      <li>Select the three steps under <strong>Before your first shift</strong> and select <span class="demo-ui">Bullet list</span> to switch them from a numbered list. Toolbar buttons that do not fit are under <span class="demo-ui">Reveal or hide additional toolbar items</span> (<strong>&#8230;</strong>) at the end of the toolbar.</li>
+      <li>Select the three steps under <strong>Before your first shift</strong> and select <span class="demo-ui">Bullet list</span> to switch them from a numbered list. When the toolbar is too narrow to show <span class="demo-ui">Bullet list</span>, select <span class="demo-ui">Reveal or hide additional toolbar items</span> at the end of the toolbar first.</li>
       <li>Open the <span class="demo-ui">HTML</span> tab to compare each attribute with the editor it produces.</li>
     </ol>
   </div>

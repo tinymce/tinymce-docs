@@ -26,7 +26,7 @@ const sharedSettings = {
       title: 'Flag any unclear or biased wording',
       command: 'TinyMCEAIChatPrompt',
       value: {
-        prompt: 'Check both sections of this hiring pack for unclear or biased wording. For each phrase, explain the problem and suggest clearer, more inclusive wording.',
+        prompt: 'Check both sections of this hiring pack for unclear or biased wording. For each phrase, explain the problem and suggest clearer, more inclusive wording. Answer as a short bulleted list, not a table.',
         displayedPrompt: 'Flag any unclear or biased wording'
       },
       icon: 'no-icon'
@@ -82,7 +82,7 @@ const sharedSettings = {
 tinymce.init({
   ...sharedSettings,
   selector: 'textarea#tinymceai-multi-editor-role-description',
-  height: '270px',
+  height: '400px',
   tinymceai_group: 'hiring-pack',
   tinymceai_document_name: 'Role description',
   tinymceai_document_description: 'The job advert for the role: the job title and location, what the role involves, and the requirements for candidates.'
@@ -91,7 +91,7 @@ tinymce.init({
 tinymce.init({
   ...sharedSettings,
   selector: 'textarea#tinymceai-multi-editor-interview-questions',
-  height: '340px',
+  height: '300px',
   tinymceai_group: 'hiring-pack',
   tinymceai_document_name: 'Interview questions',
   tinymceai_document_description: 'The interview guide for the role: a heading followed by a numbered list of interview questions.'

@@ -20,10 +20,10 @@ tinymce.init({
     { name: 'none' }, // No filter applied
   ],
   a11y_advanced_options: true,
-  toolbar: 'undo redo | uploadcare | styles | bold italic underline | forecolor | ' +
-    'bullist numlist | link | code preview | blocks | backcolor | ' +
-    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
-    'removeformat | help',
+  toolbar: 'uploadcare link | ' +
+    'undo redo | blocks | bold italic underline forecolor backcolor | ' +
+    'alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | ' +
+    'code preview | removeformat | help',
   height: 700,	
   content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

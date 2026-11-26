@@ -1,10 +1,10 @@
 tinymce.init({
   selector: "textarea#uploadcare-documents",
   plugins: 'uploadcare link advlist autolink lists charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime table help wordcount',
-  toolbar: 'undo redo | styles | bold italic underline | forecolor | ' +
-    'bullist numlist | link uploadcare uploadcare-video | code preview | ' +
-    'blocks | backcolor | alignleft aligncenter alignright alignjustify | ' +
-    'outdent indent | removeformat | help',
+  toolbar: 'link uploadcare uploadcare-video | ' +
+    'undo redo | blocks | bold italic underline forecolor backcolor | ' +
+    'alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | ' +
+    'code preview | removeformat | help',
   uploadcare_public_key: '630992ad50fe2291c406',
   uploadcare_cdn_base_url: 'https://tiny.ucarecdn.com',
   uploadcare_store_type: 'temporary',

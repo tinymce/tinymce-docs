@@ -18,10 +18,10 @@ tinymce.init({
   fluid: true,
 },
   a11y_advanced_options: true,
-  toolbar: 'undo redo | styles | bold italic underline | forecolor | ' +
-    'bullist numlist | link uploadcare uploadcare-video | code preview | ' +
-    'blocks | backcolor | alignleft aligncenter alignright alignjustify | ' +
-    'outdent indent | removeformat | help',
+  toolbar: 'uploadcare-video uploadcare link | ' +
+    'undo redo | blocks | bold italic underline forecolor backcolor | ' +
+    'alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | ' +
+    'code preview | removeformat | help',
   height: 700,	
   content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

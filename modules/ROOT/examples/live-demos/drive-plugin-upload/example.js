@@ -1,6 +1,6 @@
 tinymce.init({
   selector: 'textarea#drive-upload-example',
-  height: 900,
+  height: 1000,
   plugins: [
     'tinydrive',
     'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',

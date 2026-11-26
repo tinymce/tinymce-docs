@@ -1,12 +1,16 @@
 tinymce.init({
   selector: 'textarea#anchor-demo',
-  height: 500,
+  height: 700,
   plugins: [
-    "advlist", "anchor", "autolink", "charmap", "code", "fullscreen",
-    "help", "image", "insertdatetime", "link", "lists", "media",
-    "preview", "searchreplace", "table", "visualblocks",
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
   ],
-  toolbar: "anchor |undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-  menubar: "file edit view insert format tools table help",
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  toolbar: 'anchor link | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'table | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  allow_html_in_named_anchor: true,
+  link_context_toolbar: true
 });

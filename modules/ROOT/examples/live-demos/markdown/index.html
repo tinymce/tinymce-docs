@@ -1,31 +1,53 @@
-<table>
-  <thead>
-    <tr>
-      <th style="width: 50%;"><h2>The Markdown Plugin</h2></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="width: 50%;">
-        <textarea class="markdown">
-          <h1>Markdown Premium Plugin</h1>
-          <p>The <strong>Markdown Premium Plugin</strong> enhances the functionality of the editor by allowing it to detect and convert pure markdown content on-paste.</p>
-          <h2><strong>Tips for Pasting Text</strong></h2>
-          <p>To paste text in plain form using keyboard shortcuts, use:</p>
-          <ul>
-          <li><strong>Windows:</strong> Ctrl+Shift+V</li>
-          <li><strong>Mac:</strong> Cmd+Shift+V</li>
-          </ul>
-          <h3>Paste Example</h3>
-          <p>Paste the following markdown into the editor using the above shortcuts:</p>
-          <p># H1</p>
-          <p>## H2</p>
-          <p>### H3</p>
-          <p>#### H4</p>
-          <p>##### H5</p>
-          <p>###### H6</p>
-        </textarea>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<textarea id="markdown">
+  <h1>Atlas CLI changelog</h1>
+  <p>All notable changes to Atlas CLI are listed here, newest first. Atlas follows <a href="https://semver.org/">semantic versioning</a>.</p>
+  <h2>3.2.0</h2>
+  <p>Released <strong>November 18, 2026</strong>. This release adds incremental sync and a new <code>doctor</code> command, and removes support for configuration files in the 1.x format.</p>
+  <h3>New features</h3>
+  <ul>
+    <li><strong>Incremental sync:</strong> <code>atlas sync</code> now uploads only the files that changed since the last run.
+      <ul>
+        <li>Large projects sync up to 8 times faster.</li>
+        <li>Use <code>--full</code> to force a complete upload.</li>
+      </ul>
+    </li>
+    <li><strong>Health checks:</strong> <code>atlas doctor</code> checks credentials, network access and the local cache, and suggests a fix for each problem it finds.</li>
+  </ul>
+  <h3>Upgrading</h3>
+  <ol>
+    <li>Back up the <code>.atlas</code> folder in the project root.</li>
+    <li>Install the new version and run the migration:
+      <pre class="language-bash"><code>npm install --global atlas-cli@3.2.0
+atlas config migrate</code></pre>
+    </li>
+    <li>Run <code>atlas doctor</code> to confirm that the project is ready.</li>
+  </ol>
+  <h3>Breaking changes</h3>
+  <p>Configuration files in the 1.x format are no longer read. Run <code>atlas config migrate</code> before upgrading, or see the <a href="https://www.example.com/">migration guide</a>.</p>
+  <h2>3.1.4</h2>
+  <p>Released <strong>October 2, 2026</strong>.</p>
+  <ul>
+    <li>Fixed a crash in <code>atlas login</code> when the system proxy required authentication.</li>
+    <li>Progress bars now respect the <code>NO_COLOR</code> environment variable.</li>
+  </ul>
+  <hr>
+  <p><em>Thanks to everyone who reported issues during the 3.2 beta.</em></p>
+</textarea>
+
+<div style="margin-top: 16px;">
+  <p><label for="markdown-source"><strong>Markdown</strong></label></p>
+  <textarea id="markdown-source" rows="16" style="box-sizing: border-box; width: 100%; padding: 12px; font-family: Menlo, Consolas, monospace; font-size: 14px;">## 3.2.1
+
+Released **December 2, 2026**.
+
+### Fixed
+
+- `atlas sync` no longer stops when a folder name contains spaces.
+- Failed uploads are retried up to *five* times.
+
+> Run `atlas doctor` after upgrading to check the local cache.
+
+See the [upgrade guide](https://www.example.com/) for details. :rocket:
+
+Atlas(TM) and Atlas Cloud(SM) are trademarks of Example Tools, Inc. (C) 2026</textarea>
+</div>

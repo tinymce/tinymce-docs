@@ -1,0 +1,31 @@
+// "Try it" guide card for the url-dialog live demo. It is included directly above
+// liveDemo::url-dialog[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: URL dialog">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">URL dialog</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">A custom toolbar button in this partner agreement summary opens an external web page inside a dialog, as a contract viewer or partner portal would. Open the page, then close the dialog from inside the page.</p>
+    <ol class="demo-guide__steps">
+      <li>Select the <span class="demo-ui">{;}</span> button, the first button in the toolbar.</li>
+      <li>A 640 by 640 pixel dialog titled <strong>URL Dialog Demo</strong> opens. It loads <strong>Example External Page</strong> in a frame and has no footer buttons.</li>
+      <li>Select <span class="demo-ui">Close</span> below the text on the external page. The page sends a <code>close</code> message to the editor, and the dialog closes.</li>
+      <li>Open the dialog again and close it with the <span class="demo-ui">Close</span> button (&#215;) in the dialog header.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.windowManager.openUrl</code> opens the dialog with a <code>title</code>, the <code>url</code> of the external page, and a <code>width</code> and <code>height</code> of <code>640</code>.</li>
+      <li>The external page closes the dialog by posting <code>{ mceAction: 'close' }</code> to the parent window.</li>
+      <li><code>editor.ui.registry.addButton('urldialog')</code> adds the toolbar button that opens the dialog.</li>
+    </ul>
+  </details>
+</div>
+++++

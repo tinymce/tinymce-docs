@@ -3,30 +3,56 @@
     <form>
       <div class="form-row">
         <div class="form-group col-sm">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" id="name">
+          <label for="article-title">Article title</label>
+          <input type="text" class="form-control" id="article-title" value="Freeze or unfreeze a debit card">
         </div>
 
         <div class="form-group col-sm">
-          <label for="email">Email address</label>
-          <input type="email" class="form-control" id="email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <label for="article-section">Help center section</label>
+          <input type="text" class="form-control" id="article-section" value="Cards and payments">
+          <small id="sectionHelp" class="form-text text-muted">The article appears under this section in the app and on the website.</small>
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group col-sm">
-          <label for="email">Describe your issue in detail</label>
-          <textarea id="premiumskinsandicons-bootstrap"></textarea>
+          <label for="premiumskinsandicons-bootstrap">Article body</label>
+          <textarea id="premiumskinsandicons-bootstrap">
+            <h1>Freeze or unfreeze a debit card</h1>
+            <p>Freezing a card blocks new card purchases and ATM withdrawals until the card is unfrozen. Direct debits, refunds and incoming transfers keep working, so bills are still paid on time.</p>
+            <p><strong>Freeze a card in the app</strong></p>
+            <ol>
+              <li>Open the Plover app and select <strong>Cards</strong>.</li>
+              <li>Choose the card, then select <strong>Freeze card</strong>.</li>
+              <li>Confirm with Face ID, Touch ID or the app passcode.</li>
+            </ol>
+            <p>A frozen card shows a snowflake badge in the app. To unfreeze it, follow the same steps and select <strong>Unfreeze card</strong>.</p>
+            <p><strong>What still works while a card is frozen</strong></p>
+            <table style="border-collapse: collapse; width: 100%;" border="1">
+              <colgroup><col style="width: 57.7%;"><col style="width: 42.3%;"></colgroup>
+              <thead>
+                <tr><th>Transaction</th><th>While the card is frozen</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Card purchases, in store and online</td><td>Declined</td></tr>
+                <tr><td>ATM withdrawals</td><td>Declined</td></tr>
+                <tr><td>Subscriptions charged to the card</td><td>Declined</td></tr>
+                <tr><td>Direct debits from the account</td><td>Paid as usual</td></tr>
+                <tr><td>Refunds to the card</td><td>Received as usual</td></tr>
+              </tbody>
+            </table>
+            <h2>Lost or stolen cards</h2>
+            <p>If the card is lost or stolen, freeze it first, then report the card in <strong>Cards</strong> &gt; <strong>Report a problem</strong>. A replacement card arrives in 5 to 7 business days. For help at any time, call (555) 010-0142.</p>
+          </textarea>
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group col-sm">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <input class="form-check-input" type="checkbox" id="gridCheck" checked>
             <label class="form-check-label" for="gridCheck">
-              I agree to the <a href="#">terms and conditions</a>
+              Show this article in the in-app help panel
             </label>
           </div>
         </div>
@@ -34,8 +60,8 @@
 
       <div class="form-row">
         <div class="form-group col-sm">
-          <button type="button" class="btn btn-primary">Submit</button>
-          <button type="button" class="btn btn-secondary">Save Draft</button>
+          <button type="button" class="btn btn-primary">Publish</button>
+          <button type="button" class="btn btn-secondary">Save draft</button>
         </div>
       </div>
     </form>

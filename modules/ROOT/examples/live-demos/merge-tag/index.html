@@ -1,8 +1,32 @@
 <textarea id="mergetags">
-  <h1>Proposal for Services — {*Client.Name*}</h1>
-  <h2>Prepared on {*Proposal.SubmissionDate*}</h2>
-  <p>{*Client.Name*},</p>
-  <p>As per our discussions on {*Client.LastCallDate*}, please find attached our formal Services Proposal.
-  <p>{*Salutation*},</p>
-  <p>{*Consultant*}.</p>
+  <p><strong>Subject:</strong> {*Customer.FirstName*}, your {*Subscription.PlanName*} plan renews on {*Subscription.RenewalDate*}</p>
+  <hr>
+  <h1>Your plan renews soon</h1>
+  <p>Hi {*Customer.FirstName*},</p>
+  <p>The {*Subscription.PlanName*} subscription for {*Customer.Company*} renews automatically on <strong>{*Subscription.RenewalDate*}</strong>. Backups keep running without interruption, and no action is needed unless the details below have changed.</p>
+  <p>Amount due at renewal: <strong><span style="color: #335dff;">{*Billing.AmountDue*}</span></strong></p>
+  <h2>Renewal summary</h2>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 30.4%;"><col style="width: 69.6%;"></colgroup>
+    <thead>
+      <tr><th>Item</th><th>Details</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Plan</td><td>{*Subscription.PlanName*}</td></tr>
+      <tr><td>Seats</td><td>{*Subscription.Seats*}</td></tr>
+      <tr><td>Storage used</td><td>{*Subscription.StorageUsed*} of {*Subscription.StorageLimit*}</td></tr>
+      <tr><td>Payment method</td><td>{*Billing.CardBrand*} ending in {*Billing.CardLast4*}</td></tr>
+      <tr><td>Billing address</td><td>{*Customer.Address.Street*}, {*Customer.Address.City*}, {*Customer.Address.Country*}</td></tr>
+    </tbody>
+  </table>
+  <h2>Before the renewal date</h2>
+  <ul>
+    <li>Update the payment card at {*Billing.PortalUrl*}.</li>
+    <li>Add or remove seats from <strong>Admin &gt; Seats</strong>. Changes apply from the next billing period.</li>
+    <li>Download past invoices from <strong>Admin &gt; Billing history</strong>.</li>
+  </ul>
+  <p>Questions about this renewal? Reply to this email or call {*Sender.Phone*}.</p>
+  <p>Kind regards,<br>{*Sender.Name*}<br>{*Sender.Title*}, Larkspur Backup</p>
+  <hr>
+  <p>This message was sent to {*Customer.Email*}. To stop receiving billing reminders, use {*Unsubscribe.Link*}.</p>
 </textarea>

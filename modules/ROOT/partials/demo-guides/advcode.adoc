@@ -1,0 +1,29 @@
+// "Try it" guide card for the advcode live demo. It is included directly above
+// liveDemo::advcode[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Enhanced Code Editor">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Enhanced Code Editor</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">The bank has raised the daily mobile deposit limit for Everyday Checking and savings accounts from $2,500 to $5,000. Change both amounts in the HTML of this help article.</p>
+    <ol class="demo-guide__steps">
+      <li>Select <span class="demo-ui">Source code</span> in the toolbar. The HTML opens in place of the editor content, formatted and color highlighted, with line numbers.</li>
+      <li>Press <kbd>Ctrl</kbd>+<kbd>F</kbd> (<kbd>⌘</kbd>+<kbd>F</kbd> on macOS) to open the search panel. Type <code>2,500</code> in <span class="demo-ui">Find</span> and <code>5,000</code> in <span class="demo-ui">Replace</span>, then select <span class="demo-ui">replace all</span>. Both amounts change.</li>
+      <li>Select the arrow next to the line number of the <code>&lt;table&gt;</code> or <code>&lt;ol&gt;</code> tag to fold the element.</li>
+      <li>Try <span class="demo-ui">Dark/light mode</span>, <span class="demo-ui">Increase font size</span> and <span class="demo-ui">Fullscreen</span>, then select <span class="demo-ui">Save code</span>. The limits table now shows $5,000 for both accounts.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>advcode_inline: true</code> opens the code editor in place of the editor content instead of in a dialog, and adds the <strong>Fullscreen</strong> button, which needs the <code>fullscreen</code> plugin.</li>
+    </ul>
+  </details>
+</div>
+++++

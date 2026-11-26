@@ -1,28 +1,25 @@
 <textarea id="advanced-typography">
-
-<h3>Using the Advanced Typography plugin</h3>
-
-<ol>
-<li>Select the text of the short narrative below.</li>
-<li>Press the typography toolbar button to run the <em>Advanced Typography</em> plugin’s en-US typography rules.</li>
-<li>See the text change from typewriter-centric typesetting to typographer-friendly typesetting.</li>
-</ol>
-
-<h3>Short narrative</h3>
-
-<p>"It's over there", she said.</p>
-
-<p>"No. There" -- -> -- she pointed.</p>
-
-<p>"Got it", he said.</p>
-
-<p>He smiled as he looked down at the simple but striking image. "So, I presume the next step is to (c) this?"</p>
-
-<p>"Nah, that happens automatically. We need a full-blown (tm). And that takes... lawyers."</p>
-
-<p>"Oh. Well" -- he started back towards her desk -- "I guess I'd better call Sarah."</p>
-
-<p>She -> back to the table he'd grabbed the design from. "The <code>8-bit and "gloriously proud of it"</code> version is also back there. Sarah will need that as well, and all the sample product packaging using both designs."</p>
-
-<p>He turned back, grabbed the extra sheet, and headed back to his office. <em>[ This sentence needs work. Something about 10C hotter to reflect his excitement -- ed. ]</em></p>
+  <h1>Contributing to Lumen</h1>
+  <p>Lumen is an open-source image optimizer maintained by volunteers. "Every fix counts -- even a typo in the docs," says maintainer Priya Shah. This guide explains how to propose a change , from the first issue to the final review.</p>
+  <h2>Before you start</h2>
+  <ul>
+    <li>Search the open issues first. If someone's already working on it, offer to help instead of starting over.</li>
+    <li>For changes that affect more than 1/2 of the codebase, open a discussion before writing code.</li>
+    <li>Test on a 1920x1080 screen and at 3/4 zoom ; the preview panel is the most common source of layout bugs.</li>
+  </ul>
+  <h2>Submitting a pull request</h2>
+  <p>The workflow is fork -&gt; branch -&gt; commit -&gt; pull request. Keep each pull request small:a reviewer should be able to read it in 15 minutes. Write the commit summary in the imperative mood,for example "Add WebP support" rather than "Added WebP support".</p>
+  <p>Run the test suite before you push:</p>
+  <pre class="language-bash"><code>npm test -- --coverage
+git commit -m "Fix crash when --quality is 0"</code></pre>
+  <p>Pull requests that change the compression settings must keep quality &lt;= 95 and file size within +-2% of the current release. CI checks both...and blocks the merge if either fails.</p>
+  <h2>Translations</h2>
+  <p>The interface is translated by the community. Two translators describe what they look for:</p>
+  <ul>
+    <li><span lang="de">"Kurze, klare S&auml;tze sind am besten", sagt Jonas Becker.</span></li>
+    <li><span lang="es">"Siempre revisamos el texto con un colega", dice Luc&iacute;a Torres.</span></li>
+  </ul>
+  <h2>License</h2>
+  <p>By contributing, you agree that your work is released under the MIT License.</p>
+  <p>Copyright (c) 2027 the Lumen contributors.</p>
 </textarea>

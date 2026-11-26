@@ -1,9 +1,15 @@
 tinymce.init({
   selector: 'textarea#custom-table-picker-menu-button',
-  height: 600,
-  plugins: 'table',
-  toolbar: 'inserttable',
-  menubar: false,
+  height: 700,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'inserttable | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'removeformat | help',
 
   setup: (editor) => {
     editor.ui.registry.addMenuButton('inserttable', {
@@ -25,5 +31,6 @@ tinymce.init({
         ]);
       }
     });
-  }
+  },
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

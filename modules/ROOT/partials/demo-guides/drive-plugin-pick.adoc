@@ -1,0 +1,31 @@
+// "Try it" guide card for the drive-plugin-pick live demo. It is included directly above
+// liveDemo::drive-plugin-pick[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Tiny Drive pick API">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Tiny Drive: pick</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">The <strong>Photo</strong> column of this fire safety inspection is empty for all 3 findings. Link the fire ring photo to the <strong>Site A12</strong> row using the custom pick button.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point in the <strong>Photo</strong> cell of the <strong>Site A12</strong> row.</li>
+      <li>Select <span class="demo-ui">Custom pick</span> in the toolbar. The button calls <code>editor.plugins.tinydrive.pick()</code>, which opens the file manager.</li>
+      <li>Open the <strong>Hero Backgrounds</strong> folder and select the name <strong>ash-bonfire-burn-164168.jpg</strong>. The file manager closes and the promise resolves with the picked file's metadata.</li>
+      <li>The demo's code turns each picked file into a link, so the cell now holds a link named after the file. The same code inserts a link for a PDF or any other file type.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.ui.registry.addButton</code> in <code>setup</code> adds the <strong>Custom pick</strong> button. It calls <code>tinydrive.pick()</code> and inserts a link built from the <code>name</code> and <code>url</code> of each file in <code>result.files</code>.</li>
+      <li>The <code>insertfile</code> toolbar button opens the built-in picker for comparison, which inserts images as images instead of links.</li>
+      <li><code>tinydrive_token_provider</code> supplies the JSON Web Token that authorizes each request. In this demo it returns a fixed token and the file manager opens a sample library instead of a real {cloudfilemanager} account.</li>
+    </ul>
+  </details>
+</div>
+++++

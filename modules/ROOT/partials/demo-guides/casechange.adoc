@@ -1,0 +1,29 @@
+// "Try it" guide card for the casechange live demo. It is included directly above
+// liveDemo::casechange[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Case Change">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Case Change</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">Fix the case of the 5 headline drafts in this investor letter so they follow the house style, then fix the page address and the disclosure label.</p>
+    <ol class="demo-guide__steps">
+      <li>Select all five headline drafts, then open the arrow next to <span class="demo-ui">Capitalization</span> in the toolbar and choose <span class="demo-ui">Title Case</span>. Short words such as <em>as</em>, <em>for</em> and <em>to</em> become lowercase, while <em>From</em> and <em>With</em> are capitalized because they have four letters.</li>
+      <li>Select the text after <strong>Page address:</strong> and choose <span class="demo-ui">lowercase</span>.</li>
+      <li>Select the text after <strong>Disclosure label:</strong> and choose <span class="demo-ui">UPPERCASE</span>.</li>
+      <li>Select the main part of the <span class="demo-ui">Capitalization</span> button to apply the last case used to a new selection.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>casechange_title_case_minors</code> lists the articles, conjunctions and prepositions of three letters or fewer that <strong>Title Case</strong> keeps lowercase. The default list also keeps longer prepositions such as <em>from</em> and <em>with</em> lowercase.</li>
+    </ul>
+  </details>
+</div>
+++++

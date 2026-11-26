@@ -1,0 +1,30 @@
+// "Try it" guide card for the context-form live demo. It is included directly above
+// liveDemo::context-form[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Context form">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Context form</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This knowledge base draft has four links. Open the custom link form on a link, and check that it does not appear on plain text.</p>
+    <ol class="demo-guide__steps">
+      <li>Click inside the <strong>audit log</strong> link. A form appears with <code>https://www.example.com/admin/audit-log</code> in its input, and two buttons: <span class="demo-ui">Link</span>, shown as pressed, and <span class="demo-ui">Remove link</span>.</li>
+      <li>Edit the address and select <span class="demo-ui">Link</span>. The form closes. In this demo the button only writes the typed value to the browser console, so the link itself does not change.</li>
+      <li>Click inside any paragraph that has no link. The form does not appear.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.ui.registry.addContextForm</code> registers <code>link-form</code>. Its <code>predicate</code> shows the form only when the selection is in a link with an address.</li>
+      <li><code>initValue</code> fills the input with the link&#8217;s address, and <code>placeholder</code> shows <code>https://www.example.com</code> when the input is empty.</li>
+      <li>The <code>commands</code> array adds the <span class="demo-ui">Link</span> and <span class="demo-ui">Remove link</span> toggle buttons. <code>onSetup</code> marks <span class="demo-ui">Link</span> as pressed inside a link, and each <code>onAction</code> logs a message and calls <code>formApi.hide()</code>.</li>
+    </ul>
+  </details>
+</div>
+++++

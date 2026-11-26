@@ -1,0 +1,39 @@
+// "Try it" guide card for the tinymceai live demo. It is included directly above
+// liveDemo::tinymceai[] (or liveDemo::{plugincode}[] on the plugin page) so it sits outside
+// the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: {pluginname} Chat">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">{pluginname} Chat</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This article about bringing generative AI into content workflows is a draft. Use Chat to summarize it, then translate the four-item "Key Benefits of Integrated AI" list into Spanish.</p>
+    <ol class="demo-guide__steps">
+      <li>The <span class="demo-ui">AI Chat</span> sidebar is open beside the article. Select <span class="demo-ui">Summarize the document</span>, one of the four suggested actions, and read the summary in Chat.</li>
+      <li>Type a request in the <span class="demo-ui">Ask AI…</span> box, such as <code>Add a sentence about data privacy to the last paragraph</code>, and press <kbd>Enter</kbd>. When Chat changes the article, the editor shows the change as a preview: select <span class="demo-ui">Apply suggestion</span> or <span class="demo-ui">Skip suggestion</span>.</li>
+      <li>Select <span class="demo-ui">Add context source</span> below the prompt and open <span class="demo-ui">TinyMCE resources</span> to attach one of the three web pages to the conversation.</li>
+      <li>Select the "Key Benefits of Integrated AI" list, then open <span class="demo-ui">Translate</span> in the toolbar and choose <span class="demo-ui">Spanish</span> from the 12 languages. Step through the translated items with <span class="demo-ui">Previous</span> and <span class="demo-ui">Next</span>, then select <span class="demo-ui">Apply all</span>.</li>
+      <li>Select <span class="demo-ui">AI Review</span> in the toolbar, or the <span class="demo-ui">Review my document</span> action, to switch the sidebar to Review.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>sidebar_show: 'tinymceai-chat'</code> opens the Chat sidebar when the editor loads.</li>
+      <li><code>tinymceai_chat_welcome_message</code> sets the greeting at the top of a new chat.</li>
+      <li><code>tinymceai_chat_welcome_actions</code> adds four one-click actions under the greeting: summarize, continue writing, translate to Spanish and open Review.</li>
+      <li><code>tinymceai_chat_fetch_sources</code> and <code>tinymceai_chat_fetch_source</code> add a <strong>TinyMCE resources</strong> group of three web pages to <strong>Add context source</strong>.</li>
+      <li><code>tinymceai_languages</code> sets the 12 languages in the <strong>Translate</strong> menu.</li>
+      <li><code>tinymceai_quickactions_custom</code> adds a <strong>Challenge</strong> chat prompt under <strong>AI Quick Actions</strong> &gt; <strong>Other</strong>.</li>
+      <li><code>quickbars_selection_toolbar: 'tinymceai-quickactions addcomment'</code> shows <strong>AI Quick Actions</strong> and <strong>Add comment</strong> above selected text.</li>
+      <li><code>tinymceai_token_provider</code> fetches a JSON Web Token (JWT) from a demo session before each AI request. The <strong>JS</strong> tab shows a placeholder endpoint instead.</li>
+      <li>The other premium plugins (comments, mentions, revision history, suggested edits, spell checking and Uploadcare) use demo settings so the full editor works alongside {pluginname}.</li>
+    </ul>
+  </details>
+</div>
+++++

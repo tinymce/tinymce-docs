@@ -1,0 +1,31 @@
+// "Try it" guide card for the premiumskinsandicons-material-outline live demo. It is included directly above
+// liveDemo::premiumskinsandicons-material-outline[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Material Outline skin">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Material Outline skin</span>
+    <span class="demo-guide__tier">Premium skin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This law firm client alert sits in a Material Design form with outlined text fields. Make the two new salary thresholds in the <strong>From January 1</strong> column bold, then link <strong>Renee Carver</strong> to <code>https://www.example.com/</code>.</p>
+    <ol class="demo-guide__steps">
+      <li>Look at the editor: a thin outline with rounded corners on a white background, matching the outlined text fields above it.</li>
+      <li>Place the insertion point in the <strong>Recommended steps</strong> list. The <span class="demo-ui">Numbered list</span> button turns purple to show that it is active.</li>
+      <li>Select <strong>$58,240 a year</strong> and select <span class="demo-ui">Bold</span>. Repeat for <strong>$56,160 a year</strong>.</li>
+      <li>Select <strong>Renee Carver</strong> and select <span class="demo-ui">Insert/edit link</span>. When the toolbar is too narrow to show it, select <span class="demo-ui">Reveal or hide additional toolbar items</span> at the end of the toolbar first. The dialog has flat, uppercase <span class="demo-ui">CANCEL</span> and <span class="demo-ui">SAVE</span> text buttons. Type <code>https://www.example.com/</code> in <span class="demo-ui">URL</span> and select <span class="demo-ui">SAVE</span>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>skin: 'material-outline'</code> styles the editor like an outlined Material Design text field, with the Roboto font and purple active buttons.</li>
+      <li><code>content_css: 'material-outline'</code> loads the matching content styles.</li>
+      <li><code>icons: 'material'</code> replaces the toolbar and menu icons with the Material icon pack.</li>
+    </ul>
+  </details>
+</div>
+++++

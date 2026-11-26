@@ -7,5 +7,6 @@ tinymce.init({
   ],
   menubar: 'file edit view insert format tools table help',
   toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media table | charmap emoticons codesample | code preview fullscreen | removeformat help',
-  height: 500
+  height: 500,
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

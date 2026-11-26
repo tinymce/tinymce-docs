@@ -1,6 +1,40 @@
 <textarea id="contextmenu-section">
-  <p>Right click on the example image below will show the newly configured context menu.</p>
-
-  {{logofordemoshtml}}
-  <p>Right Clicking on text should not invoke the context menu</p>
+  <h1>Roadmap note: offline mode for the field service app</h1>
+  <p>Product team, Field Service. Written by Elena Torres on December 2. Status: <strong>planned for the second quarter</strong>.</p>
+  <h2>Problem</h2>
+  <p>Technicians lose signal in basements, plant rooms, and rural sites. Today the app shows a blank job sheet without a connection, so technicians write notes on paper and type them in later. Support logged 214 tickets about lost job notes in October.</p>
+  <h2>Proposed solution</h2>
+  <p>Store each technician's jobs for the next 48 hours on the device. Notes, photos, and signatures save locally and upload when the connection returns.</p>
+  <h3>Prototype from the design sprint</h3>
+  <p><img src="https://www.tiny.cloud/images/medium-pic.jpg" alt="A laptop showing program code on a white desk, next to a coffee cup, headphones, a phone, and a potted plant" width="640" height="190"></p>
+  <p>The engineering team built a working sync prototype during the November design sprint. It handled 500 queued notes without data loss.</p>
+  <h2>Milestones</h2>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 71.2%;"><col style="width: 28.8%;"></colgroup>
+    <thead>
+      <tr>
+        <th>Milestone</th>
+        <th>Target date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Design review with field supervisors</td>
+        <td>January 14</td>
+      </tr>
+      <tr>
+        <td>Beta for 50 technicians</td>
+        <td>March 3</td>
+      </tr>
+      <tr>
+        <td>General release</td>
+        <td>May 19</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Open questions</h2>
+  <ul>
+    <li>How many days of jobs should the app keep on older phones with limited storage?</li>
+    <li>Which edit wins when a dispatcher and a technician change the same job while offline?</li>
+  </ul>
 </textarea>

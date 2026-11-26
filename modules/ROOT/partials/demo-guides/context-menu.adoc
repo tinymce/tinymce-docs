@@ -1,0 +1,29 @@
+// "Try it" guide card for the context-menu live demo. It is included directly above
+// liveDemo::context-menu[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Context menu">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Context menu</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This onboarding wiki has links, a photo, and a schedule table. Right-click each kind of content and compare the context menus.</p>
+    <ol class="demo-guide__steps">
+      <li>Right-click the <strong>Laptop setup guide</strong> link. The menu shows <span class="demo-ui">Link…</span>, <span class="demo-ui">Remove link</span>, and <span class="demo-ui">Open link</span>.</li>
+      <li>Right-click the photo of Natalie. The menu shows <span class="demo-ui">Link…</span> in its first section and <span class="demo-ui">Image…</span> in a second section.</li>
+      <li>Right-click a cell in the <strong>Week one schedule</strong> table. Below <span class="demo-ui">Link…</span>, the table section adds <span class="demo-ui">Cell</span>, <span class="demo-ui">Row</span>, <span class="demo-ui">Column</span>, <span class="demo-ui">Table properties</span>, and <span class="demo-ui">Delete table</span>. Open <span class="demo-ui">Row</span> to insert or delete rows.</li>
+      <li>Right-click plain text in a paragraph. Only <span class="demo-ui">Link…</span> appears.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>contextmenu: 'link image table'</code> shows the link, image, and table sections, in that order. Each section adds items only when they apply to the right-clicked content.</li>
+    </ul>
+  </details>
+</div>
+++++

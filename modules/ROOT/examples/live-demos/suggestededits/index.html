@@ -1,39 +1,58 @@
-<textarea id="suggestededits" suggestededits-model='{"history":{"2":[{"id":1,"uid":"james-wilson","timestamp":1752576936000,"feedback":"Nice improvement!"}]},"version":2,"metadata":{"5":{"source":"ai"}},"contents":[{"type":"p","children":[{"type":"img","attrs":{"style":"display: block; margin-left: auto; margin-right: auto;","title":"Tiny Logo","src":"https://www.tiny.cloud/docs/tinymce/latest/_images/logos/android-chrome-256x256.png","alt":"TinyMCE Logo","width":"128","height":"128"}}]},{"type":"h2","attrs":{"style":"text-align: center;"},"children":[{"text":"Welcome to the TinyMCE Suggested Edits "},{"text":"interactive ","opData":{"id":1,"type":"insert","uid":"alex-thompson","timestamp":1752015064000}},{"text":"demo!"}]},{"type":"p","attrs":{"style":"text-align: center;"},"children":[{"text":"Try out the Suggested Edits feature"},{"text":" by typing in the editor and t","opData":{"id":2,"type":"remove","uid":"alex-thompson","timestamp":1752415064000}},{"text":": type in the editor, apply formatting or delete some content. T","opData":{"id":2,"type":"insert","uid":"alex-thompson","timestamp":1752415064000}},{"text":"hen"},{"text":",","opData":{"id":3,"type":"insert","uid":"alex-thompson","timestamp":1752515064000}},{"text":" click"},{"text":"ing","opData":{"id":4,"type":"remove","uid":"alex-thompson","timestamp":1752515064000}},{"text":" the Review edits button in the toolbar"},{"text":" to see your changes","opData":{"id":5,"type":"insert","uid":"kai-nakamura","timestamp":1752615064000}},{"text":"."}]},{"type":"p","attrs":{"style":"text-align: center;"},"children":[{"text":"And visit the "},{"text":"pricing page","opData":{"id":6,"type":"modify","uid":"kai-nakamura","timestamp":1752615064000},"format":[{"type":"a","attrs":{"href":"https://www.tiny.cloud/pricing"}}],"oldFormat":[{"type":"a","attrs":{"href":"https://www.tiny.cloud/pricing"}},"em"]},{"text":" to learn more about our Premium plugins."}]},{"type":"h2","children":[{"text":"A simple table to play with"}]},{"type":"table","attrs":{"style":"border-collapse: collapse; width: 100%;","border":"1"},"children":[{"type":"thead","children":[{"type":"tr","attrs":{"style":"text-align: left;"},"children":[{"type":"th","children":[{"text":"Product"}]},{"type":"th","children":[{"text":"Cost"}]},{"type":"th","children":[{"text":"Really?"}]}]}]},{"type":"tbody","children":[{"type":"tr","children":[{"type":"td","attrs":{"style":"text-align: center;"},"children":[{"text":"TinyMCE Cloud"}]},{"type":"td","attrs":{"style":"text-align: center;"},"children":[{"text":"Get started for free"}]},{"type":"td","attrs":{"style":"text-align: center;"},"children":[{"text":"Yes!","format":["strong"]}]}]}]}]},{"type":"h2","opData":{"id":7,"type":"insert","uid":"mia-andersson","timestamp":1752576331000},"children":[{"text":"Found a bug?"}]},{"type":"p","children":[{"text":" ","opData":{"id":7,"type":"remove","uid":"mia-andersson","timestamp":1752576331000}},{"text":"If you believe you have found a bug please create an issue on the ","opData":{"id":7,"type":"insert","uid":"mia-andersson","timestamp":1752576331000}},{"text":"GitHub repo","opData":{"id":7,"type":"insert","uid":"mia-andersson","timestamp":1752576331000},"format":[{"type":"a","attrs":{"href":"https://github.com/tinymce/tinymce/issues"}}]},{"text":" to report it to the developers.","opData":{"id":7,"type":"insert","uid":"mia-andersson","timestamp":1752576331000}}]},{"type":"h2","children":[{"text":"Finally…"}]},{"type":"p","children":[{"text":"Need file uploads in your app? Consider using "},{"text":"Uploadcare","format":[{"type":"a","attrs":{"href":"https://www.tiny.cloud/docs/tinymce/latest/uploadcare/","target":"_blank","rel":"noopener noreferrer"}}]},{"text":" with TinyMCE for a fast, modern upload experience."}]},{"type":"p","children":[{"text":"Thanks for supporting TinyMCE. We hope it helps you and your users create great content."}]},{"type":"p","children":[{"text":"All the best from the TinyMCE team."}]}]}'>
-  {{logofordemoshtml}}
-
-  <h2 style="text-align: center;">Welcome to the TinyMCE Suggested Edits interactive demo!</h2>
-
-  <p style="text-align: center;">Try out the Suggested Edits feature: type in the editor, apply formatting or delete some content. Then, click the Review edits button in the toolbar to see your changes.</p>
-
-  <p style="text-align: center;">And visit the <a href="https://www.tiny.cloud/pricing">pricing page</a> to learn more about our Premium plugins.</p>
-  
-  <h2>A simple table to play with</h2>
-
+<textarea id="suggestededits" suggestededits-model='{"version":2,"history":{"1":[{"id":1,"uid":"ahmed-hassan","timestamp":1795104120000,"feedback":"Is the 2.1 second upper bound from the Java functions? Worth saying which runtime it comes from."},{"id":2,"uid":"clara-schmidt","timestamp":1795105200000,"feedback":"Yes, Java 21 at 512 MB. The breakdown by runtime is in appendix B."}],"2":[{"id":3,"uid":"christopher-simmons","timestamp":1795172700000,"feedback":"Marketing is fine with removing this. The claim was never benchmarked."}],"4":[{"id":4,"uid":"elsa-johansson","timestamp":1795250400000,"feedback":"These numbers come from the QA rerun on November 19, with the same function set."}]},"metadata":{"6":{"source":"ai"}},"contents":[{"type":"h1","children":[{"text":"Reducing cold-start latency in serverless functions"}]},{"type":"p","children":[{"text":"Technical whitepaper, version 0.9 draft. Platform Engineering, December 2026."}]},{"type":"h2","children":[{"text":"Abstract"}]},{"type":"p","children":[{"text":"Cold starts add "},{"text":"up to two seconds","opData":{"id":1,"type":"remove","uid":"clara-schmidt","timestamp":1795101000000}},{"text":"between 0.8 and 2.1 seconds","opData":{"id":1,"type":"insert","uid":"clara-schmidt","timestamp":1795101000000}},{"text":" to the first request a serverless function handles after a period of inactivity. This paper compares four mitigation techniques across 1,200 production functions and shows that snapshot-based restore cuts the median cold-start time by 62% while adding less than 5% to the monthly compute cost."}]},{"type":"h2","children":[{"text":"Background"}]},{"type":"p","children":[{"text":"A cold start happens when the platform must create a new execution environment before it can run a function. The environment downloads the deployment package, starts the language runtime and runs the initialization code."},{"text":" Our platform is the fastest on the market, so most customers never notice cold starts.","opData":{"id":2,"type":"remove","uid":"ahmed-hassan","timestamp":1795167720000}}]},{"type":"h2","children":[{"text":"Techniques compared"}]},{"type":"ol","children":[{"type":"li","children":[{"text":"Provisioned concurrency","format":["strong"]},{"text":": keeps a fixed number of environments initialized at all times."}]},{"type":"li","children":[{"text":"Snapshot-based restore","format":["strong"]},{"text":": saves a memory snapshot after initialization and restores it instead of starting from scratch."}]},{"type":"li","children":[{"text":"Dependency trimming","format":["strong"]},{"text":": removes unused libraries from the deployment package to shorten download and load time."}]},{"type":"li","opData":{"id":3,"type":"insert","uid":"elsa-johansson","timestamp":1795179900000},"children":[{"text":"Lazy initialization","format":["strong"]},{"text":": defers loading optional modules until the first request that needs them."}]}]},{"type":"h2","children":[{"text":"Results"}]},{"type":"p","children":[{"text":"Table 1 lists the median cold-start time for each technique, measured on functions with a 512 MB memory setting."}]},{"type":"table","attrs":{"style":"border-collapse: collapse; width: 100%;","border":"1"},"children":[{"type":"colgroup","children":[{"type":"col","attrs":{"style":"width: 38.0%;"}},{"type":"col","attrs":{"style":"width: 31.0%;"}},{"type":"col","attrs":{"style":"width: 31.0%;"}}]},{"type":"thead","children":[{"type":"tr","children":[{"type":"th","children":[{"text":"Technique"}]},{"type":"th","children":[{"text":"Cold start"}]},{"type":"th","children":[{"text":"Extra cost"}]}]}]},{"type":"tbody","children":[{"type":"tr","children":[{"type":"td","children":[{"text":"No mitigation"}]},{"type":"td","children":[{"text":"1,480 ms"}]},{"type":"td","children":[{"text":"0%"}]}]},{"type":"tr","children":[{"type":"td","children":[{"text":"Provisioned concurrency"}]},{"type":"td","children":[{"text":"90 ms"}]},{"type":"td","children":[{"text":"38%"}]}]},{"type":"tr","children":[{"type":"td","children":[{"text":"Snapshot-based restore"}]},{"type":"td","children":[{"text":"560 ms"}]},{"type":"td","children":[{"text":"4.6%"}]}]},{"type":"tr","children":[{"type":"td","children":[{"text":"Dependency trimming"}]},{"type":"td","children":[{"text":"1,210 ms"}]},{"type":"td","children":[{"text":"0%"}]}]},{"type":"tr","opData":{"id":4,"type":"insert","uid":"ahmed-hassan","timestamp":1795192200000},"children":[{"type":"td","children":[{"text":"Lazy initialization"}]},{"type":"td","children":[{"text":"1,140 ms"}]},{"type":"td","children":[{"text":"0%"}]}]}]}]},{"type":"p","children":[{"text":"Provisioned concurrency removes almost all cold-start delay, but its cost grows with the number of reserved environments, "},{"text":"whether or not they handle traffic","format":["strong"],"oldFormat":[],"opData":{"id":5,"type":"modify","uid":"christopher-simmons","timestamp":1795428900000}},{"text":"."}]},{"type":"h2","children":[{"text":"Recommendations"}]},{"type":"p","children":[{"text":"Use snapshot-based restore as the default for latency-sensitive functions. Reserve provisioned concurrency for functions with steady traffic and a strict latency target, and apply dependency trimming to every function."}]},{"type":"p","children":[{"text":"In the end, it is up to each team to figure out what works best for them.","opData":{"id":6,"type":"remove","uid":"clara-schmidt","timestamp":1795445280000}},{"text":"Measure how often each function starts cold before choosing a technique, because functions that run every few seconds rarely start cold.","opData":{"id":6,"type":"insert","uid":"clara-schmidt","timestamp":1795445280000}},{"text":" The full benchmark method is in the "},{"text":"benchmark repository","format":[{"type":"a","attrs":{"href":"https://www.example.com/"}}]},{"text":"."}]}]}'>
+  <h1>Reducing cold-start latency in serverless functions</h1>
+  <p>Technical whitepaper, version 0.9 draft. Platform Engineering, December 2026.</p>
+  <h2>Abstract</h2>
+  <p>Cold starts add between 0.8 and 2.1 seconds to the first request a serverless function handles after a period of inactivity. This paper compares four mitigation techniques across 1,200 production functions and shows that snapshot-based restore cuts the median cold-start time by 62% while adding less than 5% to the monthly compute cost.</p>
+  <h2>Background</h2>
+  <p>A cold start happens when the platform must create a new execution environment before it can run a function. The environment downloads the deployment package, starts the language runtime and runs the initialization code.</p>
+  <h2>Techniques compared</h2>
+  <ol>
+    <li><strong>Provisioned concurrency</strong>: keeps a fixed number of environments initialized at all times.</li>
+    <li><strong>Snapshot-based restore</strong>: saves a memory snapshot after initialization and restores it instead of starting from scratch.</li>
+    <li><strong>Dependency trimming</strong>: removes unused libraries from the deployment package to shorten download and load time.</li>
+    <li><strong>Lazy initialization</strong>: defers loading optional modules until the first request that needs them.</li>
+  </ol>
+  <h2>Results</h2>
+  <p>Table 1 lists the median cold-start time for each technique, measured on functions with a 512 MB memory setting.</p>
   <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 38.0%;"><col style="width: 31.0%;"><col style="width: 31.0%;"></colgroup>
     <thead>
-      <tr style="text-align: left;">
-        <th>Product</th>
-        <th>Cost</th>
-        <th>Really?</th>
+      <tr>
+        <th>Technique</th>
+        <th>Cold start</th>
+        <th>Extra cost</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td style="text-align: center;">TinyMCE Cloud</td>
-        <td style="text-align: center;">Get started for free</td>
-        <td style="text-align: center;"><strong>Yes!</strong></td>
+        <td>No mitigation</td>
+        <td>1,480 ms</td>
+        <td>0%</td>
+      </tr>
+      <tr>
+        <td>Provisioned concurrency</td>
+        <td>90 ms</td>
+        <td>38%</td>
+      </tr>
+      <tr>
+        <td>Snapshot-based restore</td>
+        <td>560 ms</td>
+        <td>4.6%</td>
+      </tr>
+      <tr>
+        <td>Dependency trimming</td>
+        <td>1,210 ms</td>
+        <td>0%</td>
+      </tr>
+      <tr>
+        <td>Lazy initialization</td>
+        <td>1,140 ms</td>
+        <td>0%</td>
       </tr>
     </tbody>
   </table>
-
-  <h2>Found a bug?</h2>
-
-  <p>If you believe you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
-
-  <h2>Finally …</h2>
-
-  <p>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</p>
-  <p>Thanks for supporting TinyMCE. We hope it helps you and your users create great content.</p>
-  <p>All the best from the TinyMCE team.</p>
-
+  <p>Provisioned concurrency removes almost all cold-start delay, but its cost grows with the number of reserved environments, <strong>whether or not they handle traffic</strong>.</p>
+  <h2>Recommendations</h2>
+  <p>Use snapshot-based restore as the default for latency-sensitive functions. Reserve provisioned concurrency for functions with steady traffic and a strict latency target, and apply dependency trimming to every function.</p>
+  <p>Measure how often each function starts cold before choosing a technique, because functions that run every few seconds rarely start cold. The full benchmark method is in the <a href="https://www.example.com/">benchmark repository</a>.</p>
 </textarea>

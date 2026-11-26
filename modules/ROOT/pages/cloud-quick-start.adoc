@@ -36,9 +36,11 @@ include::partial$install/initialize-editor-cloud.adoc[]
 
 Opening the page in a web browser loads a {productname} editor:
 
+include::partial$demo-guides/cloud-quick-start.adoc[]
+
 liveDemo::cloud-quick-start[]
 
-The demo above runs the same configuration as the example. For an editor with every premium plugin enabled, see the xref:full-featured-premium-demo.adoc[full featured demo].
+The demo above runs the same configuration as the example, plus a stylesheet for the demo content. For an editor with every premium plugin enabled, see the xref:full-featured-premium-demo.adoc[full featured demo].
 
 include::partial$install/approve-domain-cloud.adoc[]
 

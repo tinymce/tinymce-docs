@@ -1,0 +1,31 @@
+// "Try it" guide card for the premiumskinsandicons-bootstrap live demo. It is included directly above
+// liveDemo::premiumskinsandicons-bootstrap[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Bootstrap skin">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Bootstrap skin</span>
+    <span class="demo-guide__tier">Premium skin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This help article sits in a Bootstrap form. Two of its section titles are bold paragraphs instead of headings: make both of them Heading 2, then link the words &#8220;report the card&#8221; to <code>https://www.example.com/</code>.</p>
+    <ol class="demo-guide__steps">
+      <li>Look at the editor: a thin gray border with rounded corners, like the text fields above it. Select inside the editor to see the light blue focus ring that the demo adds around it.</li>
+      <li>Place the insertion point in <strong>Freeze a card in the app</strong>, open the <span class="demo-ui">Paragraph</span> list in the toolbar and choose <span class="demo-ui">Heading 2</span>. Repeat for <strong>What still works while a card is frozen</strong>.</li>
+      <li>Select <strong>report the card</strong> in the last paragraph and select <span class="demo-ui">Insert/edit link</span> in the toolbar. The dialog follows Bootstrap modal styling: lines under the header and above the footer, a blue <span class="demo-ui">Save</span> button and a gray <span class="demo-ui">Cancel</span> button.</li>
+      <li>Select the <span class="demo-ui">URL</span> field to see the Bootstrap focus ring, type <code>https://www.example.com/</code> and select <span class="demo-ui">Save</span>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>skin: 'bootstrap'</code> matches the editor, menus and dialogs to the colors, borders and buttons of the Bootstrap framework.</li>
+      <li><code>icons: 'bootstrap'</code> replaces the toolbar and menu icons with the Bootstrap icon pack.</li>
+      <li><code>setup</code> adds the blue focus ring around the editor when it has focus. The ring is not part of the skin.</li>
+    </ul>
+  </details>
+</div>
+++++

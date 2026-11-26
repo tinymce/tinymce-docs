@@ -1,0 +1,30 @@
+// "Try it" guide card for the url-conversion-relative-2 live demo. It is included directly above
+// liveDemo::url-conversion-relative-2[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Relative URLs from a base URL">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Relative URLs from a base URL</span>
+    <span class="demo-guide__tier">Core feature</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This data retention schedule loads its photo from <code>//www.tiny.cloud/images/image-two.jpg</code>. Check how the editor saves that address relative to the base URL set in the configuration, not relative to this page.</p>
+    <ol class="demo-guide__steps">
+      <li>Select <span class="demo-ui">Source code</span> in the toolbar, or open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Source code</span>. The photo is saved as <code>../images/image-two.jpg</code>.</li>
+      <li>Find the link to the state retention guidance. It points to another site, so it keeps its full address. Select <span class="demo-ui">Cancel</span>.</li>
+      <li>Select a word, select <span class="demo-ui">Insert/edit link</span>, enter <code>//www.tiny.cloud/docs/tinymce/latest/link/</code> as the <span class="demo-ui">URL</span>, and select <span class="demo-ui">Save</span>.</li>
+      <li>Open <span class="demo-ui">Source code</span> again. The new link is saved as <code>tinymce/latest/link/</code>, relative to the <code>/docs/</code> folder.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>relative_urls: true</code> saves addresses on the same site as <code>document_base_url</code> relative to it.</li>
+      <li><code>document_base_url: '//www.tiny.cloud/docs/demo'</code> replaces this page as the base. The value does not end with <code>/</code>, so <code>demo</code> counts as a file name and addresses are saved relative to the <code>/docs/</code> folder. The value also has no protocol, so only addresses that start with <code>//www.tiny.cloud</code> count as the same site: a link to <code>https://www.tiny.cloud/docs/tinymce/latest/link/</code> keeps its full address.</li>
+    </ul>
+  </details>
+</div>
+++++

@@ -1,0 +1,34 @@
+// "Try it" guide card for the suggestededits live demo. It is included directly above
+// liveDemo::{plugincode}[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Suggested Edits">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Suggested Edits</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This whitepaper draft opens in the Review edits view with 6 suggested edits from 4 reviewers, and 3 of the suggestions have feedback. Review each suggestion as Anna Petrov, the approver, and save the result.</p>
+    <ol class="demo-guide__steps">
+      <li>Select a card in the sidebar to outline the suggestion in the document and read its feedback. The number next to the time shows how many feedback entries a card has, and the badge on Clara Schmidt's photo marks her last suggestion as AI-assisted.</li>
+      <li>Point to a card and select <span class="demo-ui">Accept</span> or <span class="demo-ui">Reject</span>, for example reject the removal of the marketing claim. Select <span class="demo-ui">Revert</span> to change a decision, or open <span class="demo-ui">Bulk actions</span> &gt; <span class="demo-ui">Accept remaining</span>.</li>
+      <li>Select <span class="demo-ui">Preview</span> below the document to read the result, then select <span class="demo-ui">Save &amp; Exit</span>.</li>
+      <li>Type a sentence in the document, then select <span class="demo-ui">Review edits</span> in the toolbar. The new text appears as a suggestion from Anna Petrov. Turn off <span class="demo-ui">Track edits</span> in the toolbar to change the content without creating suggestions.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>suggestededits_model</code> loads the saved suggestions, feedback and AI attribution, which this demo stores in an attribute on the textarea.</li>
+      <li><code>suggestededits_content: 'html'</code> loads the content from the textarea and keeps the model in step with it.</li>
+      <li><code>suggestededits_access: 'full'</code> allows accepting and rejecting suggestions, <strong>Bulk actions</strong> and <strong>Save &amp; Exit</strong>.</li>
+      <li><code>view_show: 'suggestededits'</code> opens the Review edits view when the editor loads.</li>
+      <li><code>user_id: 'anna-petrov'</code> signs in as Anna Petrov, so new edits and feedback are attributed to her.</li>
+      <li><code>fetch_users</code> loads the names and photos of the reviewers from the demo user directory.</li>
+    </ul>
+  </details>
+</div>
+++++

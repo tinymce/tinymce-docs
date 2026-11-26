@@ -1,0 +1,32 @@
+// "Try it" guide card for the autocompleter-cardmenuitem live demo. It is included directly above
+// liveDemo::autocompleter-cardmenuitem[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Autocompleter with card menu items">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Autocompleter with card menu items</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">The recommendation in this vendor evaluation is missing a dollar sign before the <strong>44</strong> price and an ampersand in <strong>Harper Cole</strong>. Insert both with an autocompleter that opens when a word starts with a hyphen.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point directly before <strong>44</strong> in the <strong>Recommendation</strong> paragraph.</li>
+      <li>Type <code>-dol</code>. The menu shows one card, with the name <strong>dollars</strong> above the <strong>$</strong> sign and the typed text highlighted in the name. Press <kbd>Enter</kbd> to replace <code>-dol</code> with <code>$</code>.</li>
+      <li>Place the insertion point after <strong>Harper</strong> and its space, type <code>-amp</code>, select the <strong>ampersand</strong> card, then type a space.</li>
+      <li>Type <code>-a</code> to see every name that contains the letter, then press <kbd>Esc</kbd> to close the menu.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.ui.registry.addAutocompleter</code> registers the <code>specialchars_cardmenuitems</code> autocompleter with <code>trigger: '-'</code> and <code>minChars: 1</code>.</li>
+      <li><code>fetch</code> returns <code>cardmenuitem</code> entries: a vertical <code>cardcontainer</code> with two <code>cardtext</code> items, the name and the character.</li>
+      <li><code>highlightOn: ['char_name']</code> highlights the typed text in the name.</li>
+      <li><code>columns: 1</code> lists the cards in a single column.</li>
+    </ul>
+  </details>
+</div>
+++++

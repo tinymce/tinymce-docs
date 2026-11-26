@@ -1,0 +1,30 @@
+// "Try it" guide card for the premiumskinsandicons-outside live demo. It is included directly above
+// liveDemo::premiumskinsandicons-outside[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Outside skin">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Outside skin</span>
+    <span class="demo-guide__tier">Premium skin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This library staff post uses the Outside skin, which keeps a border only around the text. Make the first line, <strong>Storytime moves upstairs this week</strong>, a Heading 3, then make <strong>Community Room</strong> bold.</p>
+    <ol class="demo-guide__steps">
+      <li>Look at the editor: the toolbar has no background or border, and a thin gray border surrounds only the text area.</li>
+      <li>Place the insertion point in the first line, open the <span class="demo-ui">Paragraph</span> list in the toolbar and choose <span class="demo-ui">Heading 3</span>.</li>
+      <li>Select <strong>Community Room</strong> in the second paragraph and select <span class="demo-ui">Bold</span>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>skin: 'outside'</code> removes the outer border and toolbar background and draws a border around the text area only.</li>
+      <li><code>icons: 'small'</code> uses the smaller version of the default icons.</li>
+      <li><code>menubar: false</code> and <code>statusbar: false</code> hide the menu bar and status bar for a compact comment box.</li>
+    </ul>
+  </details>
+</div>
+++++

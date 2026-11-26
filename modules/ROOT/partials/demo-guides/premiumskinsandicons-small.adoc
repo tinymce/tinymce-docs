@@ -1,0 +1,31 @@
+// "Try it" guide card for the premiumskinsandicons-small live demo. It is included directly above
+// liveDemo::premiumskinsandicons-small[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Small skin and icons">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Small skin and icons</span>
+    <span class="demo-guide__tier">Premium skin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This brewery newsletter has a toolbar with more than 30 buttons. The beer &#8220;Copper Kettle Red&#8221; has been renamed: replace all three mentions with <code>Copper Kettle Amber</code>.</p>
+    <ol class="demo-guide__steps">
+      <li>Look at the toolbar: each button is 26 pixels square with an 18-pixel icon, so more tools fit in each row.</li>
+      <li>Select <span class="demo-ui">Find and replace</span> in the toolbar. Type <code>Copper Kettle Red</code> in <span class="demo-ui">Find</span> and <code>Copper Kettle Amber</code> in <span class="demo-ui">Replace with</span>.</li>
+      <li>Select <span class="demo-ui">Find</span>, then <span class="demo-ui">Replace all</span>. All three mentions change: in the introduction, the table and the growler paragraph.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>skin: 'small'</code> makes toolbar buttons, menus and the status bar text smaller.</li>
+      <li><code>icons: 'small'</code> uses the smaller version of the default icons.</li>
+      <li><code>toolbar_mode: 'wrap'</code> wraps the toolbar onto a second row instead of hiding the buttons that do not fit.</li>
+      <li><code>toolbar</code> adds buttons from all the baseline plugins, such as <span class="demo-ui">Special character</span>, <span class="demo-ui">Insert date/time</span> and <span class="demo-ui">Show blocks</span>.</li>
+    </ul>
+  </details>
+</div>
+++++

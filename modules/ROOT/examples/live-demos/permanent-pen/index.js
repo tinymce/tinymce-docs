@@ -1,27 +1,34 @@
 tinymce.init({
   selector: 'textarea#permanent-pen',
-  plugins: 'permanentpen code',
-  contextmenu: 'configurepermanentpen',
-  toolbar: 'permanentpen code',
-  menubar: 'file edit view format table tools help',
+  height: 720,
+  plugins: [
+    'permanentpen',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'permanentpen | undo redo | blocks | ' +
+    'bold italic forecolor backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link table | removeformat | help',
+  // The default Format menu, with the Permanent Pen items added at the end.
   menu: {
     format: {
       title: 'Format',
-      items: 'configurepermanentpen | bold italic underline strikethrough ' +
-        'superscript subscript codeformat | styles blocks fontfamily ' +
-        'fontsize align | forecolor backcolor | removeformat'
+      items: 'bold italic underline strikethrough superscript subscript codeformat | ' +
+        'styles blocks fontfamily fontsize align lineheight | forecolor backcolor | ' +
+        'language | removeformat | permanentpen configurepermanentpen'
     }
   },
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   permanentpen_properties: {
-    fontname: 'arial,helvetica,sans-serif',
-    forecolor: '#E74C3C',
+    fontname: 'georgia,palatino,serif',
     fontsize: '12pt',
+    forecolor: '#335dff',
     hilitecolor: '',
-    bold: true,
-    italic: false,
-    strikethrough: false,
-    underline: false
-  },
-  height: 500,
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+    bold: false,
+    italic: true,
+    underline: false,
+    strikethrough: false
+  }
 });

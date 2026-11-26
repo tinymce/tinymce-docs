@@ -1,0 +1,68 @@
+= Text and background color
+:navtitle: Text and background color
+:description: Text and background color apply a color from a configurable palette, or a custom color, to selected text or to the background behind it.
+:description_short: Apply text and background colors to selected text.
+:keywords: text color, background color, highlight, forecolor, backcolor, color picker, custom colors, color_map, color_map_foreground, color_map_background
+
+include::partial$misc/core-feature-summaries.adoc[tag=text-color]
+Authors can mark status, emphasis, or brand colors in content by choosing from a named palette set in the editor configuration. Text and background color are part of the core editor and do not require a plugin.
+
+[[what-text-and-background-color-do]]
+== What text and background color do
+
+* Applies a text color with the `+forecolor+` toolbar button or menu item, and a background (highlight) color with the `+backcolor+` toolbar button or menu item.
+* Stores each color as an inline `+color+` or `+background-color+` style on a `+span+` element, so the color is kept when the content is displayed outside the editor. Links inside the selection receive the same style, so the link underline matches the text color.
+* Opens a grid of named color swatches from the arrow beside each toolbar button, or from the *Text color* and *Background color* items in the *Format* menu. The default grid contains 22 colors. The xref:#color_map[`+color_map+`] option replaces them for both grids.
+* Supports a separate palette for each grid. The xref:#color_map_foreground[`+color_map_foreground+`] and xref:#color_map_background[`+color_map_background+`] options take priority over `+color_map+` for the text color grid and the background color grid.
+* Converts `+color_map+` values to hexadecimal colors. The xref:#color_map_raw[`+color_map_raw+`] option accepts any CSS color value, such as a CSS variable, and keeps each value as written.
+* Lays out each grid in at least five columns, and adds columns for longer palettes to keep the grid close to square. The xref:#color_cols[`+color_cols+`], xref:#color_cols_foreground[`+color_cols_foreground+`], and xref:#color_cols_background[`+color_cols_background+`] options set a fixed number of columns.
+* Includes a *Remove color* swatch that removes the text color or background color from the selection.
+* Includes a *Custom color* swatch that opens the *Color Picker* dialog. Each saved custom color is added to that grid after the palette colors and is stored in the browser local storage, which keeps up to 10 custom colors for each grid. Custom colors are not shared between the text color and background color grids, and are not added to the configuration. Setting xref:#custom_colors[`+custom_colors+`] to `+false+` removes the swatch.
+* Applies the most recently chosen color when the main part of a toolbar button is clicked. Before a color is chosen, the button applies black, or the color set by xref:#color_default_foreground[`+color_default_foreground+`] or xref:#color_default_background[`+color_default_background+`].
+
+[[interactive-example]]
+== Interactive example
+
+include::partial$demo-guides/text-color.adoc[]
+
+liveDemo::text-color[]
+
+[[basic-setup]]
+== Basic setup
+
+The *Text color* and *Background color* items are included in the default *Format* menu. To also show the toolbar buttons, add `+forecolor+` and `+backcolor+` to the xref:toolbar-configuration-options.adoc#toolbar[`+toolbar+`] option.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  toolbar: 'undo redo | blocks | bold italic | forecolor backcolor'
+});
+----
+
+include::partial$configuration/text_color.adoc[]
+
+[[toolbar-buttons]]
+== Toolbar buttons
+
+[cols="1,3",options="header"]
+|===
+|Toolbar button identifier |Description
+include::partial$toolbar-button-ids/core-toolbar-buttons.adoc[tag=forecolor]
+include::partial$toolbar-button-ids/core-toolbar-buttons.adoc[tag=backcolor]
+|===
+
+[[menu-items]]
+== Menu items
+
+[cols="1,1,2",options="header"]
+|===
+|Menu item identifier |Default menu location |Description
+include::partial$menu-item-ids/core-menu-items.adoc[tag=forecolor]
+include::partial$menu-item-ids/core-menu-items.adoc[tag=backcolor]
+|===
+
+[[commands]]
+== Commands
+
+To apply or remove colors from code, use the `+ForeColor+`, `+BackColor+`, `+HiliteColor+`, `+mceApplyTextcolor+`, and `+mceRemoveTextcolor+` commands. For details, see xref:editor-command-identifiers.adoc#core-editor-commands[Core editor commands].

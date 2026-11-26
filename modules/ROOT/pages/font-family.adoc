@@ -1,0 +1,72 @@
+= Font family
+:navtitle: Font family
+:description: Font family sets the typeface of selected text from a configurable list of fonts.
+:description_short: Set the typeface of selected text.
+:keywords: font family, font, typeface, fontfamily, FontName, font_family_formats, default_font_stack
+
+include::partial$misc/core-feature-summaries.adoc[tag=font-family]
+Authors can set headings, quotations, code, and body text in different typefaces, from a list of fonts that the integrator chooses. Font family is part of the core editor and does not require a plugin.
+
+[[what-font-family-does]]
+== What font family does
+
+* Applies a font family to the selected text, or, when nothing is selected, to the word at the insertion point or the text typed next, as an inline `+font-family+` style on a `+span+` element, so the typeface is kept when the content is displayed outside the editor.
+* Replaces any other font family applied inside the selection, so one choice sets a single typeface for the whole selection.
+* Also applies the font family to each list item that is selected in full, so list bullets and numbers match the text.
+* Keeps the font family when the font that is already applied is chosen again. The *Clear formatting* toolbar button and menu item remove it.
+* Offers a configurable list of fonts through the xref:#font_family_formats[`+font_family_formats+`] option, and shows each font name in its own typeface, except names that contain `+dings+`, such as Webdings and Wingdings.
+* Shows the font family at the insertion point. A font matches a list entry when its first font name is the same. A font that is not in the list is shown as its `+font-family+` value, and the system font stack, or the stack set by xref:#default_font_stack[`+default_font_stack+`], is shown as *System Font*.
+* Does not load font files. Each font needs to be installed on the reader's system or loaded by a style sheet, for example through the xref:add-css-options.adoc#content_css[`+content_css+`] option.
+* Is available from the `+fontfamily+` toolbar button, the *Fonts* item in the *Format* menu, and the `+FontName+` command.
+
+[[interactive-example]]
+== Interactive example
+
+include::partial$demo-guides/font-family.adoc[]
+
+liveDemo::font-family[]
+
+[[basic-setup]]
+== Basic setup
+
+The *Fonts* item is included in the default *Format* menu. To also show the toolbar button, add `+fontfamily+` to the xref:toolbar-configuration-options.adoc#toolbar[`+toolbar+`] option.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  toolbar: 'undo redo | blocks | fontfamily | bold italic'
+});
+----
+
+[[options]]
+== Options
+
+The following configuration options affect the font family feature.
+
+include::partial$configuration/default_font_stack.adoc[leveloffset=+1]
+
+include::partial$configuration/font_family_formats.adoc[leveloffset=+1]
+
+[[toolbar-buttons]]
+== Toolbar buttons
+
+[cols="1,3",options="header"]
+|===
+|Toolbar button identifier |Description
+include::partial$toolbar-button-ids/core-toolbar-buttons.adoc[tag=fontfamily]
+|===
+
+[[menu-items]]
+== Menu items
+
+[cols="1,1,2",options="header"]
+|===
+|Menu item identifier |Default menu location |Description
+include::partial$menu-item-ids/core-menu-items.adoc[tag=fontfamily]
+|===
+
+[[commands]]
+== Commands
+
+To set the font family from code, use the `+FontName+` command. For details, see xref:editor-command-identifiers.adoc#core-editor-commands[Core editor commands]. To read the font family of the current selection, use the `+FontName+` query value. For details, see xref:editor-command-identifiers.adoc#available-query-command-values[Available query command values].

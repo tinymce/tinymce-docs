@@ -15,6 +15,8 @@ Multi-editor mode groups several {productname} editors on one page, such as the 
 
 The demo below groups the two sections of a hiring pack. The group uses xref:tinymceai.adoc#decoupled-mode[decoupled mode], so AI Chat and AI Review open in a panel next to the editors, and AI Chat opens when the demo loads. Select a suggested action, or run a review across both editors.
 
+include::partial$demo-guides/tinymceai-multi-editor.adoc[]
+
 liveDemo::tinymceai-multi-editor[]
 
 include::partial$misc/admon-inline-not-supported.adoc[]

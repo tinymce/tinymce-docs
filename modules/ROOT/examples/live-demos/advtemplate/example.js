@@ -109,26 +109,68 @@ const headers = {
         headers,
       })
       .then(handleResponse('Failed to move all templates to new category'))
-  } 
+  }
 
-  tinymce.init({
-    selector: "textarea#template",
-      plugins: [
-          "advlist", "anchor", "autolink", "charmap", "code", "fullscreen", 
-          "help", "image", "insertdatetime", "link", "lists", "media", 
-          "preview", "searchreplace", "table", "visualblocks", "advtemplate"
-      ],
-    contextmenu: 'advtemplate',
-    toolbar: "addtemplate inserttemplate | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-    advtemplate_list,
-    advtemplate_get_template,
-    advtemplate_create_category,
-    advtemplate_create_template,
-    advtemplate_rename_category,
-    advtemplate_rename_template,
-    advtemplate_delete_template,
-    advtemplate_delete_category,
-    advtemplate_move_template,
-    advtemplate_move_category_items
-  });
-  
+const mergetags_list = [
+  {
+    title: 'Customer',
+    menu: [
+      { value: 'Customer.FirstName', title: 'First name' },
+      { value: 'Customer.LastName', title: 'Last name' },
+      { value: 'Customer.Email', title: 'Email address' }
+    ]
+  },
+  {
+    title: 'Ticket',
+    menu: [
+      { value: 'Ticket.Number', title: 'Ticket number' },
+      { value: 'Ticket.Subject', title: 'Subject' }
+    ]
+  },
+  {
+    title: 'Order',
+    menu: [
+      { value: 'Order.Number', title: 'Order number' },
+      { value: 'Order.Total', title: 'Order total' },
+      { value: 'Order.TrackingUrl', title: 'Tracking URL' }
+    ]
+  },
+  {
+    title: 'Agent',
+    menu: [
+      { value: 'Agent.FirstName', title: 'First name' },
+      { value: 'Agent.LastName', title: 'Last name' },
+      { value: 'Agent.Title', title: 'Job title' }
+    ]
+  },
+  { value: 'Company.Name', title: 'Company name' },
+  { value: 'Survey.Link', title: 'Survey link' }
+];
+
+tinymce.init({
+  selector: 'textarea#template',
+  height: 640,
+  plugins: [
+    'advtemplate', 'mergetags',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'inserttemplate addtemplate | mergetags | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link | removeformat | help',
+  contextmenu: 'advtemplate',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  mergetags_list,
+  advtemplate_list,
+  advtemplate_get_template,
+  advtemplate_create_category,
+  advtemplate_create_template,
+  advtemplate_rename_category,
+  advtemplate_move_category_items,
+  advtemplate_delete_category,
+  advtemplate_rename_template,
+  advtemplate_move_template,
+  advtemplate_delete_template
+});

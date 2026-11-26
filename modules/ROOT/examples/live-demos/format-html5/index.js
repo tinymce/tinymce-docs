@@ -1,7 +1,15 @@
 tinymce.init({
   selector: 'textarea#format-html5',
-  height: 500,
-  plugins: 'visualblocks',
+  height: 820,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'styles visualblocks | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'removeformat | help',
   style_formats: [
     { title: 'Headers', items: [
       { title: 'h1', block: 'h1' },
@@ -29,5 +37,5 @@ tinymce.init({
   ],
   visualblocks_default_state: true,
   end_container_on_empty_block: true,
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

@@ -1,0 +1,29 @@
+// "Try it" guide card for the advtemplate-mce-clipboard live demo. It is included directly above
+// liveDemo::{plugincode}-mce-clipboard[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: mce-clipboard marker">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">mce-clipboard marker</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">A buyer has asked about a listed home. Reply with a template that fills in the property address from the clipboard in 2 places.</p>
+    <ol class="demo-guide__steps">
+      <li>Select the address <strong>418 Alder Creek Lane</strong> and copy it with <kbd>Ctrl</kbd>+<kbd>C</kbd> (<kbd>⌘</kbd>+<kbd>C</kbd> on macOS).</li>
+      <li>Place the insertion point on the empty line under <strong>Reply</strong> and select <span class="demo-ui">Insert template</span> in the toolbar.</li>
+      <li>Expand <strong>With an mce-clipboard marker</strong>, select <strong>Showing confirmation</strong>, and select <span class="demo-ui">Insert</span>. Allow clipboard access if the browser asks. The copied address appears in both marked places.</li>
+      <li>Insert <strong>Showing log entry</strong> to place the same address in a table, or insert <strong>Showing confirmation</strong> from <strong>Without an mce-clipboard marker</strong> to compare.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>advtemplate_templates</code> sets one category of templates with the <code>&#123;&#123;mce-clipboard&#125;&#125;</code> marker and one without it.</li>
+    </ul>
+  </details>
+</div>
+++++

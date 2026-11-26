@@ -1,13 +1,15 @@
 tinymce.init({
   selector: 'textarea#checklist',
-  plugins: 'lists checklist',
-  toolbar: 'checklist',
-  height: 250,
-  menu: {
-    format: {
-      title: 'Format',
-      items: 'checklist | bold italic underline strikethrough superscript subscript codeformat | styles blocks fontfamily fontsize align | forecolor backcolor | removeformat'
-    }
-  },
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  height: 760,
+  plugins: [
+    'checklist',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'checklist | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

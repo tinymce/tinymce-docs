@@ -1,0 +1,34 @@
+// "Try it" guide card for the inline live demo. It is included directly above
+// liveDemo::inline[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Inline editor">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Inline editor</span>
+    <span class="demo-guide__tier">Editor setup</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This intranet post has four inline editors: the two headings and the two body sections. Each heading editor has a smaller toolbar and accepts text formatting only. Edit the post in place.</p>
+    <ol class="demo-guide__steps">
+      <li>Click the heading "New expense app launches January 4". A toolbar with <span class="demo-ui">Undo</span>, <span class="demo-ui">Redo</span>, <span class="demo-ui">Bold</span>, <span class="demo-ui">Italic</span>, and <span class="demo-ui">Underline</span> appears above it.</li>
+      <li>Click a paragraph in the body. Its toolbar has two rows, with fonts, font sizes, colors, alignment, and lists.</li>
+      <li>Select the three steps under <strong>How to submit a claim</strong> and select <span class="demo-ui">Bullet list</span>.</li>
+      <li>Click outside the post. The toolbar hides and the page reads as normal content.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>inline: true</code> edits the headings and sections in place, styled by the page stylesheet.</li>
+      <li><code>menubar: false</code> hides the menu bar for both editor types.</li>
+      <li><code>valid_elements</code> limits the headings to bold, italic, styled text, and links, and the body sections to paragraphs, lists, and the same inline formats.</li>
+      <li><code>valid_styles</code> keeps only font size, font family, color, text decoration, and alignment styles.</li>
+      <li><code>powerpaste_word_import: 'clean'</code> and <code>powerpaste_html_import: 'clean'</code> strip formatting from pasted content.</li>
+      <li>The body editors load the <code>tinymcespellchecker</code> plugin for as-you-type spell checking.</li>
+    </ul>
+  </details>
+</div>
+++++

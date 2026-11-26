@@ -1,4 +1,29 @@
 <textarea id="url-conversion-absolute-1" name="absurls">
-  <p>Some relative urls: <a href="../index.html">content</a>. <img src="{{logofordemos}}" alt="Tiny Logo" width="128" height="128"></p>
-  <p>Some absolute urls: <a href="https://www.tiny.cloud/index.html">content</a>. <img src="{{logofordemos}}" alt="Tiny Logo" width="128" height="128"></p>
+  <h1>Change request CR-2291: replace core switch in data closet 3</h1>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 28.4%;"><col style="width: 71.6%;"></colgroup>
+    <tbody>
+      <tr><th>Requested by</th><td>Sam Ortiz, Network Engineering</td></tr>
+      <tr><th>Change window</th><td>Saturday, December 12, 10:00 PM to 2:00 AM</td></tr>
+      <tr><th>Risk</th><td>Medium: third-floor offices lose network access during the window</td></tr>
+      <tr><th>Status</th><td>Awaiting approval</td></tr>
+    </tbody>
+  </table>
+  <h2>Reason for change</h2>
+  <p>The core switch in data closet 3 reached end of support on October 31 and has logged two power supply faults this quarter. The replacement switch is already racked and tested.</p>
+  <h2>Implementation steps</h2>
+  <ol>
+    <li>Confirm the window is still clear on the <a href="../change-calendar/">change calendar</a>.</li>
+    <li>Back up the running configuration of the old switch.</li>
+    <li>Move the uplinks and access ports to the new switch, one patch panel at a time.</li>
+    <li>Test connectivity from each third-floor wall port.</li>
+  </ol>
+  <h2>Rollback</h2>
+  <p>If testing fails by 1:30 AM, move the cables back to the old switch and follow the <a href="rollback-plan/">rollback plan</a>. The vendor's support line is listed on the <a href="https://www.example.com/">vendor portal</a>.</p>
+  <h2>Approvals</h2>
+  <ul>
+    <li>Network Engineering lead: approved December 3</li>
+    <li>Facilities: approved December 4</li>
+    <li>Change advisory board: pending, meets December 8</li>
+  </ul>
 </textarea>

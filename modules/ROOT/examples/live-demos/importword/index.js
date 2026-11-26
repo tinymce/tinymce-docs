@@ -1,10 +1,22 @@
 tinymce.init({
   selector: 'textarea#importword',
-  height: '800px',
+  height: 720,
   plugins: [
-    "importword", "advlist", "anchor", "autolink", "charmap", "code", "fullscreen",
-    "help", "image", "insertdatetime", "link", "lists", "media",
-    "preview", "searchreplace", "table", "visualblocks",
-],
-toolbar: "undo redo | importword | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+    'importword',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'importword | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'table image | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  importword_converter_options: {
+    formatting: {
+      styles: 'inline',
+      resets: 'inline',
+      defaults: 'none'
+    }
+  }
 });

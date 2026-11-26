@@ -1,7 +1,16 @@
 tinymce.init({
   selector: "textarea#custom-view",
-  toolbar: "showCodeView",
-  height: 600,
+  height: 720,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'showCodeView | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'table | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   setup: (ed) => {
     ed.ui.registry.addView('code', {
       buttons: [
@@ -48,6 +57,5 @@ tinymce.init({
         ed.execCommand('ToggleView', false, 'code');
       }
     });
-  },
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  }
 });

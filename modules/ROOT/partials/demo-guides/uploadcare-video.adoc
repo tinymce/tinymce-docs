@@ -1,0 +1,32 @@
+// "Try it" guide card for the uploadcare-video live demo. It is included directly above
+// liveDemo::uploadcare-video[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Media Optimizer video">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Media Optimizer: video</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This online course module has one video lesson, and its <strong>Assignment</strong> section asks for a second clip. Watch and resize the lesson video, then add a video under the assignment.</p>
+    <ol class="demo-guide__steps">
+      <li>Play the campfire video with the player's play button. The video starts muted, so use the volume control to turn on sound.</li>
+      <li>Select the video and drag a corner handle to resize it.</li>
+      <li>Place the insertion point at the end of the <strong>Assignment</strong> paragraph, press <kbd>Enter</kbd>, and open <span class="demo-ui">Insert</span> &gt; <span class="demo-ui">Video…</span> or select <span class="demo-ui">Insert video</span> in the toolbar.</li>
+      <li>In the placeholder, select <span class="demo-ui">Upload from device</span> to choose a video file, or <span class="demo-ui">Upload from URL</span> to paste a link to one. The new video gets the same player settings as the lesson video.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>uploadcare_video_properties</code> gives the lesson video, and every new video, player controls, muted sound, metadata-only preloading, a poster frame taken at 10 seconds and a fluid width. The lesson video's markup sets none of these itself.</li>
+      <li><code>a11y_advanced_options: true</code> adds the <strong>Decorative image</strong> toggle to the <strong>Alt text</strong> form of any image inserted into the module.</li>
+      <li><code>uploadcare_store_type: 'temporary'</code> stores files uploaded in this demo temporarily: Uploadcare removes them after 24 hours.</li>
+      <li><code>uploadcare_public_key</code> connects the editor to the Uploadcare project that stores and serves the media.</li>
+    </ul>
+  </details>
+</div>
+++++

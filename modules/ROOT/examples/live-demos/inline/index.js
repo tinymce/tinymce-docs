@@ -1,4 +1,4 @@
-const emailHeaderConfig = {
+tinymce.init({
   selector: '.tinymce-heading',
   menubar: false,
   inline: true,
@@ -13,10 +13,10 @@ const emailHeaderConfig = {
     '*': 'font-size,font-family,color,text-decoration,text-align'
   },
   powerpaste_word_import: 'clean',
-  powerpaste_html_import: 'clean',
-};
+  powerpaste_html_import: 'clean'
+});
 
-const emailBodyConfig = {
+tinymce.init({
   selector: '.tinymce-body',
   menubar: false,
   inline: true,
@@ -26,15 +26,12 @@ const emailBodyConfig = {
   ],
   toolbar: [
     'undo redo | bold italic underline | fontfamily fontsize',
-    'forecolor backcolor | alignleft aligncenter alignright alignfull | numlist bullist outdent indent'
+    'forecolor backcolor | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent'
   ],
   valid_elements: 'p[style],strong,em,span[style],a[href],ul,ol,li',
   valid_styles: {
     '*': 'font-size,font-family,color,text-decoration,text-align'
   },
   powerpaste_word_import: 'clean',
-  powerpaste_html_import: 'clean',
-};
-
-tinymce.init(emailHeaderConfig);
-tinymce.init(emailBodyConfig);
+  powerpaste_html_import: 'clean'
+});

@@ -1,0 +1,30 @@
+// "Try it" guide card for the permanent-pen live demo. It is included directly above
+// liveDemo::permanent-pen[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Permanent Pen">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Permanent Pen</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">The copy desk left two notes in blue italic Georgia in this style guide draft. Add a reviewer note to the <strong>Dates and times</strong> section in the same style, then give a second reviewer a different style.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point at the end of the <strong>Dates and times</strong> paragraph and select <span class="demo-ui">Permanent pen</span> in the toolbar. Everything typed now uses the pen style.</li>
+      <li>Type a note, then select <span class="demo-ui">Permanent pen</span> again to go back to normal text.</li>
+      <li>Open <span class="demo-ui">Format</span> &gt; <span class="demo-ui">Permanent pen properties…</span>, change the <span class="demo-ui">Text color</span>, turn on <span class="demo-ui">Bold</span> and select <span class="demo-ui">Save</span>. Notes typed from now on use the new style, and the existing notes keep theirs.</li>
+      <li>While the pen is on, right-click in the text and select <span class="demo-ui">Permanent pen properties…</span> to open the same dialog. <span class="demo-ui">Format</span> &gt; <span class="demo-ui">Permanent pen</span> turns the pen on and off.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>permanentpen_properties</code> sets the starting pen style: Georgia, 12pt, italic, in the color <code>#335dff</code>, without bold or a background color.</li>
+      <li><code>menu</code> adds <span class="demo-ui">Permanent pen</span> and <span class="demo-ui">Permanent pen properties…</span> to the end of the default <span class="demo-ui">Format</span> menu.</li>
+    </ul>
+  </details>
+</div>
+++++

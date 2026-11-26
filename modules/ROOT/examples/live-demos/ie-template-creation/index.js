@@ -1,23 +1,22 @@
 const content_style = `
 
-// In a more typical environment this constant would be a file, style.css,
-// referenced in the tinymce.init configuration with the content_css option.
+/* In a more typical environment this constant would be a file, style.css,
+   referenced in the tinymce.init configuration with the content_css option. */
 
 body {
   background-color: #f0eeee;
-  padding: 1rem;
 }
 
 section {
   padding: 4rem 4rem 1rem;
   box-sizing: border-box;
   max-width: 1050px;
-  min-width: 820px;
+  min-width: 720px;
   min-height: 600px;
   margin: 2rem auto;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-  background-image: url("images/template-document-body-landscape_2x.png");
+  background-image: url("{{imagesdir}}/ie-template-creation/template-document-body-landscape_2x.png");
   background-size: 100%;
   background-position: right bottom;
   background-repeat: no-repeat;
@@ -64,7 +63,7 @@ section main > * + * {
 
 section.cover {
   background-color: #fed330;
-  background-image: url("images/template-document-cover-landscape_2x.png");
+  background-image: url("{{imagesdir}}/ie-template-creation/template-document-cover-landscape_2x.png");
   background-size: cover;
   background-position: right bottom;
   background-repeat: no-repeat;
@@ -84,7 +83,7 @@ section.cover h1 {
 
 section.end {
   background-color: #2C3A47;
-  background-image: url("images/template-document-end-landscape_2x.png");
+  background-image: url("{{imagesdir}}/ie-template-creation/template-document-end-landscape_2x.png");
   background-size: 100%;
   background-position: right bottom;
   background-repeat: no-repeat;
@@ -107,46 +106,39 @@ section.end  a {
 
 tinymce.init({
   selector: 'textarea#template-creation',
-  plugins: 'anchor autolink link lists image code advcode mergetags wordcount',
-  toolbar: 'undo redo | blocks | bold italic strikethrough backcolor | mergetags | link image | align bullist numlist | code ',
   height: 900,
+  plugins: [
+    'mergetags',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'advcode', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'mergetags | undo redo | blocks | ' +
+    'bold italic strikethrough backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link image | code | removeformat | help',
   editable_root: false,
   editable_class: 'editable',
   content_style,
   elementpath: false,
-  newdocument_content: '<section class="cover"><header><img src="{{imagesdir}}/ie-template-creation/template-document-logo_2x.png" alt="demo document logo with triangle shapes" width="160" height="106"></header><main class="editable"><h1>Project proposal template</h1><p>*{client.givenname}* *{client.familyname}*</p><p>*{client.company}*</p></main><footer><p><small>Confidential</small></p></footer></section><section><main class="editable"><h1>Executive summary</h1><p>*{client.company}* has requested assistance with asserting, building and implementing X which may include</p><ul><li>Deliverable 1</li><li>Deliverable 2</li><li>Deliverable 3</li></ul><p>Our team has significant experience in your industry and has a successful track record with similar clients and projects. We pride ourselves on delivering only the best results for our clients so that they see an increase in productivity that has lasting results for their business.</p><p>*{submission.date}*</p></main></section><section><main class="editable"><h1>Process</h1><p>We work closely with you to build and fulfill the project’s needs by *{completion.date}*.</p><p>We do this by establishing clear goals and a comprehensive solution based on *{client.company}*’s needs.</p><p>Our process is as follows.</p><h2>Phase 1: initial consultation</h2><p>Our expert team reviews any and all project-related systems and determines:<p><ul><li>existing pain points; and</li><li>existing leverage opportunities.</li></ul><p>Based on this initial consultation we develop a solutions list.</p><h2>Phase 2: solution model</h2><p>Working with your team we implement the selected solution.</p><p>This allows us to tailor the solution specifically for *{client.company}*’s needs, ensuring the solution does not include services you do not need and should not pay for.</p><h2>Phase 3: implementation</h2><p>Once we have agreed on a solution, our team implements the project plan.</p><p>We will first deliver a detailed outline of the plan with a timeline that includes all relevant due dates and deliverables.</p></main></section><section class="end"><main class="editable"><p><span style="font-size: 20px;">Acme Projects have been helping customers for over 20 years. Since the beginning the focus has always been quality and delivery. Over six thousand customers over 4 continents, Acme is there for you, when you need it.</span></p><p>&nbsp;</p><p><span style="font-size: 20px;">Please reach out to our region associates for any inquiries</span></p><p>&nbsp;</p><p>&nbsp;</p><p><img src="{{imagesdir}}/ie-template-creation/template-document-fredrik_2x.png" alt="profile picture of one staff member" width="84" height="84"></p><p>Fredrik Danielsson <br>+46 70 1740605 <br><a href="mailto:fredrik.danielsson@example.com">fredrik.danielsson@example.com</a></p><p>&nbsp;</p><p><img src="{{imagesdir}}/ie-template-creation/template-document-viola_2x.png" alt="profile picture of a second staff member" width="84" height="84"></p><p>Viola From <br>+46 70 1740699 <br><a href="mailto:viola.from@example.com">viola.from@example.com</a></p></main></section>',
+  newdocument_content: '<section class="cover"><header><img src="{{imagesdir}}/ie-template-creation/template-document-logo_2x.png" alt="Riverside Farmers Market logo: a white triangle and circle on a yellow background" width="160" height="106"></header><main class="editable"><h1>Vendor agreement</h1><p>*{vendor.givenname}* *{vendor.familyname}*</p><p>*{vendor.business}*</p></main><footer><p><small>Riverside Farmers Market, season 2027</small></p></footer></section><section><main class="editable"><h1>Welcome to the market</h1><p>Thank you for applying to sell at Riverside Farmers Market. This agreement confirms a weekly stall for *{vendor.business}* from *{season.opening}* until the last market day in October.</p><p>Each stall includes:</p><ul><li>A 10-by-10-foot space on the paved plaza</li><li>Access to shared electrical outlets and handwashing stations</li><li>A listing on the market website and printed map</li></ul><p>Stall fee: $35 per market day, invoiced monthly.</p><p>Application received: *{application.date}*</p></main></section><section><main class="editable"><h1>Market day rules</h1><h2>Setup</h2><p>Vendors arrive between 6:30 AM and 7:30 AM. Vehicles must leave the plaza by 7:45 AM, before the market opens at 8 AM.</p><h2>During market hours</h2><ul><li>Display prices clearly on every product.</li><li>Sell only products grown, raised, or made by *{vendor.business}*.</li><li>Keep tent weights of at least 25 pounds on each leg.</li></ul><h2>Pack-down</h2><p>The market closes at 1 PM. Leave the stall clean and take all waste with you.</p></main></section><section class="end"><main class="editable"><p><span style="font-size: 20px;">Riverside Farmers Market has brought local growers and shoppers together every Saturday since 2009.</span></p><p><span style="font-size: 20px;">Contact the market team with any questions about this agreement.</span></p><p><img src="{{imagesdir}}/ie-template-creation/template-document-fredrik_2x.png" alt="Portrait of Fredrik Danielsson" width="84" height="84"></p><p>Fredrik Danielsson, market manager<br>(555) 010-0174<br><a href="mailto:fredrik.danielsson@example.com">fredrik.danielsson@example.com</a></p><p><img src="{{imagesdir}}/ie-template-creation/template-document-viola_2x.png" alt="Portrait of Viola From" width="84" height="84"></p><p>Viola From, vendor coordinator<br>(555) 010-0175<br><a href="mailto:viola.from@example.com">viola.from@example.com</a></p></main></section>',
   mergetags_prefix: '*{',
   mergetags_suffix: '}*',
   mergetags_list: [
     {
-      title: 'Client',
+      title: 'Vendor',
       menu: [
-            {
-              value: 'client.givenname',
-              title: 'Given name'
-            },
-            {
-              value: 'client.familyname',
-              title: 'Family name'
-            },
-            {
-              value: 'client.company',
-              title: 'Company'
-            }
-            ]
+        { value: 'vendor.givenname', title: 'Given name' },
+        { value: 'vendor.familyname', title: 'Family name' },
+        { value: 'vendor.business', title: 'Business name' }
+      ]
     },
     {
-      title: 'Schedule',
+      title: 'Dates',
       menu: [
-            {
-              value: 'submission.date',
-              title: 'Submission date'
-            },
-            {
-              value: 'completion.date',
-              title: 'Completion date'
-            }
-            ]
-    },
-  ],
+        { value: 'application.date', title: 'Application date' },
+        { value: 'season.opening', title: 'Opening day' }
+      ]
+    }
+  ]
 });

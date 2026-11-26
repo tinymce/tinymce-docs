@@ -1,8 +1,16 @@
 tinymce.init({
   selector: 'textarea#custom-menu-item',
-  height: 500,
-  toolbar: false,
-  menubar: 'custom',
+  height: 600,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'removeformat | help',
+  menubar: 'file edit view insert format tools table custom help',
   menu: {
     custom: { title: 'Custom menu', items: 'basicitem nesteditem toggleitem' }
   },
@@ -37,5 +45,5 @@ tinymce.init({
       }
     });
   },
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

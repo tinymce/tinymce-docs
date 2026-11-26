@@ -1,80 +1,61 @@
 tinymce.init({
-  selector: "textarea#template-insertionpoint",
-  plugins: [ "advtemplate", "mergetags", ],
-  toolbar: "inserttemplate | mergetags",
+  selector: 'textarea#template-insertionpoint',
+  height: 640,
+  plugins: [
+    'advtemplate', 'mergetags',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'inserttemplate | mergetags | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link table | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   advtemplate_templates: [
-    {
-      title: 'Without an insertion point marker',
-      items: [
-        {
-          title: 'Name entry prompt',
-          content: '<p><strong>Enter your name:</strong></p><p><em>Include both your given and family names, in your preferred order.</em></p>'
-        },
-        {
-          title: 'Letter outline',
-          content: '<p>{{prefix}}Current.Date{{suffix}}</p><p>{{prefix}}Honorific{{suffix}} {{prefix}}Person.Name.Last{{suffix}},</p><p></p><p>&nbsp;</p><p>Regards,</p><p>{{prefix}}staff.digital.signature{{suffix}}</p><p>{{prefix}}Staff.Name{{suffix}}</p><p>{{prefix}}Staff.Email{{suffix}}</p>'
-        },
-      ],
-    },
     {
       title: 'With an insertion point marker',
       items: [
         {
-          title: 'Name entry prompt',
-          content: '<p><strong>Enter your name:</strong>{{prefix}}mce-cursor{{suffix}}</p><p><em>Include both your given and family names, in your preferred order.</em></p>'
+          title: 'Follow-up email',
+          content: '<p>{{prefix}}Current.Date{{suffix}}</p><p>Hi {{prefix}}Prospect.FirstName{{suffix}},</p><p>{{prefix}}mce-cursor{{suffix}}&nbsp;</p><p>Best regards,</p><p>{{prefix}}Rep.Name{{suffix}}<br>{{prefix}}Rep.Title{{suffix}}<br>{{prefix}}Rep.Phone{{suffix}}</p>'
         },
         {
-          title: 'Letter outline',
-          content: '<p>{{prefix}}Current.Date{{suffix}}</p><p>{{prefix}}Honorific{{suffix}} {{prefix}}Person.Name.Last{{suffix}},</p><p>{{prefix}}mce-cursor{{suffix}}&nbsp;</p><p>Regards,</p><p>{{prefix}}staff.digital.signature{{suffix}}</p><p>{{prefix}}Staff.Name{{suffix}}</p><p>{{prefix}}Staff.Email{{suffix}}</p>'
-        },
-      ],
+          title: 'Meeting notes',
+          content: '<h2>Meeting notes</h2><table style="border-collapse: collapse; width: 100%;" border="1"><colgroup><col style="width: 30.9%;"><col style="width: 69.1%;"></colgroup><tbody><tr><th>Date</th><td>{{prefix}}Current.Date{{suffix}}</td></tr><tr><th>Attendees</th><td>{{prefix}}mce-cursor{{suffix}}&nbsp;</td></tr><tr><th>Recorded by</th><td>{{prefix}}Rep.Name{{suffix}}</td></tr></tbody></table><h3>Decisions</h3><ul><li>&nbsp;</li></ul><h3>Action items</h3><ul><li>&nbsp;</li></ul>'
+        }
+      ]
     },
+    {
+      title: 'Without an insertion point marker',
+      items: [
+        {
+          title: 'Follow-up email',
+          content: '<p>{{prefix}}Current.Date{{suffix}}</p><p>Hi {{prefix}}Prospect.FirstName{{suffix}},</p><p>&nbsp;</p><p>Best regards,</p><p>{{prefix}}Rep.Name{{suffix}}<br>{{prefix}}Rep.Title{{suffix}}<br>{{prefix}}Rep.Phone{{suffix}}</p>'
+        },
+        {
+          title: 'Meeting notes',
+          content: '<h2>Meeting notes</h2><table style="border-collapse: collapse; width: 100%;" border="1"><colgroup><col style="width: 30.9%;"><col style="width: 69.1%;"></colgroup><tbody><tr><th>Date</th><td>{{prefix}}Current.Date{{suffix}}</td></tr><tr><th>Attendees</th><td>&nbsp;</td></tr><tr><th>Recorded by</th><td>{{prefix}}Rep.Name{{suffix}}</td></tr></tbody></table><h3>Decisions</h3><ul><li>&nbsp;</li></ul><h3>Action items</h3><ul><li>&nbsp;</li></ul>'
+        }
+      ]
+    }
   ],
   mergetags_list: [
+    { value: 'Current.Date', title: 'Current date' },
     {
-      value: 'Current.Date',
-      title: 'Current date in DD/MM/YYYY format'
-    },
-    {
-      value: 'Current.Time',
-    },
-    {
-      value: 'Honorific',
-    },
-    {
-      title: 'Person',
+      title: 'Prospect',
       menu: [
-        {
-          value: 'Customer.Name.Given',
-          title: 'customer first name'
-        },
-        {
-          value: 'Customer.Name.Family',
-          title: 'customer family name'
-        },
-        {
-          value: 'Customer.Name.Full',
-          title: 'customer full name'
-        },
-        {
-          value: 'Staff.Name.Full',
-          title: 'staff full name'
-        },
-        {
-          value: 'Staff.Digital.Signature',
-          title: 'staff digital signaure'
-        },
-        {
-          title: 'Email',
-          menu: [
-            {
-              value: 'Customer.Email'
-            },
-            {
-              value: 'Staff.Email'
-            }
-          ]
-        }
+        { value: 'Prospect.FirstName', title: 'First name' },
+        { value: 'Prospect.LastName', title: 'Last name' },
+        { value: 'Prospect.Company', title: 'Company' }
+      ]
+    },
+    {
+      title: 'Sales rep',
+      menu: [
+        { value: 'Rep.Name', title: 'Full name' },
+        { value: 'Rep.Title', title: 'Job title' },
+        { value: 'Rep.Phone', title: 'Phone number' }
       ]
     }
   ]

@@ -138,8 +138,29 @@ const ai_request = (request, respondWith) => {
 
 tinymce.init({
     selector: 'textarea', // change this value according to your HTML
-    plugins: 'ai advlist anchor autolink charmap advcode emoticons fullscreen help image link lists media preview searchreplace table',
-    toolbar: 'undo redo | aidialog aishortcuts | styles fontsizeinput | bold italic | align bullist numlist | table link image | code',
-    height: 650,
+    height: 760,
+    plugins: [
+        'ai',
+        'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+        'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+        'insertdatetime', 'media', 'table', 'help', 'wordcount'
+    ],
+    toolbar: 'aidialog aishortcuts | undo redo | blocks | ' +
+        'bold italic backcolor | alignleft aligncenter ' +
+        'alignright alignjustify | bullist numlist outdent indent | ' +
+        'removeformat | help',
+    content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
     ai_request,
+    ai_shortcuts: [
+        { title: 'Rewrite in plain language', prompt: 'Rewrite this insurance wording in plain language that a policyholder with no insurance background can understand. Keep every condition and exclusion.', selection: true },
+        { title: 'List the exclusions', prompt: 'List every exclusion and condition in this content as a bulleted list.', selection: true },
+        { title: 'Summarize in one sentence', prompt: 'Summarize this content in one sentence.', selection: true },
+        {
+            title: 'Change tone', subprompts: [
+                { title: 'Reassuring', prompt: 'Rewrite this content in a calm, reassuring tone for a customer who has just had a leak at home.', selection: true },
+                { title: 'Formal', prompt: 'Rewrite this content in a formal tone suitable for a policy document.', selection: true }
+            ]
+        },
+        { title: 'Draft a claim acknowledgment', prompt: 'Write a short email that acknowledges a new water damage claim, gives the claim reference CLM-48213, and lists the next three steps for the policyholder.', selection: false }
+    ]
 });

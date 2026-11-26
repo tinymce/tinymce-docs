@@ -1,0 +1,32 @@
+// "Try it" guide card for the basic-conf live demo. It is included directly above
+// liveDemo::basic-conf[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Basic configuration">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Basic configuration</span>
+    <span class="demo-guide__tier">Editor setup</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This coworking member handbook still names the old Wi-Fi network, Hive-Guest, three times. Rename it to Hive-Members with the custom <strong>My Favorites</strong> menu.</p>
+    <ol class="demo-guide__steps">
+      <li>Open <span class="demo-ui">My Favorites</span> &gt; <span class="demo-ui">Find and replace…</span> and enter <code>Hive-Guest</code> in <span class="demo-ui">Find</span> and <code>Hive-Members</code> in <span class="demo-ui">Replace with</span>, then select <span class="demo-ui">Replace all</span>.</li>
+      <li>Open <span class="demo-ui">My Favorites</span> &gt; <span class="demo-ui">Source code</span> to check the new name in the HTML.</li>
+      <li>Place the insertion point at the end of the Kitchen section and open <span class="demo-ui">My Favorites</span> &gt; <span class="demo-ui">Emojis…</span> to add an emoji.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>width: 600</code> and <code>height: 300</code> set the editor size in pixels.</li>
+      <li><code>plugins</code> adds <code>pagebreak</code>, <code>visualchars</code>, and <code>emoticons</code> to the most common plugins.</li>
+      <li><code>toolbar</code> adds <span class="demo-ui">Print</span>, <span class="demo-ui">Preview</span>, <span class="demo-ui">Full screen</span>, text and background colors, and <span class="demo-ui">Emojis</span>.</li>
+      <li><code>menu: { favs: { title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons' } }</code> defines the <strong>My Favorites</strong> menu.</li>
+      <li><code>menubar: 'favs file edit view insert format tools table help'</code> puts <strong>My Favorites</strong> first in the menu bar.</li>
+    </ul>
+  </details>
+</div>
+++++

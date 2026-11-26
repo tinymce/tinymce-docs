@@ -1,0 +1,29 @@
+// "Try it" guide card for the code live demo. It is included directly above
+// liveDemo::code[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--opensource" role="note" aria-label="Try it: Code">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Code</span>
+    <span class="demo-guide__tier">Open source plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">The bank has raised the daily mobile deposit limit for Everyday Checking and savings accounts from $2,500 to $5,000. Change both amounts in the HTML of this help article.</p>
+    <ol class="demo-guide__steps">
+      <li>Select <span class="demo-ui">Source code</span> in the toolbar, or open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Source code</span>. The HTML opens as plain text in the <span class="demo-ui">Source Code</span> dialog.</li>
+      <li>Find the two <code>$2,500</code> amounts in the limits table and change both to <code>$5,000</code>.</li>
+      <li>Select <span class="demo-ui">Save</span>. The limits table in the editor now shows $5,000 for both accounts.</li>
+      <li>To edit the same HTML with highlighting, line numbers, folding and search, try the <a href="../advcode/#interactive-example">Enhanced Code Editor demo</a>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>plugins: ['code', …]</code> with <code>toolbar: 'code | …'</code> adds the <span class="demo-ui">Source code</span> button first in the toolbar. The plugin has no options of its own.</li>
+    </ul>
+  </details>
+</div>
+++++

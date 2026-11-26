@@ -1,0 +1,30 @@
+// "Try it" guide card for the readonly-demo live demo. It is included directly above
+// liveDemo::readonly-demo[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Read-only mode">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Read-only mode</span>
+    <span class="demo-guide__tier">Core feature</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This published security policy opens in read-only mode. Confirm that it cannot be changed, then switch to editing and move the next review date to December 1, 2027.</p>
+    <ol class="demo-guide__steps">
+      <li>Click in the policy text. The insertion point can be placed and text can be selected and copied, but typing does not change the content. Formatting buttons such as <span class="demo-ui">Bold</span> and <span class="demo-ui">Italic</span> are unavailable.</li>
+      <li>Open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Preview</span>, or open <span class="demo-ui">Help</span> &gt; <span class="demo-ui">Help</span>. Both still work in read-only mode.</li>
+      <li>Select <span class="demo-ui">Edit policy</span> in the toolbar. The button shows as pressed, the editor switches to design mode, and the formatting buttons become available.</li>
+      <li>Change the next review date, then select <span class="demo-ui">Edit policy</span> again to return to read-only mode.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>readonly: true</code> starts the editor in read-only mode.</li>
+      <li><code>editor.ui.registry.addToggleButton</code> adds the <strong>Edit policy</strong> button. <code>context: 'any'</code> keeps it available in read-only mode, and the button calls <code>editor.mode.set()</code> to switch between <code>'readonly'</code> and <code>'design'</code>.</li>
+    </ul>
+  </details>
+</div>
+++++

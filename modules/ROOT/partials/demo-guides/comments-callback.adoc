@@ -1,0 +1,38 @@
+// "Try it" guide card for the comments-callback live demo. It is included directly above
+// liveDemo::comments-callback[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Comments in callback mode">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Comments in callback mode</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This news story draft has 3 open conversations between the metro editor, Ava Mitchell, and three colleagues. The demo is signed in as Ava, and callback functions save every change to a simulated server. Answer the photo editor, start a new conversation, and resolve the fact check that Ava started.</p>
+    <ol class="demo-guide__steps">
+      <li>Select the highlighted text "viewpoint over the Clearwater Valley" to open Grace Lee's conversation in the <span class="demo-ui">Comments</span> sidebar. Select <span class="demo-ui">Add comment…</span>, type a reply and select <span class="demo-ui">Save</span>.</li>
+      <li>Select other text, such as "Campgrounds stay closed until April 1.", then select <span class="demo-ui">Add comment</span> in the toolbar or in the toolbar that appears over the selection. Type a comment and select <span class="demo-ui">Save</span>.</li>
+      <li>Select "14 miles of trail", open <span class="demo-ui">Conversation Actions</span> and select <span class="demo-ui">Resolve conversation</span>, then <span class="demo-ui">Resolve</span>. The conversation and its highlight disappear.</li>
+      <li>Try to resolve Joshua Perry's conversation about the ranger quote, or select <span class="demo-ui">Edit</span> on a colleague's comment. The callbacks refuse, and the editor shows a message such as <strong>You are not allowed to resolve this conversation</strong>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>tinycomments_mode: 'callback'</code> stores conversations through the callback functions below instead of in the content.</li>
+      <li><code>tinycomments_fetch</code> loads all 3 conversations in one request when the editor opens, and <code>tinycomments_lookup</code> reloads a conversation when it is selected.</li>
+      <li><code>tinycomments_create</code> and <code>tinycomments_reply</code> save new conversations and replies to an in-memory stand-in for a server.</li>
+      <li><code>tinycomments_edit_comment</code> and <code>tinycomments_delete_comment</code> allow changes only to the signed-in user's own comments.</li>
+      <li><code>tinycomments_resolve</code> and <code>tinycomments_delete</code> allow only the person who started a conversation to resolve or delete it.</li>
+      <li><code>tinycomments_delete_all</code> handles <span class="demo-ui">File</span> &gt; <span class="demo-ui">Delete all conversations</span>.</li>
+      <li><code>tinycomments_always_show_highlights: true</code> keeps the highlights visible when the sidebar is closed.</li>
+      <li><code>sidebar_show: 'showcomments'</code> opens the <span class="demo-ui">Comments</span> sidebar when the editor loads.</li>
+      <li><code>user_id: 'ava-mitchell'</code> and <code>fetch_users</code> sign in Ava Mitchell and look up names and avatars in a demo user directory.</li>
+      <li><code>quickbars_selection_toolbar: 'addcomment | bold italic | quicklink'</code> adds <span class="demo-ui">Add comment</span> to the toolbar over selected text, and <code>quickbars_insert_toolbar: false</code> turns off the toolbar on empty lines.</li>
+    </ul>
+  </details>
+</div>
+++++

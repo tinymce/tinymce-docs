@@ -1,0 +1,34 @@
+// "Try it" guide card for the comments-embedded live demo. It is included directly above
+// liveDemo::comments-embedded[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Comments in embedded mode">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Comments in embedded mode</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This grant proposal has 3 open conversations, saved inside the content itself. The demo is signed in as Nicholas Butler, the grants coordinator. Answer the finance question about the budget, fix the numbers, and resolve the conversation Nicholas started about volunteers.</p>
+    <ol class="demo-guide__steps">
+      <li>Select the highlighted text "Evaluation by an external consultant" in the budget table to open Elena Rodriguez's conversation. Select <span class="demo-ui">Add comment…</span>, type a reply and select <span class="demo-ui">Save</span>.</li>
+      <li>Change the evaluation cost to <code>$2,425</code> and the instructor wages to <code>$25,575</code>, so the total stays at $48,500.</li>
+      <li>Select "One-on-one follow-up sessions with trained volunteers", open <span class="demo-ui">Conversation Actions</span> and select <span class="demo-ui">Resolve conversation</span>, then <span class="demo-ui">Resolve</span>. Margaret Long's conversation about the learner target cannot be resolved, because Nicholas did not start it.</li>
+      <li>Select other text, then select <span class="demo-ui">Add comment</span> in the toolbar or in the toolbar that appears over the selection to start a new conversation.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>tinycomments_mode: 'embedded'</code> saves the conversations in the editor content, as an HTML comment at the end, so no back end is needed. The 3 starting conversations are stored this way in the demo HTML.</li>
+      <li><code>tinycomments_can_resolve</code> adds <span class="demo-ui">Resolve conversation</span> and allows it only for conversations that the signed-in user started.</li>
+      <li><code>user_id: 'nicholas-butler'</code> and <code>fetch_users</code> sign in Nicholas Butler and look up names and avatars in a demo user directory.</li>
+      <li><code>tinycomments_always_show_highlights: true</code> keeps the highlights visible when the sidebar is closed.</li>
+      <li><code>sidebar_show: 'showcomments'</code> opens the <span class="demo-ui">Comments</span> sidebar when the editor loads.</li>
+      <li><code>quickbars_selection_toolbar: 'addcomment | bold italic | quicklink'</code> adds <span class="demo-ui">Add comment</span> to the toolbar over selected text, and <code>quickbars_insert_toolbar: false</code> turns off the toolbar on empty lines.</li>
+    </ul>
+  </details>
+</div>
+++++

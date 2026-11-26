@@ -1,0 +1,32 @@
+// "Try it" guide card for the drive-plugin-pick-images live demo. It is included directly above
+// liveDemo::drive-plugin-pick-images[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Tiny Drive file types">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Tiny Drive: pick images only</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This recipe post has no photo yet. Add the moka pot photo from the file library with a picker that only offers images.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point at the end of the introduction paragraph, above <strong>Ingredients</strong>.</li>
+      <li>Select <span class="demo-ui">Custom pick image</span> in the toolbar. The top level of the library shows 2 folders and 4 images. The 2 PDF files are hidden.</li>
+      <li>Open the <strong>logos</strong> folder: only the 2 PNG files appear, and the SVG and EPS files are hidden. Select <span class="demo-ui">Move one folder up</span>.</li>
+      <li>Open <strong>Hero Backgrounds</strong> and select the name <strong>aluminium-antique-coffee-6255.jpg</strong>. The demo's code inserts it as an image at the insertion point.</li>
+      <li>Select <span class="demo-ui">Insert file</span> to compare: without a file type filter, the same library also lists the PDF files.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.ui.registry.addButton</code> in <code>setup</code> adds the <strong>Custom pick image</strong> button. It calls <code>tinydrive.pick({ filetypes: ['image'] })</code> and inserts an image for each picked file.</li>
+      <li><code>filetypes: ['image']</code> limits the file manager to folders and image files.</li>
+      <li><code>tinydrive_token_provider</code> supplies the JSON Web Token that authorizes each request. In this demo it returns a fixed token and the file manager opens a sample library instead of a real {cloudfilemanager} account.</li>
+    </ul>
+  </details>
+</div>
+++++

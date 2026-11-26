@@ -1,0 +1,86 @@
+= Block formats and styles
+:navtitle: Block formats and styles
+:description: Block formats and styles apply block types, such as headings and paragraphs, and named styles defined in the editor configuration to content from dropdown menus.
+:description_short: Apply block types and named styles to content.
+:keywords: block formats, styles, style formats, headings, paragraph, blocks, formats, preview, block_formats, style_formats, style_formats_merge, style_formats_autohide, preview_styles
+
+include::partial$misc/core-feature-summaries.adoc[tag=block-formats-and-styles]
+Integrators can offer a short list of block types and a set of named styles that match the classes in the application style sheets, so authors apply consistent formatting without editing HTML. Block formats and styles are part of the core editor and do not require a plugin.
+
+[[what-block-formats-and-styles-do]]
+== What block formats and styles do
+
+* Changes the type of each selected block, such as a paragraph, heading, or preformatted block, from the `+blocks+` dropdown. The dropdown shows the type of the current block, and the xref:#block_formats[`+block_formats+`] option sets its list. The default list contains a paragraph, six heading levels, and preformatted text.
+* Toggles a single heading level from the `+h1+` to `+h6+` toolbar buttons.
+* Applies named styles from the `+styles+` dropdown, which shows the name of the current style, or *Formats* when no style matches. By default, the dropdown lists headings, inline formats, blocks, and alignment, each in its own submenu.
+* Accepts custom styles in the xref:#style_formats[`+style_formats+`] option. A block style changes the block element (`+block+`), an inline style wraps the selected text in an element (`+inline+`), and a selector-based style adds classes, styles, or attributes to existing elements that match a CSS selector (`+selector+`). A style can also refer to an existing format by name. For the available properties, see xref:content-formatting.adoc#format-type[Format types].
+* Organizes custom styles into nested submenus, and into groups under non-clickable headings.
+* Replaces the default styles with the custom styles, or adds the custom styles after the defaults when xref:#style_formats_merge[`+style_formats_merge+`] is set to `+true+`.
+* Removes a style when the style already applied to the selection is chosen again.
+* Disables styles that cannot apply to the current selection, such as a table style when the insertion point is outside a table. Setting xref:#style_formats_autohide[`+style_formats_autohide+`] to `+true+` hides these styles, and any submenu left empty, instead.
+* Shows a preview of each block type and style in the menus, rendered with the element, classes, and styles of the format and with the content CSS. The xref:#preview_styles[`+preview_styles+`] option sets which CSS properties are previewed, or turns previews off.
+
+[[interactive-example]]
+== Interactive example
+
+include::partial$demo-guides/block-formats-and-styles.adoc[]
+
+liveDemo::block-formats-and-styles[]
+
+[[basic-setup]]
+== Basic setup
+
+The `+styles+` dropdown is part of the default toolbar, and the *Blocks* and *Formats* items are included in the default *Format* menu. To show both dropdowns in a custom toolbar, add `+blocks+` and `+styles+` to the xref:toolbar-configuration-options.adoc#toolbar[`+toolbar+`] option.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  toolbar: 'undo redo | blocks styles | bold italic',
+  style_formats: [
+    { title: 'Lead paragraph', block: 'p', classes: 'lead' },
+    { title: 'Highlight', inline: 'mark' }
+  ]
+});
+----
+
+[[options]]
+== Options
+
+The following configuration options affect block formats and styles.
+
+include::partial$configuration/block_formats.adoc[leveloffset=+1]
+
+include::partial$configuration/style_formats.adoc[leveloffset=+1]
+
+include::partial$configuration/style_formats_merge.adoc[leveloffset=+1]
+
+include::partial$configuration/style_formats_autohide.adoc[leveloffset=+1]
+
+include::partial$configuration/preview_styles.adoc[leveloffset=+1]
+
+[[toolbar-buttons]]
+== Toolbar buttons
+
+[cols="1,3",options="header"]
+|===
+|Toolbar button identifier |Description
+include::partial$toolbar-button-ids/core-toolbar-buttons.adoc[tag=blocks]
+include::partial$toolbar-button-ids/core-toolbar-buttons.adoc[tag=styles]
+include::partial$toolbar-button-ids/core-toolbar-buttons.adoc[tag=headings]
+|===
+
+[[menu-items]]
+== Menu items
+
+[cols="1,1,2",options="header"]
+|===
+|Menu item identifier |Default menu location |Description
+include::partial$menu-item-ids/core-menu-items.adoc[tag=blocks]
+include::partial$menu-item-ids/core-menu-items.adoc[tag=styles]
+|===
+
+[[commands]]
+== Commands
+
+To apply block formats and styles from code, use the `+FormatBlock+` and `+mceToggleFormat+` commands. For details, see xref:editor-command-identifiers.adoc#core-editor-commands[Core editor commands].

@@ -1,0 +1,28 @@
+// "Try it" guide card for the premiumskinsandicons-borderless live demo. It is included directly above
+// liveDemo::premiumskinsandicons-borderless[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Borderless skin">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Borderless skin</span>
+    <span class="demo-guide__tier">Premium skin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This hotel blog post fills the page with no frame around the editor. Add a fourth row to the activities table for the farmers market trip (<code>Saturday farmers market</code>, <code>9:00 AM</code>, <code>$10</code>), then link <strong>Hollis Farm</strong> to <code>https://www.example.com/</code>.</p>
+    <ol class="demo-guide__steps">
+      <li>Look at the edges of the editor: the Borderless skin has no outer border, so the menu bar, toolbar and text sit directly on the page.</li>
+      <li>Place the insertion point in the last row of the <strong>Morning activities</strong> table and open <span class="demo-ui">Table</span> &gt; <span class="demo-ui">Row</span> &gt; <span class="demo-ui">Insert row after</span>. Type the three values into the new row.</li>
+      <li>Select <strong>Hollis Farm</strong> in the breakfast section, select <span class="demo-ui">Insert/edit link</span> in the toolbar, type <code>https://www.example.com/</code> in <span class="demo-ui">URL</span> and select <span class="demo-ui">Save</span>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>skin: 'borderless'</code> removes the outer border around the editor, for full-page editing or for an application that draws its own frame.</li>
+    </ul>
+  </details>
+</div>
+++++

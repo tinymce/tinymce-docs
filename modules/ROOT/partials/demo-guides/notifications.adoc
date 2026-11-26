@@ -1,0 +1,29 @@
+// "Try it" guide card for the notifications live demo. It is included directly above
+// liveDemo::notifications[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Notifications">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Notifications</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This support ticket reply opens with four notifications, one of each type. Compare them and close them one by one.</p>
+    <ol class="demo-guide__steps">
+      <li>When the editor loads, four notifications stack at the top of the editing area in the order they were opened: success (<strong>Draft reply saved at 10:42 AM.</strong>), info, warning, and error.</li>
+      <li>Compare the colors and icons. Each <code>type</code> has its own style.</li>
+      <li>Select <span class="demo-ui">Close</span> (the &#215; button) on each notification. None of them closes on its own, because no <code>timeout</code> is set.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.notificationManager.open</code> opens each notification with a <code>text</code> and a <code>type</code> of <code>success</code>, <code>info</code>, <code>warning</code>, or <code>error</code>.</li>
+      <li><code>editor.on('SkinLoaded')</code> in <code>setup</code> opens all four as soon as the editor&#8217;s interface is ready.</li>
+    </ul>
+  </details>
+</div>
+++++

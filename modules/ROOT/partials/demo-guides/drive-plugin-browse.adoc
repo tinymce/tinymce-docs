@@ -1,0 +1,31 @@
+// "Try it" guide card for the drive-plugin-browse live demo. It is included directly above
+// liveDemo::drive-plugin-browse[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Tiny Drive browse API">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Tiny Drive: browse</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">The camp photos for this school newsletter need sorting before the December issue. Open the file library from the custom button, star two of the 14 photos in <strong>Hero Backgrounds</strong>, and close it again. Browsing manages files and inserts nothing.</p>
+    <ol class="demo-guide__steps">
+      <li>Select <span class="demo-ui">Custom browse</span> in the toolbar. The button calls <code>editor.plugins.tinydrive.browse()</code>, which opens the file manager.</li>
+      <li>Open the <strong>Hero Backgrounds</strong> folder. File names are plain text here, because the browse dialog does not insert files.</li>
+      <li>Select the check boxes next to two photos, then select <span class="demo-ui">Star</span>. With files selected, the bar also offers <span class="demo-ui">Move</span>, <span class="demo-ui">Download</span> and <span class="demo-ui">Delete</span>.</li>
+      <li>Select <span class="demo-ui">Close</span>. The promise that <code>browse()</code> returned resolves, and the demo logs <code>Tiny Drive dialog closed.</code> to the browser console. The newsletter is unchanged.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.ui.registry.addButton</code> in <code>setup</code> adds the <strong>Custom browse</strong> button, which calls <code>tinydrive.browse()</code> and logs a message when the dialog closes.</li>
+      <li>The <code>insertfile</code> toolbar button opens the same library in insert mode, for comparison: selecting a file name there inserts the file.</li>
+      <li><code>tinydrive_token_provider</code> supplies the JSON Web Token that authorizes each request. In this demo it returns a fixed token and the file manager opens a sample library instead of a real {cloudfilemanager} account.</li>
+    </ul>
+  </details>
+</div>
+++++

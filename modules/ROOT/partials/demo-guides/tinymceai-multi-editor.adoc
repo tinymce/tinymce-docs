@@ -1,0 +1,37 @@
+// "Try it" guide card for the tinymceai-multi-editor live demo. It is included directly above
+// liveDemo::tinymceai-multi-editor[] so it sits outside the editors and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: {pluginname} multi-editor mode">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">{pluginname} multi-editor mode</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This hiring pack for a senior product designer in Berlin is split across two editors that share one AI panel. The role description contains wording that can put candidates off, such as "young and fast-moving team" and "Native-level English required", and the interview guide has only two questions. Fix both from the panel next to the editors.</p>
+    <ol class="demo-guide__steps">
+      <li><span class="demo-ui">AI Chat</span> is open in the panel next to the editors. Above the prompt, two context tags show the editors in the conversation: <span class="demo-ui">Role description</span> and <span class="demo-ui">Interview questions</span>. Point to a tag to see its full name.</li>
+      <li>Select <span class="demo-ui">Flag any unclear or biased wording</span> and read the suggestions for each section.</li>
+      <li>Select <span class="demo-ui">Suggest more interview questions</span>. The <span class="demo-ui">Interview questions</span> editor shows the new questions as a preview: select <span class="demo-ui">Apply all</span>, or step through them with <span class="demo-ui">Apply suggestion</span> and <span class="demo-ui">Skip suggestion</span>.</li>
+      <li>Select <span class="demo-ui">AI Review</span> in the toolbar of either editor. The same panel switches to Review, which works across both editors.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>tinymceai_group: 'hiring-pack'</code> puts the two editors in one group that shares Chat, Review and Quick Actions.</li>
+      <li><code>tinymceai_document_name</code> labels each editor's context tag, and <code>tinymceai_document_description</code> tells the AI what each editor contains.</li>
+      <li><code>tinymceai_decoupled_container: '#tinymceai-multi-editor-panel'</code> renders AI Chat and AI Review in the panel next to the editors instead of in a sidebar, and <code>tinymceai_decoupled_show: 'tinymceai-chat'</code> opens Chat when the page loads.</li>
+      <li><code>tinymceai_chat_welcome_message</code> and <code>tinymceai_chat_welcome_actions</code> set the greeting and two hiring-pack prompts. The <code>setup</code> function registers an empty icon so the prompts show text only.</li>
+      <li><code>tinymceai_languages</code> sets the 12 languages in the <strong>Translate</strong> toolbar menu, and <code>tinymceai_quickactions_custom</code> adds a <strong>Challenge</strong> chat prompt to <strong>AI Quick Actions</strong>.</li>
+      <li><code>quickbars_selection_toolbar: 'tinymceai-quickactions addcomment'</code> shows <strong>AI Quick Actions</strong> and <strong>Add comment</strong> above selected text.</li>
+      <li><code>tinymceai_chat_fetch_sources</code> and <code>tinymceai_chat_fetch_source</code> add three web pages to <strong>Add context source</strong>.</li>
+      <li><code>tinymceai_token_provider</code> fetches a JSON Web Token (JWT) from a demo session before each AI request. The <strong>JS</strong> tab shows a placeholder endpoint instead.</li>
+      <li><code>menubar: false</code> leaves out the menu bar so the two compact editors line up with the panel.</li>
+    </ul>
+  </details>
+</div>
+++++

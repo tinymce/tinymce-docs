@@ -36,7 +36,9 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 
 The following example adds two buttons to the toolbar:
 
-liveDemo::custom-toolbar-button[tab="js"]
+include::partial$demo-guides/custom-toolbar-button.adoc[]
+
+liveDemo::custom-toolbar-button[]
 
 The first button inserts "It's my button!" into the editor when clicked. The second button is an example of how `+onSetup+` works. This button inserts a `+time+` element containing the current date into the editor using a `+toTimeHtml()+` helper function - a simplified version of {productname}'s xref:insertdatetime.adoc[insertdatetime] plugin.
 

@@ -1,0 +1,31 @@
+// "Try it" guide card for the premiumskinsandicons-fabric live demo. It is included directly above
+// liveDemo::premiumskinsandicons-fabric[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Fabric skin">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Fabric skin</span>
+    <span class="demo-guide__tier">Premium skin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This architecture firm project page uses the Fabric skin, which follows the Microsoft Office look. Center the project title, then link <strong>Kessler Engineering</strong> to <code>https://www.example.com/</code>.</p>
+    <ol class="demo-guide__steps">
+      <li>Look at the toolbar: square 40-pixel buttons with square corners on a light gray bar. The content sits on a white page against a gray background, like a word processor.</li>
+      <li>Place the insertion point in the title and select <span class="demo-ui">Align center</span> in the toolbar.</li>
+      <li>Select <strong>Kessler Engineering</strong> under <strong>Project team</strong>. Select <span class="demo-ui">Reveal or hide additional toolbar items</span> (the last toolbar button) to open the toolbar drawer, then select <span class="demo-ui">Insert/edit link</span>. The dialog has a blue border with a soft blue glow, square corners and no lines between the header, body and footer.</li>
+      <li>Type <code>https://www.example.com/</code> in <span class="demo-ui">URL</span> and select <span class="demo-ui">Save</span>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>skin: 'fabric'</code> styles the menu bar, toolbar, menus and dialogs in the Microsoft Fabric design language. The skin has no outer border, so the blue header bar and the gray border around the editor come from the demo page CSS.</li>
+      <li><code>content_css: 'fabric'</code> loads the matching content styles, which show the text as a white page on a gray background.</li>
+      <li><code>toolbar_mode: 'floating'</code> moves toolbar buttons that do not fit in the toolbar into a drawer, opened with <span class="demo-ui">Reveal or hide additional toolbar items</span>.</li>
+    </ul>
+  </details>
+</div>
+++++

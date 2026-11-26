@@ -261,6 +261,7 @@ const revisions = [
       <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
       <h2>A simple table to play with</h2>
       <table style="border-collapse: collapse; width: 100%;" border="1">
+      <colgroup><col style="width: 34.2%;"><col style="width: 31.6%;"><col style="width: 34.2%;"></colgroup>
       <thead>
       <tr>
       <th>Product</th>
@@ -270,21 +271,16 @@ const revisions = [
       </thead>
       <tbody>
       <tr>
-      <td>TinyMCE</td>
-      <td>Free</td>
-      <td>YES!</td>
-      </tr>
-      <tr>
-      <td>Plupload</td>
-      <td>Free</td>
-      <td>YES!</td>
+      <td style="text-align: center;">TinyMCE</td>
+      <td style="text-align: center;">Free</td>
+      <td style="text-align: center;">YES!</td>
       </tr>
       </tbody>
       </table>
       <h2>Found a bug?</h2>
       <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
       <h2>Finally ...</h2>
-      <p><s>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</s></p>
+      <p><s>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</s></p>
       <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
     `,
   },
@@ -299,7 +295,7 @@ const revisions = [
     content: `
       <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/tinymce/latest/_images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
       <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
-      <h2>Got questions or need help?</span></h2>
+      <h2>Got questions or need help?</h2>
       <ol>
       <li>Our <a href="../">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
       <li>Have a specific question? Try the <a href="https://stackoverflow.com/questions/tagged/tinymce" target="_blank" rel="noopener"><code>tinymce</code> tag at Stack Overflow</a>.</li>
@@ -307,6 +303,7 @@ const revisions = [
       </ol>
       <h2>A simple table to play with</h2>
       <table style="border-collapse: collapse; width: 100%;" border="1">
+      <colgroup><col style="width: 34.2%;"><col style="width: 31.6%;"><col style="width: 34.2%;"></colgroup>
       <thead>
       <tr>
       <th>Product</th>
@@ -316,21 +313,16 @@ const revisions = [
       </thead>
       <tbody>
       <tr>
-      <td>TinyMCE</td>
-      <td>Free</td>
-      <td>YES!</td>
-      </tr>
-      <tr>
-      <td>Plupload</td>
-      <td>Free</td>
-      <td>YES!</td>
+      <td style="text-align: center;">TinyMCE</td>
+      <td style="text-align: center;">Free</td>
+      <td style="text-align: center;">YES!</td>
       </tr>
       </tbody>
       </table>
       <h2>Found a bug?</h2>
       <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
       <h2>Finally ...</h2>
-      <p>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</p>
+      <p>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</p>
       <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
     `,
   },
@@ -353,6 +345,7 @@ const revisions = [
       </ul>
       <h2>A simple table to play with</h2>
       <table style="border-collapse: collapse; width: 100%;" border="1">
+      <colgroup><col style="width: 34.2%;"><col style="width: 31.6%;"><col style="width: 34.2%;"></colgroup>
       <thead>
       <tr>
       <th>Product</th>
@@ -362,21 +355,16 @@ const revisions = [
       </thead>
       <tbody>
       <tr>
-      <td>TinyMCE</td>
-      <td>Free</td>
-      <td>YES!</td>
-      </tr>
-      <tr>
-      <td>Plupload</td>
-      <td>Free</td>
-      <td>YES!</td>
+      <td style="text-align: center;">TinyMCE</td>
+      <td style="text-align: center;">Free</td>
+      <td style="text-align: center;">YES!</td>
       </tr>
       </tbody>
       </table>
       <h2>Found a bug?</h2>
       <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
       <h2>Finally ...</h2>
-      <p>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</p>
+      <p>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</p>
       <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
     `,
   }
@@ -392,9 +380,9 @@ const revisionhistory_fetch = () => new Promise((resolve) => {
 
 const revisionhistory_fetch_revision = (_editor, revision) => new Promise((resolve, reject) => {
   setTimeout(() => {
-    const revision = revisions.find((r) => r.revisionId === revision.revisionId);
-    if (revision) {
-      resolve(revision);
+    const found = revisions.find((r) => r.revisionId === revision.revisionId);
+    if (found) {
+      resolve(found);
     } else {
       reject(`Revision ${revision.revisionId} is not found`);
     }
@@ -420,7 +408,7 @@ tinymce.init({
   },
   menubar: 'file edit view insert format tools table tc help',
   // Note: if a toolbar item requires a plugin, the item will not present in the toolbar if the plugin is not also loaded.
-  toolbar: "undo redo | insertfile |importword exportword exportpdf | suggestededits | revisionhistory | tinymceai-chat tinymceai-review tinymceai-quickactions | blocks fontsizeinput | bold italic | align numlist bullist | link uploadcare uploadcare-video | table math media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", 
+  toolbar: "undo redo | importword exportword exportpdf | suggestededits | revisionhistory | tinymceai-chat tinymceai-review tinymceai-quickactions | blocks fontsizeinput | bold italic | align numlist bullist | link uploadcare uploadcare-video | table math media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", 
   mobile: {
     plugins: 'tinymceai suggestededits preview powerpaste casechange importcss searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen link math media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars emoticons advtable footnotes mergetags autocorrect typography advtemplate uploadcare'
   },
@@ -494,13 +482,13 @@ tinymce.init({
     { title: 'My page 2', value: 'http://www.moxiecode.com' }
   ],
   importcss_append: true,
-  height: 600,
+  height: 800,
   quickbars_selection_toolbar: 'tinymceai-quickactions ai-quickactions-translate | bold italic | quicklink h2 h3 blockquote quicktable | addcomment',
   noneditable_class: 'mceNonEditable',
   toolbar_mode: 'sliding',
   spellchecker_ignore_list: ['Ephox', 'Moxiecode', 'tinymce', 'TinyMCE'],
-  content_style: '.mymention{ color: gray; }' +
-  'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  content_style: '.mymention{ color: gray; }',
   contextmenu: 'link uploadcare uploadcare-video table spellchecker configurepermanentpen',
   
   tinymceai_token_provider: async () => {

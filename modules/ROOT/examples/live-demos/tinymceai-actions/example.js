@@ -1,12 +1,83 @@
-// Step 1: Set up session - this should be part of the application's user management process.
-// Open-source plugins below are only for editing the demo HTML (lists, links, tables). TinyMCE AI options are the focus.
+const mentions_fetch = async (query, success) => {
+  const searchPhrase = query.term.toLowerCase();
+  await fetch(`https://demouserdirectory.tiny.cloud/v1/users?q=${encodeURIComponent(searchPhrase)}`)
+    .then((response) => response.json())
+    .then((users) => success(users.data.map((userInfo) => ({
+      id: userInfo.id,
+      name: userInfo.name,
+      image: userInfo.avatar,
+      description: userInfo.custom.role
+    }))))
+    .catch(() => {});
+};
+
+const fetch_users = (userIds) => Promise.all(userIds.map((userId) => fetch(`https://demouserdirectory.tiny.cloud/v1/users/${userId}`).then((response) => response.json()).catch(() => ({ id: userId }))));
+
 tinymce.init({
   selector: 'textarea#tinymceai-actions',
-  height: '800px',
-  plugins: ['tinymceai', 'advlist', 'lists', 'link', 'autolink', 'table', 'wordcount'],
-  toolbar: 'undo redo | tinymceai-chat tinymceai-review tinymceai-quickactions | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link',
+  height: 800,
+  plugins: [
+    'tinymceai',
+    'advlist', 'autolink', 'lists', 'link', 'uploadcare', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'advcode', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount',
+    'quickbars', 'tinycomments', 'mentions', 'revisionhistory', 'suggestededits',
+    'emoticons', 'autocorrect', 'tinymcespellchecker', 'accordion', 'footnotes', 'powerpaste',
+    'importword', 'exportpdf', 'exportword', 'markdown', 'a11ychecker', 'typography', 'casechange',
+    'checklist', 'advtable', 'formatpainter', 'permanentpen', 'tableofcontents', 'math',
+    'linkchecker', 'mediaembed'
+  ],
+  toolbar: 'tinymceai-chat tinymceai-review tinymceai-quickactions | undo redo | blocks | ' +
+    'bold italic forecolor backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link uploadcare table | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  quickbars_selection_toolbar: 'tinymceai-quickactions addcomment',
   sidebar_show: 'tinymceai-chat',
+  toolbar_mode: 'sliding',
+  visual: false,
+  images_file_types: 'jpeg,jpg,jpe,jfi,jif,jfif,png,gif,bmp,webp,svg',
+  user_id: 'james-wilson',
+  spellchecker_active: true,
+  spellchecker_dialog: true,
+  uploadcare_public_key: '630992ad50fe2291c406',
+  uploadcare_store_type: 'temporary',
+  advcode_inline: true,
+  tinycomments_mode: 'embedded',
+  suggestededits_content: 'html',
+  mentions_item_type: 'profile',
+  mentions_fetch,
+  fetch_users,
+  revisionhistory_fetch: () => {
+    const textarea = document.querySelector('textarea#tinymceai-actions');
+    const initialContent = textarea ? textarea.value : '';
+    const revisions = [
+      {
+        revisionId: '1',
+        createdAt: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - 1, 14, 32, 0).getTime(),
+        author: {
+          id: 'jade-scott',
+          name: 'Jade Scott',
+          avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_jade-scott_128_515dc6a1.jpg',
+        },
+        content: initialContent
+      },
+      {
+        revisionId: '0',
+        createdAt: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - 1, 14, 32, 0).getTime(),
+        author: {
+          id: 'jade-scott',
+          name: 'Jade Scott',
+          avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_jade-scott_128_515dc6a1.jpg',
+        },
+        content: ''
+      }
+    ];
+    return Promise.resolve(revisions.sort((a, b) => (new Date(a.createdAt) < new Date(b.createdAt) ? -1 : 1)));
+  },
+  revisionhistory_display_author: true,
   tinymceai_token_provider: async () => {
+    // Required for authentication. Replace with the token endpoint for the AI service.
     return fetch('/api/tinymceai-token', { credentials: 'include' })
       .then(resp => resp.text())
       .then(token => ({ token }));
@@ -28,11 +99,7 @@ tinymce.init({
     return Promise.resolve({ type: 'web-resource', url: urls[id] });
   },
   tinymceai_quickactions_custom: [
-    {
-      type: 'chat',
-      title: 'Challenge',
-      prompt: 'Challenge statements, verify facts and identify assumptions'
-    }
+    { type: 'chat', title: 'Challenge', prompt: 'Challenge statements, verify facts and identify assumptions' }
   ],
   tinymceai_languages: [
     { title: 'English', language: 'english' },

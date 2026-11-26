@@ -1,0 +1,30 @@
+// "Try it" guide card for the edit-image live demo. It is included directly above
+// liveDemo::edit-image[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Image Editing">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Image Editing</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This travel brochure has three photos to fix before it goes to print: the cove banner is too dark, the kitchen photo arrived sideways, and the terrace photo shows too much sky.</p>
+    <ol class="demo-guide__steps">
+      <li>Select the sideways kitchen photo, then select <span class="demo-ui">Rotate clockwise</span> in the toolbar that appears above the image. The same button is also in the first group of the main toolbar.</li>
+      <li>Select the cove photo and select <span class="demo-ui">Edit image</span>. In the <span class="demo-ui">Edit Image</span> dialog, select <span class="demo-ui">Brightness</span>, drag the slider to the right, select <span class="demo-ui">Apply</span>, then select <span class="demo-ui">Save</span>.</li>
+      <li>Select the terrace photo, open <span class="demo-ui">Edit image</span> again and select <span class="demo-ui">Crop</span>. Drag the corner handles to remove some of the sky, then select <span class="demo-ui">Apply</span> and <span class="demo-ui">Save</span>.</li>
+      <li>Right-click any photo and select <span class="demo-ui">Edit image</span> to try <span class="demo-ui">Resize</span>, <span class="demo-ui">Sharpen</span> or <span class="demo-ui">Color levels</span>. Press <kbd>Ctrl</kbd>+<kbd>Z</kbd> (<kbd>⌘</kbd>+<kbd>Z</kbd> on macOS) to undo a change.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editimage_cors_hosts: ['tiny.ucarecdn.com']</code> lets the editor load the photos from their image host directly, so they can be edited without a proxy.</li>
+      <li><code>editimage_toolbar</code> groups the image toolbar into rotate, flip and edit buttons.</li>
+    </ul>
+  </details>
+</div>
+++++

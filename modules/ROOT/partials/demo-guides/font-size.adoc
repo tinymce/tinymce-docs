@@ -1,0 +1,30 @@
+// "Try it" guide card for the font-size live demo. It is included directly above
+// liveDemo::font-size[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Font size">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Font size</span>
+    <span class="demo-guide__tier">Core feature</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This weekly grocery flyer shows each deal-of-the-week price at 48px, except the avocado price, which is 32px. Make all three prices match, then adjust the fine print.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point in the apple price, <strong>$1.49</strong>. The font size field in the toolbar shows <strong>48px</strong>.</li>
+      <li>Select the avocado price, <strong>$0.99</strong>. The field shows <strong>32px</strong>. Type <code>48</code> in the field and press <kbd>Enter</kbd>. A number without a unit is applied in pixels.</li>
+      <li>Select the fine print at the end of the flyer and select <span class="demo-ui">Increase font size</span> or <span class="demo-ui">Decrease font size</span> to change it one pixel at a time.</li>
+      <li>Select a heading and open <span class="demo-ui">Format</span> &gt; <span class="demo-ui">Font sizes</span> to choose from the eight preset sizes.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>font_size_formats: '12px 14px 16px 18px 24px 32px 48px 64px'</code> sets the preset sizes in <strong>Format</strong> &gt; <strong>Font sizes</strong>, from 12px fine print to a 64px headline.</li>
+      <li><code>font_size_input_default_unit: 'px'</code> applies a number typed without a unit in pixels, instead of the default points.</li>
+    </ul>
+  </details>
+</div>
+++++

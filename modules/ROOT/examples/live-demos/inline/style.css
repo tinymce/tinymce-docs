@@ -15,7 +15,11 @@
   padding: 20px;
 }
 .demo-inline p {
-  margin: 0 0;
+  margin: 0 0 10px;
+}
+.demo-inline ul,
+.demo-inline ol {
+  margin: 0 0 10px;
 }
 .demo-inline h1 {
   color: #1976D2;

@@ -1,7 +1,10 @@
 tinymce.init({
-  selector: 'textarea',
-  plugins: 'uploadcare link',
-  toolbar: "undo redo | styles | bold italic underline | forecolor | bullist numlist | link uploadcare uploadcare-video | code preview",
+  selector: "textarea#uploadcare-documents",
+  plugins: 'uploadcare link advlist autolink lists charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime table help wordcount',
+  toolbar: 'link uploadcare uploadcare-video | ' +
+    'undo redo | blocks | bold italic underline forecolor backcolor | ' +
+    'alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | ' +
+    'code preview | removeformat | help',
   uploadcare_public_key: '<your-public-key>',
   documents_file_types: [
     { mimeType: 'application/msword', extensions: [ 'doc' ] },
@@ -26,6 +29,8 @@ tinymce.init({
     { mimeType: 'application/x-compressed-tar', extensions: [ 'tar.gz', 'tgz' ] },
     { mimeType: 'application/x-7z-compressed', extensions: [ '7z' ] },
     { mimeType: 'application/vnd.rar', extensions: [ 'rar' ] }
-  ]
+  ],
+  height: 700,
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });
 

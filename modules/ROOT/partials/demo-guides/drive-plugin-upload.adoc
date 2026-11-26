@@ -1,0 +1,31 @@
+// "Try it" guide card for the drive-plugin-upload live demo. It is included directly above
+// liveDemo::drive-plugin-upload[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Tiny Drive upload API">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Tiny Drive: upload</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">The <strong>Attachments</strong> section of this site update needs the daily log file. Upload a file that the application generates, without opening the file manager, and link it in one step.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point at the end of the <strong>Daily log exported from the site management system:</strong> line.</li>
+      <li>Select <span class="demo-ui">Custom upload</span> in the toolbar. The button creates a 12-byte text file in the browser and passes it to <code>editor.plugins.tinydrive.upload()</code>.</li>
+      <li>When the upload finishes, the demo inserts a link named <strong>hello.txt</strong> at the insertion point. The browser console shows an <code>upload progress</code> message for each progress update.</li>
+      <li>Select <span class="demo-ui">Insert file</span> to open the library. A new <strong>hello</strong> folder holds <strong>hello.txt</strong>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.ui.registry.addButton</code> in <code>setup</code> adds the <strong>Custom upload</strong> button. It calls <code>tinydrive.upload()</code> with <code>path: '/hello'</code>, <code>name: 'hello.txt'</code>, a <code>Blob</code> holding <code>Hello world!</code> and an <code>onprogress</code> callback, then inserts a link to <code>result.file.url</code>.</li>
+      <li>The <code>insertfile</code> toolbar button opens the library, where the uploaded file appears.</li>
+      <li><code>tinydrive_token_provider</code> supplies the JSON Web Token that authorizes each request. In this demo it returns a fixed token and uploads go to a sample library in the browser instead of a real {cloudfilemanager} account.</li>
+    </ul>
+  </details>
+</div>
+++++

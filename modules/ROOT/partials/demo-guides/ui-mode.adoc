@@ -1,0 +1,31 @@
+// "Try it" guide card for the ui-mode live demo. It is included directly above
+// liveDemo::ui-mode[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Editors in scrollable containers">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Editors in scrollable containers</span>
+    <span class="demo-guide__tier">Core feature</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">Two IT runbooks sit in boxes that scroll on their own: one in a classic editor, and one split into two inline editors. Open a menu in each box, then scroll the box, and check that the menu stays attached to the button that opened it.</p>
+    <ol class="demo-guide__steps">
+      <li>In the first box, open <span class="demo-ui">Format</span> in the menu bar.</li>
+      <li>With the menu open, scroll inside the box. The menu moves up and down with the menu bar instead of staying fixed on the page.</li>
+      <li>In the second box, click the runbook text below the title. The inline editor shows its menu bar and toolbar. Open the block format list, which shows <span class="demo-ui">Paragraph</span>, and scroll inside the box again. The toolbar stays docked at the top of the box, and the list stays open below it.</li>
+      <li>Click the runbook title to use the second inline editor, which has a shorter toolbar: <span class="demo-ui">Undo</span>, <span class="demo-ui">Redo</span>, <span class="demo-ui">Bold</span>, <span class="demo-ui">Italic</span>, and <span class="demo-ui">Underline</span>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>ui_mode: 'split'</code> renders menus, toolbars of inline editors, and inline dialogs in a container next to each editor, inside the scrolling box, so they scroll with it.</li>
+      <li><code>min_height: 500</code> makes the classic editor taller than its 300 pixel box, so the box has to scroll.</li>
+      <li><code>inline: true</code> turns the runbook title and body into two inline editors. The title editor sets a shorter <code>toolbar</code>.</li>
+    </ul>
+  </details>
+</div>
+++++

@@ -1,0 +1,29 @@
+// "Try it" guide card for the font-family live demo. It is included directly above
+// liveDemo::font-family[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Font family">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Font family</span>
+    <span class="demo-guide__tier">Core feature</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">In this fall lookbook, look names are set in Georgia and style codes in Courier New. Look 3 breaks both rules: its name is in Trebuchet MS, and its style code <strong>CL-2063</strong> uses the body font. Fix both.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point in any line. The font dropdown in the toolbar shows its typeface: <span class="demo-ui">Inter</span> in the introduction, <span class="demo-ui">Palatino</span> in the quote, <span class="demo-ui">Trebuchet MS</span> in the Look 3 name.</li>
+      <li>Select <strong>Look 3: Evening in town</strong>, open the font dropdown and choose <span class="demo-ui">Georgia</span>.</li>
+      <li>Select <strong>CL-2063</strong> in the Look 3 description and open <span class="demo-ui">Format</span> &gt; <span class="demo-ui">Fonts</span> &gt; <span class="demo-ui">Courier New</span>.</li>
+      <li>Select a whole line that mixes typefaces, such as the Look 1 description, and choose one font to replace every typeface in it. Open <span class="demo-ui">Format</span> &gt; <span class="demo-ui">Clear formatting</span> to return the text to Inter.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>font_family_formats</code> replaces the default list with six fonts, each shown in its own typeface. Inter matches the body text, so plain text shows <strong>Inter</strong> instead of a font stack.</li>
+    </ul>
+  </details>
+</div>
+++++

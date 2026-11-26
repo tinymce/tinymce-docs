@@ -1,0 +1,28 @@
+// "Try it" guide card for the checklist live demo. It is included directly above
+// liveDemo::checklist[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Checklist">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Checklist</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This month-end close list has 12 tasks, and 4 of them are done. Check off more tasks, add a subtask, and turn the items raised at the close meeting into tasks.</p>
+    <ol class="demo-guide__steps">
+      <li>Select the checkbox next to <strong>Reconcile the payroll bank account</strong> to mark it as done, or place the insertion point in a task and press <kbd>Ctrl</kbd>+<kbd>Enter</kbd> (<kbd>⌘</kbd>+<kbd>Enter</kbd> on macOS).</li>
+      <li>Place the insertion point at the end of <strong>Reconcile the operating bank account</strong>, press <kbd>Enter</kbd>, and type <code>Reconcile the savings account</code>. Press <kbd>Tab</kbd> to make the new task a subtask of the task above, and <kbd>Shift</kbd>+<kbd>Tab</kbd> to move it back out.</li>
+      <li>Place the insertion point in the bulleted list under <strong>Raised at the close meeting</strong> and select <span class="demo-ui">Insert Checklist</span> in the toolbar. The three items become tasks.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li>No options. The plugin adds the <strong>Insert Checklist</strong> toolbar button and needs the <code>lists</code> plugin. The <strong>CSS</strong> tab shows the styles that display checkboxes on a published page.</li>
+    </ul>
+  </details>
+</div>
+++++

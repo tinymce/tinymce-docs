@@ -1,0 +1,30 @@
+// "Try it" guide card for the suggestededits-auto-approve live demo. It is included directly above
+// liveDemo::suggestededits-auto-approve[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: suggestededits_auto_approve">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">suggestededits_auto_approve</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">The saved model of these release notes holds 5 suggestions. The 2 made by Hazel Turner, the signed-in release manager, were applied when the editor loaded, so only the 3 from engineers wait for review.</p>
+    <ol class="demo-guide__steps">
+      <li>Select <span class="demo-ui">Review edits</span> in the toolbar. The sidebar lists 3 suggestions from Grace Lee, James Wilson and Dmitri Sokolov. Select <span class="demo-ui">Exit review</span>.</li>
+      <li>Type a change in the document, then select <span class="demo-ui">Review edits</span> again. The change was applied directly and is not listed, because <span class="demo-ui">Track edits</span> is off.</li>
+      <li>Select <span class="demo-ui">Track edits</span> in the toolbar to turn tracking on, type another change, and open <span class="demo-ui">Review edits</span>. The change now appears as a suggestion from Hazel Turner.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>suggestededits_auto_approve: true</code> applies the saved suggestions of the signed-in user on load and starts with <strong>Track edits</strong> off.</li>
+      <li><code>suggestededits_model</code> loads the 5 saved suggestions and their feedback.</li>
+      <li><code>user_id: 'hazel-turner'</code> and <code>fetch_users</code> sign in as Hazel Turner and load the reviewers' names and photos.</li>
+    </ul>
+  </details>
+</div>
+++++

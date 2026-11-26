@@ -1,0 +1,30 @@
+// "Try it" guide card for the custom-toolbar-toggle-button live demo. It is included directly above
+// liveDemo::custom-toolbar-toggle-button[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Toggle toolbar button">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Toggle toolbar button</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">Week 1 of this onboarding checklist is now complete, and two of its three steps are already struck through. Strike through the third step, and compare how the two custom toggle buttons show their state.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point in <strong>Hold the kickoff call</strong>, which is struck through. The strikethrough icon button, the second button in the toolbar, is highlighted. The <span class="demo-ui">Strikethrough</span> text button is not.</li>
+      <li>Select the text of <strong>Share the onboarding plan and the go-live date</strong> and select <span class="demo-ui">Strikethrough</span>. The step is struck through and both buttons are highlighted.</li>
+      <li>Click in a step in Week 2, which has no strikethrough. The icon button turns off, but the <strong>Strikethrough</strong> text button stays highlighted, because it only changes state when it is selected.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.ui.registry.addToggleButton</code> adds <strong>Strikethrough</strong>, which toggles its own state with <code>api.setActive(!api.isActive())</code>.</li>
+      <li><code>editor.ui.registry.addToggleButton</code> adds the strikethrough icon button, which follows the selection through <code>editor.formatter.formatChanged</code>.</li>
+      <li>Both buttons run <code>mceToggleFormat</code> with the <code>strikethrough</code> format.</li>
+    </ul>
+  </details>
+</div>
+++++

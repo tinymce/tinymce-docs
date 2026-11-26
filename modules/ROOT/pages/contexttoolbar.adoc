@@ -25,7 +25,9 @@ include::partial$context/positioning.adoc[]
 
 This example shows how the quickbars plugin adds the standard selection context toolbar and an example of a custom toolbar for image alignment. The context toolbar will show whenever any content is selected.
 
-liveDemo::context-toolbar[height="600", tab="js"]
+include::partial$demo-guides/context-toolbar.adoc[]
+
+liveDemo::context-toolbar[height="600"]
 
 [[add-labels-and-groups-for-context-toolbar-buttons]]
 == Add labels and groups for context toolbar buttons
@@ -88,7 +90,9 @@ tinymce.init({
 });
 ----
 
-liveDemo::context-toolbar-labels[height="600", tab="js"]
+include::partial$demo-guides/context-toolbar-labels.adoc[]
+
+liveDemo::context-toolbar-labels[height="600"]
 
 == Launching a context toolbar programmatically
 

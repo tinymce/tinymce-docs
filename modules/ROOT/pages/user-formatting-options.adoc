@@ -2,6 +2,17 @@
 :navtitle: User formatting
 :description: Options for changing menu and toolbar dropdown formatting options available to users.
 
+TIP: Each formatting feature also has its own page that explains what it does, with an interactive example: xref:block-formats-and-styles.adoc[Block formats and styles], xref:font-family.adoc[Font family], xref:font-size.adoc[Font size], xref:line-height.adoc[Line height], and xref:text-color.adoc[Text and background color].
+
+[[interactive-example]]
+== Interactive example
+
+The following example configures block formats, named styles, fonts, font sizes, line heights, a brand color palette, indentation, and a maximum list depth.
+
+include::partial$demo-guides/user-formatting.adoc[]
+
+liveDemo::user-formatting[]
+
 include::partial$configuration/block_formats.adoc[]
 
 include::partial$configuration/default_font_stack.adoc[]

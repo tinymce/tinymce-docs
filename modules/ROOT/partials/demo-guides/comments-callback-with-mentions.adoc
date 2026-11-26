@@ -1,0 +1,37 @@
+// "Try it" guide card for the comments-callback-with-mentions live demo. It is included directly above
+// liveDemo::comments-callback-with-mentions[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Comments with Mentions in callback mode">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Comments with Mentions in callback mode</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This product requirements document has 3 conversations, and the comments mention colleagues by name. The demo is signed in as James Wilson, a senior software engineer. Answer Anna Petrov's question about the report limit and bring the product owner, Mia Andersson, into the conversation.</p>
+    <ol class="demo-guide__steps">
+      <li>Select the highlighted text "Store up to 50 reports on the device" to open Anna Petrov's conversation, then select <span class="demo-ui">Add comment…</span> to open the reply box, which shows <strong>Comment or mention with @</strong>.</li>
+      <li>Type a reply, then type <code>@mia</code> and select <strong>Mia Andersson</strong> from the list, which shows each person's photo and role. Select <span class="demo-ui">Save</span>. The reply shows the mention as <strong>@Mia Andersson</strong>.</li>
+      <li>Point to <strong>@Jade Scott</strong> next to <strong>QA owner</strong> at the top of the document to see her profile card.</li>
+      <li>Select "Offline map tiles", open <span class="demo-ui">Conversation Actions</span> and select <span class="demo-ui">Resolve conversation</span>, then <span class="demo-ui">Resolve</span>. James started this conversation, so the callback allows it. Anna's conversation cannot be resolved by James.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>tinycomments_mentions_enabled: true</code> turns on mentions in comments. A mention is saved in the comment text as <code>@</code> followed by the user ID.</li>
+      <li><code>mentions_fetch</code> searches a demo user directory for the text typed after <code>@</code>, and <code>mentions_min_chars: 0</code> shows the list as soon as <code>@</code> is typed.</li>
+      <li><code>mentions_item_type: 'profile'</code> shows a photo and a role for each person in the list.</li>
+      <li><code>mentions_menu_complete</code> inserts each mention into the document as a <code>mymention</code> span, and <code>mentions_selector: '.mymention'</code> identifies those spans as mentions.</li>
+      <li><code>mentions_menu_hover</code> and <code>mentions_select</code> return the profile cards shown in the list and when pointing to a mention in the document.</li>
+      <li><code>content_style</code> and the CSS tab color mentions in the document and in the sidebar.</li>
+      <li><code>tinycomments_mode: 'callback'</code> with the <code>tinycomments_create</code>, <code>tinycomments_reply</code>, <code>tinycomments_edit_comment</code>, <code>tinycomments_delete_comment</code>, <code>tinycomments_delete</code>, <code>tinycomments_resolve</code>, <code>tinycomments_delete_all</code>, <code>tinycomments_lookup</code> and <code>tinycomments_fetch</code> callbacks saves conversations to a simulated server and lets only the author of a comment, or the person who started a conversation, change it.</li>
+      <li><code>tinycomments_always_show_highlights: true</code>, <code>sidebar_show: 'showcomments'</code>, <code>user_id</code> and <code>fetch_users</code> keep highlights visible, open the sidebar on load, and sign in James Wilson.</li>
+      <li><code>quickbars_selection_toolbar</code> adds <span class="demo-ui">Add comment</span> to the toolbar over selected text.</li>
+    </ul>
+  </details>
+</div>
+++++

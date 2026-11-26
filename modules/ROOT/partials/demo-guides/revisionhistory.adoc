@@ -1,0 +1,33 @@
+// "Try it" guide card for the revisionhistory live demo. It is included directly above
+// liveDemo::{plugincode}[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Revision History">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Revision History</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This clinical trial protocol opens in the Revision History view with 5 saved revisions by 4 authors. Find the revision that raised the upper age limit from 65 to 75, then restore the first draft.</p>
+    <ol class="demo-guide__steps">
+      <li>Select each revision in the sidebar to compare it with the revision before it. Added text is green, removed text is red, and formatting changes are blue.</li>
+      <li>Look for the tags and badges on the cards: <strong>APPROVED</strong> and <strong>IRB SUBMITTED</strong> on two revisions, and an AI badge on the AI-assisted rewrite of the plain-language summary.</li>
+      <li>Select the oldest revision, then select <span class="demo-ui">Restore this version</span> to load version 0.1 into the editor.</li>
+      <li>Select <span class="demo-ui">Revision history</span> in the toolbar again. A <strong>DRAFT</strong> revision by Genevieve Simmons now tops the list of 6, comparing the unsaved content with the approved version. Select <span class="demo-ui">Close</span> to return to the editor.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>revisionhistory_fetch</code> returns the 5 saved revisions, with tags and an AI source in their metadata, and includes content only for the latest.</li>
+      <li><code>revisionhistory_fetch_revision</code> loads the content of an older revision when it is selected.</li>
+      <li><code>revisionhistory_display_author: true</code> shows the author's name on each revision card.</li>
+      <li><code>view_show: 'revision'</code> opens the Revision History view when the editor loads.</li>
+      <li><code>user_id: 'genevieve-simmons'</code> and <code>fetch_users</code> make Genevieve Simmons the author of the draft revision.</li>
+    </ul>
+  </details>
+</div>
+++++

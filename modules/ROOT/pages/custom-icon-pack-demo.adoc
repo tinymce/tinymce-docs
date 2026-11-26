@@ -26,8 +26,8 @@ The demo shows how to:
 
 Compare:
 
-* Default {productname} icons (left editor)
-* Custom redesigned icons (right editor)
+* Default {productname} icons (Default icons editor)
+* Custom redesigned icons (Custom icon pack editor)
 * Different visual styles and approaches
 
 == How to Use This Demo
@@ -43,6 +43,8 @@ After exploring this demo:
 . Read the link:creating-an-icon-pack.adoc[Creating an Icon Pack] guide
 . Learn about link:bundling-icons.adoc[Bundling Icon Packs] for production
 . Check the link:icons.adoc[Icons Configuration] options
+
+include::partial$demo-guides/custom-icon-pack.adoc[]
 
 liveDemo::custom-icon-pack[]
 

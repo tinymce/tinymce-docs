@@ -1,6 +1,16 @@
 tinymce.init({
   selector: 'textarea#context-toolbar-labels',
-  height: 350,
+  height: 700,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'image table | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   setup: (editor) => {
     editor.ui.registry.addContextToolbar('imagealignment', {
       predicate: (node) => node.nodeName.toLowerCase() === 'img',
@@ -29,6 +39,6 @@ tinymce.init({
         },
       ],
     });
-  },
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  }
 });
+

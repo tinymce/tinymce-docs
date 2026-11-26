@@ -1,0 +1,30 @@
+// "Try it" guide card for the noneditable-regexp live demo. It is included directly above
+// liveDemo::noneditable-regexp[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Non-editable text patterns">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Non-editable text patterns</span>
+    <span class="demo-guide__tier">Core feature</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This API changelog locks 6 pieces of text that match a regular expression: 4 support ticket numbers, such as 512-884-301, and 2 mentions of the <code>apikey</code> parameter name. Edit the changelog around them, then add a new ticket number.</p>
+    <ol class="demo-guide__steps">
+      <li>Click the ticket number <strong>512-884-301</strong>. The editor selects the whole number, and its text cannot be changed.</li>
+      <li>Type <code>See ticket 512-930-118.</code> at the end of the last paragraph. New text stays editable until the content is loaded again.</li>
+      <li>Open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Source code</span>. The locked text is saved as plain text, without the spans that lock it while editing. Select <span class="demo-ui">Save</span>.</li>
+      <li>The content loads again, and the new ticket number is now locked too, for 7 locked items in total.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>noneditable_regexp: /apikey|\d&#123;3&#125;-\d&#123;3&#125;-\d&#123;3&#125;/g</code> wraps each match in a locked span when content is loaded into the editor. The spans use the default <code>mceNonEditable</code> class.</li>
+      <li><code>content_style</code> highlights the locked text with a dashed outline.</li>
+    </ul>
+  </details>
+</div>
+++++

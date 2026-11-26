@@ -1,8 +1,16 @@
 tinymce.init({
   selector: 'textarea#premiumskinsandicons-jam',
+  height: 800,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'undo redo | blocks | ' +
+    'bold italic forecolor backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link image table | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   skin: 'jam',
-  icons: 'jam',
-  plugins: 'code image link lists',
-  toolbar: 'undo redo | styles | bold italic underline forecolor backcolor | link image code | align | bullist numlist',
-  menubar: false
+  icons: 'jam'
 });

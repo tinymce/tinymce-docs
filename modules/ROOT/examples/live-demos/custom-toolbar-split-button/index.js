@@ -1,7 +1,15 @@
 tinymce.init({
   selector: 'textarea#custom-toolbar-split-button',
-  toolbar: 'myButton',
-  menubar: false,
+  height: 620,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'myButton | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'removeformat | help',
   setup: (editor) => {
     editor.ui.registry.addSplitButton('myButton', {
       text: 'My Button',
@@ -29,5 +37,5 @@ tinymce.init({
       }
     });
   },
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

@@ -1,0 +1,30 @@
+// "Try it" guide card for the custom-shortcut live demo. It is included directly above
+// liveDemo::custom-shortcut[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Custom keyboard shortcut">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Custom keyboard shortcut</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This legal intake form records what new clients told the firm. Highlight the three details the clients could not confirm: the lease end date, when the deduction statement arrived, and the $300 pet deposit.</p>
+    <ol class="demo-guide__steps">
+      <li>In the second paragraph under <strong>Matter summary</strong>, select <strong>October 31</strong> in the sentence about the lease.</li>
+      <li>Press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Y</kbd> (<kbd>⌘</kbd>+<kbd>Option</kbd>+<kbd>Y</kbd> on macOS). The selected text gets a yellow highlight.</li>
+      <li>Repeat for <strong>more than 30 days after move-out</strong> and <strong>$300 pet deposit</strong>.</li>
+      <li>To remove a highlight, select the text, open the arrow next to <span class="demo-ui">Background color</span> in the toolbar and choose <span class="demo-ui">Remove color</span>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.addShortcut('meta+alt+y', …)</code> registers the shortcut. <code>meta</code> is <kbd>Ctrl</kbd> on Windows and Linux and <kbd>⌘</kbd> on macOS.</li>
+      <li>The shortcut runs the <code>hilitecolor</code> command with <code>#FFFF00</code>, which applies a yellow background color to the selection.</li>
+    </ul>
+  </details>
+</div>
+++++

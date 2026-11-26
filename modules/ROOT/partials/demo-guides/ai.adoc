@@ -1,0 +1,30 @@
+// "Try it" guide card for the ai live demo. It is included directly above
+// liveDemo::ai[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: AI Assistant">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">AI Assistant</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This homeowners guide quotes a 101-word policy clause. Rewrite it in plain language, then draft a claim acknowledgment email at the end of the guide.</p>
+    <ol class="demo-guide__steps">
+      <li>Select the paragraph under <strong>Policy wording</strong>, then open <span class="demo-ui">AI shortcuts</span> in the toolbar and choose <span class="demo-ui">Rewrite in plain language</span>. The <span class="demo-ui">AI Assistant</span> dialog opens and writes a response.</li>
+      <li>Select <span class="demo-ui">Insert</span> to replace the clause with the response, or <span class="demo-ui">Try again</span> for a new response. Close the dialog to keep the clause unchanged.</li>
+      <li>Place the insertion point in the empty paragraph at the end of the guide and open <span class="demo-ui">AI shortcuts</span> again. With nothing selected, the rewrite shortcuts are unavailable and <span class="demo-ui">Draft a claim acknowledgment</span> is available. Choose it to write the email.</li>
+      <li>Select <span class="demo-ui">Ask AI</span> in the toolbar, or press <kbd>Ctrl</kbd>+<kbd>J</kbd> (<kbd>⌘</kbd>+<kbd>J</kbd> on macOS), to type a request of any kind, such as <code>Add a sentence about frozen pipes</code>, then select <span class="demo-ui">Generate</span>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>ai_request</code> sends each request to a language model through a proxy server and streams the response into the dialog. The <strong>JS</strong> tab shows the same function calling the provider directly, with a placeholder API key.</li>
+      <li><code>ai_shortcuts</code> replaces the default shortcuts with five insurance shortcuts, including a nested <strong>Change tone</strong> menu. Shortcuts with <code>selection: true</code> need selected text, and the claim acknowledgment, with <code>selection: false</code>, needs an empty selection.</li>
+    </ul>
+  </details>
+</div>
+++++

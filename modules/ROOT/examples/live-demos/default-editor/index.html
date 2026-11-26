@@ -2,28 +2,43 @@
 #submitContainer {
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  margin: 1.25rem 0 .75rem;
 }
 .contentDumpBox {
   white-space: pre-wrap;
-  padding: 15px;
-  border: 2px solid #1976D2;
-  border-radius: 10px;
-  margin: 5px;
-  background-color: #f8f9fa;
+  overflow-wrap: anywhere;
+  margin: 0;
+  padding: .75rem;
+  background: var(--code-background, #f9f9fb);
+  border: 1px solid var(--panel-border-color, #c6ccdc);
+  border-radius: .25em;
+  color: var(--code-font-color, #17224f);
+  font-family: "Fira Code", "Roboto Mono", monospace;
+  font-size: .8rem;
+  line-height: 1.5;
 }
 .live_demo {
-  background-color: #335dff;
-  color: #fafafa;
-  cursor: pointer;
-  font-size: 1em;
-  line-height: 1.15;
+  display: inline-flex;
+  align-items: center;
+  height: 2.5rem;
   margin: 0;
-  padding: .5rem;
-  border-radius: 6px;
+  padding: 0 1.5rem;
+  background: var(--color-tiny-secondary-four, #17224f);
+  border: 1px solid var(--color-tiny-secondary-four, #17224f);
+  border-radius: .2rem;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  line-height: 1;
 }
 .live_demo:hover {
-  background-color: #2a4fd8;
+  background: var(--color-tiny-primary-four, #335dff);
+  border-color: var(--color-tiny-primary-four, #335dff);
+}
+.live_demo:focus-visible {
+  outline: 2px solid var(--color-tiny-primary-four, #335dff);
+  outline-offset: 2px;
 }
 </style>
 

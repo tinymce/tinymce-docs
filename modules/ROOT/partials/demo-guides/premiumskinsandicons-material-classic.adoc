@@ -1,0 +1,31 @@
+// "Try it" guide card for the premiumskinsandicons-material-classic live demo. It is included directly above
+// liveDemo::premiumskinsandicons-material-classic[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Material Classic skin">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Material Classic skin</span>
+    <span class="demo-guide__tier">Premium skin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This veterinary care sheet sits in a Material Design form with filled text fields. Link <strong>Maple Street Veterinary Clinic</strong> in the last paragraph to <code>https://www.example.com/</code>, then make the recheck date, <strong>Monday, November 30</strong>, bold.</p>
+    <ol class="demo-guide__steps">
+      <li>Look at the editor: a light gray frame and a gray content area, matching the filled text fields above it.</li>
+      <li>Place the insertion point in a list item. The <span class="demo-ui">Bullet list</span> button turns purple to show that it is active.</li>
+      <li>Select <strong>Maple Street Veterinary Clinic</strong> and select <span class="demo-ui">Insert/edit link</span>. When the toolbar is too narrow to show it, select <span class="demo-ui">Reveal or hide additional toolbar items</span> at the end of the toolbar first. The dialog uses filled gray fields and flat, uppercase <span class="demo-ui">CANCEL</span> and <span class="demo-ui">SAVE</span> text buttons. Type <code>https://www.example.com/</code> in <span class="demo-ui">URL</span> and select <span class="demo-ui">SAVE</span>.</li>
+      <li>Select <strong>Monday, November 30</strong> and select <span class="demo-ui">Bold</span>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>skin: 'material-classic'</code> styles the editor like a filled Material Design text field, with the Roboto font and purple active buttons.</li>
+      <li><code>content_css: 'material-classic'</code> loads the matching content styles, including the gray content area.</li>
+      <li><code>icons: 'material'</code> replaces the toolbar and menu icons with the Material icon pack.</li>
+    </ul>
+  </details>
+</div>
+++++

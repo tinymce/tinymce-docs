@@ -1,49 +1,96 @@
 <textarea id="accordion">
-
-  {{logofordemoshtml}}
-
-  <h1 style="text-align: center;">The Accordion plugin</h1>
-
-  <p>This is a demo of the <strong>Accordion</strong> open source plugin.</p>
-
-  <details class="mce-accordion">
-    <summary>What does the <strong>Accordion</strong> plugin do?</summary>
-      <p>The Accordion plugin allows for the creation of collapsible sections in a document that can be expanded or collapsed to show or hide additional content.</p>
+  <h1>Juniper Table: menu notes and guest FAQ</h1>
+  <p>Juniper Table serves a seasonal dinner menu from 5 PM to 10 PM, Tuesday to Sunday. Brunch runs from 10 AM to 2 PM on weekends. Reservations and private events: (555) 010-0142.</p>
+  <h2>Winter dinner menu</h2>
+  <details class="mce-accordion" open="open">
+    <summary class="mce-accordion-summary">Small plates</summary>
+    <div class="mce-accordion-body">
+      <table style="border-collapse: collapse; width: 100%;" border="1">
+        <colgroup><col style="width: 32.6%;"><col style="width: 53.9%;"><col style="width: 13.5%;"></colgroup>
+        <thead>
+          <tr><th>Dish</th><th>Description</th><th>Price</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Roasted beet salad</td><td>Whipped goat cheese, candied pecans, orange vinaigrette</td><td>$14</td></tr>
+          <tr><td>Crispy Brussels sprouts</td><td>Maple chili glaze, toasted sesame</td><td>$12</td></tr>
+          <tr><td>Wood-fired flatbread</td><td>Wild mushrooms, fontina, thyme</td><td>$16</td></tr>
+        </tbody>
+      </table>
+    </div>
   </details>
-
   <details class="mce-accordion">
-    <summary>How does it present to an end-user?</summary>
-      <p>By default, when the <code>accordion</code> plugin is loaded, the command is available in the TinyMCE menu at <strong>Insert → Accordion</strong>.</p>
-      <p>Adding <code>accordion</code> to the <code>toolbar</code> in the TinyMCE configuration adds an Accordion icon to the TinyMCE toolbar.</p>
-      <p>And, when a specific collapsible section is selected, a pop-up menu presents offering two controls: one to collapse or expand the selected section; and one to delete the selected section.</p>
+    <summary class="mce-accordion-summary">Mains</summary>
+    <div class="mce-accordion-body">
+      <table style="border-collapse: collapse; width: 100%;" border="1">
+        <colgroup><col style="width: 33.3%;"><col style="width: 53.3%;"><col style="width: 13.4%;"></colgroup>
+        <thead>
+          <tr><th>Dish</th><th>Description</th><th>Price</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Braised short rib</td><td>Celery root puree, red wine jus, crispy shallots</td><td>$34</td></tr>
+          <tr><td>Pan-seared trout</td><td>Brown butter, capers, fingerling potatoes</td><td>$29</td></tr>
+          <tr><td>Butternut squash risotto</td><td>Sage, parmesan, toasted pepitas</td><td>$24</td></tr>
+        </tbody>
+      </table>
+      <p>Every main can be prepared gluten-free. Ask the server when ordering.</p>
+    </div>
   </details>
-
   <details class="mce-accordion">
-    <summary>Are there other Accordion options?</summary>
-      <p>The Accordion plugin provides:<br />
-         four commands (<code>InsertAccordion</code>, <code>ToggleAccordion</code>, <code>ToggleAllAccordions</code>, and <code>RemoveAccordion</code>); and<br />
-         two initialization options (<code>details_initial_state</code> and <code>details_serialized_state</code>).</p>
-      <p>See below for details</p>
+    <summary class="mce-accordion-summary">Desserts</summary>
+    <div class="mce-accordion-body">
+      <ul>
+        <li>Warm apple galette with cinnamon ice cream, $11</li>
+        <li>Dark chocolate pot de cr&egrave;me, $10</li>
+        <li>Seasonal sorbet trio, $9</li>
+      </ul>
+    </div>
   </details>
-
-
-  <h2>Got questions or need help?</h2>
-
-  <ul>
-    <li>Our <a href="{{site-url}}/tinymce/8/">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
-    <li>Have a specific question? Try the <a href="{{communitysupporturl}}" target="_blank" rel="noopener"><code>{{prodnamecode}}</code> tag at Stack Overflow</a>.</li>
-    <li>We also offer enterprise grade support as part of <a href="{{pricingpage}}">TinyMCE premium plans</a>.</li>
-  </ul>
-
-  <h2>Found a bug?</h2>
-
-  <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
-
-  <h2>Finally…</h2>
-
-  <p>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</p>
-
-  <p>Thanks for supporting TinyMCE. We hope it helps you in creating great content.</p>
-
-  <p>All the best from the TinyMCE team.</p>
+  <h2>Frequently asked questions</h2>
+  <details class="mce-accordion" open="open">
+    <summary class="mce-accordion-summary">How do I book a table?</summary>
+    <div class="mce-accordion-body">
+      <ol>
+        <li>Choose a date and party size on the reservations page.</li>
+        <li>Pick an available time between 5 PM and 9 PM.</li>
+        <li>Confirm with a phone number. A text reminder arrives the day before.</li>
+      </ol>
+      <p>Walk-in guests are seated at the bar and the chef's counter.</p>
+    </div>
+  </details>
+  <details class="mce-accordion">
+    <summary class="mce-accordion-summary">Can the kitchen handle food allergies?</summary>
+    <div class="mce-accordion-body">
+      <p>Yes. Tell the server about any allergy before ordering. The kitchen keeps a separate prep area for:</p>
+      <ul>
+        <li>Gluten-free dishes</li>
+        <li>Tree nut and peanut allergies</li>
+        <li>Shellfish allergies</li>
+      </ul>
+    </div>
+  </details>
+  <details class="mce-accordion">
+    <summary class="mce-accordion-summary">Do you host private events?</summary>
+    <div class="mce-accordion-body">
+      <p>The Garden Room seats up to 40 guests for dinners, rehearsal dinners and company celebrations.</p>
+      <details class="mce-accordion">
+        <summary class="mce-accordion-summary">Is there a minimum spend?</summary>
+        <div class="mce-accordion-body">
+          <p>Friday and Saturday evenings have a $2,000 food and beverage minimum. There is no minimum from Tuesday to Thursday.</p>
+        </div>
+      </details>
+      <details class="mce-accordion">
+        <summary class="mce-accordion-summary">Can we bring our own cake?</summary>
+        <div class="mce-accordion-body">
+          <p>Yes. A $3 per guest plating fee applies to outside desserts.</p>
+        </div>
+      </details>
+    </div>
+  </details>
+  <details class="mce-accordion">
+    <summary class="mce-accordion-summary">Is there parking?</summary>
+    <div class="mce-accordion-body">
+      <p>Free street parking is available after 6 PM. The Elm Street garage, one block north, charges $8 for the evening.</p>
+    </div>
+  </details>
+  <p>Do you sell gift cards?</p>
 </textarea>

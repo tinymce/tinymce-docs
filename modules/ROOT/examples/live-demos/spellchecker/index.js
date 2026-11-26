@@ -1,32 +1,28 @@
 tinymce.init({
   selector: 'textarea#spellchecker',
-  plugins: 'code tinymcespellchecker link',
-  toolbar: 'spellchecker language spellcheckdialog',
-  height: 500,
-  spellchecker_language: 'en-US',
-  content_langs: [
-    { title: 'Afrikaans (South Africa)', code: 'af-ZA', customCode: 'af-ZA' },
-    { title: 'English (Australia)', code: 'en-AU' },
-    { title: 'English (Canada)', code: 'en-CA' },
-    { title: 'English (United Kingdom)', code: 'en-GB' },
-    { title: 'English (United States)', code: 'en-US' },
-    { title: 'Medical English (US)', code: 'en-US', customCode: 'en-US-medical' },
-    { title: 'Danish', code: 'da' },
-    { title: 'Dutch', code: 'nl-NL' },
-    { title: 'Finnish', code: 'fi' },
-    { title: 'French', code: 'fr' },
-    { title: 'German', code: 'de-DE' },
-    { title: 'Hungarian', code: 'hu' },
-    { title: 'Italian', code: 'it-IT' },
-    { title: 'Maori (New Zealand)', code: 'mi-NZ' },
-    { title: 'Norwegian Bokmål', code: 'nb-NO' },
-    { title: 'Norwegian Nynorsk', code: 'nn' },
-    { title: 'Polish', code: 'pl' },
-    { title: 'Portuguese (Brazil)', code: 'pt-BR' },
-    { title: 'Portuguese (Portugal)', code: 'pt-PT' },
-    { title: 'Spanish', code: 'es' },
-    { title: 'Swedish', code: 'sv-SE' },
-    { title: 'Swedish (Finland)', code: 'sv-FI' }
+  height: 760,
+  plugins: [
+    'tinymcespellchecker',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
   ],
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  toolbar: 'spellchecker spellcheckdialog language | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link image table | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  spellchecker_language: 'en-US',
+  spellchecker_languages: [ 'en-US', 'en-GB', 'fr', 'it', 'es' ],
+  spellchecker_ignore_list: {
+    'en-US': [ 'brunoise', 'mirepoix', 'moka' ],
+    'it': [ 'moka' ]
+  },
+  content_langs: [
+    { title: 'English (US)', code: 'en-US' },
+    { title: 'English (UK)', code: 'en-GB' },
+    { title: 'French', code: 'fr' },
+    { title: 'Italian', code: 'it' },
+    { title: 'Spanish', code: 'es' }
+  ]
 });

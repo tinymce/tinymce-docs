@@ -1,0 +1,29 @@
+// "Try it" guide card for the codesample live demo. It is included directly above
+// liveDemo::codesample[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--opensource" role="note" aria-label="Try it: Code Sample">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Code Sample</span>
+    <span class="demo-guide__tier">Open source plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This API tutorial shows the same webhook signature check in 5 languages. The <strong>Java</strong> section is still empty. Add a Java code sample.</p>
+    <ol class="demo-guide__steps">
+      <li>Double-click the Python sample to open <span class="demo-ui">Insert/Edit Code Sample</span>. Change the code and select <span class="demo-ui">Save</span>. The highlighting updates as soon as the dialog closes.</li>
+      <li>Place the insertion point in the empty paragraph under the <strong>Java</strong> heading and select <span class="demo-ui">Insert/edit code sample</span> in the toolbar.</li>
+      <li>Open the <span class="demo-ui">Language</span> list, which offers the 7 languages this tutorial publishes, and choose <span class="demo-ui">Java</span>. Paste or type the code, then select <span class="demo-ui">Save</span>.</li>
+      <li>Open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Source code</span> to see the <code>pre</code> and <code>code</code> markup that each sample is saved as, with its language in the class name.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>codesample_languages</code> limits the <strong>Language</strong> list to 7 languages, in the tutorial's order, and labels JavaScript as <strong>Node.js</strong>.</li>
+    </ul>
+  </details>
+</div>
+++++

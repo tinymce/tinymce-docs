@@ -7,41 +7,55 @@ tinymce.IconManager.add('my-icon-pack', {
   }
 });
 
-// Default Icons Editor
+// Default icons editor
 tinymce.init({
-selector: '#default-editor',
-icons: 'material', // use material icon pack
-plugins: 'lists link image code',
-toolbar: 'undo redo | bold italic underline | bullist numlist | link image code',
-height: 500,
-// license_key: 'gpl'
+  selector: '#default-editor',
+  height: 600,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'undo redo | bold italic | blocks | ' +
+    'backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });
 
-// Custom Icons Editor
+// Custom icons editor
 tinymce.init({
-selector: '#custom-editor',
-icons: 'my-icon-pack',
-plugins: 'lists link image code',
-toolbar: 'undo redo | myButton1 myButton2 myButton3 | bullist numlist | link image code',
-height: 500,
-setup: (editor) => {
-  editor.ui.registry.addButton('myButton1', {
-    icon: 'bold',    // the 'bold' icon created from 'bold.svg'
-    onAction: (_) => {
-      editor.insertContent('&nbsp;<strong>It\'s my custom bold icon button!</strong>&nbsp;');
-    }
-  });
-  editor.ui.registry.addButton('myButton2', {
-    icon: 'italic',    // the 'italic' icon created from 'italic.svg'
-    onAction: (_) => {
-      editor.insertContent('&nbsp;<strong>It\'s my custom italic icon button!</strong>&nbsp;');
-    }
-  });
-  editor.ui.registry.addButton('myButton3', {
-    icon: 'audio',    // the 'audio' icon created from 'audio.svg'
-    onAction: (_) => {
-      editor.insertContent('&nbsp;<strong>It\'s my custom audio icon button!</strong>&nbsp;');
-    }
-  });
-}
+  selector: '#custom-editor',
+  icons: 'my-icon-pack',
+  height: 600,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'myButton1 myButton2 myButton3 | undo redo | bold italic | blocks | ' +
+    'backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  setup: (editor) => {
+    editor.ui.registry.addButton('myButton1', {
+      icon: 'bold',    // the 'bold' icon created from 'bold.svg'
+      onAction: (_) => {
+        editor.insertContent('&nbsp;<strong>It\'s my custom bold icon button!</strong>&nbsp;');
+      }
+    });
+    editor.ui.registry.addButton('myButton2', {
+      icon: 'italic',    // the 'italic' icon created from 'italic.svg'
+      onAction: (_) => {
+        editor.insertContent('&nbsp;<strong>It\'s my custom italic icon button!</strong>&nbsp;');
+      }
+    });
+    editor.ui.registry.addButton('myButton3', {
+      icon: 'audio',    // the 'audio' icon created from 'audio.svg'
+      onAction: (_) => {
+        editor.insertContent('&nbsp;<strong>It\'s my custom audio icon button!</strong>&nbsp;');
+      }
+    });
+  }
 });

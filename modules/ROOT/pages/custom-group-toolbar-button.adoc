@@ -36,7 +36,9 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 
 The following is a simple group toolbar button example:
 
-liveDemo::custom-toolbar-group-button[tab="js"]
+include::partial$demo-guides/custom-toolbar-group-button.adoc[]
+
+liveDemo::custom-toolbar-group-button[]
 
 The example above configures a custom *alignment* group toolbar button. When clicked the button will show a floating shelf containing the align left, center, right and justify toolbar buttons.
 

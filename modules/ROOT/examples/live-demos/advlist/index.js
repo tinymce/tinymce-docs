@@ -1,20 +1,15 @@
 tinymce.init({
-    selector: '#advlist-demo',
-    plugins: [
-        'advlist', 'anchor', 'autolink', 'charmap', 'code', 'fullscreen',
-        'help', 'image', 'insertdatetime', 'link', 'lists', 'media',
-        'preview', 'searchreplace', 'table', 'visualblocks', 'wordcount'
-    ],
-    toolbar: 'undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | code | fullscreen | help',
-    menubar: 'file edit view insert format tools table help',
-    height: 600,
-
-    setup: (editor) => {
-      editor.ui.registry.addContextToolbar('textselection', {
-        predicate: () => !editor.selection.isCollapsed(),
-        items: 'bullist numlist',
-        position: 'selection', // 'selection' | 'node' | 'line'
-        scope: 'node'
-      });
-    }
+  selector: 'textarea#advlist-demo',
+  height: 720,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'numlist bullist outdent indent | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | table | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  advlist_number_styles: 'default,upper-roman,upper-alpha,lower-alpha,lower-roman',
+  advlist_bullet_styles: 'square,disc'
 });

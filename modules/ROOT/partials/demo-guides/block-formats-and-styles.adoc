@@ -1,0 +1,33 @@
+// "Try it" guide card for the block-formats-and-styles live demo. It is included directly above
+// liveDemo::block-formats-and-styles[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Block formats and styles">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Block formats and styles</span>
+    <span class="demo-guide__tier">Core feature</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This dresser assembly guide has four formatting fixes left: the Step 3 heading, the second tip, the three unmarked mentions of part H-04, and the back-ordered runners row in the parts table.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point in <strong>Step 3: Install the drawer runners</strong>. The block format dropdown shows <span class="demo-ui">Paragraph</span>. Open it and choose <span class="demo-ui">Step</span>.</li>
+      <li>Place the insertion point in the paragraph that starts <strong>Tip: Install the bottom runners</strong>. Open the <span class="demo-ui">Formats</span> dropdown and choose <span class="demo-ui">Guide blocks</span> &gt; <span class="demo-ui">Tip</span>. The dropdown now shows <span class="demo-ui">Tip</span>.</li>
+      <li>Select each <strong>H-04</strong> that has no label and choose <span class="demo-ui">Part number</span> under the <span class="demo-ui">Labels</span> heading.</li>
+      <li>Place the insertion point in the <strong>H-04</strong> table row. The <span class="demo-ui">Parts table</span> submenu appears only inside the table. Choose <span class="demo-ui">Parts table</span> &gt; <span class="demo-ui">Back-ordered part</span>, then choose it again to remove the style.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>block_formats: 'Paragraph=p; Title=h1; Section=h2; Step=h3'</code> limits the block format dropdown to four types, named in the guide's own terms.</li>
+      <li><code>style_formats</code> defines the <strong>Guide blocks</strong> and <strong>Parts table</strong> submenus and the <strong>Labels</strong> group heading, with block, wrapper, inline and selector-based styles that add classes.</li>
+      <li><code>style_formats_autohide: true</code> hides the <strong>Parts table</strong> submenu when the insertion point is outside the table.</li>
+      <li><code>preview_styles</code> previews only font weight, font style, text decoration, colors and the left border, so menu items are not shown at heading size.</li>
+      <li><code>content_style</code> styles the classes that the custom styles add, such as the tip border and the part number label.</li>
+    </ul>
+  </details>
+</div>
+++++

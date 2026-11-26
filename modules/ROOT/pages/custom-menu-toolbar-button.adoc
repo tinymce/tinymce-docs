@@ -37,6 +37,8 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 
 The following is a simple toolbar menu button example:
 
+include::partial$demo-guides/custom-toolbar-menu-button.adoc[]
+
 liveDemo::custom-toolbar-menu-button[]
 
 This example configures a toolbar menu button with the label `+My Button+` that opens the specified menu when clicked. The top-level menu contains two items. The first menu item inserts content when clicked and the second menu item opens a submenu containing two menu items which insert content when clicked.
@@ -54,6 +56,8 @@ The `+fetchContext+` is an object containing a single string property: `+pattern
 
 The following is a simple toolbar menu button example, where searching has been configured:
 
+include::partial$demo-guides/custom-toolbar-menu-button-search.adoc[]
+
 liveDemo::custom-toolbar-menu-button-search[]
 
 This example configures a toolbar menu button with the label `+My searchable button+` that opens the specified menu when clicked. The menu will contain a search input field because `+search+` is not `+false+`. The input field's https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#placeholder[placeholder attribute] will be `+Type...+`.
@@ -68,6 +72,8 @@ The built-in table grid picker can be added to a custom menu button using a `+fa
 The `+onAction+` callback receives an object with `+numRows+` and `+numColumns+` properties. Pass these values to the `+mceInsertTable+` command to insert the table.
 
 NOTE: The table picker requires the `+table+` plugin.
+
+include::partial$demo-guides/custom-table-picker-menu-button.adoc[]
 
 liveDemo::custom-table-picker-menu-button[]
 

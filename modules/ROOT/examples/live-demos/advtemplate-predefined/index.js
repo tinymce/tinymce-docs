@@ -1,57 +1,88 @@
 const advtemplate_templates = [
   {
-    title: 'Quick replies',
+    title: 'Interviews',
     items: [
       {
-        title: 'Message received',
-        content: '<p dir="ltr">Hey {{prefix}}Customer.FirstName{{suffix}}!</p>\n<p dir="ltr">Just a quick note to say we&rsquo;ve received your message, and will get back to you within 48 hours.</p>\n<p dir="ltr">For reference, your ticket number is: {{prefix}}Ticket.Number{{suffix}}</p>\n<p dir="ltr">Should you have any questions in the meantime, just reply to this email and it will be attached to this ticket.</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Regards,</p>\n<p dir="ltr">{{prefix}}Agent.FirstName{{suffix}}</p>'
+        title: 'Interview invitation',
+        content: '<p>Hi {{prefix}}Candidate.FirstName{{suffix}},</p><p>Thank you for applying for the {{prefix}}Role.Title{{suffix}} position. The hiring team would like to invite you to an interview.</p><table style="border-collapse: collapse; width: 100%;" border="1"><colgroup><col style="width: 22.6%;"><col style="width: 77.4%;"></colgroup><tbody><tr><th>Date</th><td>{{prefix}}Interview.Date{{suffix}}</td></tr><tr><th>Time</th><td>{{prefix}}Interview.Time{{suffix}}</td></tr><tr><th>Location</th><td>{{prefix}}Interview.Location{{suffix}}</td></tr><tr><th>Panel</th><td>{{prefix}}Role.HiringManager{{suffix}} and {{prefix}}Recruiter.Name{{suffix}}</td></tr></tbody></table><p>The interview takes about 45 minutes and has three parts:</p><ol><li>A short introduction to the {{prefix}}Role.Department{{suffix}} team.</li><li>A walkthrough of two recent projects from your portfolio.</li><li>Time for your questions about the role.</li></ol><p>Please reply to confirm the time, or to ask for a different one.</p><p>Kind regards,<br>{{prefix}}Recruiter.Name{{suffix}}</p>'
       },
       {
-        title: 'Thanks for the feedback',
-        content: '<p dir="ltr">Hi {{prefix}}Customer.FirstName{{suffix}},</p>\n<p dir="ltr">We appreciate you taking the time to provide feedback on {{prefix}}Product.Name{{suffix}}.</p>\n<p dir="ltr">It sounds like it wasn&rsquo;t able to fully meet your expectations, for which we apologize. Rest assured our team looks at each piece of feedback and uses it to decide what to focus on next with {{prefix}}Product.Name{{suffix}}.</p>\n<p dir="ltr"><strong>&nbsp;</strong></p>\n<p dir="ltr">All the best, and let us know if there&rsquo;s anything else we can do to help.</p>\n<p dir="ltr">-{{prefix}}Agent.FirstName{{suffix}}</p>'
-      },
-      {
-        title: 'Still working on case',
-        content: '<p dir="ltr">Hi {{prefix}}Customer.FirstName{{suffix}},</p>\n<p dir="ltr">Just a quick note to let you know we&rsquo;re still working on your case. It&rsquo;s taking a bit longer than we hoped, but we&rsquo;re aiming to get you an answer in the next 48 hours.</p>\n<p dir="ltr">Stay tuned,</p>\n<p dir="ltr">{{prefix}}Agent.FirstName{{suffix}}</p>'
+        title: 'Interview reschedule',
+        content: '<p>Hi {{prefix}}Candidate.FirstName{{suffix}},</p><p>The interview for the {{prefix}}Role.Title{{suffix}} position needs to move. The new time is {{prefix}}Interview.Date{{suffix}} at {{prefix}}Interview.Time{{suffix}}, at the same location.</p><p>Apologies for the change, and please reply if the new time does not work.</p><p>Kind regards,<br>{{prefix}}Recruiter.Name{{suffix}}</p>'
       }
     ]
   },
   {
-    title: 'Closing tickets',
+    title: 'Offers',
     items: [
       {
-        title: 'Closing ticket',
-        content: '<p dir="ltr">Hi {{prefix}}Customer.FirstName{{suffix}},</p>\n<p dir="ltr">We haven&rsquo;t heard back from you in over a week, so we have gone ahead and closed your ticket number {{prefix}}Ticket.Number{{suffix}}.</p>\n<p dir="ltr">If you&rsquo;re still running into issues, not to worry, just reply to this email and we will re-open your ticket.</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">All the best,</p>\n<p dir="ltr">{{prefix}}Agent.FirstName{{suffix}}</p>'
+        title: 'Offer summary',
+        content: '<h2>Offer of employment</h2><p>Dear {{prefix}}Candidate.FirstName{{suffix}} {{prefix}}Candidate.LastName{{suffix}},</p><p>Following the interview process, Ashbourne Design is pleased to offer you the position of {{prefix}}Role.Title{{suffix}} in the {{prefix}}Role.Department{{suffix}} team.</p><h3>Key terms</h3><ul><li>Start date: {{prefix}}Role.StartDate{{suffix}}</li><li>Annual salary: {{prefix}}Role.Salary{{suffix}}</li><li>Reports to: {{prefix}}Role.HiringManager{{suffix}}</li><li>Paid time off: 20 days, plus 11 company holidays</li></ul><h3>Next steps</h3><ol><li>Sign and return the attached offer letter.</li><li>Complete the background check form.</li><li>Choose a laptop from the equipment list.</li></ol><p>Kind regards,<br>{{prefix}}Recruiter.Name{{suffix}}</p>'
       },
       {
-        title: 'Post-call survey',
-        content: '<p dir="ltr">Hey {{prefix}}Customer.FirstName{{suffix}}!</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr">How did we do?</p>\n<p dir="ltr">If you have a few moments, we&rsquo;d love you to fill out our post-support survey: {{prefix}}Survey.Link{{suffix}}</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Thanks in advance!<br>{{prefix}}Company.Name{{suffix}} Customer Support</p>'
+        title: 'Offer accepted',
+        content: '<p>Hi {{prefix}}Candidate.FirstName{{suffix}},</p><p>Welcome to the {{prefix}}Role.Department{{suffix}} team. The signed offer letter has been received, and the onboarding pack will arrive two weeks before {{prefix}}Role.StartDate{{suffix}}.</p><p>Kind regards,<br>{{prefix}}Recruiter.Name{{suffix}}</p>'
       }
     ]
   },
   {
-    title: 'Product support',
+    title: 'Application outcomes',
     items: [
       {
-        title: 'How to find model number',
-        content: '<p dir="ltr">Hi {{prefix}}Customer.FirstName{{suffix}},</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">My name is {{prefix}}Agent.FirstName{{suffix}} and I will be glad to assist you today.</p>\n<p dir="ltr">To troubleshoot your issue, we first need your model number, which can be found on the underside of your product beneath the safety warning label.&nbsp;</p>\n<p dir="ltr">It should look something like the following: XX.XXXXX.X</p>\n<p dir="ltr">Once you send it over, I will advise on next steps.</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Thanks!</p>\n<p dir="ltr">{{prefix}}Agent.FirstName{{suffix}}</p>'
+        title: 'Application received',
+        content: '<p>Hi {{prefix}}Candidate.FirstName{{suffix}},</p><p>Thank you for applying for the {{prefix}}Role.Title{{suffix}} position. Applications close at the end of the month, and every applicant will hear back within two weeks after that.</p><p>Kind regards,<br>{{prefix}}Recruiter.Name{{suffix}}</p>'
       },
       {
-        title: 'Support escalation',
-        content: '<p dir="ltr">Hi {{prefix}}Customer.FirstName{{suffix}},</p>\n<p dir="ltr">We have escalated your ticket {{prefix}}Ticket.Number{{suffix}} to second-level support.</p>\n<p dir="ltr">You should hear back from the new agent on your case, {{prefix}}NewAgent.FirstName{{suffix}}, shortly.</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Thanks,</p>\n<p dir="ltr">{{prefix}}Company.Name{{suffix}} Customer Support</p>'
+        title: 'Not shortlisted',
+        content: '<p>Hi {{prefix}}Candidate.FirstName{{suffix}},</p><p>Thank you for your interest in the {{prefix}}Role.Title{{suffix}} position. After reviewing all applications, the hiring team has decided not to progress your application on this occasion.</p><p>Your details will be kept on file for twelve months, and the team may be in touch about future roles.</p><p>Kind regards,<br>{{prefix}}Recruiter.Name{{suffix}}</p>'
       }
     ]
   }
 ];
 
+const mergetags_list = [
+  {
+    title: 'Candidate',
+    menu: [
+      { value: 'Candidate.FirstName', title: 'First name' },
+      { value: 'Candidate.LastName', title: 'Last name' }
+    ]
+  },
+  {
+    title: 'Role',
+    menu: [
+      { value: 'Role.Title', title: 'Job title' },
+      { value: 'Role.Department', title: 'Department' },
+      { value: 'Role.HiringManager', title: 'Hiring manager' },
+      { value: 'Role.StartDate', title: 'Start date' },
+      { value: 'Role.Salary', title: 'Salary' }
+    ]
+  },
+  {
+    title: 'Interview',
+    menu: [
+      { value: 'Interview.Date', title: 'Date' },
+      { value: 'Interview.Time', title: 'Time' },
+      { value: 'Interview.Location', title: 'Location' }
+    ]
+  },
+  { value: 'Recruiter.Name', title: 'Recruiter name' }
+];
+
 tinymce.init({
-  selector: "textarea#template-predefined",
-    plugins: [
-        "advlist", "anchor", "autolink", "charmap", "code", "fullscreen", 
-        "help", "image", "insertdatetime", "link", "lists", "media", 
-        "preview", "searchreplace", "table", "visualblocks", "advtemplate"
-    ],
-  contextmenu: 'advtemplate',
-  toolbar: "inserttemplate undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+  selector: 'textarea#template-predefined',
+  height: 640,
+  plugins: [
+    'advtemplate', 'mergetags',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'inserttemplate | mergetags | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link table | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  mergetags_list,
   advtemplate_templates
 });

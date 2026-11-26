@@ -1,0 +1,31 @@
+// "Try it" guide card for the markdown live demo. It is included directly above
+// liveDemo::{plugincode}[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Markdown">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Markdown</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This changelog needs the 3.2.1 patch notes, which a developer wrote in Markdown. The notes are in the <strong>Markdown</strong> box below the editor. Add them above the 3.2.0 section.</p>
+    <ol class="demo-guide__steps">
+      <li>Select all the text in the <strong>Markdown</strong> box and copy it. Place the insertion point at the start of the <strong>3.2.0</strong> heading and paste. The heading, list, quote, link and code become formatted content, <code>:rocket:</code> becomes an emoji, and <code>(TM)</code>, <code>(SM)</code> and <code>(C)</code> become symbols.</li>
+      <li>Press <kbd>Ctrl</kbd>+<kbd>Z</kbd> (<kbd>⌘</kbd>+<kbd>Z</kbd> on macOS) once to see the pasted text as plain Markdown, then press <kbd>Ctrl</kbd>+<kbd>Y</kbd> (<kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd> on macOS) to convert it again.</li>
+      <li>Select <span class="demo-ui">Insert Markdown</span> in the toolbar to insert the contents of the box at the insertion point without using the clipboard.</li>
+      <li>Select <span class="demo-ui">Convert to Markdown</span> to write the whole changelog into the box as Markdown.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>markdown_symbols</code> keeps the default <code>(C)</code>, <code>(TM)</code> and <code>(R)</code> replacements and adds <code>(SM)</code> for the service mark ℠.</li>
+      <li>The <code>emoticons</code> plugin lets the {pluginname} plugin replace emoji codes such as <code>:rocket:</code>.</li>
+      <li>The <span class="demo-ui">Convert to Markdown</span> button calls <code>editor.plugins.markdown.getContent()</code>, and the <span class="demo-ui">Insert Markdown</span> button runs the <code>MarkdownInsert</code> command. Both are custom buttons added in <code>setup</code>.</li>
+    </ul>
+  </details>
+</div>
+++++

@@ -1,0 +1,31 @@
+// "Try it" guide card for the quickbars live demo. It is included directly above
+// liveDemo::quickbars[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--opensource" role="note" aria-label="Try it: Quick Toolbars">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Quick Toolbars</span>
+    <span class="demo-guide__tier">Open source plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This walking tour itinerary is edited without a main toolbar. Its buttons appear in quick toolbars next to the content instead. Format the Day 3 safety advice and add a table below the packing list.</p>
+    <ol class="demo-guide__steps">
+      <li>Select <strong>no shade after the first mile</strong> in the Day 3 paragraph. The quick selection toolbar opens. Select <span class="demo-ui">Bold</span>, or <span class="demo-ui">Link</span> to add a link without opening a dialog.</li>
+      <li>Place the insertion point at the end of the last packing list item and press <kbd>Enter</kbd> twice. On the empty line, the quick insert toolbar offers <span class="demo-ui">Insert image</span>, <span class="demo-ui">Insert table</span> and <span class="demo-ui">Horizontal line</span>. Select <span class="demo-ui">Insert table</span> to add a 2 by 2 table.</li>
+      <li>Select the rowboat photo. The quick image toolbar aligns it with <span class="demo-ui">Align left</span>, <span class="demo-ui">Align center</span> and <span class="demo-ui">Align right</span>. Select <span class="demo-ui">Insert/edit image</span> to change its description.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>toolbar: false</code> removes the main toolbar, so the quick toolbars and the menu bar are the only controls.</li>
+      <li><code>quickbars_selection_toolbar</code> adds <strong>Underline</strong> and the two list buttons to the default bold, italic, link, heading and quote buttons.</li>
+      <li><code>quickbars_insert_toolbar</code> adds <strong>Horizontal line</strong> to the default image and table buttons.</li>
+      <li><code>quickbars_image_toolbar</code> adds <strong>Insert/edit image</strong> to the default alignment buttons.</li>
+    </ul>
+  </details>
+</div>
+++++

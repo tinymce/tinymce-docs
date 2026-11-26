@@ -1,0 +1,32 @@
+// "Try it" guide card for the typography live demo. It is included directly above
+// liveDemo::{plugincode}[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Advanced Typography">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Advanced Typography</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This contributing guide was typed with straight quotes, double hyphens and stray spaces. Typeset it in one step without changing the code samples or the license notice.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point anywhere in the guide and select <span class="demo-ui">Typography</span> in the toolbar. Straight quotes and apostrophes become curly, <code>--</code> becomes a dash, and <code>-&gt;</code>, <code>1/2</code>, <code>1920x1080</code>, <code>&lt;=</code>, <code>+-</code> and <code>...</code> become proper symbols. The space before a comma or semicolon is removed, and a missing space after a comma or colon is added.</li>
+      <li>Check the translator quotes: the German quote gets „German“ quotation marks and the Spanish quote gets «Spanish» ones, because each is tagged with its language.</li>
+      <li>Check the commands in code formatting and the <code>Copyright (c)</code> line. Neither changes.</li>
+      <li>Press <kbd>Ctrl</kbd>+<kbd>Z</kbd> (<kbd>⌘</kbd>+<kbd>Z</kbd> on macOS), select the first paragraph, open the arrow next to <span class="demo-ui">Typography</span> and choose <span class="demo-ui">English (UK)</span>. Only the selection is typeset, with British single quotation marks.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>typography_langs: [ 'en-US', 'en-GB', 'de', 'es' ]</code> lists the four languages in the <span class="demo-ui">Typography</span> menu.</li>
+      <li><code>typography_default_lang: 'en-US'</code> applies US English rules to text that is not tagged with a language.</li>
+      <li><code>typography_ignore: [ 'code' ]</code> leaves text in code formatting unchanged.</li>
+      <li><code>typography_rules</code> turns on every available rule except <code>common/symbols/copy</code>, which would replace <code>Copyright (c)</code> in the license notice with ©.</li>
+    </ul>
+  </details>
+</div>
+++++

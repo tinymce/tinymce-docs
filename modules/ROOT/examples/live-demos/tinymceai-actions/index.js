@@ -19,12 +19,23 @@ const fetch_users = (userIds) => Promise.all(userIds.map((userId) => fetch(`http
 
 tinymce.init({
   selector: 'textarea#tinymceai-actions',
-  height: '800px',
+  height: 800,
   plugins: [
-    'autolink', 'link', 'emoticons', 'lists', 'table', 'advlist', 'searchreplace', 'wordcount', 'autocorrect', 'tinymcespellchecker', 'charmap', 'fullscreen', 'advcode', 'accordion', 'anchor', 'footnotes', 'powerpaste', 'importword', 'exportpdf', 'exportword', 'markdown', 'a11ychecker', 'typography', 'casechange', 'checklist', 'advtable', 'formatpainter', 'permanentpen', 'tableofcontents', 'help', 'math', 'linkchecker', 'media', 'mediaembed',
-    'quickbars', 'tinymceai', 'tinycomments', 'mentions', 'revisionhistory', 'suggestededits', 'uploadcare'
+    'tinymceai',
+    'advlist', 'autolink', 'lists', 'link', 'uploadcare', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'advcode', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount',
+    'quickbars', 'tinycomments', 'mentions', 'revisionhistory', 'suggestededits',
+    'emoticons', 'autocorrect', 'tinymcespellchecker', 'accordion', 'footnotes', 'powerpaste',
+    'importword', 'exportpdf', 'exportword', 'markdown', 'a11ychecker', 'typography', 'casechange',
+    'checklist', 'advtable', 'formatpainter', 'permanentpen', 'tableofcontents', 'math',
+    'linkchecker', 'mediaembed'
   ],
-  toolbar: 'undo redo | tinymceai-chat tinymceai-review tinymceai-quickactions spellchecker | styles | bold italic underline forecolor backcolor casechange | link uploadcare table addcomment | align bullist numlist checklist removeformat | code fullscreen help',
+  toolbar: 'tinymceai-chat tinymceai-review tinymceai-quickactions | undo redo | blocks | ' +
+    'bold italic forecolor backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link uploadcare table | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   quickbars_selection_toolbar: 'tinymceai-quickactions addcomment',
   sidebar_show: 'tinymceai-chat',
   toolbar_mode: 'sliding',

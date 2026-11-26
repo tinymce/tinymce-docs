@@ -1,0 +1,29 @@
+// "Try it" guide card for the menu2 live demo. It is included directly above
+// liveDemo::menu2[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Custom menu">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Custom menu</span>
+    <span class="demo-guide__tier">Editor setup</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This family recipe shows a single custom menu, Happy, with one item. Carmen's oven runs hot, so lower both oven temperatures from 450 to 425 degrees in the HTML source.</p>
+    <ol class="demo-guide__steps">
+      <li>Open <span class="demo-ui">Happy</span> &gt; <span class="demo-ui">Source code</span>.</li>
+      <li>Change both <code>450</code> values to <code>425</code>, then select <span class="demo-ui">Save</span>.</li>
+      <li>The default menus are hidden, but the toolbar and keyboard shortcuts still work.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>menu: { happy: { title: 'Happy', items: 'code' } }</code> defines the Happy menu with the <strong>Source code</strong> item.</li>
+      <li><code>menubar: 'happy'</code> shows only the Happy menu.</li>
+    </ul>
+  </details>
+</div>
+++++

@@ -1,0 +1,29 @@
+// "Try it" guide card for the advtable live demo. It is included directly above
+// liveDemo::advtable[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Enhanced Tables">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Enhanced Tables</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This compliance report lists training completion for 7 departments. Rank the departments by completion rate, then find the department with the most overdue staff.</p>
+    <ol class="demo-guide__steps">
+      <li>Right-click a cell in the <strong>Completion (%)</strong> column and select <span class="demo-ui">Sort</span> &gt; <span class="demo-ui">Sort table by column descending</span>. Human Resources moves to the top, the <strong>#</strong> column renumbers, and the <strong>All departments</strong> total row stays at the bottom.</li>
+      <li>Sort the <strong>Overdue</strong> column the same way. Operations, with 25 overdue staff, moves to the top.</li>
+      <li>Open <span class="demo-ui">Table</span> &gt; <span class="demo-ui">Sort</span> &gt; <span class="demo-ui">Advanced sort…</span> to sort by a row or a column, across the whole table or only the selected cells, in ascending or descending order.</li>
+      <li>Select <span class="demo-ui">Row numbering</span> in the toolbar and choose <span class="demo-ui">Lettered</span>, or <span class="demo-ui">None</span> to remove the column.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>advtable_value_series</code> replaces the default <strong>Numeric</strong> and <strong>Alpha</strong> series with <strong>Numbered</strong> and <strong>Lettered</strong> series whose generators number only the body rows, so the header row and the total row stay blank.</li>
+    </ul>
+  </details>
+</div>
+++++

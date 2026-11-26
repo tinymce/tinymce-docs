@@ -1,8 +1,16 @@
 tinymce.init({
   selector: 'textarea#valid-elements',
-  plugins: 'code',
-  height: 500,
+  height: 700,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'code image | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   extended_valid_elements: 'img[class=myclass|!src|border~0|alt|title|width|height|style]',
-  invalid_elements: 'strong,b,em,i',
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  invalid_elements: 'strong,b,em,i'
 });

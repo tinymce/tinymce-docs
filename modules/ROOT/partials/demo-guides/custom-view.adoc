@@ -1,0 +1,31 @@
+// "Try it" guide card for the custom-view live demo. It is included directly above
+// liveDemo::custom-view[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Custom view">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Custom view</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">The <strong>Freeze the release branch</strong> step in this release checklist is complete. Change its status from Pending to Done by editing the HTML in a custom view.</p>
+    <ol class="demo-guide__steps">
+      <li>Select <span class="demo-ui">Show Code View</span>, the first button in the toolbar. The view replaces the whole editor with a plain text area that holds the content&#8217;s HTML, and <span class="demo-ui">Cancel</span> and <span class="demo-ui">Save code</span> buttons.</li>
+      <li>Find the table row that contains <code>Freeze the release branch</code> and change <code>Pending</code> in that row to <code>Done</code>.</li>
+      <li>Select <span class="demo-ui">Save code</span>. The view closes and the table shows the new status.</li>
+      <li>Open the view again, make a change, and select <span class="demo-ui">Cancel</span>. The view closes and the content stays as it was.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.ui.registry.addView('code')</code> registers the view. Its <code>onShow</code> callback fills the view with a text area containing <code>editor.getContent()</code>.</li>
+      <li>The view&#8217;s <code>buttons</code> add <span class="demo-ui">Cancel</span>, which closes the view, and <span class="demo-ui">Save code</span>, which calls <code>editor.setContent()</code> with the edited HTML first.</li>
+      <li><code>editor.ui.registry.addButton('showCodeView')</code> adds the toolbar button, which runs the <code>ToggleView</code> command.</li>
+    </ul>
+  </details>
+</div>
+++++

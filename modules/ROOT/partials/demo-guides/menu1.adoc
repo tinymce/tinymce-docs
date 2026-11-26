@@ -1,0 +1,28 @@
+// "Try it" guide card for the menu1 live demo. It is included directly above
+// liveDemo::menu1[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Custom Edit menu">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Custom Edit menu</span>
+    <span class="demo-guide__tier">Editor setup</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This church bulletin has a trimmed Edit menu with only Undo, Redo, and Select all. Thursday's choir rehearsal is canceled: remove it, then undo and redo the change from the Edit menu.</p>
+    <ol class="demo-guide__steps">
+      <li>Open <span class="demo-ui">Edit</span>. It lists only <span class="demo-ui">Undo</span>, <span class="demo-ui">Redo</span>, and <span class="demo-ui">Select all</span>. Cut, Copy, Paste, and Find and replace are gone.</li>
+      <li>Delete the choir rehearsal item from the <strong>This week</strong> list. Open <span class="demo-ui">Edit</span> &gt; <span class="demo-ui">Undo</span> to bring it back, then <span class="demo-ui">Edit</span> &gt; <span class="demo-ui">Redo</span> to remove it again.</li>
+      <li>Press <kbd>Ctrl</kbd>+<kbd>F</kbd> (<kbd>⌘</kbd>+<kbd>F</kbd> on macOS). The <strong>Find and Replace</strong> dialog still opens from the keyboard, although the menu no longer lists it.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>menu: { edit: { title: 'Edit', items: 'undo redo | selectall' } }</code> replaces the default Edit menu. The <code>|</code> adds a separator before <strong>Select all</strong>.</li>
+    </ul>
+  </details>
+</div>
+++++

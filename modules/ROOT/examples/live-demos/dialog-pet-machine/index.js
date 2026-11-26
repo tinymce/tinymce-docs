@@ -44,13 +44,22 @@ const dialogConfig =  {
 
 tinymce.init({
   selector: 'textarea#dialog-pet-machine',
-  toolbar: 'dialog-example-btn',
+  height: 560,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'dialog-example-btn | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   setup: (editor) => {
     editor.ui.registry.addButton('dialog-example-btn', {
       icon: 'code-sample',
       onAction: () => editor.windowManager.open(dialogConfig)
     })
-  },
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  }
 });
 

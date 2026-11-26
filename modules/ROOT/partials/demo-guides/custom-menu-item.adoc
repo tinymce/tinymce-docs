@@ -1,0 +1,30 @@
+// "Try it" guide card for the custom-menu-item live demo. It is included directly above
+// liveDemo::custom-menu-item[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Custom menu items">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Custom menu items</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This product FAQ has a <strong>Custom menu</strong> in the menu bar, between <strong>Table</strong> and <strong>Help</strong>. Insert content with each of its three menu items.</p>
+    <ol class="demo-guide__steps">
+      <li>Click at the end of the answer that starts with <strong>Most installations</strong>, then select <span class="demo-ui">Custom menu</span> &gt; <span class="demo-ui">My basic menu item</span>. A paragraph is inserted below the answer.</li>
+      <li>Open <span class="demo-ui">Custom menu</span> &gt; <span class="demo-ui">My nested menu item</span> and select <span class="demo-ui">My submenu item</span>.</li>
+      <li>Select <span class="demo-ui">Custom menu</span> &gt; <span class="demo-ui">My toggle menu item</span>. Open <span class="demo-ui">Custom menu</span> again: the item now shows a check mark, and selecting it again clears the check mark.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>menu: { custom: { title: 'Custom menu', items: 'basicitem nesteditem toggleitem' } }</code> defines the new menu and its items.</li>
+      <li><code>menubar: 'file edit view insert format tools table custom help'</code> adds <strong>Custom menu</strong> to the default menus.</li>
+      <li><code>editor.ui.registry.addMenuItem</code>, <code>addNestedMenuItem</code> and <code>addToggleMenuItem</code> register the three items.</li>
+    </ul>
+  </details>
+</div>
+++++

@@ -1,0 +1,32 @@
+// "Try it" guide card for the merge-tag live demo. It is included directly above
+// liveDemo::merge-tag[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Merge Tags">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Merge Tags</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This renewal email is a template. Each merge tag is a placeholder that the sending application replaces with one customer's details. Edit the template the way a marketing or billing team would.</p>
+    <ol class="demo-guide__steps">
+      <li>Select <span class="demo-ui">Insert merge tag</span> in the toolbar, or open <span class="demo-ui">Insert</span> &gt; <span class="demo-ui">Merge tag</span>, then open <span class="demo-ui">Customer</span> &gt; <span class="demo-ui">Billing address</span> to browse a nested category.</li>
+      <li>Type <code>{*</code> anywhere in the text, followed by part of a name such as <code>seat</code>, then pick a tag from the list that appears.</li>
+      <li>Select an existing tag, such as the plan name in the subject line, then pick a different tag from <span class="demo-ui">Insert merge tag</span> to replace it.</li>
+      <li>Type in the <span class="demo-ui">Filter merge tags</span> box at the top of the menu to search every category at once.</li>
+      <li>Select a tag and apply <span class="demo-ui">Bold</span> or a <span class="demo-ui">Text color</span>. Tags cannot be edited as text, but they take inline formatting, like the bold, blue amount due.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>mergetags_prefix</code> and <code>mergetags_suffix</code> replace the default braces with <code>{*</code> and <code>*}</code>.</li>
+      <li><code>mergetags_list</code> defines four categories, a nested address submenu and one tag outside any category.</li>
+      <li><code>content_style</code> restyles the tags through their <code>mce-mergetag</code> classes.</li>
+    </ul>
+  </details>
+</div>
+++++

@@ -1,41 +1,83 @@
 <textarea id="mentions">
-  {{logofordemoshtml}}
-
-  <h2 style="text-align: center;">Welcome to the TinyMCE Mentions interactive demo!</h2>
-
-  <p>Type "<kbd>@</kbd>" followed immediately by one or more characters.</p>
-  
-  <p>For example: @a</p>
-  
-  <p style="text-align: center;">And visit the <a href="https://www.tiny.cloud/pricing">pricing page</a> to learn more about our Premium plugins.</p>
-  
-  <h2>A simple table to play with</h2>
-
+  <h1>Postmortem: checkout API outage on November 18</h1>
+  <p><strong>Status:</strong> draft for review. <strong>Severity:</strong> SEV-1. <strong>Duration:</strong> 47 minutes. <strong>Incident commander:</strong> <span class="mymention" data-mention-id="dmitri-sokolov">@Dmitri Sokolov</span></p>
+  <h2>Summary</h2>
+  <p>From 2:12 PM to 2:59 PM ET, 31% of checkout requests failed with HTTP 503 errors. A routine deployment lowered the database connection pool limit of the checkout service from 200 to 20, and the service ran out of connections as afternoon traffic peaked. No payment data was lost. 4,180 customers saw an error, and 1,260 of them completed their order on a second attempt.</p>
+  <h2>Timeline</h2>
   <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 23.8%;"><col style="width: 76.2%;"></colgroup>
     <thead>
-      <tr style="text-align: left;">
-        <th>Product</th>
-        <th>Cost</th>
-        <th>Really?</th>
+      <tr>
+        <th>Time (ET)</th>
+        <th>Event</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td style="text-align: center;">TinyMCE Cloud</td>
-        <td style="text-align: center;">Get started for free</td>
-        <td style="text-align: center;"><strong>Yes!</strong></td>
+        <td>2:05 PM</td>
+        <td>Deployment 2026.11.18-3 reaches all regions.</td>
+      </tr>
+      <tr>
+        <td>2:12 PM</td>
+        <td>Error rate alerts fire for the checkout service. <span class="mymention" data-mention-id="ethan-roberts">@Ethan Roberts</span> acknowledges the page.</td>
+      </tr>
+      <tr>
+        <td>2:24 PM</td>
+        <td><span class="mymention" data-mention-id="ethan-roberts">@Ethan Roberts</span> raises the incident to SEV-1, and <span class="mymention" data-mention-id="dmitri-sokolov">@Dmitri Sokolov</span> takes the incident commander role.</td>
+      </tr>
+      <tr>
+        <td>2:41 PM</td>
+        <td><span class="mymention" data-mention-id="andre-pereira">@Andre Pereira</span> finds the connection pool change in the deployment diff.</td>
+      </tr>
+      <tr>
+        <td>2:52 PM</td>
+        <td>Rollback to deployment 2026.11.18-2 completes.</td>
+      </tr>
+      <tr>
+        <td>2:59 PM</td>
+        <td>Error rate returns to normal. Incident resolved.</td>
       </tr>
     </tbody>
   </table>
-
-  <h2>Found a bug?</h2>
-
-  <p>If you believe you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
-
-  <h2>Finally…</h2>
-
-  <p>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</p>
-  <p>Thanks for supporting TinyMCE. We hope it helps you and your users create great content.</p>
-  <p>All the best from the TinyMCE team.</p>
-
+  <h2>Root cause</h2>
+  <p>The connection pool limit is set in a configuration file that three services share. A change meant to reduce the load from the reporting service also applied to the checkout service, and the code review did not show which services read the file.</p>
+  <h2>What went well</h2>
+  <ul>
+    <li>Alerts fired 7 minutes after the deployment reached all regions.</li>
+    <li>The rollback runbook worked as written and took 11 minutes.</li>
+  </ul>
+  <h2>Action items</h2>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 56.5%;"><col style="width: 23.5%;"><col style="width: 20.0%;"></colgroup>
+    <thead>
+      <tr>
+        <th>Action</th>
+        <th>Owner</th>
+        <th>Due date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Move the connection pool limit into the configuration of each service.</td>
+        <td><span class="mymention" data-mention-id="andre-pereira">@Andre Pereira</span></td>
+        <td>December 4</td>
+      </tr>
+      <tr>
+        <td>Add a deployment check that blocks connection pool limits below 100.</td>
+        <td>Unassigned</td>
+        <td>December 11</td>
+      </tr>
+      <tr>
+        <td>Alert when connection pool use stays above 80% for 5 minutes.</td>
+        <td><span class="mymention" data-mention-id="ivan-kozlov">@Ivan Kozlov</span></td>
+        <td>December 4</td>
+      </tr>
+      <tr>
+        <td>Add the checkout service to the load test that runs before each deployment.</td>
+        <td>Unassigned</td>
+        <td>December 18</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Questions about this postmortem: contact the on-call desk at (555) 010-0123.</p>
 </textarea>

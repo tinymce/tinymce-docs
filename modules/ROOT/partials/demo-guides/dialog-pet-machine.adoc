@@ -1,0 +1,31 @@
+// "Try it" guide card for the dialog-pet-machine live demo. It is included directly above
+// liveDemo::dialog-pet-machine[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Basic dialog">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Basic dialog</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">Facilities needs every pet&#8217;s name for the name tags in this team announcement. Add a dog to the list with the custom dialog.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point at the end of the line <strong>My cat&#8217;s name is: Pepper</strong>.</li>
+      <li>Select the <span class="demo-ui">{;}</span> button, the first button in the toolbar. The <strong>Pet Name Machine</strong> dialog opens with <strong>initial Cat</strong> in the name field.</li>
+      <li>Replace the name with <code>Mochi</code> and check <span class="demo-ui">tick if cat is actually a dog</span>.</li>
+      <li>Select <span class="demo-ui">Do Cat Thing</span>. The dialog closes and inserts a new line, <strong>My dog&#8217;s name is: Mochi</strong>, with the name in bold. Select <span class="demo-ui">Cancel</span> instead to close the dialog without inserting anything.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>dialogConfig</code> defines a dialog with an <code>input</code> named <code>catdata</code>, a <code>checkbox</code> named <code>isdog</code>, and <code>initialData</code> for both.</li>
+      <li>The <code>cancel</code> and <code>submit</code> footer buttons add <span class="demo-ui">Cancel</span> and <span class="demo-ui">Do Cat Thing</span>. <code>onSubmit</code> reads the values with <code>api.getData()</code>, inserts the sentence, and calls <code>api.close()</code>.</li>
+      <li><code>editor.ui.registry.addButton('dialog-example-btn')</code> adds the toolbar button, which opens the dialog with <code>editor.windowManager.open</code>.</li>
+    </ul>
+  </details>
+</div>
+++++

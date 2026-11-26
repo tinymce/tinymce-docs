@@ -1,0 +1,37 @@
+// "Try it" guide card for the full-featured live demo. It is included directly above
+// liveDemo::full-featured[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Full featured editor">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Full featured editor</span>
+    <span class="demo-guide__tier">Premium plugins</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This {productname} overview page has two open comment threads, three earlier revisions and one accessibility issue. Review it before publishing.</p>
+    <ol class="demo-guide__steps">
+      <li>Open <span class="demo-ui">Comments</span> &gt; <span class="demo-ui">Show comments</span> to read the two conversations: one asks whether to say "rich text editor" or "WYSIWYG editor", the other asks to mention Export to PDF. Reply to one or resolve it.</li>
+      <li>Select <span class="demo-ui">Revision history</span> in the toolbar and select one of the three earlier revisions to see what changed. Select <span class="demo-ui">Close</span> to return to the draft.</li>
+      <li>Place the insertion point before "Meet" in the first paragraph and open <span class="demo-ui">Insert</span> &gt; <span class="demo-ui">Merge tag</span> &gt; <span class="demo-ui">Client</span> &gt; <span class="demo-ui">Client name</span>.</li>
+      <li>Open <span class="demo-ui">Tools</span> &gt; <span class="demo-ui">Accessibility checker…</span> to see <strong>Issue 1 of 1</strong>: the <strong>Get TinyMCE</strong> table has no caption. Type a caption under <strong>Provide caption</strong> and select <span class="demo-ui">Repair</span>. The <span class="demo-ui">File</span> menu also offers <span class="demo-ui">Export to PDF…</span> and <span class="demo-ui">Export to Word…</span> for downloading the document.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>tinycomments_mode: 'callback'</code> with the <code>tinycomments_*</code> callbacks stores comments in a local sample database.</li>
+      <li><code>revisionhistory_fetch</code> loads three sample revisions, and <code>revisionhistory_display_author</code> shows who saved each one.</li>
+      <li><code>mentions_fetch</code> and the other <code>mentions_*</code> options look up people in a sample user directory when typing <code>@</code>.</li>
+      <li><code>mergetags_list</code> sets the Client, Proposal, Consultant and Salutation merge tags, and <code>advtemplate_templates</code> sets the <strong>Resolving tickets</strong> and <strong>Quick replies</strong> templates.</li>
+      <li><code>sidebar_show: 'tinymceai-chat'</code> opens the AI Chat sidebar on load, and the <code>tinymceai_*</code> options set its token provider, sources, custom quick action, and translation languages.</li>
+      <li><code>menu</code> and <code>menubar</code> add a <strong>Comments</strong> menu, and <code>toolbar_mode: 'sliding'</code> puts the toolbar buttons that do not fit behind the <span class="demo-ui">Reveal or hide additional toolbar items</span> button.</li>
+      <li><code>uploadcare_*</code> options configure image and video uploads with Media Optimizer.</li>
+      <li><code>exportpdf_converter_options</code> and <code>exportword_converter_options</code> export on US Letter paper.</li>
+      <li><code>typography_*</code>, <code>autocorrect_capitalize</code>, <code>autosave_*</code>, and <code>spellchecker_ignore_list</code> set typography rules, capitalization, autosave, and words the spell checker ignores, such as {productname}.</li>
+    </ul>
+  </details>
+</div>
+++++

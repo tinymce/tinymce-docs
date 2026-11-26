@@ -1,0 +1,32 @@
+// "Try it" guide card for the annotations live demo. It is included directly above
+// liveDemo::annotations[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Annotations API">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Annotations API</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This event run sheet already has 2 review comments, highlighted in green. Add another comment with the custom <span class="demo-ui">Annotate</span> button.</p>
+    <ol class="demo-guide__steps">
+      <li>Select the text <strong>two wireless lapel microphones</strong> in the vendor list, then select <span class="demo-ui">Annotate</span> in the toolbar.</li>
+      <li>Type a comment in the browser prompt, such as <code>Ask for a spare handheld microphone</code>, and select <span class="demo-ui">OK</span>. The text is highlighted as an annotation.</li>
+      <li>Place the insertion point inside <strong>Lunch on the terrace</strong> or any other highlighted text. <span class="demo-ui">Annotate</span> is disabled while the insertion point is in an annotation.</li>
+      <li>Open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Source code</span>. Each annotation is a <code>span</code> that keeps its comment in a <code>data-mce-comment</code> attribute.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.ui.registry.addButton</code> adds the <span class="demo-ui">Annotate</span> button, which asks for a comment and calls <code>editor.annotator.annotate('alpha', …)</code> on the selection.</li>
+      <li><code>editor.annotator.annotationChanged</code> disables the button while the selection is inside an <code>alpha</code> annotation.</li>
+      <li><code>editor.annotator.register('alpha', …)</code> with <code>persistent: true</code> keeps the annotations in the saved content, and its <code>decorate</code> function stores the comment and author as attributes.</li>
+      <li><code>content_style</code> highlights annotated text through the <code>mce-annotation</code> class.</li>
+    </ul>
+  </details>
+</div>
+++++

@@ -1,0 +1,30 @@
+// "Try it" guide card for the custom-toolbar-button live demo. It is included directly above
+// liveDemo::custom-toolbar-button[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Basic toolbar button">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Basic toolbar button</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">These CRM account notes keep a dated activity log. Add a new log entry that starts with the current date, and check that a date cannot be inserted inside an existing date.</p>
+    <ol class="demo-guide__steps">
+      <li>Click at the end of the last activity log entry, press <kbd>Enter</kbd>, then select <span class="demo-ui">Insert Current Date</span> (the clock icon) in the toolbar. The current date is inserted as a <code>time</code> element.</li>
+      <li>Place the insertion point inside one of the two existing dates, such as <strong>Wed Nov 04 2026</strong>. <span class="demo-ui">Insert Current Date</span> is disabled while the insertion point is inside a date, and is enabled again when it moves out.</li>
+      <li>Select <span class="demo-ui">My Button</span> to insert the bold text <strong>It's my button!</strong> at the insertion point.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.ui.registry.addButton</code> adds <strong>My Button</strong>, a text button that inserts fixed content.</li>
+      <li><code>editor.ui.registry.addButton</code> adds <strong>Insert Current Date</strong>, an icon button that starts with <code>enabled: false</code>.</li>
+      <li><code>onSetup</code> listens to the <code>NodeChange</code> event and disables the date button while the insertion point is inside a <code>time</code> element.</li>
+    </ul>
+  </details>
+</div>
+++++

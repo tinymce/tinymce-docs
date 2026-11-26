@@ -10,7 +10,17 @@ const specialChars = [
 ];
 tinymce.init({
   selector: 'textarea#autocompleter-autocompleteitem',
-  height: 250,
+  height: 640,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link table | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   setup: (editor) => {
     const onAction = (autocompleteApi, rng, value) => {
       editor.selection.setRng(rng);

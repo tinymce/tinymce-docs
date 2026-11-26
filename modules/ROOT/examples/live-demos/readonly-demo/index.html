@@ -1,28 +1,29 @@
-<script type="text/javascript">
-  function getEditorStatus (editorId) {
-    return tinymce.get(editorId).mode.get();
-  }
-
-  function toggleEditorStatus (editorId, currentStatus) {
-    if (currentStatus === "design") {
-      tinymce.get(editorId).mode.set("readonly");
-    } else {
-      tinymce.get(editorId).mode.set("design");
-    }
-  }
-
-  function enableDisable (targetEditor, targetElement) {
-    const status = getEditorStatus(targetEditor);
-    const button = document.getElementById(targetElement);
-    toggleEditorStatus(targetEditor, status);
-    if (status === "design") {
-      button.innerText = "Enable editor";
-    } else {
-      button.innerText = "Disable editor";
-    }
-  }
-</script>
-
-<textarea id="readonly-demo">Hello, World!</textarea>
-
-<button id="enableDisableButton" class="live_demo" onclick="enableDisable('readonly-demo','enableDisableButton')">Enable editor</button>
+<textarea id="readonly-demo">
+  <h1>Password and account security policy</h1>
+  <p>Policy owner: Information Security. Approved December 1, 2026. Next review: June 1, 2027.</p>
+  <h2>Purpose</h2>
+  <p>This policy sets the minimum rules for passwords and sign-in on every company system. It applies to all employees, contractors, and service accounts.</p>
+  <h2>Password requirements</h2>
+  <ul>
+    <li>At least 14 characters. A phrase of four or more words is recommended.</li>
+    <li>Not used for any other account, at work or at home.</li>
+    <li>Stored only in the company password manager.</li>
+    <li>Changed immediately if it may have been seen or shared.</li>
+  </ul>
+  <h2>Multi-factor authentication</h2>
+  <p>Multi-factor authentication is required for email, the VPN, the HR system, and every system that holds customer data. Use the company authenticator app. Text message codes are allowed only until the app is set up.</p>
+  <h2>Account lockout</h2>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 48.4%;"><col style="width: 51.6%;"></colgroup>
+    <thead>
+      <tr><th>Event</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>5 failed sign-in attempts in 15 minutes</td><td>Account locked for 30 minutes</td></tr>
+      <tr><td>Sign-in from a new country</td><td>Second factor required, and the user is notified by email</td></tr>
+      <tr><td>Account unused for 90 days</td><td>Account disabled until the manager confirms it is still needed</td></tr>
+    </tbody>
+  </table>
+  <h2>Reporting a problem</h2>
+  <p>Report a lost device, a suspicious sign-in alert, or a shared password to the security desk at (555) 010-0199 within one hour.</p>
+</textarea>

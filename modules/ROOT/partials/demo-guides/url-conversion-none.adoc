@@ -1,0 +1,28 @@
+// "Try it" guide card for the url-conversion-none live demo. It is included directly above
+// liveDemo::url-conversion-none[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: No URL conversion">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">No URL conversion</span>
+    <span class="demo-guide__tier">Core feature</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This status page incident report has three links: a path from the root of the site, a relative path, and a full address on another site. Check that the editor saves every address exactly as written, then add a new link.</p>
+    <ol class="demo-guide__steps">
+      <li>Select <span class="demo-ui">Source code</span> in the toolbar, or open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Source code</span>. The links are saved as <code>/status/history/</code>, <code>../postmortems/notification-delays/</code>, and <code>https://www.example.com/</code>, unchanged. Select <span class="demo-ui">Cancel</span>.</li>
+      <li>Select a word, select <span class="demo-ui">Insert/edit link</span>, enter <code>https://www.tiny.cloud/docs/tinymce/latest/link/</code> as the <span class="demo-ui">URL</span>, and select <span class="demo-ui">Save</span>.</li>
+      <li>Open <span class="demo-ui">Source code</span> again. The new link keeps its full address, even though it is on the same site as this page. With the default settings, the editor would save it as <code>../link/</code>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>convert_urls: false</code> turns off URL conversion, so <code>relative_urls</code>, <code>remove_script_host</code>, and <code>document_base_url</code> no longer change any address.</li>
+    </ul>
+  </details>
+</div>
+++++

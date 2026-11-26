@@ -20,7 +20,10 @@ The {pluginname} plugin (`+advcode+`) provides an advanced code editor within {p
 
 NOTE: Full-screen mode requires the xref:fullscreen.adoc[Full screen] plugin and the {pluginname} to be running in xref:advcode.adoc#advcode_inline[inline mode].
 
-== The difference between the Code and Enhanced Code Editor plugins
+[[interactive-example]]
+== Interactive example
+
+include::partial$demo-guides/advcode.adoc[]
 
 liveDemo::advcode[]
 

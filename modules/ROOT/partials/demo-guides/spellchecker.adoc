@@ -1,0 +1,32 @@
+// "Try it" guide card for the spellchecker live demo. It is included directly above
+// liveDemo::spellchecker[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Spell Checker">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Spell Checker</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This cooking school curriculum has 8 spelling mistakes: 6 in English, 1 in a French phrase and 1 in an Italian phrase. Find and fix every one.</p>
+    <ol class="demo-guide__steps">
+      <li>Scroll through the curriculum. Misspelled words are underlined as they come into view. Right-click one, such as <strong>recieve</strong>, and choose a suggestion, or select <span class="demo-ui">Ignore</span> or <span class="demo-ui">Ignore all</span>.</li>
+      <li>Select <span class="demo-ui">Spellcheck…</span> in the toolbar to step through the remaining mistakes in a dialog, and select <span class="demo-ui">Accept</span> to use the highlighted suggestion.</li>
+      <li>Place the insertion point in the French phrase in Module 2 and open <span class="demo-ui">Language</span> in the toolbar. <strong>French</strong> is checked, so the phrase is checked against the French dictionary.</li>
+      <li>Open the arrow next to <span class="demo-ui">Spellcheck</span> to change the language of the whole document, or choose <span class="demo-ui">Off</span> to stop checking.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>spellchecker_language: 'en-US'</code> checks untagged text against the US English dictionary.</li>
+      <li><code>spellchecker_languages</code> lists five dictionaries in the <span class="demo-ui">Spellcheck</span> menu.</li>
+      <li><code>spellchecker_ignore_list</code> accepts the cooking terms <strong>brunoise</strong>, <strong>mirepoix</strong> and <strong>moka</strong> in English, and <strong>moka</strong> in Italian.</li>
+      <li><code>content_langs</code> sets the languages in the <span class="demo-ui">Language</span> toolbar button, which tags selected text with a language.</li>
+    </ul>
+  </details>
+</div>
+++++

@@ -19,6 +19,7 @@
 ** xref:toolbar[`+toolbar+`]
 ** xref:tinymce-script-src[`+tinymce-script-src+`]
 * xref:form-input-bindings-v-model[Form Input Bindings: `+v-model+`]
+** xref:updating-the-editor-content-from-a-parent-component[Updating the editor content from a parent component]
 * xref:event-binding[Event binding]
 
 [[installing-the-tinymce-vuejs-integration-using-npm]]
@@ -434,6 +435,49 @@ The `+v-model+` directive can be used to create a two-way data binding. For exam
 ----
 
 For information on `+v-model+` and form input bindings, see: link:https://vuejs.org/guide/essentials/forms.html[Vue.js documentation - Form Input Bindings].
+
+[[updating-the-editor-content-from-a-parent-component]]
+=== Updating the editor content from a parent component
+
+When `+v-model+` (or an explicit `+@update:modelValue+` listener) is bound, the component watches the bound value and updates the editor whenever a parent component reassigns it. On each change, the component calls `+editor.setContent()+` with the new value, so no manual editor call is required.
+
+To avoid resetting the editor unnecessarily, the update runs only when all of the following are true:
+
+* The new value is a string.
+* The new value differs from the previous bound value.
+* The new value differs from the current editor content, compared using the xref:output-format[`+output-format+`] format.
+
+The final guard prevents a redundant `+setContent()+` call, and the loss of cursor position that would accompany it, during the normal editing round trip where an edit emits `+update:modelValue+` and updates the bound value in the parent.
+
+==== Example: updating content through `+v-model+`
+
+Reassigning the bound value in the parent updates the editor to match:
+
+[source,html]
+----
+<template>
+  <editor v-model="content" />
+  <button @click="setContent">Update content</button>
+</template>
+
+<script>
+import Editor from '@tinymce/tinymce-vue';
+
+export default {
+  components: { editor: Editor },
+  data() {
+    return { content: '<p>Initial content.</p>' };
+  },
+  methods: {
+    setContent() {
+      this.content = '<p>Updated from the parent.</p>';
+    }
+  }
+};
+</script>
+----
+
+This watcher is only active when `+v-model+` or an `+@update:modelValue+` listener is bound. Without it, reassigning a one-way content prop does not update the editor; use xref:event-binding[the `+init+` event] to obtain the editor instance and call its content APIs directly.
 
 [[event-binding]]
 == Event binding

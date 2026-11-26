@@ -5,7 +5,6 @@ const content_style = `
 
 body {
   background-color: #f0eeee;
-  padding: 1rem;
 }
 
 section {

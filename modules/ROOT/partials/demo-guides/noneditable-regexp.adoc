@@ -15,7 +15,7 @@
     <ol class="demo-guide__steps">
       <li>Click the ticket number <strong>512-884-301</strong>. The editor selects the whole number, and its text cannot be changed.</li>
       <li>Type <code>See ticket 512-930-118.</code> at the end of the last paragraph. New text stays editable until the content is loaded again.</li>
-      <li>Select <span class="demo-ui">Source code</span> in the toolbar, or open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Source code</span>. The locked text is saved as plain text, without the spans that lock it while editing. Select <span class="demo-ui">Save</span>.</li>
+      <li>Open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Source code</span>. The locked text is saved as plain text, without the spans that lock it while editing. Select <span class="demo-ui">Save</span>.</li>
       <li>The content loads again, and the new ticket number is now locked too, for 7 locked items in total.</li>
     </ol>
   </div>

@@ -14,6 +14,14 @@ tinymce.init({
     'charmap emoticons | code fullscreen preview | save print | ' +
     'pagebreak anchor codesample | ltr rtl | help',
   toolbar_mode: 'sliding',
+  font_family_formats: 'Inter=inter, sans-serif; Andale Mono=andale mono, monospace; ' +
+    'Arial=arial, helvetica, sans-serif; Arial Black=arial black, sans-serif; ' +
+    'Book Antiqua=book antiqua, palatino, serif; Comic Sans MS=comic sans ms, sans-serif; ' +
+    'Courier New=courier new, courier, monospace; Georgia=georgia, palatino, serif; ' +
+    'Helvetica=helvetica, arial, sans-serif; Impact=impact, sans-serif; Symbol=symbol; ' +
+    'Tahoma=tahoma, arial, helvetica, sans-serif; Terminal=terminal, monaco, monospace; ' +
+    'Times New Roman=times new roman, times, serif; Trebuchet MS=trebuchet ms, geneva, sans-serif; ' +
+    'Verdana=verdana, geneva, sans-serif; Webdings=webdings; Wingdings=wingdings, zapf dingbats',
   content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   autosave_interval: '20s',
   autosave_retention: '30m',

@@ -13,7 +13,7 @@
   <div class="demo-guide__body">
     <p class="demo-guide__task">This knowledge base draft has four links. Open the custom link form on a link, and check that it does not appear on plain text.</p>
     <ol class="demo-guide__steps">
-      <li>Click inside the <strong>audit log</strong> link. A form appears with the full address, <code>https://www.example.com/admin/audit-log</code>, and two buttons: <span class="demo-ui">Link</span>, shown as pressed, and <span class="demo-ui">Remove link</span>.</li>
+      <li>Click inside the <strong>audit log</strong> link. A form appears with <code>https://www.example.com/admin/audit-log</code> in its input, and two buttons: <span class="demo-ui">Link</span>, shown as pressed, and <span class="demo-ui">Remove link</span>.</li>
       <li>Edit the address and select <span class="demo-ui">Link</span>. The form closes. In this demo the button only writes the typed value to the browser console, so the link itself does not change.</li>
       <li>Click inside any paragraph that has no link. The form does not appear.</li>
     </ol>

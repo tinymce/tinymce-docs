@@ -16,7 +16,7 @@
       <li>Click the highlighted premium amount, <strong>$1,284.00</strong>. The editor selects the whole field, and its text cannot be changed.</li>
       <li>Click the disclosure paragraph that starts "State law requires". The whole block is selected in the same way.</li>
       <li>Add a sentence to the paragraph that starts "Thank you". Text outside the highlighted fields is editable as usual.</li>
-      <li>Select <span class="demo-ui">Source code</span> in the toolbar, or open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Source code</span>. Each locked field keeps <code>class="non-editable"</code>. The <code>contenteditable</code> attribute that locks it while editing is not saved.</li>
+      <li>Open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Source code</span>. Each locked field keeps <code>class="non-editable"</code>. The <code>contenteditable</code> attribute that locks it while editing is not saved.</li>
     </ol>
   </div>
   <details class="demo-guide__config">

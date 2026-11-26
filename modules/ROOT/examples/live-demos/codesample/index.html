@@ -48,7 +48,9 @@ def verify_signature(
 <pre class="language-ruby"><code>require 'openssl'
 
 def verify_signature(raw_body, signature, secret)
-  expected = OpenSSL::HMAC.hexdigest('SHA256', secret, raw_body)
+  expected = OpenSSL::HMAC.hexdigest(
+    'SHA256', secret, raw_body
+  )
   OpenSSL.secure_compare(expected, signature)
 end</code></pre>
   <h2>PHP</h2>

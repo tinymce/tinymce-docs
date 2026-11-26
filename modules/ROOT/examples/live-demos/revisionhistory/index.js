@@ -7,7 +7,7 @@ const fakeDelay = 200;
 const revisions = [
   {
     revisionId: '5',
-    createdAt: '2026-11-18T16:40:00.000Z',
+    createdAt: '2026-11-18T12:40:00.000Z',
     author: {
       id: 'anna-petrov',
       name: 'Anna Petrov',
@@ -193,7 +193,7 @@ const revisions = [
   },
   {
     revisionId: '3',
-    createdAt: '2026-10-21T14:05:00.000Z',
+    createdAt: '2026-10-21T12:05:00.000Z',
     author: {
       id: 'genevieve-simmons',
       name: 'Genevieve Simmons',

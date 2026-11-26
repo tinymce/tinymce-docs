@@ -18,7 +18,7 @@ tinymce.init({
 
     /* example, adding a toolbar menu button */
     editor.ui.registry.addMenuButton('mybutton', {
-      text: 'My button',
+      text: 'My Button',
       fetch: (callback) => {
         const items = [
           {

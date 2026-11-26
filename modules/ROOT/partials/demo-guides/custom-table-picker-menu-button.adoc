@@ -16,7 +16,7 @@
       <li>Click the empty line under the paragraph that starts with <strong>The January theme</strong>.</li>
       <li>Select <span class="demo-ui">Insert table</span> (the table icon), the first button in the toolbar. A 10 by 10 grid opens.</li>
       <li>Move the pointer over the grid until the label under it reads <strong>5x5</strong> (columns by rows), then click.</li>
-      <li>The new table has 5 columns and 5 rows, and its first row is a header row, like the December table.</li>
+      <li>The new table has 5 columns and 5 rows. Its first row is a header row in a <code>thead</code> element, ready for the column names.</li>
     </ol>
   </div>
   <details class="demo-guide__config">

@@ -15,7 +15,7 @@
     <ol class="demo-guide__steps">
       <li>Look at the toolbar: square 40-pixel buttons with square corners on a light gray bar. The content sits on a white page against a gray background, like a word processor.</li>
       <li>Place the insertion point in the title and select <span class="demo-ui">Align center</span> in the toolbar.</li>
-      <li>Select <strong>Kessler Engineering</strong> under <strong>Project team</strong> and select <span class="demo-ui">Insert/edit link</span>. The dialog has a blue border with a soft blue glow, square corners and no lines between the header, body and footer.</li>
+      <li>Select <strong>Kessler Engineering</strong> under <strong>Project team</strong>. Select <span class="demo-ui">Reveal or hide additional toolbar items</span> (the last toolbar button) to open the toolbar drawer, then select <span class="demo-ui">Insert/edit link</span>. The dialog has a blue border with a soft blue glow, square corners and no lines between the header, body and footer.</li>
       <li>Type <code>https://www.example.com/</code> in <span class="demo-ui">URL</span> and select <span class="demo-ui">Save</span>.</li>
     </ol>
   </div>
@@ -24,7 +24,7 @@
     <ul class="demo-guide__options">
       <li><code>skin: 'fabric'</code> styles the menu bar, toolbar, menus and dialogs in the Microsoft Fabric design language. The skin has no outer border, so the blue header bar and the gray border around the editor come from the demo page CSS.</li>
       <li><code>content_css: 'fabric'</code> loads the matching content styles, which show the text as a white page on a gray background.</li>
-      <li><code>toolbar_mode: 'floating'</code> moves toolbar buttons that do not fit on narrow screens into a drawer, opened with <span class="demo-ui">Reveal or hide additional toolbar items</span>.</li>
+      <li><code>toolbar_mode: 'floating'</code> moves toolbar buttons that do not fit in the toolbar into a drawer, opened with <span class="demo-ui">Reveal or hide additional toolbar items</span>.</li>
     </ul>
   </details>
 </div>

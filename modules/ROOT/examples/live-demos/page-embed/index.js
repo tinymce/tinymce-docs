@@ -12,6 +12,7 @@ tinymce.init({
     'alignright alignjustify | bullist numlist outdent indent | ' +
     'link table | removeformat | help',
   content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  sandbox_iframes_exclusions: ['phet.colorado.edu', 'openstreetmap.org'],
   tiny_pageembed_classes: [
     { text: 'Simulation (16:9)', value: 'tiny-pageembed--16by9' },
     { text: 'Wide (21:9)', value: 'tiny-pageembed--21by9' },

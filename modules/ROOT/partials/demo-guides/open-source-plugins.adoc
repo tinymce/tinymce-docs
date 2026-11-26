@@ -23,6 +23,7 @@
     <summary class="demo-guide__label">Configured in this demo</summary>
     <ul class="demo-guide__options">
       <li><code>toolbar_mode: 'sliding'</code> moves the toolbar buttons that do not fit into a drawer, opened with <strong>Reveal or hide additional toolbar items</strong>.</li>
+      <li><code>font_family_formats</code> adds <strong>Inter</strong>, the font of the demo text, to the start of the font list, so the font list in the toolbar shows <strong>Inter</strong> instead of a font stack.</li>
       <li><code>autosave_interval: '20s'</code>, <code>autosave_retention: '30m'</code> and <code>autosave_prefix</code> save a draft in the browser every 20 seconds and keep it for 30 minutes.</li>
       <li><code>image_advtab</code>, <code>image_caption</code> and <code>image_list</code> add an <strong>Advanced</strong> tab, a <strong>Show caption</strong> option and an <strong>Image list</strong> with the {productname} logo and a laptop photo to the image dialog.</li>
       <li><code>link_list</code> adds two sample pages to the <strong>Link list</strong> in the link dialog.</li>

@@ -36,7 +36,7 @@ tinymce.PluginManager.add('example', (editor, url) => {
   });
   /* Add a button that opens a window */
   editor.ui.registry.addButton('example', {
-    text: 'My button',
+    text: 'My Button',
     onAction: () => {
       /* Open window */
       openDialog();

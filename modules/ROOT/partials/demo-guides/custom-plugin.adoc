@@ -14,7 +14,7 @@
     <p class="demo-guide__task">This bug report has an empty line where its title belongs. Add the title with the example plugin&#8217;s toolbar button, then find the plugin in the help dialog.</p>
     <ol class="demo-guide__steps">
       <li>Click in the empty line under the <strong>Bug report BUG-2417</strong> heading.</li>
-      <li>Select <span class="demo-ui">My button</span>, the first button in the toolbar. The <strong>Example plugin</strong> dialog opens with one field, <span class="demo-ui">Title</span>.</li>
+      <li>Select <span class="demo-ui">My Button</span>, the first button in the toolbar. The <strong>Example plugin</strong> dialog opens with one field, <span class="demo-ui">Title</span>.</li>
       <li>Type <code>Pay now button stays disabled after the shipping country changes</code> and select <span class="demo-ui">Save</span>. The plugin inserts <strong>Title:</strong> followed by the text. Select <span class="demo-ui">Close</span> instead to discard it.</li>
       <li>Open <span class="demo-ui">Help</span> &gt; <span class="demo-ui">Help</span> and select the <span class="demo-ui">Plugins</span> tab. <strong>Example plugin</strong> is listed, with a link to its documentation.</li>
     </ol>
@@ -23,7 +23,7 @@
     <summary class="demo-guide__label">Configured in this demo</summary>
     <ul class="demo-guide__options">
       <li><code>tinymce.PluginManager.add('example')</code> registers the plugin, which <code>plugins</code> then loads.</li>
-      <li><code>editor.ui.registry.addButton('example')</code> adds <span class="demo-ui">My button</span>, which opens a dialog with <code>editor.windowManager.open</code>. The dialog&#8217;s <code>onSubmit</code> inserts the text with <code>editor.insertContent</code>.</li>
+      <li><code>editor.ui.registry.addButton('example')</code> adds <span class="demo-ui">My Button</span>, which opens a dialog with <code>editor.windowManager.open</code>. The dialog&#8217;s <code>onSubmit</code> inserts the text with <code>editor.insertContent</code>.</li>
       <li><code>editor.ui.registry.addMenuItem('example')</code> registers an <strong>Example plugin</strong> menu item that opens the same dialog. This demo does not add it to a menu.</li>
       <li><code>getMetadata</code> returns the name and address that the Help dialog lists.</li>
     </ul>

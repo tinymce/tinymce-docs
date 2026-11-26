@@ -23,6 +23,7 @@
     <summary class="demo-guide__label">Configured in this demo</summary>
     <ul class="demo-guide__options">
       <li><code>tiny_pageembed_classes</code> renames the four responsive sizes in the <span class="demo-ui">Size</span> list to match the content of this lesson plan, such as <strong>Simulation (16:9)</strong> and <strong>Map (4:3)</strong>, while keeping the built-in size classes.</li>
+      <li><code>sandbox_iframes_exclusions: ['phet.colorado.edu', 'openstreetmap.org']</code> lets the simulation and the map run their scripts. Other embedded pages are sandboxed by default, and pages that need scripts show blank until their host is added here.</li>
     </ul>
   </details>
 </div>

@@ -22,7 +22,7 @@
     <summary class="demo-guide__label">Configured in this demo</summary>
     <ul class="demo-guide__options">
       <li><code>toolbar</code> adds <span class="demo-ui">Underline</span>, <span class="demo-ui">Insert/edit link</span>, and <span class="demo-ui">Insert/edit image</span> to the standard buttons.</li>
-      <li><code>height: 560</code> fits the show notes without scrolling.</li>
+      <li><code>height: 760</code> fits the show notes without scrolling.</li>
       <li>The <span class="demo-ui">View HTML Output</span> button is page code outside the editor. It calls <code>tinymce.get('default-editor').getContent()</code> and prints the result.</li>
     </ul>
   </details>

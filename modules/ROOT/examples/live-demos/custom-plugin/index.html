@@ -1,1 +1,41 @@
-<textarea id="custom-plugin"><p>To add a `Title: ` to the editor content, click "My button" and fill the dialog, then save the change.</p><p>&nbsp;</p></textarea>
+<textarea id="custom-plugin">
+  <h1>Bug report BUG-2417</h1>
+  <p>&nbsp;</p>
+  <p><strong>Reporter:</strong> Alicia Gomez, QA team<br><strong>Component:</strong> Checkout, payment form<br><strong>Severity:</strong> High<br><strong>Found in:</strong> web app version 5.14.2, Chrome 131 on Windows 11</p>
+  <h2>Steps to reproduce</h2>
+  <ol>
+    <li>Sign in as a customer with a saved card.</li>
+    <li>Add any item to the cart and select <strong>Checkout</strong>.</li>
+    <li>Change the shipping country from United States to Canada.</li>
+    <li>Select <strong>Pay now</strong>.</li>
+  </ol>
+  <h2>Expected result</h2>
+  <p>The order total updates with Canadian shipping and the payment goes through.</p>
+  <h2>Actual result</h2>
+  <p>The <strong>Pay now</strong> button stays disabled after the country changes. Reloading the page enables it again, but the cart is empty.</p>
+  <h2>Environment</h2>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 44.7%;"><col style="width: 55.3%;"></colgroup>
+    <thead>
+      <tr>
+        <th>Browser</th>
+        <th>Reproduces</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Chrome 131</td>
+        <td>Yes, every time</td>
+      </tr>
+      <tr>
+        <td>Firefox 133</td>
+        <td>Yes, every time</td>
+      </tr>
+      <tr>
+        <td>Safari 18</td>
+        <td>No</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>First reported by a customer through support ticket 88213 on December 1.</p>
+</textarea>

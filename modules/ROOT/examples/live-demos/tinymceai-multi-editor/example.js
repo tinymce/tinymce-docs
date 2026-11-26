@@ -5,6 +5,7 @@ const sharedSettings = {
   toolbar: 'undo redo | tinymceai-chat tinymceai-review ai-quickactions-translate | styles | bold italic underline | bullist numlist | link table',
   menubar: false,
   help_accessibility: false,
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   // Decoupled mode: AI Chat and AI Review render in the panel next to the editors instead of in a sidebar.
   tinymceai_decoupled_container: '#tinymceai-multi-editor-panel',
   tinymceai_decoupled_show: 'tinymceai-chat',

@@ -1,0 +1,34 @@
+// "Try it" guide card for the advtemplate live demo. It is included directly above
+// liveDemo::{plugincode}[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Templates">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Templates</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This support reply draws on a shared library of 8 saved replies: 7 in 3 categories, and an uncategorized email signature. Add a reply from the library, save a paragraph as a new reply, and reorganize the library.</p>
+    <ol class="demo-guide__steps">
+      <li>Open <span class="demo-ui">Insert</span> &gt; <span class="demo-ui">Template…</span> or select <span class="demo-ui">Insert template</span> in the toolbar. Expand <strong>Orders and shipping</strong> and select <strong>Refund issued</strong> to preview it, or type <code>survey</code> in the <span class="demo-ui">Search</span> box to find a reply in any category. Select <span class="demo-ui">Insert</span>.</li>
+      <li>Select the paragraph that starts "If the replacement has any problems", then select <span class="demo-ui">Save as template</span> in the toolbar, or right-click and select <span class="demo-ui">Save as template…</span> from the menu. Enter a <span class="demo-ui">Template name</span>, choose <strong>Closing tickets</strong> from the <span class="demo-ui">Category</span> list, and select <span class="demo-ui">Save</span>.</li>
+      <li>Open <span class="demo-ui">Insert template</span> again and select <span class="demo-ui">New category</span> to add a category.</li>
+      <li>Open <span class="demo-ui">Template actions</span> next to a reply to <span class="demo-ui">Rename…</span>, <span class="demo-ui">Move to…</span>, or <span class="demo-ui">Delete</span> it, or <span class="demo-ui">Category actions</span> next to a category to <span class="demo-ui">Rename…</span>, <span class="demo-ui">Move all items…</span>, or <span class="demo-ui">Delete all</span>. Changes last until the page reloads.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>advtemplate_list</code> and <code>advtemplate_get_template</code> load the library and each reply from an in-memory store that stands in for a remote template service.</li>
+      <li><code>advtemplate_create_template</code> adds the <span class="demo-ui">Save as template</span> button and menu items, and <code>advtemplate_create_category</code> adds the <span class="demo-ui">New category</span> button.</li>
+      <li><code>advtemplate_rename_template</code>, <code>advtemplate_move_template</code>, and <code>advtemplate_delete_template</code> fill the <span class="demo-ui">Template actions</span> menu.</li>
+      <li><code>advtemplate_rename_category</code>, <code>advtemplate_move_category_items</code>, and <code>advtemplate_delete_category</code> fill the <span class="demo-ui">Category actions</span> menu.</li>
+      <li><code>contextmenu: 'advtemplate'</code> shows <span class="demo-ui">Save as template…</span> when selected text is right-clicked.</li>
+      <li><code>mergetags_list</code> defines the customer, ticket, order, and agent merge tags used in the replies.</li>
+    </ul>
+  </details>
+</div>
+++++

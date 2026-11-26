@@ -1,0 +1,29 @@
+// "Try it" guide card for the autocorrect live demo. It is included directly above
+// liveDemo::autocorrect[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Spelling Autocorrect">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Spelling Autocorrect</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">These supplier meeting notes end mid-sentence. Finish the last paragraph and watch typing mistakes get fixed as each word is completed.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point after <strong>Before the first order,</strong> at the end of the last paragraph and type <code>teh</code> followed by a space. The word changes to <strong>the</strong>.</li>
+      <li>Keep typing with common typos such as <code>recieve</code>, <code>seperate</code> or <code>adn</code>, each followed by a space.</li>
+      <li>End a sentence with a period, then start the next one with a lowercase letter, such as <code>luis</code>. The first letter is capitalized when the space is typed. Type a word with two initial capitals, such as <code>PRiya</code>, followed by a space to see it corrected.</li>
+      <li>Open <span class="demo-ui">Tools</span> and turn <span class="demo-ui">Autocorrect</span> or <span class="demo-ui">Capitalization</span> off and on. The browser remembers the choice for later visits.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>autocorrect_capitalize: true</code> turns on capitalization, which is off by default, so sentence starts and words with two initial capitals are corrected.</li>
+    </ul>
+  </details>
+</div>
+++++

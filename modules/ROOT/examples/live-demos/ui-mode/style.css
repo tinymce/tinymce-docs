@@ -3,6 +3,8 @@
     overflow: scroll;
 }
 
-.my-inline-editor {
-    margin: 12px;
+.tinymce-body th,
+.tinymce-body td {
+    padding: 4px 8px;
+    text-align: left;
 }

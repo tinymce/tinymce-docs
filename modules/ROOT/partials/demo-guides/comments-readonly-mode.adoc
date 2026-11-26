@@ -1,0 +1,33 @@
+// "Try it" guide card for the comments-readonly-mode live demo. It is included directly above
+// liveDemo::comments-readonly-mode[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Comments in read-only mode">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Comments in read-only mode</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This approved company policy opens in read-only mode with the 3 conversations from its review. Read the reasoning behind the policy, then compare read-only mode with editing.</p>
+    <ol class="demo-guide__steps">
+      <li>Select the highlighted text "up to three days a week" to open Benjamin Barnes's conversation in the <span class="demo-ui">Comments</span> sidebar. The conversation can be read, but <span class="demo-ui">Add comment…</span>, <span class="demo-ui">Conversation Actions</span> and <span class="demo-ui">Comment Actions</span> are unavailable.</li>
+      <li>Select any other text. <span class="demo-ui">Add comment</span> in the toolbar stays unavailable, and the text cannot be changed.</li>
+      <li>Select <span class="demo-ui">Readonly mode</span> in the toolbar to switch the editor to design mode. The text becomes editable, and replies, new comments and the conversation menus become available to the signed-in user, Benjamin Barnes.</li>
+      <li>Select <span class="demo-ui">Readonly mode</span> again to lock the policy.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>readonly: true</code> opens the editor in read-only mode, which also makes the conversations view-only.</li>
+      <li><code>tinycomments_mode: 'embedded'</code> stores the 3 review conversations in the editor content.</li>
+      <li><code>editor.ui.registry.addToggleButton</code> adds the <span class="demo-ui">Readonly mode</span> button, which switches the editor between <code>readonly</code> and <code>design</code> mode with <code>editor.mode.set</code>.</li>
+      <li><code>user_id: 'benjamin-barnes'</code> and <code>fetch_users</code> sign in Benjamin Barnes for comments added in design mode.</li>
+      <li><code>sidebar_show: 'showcomments'</code> opens the <span class="demo-ui">Comments</span> sidebar when the editor loads.</li>
+    </ul>
+  </details>
+</div>
+++++

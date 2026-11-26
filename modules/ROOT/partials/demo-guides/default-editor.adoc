@@ -1,0 +1,30 @@
+// "Try it" guide card for the default-editor live demo. It is included directly above
+// liveDemo::default-editor[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Rich text editor">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Rich text editor</span>
+    <span class="demo-guide__tier">Editor setup</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">These podcast show notes list three timestamps as plain paragraphs. Turn them into a numbered list, link the events calendar, and check the HTML the editor produces.</p>
+    <ol class="demo-guide__steps">
+      <li>Select the three timestamp lines under <strong>In this episode</strong> and select <span class="demo-ui">Numbered list</span>. Toolbar buttons that do not fit are under <span class="demo-ui">Reveal or hide additional toolbar items</span> (<strong>&#8230;</strong>) at the end of the toolbar.</li>
+      <li>Select "Eastside Library events calendar", select <span class="demo-ui">Insert/edit link</span>, enter <code>https://www.example.com/events</code> in the <span class="demo-ui">URL</span> field, and select <span class="demo-ui">Save</span>.</li>
+      <li>Select <span class="demo-ui">View HTML Output</span> below the editor. The output now has an <code>&lt;ol&gt;</code> with three <code>&lt;li&gt;</code> items and two links under <strong>Links from the show</strong>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>toolbar</code> adds <span class="demo-ui">Underline</span>, <span class="demo-ui">Insert/edit link</span>, and <span class="demo-ui">Insert/edit image</span> to the standard buttons.</li>
+      <li><code>height: 560</code> fits the show notes without scrolling.</li>
+      <li>The <span class="demo-ui">View HTML Output</span> button is page code outside the editor. It calls <code>tinymce.get('default-editor').getContent()</code> and prints the result.</li>
+    </ul>
+  </details>
+</div>
+++++

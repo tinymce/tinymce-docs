@@ -1,10 +1,18 @@
 tinymce.init({
   selector: 'textarea#premiumskinsandicons-bootstrap',
+  height: 800,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'undo redo | blocks | ' +
+    'bold italic forecolor backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link image table | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   skin: 'bootstrap',
   icons: 'bootstrap',
-  plugins: 'image lists link anchor charmap',
-  toolbar: 'blocks | bold italic bullist numlist | link image charmap',
-  menubar: false,
   setup: (editor) => {
     editor.on('init', () => {
       editor.getContainer().style.transition='border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out';

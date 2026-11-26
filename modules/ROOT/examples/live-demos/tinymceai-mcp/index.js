@@ -371,10 +371,20 @@ tinymce.IconManager.add('fancy-ai-icons', {
 tinymce.init({
   selector: 'textarea#tinymceai-mcp',
   plugins: [
-  "autolink", "link", "emoticons", "lists", "table", "advlist", "searchreplace", "wordcount", "autocorrect", "tinymcespellchecker", "charmap", "fullscreen", "advcode", "accordion", "anchor", "footnotes", "powerpaste", "importword", "exportpdf", "exportword", "markdown", "a11ychecker", "typography", "casechange", "checklist", "advtable", "formatpainter", "permanentpen", "tableofcontents", "help", "math", "linkchecker", "media", "mediaembed", // general plugins
-  "quickbars", "tinymceai", "mergetags", "tinycomments", "mentions", "revisionhistory", "suggestededits", "advtemplate", "uploadcare"
+    'tinymceai',
+    'advlist', 'autolink', 'lists', 'link', 'uploadcare', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'advcode', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount',
+    'quickbars', 'mergetags', 'tinycomments', 'mentions', 'revisionhistory', 'suggestededits', 'advtemplate',
+    'emoticons', 'autocorrect', 'tinymcespellchecker', 'accordion', 'footnotes', 'powerpaste',
+    'importword', 'exportpdf', 'exportword', 'markdown', 'a11ychecker', 'typography', 'casechange',
+    'checklist', 'advtable', 'formatpainter', 'permanentpen', 'tableofcontents', 'math',
+    'linkchecker', 'mediaembed'
   ],
-  toolbar: "undo redo | tinymceai-chat tinymceai-review | ai-quickactions-translate | styles fontsizeinput | bold italic underline forecolor backcolor casechange | link uploadcare table addcomment | align bullist numlist checklist removeformat | code fullscreen help",
+  toolbar: 'tinymceai-chat tinymceai-review ai-quickactions-translate | undo redo | blocks | ' +
+    'bold italic forecolor backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link uploadcare table | removeformat | help',
   mobile: {
     toolbar: 'styles bold italic underline forecolor backcolor | link uploadcare tableofcontents accordion hr toc footnotes | align bullist numlist checklist removeformat | showcomments code help',
     sidebar_show: '',

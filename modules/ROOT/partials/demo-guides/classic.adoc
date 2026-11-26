@@ -1,0 +1,33 @@
+// "Try it" guide card for the classic live demo. It is included directly above
+// liveDemo::classic[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Classic editor">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Classic editor</span>
+    <span class="demo-guide__tier">Editor setup</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This visitor guide runs in classic mode: the content sits in an iframe below the menu bar and toolbar. It has two spelling mistakes. Fix them, check accessibility, and insert a photo from the file manager.</p>
+    <ol class="demo-guide__steps">
+      <li>Select <span class="demo-ui">Spellcheck…</span> in the toolbar. The dialog steps through the 2 misspelled words, "seperate" and "accomodation". The place names Ostrander and Kittredge are not flagged.</li>
+      <li>Select <span class="demo-ui">Accessibility checker</span>. It reports <strong>No accessibility issues detected</strong>, because the table has a caption and column header scopes.</li>
+      <li>Select <span class="demo-ui">Insert file</span> to open {cloudfilemanager} with sample files, then pick an image such as <strong>Promo-bike-rentals.jpg</strong>.</li>
+      <li>The status bar has no resize handle, so the editor keeps its height.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>width: '100%'</code> and <code>height: 600</code> set the editor size; <code>resize: false</code> removes the resize handle.</li>
+      <li>The <code>advcode</code> plugin replaces <code>code</code>, so <strong>Source code</strong> opens the enhanced code editor.</li>
+      <li><code>spellchecker_dialog: true</code> makes <span class="demo-ui">Spellcheck…</span> open the spell checker dialog.</li>
+      <li><code>spellchecker_ignore_list</code> stops the spell checker flagging the place names Ostrander and Kittredge.</li>
+      <li><code>tinydrive_demo_files_url</code> and <code>tinydrive_token_provider</code> load sample files into {cloudfilemanager}.</li>
+    </ul>
+  </details>
+</div>
+++++

@@ -1,19 +1,45 @@
 <textarea id="readonly-locked-template">
-  <blockquote>
-    <p><strong>Try it:</strong></p>
-    <ul>
-      <li>Select <strong>Insert template</strong> in the toolbar. <strong>Privacy requests</strong> and <strong>Warranty claims</strong> show a lock icon: their approved wording can be previewed and inserted, but not renamed, moved, or deleted.</li>
-      <li>Open <strong>Template actions</strong> on a template in <strong>Team replies</strong> to compare. <strong>Rename...</strong>, <strong>Move to...</strong>, and <strong>Delete</strong> are available there.</li>
-      <li>Select a paragraph, select <strong>Save as template</strong>, and open the <strong>Category</strong> list. Locked categories are not offered as a destination.</li>
-    </ul>
-  </blockquote>
-  <p><strong>To:</strong> {{prefix}}Customer.Email{{suffix}}<br><strong>Subject:</strong> Re: Ticket {{prefix}}Ticket.Number{{suffix}}, account deletion</p>
-  <p>Hi {{prefix}}Customer.FirstName{{suffix}},</p>
-  <p>{{prefix}}Company.Name{{suffix}} has received a request to delete the account registered to {{prefix}}Customer.Email{{suffix}} and its personal data.</p>
-  <ul>
-    <li>The account will be closed within 30 days of this request.</li>
-    <li>Order and invoice records are kept for seven years to meet tax obligations, then deleted.</li>
-    <li>Marketing emails stop immediately.</li>
-  </ul>
-  <p>Regards,<br>{{prefix}}Company.Name{{suffix}} Privacy Team</p>
+  <p><strong>To:</strong> {{prefix}}Employee.Email{{suffix}}<br><strong>Subject:</strong> Your first week at {{prefix}}Company.Name{{suffix}}</p>
+  <p>Hi {{prefix}}Employee.FirstName{{suffix}},</p>
+  <p>Welcome to {{prefix}}Company.Name{{suffix}}. The People Team has put together a first-week schedule so that you can meet the {{prefix}}Employee.Department{{suffix}} team and get set up before your first project.</p>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 16.2%;"><col style="width: 18.9%;"><col style="width: 64.9%;"></colgroup>
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th>Time</th>
+        <th>Session</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Day 1</td>
+        <td>9:00 AM</td>
+        <td>Welcome coffee and office tour with {{prefix}}Manager.Name{{suffix}}</td>
+      </tr>
+      <tr>
+        <td>Day 1</td>
+        <td>1:00 PM</td>
+        <td>Laptop pickup and account setup at the IT desk</td>
+      </tr>
+      <tr>
+        <td>Day 2</td>
+        <td>10:00 AM</td>
+        <td>Benefits and payroll overview</td>
+      </tr>
+      <tr>
+        <td>Day 3</td>
+        <td>2:00 PM</td>
+        <td>Team planning meeting</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Before {{prefix}}Employee.StartDate{{suffix}}, complete these steps in the employee portal:</p>
+  <ol>
+    <li>Sign the Code of Conduct and the confidentiality agreement.</li>
+    <li>Upload a photo for the building access card.</li>
+    <li>Add bank details for direct deposit.</li>
+  </ol>
+  <p>On the first day, bring photo ID for the I-9 employment eligibility check.</p>
+  <p>Regards,<br>{{prefix}}Company.Name{{suffix}} People Team</p>
 </textarea>

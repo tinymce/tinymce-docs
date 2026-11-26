@@ -1,0 +1,30 @@
+// "Try it" guide card for the default live demo. It is included directly above
+// liveDemo::default[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Default editor">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Default editor</span>
+    <span class="demo-guide__tier">Editor setup</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This coffee roaster's about page opens in the editor that the code above creates: no plugins, with the default menu bar and toolbar. Two section titles, "Visit the roastery" and "Wholesale", are still plain paragraphs. Turn them into headings so the page has three Heading 2 sections.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point in "Visit the roastery", open the <span class="demo-ui">Paragraph</span> format list in the toolbar, and choose <span class="demo-ui">Headings</span> &gt; <span class="demo-ui">Heading 2</span>.</li>
+      <li>Do the same for "Wholesale".</li>
+      <li>Select the line under the main title and select <span class="demo-ui">Align center</span>.</li>
+      <li>Select the phone number and open <span class="demo-ui">Format</span> &gt; <span class="demo-ui">Text color</span> in the menu bar to pick a color. Press <kbd>Ctrl</kbd>+<kbd>Z</kbd> (<kbd>⌘</kbd>+<kbd>Z</kbd> on macOS) to undo a change.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>height: 520</code> makes the editor tall enough for the whole page.</li>
+      <li>No <code>plugins</code>, <code>menubar</code>, or <code>toolbar</code> options are set, so the menus and toolbar show the core features only.</li>
+    </ul>
+  </details>
+</div>
+++++

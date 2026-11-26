@@ -142,6 +142,8 @@ annotationChanged: (name: string, callback): void
 
 Use the following example to create the Annotate API:
 
+include::partial$demo-guides/annotations.adoc[]
+
 liveDemo::annotations[height="750"]
 
 == Retrieving All Annotations for a Particular Annotation Name

@@ -150,11 +150,16 @@ const mergetags_list = [
 tinymce.init({
   selector: 'textarea#template',
   height: 640,
-  plugins: 'advtemplate mergetags lists link advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
+  plugins: [
+    'advtemplate', 'mergetags',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
   toolbar: 'inserttemplate addtemplate | mergetags | undo redo | blocks | ' +
-    'bold italic | bullist numlist | link | backcolor | ' +
-    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
-    'removeformat | help',
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link | removeformat | help',
   contextmenu: 'advtemplate',
   content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   mergetags_list,

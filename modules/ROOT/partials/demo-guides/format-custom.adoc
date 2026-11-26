@@ -1,0 +1,31 @@
+// "Try it" guide card for the format-custom live demo. It is included directly above
+// liveDemo::format-custom[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Custom formats">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Custom formats</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This laptop specification sheet overrides the built-in formats, so bold, italic, underline and alignment add classes instead of tags and inline styles. Format the sheet, then check the HTML.</p>
+    <ol class="demo-guide__steps">
+      <li>Select a word and select <span class="demo-ui">Bold</span>, then place the insertion point in the title and open <span class="demo-ui">Format</span> &gt; <span class="demo-ui">Align</span> &gt; <span class="demo-ui">Center</span>. Open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Source code</span>: the word is wrapped in <code>&lt;span class="bold"&gt;</code> and the title has <code>class="center"</code>.</li>
+      <li>Select <strong>Meridian 13</strong> in the first paragraph and choose <span class="demo-ui">Product code</span> from the <span class="demo-ui">Formats</span> dropdown. The style refers to a format registered in the <code>formats</code> option.</li>
+      <li>Select the laptop photo and choose <span class="demo-ui">Image left</span> under the <span class="demo-ui">Image formats</span> heading.</li>
+      <li>Place the insertion point in a table row and choose <span class="demo-ui">Highlighted row</span>. Outside a table, the item is unavailable.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>formats</code> overrides <code>alignleft</code>, <code>aligncenter</code>, <code>alignright</code>, <code>alignjustify</code>, <code>bold</code>, <code>italic</code> and <code>underline</code> to add classes, makes <code>strikethrough</code> add a <code>del</code> element, and registers a <code>productcode</code> format.</li>
+      <li><code>style_formats</code> lists format references, inline, block and selector-based styles, and an <strong>Image formats</strong> group heading in the <span class="demo-ui">Formats</span> dropdown.</li>
+      <li><code>content_style</code> styles the classes that the overridden formats add, so the editor still shows bold, alignment and the highlighted row.</li>
+    </ul>
+  </details>
+</div>
+++++

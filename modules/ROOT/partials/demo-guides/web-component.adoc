@@ -1,0 +1,31 @@
+// "Try it" guide card for the web-component live demo. It is included directly above
+// liveDemo::web-component[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Web Component">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Web Component</span>
+    <span class="demo-guide__tier">Editor setup</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This volunteer guide is edited in a <code>tinymce-editor</code> element. Every option is an HTML attribute, and the initial content is escaped HTML inside the element. The cleanup shift now ends at 2:30 PM: update the shift table.</p>
+    <ol class="demo-guide__steps">
+      <li>In the <strong>Shift times</strong> table, change the Cleanup time to <code>12:30 PM to 2:30 PM</code>.</li>
+      <li>Select the three steps under <strong>Before your first shift</strong> and select <span class="demo-ui">Bullet list</span> to switch them from a numbered list. Toolbar buttons that do not fit are under <span class="demo-ui">Reveal or hide additional toolbar items</span> (<strong>&#8230;</strong>) at the end of the toolbar.</li>
+      <li>Open the <span class="demo-ui">HTML</span> tab to compare each attribute with the editor it produces.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>plugins</code> and <code>toolbar</code> attributes take the same space-separated values as the <code>tinymce.init</code> options.</li>
+      <li><code>height="600"</code> sets the editor height.</li>
+      <li><code>content_css="default,…/content.css"</code> loads two content stylesheets from one comma-separated attribute value.</li>
+      <li><code>api-key</code> sets the {cloudname} API key used to load {productname} when the page has not loaded it already.</li>
+    </ul>
+  </details>
+</div>
+++++

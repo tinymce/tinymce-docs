@@ -1,20 +1,43 @@
 <textarea id="custom-toolbar-menu-button">
-  {{logofordemoshtml}}
-  <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
-  <p>Select a menu item from the listbox above and it will insert contents into the editor at the caret position.</p>
-
-  <h2>Got questions or need help?</h2>
+  <h1>Sprint 42 planning notes</h1>
+  <p><strong>Team:</strong> Checkout squad | <strong>Sprint dates:</strong> December 7 to December 18 | <strong>Facilitator:</strong> Lena Park</p>
+  <h2>Sprint goal</h2>
+  <p>Customers can save a card during checkout and use it on their next order without entering it again.</p>
+  <h2>Capacity</h2>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 24.4%;"><col style="width: 25.6%;"><col style="width: 50.0%;"></colgroup>
+    <thead>
+      <tr><th>Team member</th><th>Days available</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Lena Park</td><td>8</td><td>Facilitating planning and review</td></tr>
+      <tr><td>Omar Haddad</td><td>10</td><td></td></tr>
+      <tr><td>Grace Liu</td><td>6</td><td>Out December 17 and 18</td></tr>
+      <tr><td>Daniel Brooks</td><td>10</td><td>On call December 7 to December 11</td></tr>
+    </tbody>
+  </table>
+  <h2>Committed stories</h2>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 60.8%;"><col style="width: 15.2%;"><col style="width: 24.0%;"></colgroup>
+    <thead>
+      <tr><th>Story</th><th>Points</th><th>Owner</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Save card at checkout</td><td>8</td><td>Omar Haddad</td></tr>
+      <tr><td>Show saved cards on the payment step</td><td>5</td><td>Grace Liu</td></tr>
+      <tr><td>Remove a saved card from account settings</td><td>3</td><td>Daniel Brooks</td></tr>
+      <tr><td>Carryover from Sprint 41: fix the address autocomplete timeout</td><td>2</td><td>Lena Park</td></tr>
+    </tbody>
+  </table>
+  <p>Total committed: 18 points. Average velocity over the last three sprints: 20 points.</p>
+  <h2>Risks</h2>
   <ul>
-    <li>Our <a href="{{site-url}}/tinymce/8/">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
-    <li>Have a specific question? Try the <a href="{{communitysupporturl}}" target="_blank" rel="noopener"><code>{{prodnamecode}}</code> tag at Stack Overflow</a>.</li>
-    <li>We also offer enterprise grade support as part of <a href="{{pricingpage}}">TinyMCE premium plans</a>.</li>
+    <li>The payment provider sandbox is down for maintenance on December 9.</li>
+    <li>The security review for stored card tokens is not yet booked.</li>
   </ul>
-
-  <h2>Found a bug?</h2>
-  <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
-
-  <h2>Finally ...</h2>
-  <p>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</p>
-  <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.
-    <br>All the best from the TinyMCE team.</p>
+  <h2>Decisions</h2>
+  <ol>
+    <li>Saved cards ship behind a feature flag and roll out to 10% of customers first.</li>
+    <li>The sprint review moves to Friday, December 18, at 2:00 PM.</li>
+  </ol>
 </textarea>

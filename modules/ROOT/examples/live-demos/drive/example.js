@@ -1,14 +1,20 @@
 tinymce.init({
   selector: 'textarea#drive',
-  plugins: 'tinydrive image media link editimage lists advlist autolink charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime table help wordcount',
-  height: 680,
-  tinydrive_token_provider: 'URL_TO_YOUR_TOKEN_PROVIDER',
-  toolbar: 'insertfile | undo redo | blocks | bold italic | bullist numlist | ' +
-    'image link media | backcolor | ' +
-    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
-    'removeformat | help',
+  height: 760,
+  plugins: [
+    'tinydrive', 'editimage',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'insertfile | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link image media | removeformat | help',
   menu: {
-    insert: { title: 'Insert', items: 'insertfile image link media' }
+    insert: { title: 'Insert', items: 'insertfile image link media inserttable | charmap hr | anchor | insertdatetime' }
   },
-  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  tinydrive_token_provider: 'URL_TO_YOUR_TOKEN_PROVIDER',
+  tinydrive_upload_path: '/Campaign uploads'
 });

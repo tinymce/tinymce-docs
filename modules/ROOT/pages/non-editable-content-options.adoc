@@ -9,6 +9,8 @@ include::partial$configuration/editable_class.adoc[]
 
 include::partial$configuration/editable_root.adoc[]
 
+include::partial$demo-guides/editable-class-and-editable-root.adoc[]
+
 liveDemo::editable-class-and-editable-root[]
 
 [NOTE]
@@ -20,10 +22,13 @@ include::partial$configuration/allow_noneditable.adoc[]
 // noneditable_class
 include::partial$configuration/noneditable_class.adoc[]
 
+include::partial$demo-guides/noneditable-class.adoc[]
+
 liveDemo::noneditable-class[]
 
 // noneditable_regexp
 include::partial$configuration/noneditable_regexp.adoc[]
 
-// TODO: improve example to show more practical use case
+include::partial$demo-guides/noneditable-regexp.adoc[]
+
 liveDemo::noneditable-regexp[]

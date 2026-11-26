@@ -1,0 +1,32 @@
+// "Try it" guide card for the autoresize live demo. It is included directly above
+// liveDemo::autoresize[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--opensource" role="note" aria-label="Try it: Autoresize">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Autoresize</span>
+    <span class="demo-guide__tier">Open source plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This ski resort trail report lists 2 groomed trails. Add the rest of the overnight grooming list and watch the editor grow with the report.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point at the end of <strong>Eagle Ridge (intermediate)</strong> and press <kbd>Enter</kbd> to add trail names. The editor grows with each new line, and no scroll bar appears.</li>
+      <li>Keep adding lines. When the editor reaches 900 pixels, it stops growing and the content starts to scroll.</li>
+      <li>Delete the new lines. The editor shrinks to fit the report again.</li>
+      <li>Press <kbd>Ctrl</kbd>+<kbd>A</kbd> (<kbd>⌘</kbd>+<kbd>A</kbd> on macOS) and <kbd>Delete</kbd> to clear the report. The editor stops shrinking at 400 pixels. Press <kbd>Ctrl</kbd>+<kbd>Z</kbd> (<kbd>⌘</kbd>+<kbd>Z</kbd> on macOS) to restore it.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>min_height: 400</code> sets the smallest height of the whole editor, including the menu bar, toolbar and status bar.</li>
+      <li><code>max_height: 900</code> sets the height at which the editor stops growing and the content scrolls.</li>
+      <li><code>autoresize_bottom_margin: 40</code> keeps 40 pixels of space below the last line while the editor grows.</li>
+      <li><code>autoresize_overflow_padding: 40</code> sets 40 pixels of padding at each side of the content, to match the demo stylesheet.</li>
+    </ul>
+  </details>
+</div>
+++++

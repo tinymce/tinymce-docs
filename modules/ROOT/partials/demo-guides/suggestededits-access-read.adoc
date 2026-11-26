@@ -1,0 +1,32 @@
+// "Try it" guide card for the suggestededits-access-read live demo. It is included directly above
+// liveDemo::suggestededits-access-read[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: suggestededits_access: 'read'">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">suggestededits_access: 'read'</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">These draft board meeting minutes have 4 suggested edits, and 2 of them have feedback. As Joshua Perry, with read-only access to the review, find out why the lease term changed.</p>
+    <ol class="demo-guide__steps">
+      <li>Select <span class="demo-ui">Review edits</span> in the toolbar to open the review.</li>
+      <li>Select the card that replaces <code>five years</code> with <code>seven years</code> to outline the change in the minutes and read its 2 feedback entries.</li>
+      <li>Select the other cards to step through the remaining suggestions, including the new table row from Elena Rodriguez.</li>
+      <li>Note that the cards have no <span class="demo-ui">Accept</span>, <span class="demo-ui">Reject</span> or <span class="demo-ui">Provide feedback</span> buttons, and <span class="demo-ui">Save &amp; Exit</span> is unavailable.</li>
+      <li>Select <span class="demo-ui">Exit review</span> to return to the minutes.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>suggestededits_access: 'read'</code> shows suggestions and feedback without any review actions.</li>
+      <li><code>suggestededits_model</code> loads the 4 saved suggestions and their feedback.</li>
+      <li><code>user_id: 'joshua-perry'</code> and <code>fetch_users</code> sign in as Joshua Perry and load the reviewers' names and photos.</li>
+    </ul>
+  </details>
+</div>
+++++

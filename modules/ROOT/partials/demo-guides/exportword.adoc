@@ -1,0 +1,30 @@
+// "Try it" guide card for the exportword live demo. It is included directly above
+// liveDemo::exportword[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Export to Word">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Export to Word</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This press release goes out to journalists as a Word file. Export it and check the page setup, headers, footer and watermark.</p>
+    <ol class="demo-guide__steps">
+      <li>Open <span class="demo-ui">File</span> &gt; <span class="demo-ui">Export to Word…</span> or select <span class="demo-ui">Export to Word</span> in the toolbar. The .docx file downloads.</li>
+      <li>Open the file in Word. The first page has its own header, the pages that follow show the release title in the header, the footer shows page numbers, and a faded image watermark sits behind the text.</li>
+      <li>The media contact details start on a new page because of the page break above them. Move the insertion point, select <span class="demo-ui">Page break</span> to add another break, and export again.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>exportword_converter_options</code> sets US Letter pages with custom margins, a first-page header, a header for the other pages, a page number footer and a washed-out image watermark.</li>
+      <li><code>exportword_converter_style</code> sets Calibri for the exported text, because Word uses the fonts installed on the reader's computer.</li>
+      <li><code>pagebreak_separator</code> and <code>pagebreak_split_block</code>, from the Page Break plugin, write page breaks that the converter turns into Word page breaks.</li>
+    </ul>
+  </details>
+</div>
+++++

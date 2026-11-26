@@ -1,0 +1,30 @@
+// "Try it" guide card for the custom-icon-pack live demo. It is included directly above
+// liveDemo::custom-icon-pack[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Custom icon pack">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Custom icon pack</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">Both editors show the same design review notes. The right editor uses a custom icon pack with 3 icons: <code>bold</code>, <code>italic</code> and <code>audio</code>, and adds three toolbar buttons that use them. Find where the toolbars differ.</p>
+    <ol class="demo-guide__steps">
+      <li>Compare the <span class="demo-ui">Bold</span> and <span class="demo-ui">Italic</span> buttons in the two toolbars. In the right editor they use the custom icons, which replace the default icons with the same names.</li>
+      <li>Compare the other buttons, such as <strong>Undo</strong> and <strong>Redo</strong>. They are identical, because icons missing from the custom pack fall back to the default icons.</li>
+      <li>In the right editor, select the first three toolbar buttons. They use the custom <code>bold</code>, <code>italic</code> and <code>audio</code> icons and each inserts bold text.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>tinymce.IconManager.add('my-icon-pack', …)</code> registers the icon pack in the page, in place of an <code>icons.js</code> file.</li>
+      <li><code>icons: 'my-icon-pack'</code> selects the custom pack in the right editor. The left editor uses the default icons.</li>
+      <li><code>editor.ui.registry.addButton</code> adds three buttons that use the <code>bold</code>, <code>italic</code> and <code>audio</code> icons by name.</li>
+    </ul>
+  </details>
+</div>
+++++

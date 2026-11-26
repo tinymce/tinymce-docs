@@ -1,19 +1,83 @@
 <textarea id="mentions">
-  <blockquote><p><strong>Try it:</strong> type <kbd>@</kbd> to list people from the company directory, then keep typing to narrow the list. Choose <strong>Show more people</strong> at the end of the list to load the next ten names. Hover over a name in the list, or over a mention in the text, to see that person's profile card.</p></blockquote>
-  <h1>Website redesign: weekly update</h1>
-  <p>The new homepage passed design review on Monday. Development of the pricing and product pages starts this week, and the launch date of March 2 is unchanged.</p>
-  <h2>Progress</h2>
+  <h1>Postmortem: checkout API outage on November 18</h1>
+  <p><strong>Status:</strong> draft for review. <strong>Severity:</strong> SEV-1. <strong>Duration:</strong> 47 minutes. <strong>Incident commander:</strong> <span class="mymention" data-mention-id="dmitri-sokolov">@Dmitri Sokolov</span></p>
+  <h2>Summary</h2>
+  <p>From 2:12 PM to 2:59 PM ET, 31% of checkout requests failed with HTTP 503 errors. A routine deployment lowered the database connection pool limit of the checkout service from 200 to 20, and the service ran out of connections as afternoon traffic peaked. No payment data was lost. 4,180 customers saw an error, and 1,260 of them completed their order on a second attempt.</p>
+  <h2>Timeline</h2>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 23.8%;"><col style="width: 76.2%;"></colgroup>
+    <thead>
+      <tr>
+        <th>Time (ET)</th>
+        <th>Event</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2:05 PM</td>
+        <td>Deployment 2026.11.18-3 reaches all regions.</td>
+      </tr>
+      <tr>
+        <td>2:12 PM</td>
+        <td>Error rate alerts fire for the checkout service. <span class="mymention" data-mention-id="ethan-roberts">@Ethan Roberts</span> acknowledges the page.</td>
+      </tr>
+      <tr>
+        <td>2:24 PM</td>
+        <td><span class="mymention" data-mention-id="ethan-roberts">@Ethan Roberts</span> raises the incident to SEV-1, and <span class="mymention" data-mention-id="dmitri-sokolov">@Dmitri Sokolov</span> takes the incident commander role.</td>
+      </tr>
+      <tr>
+        <td>2:41 PM</td>
+        <td><span class="mymention" data-mention-id="andre-pereira">@Andre Pereira</span> finds the connection pool change in the deployment diff.</td>
+      </tr>
+      <tr>
+        <td>2:52 PM</td>
+        <td>Rollback to deployment 2026.11.18-2 completes.</td>
+      </tr>
+      <tr>
+        <td>2:59 PM</td>
+        <td>Error rate returns to normal. Incident resolved.</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Root cause</h2>
+  <p>The connection pool limit is set in a configuration file that three services share. A change meant to reduce the load from the reporting service also applied to the checkout service, and the code review did not show which services read the file.</p>
+  <h2>What went well</h2>
   <ul>
-    <li><span class="mymention" data-mention-id="james-wilson">@James Wilson</span> finished the navigation component and merged it into the main branch.</li>
-    <li><span class="mymention" data-mention-id="jade-scott">@Jade Scott</span> started cross-browser testing of the homepage and logged 12 issues, 9 of which are already fixed.</li>
-    <li><span class="mymention" data-mention-id="bella-moore">@Bella Moore</span> delivered the final icon set for the product pages.</li>
+    <li>Alerts fired 7 minutes after the deployment reached all regions.</li>
+    <li>The rollback runbook worked as written and took 11 minutes.</li>
   </ul>
-  <h2>Next steps</h2>
-  <ul>
-    <li>Agree the copy for the pricing page with the marketing team. Owner: <span class="mymention" data-mention-id="mia-andersson">@Mia Andersson</span>.</li>
-    <li>Fix the 3 remaining homepage issues before the end of the week.</li>
-    <li>Book a usability session for the new checkout flow.</li>
-  </ul>
-  <h2>Risks</h2>
-  <p>The product page depends on the new image service, which is still in beta. A fallback to the current service is ready if the beta is not stable by the end of the month.</p>
+  <h2>Action items</h2>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 56.5%;"><col style="width: 23.5%;"><col style="width: 20.0%;"></colgroup>
+    <thead>
+      <tr>
+        <th>Action</th>
+        <th>Owner</th>
+        <th>Due date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Move the connection pool limit into the configuration of each service.</td>
+        <td><span class="mymention" data-mention-id="andre-pereira">@Andre Pereira</span></td>
+        <td>December 4</td>
+      </tr>
+      <tr>
+        <td>Add a deployment check that blocks connection pool limits below 100.</td>
+        <td>Unassigned</td>
+        <td>December 11</td>
+      </tr>
+      <tr>
+        <td>Alert when connection pool use stays above 80% for 5 minutes.</td>
+        <td><span class="mymention" data-mention-id="ivan-kozlov">@Ivan Kozlov</span></td>
+        <td>December 4</td>
+      </tr>
+      <tr>
+        <td>Add the checkout service to the load test that runs before each deployment.</td>
+        <td>Unassigned</td>
+        <td>December 18</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Questions about this postmortem: contact the on-call desk at (555) 010-0123.</p>
 </textarea>

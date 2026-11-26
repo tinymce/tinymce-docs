@@ -1,7 +1,15 @@
 tinymce.init({
   selector: 'textarea#custom-toolbar-menu-button',
-  height: 500,
-  toolbar: 'mybutton',
+  height: 640,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'mybutton | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'removeformat | help',
 
   setup: (editor) => {
     /* Menu items are recreated when the menu is closed and opened, so we need
@@ -55,5 +63,5 @@ tinymce.init({
     });
 
   },
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

@@ -1,9 +1,16 @@
 tinymce.init({
   selector: 'textarea#premiumskinsandicons-fabric',
+  height: 800,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'undo redo | blocks | ' +
+    'bold italic forecolor backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link image table | removeformat | help',
   skin: 'fabric',
   content_css: 'fabric',
-  toolbar_mode: 'floating',
-  plugins: 'advlist anchor autolink charmap code codesample directionality help image editimage insertdatetime link lists media nonbreaking pagebreak preview searchreplace table tableofcontents visualblocks wordcount',
-  toolbar: 'undo redo | blocks | bold italic strikethrough forecolor backcolor blockquote | link image media | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | removeformat',
-  height: 400
+  toolbar_mode: 'floating'
 });

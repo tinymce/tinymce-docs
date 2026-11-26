@@ -1,0 +1,36 @@
+// "Try it" guide card for the tinymceai-actions live demo. It is included directly above
+// liveDemo::tinymceai-actions[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: {pluginname} Quick Actions">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">{pluginname} Quick Actions</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This article about bringing generative AI into content workflows needs a tighter close. Shorten the paragraph that starts "While the advantages are clear", then make the four "Key Benefits of Integrated AI" bullets more direct.</p>
+    <ol class="demo-guide__steps">
+      <li>Select the paragraph under "Overcoming Adoption Challenges" that starts "While the advantages are clear", open <span class="demo-ui">AI Quick Actions</span> in the toolbar and choose <span class="demo-ui">Change length</span> &gt; <span class="demo-ui">Make shorter</span>.</li>
+      <li>The editor becomes read-only and shows the suggested edits as a preview. Step through them with <span class="demo-ui">Previous</span> and <span class="demo-ui">Next</span>, and select <span class="demo-ui">Apply suggestion</span> or <span class="demo-ui">Skip suggestion</span> for each, or <span class="demo-ui">Apply all</span> at once.</li>
+      <li>Select the four bullets under "Key Benefits of Integrated AI" and choose <span class="demo-ui">AI Quick Actions</span> &gt; <span class="demo-ui">Change tone</span> &gt; <span class="demo-ui">More direct</span>. The same quick actions appear above any selected text.</li>
+      <li>Select the paragraph under "Evaluating Workflow Improvements" and choose <span class="demo-ui">AI Quick Actions</span> &gt; <span class="demo-ui">Chat commands</span> &gt; <span class="demo-ui">Explain</span>. The answer appears in the <span class="demo-ui">AI Chat</span> sidebar instead of changing the article.</li>
+      <li>Choose <span class="demo-ui">AI Quick Actions</span> &gt; <span class="demo-ui">Other</span> &gt; <span class="demo-ui">Challenge</span> to ask Chat to question the statements in the selected text.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>tinymceai_quickactions_custom</code> adds the <strong>Challenge</strong> chat prompt under <strong>AI Quick Actions</strong> &gt; <strong>Other</strong>.</li>
+      <li><code>tinymceai_languages</code> sets the 12 languages in the <strong>AI Quick Actions</strong> &gt; <strong>Translate</strong> submenu.</li>
+      <li><code>quickbars_selection_toolbar: 'tinymceai-quickactions addcomment'</code> shows <strong>AI Quick Actions</strong> and <strong>Add comment</strong> above selected text.</li>
+      <li><code>sidebar_show: 'tinymceai-chat'</code> opens the Chat sidebar when the editor loads.</li>
+      <li><code>tinymceai_chat_fetch_sources</code> and <code>tinymceai_chat_fetch_source</code> add three web pages to <strong>Add context source</strong> in Chat.</li>
+      <li><code>tinymceai_token_provider</code> fetches a JSON Web Token (JWT) from a demo session before each AI request. The <strong>JS</strong> tab shows a placeholder endpoint instead.</li>
+      <li>The other premium plugins (comments, mentions, revision history, suggested edits, spell checking and Uploadcare) use demo settings so the full editor works alongside {pluginname}.</li>
+    </ul>
+  </details>
+</div>
+++++

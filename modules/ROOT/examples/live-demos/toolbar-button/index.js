@@ -1,6 +1,15 @@
 tinymce.init({
   selector: 'textarea#toolbar-button',
-  toolbar: 'basicDateButton selectiveDateButton toggleDateButton splitDateButton menuDateButton',
+  height: 680,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'basicDateButton selectiveDateButton toggleDateButton ' +
+    'splitDateButton menuDateButton | undo redo | blocks | bold italic backcolor | ' +
+    'alignleft aligncenter alignright alignjustify | ' +
+    'bullist numlist outdent indent | removeformat | help',
   setup: (editor) => {
 
     /* Helper functions */
@@ -48,7 +57,7 @@ tinymce.init({
     /* Split button that lists 3 formats, and inserts the date in the selected format when clicked */
     editor.ui.registry.addSplitButton('splitDateButton', {
       text: 'Insert Date',
-      onAction: (_) => editor.insertContent('<p>Its Friday!</p>'),
+      onAction: (_) => editor.insertContent(toDateHtml(new Date())),
       onItemAction: (buttonApi, value) => editor.insertContent(value),
       fetch: (callback) => {
         const items = [
@@ -104,5 +113,5 @@ tinymce.init({
       }
     });
   },
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

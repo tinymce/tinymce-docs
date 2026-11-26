@@ -1,0 +1,31 @@
+// "Try it" guide card for the premiumskinsandicons-naked live demo. It is included directly above
+// liveDemo::premiumskinsandicons-naked[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Naked skin">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Naked skin</span>
+    <span class="demo-guide__tier">Premium skin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This fitness studio message box has no borders of its own: the frame around it comes from the page. Strike through the one canceled class, then link <strong>member app</strong> to <code>https://www.example.com/</code>.</p>
+    <ol class="demo-guide__steps">
+      <li>Look at the editor: no outer border and no line between the text and the toolbar, which sits below the text like a chat input.</li>
+      <li>Select the <strong>Spin Express</strong> list item and select <span class="demo-ui">Strikethrough</span> in the toolbar.</li>
+      <li>Select <strong>member app</strong>, select <span class="demo-ui">Insert/edit link</span>, type <code>https://www.example.com/</code> in <span class="demo-ui">URL</span> and select <span class="demo-ui">Save</span>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>skin: 'naked'</code> removes the outer border and the borders between the toolbar, menu bar, status bar and text. The gray frame comes from the demo page CSS.</li>
+      <li><code>icons: 'small'</code> uses the smaller version of the default icons.</li>
+      <li><code>toolbar_location: 'bottom'</code> places the toolbar below the text.</li>
+      <li><code>menubar: false</code> and <code>statusbar: false</code> hide the menu bar and status bar for a compact message box.</li>
+    </ul>
+  </details>
+</div>
+++++

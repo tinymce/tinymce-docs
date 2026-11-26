@@ -1,0 +1,30 @@
+// "Try it" guide card for the custom-toolbar-split-button live demo. It is included directly above
+// liveDemo::custom-toolbar-split-button[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Split toolbar button">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Split toolbar button</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This sales call summary ends with a call notes section. Insert content from both parts of the custom split button: the main button and its menu.</p>
+    <ol class="demo-guide__steps">
+      <li>Click at the end of the last paragraph, which starts with <strong>Rachel asked</strong>.</li>
+      <li>Select the arrow on the right of <span class="demo-ui">My Button</span>, labeled <span class="demo-ui">My Button menu options</span>. The menu lists <span class="demo-ui">Menu item 1</span> and <span class="demo-ui">Menu item 2</span>, each with an icon.</li>
+      <li>Select <strong>Menu item 2</strong>. The value of that item, the italic text <em>You clicked menu item 2!</em>, is inserted.</li>
+      <li>Select the main part of <span class="demo-ui">My Button</span> (tooltip <span class="demo-ui">Execute my action</span>). It runs a different action and inserts the paragraph <strong>You clicked the main button</strong>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.ui.registry.addSplitButton</code> adds <strong>My Button</strong> with a text label, an icon and separate tooltips for the main button and the arrow.</li>
+      <li><code>onAction</code> runs when the main part is selected, and <code>onItemAction</code> inserts the <code>value</code> of the chosen <code>choiceitem</code>.</li>
+    </ul>
+  </details>
+</div>
+++++

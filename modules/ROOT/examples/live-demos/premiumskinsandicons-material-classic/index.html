@@ -5,23 +5,54 @@
 <div class="mdc-layout-grid">
   <div class="mdc-layout-grid__inner">
     <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6" data-mdc-auto-init="MDCTextField">
-      <div class="mdc-text-field" style="width: 100%">
-        <input type="text" id="my-text-field-registered" class="mdc-text-field__input">
-        <label class="mdc-floating-label" for="my-text-field-registered">Registered by</label>
-        <div class="mdc-line-ripple"></div>
-      </div>
+      <label class="mdc-text-field mdc-text-field--filled mdc-text-field--label-floating" style="width: 100%">
+        <span class="mdc-text-field__ripple"></span>
+        <span class="mdc-floating-label mdc-floating-label--float-above" id="my-text-field-patient-label">Patient</span>
+        <input type="text" id="my-text-field-patient" class="mdc-text-field__input" aria-labelledby="my-text-field-patient-label" value="Pepper (canine, 7 years)">
+        <span class="mdc-line-ripple"></span>
+      </label>
     </div>
 
     <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6" data-mdc-auto-init="MDCTextField">
-      <div class="mdc-text-field" style="width: 100%">
-        <input type="text" id="my-text-field-date" class="mdc-text-field__input">
-        <label class="mdc-floating-label" for="my-text-field-date">Date</label>
-        <div class="mdc-line-ripple"></div>
-      </div>
+      <label class="mdc-text-field mdc-text-field--filled mdc-text-field--label-floating" style="width: 100%">
+        <span class="mdc-text-field__ripple"></span>
+        <span class="mdc-floating-label mdc-floating-label--float-above" id="my-text-field-date-label">Visit date</span>
+        <input type="text" id="my-text-field-date" class="mdc-text-field__input" aria-labelledby="my-text-field-date-label" value="November 18">
+        <span class="mdc-line-ripple"></span>
+      </label>
     </div>
 
     <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
-      <textarea id="premiumskinsandicons-material-classic"></textarea>
+      <textarea id="premiumskinsandicons-material-classic">
+        <h1>Home care after a dental cleaning</h1>
+        <p>Pepper had a dental cleaning under anesthesia today and two damaged teeth removed. She recovered well and is ready to go home. Follow these instructions for the next 10 days.</p>
+        <h2>The first 24 hours</h2>
+        <ul>
+          <li>Pepper may be sleepy or unsteady tonight. Keep her indoors and away from stairs.</li>
+          <li>Offer a small meal of soft food this evening, about half her normal portion.</li>
+          <li>A little blood in her saliva is normal for the first day.</li>
+        </ul>
+        <h2>Medication</h2>
+        <table style="border-collapse: collapse; width: 100%;" border="1">
+          <colgroup><col style="width: 31.2%;"><col style="width: 33.3%;"><col style="width: 17.7%;"><col style="width: 17.8%;"></colgroup>
+          <thead>
+            <tr><th>Medication</th><th>Dose</th><th>How often</th><th>Last dose</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Meloxicam (pain relief)</td><td>1.5 mL by mouth, with food</td><td>Once a day</td><td>November 22</td></tr>
+            <tr><td>Clindamycin (antibiotic)</td><td>1 capsule</td><td>Twice a day</td><td>November 27</td></tr>
+          </tbody>
+        </table>
+        <h2>Feeding for 10 days</h2>
+        <p>Feed only soft or soaked food, and do not give chew toys, bones or dental treats until the recheck. Brushing can start again after the recheck.</p>
+        <h2>Call the clinic right away if Pepper</h2>
+        <ul>
+          <li>Stops eating for more than 24 hours</li>
+          <li>Has swelling on her face or jaw</li>
+          <li>Bleeds from the mouth after the first day</li>
+        </ul>
+        <p>Recheck appointment: Monday, November 30 at 3:30 PM. Maple Street Veterinary Clinic, (555) 010-0186.</p>
+      </textarea>
     </div>
 
     <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
@@ -35,13 +66,13 @@
             <div class="mdc-checkbox__mixedmark"></div>
           </div>
         </div>
-        <label for="checkbox-1">I agree to the <a href="#">Terms and conditions</a></label>
+        <label for="checkbox-1">Email a copy to the owner</label>
       </div>
     </div>
 
     <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
       <div style="text-align: right;">
-        <button class="foo-button mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple">Submit Claim</button>
+        <button class="foo-button mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple">Save care sheet</button>
       </div>
     </div>
   </div>

@@ -1,0 +1,31 @@
+// "Try it" guide card for the exportpdf live demo. It is included directly above
+// liveDemo::exportpdf[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Export to PDF">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Export to PDF</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This architecture proposal goes to the county parks board as a PDF. Export it and check the page layout, the running headers and footers, and the document properties.</p>
+    <ol class="demo-guide__steps">
+      <li>Open <span class="demo-ui">File</span> &gt; <span class="demo-ui">Export to PDF…</span> or select <span class="demo-ui">Export to PDF</span> in the toolbar. The PDF downloads as a Letter-size file.</li>
+      <li>In the PDF, compare the first page with the pages that follow: the first page has the firm name in its header, and the other pages show the project name. Page numbers sit on the right of odd pages and on the left of even pages, and the side margins swap to match.</li>
+      <li>The appendix starts on a new page because of the page break above it. Place the insertion point before another heading, select <span class="demo-ui">Page break</span>, and export again.</li>
+      <li>Open the document properties in a PDF viewer to see the title, author, subject, keywords and project number.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>exportpdf_converter_options</code> sets US Letter pages with mirrored margins, a first-page header, a header for the other pages, page numbers on odd and even pages, and the PDF metadata.</li>
+      <li><code>exportpdf_converter_style</code> loads the web font that the content uses, so the PDF matches the editor.</li>
+      <li><code>pagebreak_separator</code> and <code>pagebreak_split_block</code>, from the Page Break plugin, write page breaks as CSS breaks that the converter follows.</li>
+    </ul>
+  </details>
+</div>
+++++

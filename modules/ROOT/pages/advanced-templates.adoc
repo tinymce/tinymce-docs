@@ -111,6 +111,8 @@ To create a locked (read-only) category, add the `+locked: true+` property to th
 }
 ----
 
+include::partial$demo-guides/advtemplate-readonly-template.adoc[]
+
 liveDemo::{plugincode}-readonly-template[]
 
 == Basic setup
@@ -164,6 +166,8 @@ The following interactive predefined list example provides guidance for this app
 [[predefined-list-config-example]]
 ==== Configuring the {pluginname} plugin to use a static list of predefined templates.
 
+include::partial$demo-guides/advtemplate-predefined.adoc[]
+
 liveDemo::{plugincode}-predefined[]
 
 === User-modifiable template lists
@@ -174,6 +178,8 @@ The following interactive remote storage configuration example provides guidance
 
 [[remote-config-example]]
 ==== Configuring the Templates plugin to interact with a remote backend service via REST API.
+
+include::partial$demo-guides/advtemplate.adoc[]
 
 liveDemo::{plugincode}[]
 
@@ -188,6 +194,8 @@ Wherever this string is within a template is where the insertion point appears w
 
 Also, and as shown in the interactive demonstration below, the xref:mergetags.adoc[Merge Tags] plugin knows to ignore this fixed string, making it possible to use the insertion point marker in conjunction with both plugins.
 
+include::partial$demo-guides/advtemplate-insertionpoint.adoc[]
+
 liveDemo::{plugincode}-insertionpoint[]
 
 
@@ -199,6 +207,8 @@ The `+{{mce-clipboard}}+` marker is a fixed string for adding to any template.
 The string to add is as follows: `+{{mce-clipboard}}+`.
 
 Whenever a user inserts a template containing the `+{{mce-clipboard}}+` marker, the editor will replace those markers with the actual content from the clipboard.
+
+include::partial$demo-guides/advtemplate-mce-clipboard.adoc[]
 
 liveDemo::{plugincode}-mce-clipboard[]
 

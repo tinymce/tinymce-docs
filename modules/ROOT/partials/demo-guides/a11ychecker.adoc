@@ -1,0 +1,36 @@
+// "Try it" guide card for the a11ychecker live demo. It is included directly above
+// liveDemo::a11ychecker[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Accessibility Checker">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Accessibility Checker</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This council newsletter has 13 accessibility issues at WCAG level AAA: 11 errors and 2 warnings. Find and fix every one.</p>
+    <ol class="demo-guide__steps">
+      <li>Open <span class="demo-ui">Tools</span> &gt; <span class="demo-ui">Accessibility checker…</span> or select <span class="demo-ui">Accessibility checker</span> in the toolbar. The dialog highlights the first problem and shows <strong>Issue 1 of 13</strong>.</li>
+      <li>Use the <span class="demo-ui">Next issue</span> and <span class="demo-ui">Previous issue</span> arrows to step through errors and warnings in headings, links, color contrast, duplicate IDs, images and tables. Select <span class="demo-ui">More info</span> to open the rule's documentation.</li>
+      <li>Where the dialog offers a solution, select <span class="demo-ui">Repair</span> to fix the issue in place: give the bold "Summer pool hours" line a heading level, choose a header row for the collection table, or replace the dog photo's filename with a real description. Press <kbd>Ctrl</kbd>+<kbd>Z</kbd> (<kbd>⌘</kbd>+<kbd>Z</kbd> on macOS) to undo a repair.</li>
+      <li>Select <span class="demo-ui">Ignore</span> to skip an issue. Run the checker again until it reports <strong>No accessibility issues detected</strong>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>a11ychecker_level: 'aaa'</code> adds the enhanced contrast rule, so the gray discount note is reported.</li>
+      <li><code>a11ychecker_alt_text_max_length: 100</code> flags the long description on the coding club photo.</li>
+      <li><code>a11ychecker_allow_decorative_images</code> lets the lake photo under the title pass as a decorative image.</li>
+      <li><code>a11ychecker_ignored_rules: 'T1'</code> turns off the table caption check.</li>
+      <li><code>a11ychecker_filter_issue</code> drops issues inside the legal footer, which another team maintains.</li>
+      <li><code>a11ychecker_issue_url_callback</code> points <strong>More info</strong> links at the latest documentation and sends the three contrast rules to one section.</li>
+      <li><code>a11ychecker_html_version: 'html5'</code> checks the content against HTML5 rules.</li>
+      <li><code>a11y_advanced_options</code> adds the decorative image option to the image dialog.</li>
+    </ul>
+  </details>
+</div>
+++++

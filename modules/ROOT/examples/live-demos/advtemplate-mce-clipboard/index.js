@@ -1,22 +1,28 @@
 tinymce.init({
   selector: 'textarea#template-mce-clipboard',
   height: 600,
-  plugins: 'advtemplate lists link advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
-  toolbar: 'inserttemplate | undo redo | blocks | bold italic | bullist numlist | ' +
-    'link | backcolor | alignleft aligncenter alignright alignjustify | ' +
-    'outdent indent | removeformat | help',
+  plugins: [
+    'advtemplate',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'inserttemplate | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link table | removeformat | help',
   content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   advtemplate_templates: [
     {
       title: 'With an mce-clipboard marker',
       items: [
         {
-          title: 'Order status reply',
-          content: '<p>Hello,</p><p>Thank you for asking about order {{prefix}}mce-clipboard{{suffix}}. The order left the warehouse this morning and should arrive within three business days.</p><p>To check progress, enter {{prefix}}mce-clipboard{{suffix}} on the <strong>Track an order</strong> page.</p><p>Kind regards,<br>Customer Support</p>'
+          title: 'Showing confirmation',
+          content: '<p>Hi Priya,</p><p>Thank you for your interest in {{prefix}}mce-clipboard{{suffix}}. The home is still available, and showings run on Saturday and Sunday between 10:00 AM and 4:00 PM.</p><p>To book a time, reply with two preferred times, or schedule a showing from the listing page for {{prefix}}mce-clipboard{{suffix}}.</p><p>Kind regards,<br>Jordan Reyes<br>Harbor Point Realty, (555) 010-0142</p>'
         },
         {
-          title: 'Case note',
-          content: '<table><tbody><tr><th>Order</th><td>{{prefix}}mce-clipboard{{suffix}}</td></tr><tr><th>Status</th><td>Shipped</td></tr><tr><th>Next step</th><td>Follow up if not delivered within three business days</td></tr></tbody></table>'
+          title: 'Showing log entry',
+          content: '<table style="border-collapse: collapse; width: 100%;" border="1"><colgroup><col style="width: 23.8%;"><col style="width: 76.2%;"></colgroup><tbody><tr><th>Property</th><td>{{prefix}}mce-clipboard{{suffix}}</td></tr><tr><th>Status</th><td>Showing requested</td></tr><tr><th>Next step</th><td>Confirm a weekend showing within one business day</td></tr></tbody></table>'
         }
       ]
     },
@@ -24,8 +30,8 @@ tinymce.init({
       title: 'Without an mce-clipboard marker',
       items: [
         {
-          title: 'Order status reply',
-          content: '<p>Hello,</p><p>Thank you for asking about the order. It left the warehouse this morning and should arrive within three business days.</p><p>To check progress, enter the order number on the <strong>Track an order</strong> page.</p><p>Kind regards,<br>Customer Support</p>'
+          title: 'Showing confirmation',
+          content: '<p>Hi Priya,</p><p>Thank you for your interest in the property. The home is still available, and showings run on Saturday and Sunday between 10:00 AM and 4:00 PM.</p><p>To book a time, reply with two preferred times, or schedule a showing from the listing page.</p><p>Kind regards,<br>Jordan Reyes<br>Harbor Point Realty, (555) 010-0142</p>'
         }
       ]
     }

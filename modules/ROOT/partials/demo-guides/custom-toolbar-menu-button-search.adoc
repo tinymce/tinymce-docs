@@ -1,0 +1,31 @@
+// "Try it" guide card for the custom-toolbar-menu-button-search live demo. It is included directly above
+// liveDemo::custom-toolbar-menu-button-search[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Searchable menu button">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Searchable menu button</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This help center article has a custom <strong>My searchable button</strong> menu with a search field. Search the menu, then insert the search result at the end of the article.</p>
+    <ol class="demo-guide__steps">
+      <li>Click at the end of the last paragraph, which starts with <strong>Contact support</strong>, then select <span class="demo-ui">My searchable button</span>. The menu opens with an empty search field, showing the placeholder <strong>Type…</strong>, and two items: <span class="demo-ui">Menu item 1</span> and <span class="demo-ui">Toggle menu item</span>.</li>
+      <li>Type <code>backup codes</code> in the search field. The menu is rebuilt with one item: <strong>You searched for: "backup codes"</strong>.</li>
+      <li>Select that item to insert the bold text <strong>Inserted selected search result</strong>.</li>
+      <li>Open the menu again and clear the search field. The two original items return.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.ui.registry.addMenuButton</code> adds <strong>My searchable button</strong>.</li>
+      <li><code>search: { placeholder: 'Type...' }</code> adds the search field to the menu.</li>
+      <li><code>fetch</code> reads <code>fetchContext.pattern</code>, the text in the search field, and returns different items when it is not empty.</li>
+    </ul>
+  </details>
+</div>
+++++

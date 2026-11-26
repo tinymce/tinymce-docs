@@ -1,15 +1,15 @@
 const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
 
 // The signed-in user. Replace with the ID of the user in your application.
-const user_id = 'james-wilson';
+const user_id = 'ava-mitchell';
 
 const fakeDelay = 200;
 
 const users = {
-  'james-wilson': { name: 'James Wilson', avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg' },
-  'mia-andersson': { name: 'Mia Andersson', avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_mia-andersson_128_e6f9424b.jpg' },
-  'jade-scott': { name: 'Jade Scott', avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_jade-scott_128_515dc6a1.jpg' },
-  'anna-petrov': { name: 'Anna Petrov', avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_anna-petrov_128_00f7f951.jpg' }
+  'ava-mitchell': { name: 'Ava Mitchell', avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_ava-mitchell_128_8073af20.jpg' },
+  'daniel-long': { name: 'Daniel Long', avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_daniel-long_128_732bc263.jpg' },
+  'grace-lee': { name: 'Grace Lee', avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_grace-lee_128_60439c26.jpg' },
+  'joshua-perry': { name: 'Joshua Perry', avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_joshua-perry_128_47869386.jpg' }
 };
 
 const hoursAgo = (hours) => new Date(Date.now() - hours * 60 * 60 * 1000).toISOString();
@@ -29,29 +29,29 @@ const makeComment = (uid, author, content, createdAt) => ({
 // An in-memory stand-in for the server that stores conversations.
 // Each key matches a data-mce-annotation-uid attribute in the editor content.
 const conversationDb = {
-  'mce-conversation_sync-time': {
-    uid: 'mce-conversation_sync-time',
+  'mce-conversation_trail-miles': {
+    uid: 'mce-conversation_trail-miles',
     comments: [
-      makeComment('mce-conversation_sync-time', 'mia-andersson',
-        'Is 60 seconds realistic on a weak signal?', hoursAgo(49)),
-      makeComment('mce-conversation_sync-time-reply-1', 'james-wilson',
-        'Test uploads over 3G took 20 to 40 seconds for a report with five photos, so 60 seconds holds for most reports. Reports with many photos take longer.', hoursAgo(20)),
-      makeComment('mce-conversation_sync-time-reply-2', 'jade-scott',
-        'Adding a test case for a report with 20 photos to the regression suite. Results will be in the Friday test report.', hoursAgo(3))
+      makeComment('mce-conversation_trail-miles', 'ava-mitchell',
+        'The parks department press release says 12 miles. Which figure is right?', hoursAgo(26)),
+      makeComment('mce-conversation_trail-miles-reply-1', 'daniel-long',
+        '14 is right. The release went out before Cedar Loop reopened on Monday, and the ranger station confirmed the total this morning.', hoursAgo(5))
     ]
   },
-  'mce-conversation_report-limit': {
-    uid: 'mce-conversation_report-limit',
+  'mce-conversation_ranger-quote': {
+    uid: 'mce-conversation_ranger-quote',
     comments: [
-      makeComment('mce-conversation_report-limit', 'anna-petrov',
-        'What happens when an inspector reaches the 50-report limit? Please describe the expected behavior in this table.', hoursAgo(8))
+      makeComment('mce-conversation_ranger-quote', 'joshua-perry',
+        'Did Ranger Ortiz agree to be quoted by name? The department usually sends media questions to its press office.', hoursAgo(8)),
+      makeComment('mce-conversation_ranger-quote-reply-1', 'daniel-long',
+        'Yes. It was a recorded phone interview on November 24, and the press office approved it.', hoursAgo(6))
     ]
   },
-  'mce-conversation_map-tiles': {
-    uid: 'mce-conversation_map-tiles',
+  'mce-conversation_file-photo': {
+    uid: 'mce-conversation_file-photo',
     comments: [
-      makeComment('mce-conversation_map-tiles', 'james-wilson',
-        'Map tiles need about 300 MB of storage per region. Suggest leaving them out of version 4.2.', hoursAgo(1))
+      makeComment('mce-conversation_file-photo', 'grace-lee',
+        'The photo next to this paragraph is a 2024 file photo taken before the storm. Label it as a file photo, or I can send a photographer up on Friday.', hoursAgo(1))
     ]
   }
 };
@@ -144,16 +144,17 @@ const tinycomments_fetch = (conversationUids, done) => {
 
 tinymce.init({
   selector: 'textarea#comments-callback',
-  height: 680,
-  plugins: 'tinycomments quickbars lists link advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
-  toolbar: 'addcomment showcomments | undo redo | blocks | bold italic | ' +
-    'bullist numlist | link | backcolor | ' +
-    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
+  height: 720,
+  plugins: [
+    'tinycomments', 'quickbars',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'addcomment showcomments | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
     'removeformat | help',
-  menubar: 'file edit view insert format tools table comments help',
-  menu: {
-    comments: { title: 'Comments', items: 'addcomment showcomments deleteallconversations' }
-  },
   quickbars_selection_toolbar: 'addcomment | bold italic | quicklink',
   quickbars_insert_toolbar: false,
   content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],

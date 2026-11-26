@@ -1,17 +1,23 @@
 tinymce.init({
   selector: 'textarea#markdown',
-  height: 600,
-  plugins: 'markdown emoticons lists link advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
-  toolbar: 'convertmarkdown insertmarkdown | undo redo | blocks | bold italic | ' +
-    'bullist numlist | link emoticons | backcolor | ' +
-    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
-    'removeformat | help',
+  height: 640,
+  plugins: [
+    'markdown', 'emoticons',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'convertmarkdown insertmarkdown | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link emoticons | removeformat | help',
   content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   // Symbols written as (KEY) in pasted Markdown are replaced with these characters.
   markdown_symbols: {
     C: '©',
     TM: '™',
-    R: '®'
+    R: '®',
+    SM: '℠'
   },
   setup: (editor) => {
     const getMarkdownBox = () => document.getElementById('markdown-source');

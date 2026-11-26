@@ -1,7 +1,7 @@
 const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
 
 // The signed-in user. Replace with the ID of the user in your application.
-const user_id = 'james-wilson';
+const user_id = 'william-patterson';
 
 // Mentions: search the user directory and insert a styled span for the selected person.
 // In comments, a mention is stored as @ followed by the user ID.
@@ -48,16 +48,17 @@ const tinycomments_can_resolve = (req, done) => {
 
 tinymce.init({
   selector: 'textarea#comments-embedded-with-mentions',
-  height: 680,
-  plugins: 'tinycomments mentions quickbars lists link advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
-  toolbar: 'addcomment showcomments | undo redo | blocks | bold italic | ' +
-    'bullist numlist | link | backcolor | ' +
-    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
+  height: 720,
+  plugins: [
+    'tinycomments', 'mentions', 'quickbars',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'addcomment showcomments | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
     'removeformat | help',
-  menubar: 'file edit view insert format tools table comments help',
-  menu: {
-    comments: { title: 'Comments', items: 'addcomment showcomments deleteallconversations' }
-  },
   quickbars_selection_toolbar: 'addcomment | bold italic | quicklink',
   quickbars_insert_toolbar: false,
   content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],

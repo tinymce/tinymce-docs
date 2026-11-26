@@ -81,31 +81,31 @@ const advtemplate_move_category_items = (id, categoryId) =>
 
 const mergetags_list = [
   {
-    title: 'Customer',
+    title: 'Employee',
     menu: [
-      { value: 'Customer.FirstName', title: 'First name' },
-      { value: 'Customer.Email', title: 'Email address' }
+      { value: 'Employee.FirstName', title: 'First name' },
+      { value: 'Employee.Email', title: 'Email address' },
+      { value: 'Employee.Department', title: 'Department' },
+      { value: 'Employee.StartDate', title: 'Start date' }
     ]
   },
-  {
-    title: 'Support',
-    menu: [
-      { value: 'Ticket.Number', title: 'Ticket number' },
-      { value: 'Order.Number', title: 'Order number' },
-      { value: 'Agent.FirstName', title: 'Agent first name' }
-    ]
-  },
+  { value: 'Manager.Name', title: 'Manager name' },
   { value: 'Company.Name', title: 'Company name' }
 ];
 
 tinymce.init({
   selector: 'textarea#readonly-locked-template',
   height: 640,
-  plugins: 'advtemplate mergetags lists link advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
+  plugins: [
+    'advtemplate', 'mergetags',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
   toolbar: 'inserttemplate addtemplate | mergetags | undo redo | blocks | ' +
-    'bold italic | bullist numlist | link | backcolor | ' +
-    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
-    'removeformat | help',
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link | removeformat | help',
   contextmenu: 'advtemplate',
   content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   mergetags_list,

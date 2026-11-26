@@ -1,0 +1,30 @@
+// "Try it" guide card for the advtemplate-predefined live demo. It is included directly above
+// liveDemo::{plugincode}-predefined[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Predefined templates">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Predefined templates</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This job offer email draws on a fixed list of 6 recruiting templates in 3 categories, set in the editor configuration. Add the offer summary to the email, then find a template by name.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point on the empty line at the end of the email and select <span class="demo-ui">Insert template</span> in the toolbar.</li>
+      <li>Expand <strong>Offers</strong> and select <strong>Offer summary</strong> to preview it. Select <span class="demo-ui">Insert</span> to add it with its headings, lists, and merge tags.</li>
+      <li>Open <span class="demo-ui">Insert template</span> again and type <code>reschedule</code> in the <span class="demo-ui">Search</span> box. Matching templates from every category appear in one list.</li>
+      <li>Look for ways to change the list. The dialog has no <span class="demo-ui">New category</span> button and no actions menus, and the toolbar has no <span class="demo-ui">Save as template</span> button. A list set in the configuration cannot be changed from the editor.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>advtemplate_templates</code> sets the 3 categories and 6 templates directly in the configuration, with no template service.</li>
+      <li><code>mergetags_list</code> defines the candidate, role, interview, and recruiter merge tags used in the templates.</li>
+    </ul>
+  </details>
+</div>
+++++

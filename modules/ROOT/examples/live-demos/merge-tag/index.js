@@ -1,11 +1,20 @@
 tinymce.init({
   selector: 'textarea#mergetags',
-  height: 640,
-  plugins: 'mergetags link lists advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
-  toolbar: 'mergetags | undo redo | blocks | bold italic | bullist numlist | link | ' +
-    'backcolor | alignleft aligncenter alignright alignjustify | ' +
-    'outdent indent | removeformat | help',
+  height: 780,
+  plugins: [
+    'mergetags',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'mergetags | undo redo | blocks | ' +
+    'bold italic forecolor backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link | removeformat | help',
   content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  content_style: '.mce-content-body .mce-mergetag { padding: 0 2px; background-color: #f0f3ff; border-radius: 4px; } ' +
+    '.mce-content-body .mce-mergetag:hover { background-color: #dde4ff; } ' +
+    '.mce-content-body .mce-mergetag-affix { color: #335dff; }',
   mergetags_prefix: '{*',
   mergetags_suffix: '*}',
   mergetags_list: [
@@ -31,6 +40,8 @@ tinymce.init({
       menu: [
         { value: 'Subscription.PlanName', title: 'Plan name' },
         { value: 'Subscription.Seats', title: 'Number of seats' },
+        { value: 'Subscription.StorageUsed', title: 'Storage used' },
+        { value: 'Subscription.StorageLimit', title: 'Storage limit' },
         { value: 'Subscription.RenewalDate', title: 'Renewal date' }
       ]
     },

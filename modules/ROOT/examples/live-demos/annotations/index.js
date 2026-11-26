@@ -1,10 +1,17 @@
 tinymce.init({
   selector: 'textarea#annotations',
-  toolbar: [ 'annotate-alpha' ],
-  menubar: false,
-  height: '750px',
-  content_style: '.mce-annotation { background-color: darkgreen; color: white; } ' +
-    'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'annotate-alpha | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link table | removeformat | help',
+  height: 750,
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  content_style: '.mce-annotation { background-color: darkgreen; color: white; }',
   setup: (editor) => {
     editor.ui.registry.addButton('annotate-alpha', {
       text: 'Annotate',

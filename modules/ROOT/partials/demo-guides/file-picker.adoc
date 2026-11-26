@@ -1,0 +1,32 @@
+// "Try it" guide card for the file-picker live demo. It is included directly above
+// liveDemo::file-picker[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: File picker">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">File picker</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This custom cake order has an empty <strong>Design reference</strong> section. Add a photo of the cake design from the computer, using the file picker that the <code>file_picker_callback</code> function adds to the image dialog.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point in the empty line under <strong>Design reference</strong> and select <span class="demo-ui">Insert/edit image</span> in the toolbar.</li>
+      <li>Select <span class="demo-ui">Browse files</span> beside the <span class="demo-ui">Source</span> field and choose an image file. The image stays in the browser.</li>
+      <li>Check the dialog: <span class="demo-ui">Source</span> now holds a <code>blob:</code> address, and <span class="demo-ui">Image title</span> holds the file name. Add an <span class="demo-ui">Alternative description</span> and select <span class="demo-ui">Save</span>.</li>
+      <li>The link dialog, opened from <span class="demo-ui">Insert</span> &gt; <span class="demo-ui">Link…</span>, has no browse button, because the picker is limited to images.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>file_picker_callback</code> opens the browser file chooser, registers the chosen file in the editor's image blob cache, and passes its <code>blob:</code> address and file name back to the dialog.</li>
+      <li><code>file_picker_types: 'image'</code> adds the <strong>Browse files</strong> button to the image dialog only.</li>
+      <li><code>image_title: true</code> adds the <strong>Image title</strong> field that the callback fills in.</li>
+      <li><code>automatic_uploads: true</code> uploads registered images as soon as an <code>images_upload_url</code> or <code>images_upload_handler</code> is set. This demo sets neither, so the image is not uploaded.</li>
+    </ul>
+  </details>
+</div>
+++++

@@ -1,0 +1,30 @@
+// "Try it" guide card for the advtemplate-insertionpoint live demo. It is included directly above
+// liveDemo::{plugincode}-insertionpoint[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Insertion point marker">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Insertion point marker</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">These sales call notes need a follow-up email to the prospect. Insert the same template with and without the <code>&#123;&#123;mce-cursor&#125;&#125;</code> marker and compare where the insertion point lands.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point on the empty line under <strong>Follow-up</strong> and select <span class="demo-ui">Insert template</span> in the toolbar.</li>
+      <li>Expand <strong>With an insertion point marker</strong>, select <strong>Follow-up email</strong>, and select <span class="demo-ui">Insert</span>. The insertion point lands on the empty line after the greeting, so the message can be typed straight away.</li>
+      <li>Insert <strong>Follow-up email</strong> from <strong>Without an insertion point marker</strong>. This time the insertion point lands at the end of the inserted content.</li>
+      <li>Compare the two <strong>Meeting notes</strong> templates. With the marker, typing starts in the <strong>Attendees</strong> cell. In both versions the date, prospect, and sales rep placeholders become merge tags, and the marker does not.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>advtemplate_templates</code> sets two categories with the same two templates, one with the <code>&#123;&#123;mce-cursor&#125;&#125;</code> marker and one without.</li>
+      <li><code>mergetags_list</code> defines the date, prospect, and sales rep merge tags used in the templates.</li>
+    </ul>
+  </details>
+</div>
+++++

@@ -38,7 +38,9 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 
 == Toggle button example and explanation
 
-liveDemo::custom-toolbar-toggle-button[tab="js"]
+include::partial$demo-guides/custom-toolbar-toggle-button.adoc[]
+
+liveDemo::custom-toolbar-toggle-button[]
 
 The example above adds two custom *strikethrough* toggle buttons. Both buttons use the xref:editor-command-identifiers.adoc[`+mceToggleFormat+`] command to apply and remove strikethrough formatting. This command toggles a specified format on and off, but only works for xref:content-formatting.adoc#formats[formats] already registered with the editor. In this example, `+strikethrough+` is the registered format.
 

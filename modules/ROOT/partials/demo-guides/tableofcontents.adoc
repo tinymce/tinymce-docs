@@ -1,0 +1,31 @@
+// "Try it" guide card for the tableofcontents live demo. It is included directly above
+// liveDemo::tableofcontents[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Table of Contents">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Table of Contents</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">The table of contents in this employee handbook lists 17 headings at three levels. The <strong>Night and weekend rates</strong> section belongs under <strong>Overtime</strong>. Move it there and update the table of contents.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point in the <strong>Night and weekend rates</strong> heading. Open the toolbar list that shows <strong>Heading 3</strong>, or <span class="demo-ui">Format</span> &gt; <span class="demo-ui">Blocks</span>, and choose <strong>Heading 4</strong>.</li>
+      <li>Select the table of contents, then select <span class="demo-ui">Update</span> in the toolbar that appears above it. The entry moves under <strong>Overtime</strong> and the numbering adjusts.</li>
+      <li>Rename a heading, such as <strong>Payday</strong>, and update again to refresh the entry.</li>
+      <li>Change the <strong>Contents</strong> title of the table. The new title is kept on every update.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>tableofcontents_depth: 4</code> includes headings down to level 4, such as <strong>Approval</strong>.</li>
+      <li><code>tableofcontents_orderedlist: true</code> numbers the entries instead of using bullets, and <code>tableofcontents_orderedlist_type: '1'</code> numbers them with digits.</li>
+      <li><code>tableofcontents_includeheader: true</code> keeps the <strong>Contents</strong> title, and <code>tableofcontents_header: 'h2'</code> makes it a level 2 heading.</li>
+    </ul>
+  </details>
+</div>
+++++

@@ -1,0 +1,36 @@
+// "Try it" guide card for the mentions live demo. It is included directly above
+// liveDemo::mentions[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Mentions">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Mentions</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This incident postmortem mentions 4 people, and 2 of its action items are still unassigned. Give each one an owner from the company directory.</p>
+    <ol class="demo-guide__steps">
+      <li>Point to a mention in the text, such as <code>@Ivan Kozlov</code>, to see that person's profile card.</li>
+      <li>In the <strong>Action items</strong> table, replace the first <code>Unassigned</code> with <kbd>@</kbd>. The list opens straight away with the first 10 people. Select <span class="demo-ui">Show more people</span> at the end of the list to load the next 10.</li>
+      <li>Keep typing to narrow the list, for example <code>@jas</code>, then point to or highlight a name to see the profile card, and select <strong>Jasper Powell</strong> to insert the mention.</li>
+      <li>Replace the second <code>Unassigned</code> with <code>@elsa</code> and select <strong>Elsa Johansson</strong>. The postmortem now mentions 6 people.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>mentions_fetch</code> searches the demo user directory 10 people at a time and adds a <strong>Show more people</strong> item while more results exist.</li>
+      <li><code>mentions_min_chars: 0</code> opens the list as soon as <kbd>@</kbd> is typed.</li>
+      <li><code>mentions_item_type: 'profile'</code> shows each person's photo and job title in the list.</li>
+      <li><code>mentions_menu_hover</code> shows a profile card next to the highlighted person in the list.</li>
+      <li><code>mentions_menu_complete</code> inserts the selected person as a <code>span</code> with the <code>mymention</code> class and a <code>data-mention-id</code> attribute.</li>
+      <li><code>mentions_selector: '.mymention'</code> tells the plugin which elements in the content are mentions.</li>
+      <li><code>mentions_select</code> loads the profile card shown when the pointer rests on a mention in the text.</li>
+      <li><code>content_style</code> shows mentions in blue, semibold text.</li>
+    </ul>
+  </details>
+</div>
+++++

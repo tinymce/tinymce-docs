@@ -1,0 +1,30 @@
+// "Try it" guide card for the context-toolbar live demo. It is included directly above
+// liveDemo::context-toolbar[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Context toolbar">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Context toolbar</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This customer success playbook has a photo on the right and a customer quote written as a plain paragraph. Move the photo to the left and turn the quote into a block quote, using the toolbars that appear next to the selection.</p>
+    <ol class="demo-guide__steps">
+      <li>Click the photo under <strong>Days 1 to 30</strong>. A toolbar appears with <span class="demo-ui">Align left</span>, <span class="demo-ui">Align center</span>, and <span class="demo-ui">Align right</span>, followed by <span class="demo-ui">Bold</span>, <span class="demo-ui">Italic</span>, and <span class="demo-ui">Blockquote</span>. Selecting an image also counts as a text selection, so both toolbars match.</li>
+      <li>Select <span class="demo-ui">Align left</span>. The photo moves to the left of the paragraph.</li>
+      <li>Select the paragraph that starts <strong>Our support team answered tickets</strong>. A toolbar with <span class="demo-ui">Bold</span>, <span class="demo-ui">Italic</span>, and <span class="demo-ui">Blockquote</span> appears. Select <span class="demo-ui">Blockquote</span>.</li>
+      <li>Click anywhere in the text without selecting anything. No context toolbar appears.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.ui.registry.addContextToolbar('imagealignment')</code> shows the three alignment buttons when the selected node is an image, positioned next to the image (<code>position: 'node'</code>).</li>
+      <li><code>editor.ui.registry.addContextToolbar('textselection')</code> shows <span class="demo-ui">Bold</span>, <span class="demo-ui">Italic</span>, and <span class="demo-ui">Blockquote</span> whenever the selection is not collapsed, positioned at the selection (<code>position: 'selection'</code>).</li>
+    </ul>
+  </details>
+</div>
+++++

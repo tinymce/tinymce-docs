@@ -1,0 +1,30 @@
+// "Try it" guide card for the custom-toolbar-group-button live demo. It is included directly above
+// liveDemo::custom-toolbar-group-button[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Group toolbar button">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Group toolbar button</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This reply to a disputed invoice is ready to send except for its layout. Center the two letterhead lines, right-align the date, and justify the two body paragraphs, using only the custom alignment button.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point in <strong>Brightline Office Supply</strong> and select <span class="demo-ui">Alignment</span>, the first button in the toolbar. A floating toolbar opens with <span class="demo-ui">Align left</span>, <span class="demo-ui">Align center</span>, <span class="demo-ui">Align right</span> and <span class="demo-ui">Justify</span>.</li>
+      <li>Select <span class="demo-ui">Align center</span>. Repeat for the address line under it.</li>
+      <li>Place the insertion point in the date, <strong>December 2, 2026</strong>, open <span class="demo-ui">Alignment</span> again and select <span class="demo-ui">Align right</span>.</li>
+      <li>Select the two paragraphs that start with <strong>Thank you for your letter</strong> and <strong>We have issued credit note</strong>, then select <span class="demo-ui">Alignment</span> &gt; <span class="demo-ui">Justify</span>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.ui.registry.addGroupToolbarButton</code> adds <strong>Alignment</strong>, which collects the four alignment buttons in one floating toolbar. The separate alignment buttons are left out of the toolbar.</li>
+      <li><code>toolbar_mode: 'floating'</code> sets the toolbar mode that group toolbar buttons require. It is also the default toolbar mode on desktop browsers.</li>
+    </ul>
+  </details>
+</div>
+++++

@@ -1,0 +1,197 @@
+/*
+ * "Try it" guide card shown on the page above a live demo.
+ * Markup lives in partials/demo-guides/<demo>.adoc and is included
+ * directly above the liveDemo macro, so it sits outside the editor
+ * and is not changed when the demo content is edited.
+ *
+ *   <div class="demo-guide demo-guide--premium" role="note" aria-label="…">
+ *     <div class="demo-guide__head">…</div>
+ *     <div class="demo-guide__body">…</div>
+ *     <div class="demo-guide__config">…</div>
+ *   </div>
+ *
+ * The card follows the docs site theme: it reads the site's CSS variables
+ * (panel, border, code and Tiny brand colors), with the same values as
+ * fallbacks, and inherits the page font and size. The header matches the
+ * navy live demo tabs below it. The tier modifier (--premium, --opensource,
+ * --core) only changes the tier label.
+ * Every selector starts with .demo-guide so it outranks the docs site's
+ * .doc rules for paragraphs and lists.
+ */
+
+.demo-guide {
+  margin: 16px 0;
+  overflow: hidden;
+  background: var(--body-background, #ffffff);
+  border: 1px solid var(--panel-border-color, #c6ccdc);
+  border-radius: 4px;
+  color: var(--body-font-color, #17224f);
+}
+
+.demo-guide .demo-guide__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  padding: 10px 16px;
+  background: var(--color-tiny-secondary-four, #17224f);
+  color: #ffffff;
+}
+
+/* The Tiny mark, drawn in white before the "Try it" label. */
+.demo-guide .demo-guide__head::before {
+  content: "";
+  flex: none;
+  width: 20px;
+  height: 20px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 204'%3E%3Cpath fill='%23fff' d='M132.17 0c34 .2 67.59 28.46 67.59 69.64 0 0 1 49.8-1.1 63.62-4.7 31.46-28.2 53.2-60.59 58.72-29.19 5.71-46.49 9.02-52.09 10.12-2.4.5-13 1.9-17.6 1.9C32.79 204 .5 177.35 0 134.36c0 0 0-45.89.4-58.01C1.6 44.99 23.3 19.64 64.59 11.52c0 0 50.49-9.82 52.59-10.22C121.98.4 127.28 0 132.17 0zm23.8 36.57L75.99 52.1v31.26l-32 6.21v77.96l79.99-15.53v-31.26l31.99-6.21V36.57zm-32 37.48v46.69l-47.99 9.32V83.36l47.99-9.31z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.demo-guide .demo-guide__eyebrow {
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.demo-guide .demo-guide__title {
+  font-weight: 600;
+}
+
+.demo-guide .demo-guide__tier {
+  margin-left: auto;
+  padding: 1px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  font-size: 0.75em;
+  font-weight: 600;
+}
+
+/* Premium plugins get a filled Tiny blue label. */
+.demo-guide.demo-guide--premium .demo-guide__tier {
+  background: var(--color-tiny-primary-four, #335dff);
+  border-color: var(--color-tiny-primary-four, #335dff);
+}
+
+.demo-guide .demo-guide__body {
+  padding: 16px 16px 4px;
+}
+
+.demo-guide .demo-guide__task {
+  margin: 0 0 12px;
+  font-weight: var(--body-font-weight-bold, 500);
+}
+
+/* Numbered steps with navy counters. */
+.demo-guide .demo-guide__steps {
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+  counter-reset: guide-step;
+}
+
+.demo-guide .demo-guide__steps li {
+  position: relative;
+  margin: 0 0 8px;
+  padding-left: 2.1em;
+  counter-increment: guide-step;
+}
+
+.demo-guide .demo-guide__steps li::before {
+  content: counter(guide-step);
+  position: absolute;
+  top: 0.1em;
+  left: 0;
+  width: 1.75em;
+  height: 1.75em;
+  background: var(--color-tiny-secondary-four, #17224f);
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 0.75em;
+  font-weight: 600;
+  line-height: 1.75em;
+  text-align: center;
+}
+
+/* Editor UI names, bold like UI names in the docs prose. */
+.demo-guide .demo-ui {
+  font-weight: var(--body-font-weight-bold, 500);
+  white-space: nowrap;
+}
+
+/* Inline code, matching the docs site's inline code. */
+.demo-guide .demo-guide__body code,
+.demo-guide .demo-guide__config code {
+  padding: 0.125em 0.25em;
+  background: var(--code-background, #f9f9fb);
+  border: 1px solid var(--panel-border-color, #c6ccdc);
+  border-radius: 0.25em;
+  color: var(--code-font-color, #17224f);
+  font-size: 0.85em;
+  word-wrap: break-word;
+}
+
+/*
+ * "Configured in this demo": a collapsed <details> accordion, closed by
+ * default to keep the card short. The summary reuses the docs site's
+ * collapsible-block triangle; the rules below only reposition it.
+ * Options are listed one per line, each mapped to what it changes.
+ */
+.demo-guide details.demo-guide__config {
+  margin: 0;
+  padding: 0 16px;
+  background: var(--panel-background, #f9f9fb);
+  border-top: 1px solid var(--panel-border-color, #c6ccdc);
+}
+
+.demo-guide details.demo-guide__config > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  margin: 0;
+  padding: 10px 0;
+  font-weight: var(--body-font-weight-bold, 500);
+  cursor: pointer;
+}
+
+.demo-guide details.demo-guide__config > summary::-webkit-details-marker {
+  display: none;
+}
+
+.demo-guide details.demo-guide__config > summary::before,
+.demo-guide details.demo-guide__config[open] > summary::before {
+  position: static;
+  flex: none;
+  transform: none;
+}
+
+.demo-guide details.demo-guide__config > summary::after {
+  display: none;
+}
+
+.demo-guide details.demo-guide__config > summary:hover {
+  color: var(--link-font-color, #335dff);
+}
+
+.demo-guide details.demo-guide__config[open] > summary {
+  padding-bottom: 6px;
+}
+
+.demo-guide details.demo-guide__config[open] > .demo-guide__options {
+  padding-bottom: 12px;
+}
+
+.demo-guide .demo-guide__options {
+  margin: 0;
+  padding: 0 0 0 1.25em;
+  list-style: disc;
+}
+
+.demo-guide .demo-guide__options li {
+  margin: 0 0 4px;
+}
+
+.demo-guide .demo-guide__options code {
+  background: var(--body-background, #ffffff);
+}

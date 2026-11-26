@@ -9,6 +9,8 @@ The context menu supports both individual menu items and dynamic context menu se
 
 == Interactive example
 
+include::partial$demo-guides/context-menu.adoc[]
+
 liveDemo::context-menu[]
 
 == Options
@@ -76,4 +78,6 @@ When creating a dynamic menu, the structure `+type+` properties are used in orde
 
 This example shows how the image plugin dynamically adds the standard image menu section to the context menu. The image context menu section is empty unless the selected element is an image.
 
-liveDemo::contextmenu-section[height="600", tab="js"]
+include::partial$demo-guides/contextmenu-section.adoc[]
+
+liveDemo::contextmenu-section[height="600"]

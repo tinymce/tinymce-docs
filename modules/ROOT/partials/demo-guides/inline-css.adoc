@@ -1,0 +1,31 @@
+// "Try it" guide card for the inline-css live demo. It is included directly above
+// liveDemo::inline-css[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Inline CSS">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Inline CSS</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This bookstore newsletter is sent as an HTML email, and many email clients ignore stylesheets. Generate the email HTML with every style written inline.</p>
+    <ol class="demo-guide__steps">
+      <li>Select <span class="demo-ui">Email HTML</span> in the toolbar. The dialog shows the newsletter rendered without any stylesheet, followed by the HTML with the styles copied into <code>style</code> attributes.</li>
+      <li>Find the <code>Reserve a seat</code> link in the HTML. The button styles from its <code>button</code> class are now in its <code>style</code> attribute.</li>
+      <li>Close the dialog, change a heading, a price or the button text, then select <span class="demo-ui">Email HTML</span> again.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>inlinecss_file_filter: 'demo-content'</code> inlines rules from the newsletter stylesheet and skips the editor's default content stylesheet.</li>
+      <li><code>inlinecss_selector_filter</code> skips the <code>html</code> and <code>body</code> rules that draw the gray page and the card in the editor, so the email blocks do not inherit their background, border and shadow.</li>
+      <li><code>content_style</code> adds the email font, the price column, the button and the small print. Rules in <code>content_style</code> are always inlined.</li>
+      <li><code>setup</code> adds the <span class="demo-ui">Email HTML</span> button, which shows the result of <code>editor.plugins.inlinecss.getContent()</code> in a dialog.</li>
+    </ul>
+  </details>
+</div>
+++++

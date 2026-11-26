@@ -1,10 +1,15 @@
 tinymce.init({
   selector: 'textarea#footnotes',
-  height: 680,
-  plugins: 'footnotes table lists link advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media help wordcount',
-  toolbar: 'footnotes footnotesupdate | undo redo | blocks | bold italic | ' +
-    'bullist numlist | table link | backcolor | ' +
-    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
-    'removeformat | help',
+  height: 760,
+  plugins: [
+    'footnotes',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'footnotes footnotesupdate | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'table | removeformat | help',
   content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

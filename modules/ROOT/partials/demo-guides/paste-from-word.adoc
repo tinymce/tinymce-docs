@@ -1,0 +1,33 @@
+// "Try it" guide card for the paste-from-word live demo. It is included directly above
+// liveDemo::paste-from-word[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: PowerPaste">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">PowerPaste</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">The <strong>Budget</strong> section of this grant summary is empty. Paste the budget into it from a document or spreadsheet, and compare the two ways to clean up pasted content.</p>
+    <ol class="demo-guide__steps">
+      <li>Copy a table or a few formatted paragraphs from Microsoft Word, Microsoft Excel or Google Docs. Without those, copy part of any web page, such as this one.</li>
+      <li>Place the insertion point on the empty line under <strong>Budget</strong> and paste. The <span class="demo-ui">Paste Formatting Options</span> dialog opens.</li>
+      <li>Select <span class="demo-ui">Remove formatting</span> to keep only the structure, such as headings, lists, tables and links. Fonts, colors, bold and italic are dropped. Press <kbd>Ctrl</kbd>+<kbd>Z</kbd> (<kbd>⌘</kbd>+<kbd>Z</kbd> on macOS), paste again and select <span class="demo-ui">Keep formatting</span> to compare.</li>
+      <li>Paste or drag an image file from the computer to add it to the summary, or select <span class="demo-ui">Paste as text</span> in the toolbar before pasting to insert plain text only.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>powerpaste_word_import: 'prompt'</code> asks how to paste content from Microsoft Office applications, such as Word, and <code>powerpaste_googledocs_import: 'prompt'</code> asks the same for Google Docs.</li>
+      <li><code>powerpaste_html_import: 'prompt'</code> asks the same question for content from web pages, which is cleaned without asking by default.</li>
+      <li><code>powerpaste_clean_filtered_inline_elements: [ 'strong', 'em' ]</code> also removes bold and italic when <span class="demo-ui">Remove formatting</span> is selected.</li>
+      <li><code>powerpaste_allow_local_images: true</code> imports pasted and dropped image files as Base64-encoded images.</li>
+      <li><code>powerpaste_autolink_urls: true</code> turns web addresses in pasted text into links.</li>
+    </ul>
+  </details>
+</div>
+++++

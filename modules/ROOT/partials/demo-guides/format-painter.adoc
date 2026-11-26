@@ -1,0 +1,30 @@
+// "Try it" guide card for the format-painter live demo. It is included directly above
+// liveDemo::format-painter[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Format Painter">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Format Painter</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">The enamel camp kettle was added to this catalog page without formatting, and three stock statuses in the table are plain. Make them match the rest of the page.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point in the blue <span class="demo-ui">Cast iron skillet</span> heading, select <span class="demo-ui">Format painter</span> in the toolbar, then select the whole line <code>Enamel camp kettle, 2 quart</code>. It becomes a matching heading.</li>
+      <li>Copy the skillet's price onto the plain kettle price, and the square bullets of the skillet's list onto the kettle's list.</li>
+      <li>Copy the grill pan price. Its bold blue style is copied, but its gray review highlight is not.</li>
+      <li>Double-click <span class="demo-ui">Format painter</span> to keep it on, then select the three plain statuses in the table one after another. The cell shading and the text color are copied together. Press <kbd>Esc</kbd> to stop.</li>
+      <li>Copy and apply formatting from the keyboard with <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>C</kbd> and <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>V</kbd> (<kbd>⌘</kbd>+<kbd>Option</kbd>+<kbd>C</kbd> and <kbd>⌘</kbd>+<kbd>Option</kbd>+<kbd>V</kbd> on macOS).</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>formatpainter_ignored_formats</code> adds <code>hilitecolor</code> to the default list, so the format painter never copies the gray review highlight.</li>
+    </ul>
+  </details>
+</div>
+++++

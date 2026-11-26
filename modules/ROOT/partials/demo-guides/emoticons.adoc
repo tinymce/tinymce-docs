@@ -1,0 +1,28 @@
+// "Try it" guide card for the emoticons live demo. It is included directly above
+// liveDemo::emoticons[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--opensource" role="note" aria-label="Try it: Emoticons">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Emoticons</span>
+    <span class="demo-guide__tier">Open source plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This coffee roaster's blog post lists 3 new coffees. Mark the roast level in each row of the table with the roastery's own roast emoji.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point after <strong>Light</strong> in the <strong>Roast</strong> column, type a space and <code>:roast</code>. The list that appears shows the 3 roast emoji added for this blog. Choose 🌱 and press <kbd>Enter</kbd>.</li>
+      <li>Repeat for <strong>Medium</strong> with 🌰 and <strong>Dark</strong> with 🍫. Type <code>:medium</code> or <code>:dark</code> to narrow the list.</li>
+      <li>Select <span class="demo-ui">Emojis</span> in the toolbar and open the <span class="demo-ui">User Defined</span> tab to see the roast emoji. Type <code>pourover</code> in the search box to find the custom coffee emoji filed under <span class="demo-ui">Food and Drink</span>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>emoticons_append</code> adds 4 emoji with the roastery's own keywords: 3 roast levels in the <strong>User Defined</strong> category, and a pour-over coffee placed in <strong>Food and Drink</strong> with its <code>category</code> property.</li>
+    </ul>
+  </details>
+</div>
+++++

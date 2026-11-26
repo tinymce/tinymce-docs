@@ -1,14 +1,17 @@
-const headerFooterCss = 'p { font-family: Calibri, Arial, sans-serif; font-size: 9pt; color: #4b5676; }';
-
 tinymce.init({
   selector: 'textarea#exportword',
-  height: 720,
-  plugins: 'exportword pagebreak lists table advlist autolink link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media help wordcount',
-  toolbar: 'exportword pagebreak | undo redo | blocks | bold italic | ' +
-    'alignleft aligncenter alignright | bullist numlist | table | backcolor | ' +
-    'alignjustify | outdent indent | removeformat | help',
+  height: 760,
+  plugins: [
+    'exportword', 'pagebreak',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'exportword pagebreak | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'table | removeformat | help',
   content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
-  // Page breaks are exported as Word page breaks.
   pagebreak_separator: '<div style="break-after: page"></div>',
   pagebreak_split_block: true,
   exportword_converter_options: {
@@ -24,18 +27,18 @@ tinymce.init({
     },
     headers: {
       first: {
-        html: '<p>Greenfield Medical Group | Lattice &amp; Pine Studio</p>',
-        css: headerFooterCss + ' p { text-align: right; font-weight: bold; }'
+        html: '<p>Ridgeline Cycles | Press release</p>',
+        css: 'p { font-family: Calibri, Arial, sans-serif; font-size: 9pt; font-weight: bold; color: #17224f; text-align: right; }'
       },
       default: {
-        html: '<p>SOW-2026-014 | Website migration | Confidential</p>',
-        css: headerFooterCss + ' p { text-align: right; }'
+        html: '<p>Ridgeline Cycles introduces the Summit 2</p>',
+        css: 'p { font-family: Calibri, Arial, sans-serif; font-size: 9pt; color: #17224f; text-align: right; }'
       }
     },
     footers: {
       default: {
         html: '<p>Page <span class="pageNumber"></span> of <span class="totalPages"></span></p>',
-        css: headerFooterCss + ' p { text-align: center; }'
+        css: 'p { font-family: Calibri, Arial, sans-serif; font-size: 9pt; color: #17224f; text-align: center; }'
       }
     },
     watermark: {
@@ -43,20 +46,5 @@ tinymce.init({
       washout: true
     }
   },
-  // Word uses the fonts installed on the reader's computer, so swap the web font for a standard one.
-  exportword_converter_style: '* { font-family: Calibri, Arial, sans-serif !important; }',
-  setup: (editor) => {
-    // Leave the "Try it" note out of the exported Word file only.
-    editor.on('PreInit', () => {
-      editor.serializer.addNodeFilter('blockquote', (nodes, name, args) => {
-        if (args.export === 'word') {
-          nodes.forEach((node) => {
-            if (node.attr('data-demo-note')) {
-              node.remove();
-            }
-          });
-        }
-      });
-    });
-  }
+  exportword_converter_style: '* { font-family: Calibri, Arial, sans-serif !important; }'
 });

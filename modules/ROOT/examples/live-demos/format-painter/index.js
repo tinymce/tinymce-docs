@@ -1,9 +1,16 @@
 tinymce.init({
   selector: 'textarea#format-painter',
-  height: 620,
-  plugins: 'formatpainter lists advlist autolink link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
-  toolbar: 'formatpainter | undo redo | blocks | bold italic forecolor backcolor | ' +
-    'bullist numlist | alignleft aligncenter alignright alignjustify | ' +
-    'outdent indent | removeformat | help',
-  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
+  height: 760,
+  plugins: [
+    'formatpainter',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'formatpainter | undo redo | blocks | ' +
+    'bold italic forecolor backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'table | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  formatpainter_ignored_formats: 'link,address,removeformat,formatpainter_removeformat,hilitecolor'
 });

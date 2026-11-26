@@ -1,0 +1,30 @@
+// "Try it" guide card for the noneditable-class live demo. It is included directly above
+// liveDemo::noneditable-class[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Non-editable class">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Non-editable class</span>
+    <span class="demo-guide__tier">Core feature</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This premium change letter has 6 locked fields that the policy system fills in: the date, the address block, the policy number, the renewal date, the new premium, and the legal disclosure. Write the personal parts of the letter around them.</p>
+    <ol class="demo-guide__steps">
+      <li>Click the highlighted premium amount, <strong>$1,284.00</strong>. The editor selects the whole field, and its text cannot be changed.</li>
+      <li>Click the disclosure paragraph that starts "State law requires". The whole block is selected in the same way.</li>
+      <li>Add a sentence to the paragraph that starts "Thank you". Text outside the highlighted fields is editable as usual.</li>
+      <li>Select <span class="demo-ui">Source code</span> in the toolbar, or open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Source code</span>. Each locked field keeps <code>class="non-editable"</code>. The <code>contenteditable</code> attribute that locks it while editing is not saved.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>noneditable_class: 'non-editable'</code> locks every element with the <code>non-editable</code> class, in place of the default <code>mceNonEditable</code> class.</li>
+      <li><code>content_style</code> highlights the locked fields with a dashed outline.</li>
+    </ul>
+  </details>
+</div>
+++++

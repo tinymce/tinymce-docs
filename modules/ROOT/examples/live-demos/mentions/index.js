@@ -55,13 +55,19 @@ const mentions_select = (mention, success) => {
 
 tinymce.init({
   selector: 'textarea#mentions',
-  height: 600,
-  plugins: 'mentions lists link advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
-  toolbar: 'undo redo | blocks | bold italic | bullist numlist | link | backcolor | ' +
-    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
-    'removeformat | help',
+  height: 700,
+  plugins: [
+    'mentions',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'undo redo | blocks | ' +
+    'bold italic forecolor backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link image table | removeformat | help',
   content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
-  content_style: '.mymention { color: #174ea6; font-weight: 600; }',
+  content_style: '.mymention { color: #335dff; font-weight: 600; }',
   mentions_fetch,
   mentions_item_type: 'profile',
   mentions_min_chars: 0,

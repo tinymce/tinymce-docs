@@ -1,0 +1,30 @@
+// "Try it" guide card for the custom-toolbar-menu-button live demo. It is included directly above
+// liveDemo::custom-toolbar-menu-button[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Menu toolbar button">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Menu toolbar button</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">These sprint planning notes have a custom <strong>My button</strong> menu in the toolbar. Insert text from each of its three kinds of menu item: a basic item, an item in a submenu, and a toggle item.</p>
+    <ol class="demo-guide__steps">
+      <li>Click at the end of the paragraph that starts with <strong>Total committed</strong>, then select <span class="demo-ui">My button</span> &gt; <span class="demo-ui">Menu item 1</span>. The italic text <em>You clicked menu item 1!</em> is inserted.</li>
+      <li>Open <span class="demo-ui">My button</span> &gt; <span class="demo-ui">Menu item 2</span> to show its submenu, then select <span class="demo-ui">Sub menu item 1</span> or <span class="demo-ui">Sub menu item 2</span>.</li>
+      <li>Select <span class="demo-ui">My button</span> &gt; <span class="demo-ui">Toggle menu item</span>. The inserted text reports the new state, <em>You toggled a menuitem on</em>.</li>
+      <li>Open <span class="demo-ui">My button</span> again. <span class="demo-ui">Toggle menu item</span> now shows a check mark, because the menu rebuilds its items from a stored state each time it opens.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.ui.registry.addMenuButton</code> adds <strong>My button</strong>. Its <code>fetch</code> function returns the menu items each time the menu opens.</li>
+      <li>A <code>menuitem</code>, a <code>nestedmenuitem</code> with two submenu items, and a <code>togglemenuitem</code> make up the menu.</li>
+    </ul>
+  </details>
+</div>
+++++

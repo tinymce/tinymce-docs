@@ -1,23 +1,34 @@
 tinymce.init({
   selector: 'textarea#emoticons',
-  height: 600,
-  plugins: 'emoticons lists advlist autolink link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
-  toolbar: 'emoticons | undo redo | blocks | bold italic | bullist numlist | ' +
-    'backcolor | alignleft aligncenter alignright alignjustify | ' +
-    'outdent indent | removeformat | help',
+  height: 720,
+  plugins: [
+    'emoticons',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'emoticons | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link image table | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   emoticons_append: {
-    shipped: {
-      keywords: [ 'shipped', 'done', 'released' ],
-      char: '✅'
+    roast_light: {
+      keywords: [ 'roast', 'light', 'bright' ],
+      char: '🌱'
     },
-    in_progress: {
-      keywords: [ 'wip', 'progress', 'building' ],
-      char: '🚧'
+    roast_medium: {
+      keywords: [ 'roast', 'medium', 'balanced' ],
+      char: '🌰'
     },
-    blocked: {
-      keywords: [ 'blocked', 'stuck', 'waiting' ],
-      char: '⛔'
+    roast_dark: {
+      keywords: [ 'roast', 'dark', 'bold' ],
+      char: '🍫'
+    },
+    pour_over: {
+      keywords: [ 'pourover', 'filter', 'drip' ],
+      char: '☕',
+      category: 'food_and_drink'
     }
-  },
-  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
+  }
 });

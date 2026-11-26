@@ -1,0 +1,32 @@
+// "Try it" guide card for the toolbar-button live demo. It is included directly above
+// liveDemo::toolbar-button[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Toolbar button types">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Toolbar button types</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">These committee meeting minutes still need three dates: the meeting date, and the due dates for the two action items without one. Fill them in with the five custom date buttons.</p>
+    <ol class="demo-guide__steps">
+      <li>Click after <strong>Meeting date:</strong> and select <span class="demo-ui">Insert Date</span>, the first button in the toolbar. The current date is inserted.</li>
+      <li>Place the insertion point inside the existing date in <strong>1. Previous minutes</strong>. The first clock button is disabled and the second clock button is highlighted, so a date cannot be inserted inside another date.</li>
+      <li>Click the empty <strong>Due</strong> cell for Nora Lindqvist. Open the arrow next to the second <span class="demo-ui">Insert Date</span> button and select <span class="demo-ui">Insert GMT Date</span> or <span class="demo-ui">Insert ISO Date</span>.</li>
+      <li>Click the empty <strong>Due</strong> cell for Paul Okafor and select <span class="demo-ui">Date</span> &gt; <span class="demo-ui">Other formats</span> &gt; <span class="demo-ui">ISO</span>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.ui.registry.addButton</code> adds <strong>Insert Date</strong>, a text button, and a clock icon button that <code>onSetup</code> disables inside a <code>time</code> element.</li>
+      <li><code>editor.ui.registry.addToggleButton</code> adds a second clock icon button that is highlighted inside a <code>time</code> element.</li>
+      <li><code>editor.ui.registry.addSplitButton</code> adds an <strong>Insert Date</strong> split button with three date formats in its menu.</li>
+      <li><code>editor.ui.registry.addMenuButton</code> adds <strong>Date</strong>, with an <strong>Other formats</strong> submenu.</li>
+    </ul>
+  </details>
+</div>
+++++

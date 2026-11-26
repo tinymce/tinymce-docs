@@ -1,42 +1,46 @@
 const data = [
   {
-    title: 'Team replies',
+    title: 'Welcome messages',
     items: [
       {
-        title: 'Message received',
-        content: '<p>Hi {{prefix}}Customer.FirstName{{suffix}},</p><p>Thank you for contacting {{prefix}}Company.Name{{suffix}}. Ticket {{prefix}}Ticket.Number{{suffix}} is now open, and a member of the support team will reply within one business day.</p><p>Regards,<br>{{prefix}}Agent.FirstName{{suffix}}</p>'
+        title: 'Welcome from the team',
+        content: '<p>Hi {{prefix}}Employee.FirstName{{suffix}},</p><p>Everyone on the {{prefix}}Employee.Department{{suffix}} team is looking forward to working with you. {{prefix}}Manager.Name{{suffix}} will meet you at reception at 9:00 AM on {{prefix}}Employee.StartDate{{suffix}} and introduce you to the team over coffee.</p><p>See you soon,<br>{{prefix}}Company.Name{{suffix}} People Team</p>'
       },
       {
-        title: 'Still investigating',
-        content: '<p>Hi {{prefix}}Customer.FirstName{{suffix}},</p><p>The team is still working on ticket {{prefix}}Ticket.Number{{suffix}}. The next update will follow within 48 hours.</p><p>Regards,<br>{{prefix}}Agent.FirstName{{suffix}}</p>'
+        title: 'Laptop pickup',
+        content: '<p>Hi {{prefix}}Employee.FirstName{{suffix}},</p><p>Your laptop is set up and ready to collect from the IT desk on the second floor, any time after 1:00 PM on {{prefix}}Employee.StartDate{{suffix}}. Bring photo ID, and allow 30 minutes to sign in and set up multi-factor authentication.</p><p>Regards,<br>{{prefix}}Company.Name{{suffix}} IT Service Desk</p>'
+      },
+      {
+        title: 'First-week check-in',
+        content: '<p>Hi {{prefix}}Employee.FirstName{{suffix}},</p><p>How is the first week going? Reply with any questions about tools, access, or the onboarding schedule, and the People Team will follow up within one business day.</p><p>Regards,<br>{{prefix}}Company.Name{{suffix}} People Team</p>'
       }
     ]
   },
   {
-    title: 'Privacy requests',
+    title: 'Policy acknowledgments',
     locked: true,
     items: [
       {
-        title: 'Data access request',
-        content: '<p>Hi {{prefix}}Customer.FirstName{{suffix}},</p><p>{{prefix}}Company.Name{{suffix}} has received a request for a copy of the personal data held for the account registered to {{prefix}}Customer.Email{{suffix}}.</p><p>The data export will be sent to that address within 30 days of this request. For security, the download link expires seven days after it is sent.</p><p>Regards,<br>{{prefix}}Company.Name{{suffix}} Privacy Team</p>'
+        title: 'Code of conduct',
+        content: '<p>Hi {{prefix}}Employee.FirstName{{suffix}},</p><p>Before {{prefix}}Employee.StartDate{{suffix}}, read and sign the {{prefix}}Company.Name{{suffix}} Code of Conduct in the employee portal. The code covers:</p><ul><li>Respect in the workplace and the anti-harassment policy</li><li>Conflicts of interest, gifts, and hospitality</li><li>Protecting customer and company data</li></ul><p>Signing confirms that the code has been read and understood. Send any questions to the People Team before signing.</p><p>Regards,<br>{{prefix}}Company.Name{{suffix}} People Team</p>'
       },
       {
-        title: 'Data deletion request',
-        content: '<p>Hi {{prefix}}Customer.FirstName{{suffix}},</p><p>{{prefix}}Company.Name{{suffix}} has received a request to delete the account registered to {{prefix}}Customer.Email{{suffix}} and its personal data.</p><ul><li>The account will be closed within 30 days of this request.</li><li>Order and invoice records are kept for seven years to meet tax obligations, then deleted.</li><li>Marketing emails stop immediately.</li></ul><p>Regards,<br>{{prefix}}Company.Name{{suffix}} Privacy Team</p>'
+        title: 'Confidentiality agreement',
+        content: '<p>Hi {{prefix}}Employee.FirstName{{suffix}},</p><p>All {{prefix}}Company.Name{{suffix}} employees sign a confidentiality agreement before their first day. The agreement is waiting in the employee portal and must be signed by {{prefix}}Employee.StartDate{{suffix}}.</p><p>The agreement continues to apply after employment ends. Legal can answer questions at legal@example.com.</p><p>Regards,<br>{{prefix}}Company.Name{{suffix}} People Team</p>'
       }
     ]
   },
   {
-    title: 'Warranty claims',
+    title: 'Payroll and benefits',
     locked: true,
     items: [
       {
-        title: 'Warranty claim approved',
-        content: '<p>Hi {{prefix}}Customer.FirstName{{suffix}},</p><p>The warranty claim for order {{prefix}}Order.Number{{suffix}} has been approved. A replacement will be shipped at no cost within five business days.</p><p>This replacement is covered for the remainder of the original two-year warranty period.</p><p>Regards,<br>{{prefix}}Agent.FirstName{{suffix}}</p>'
+        title: 'Benefits enrollment',
+        content: '<p>Hi {{prefix}}Employee.FirstName{{suffix}},</p><p>Benefits enrollment opens on {{prefix}}Employee.StartDate{{suffix}} and stays open for 30 days. Choose coverage in the employee portal under <strong>Benefits</strong>.</p><table style="border-collapse: collapse; width: 100%;" border="1"><colgroup><col style="width: 42.9%;"><col style="width: 57.1%;"></colgroup><thead><tr><th>Benefit</th><th>Starts</th></tr></thead><tbody><tr><td>Medical, dental, and vision</td><td>First day of the month after the start date</td></tr><tr><td>401(k) with a 4% company match</td><td>First paycheck</td></tr><tr><td>Life and disability insurance</td><td>Start date</td></tr></tbody></table><p>Employees who do not enroll within 30 days must wait for the next open enrollment period.</p><p>Regards,<br>{{prefix}}Company.Name{{suffix}} People Team</p>'
       },
       {
-        title: 'Outside warranty period',
-        content: '<p>Hi {{prefix}}Customer.FirstName{{suffix}},</p><p>Order {{prefix}}Order.Number{{suffix}} was delivered more than two years ago, so it is outside the warranty period. A paid repair is available, and a quote can be provided on request.</p><p>Regards,<br>{{prefix}}Agent.FirstName{{suffix}}</p>'
+        title: 'Direct deposit setup',
+        content: '<p>Hi {{prefix}}Employee.FirstName{{suffix}},</p><p>Pay is deposited every second Friday. To be paid on time for the first pay period, add bank details in the employee portal under <strong>Payroll</strong> &gt; <strong>Direct deposit</strong> within five business days of {{prefix}}Employee.StartDate{{suffix}}.</p><p>Regards,<br>{{prefix}}Company.Name{{suffix}} Payroll Team</p>'
       }
     ]
   }
@@ -44,20 +48,15 @@ const data = [
 
 const mergetags_list = [
   {
-    title: 'Customer',
+    title: 'Employee',
     menu: [
-      { value: 'Customer.FirstName', title: 'First name' },
-      { value: 'Customer.Email', title: 'Email address' }
+      { value: 'Employee.FirstName', title: 'First name' },
+      { value: 'Employee.Email', title: 'Email address' },
+      { value: 'Employee.Department', title: 'Department' },
+      { value: 'Employee.StartDate', title: 'Start date' }
     ]
   },
-  {
-    title: 'Support',
-    menu: [
-      { value: 'Ticket.Number', title: 'Ticket number' },
-      { value: 'Order.Number', title: 'Order number' },
-      { value: 'Agent.FirstName', title: 'Agent first name' }
-    ]
-  },
+  { value: 'Manager.Name', title: 'Manager name' },
   { value: 'Company.Name', title: 'Company name' }
 ];
 
@@ -346,11 +345,16 @@ const advtemplate_move_category_items = async (id, categoryId) => {
 tinymce.init({
   selector: 'textarea#readonly-locked-template',
   height: 640,
-  plugins: 'advtemplate mergetags lists link advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
+  plugins: [
+    'advtemplate', 'mergetags',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
   toolbar: 'inserttemplate addtemplate | mergetags | undo redo | blocks | ' +
-    'bold italic | bullist numlist | link | backcolor | ' +
-    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
-    'removeformat | help',
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link | removeformat | help',
   contextmenu: 'advtemplate',
   content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   mergetags_list,

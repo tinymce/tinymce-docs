@@ -1,21 +1,25 @@
 <textarea id="advanced-typography">
-  <blockquote>
-    <p><strong>Try it:</strong></p>
-    <ul>
-      <li>Place the insertion point anywhere in the article and select <strong>Typography</strong> to enhance the whole document. Straight quotes and apostrophes become curly, double hyphens become dashes, and <code>(c)</code>, <code>-&gt;</code>, <code>1/2</code>, <code>12x3</code>, <code>&lt;=</code>, <code>-15 C</code>, and <code>...</code> become proper symbols. Stray spaces before commas and missing spaces after them are fixed too.</li>
-      <li>The German and Spanish quotes are tagged with their language, so they receive the quotation marks used in those languages.</li>
-      <li>Text in code formatting, such as the timetable entry, is on the ignore list and stays unchanged.</li>
-      <li>Select a single paragraph and choose a language from the <strong>Typography</strong> drop-down to enhance only that selection with the rules of that language.</li>
-    </ul>
-  </blockquote>
-  <h1>Back on track: the summit railway reopens</h1>
-  <p>After 14 months of work , the 1920s rack railway to the summit is running again. "It's the steepest line of its kind in the region," says chief engineer Ana Ruiz. "We've rebuilt 3/4 of the track -- and the last 1/2 kilometer opens in spring."</p>
-  <p>The route climbs from the lake station -&gt; the middle station -&gt; the summit, with trains every 30 minutes. Each restored carriage seats 40 passengers,measures 12x3 meters and has heated benches. Groups of &lt;= 12 people can travel without booking.</p>
-  <p>Pack a warm coat: in January the temperature at the summit station can drop to -15 C,, even on clear days. On a good morning the whole valley is visible... and on a bad one, nothing at all.</p>
-  <h2>Voices from the crew</h2>
-  <p lang="de">"Wir haben jede Schraube zweimal gepr&uuml;ft", sagt Projektleiterin Katrin Vogel.</p>
-  <p lang="es">"Es un viaje que nadie olvida", dice la gu&iacute;a Luc&iacute;a Torres.</p>
-  <h2>Timetable data</h2>
-  <p>The timetable feed lists the line as <code>route="summit-line" -&gt; "lake"</code> and is updated every night.</p>
-  <p>Photos (c) 2026 Summit Railway Heritage Trust.</p>
+  <h1>Contributing to Lumen</h1>
+  <p>Lumen is an open-source image optimizer maintained by volunteers. "Every fix counts -- even a typo in the docs," says maintainer Priya Shah. This guide explains how to propose a change , from the first issue to the final review.</p>
+  <h2>Before you start</h2>
+  <ul>
+    <li>Search the open issues first. If someone's already working on it, offer to help instead of starting over.</li>
+    <li>For changes that affect more than 1/2 of the codebase, open a discussion before writing code.</li>
+    <li>Test on a 1920x1080 screen and at 3/4 zoom ; the preview panel is the most common source of layout bugs.</li>
+  </ul>
+  <h2>Submitting a pull request</h2>
+  <p>The workflow is fork -&gt; branch -&gt; commit -&gt; pull request. Keep each pull request small:a reviewer should be able to read it in 15 minutes. Write the commit summary in the imperative mood,for example "Add WebP support" rather than "Added WebP support".</p>
+  <p>Run the test suite before you push:</p>
+  <pre class="language-bash"><code>npm test -- --coverage
+git commit -m "Fix crash when --quality is 0"</code></pre>
+  <p>Pull requests that change the compression settings must keep quality &lt;= 95 and file size within +-2% of the current release. CI checks both...and blocks the merge if either fails.</p>
+  <h2>Translations</h2>
+  <p>The interface is translated by the community. Two translators describe what they look for:</p>
+  <ul>
+    <li><span lang="de">"Kurze, klare S&auml;tze sind am besten", sagt Jonas Becker.</span></li>
+    <li><span lang="es">"Siempre revisamos el texto con un colega", dice Luc&iacute;a Torres.</span></li>
+  </ul>
+  <h2>License</h2>
+  <p>By contributing, you agree that your work is released under the MIT License.</p>
+  <p>Copyright (c) 2027 the Lumen contributors.</p>
 </textarea>

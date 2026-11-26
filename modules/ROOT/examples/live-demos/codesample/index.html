@@ -1,15 +1,25 @@
 <textarea id="codesample">
-  <blockquote>
-    <p><strong>Try it:</strong></p>
-    <ul>
-      <li>Double-click any code sample to edit the code or change its language, then select <strong>Save</strong>. The highlighting updates for the new language.</li>
-      <li>Place the cursor on an empty line, select <strong>Insert/edit code sample</strong> in the toolbar, choose one of the ten languages in the <strong>Language</strong> list and paste some code.</li>
-      <li>Select <strong>Source code</strong> to see the <code>pre</code> and <code>code</code> markup that each sample is saved as.</li>
-    </ul>
-  </blockquote>
-  <h1>Verifying webhook signatures</h1>
-  <p>Every webhook request includes an <code>X-Signature</code> header. The header value is a hex-encoded HMAC-SHA256 digest of the raw request body, signed with the endpoint's signing secret.</p>
-  <p>To confirm that a request is genuine, compute the same digest from the raw body before parsing it, then compare the two values with a constant-time comparison. A plain string comparison can leak timing information.</p>
+  <h1>Orders API tutorial: verify webhook signatures</h1>
+  <p>When an order changes status, the Orders API sends a <code>POST</code> request to each registered webhook endpoint. Before trusting the payload, confirm that the request came from the Orders API and was not changed in transit.</p>
+  <h2>How signing works</h2>
+  <p>Every webhook request carries these headers:</p>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 30%;"><col style="width: 70%;"></colgroup>
+    <thead>
+      <tr><th>Header</th><th>Value</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>X-Signature</code></td><td>Hex-encoded HMAC-SHA256 digest of the raw request body, signed with the endpoint's signing secret</td></tr>
+      <tr><td><code>X-Webhook-Id</code></td><td>Unique ID of the delivery, repeated on retries</td></tr>
+      <tr><td><code>Content-Type</code></td><td><code>application/json</code></td></tr>
+    </tbody>
+  </table>
+  <p>To verify a request:</p>
+  <ol>
+    <li>Read the raw body before any JSON parsing.</li>
+    <li>Compute the HMAC-SHA256 digest of the body with the signing secret.</li>
+    <li>Compare the result with <code>X-Signature</code> using a constant-time comparison. A plain string comparison can leak timing information.</li>
+  </ol>
   <h2>Node.js</h2>
 <pre class="language-javascript"><code>import crypto from 'node:crypto';
 
@@ -27,17 +37,13 @@ export function verifySignature(rawBody, signature, secret) {
 import hmac
 
 
-def verify_signature(raw_body: bytes, signature: str, secret: str) -&amp;gt; bool:
-    expected = hmac.new(secret.encode(), raw_body, hashlib.sha256).hexdigest()
+def verify_signature(
+    raw_body: bytes, signature: str, secret: str
+) -&amp;gt; bool:
+    expected = hmac.new(
+        secret.encode(), raw_body, hashlib.sha256
+    ).hexdigest()
     return hmac.compare_digest(expected, signature)</code></pre>
-  <h2>PHP</h2>
-<pre class="language-php"><code>&amp;lt;?php
-
-function verify_signature(string $rawBody, string $signature, string $secret): bool
-{
-    $expected = hash_hmac('sha256', $rawBody, $secret);
-    return hash_equals($expected, $signature);
-}</code></pre>
   <h2>Ruby</h2>
 <pre class="language-ruby"><code>require 'openssl'
 
@@ -45,6 +51,17 @@ def verify_signature(raw_body, signature, secret)
   expected = OpenSSL::HMAC.hexdigest('SHA256', secret, raw_body)
   OpenSSL.secure_compare(expected, signature)
 end</code></pre>
+  <h2>PHP</h2>
+<pre class="language-php"><code>&amp;lt;?php
+
+function verify_signature(
+    string $rawBody,
+    string $signature,
+    string $secret
+): bool {
+    $expected = hash_hmac('sha256', $rawBody, $secret);
+    return hash_equals($expected, $signature);
+}</code></pre>
   <h2>C#</h2>
 <pre class="language-csharp"><code>using System;
 using System.Security.Cryptography;
@@ -52,13 +69,19 @@ using System.Text;
 
 public static class WebhookSignature
 {
-    public static bool Verify(byte[] rawBody, string signature, string secret)
+    public static bool Verify(
+        byte[] rawBody, string signature, string secret)
     {
-        using var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(secret));
+        byte[] key = Encoding.UTF8.GetBytes(secret);
+        using var hmac = new HMACSHA256(key);
         byte[] expected = hmac.ComputeHash(rawBody);
         byte[] received = Convert.FromHexString(signature);
-        return CryptographicOperations.FixedTimeEquals(expected, received);
+        return CryptographicOperations.FixedTimeEquals(
+            expected, received);
     }
 }</code></pre>
-  <p>Reject any request whose signature does not match with a <code>401</code> response, and do not process its payload.</p>
+  <h2>Java</h2>
+  <p>&nbsp;</p>
+  <h2>Responding to the request</h2>
+  <p>Return <code>401 Unauthorized</code> for any request whose signature does not match, and do not process its payload. Return <code>200 OK</code> within 10 seconds for a valid request, or the Orders API retries the delivery up to five times.</p>
 </textarea>

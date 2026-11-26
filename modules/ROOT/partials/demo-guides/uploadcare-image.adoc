@@ -1,0 +1,33 @@
+// "Try it" guide card for the uploadcare-image live demo. It is included directly above
+// liveDemo::uploadcare-image[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Media Optimizer image editing">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Media Optimizer: images</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This photographer's portfolio has 4 photos. Prepare the <strong>Pass road in June</strong> photo for its black-and-white print, warm up the lake photo, and caption the boardwalk photo. Every edit is non-destructive.</p>
+    <ol class="demo-guide__steps">
+      <li>Select the mountain road photo to open its toolbar: <span class="demo-ui">Align</span>, <span class="demo-ui">Transform</span>, <span class="demo-ui">Adjust</span>, <span class="demo-ui">Filters</span>, <span class="demo-ui">Alt text</span>, <span class="demo-ui">Caption</span> and <span class="demo-ui">Revert</span>. The first edit copies this photo to Uploadcare, so it can take a moment.</li>
+      <li>Select <span class="demo-ui">Adjust</span>, then <span class="demo-ui">Grayscale</span>. Select <span class="demo-ui">Back</span>, then <span class="demo-ui">Transform</span> to rotate, flip or resize the photo.</li>
+      <li>Select the lake photo, then <span class="demo-ui">Adjust</span> &gt; <span class="demo-ui">Warmth</span>, and drag the slider. <span class="demo-ui">Reset</span> clears that one adjustment. Under <span class="demo-ui">Filters</span>, try <span class="demo-ui">Auto enhance</span> or a filter from <span class="demo-ui">Choose Filter</span>.</li>
+      <li>Select the boardwalk photo and select <span class="demo-ui">Caption</span>. A caption appears under the photo, filled in from its alt text, ready to edit.</li>
+      <li>Select <span class="demo-ui">Revert</span> on any edited photo to restore the original. To add a photo, place the insertion point in an empty paragraph and select <span class="demo-ui">Insert image</span>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>uploadcare_filters</code> fills <strong>Choose Filter</strong> with 9 entries: <strong>Adaris</strong>, <strong>Vintage</strong>, <strong>Base</strong>, <strong>Light</strong>, <strong>Intense</strong>, <strong>Soft</strong>, <strong>Sharp</strong>, <strong>Night</strong> and <strong>None</strong>.</li>
+      <li><code>a11y_advanced_options: true</code> adds the <strong>Decorative image</strong> toggle to the <strong>Alt text</strong> form.</li>
+      <li><code>uploadcare_store_type: 'temporary'</code> stores files uploaded in this demo temporarily: Uploadcare removes them after 24 hours.</li>
+      <li><code>uploadcare_public_key</code> connects the editor to the Uploadcare project that stores and serves the media.</li>
+    </ul>
+  </details>
+</div>
+++++

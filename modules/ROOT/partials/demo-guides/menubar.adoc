@@ -1,0 +1,29 @@
+// "Try it" guide card for the menubar live demo. It is included directly above
+// liveDemo::menubar[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Menu bar">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Menu bar</span>
+    <span class="demo-guide__tier">Editor setup</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This school district announcement shows only the File, Edit, and View menus. The family information night moves from Room 114 to the library: replace both mentions of Room 114 with "the library".</p>
+    <ol class="demo-guide__steps">
+      <li>Open <span class="demo-ui">Edit</span> &gt; <span class="demo-ui">Find and replace…</span> and enter <code>Room 114</code> in <span class="demo-ui">Find</span> and <code>the library</code> in <span class="demo-ui">Replace with</span>, then select <span class="demo-ui">Replace all</span>.</li>
+      <li>Open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Source code</span> to check the HTML.</li>
+      <li>Open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Show blocks</span> to outline each block.</li>
+      <li>Insert, Format, Tools, Table, and Help are not in the menu bar, but toolbar buttons such as <span class="demo-ui">Bold</span> and <span class="demo-ui">Align center</span> still work.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>menubar: 'file edit view'</code> shows only these three menus, in this order.</li>
+    </ul>
+  </details>
+</div>
+++++

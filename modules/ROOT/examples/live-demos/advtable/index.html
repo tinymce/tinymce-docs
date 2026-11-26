@@ -1,103 +1,92 @@
 <textarea id="advtable">
-  <blockquote>
-    <p><strong>Try it:</strong></p>
-    <ul>
-      <li>Right-click a cell in the <strong>Total</strong> column and select <strong>Sort</strong> &gt; <strong>Sort table by column descending</strong>. The regions are ranked by revenue, the <strong>#</strong> column renumbers and the <strong>All regions</strong> row stays at the bottom.</li>
-      <li>Sort the <strong>Growth (%)</strong> column the same way to rank the regions by growth instead.</li>
-      <li>Select <strong>Sort</strong> &gt; <strong>Advanced sort...</strong> to sort by row or by column, across the whole table or only the selected cells.</li>
-      <li>Select <strong>Row numbering</strong> in the toolbar and choose <strong>Lettered</strong> or <strong>None</strong>. Insert a row with <strong>Row</strong> &gt; <strong>Insert row after</strong> and the numbering updates.</li>
-    </ul>
-  </blockquote>
-  <h1>Regional sales report</h1>
-  <p>Revenue by region for the last financial year, in thousands of US dollars. Growth compares Q4 revenue with Q1 revenue.</p>
-  <table data-snooker-col-series="numbered" data-snooker-locked-cols="0">
-    <caption>Revenue by region and quarter ($k)</caption>
+  <h1>Annual compliance training: completion by department</h1>
+  <p>Every employee must complete the Code of Conduct and Anti-Money Laundering modules by December 15. This report shows progress on November 24. Completion is the share of staff in each department who have passed both modules.</p>
+  <table style="border-collapse: collapse; width: 100%;" data-snooker-col-series="numbered" data-snooker-locked-cols="0" border="1">
+    <caption>Training completion by department</caption>
+    <colgroup><col style="width: 12.0%;"><col style="width: 28.0%;"><col style="width: 12.0%;"><col style="width: 15.0%;"><col style="width: 13.0%;"><col style="width: 20.0%;"></colgroup>
     <thead>
       <tr>
-        <th scope="col" contenteditable="false">#</th>
-        <th scope="col">Region</th>
-        <th scope="col">Q1</th>
-        <th scope="col">Q2</th>
-        <th scope="col">Q3</th>
-        <th scope="col">Q4</th>
-        <th scope="col">Total</th>
-        <th scope="col">Growth (%)</th>
+        <th contenteditable="false">#</th>
+        <th>Department</th>
+        <th>Staff</th>
+        <th>Completed</th>
+        <th>Overdue</th>
+        <th>Completion (%)</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td contenteditable="false">1</td>
-        <td>Central</td>
-        <td>44.6</td>
-        <td>43.9</td>
-        <td>47.4</td>
-        <td>50.1</td>
-        <td>186.0</td>
-        <td>12.3</td>
+        <td>Customer Service</td>
+        <td>74</td>
+        <td>66</td>
+        <td>8</td>
+        <td>89.2</td>
       </tr>
       <tr>
         <td contenteditable="false">2</td>
-        <td>East</td>
-        <td>56.3</td>
-        <td>54.1</td>
-        <td>58.9</td>
-        <td>63.7</td>
-        <td>233.0</td>
-        <td>13.1</td>
+        <td>Finance</td>
+        <td>48</td>
+        <td>46</td>
+        <td>2</td>
+        <td>95.8</td>
       </tr>
       <tr>
         <td contenteditable="false">3</td>
-        <td>North</td>
-        <td>48.2</td>
-        <td>52.9</td>
-        <td>55.1</td>
-        <td>61.4</td>
-        <td>217.6</td>
-        <td>27.4</td>
+        <td>Human Resources</td>
+        <td>22</td>
+        <td>22</td>
+        <td>0</td>
+        <td>100.0</td>
       </tr>
       <tr>
         <td contenteditable="false">4</td>
-        <td>Northwest</td>
-        <td>27.4</td>
-        <td>30.8</td>
-        <td>33.6</td>
-        <td>38.5</td>
-        <td>130.3</td>
-        <td>40.5</td>
+        <td>Information Technology</td>
+        <td>64</td>
+        <td>51</td>
+        <td>13</td>
+        <td>79.7</td>
       </tr>
       <tr>
         <td contenteditable="false">5</td>
-        <td>South</td>
-        <td>39.7</td>
-        <td>41.3</td>
-        <td>44.8</td>
-        <td>47.3</td>
-        <td>173.1</td>
-        <td>19.1</td>
+        <td>Legal</td>
+        <td>18</td>
+        <td>17</td>
+        <td>1</td>
+        <td>94.4</td>
       </tr>
       <tr>
         <td contenteditable="false">6</td>
-        <td>West</td>
-        <td>31.9</td>
-        <td>36.5</td>
-        <td>38.2</td>
-        <td>42.9</td>
-        <td>149.5</td>
-        <td>34.5</td>
+        <td>Operations</td>
+        <td>112</td>
+        <td>87</td>
+        <td>25</td>
+        <td>77.7</td>
+      </tr>
+      <tr>
+        <td contenteditable="false">7</td>
+        <td>Sales</td>
+        <td>86</td>
+        <td>70</td>
+        <td>16</td>
+        <td>81.4</td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
         <td contenteditable="false"></td>
-        <td><strong>All regions</strong></td>
-        <td><strong>248.1</strong></td>
-        <td><strong>259.5</strong></td>
-        <td><strong>278.0</strong></td>
-        <td><strong>303.9</strong></td>
-        <td><strong>1089.5</strong></td>
-        <td><strong>22.5</strong></td>
+        <td><strong>All departments</strong></td>
+        <td><strong>424</strong></td>
+        <td><strong>359</strong></td>
+        <td><strong>65</strong></td>
+        <td><strong>84.7</strong></td>
       </tr>
     </tfoot>
   </table>
-  <p>East remains the strongest region by revenue. Northwest is the smallest region but grew fastest, with Q4 revenue 40.5% above Q1.</p>
+  <h2>Next steps</h2>
+  <ul>
+    <li>Department heads below 90% completion receive a reminder list of overdue staff on November 26.</li>
+    <li>Staff who miss the deadline lose access to customer records until both modules are passed.</li>
+    <li>Questions about the modules go to the Compliance Office at (555) 010-0199.</li>
+  </ul>
 </textarea>

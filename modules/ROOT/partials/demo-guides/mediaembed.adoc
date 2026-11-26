@@ -1,0 +1,30 @@
+// "Try it" guide card for the mediaembed live demo. It is included directly above
+// liveDemo::mediaembed[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Enhanced Media Embed">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Enhanced Media Embed</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This course syllabus already embeds the Week 1 film. Four more links sit on lines of their own: a Vimeo copy of Week 1, the Week 2 and Week 3 films, and a background article. Turn all four into embeds.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point at the end of the Vimeo link and press <kbd>Enter</kbd>. The link becomes a video player.</li>
+      <li>Do the same for the Week 2 and Week 3 YouTube links.</li>
+      <li>Press <kbd>Enter</kbd> at the end of the Wikipedia link under <strong>Background reading</strong>. The article becomes a summary card instead of a player.</li>
+      <li>To embed media anywhere else, select <span class="demo-ui">Insert/edit media</span> in the toolbar, or open <span class="demo-ui">Insert</span> &gt; <span class="demo-ui">Media…</span>, paste a link into <span class="demo-ui">Source</span> and select <span class="demo-ui">Save</span>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>mediaembed_max_width: 560</code> limits every player and card to 560 pixels wide.</li>
+      <li>The <code>media</code> plugin, which {pluginname} requires, provides the <span class="demo-ui">Insert/edit media</span> button and dialog.</li>
+    </ul>
+  </details>
+</div>
+++++

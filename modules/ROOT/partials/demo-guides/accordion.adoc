@@ -1,0 +1,30 @@
+// "Try it" guide card for the accordion live demo. It is included directly above
+// liveDemo::{plugincode}[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--opensource" role="note" aria-label="Try it: Accordion">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Accordion</span>
+    <span class="demo-guide__tier">Open source plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This restaurant page has 9 accordions: 3 menu sections, 4 guest questions and 2 follow-up questions nested in the private events answer. All of them start closed. Turn the gift card question at the end into a tenth accordion.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point in a title, such as <strong>Is there parking?</strong>, and select <span class="demo-ui">Toggle accordion</span> in the toolbar that appears to open or close that section. <span class="demo-ui">Delete accordion</span> removes it.</li>
+      <li>Select the text of the last line, <strong>Do you sell gift cards?</strong>, then select <span class="demo-ui">Insert accordion</span> in the main toolbar. The selected text becomes the title of a new section, which also starts closed. Select <span class="demo-ui">Toggle accordion</span> to open it, then replace <strong>Accordion body…</strong> with an answer.</li>
+      <li>Open <strong>Do you host private events?</strong>, place the insertion point in its answer and open <span class="demo-ui">Insert</span> &gt; <span class="demo-ui">Accordion</span> to nest another follow-up question.</li>
+      <li>Open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Source code</span>. Only the accordions that are open in the editor have an <code>open</code> attribute in the saved HTML.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>details_initial_state: 'collapsed'</code> closes every accordion when the content loads, including <strong>Small plates</strong> and <strong>How do I book a table?</strong>, which were saved open, and every accordion inserted later.</li>
+      <li><code>content_style</code> draws a border around each accordion through its <code>mce-accordion</code> classes.</li>
+    </ul>
+  </details>
+</div>
+++++

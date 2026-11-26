@@ -1,0 +1,31 @@
+// "Try it" guide card for the context-toolbar-labels live demo. It is included directly above
+// liveDemo::context-toolbar-labels[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Context toolbar groups and labels">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Context toolbar groups and labels</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This project status update has a photo and a short summary. Inspect how the context toolbars group their buttons, then move the photo to the left.</p>
+    <ol class="demo-guide__steps">
+      <li>Click the cyclists photo next to the <strong>Summary</strong> paragraph. The toolbar shows three groups: the alignment buttons, a group with the visible label <strong>Copy</strong> and the <span class="demo-ui">Copy</span> and <span class="demo-ui">Paste</span> buttons, and <span class="demo-ui">Bold</span>, <span class="demo-ui">Italic</span>, and <span class="demo-ui">Underline</span>.</li>
+      <li>Select <span class="demo-ui">Align left</span>. The photo moves to the left of the paragraph.</li>
+      <li>Select the words <strong>on schedule and under budget</strong>. The toolbar shows only <span class="demo-ui">Bold</span>, <span class="demo-ui">Italic</span>, and <span class="demo-ui">Underline</span>. Select <span class="demo-ui">Bold</span>.</li>
+      <li>Move through a toolbar with a screen reader to hear the group names <strong>Formatting</strong> and <strong>Format</strong>. A <code>name</code> is announced but not shown, while a <code>label</code> is shown as text.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li>The <code>imagealignment</code> context toolbar sets <code>items</code> to two groups: <code>name: 'Formatting'</code> for the alignment buttons, and <code>label: 'Copy'</code> for <code>copy</code> and <code>paste</code>.</li>
+      <li>The <code>textselection</code> context toolbar has one group, <code>name: 'Format'</code>, with <code>bold</code>, <code>italic</code>, and <code>underline</code>. It appears whenever the selection is not collapsed, which includes a selected image.</li>
+      <li>A group <code>name</code> becomes the group&#8217;s accessible name. A group <code>label</code> also becomes the accessible name, and is shown before the buttons.</li>
+    </ul>
+  </details>
+</div>
+++++

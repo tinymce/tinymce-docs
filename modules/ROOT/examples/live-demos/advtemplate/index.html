@@ -1,16 +1,12 @@
 <textarea id="template">
-  <blockquote>
-    <p><strong>Try it:</strong></p>
-    <ul>
-      <li>Select <strong>Insert template</strong> in the toolbar, browse the categories or type in the <strong>Search</strong> box, preview a reply, and select <strong>Insert</strong>.</li>
-      <li>Select the last two paragraphs of this reply, then select <strong>Save as template</strong> in the toolbar (or right-click and select <strong>Save as template...</strong>). Name the template and choose a category.</li>
-      <li>In the <strong>Templates</strong> dialog, select <strong>New category</strong>, or open <strong>Template actions</strong> on a template to rename, move, or delete it. Changes are kept until the page reloads.</li>
-    </ul>
-  </blockquote>
   <p><strong>To:</strong> {{prefix}}Customer.Email{{suffix}}<br><strong>Subject:</strong> Re: Ticket {{prefix}}Ticket.Number{{suffix}}, {{prefix}}Ticket.Subject{{suffix}}</p>
   <p>Hi {{prefix}}Customer.FirstName{{suffix}},</p>
-  <p>Sorry that order {{prefix}}Order.Number{{suffix}} arrived damaged. A replacement has been booked and ships within two business days. There is no need to return the damaged item.</p>
-  <p>Track the replacement at {{prefix}}Order.TrackingUrl{{suffix}}.</p>
-  <p>If the replacement has any problems, reply to this email and the ticket reopens automatically.</p>
+  <p>Sorry that order {{prefix}}Order.Number{{suffix}} arrived damaged, and thank you for sending the photos. A replacement has been booked at no cost and ships within two business days.</p>
+  <ul>
+    <li>There is no need to return the damaged item. It can be recycled or donated.</li>
+    <li>A shipping confirmation arrives by email when the replacement leaves the warehouse.</li>
+    <li>Track the replacement at {{prefix}}Order.TrackingUrl{{suffix}}.</li>
+  </ul>
+  <p>If the replacement has any problems, reply to this email within 30 days and the ticket reopens automatically.</p>
   <p>Regards,<br>{{prefix}}Agent.FirstName{{suffix}} {{prefix}}Agent.LastName{{suffix}}<br>{{prefix}}Agent.Title{{suffix}}, {{prefix}}Company.Name{{suffix}}</p>
 </textarea>

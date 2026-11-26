@@ -1,0 +1,39 @@
+// "Try it" guide card for the user-formatting live demo. It is included directly above
+// liveDemo::user-formatting[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: User formatting">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">User formatting</span>
+    <span class="demo-guide__tier">Core feature</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This online store product page has three sections with blue Heading 2 titles. The fourth, <strong>Care and cleaning</strong>, is still a plain paragraph. Format it to match, using only the store's configured choices.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point in <strong>Care and cleaning</strong>. The block dropdown shows <span class="demo-ui">Paragraph</span>. Choose <span class="demo-ui">Heading 2</span>.</li>
+      <li>Select the heading text, open <span class="demo-ui">Text color menu</span> and choose <span class="demo-ui">Blue</span> from the eight brand colors.</li>
+      <li>Place the insertion point in the <strong>Dishwasher and microwave safe</strong> paragraph and choose <strong>1.6</strong> from <span class="demo-ui">Line height</span>, the spacing used under <strong>About this set</strong>. Select <span class="demo-ui">Increase indent</span> to indent it by 24px.</li>
+      <li>Place the insertion point in the price. The <span class="demo-ui">Formats</span> dropdown shows <span class="demo-ui">Sale price</span> and the font size field shows <strong>21px</strong>. Place it in the model number to see <span class="demo-ui">Courier New</span> in the font dropdown.</li>
+      <li>Place the insertion point in <strong>Fits standard #2 paper filters</strong>. <span class="demo-ui">Increase indent</span> is unavailable, because the list is already at its maximum depth.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>toolbar_mode: 'wrap'</code> wraps the toolbar onto extra rows, so every formatting control stays visible.</li>
+      <li><code>block_formats</code> limits the block dropdown to a paragraph and three heading levels.</li>
+      <li><code>style_formats</code> replaces the <span class="demo-ui">Formats</span> dropdown with four store styles: <strong>Lead paragraph</strong>, <strong>Sale price</strong>, <strong>Highlight</strong> and <strong>Small print</strong>.</li>
+      <li><code>font_family_formats</code> offers four fonts: Inter, Georgia, Arial and Courier New.</li>
+      <li><code>font_size_formats</code> and <code>font_size_input_default_unit: 'px'</code> set seven pixel sizes and apply typed numbers in pixels.</li>
+      <li><code>line_height_formats: '1 1.2 1.4 1.6 2'</code> sets the five choices in <span class="demo-ui">Line height</span>.</li>
+      <li><code>color_map</code> and <code>color_cols: 4</code> replace both color grids with eight brand colors in four columns.</li>
+      <li><code>indentation: '24px'</code> indents paragraphs in 24px steps instead of 40px.</li>
+      <li><code>list_max_depth: 2</code> stops lists two levels below the top-level list.</li>
+      <li><code>content_style</code> styles the classes and elements that the store styles add.</li>
+    </ul>
+  </details>
+</div>
+++++

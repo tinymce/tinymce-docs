@@ -1,32 +1,32 @@
 tinymce.init({
   selector: 'textarea#text-color',
-  height: 720,
-  plugins: 'lists table advlist autolink link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media help wordcount',
-  toolbar: 'forecolor backcolor | undo redo | blocks | bold italic | ' +
-    'bullist numlist | table | ' +
-    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
+  height: 820,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'forecolor backcolor | undo redo | blocks | ' +
+    'bold italic | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
     'removeformat | help',
   color_map_foreground: [
-    '141C3A', 'Ink',
-    '174EA6', 'Brand Blue',
-    '1B5E20', 'On Track Green',
-    '8A4B00', 'At Risk Amber',
-    'B3261E', 'Blocked Red',
-    '6A1B9A', 'Review Purple',
-    '00695C', 'Teal',
-    '4B5676', 'Slate'
+    '#17224F', 'Navy',
+    '#335DFF', 'Key ingredient blue',
+    '#002FE6', 'Royal blue',
+    '#0025B3', 'Deep blue',
+    '#0C132C', 'Midnight',
+    '#B3261E', 'Warning red'
   ],
   color_map_background: [
-    'DFF5E1', 'Pale Green',
-    'FFF3B0', 'Highlight Yellow',
-    'FDE2E1', 'Pale Red',
-    'E3ECFF', 'Pale Blue',
-    'EDE7F6', 'Pale Purple',
-    'F1F3F4', 'Light Gray'
+    '#FFF3B0', 'Allergen yellow',
+    '#F0F3FF', 'Pale blue',
+    '#C6CCDC', 'Mist',
+    '#FDE2E1', 'Pale red'
   ],
-  color_cols_foreground: 4,
-  color_cols_background: 3,
-  color_default_foreground: '#174EA6',
+  color_cols_foreground: 3,
+  color_cols_background: 2,
+  color_default_foreground: '#335DFF',
   color_default_background: '#FFF3B0',
   content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

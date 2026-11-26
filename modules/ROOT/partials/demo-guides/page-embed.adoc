@@ -1,0 +1,29 @@
+// "Try it" guide card for the page-embed live demo. It is included directly above
+// liveDemo::page-embed[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Page Embed">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Page Embed</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This field trip lesson plan embeds a gravity simulation and a map. Make the map shorter, then embed a second simulation for the after-visit activity.</p>
+    <ol class="demo-guide__steps">
+      <li>Select the map, select <span class="demo-ui">Embed iframe</span> in the toolbar and change <span class="demo-ui">Size</span> from <strong>Map (4:3)</strong> to <strong>Wide (21:9)</strong>. Select <span class="demo-ui">Save</span>.</li>
+      <li>Place the insertion point on the empty line under <strong>After the visit</strong> and select <span class="demo-ui">Embed iframe</span>. Paste <code>https://phet.colorado.edu/sims/html/projectile-motion/latest/projectile-motion_en.html</code> into <span class="demo-ui">Source</span> and choose <strong>Simulation (16:9)</strong>.</li>
+      <li>On the <span class="demo-ui">Advanced</span> tab, enter a <span class="demo-ui">Title</span> for screen reader users, then select <span class="demo-ui">Save</span>.</li>
+      <li>To embed at a fixed size instead, choose <strong>Inline Value</strong> and set <span class="demo-ui">Width</span> and <span class="demo-ui">Height</span>, which start at <code>350px</code> and <code>260px</code>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>tiny_pageembed_classes</code> renames the four responsive sizes in the <span class="demo-ui">Size</span> list to match the content of this lesson plan, such as <strong>Simulation (16:9)</strong> and <strong>Map (4:3)</strong>, while keeping the built-in size classes.</li>
+    </ul>
+  </details>
+</div>
+++++

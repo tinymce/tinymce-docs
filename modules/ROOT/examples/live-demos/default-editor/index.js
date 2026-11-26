@@ -1,9 +1,14 @@
 tinymce.init({
   selector: 'textarea#default-editor',
+  height: 560,
   plugins: [
-      "advlist", "anchor", "autolink", "charmap", "code", "fullscreen",
-      "help", "image", "insertdatetime", "link", "lists", "media",
-      "preview", "searchreplace", "table", "visualblocks",
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
   ],
-  toolbar: "undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+  toolbar: 'undo redo | blocks | ' +
+    'bold italic underline backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link image | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

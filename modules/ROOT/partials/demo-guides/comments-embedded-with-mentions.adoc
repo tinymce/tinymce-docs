@@ -1,0 +1,38 @@
+// "Try it" guide card for the comments-embedded-with-mentions live demo. It is included directly above
+// liveDemo::comments-embedded-with-mentions[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Comments with Mentions in embedded mode">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Comments with Mentions in embedded mode</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This campaign brief stores 3 conversations in its content, and the comments mention teammates. The demo is signed in as William Patterson, the campaign owner. Answer Amanda Jenkins about the voucher cost, bring Samantha Coleman into the conversation, and resolve William's question about the sales target.</p>
+    <ol class="demo-guide__steps">
+      <li>Select the highlighted text "Tasting event kit with table signs, recipe cards and a $5 discount voucher" to open Amanda Jenkins's conversation, then select <span class="demo-ui">Add comment…</span> to open the reply box, which shows <strong>Comment or mention with @</strong>.</li>
+      <li>Type a reply, then type <code>@sam</code> and select <strong>Samantha Coleman</strong>, the marketing coordinator, from the list. Select <span class="demo-ui">Save</span>.</li>
+      <li>Point to <strong>@Zara Khan</strong> next to <strong>Design lead</strong> at the top of the brief to see her profile card.</li>
+      <li>Select "2,500 kit sales in the first eight weeks", open <span class="demo-ui">Conversation Actions</span> and select <span class="demo-ui">Resolve conversation</span>, then <span class="demo-ui">Resolve</span>. Penelope Butler's conversation about creator partnerships cannot be resolved, because William did not start it.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>tinycomments_mentions_enabled: true</code> turns on mentions in comments. A mention is saved in the comment text as <code>@</code> followed by the user ID.</li>
+      <li><code>mentions_fetch</code> searches a demo user directory for the text typed after <code>@</code>, and <code>mentions_min_chars: 0</code> shows the list as soon as <code>@</code> is typed.</li>
+      <li><code>mentions_item_type: 'profile'</code> shows a photo and a role for each person in the list.</li>
+      <li><code>mentions_menu_complete</code> inserts each mention into the document as a <code>mymention</code> span, and <code>mentions_selector: '.mymention'</code> identifies those spans as mentions.</li>
+      <li><code>mentions_menu_hover</code> and <code>mentions_select</code> return the profile cards shown in the list and when pointing to a mention in the document.</li>
+      <li><code>content_style</code> and the CSS tab color mentions in the document and in the sidebar.</li>
+      <li><code>tinycomments_mode: 'embedded'</code> saves the conversations in the editor content, so no back end is needed.</li>
+      <li><code>tinycomments_can_resolve</code> adds <span class="demo-ui">Resolve conversation</span> and allows it only for conversations that the signed-in user started.</li>
+      <li><code>tinycomments_always_show_highlights: true</code>, <code>sidebar_show: 'showcomments'</code>, <code>user_id</code> and <code>fetch_users</code> keep highlights visible, open the sidebar on load, and sign in William Patterson.</li>
+      <li><code>quickbars_selection_toolbar</code> adds <span class="demo-ui">Add comment</span> to the toolbar over selected text.</li>
+    </ul>
+  </details>
+</div>
+++++

@@ -3,22 +3,43 @@
 -->
 <tinymce-editor
   api-key="no-api-key"
-  height="500"
-  menubar="false"
+  height="600"
   plugins="advlist autolink lists link image charmap preview anchor
     searchreplace visualblocks code fullscreen
-    insertdatetime media table code help wordcount"
+    insertdatetime media table help wordcount"
   toolbar="undo redo | blocks | bold italic backcolor |
     alignleft aligncenter alignright alignjustify |
     bullist numlist outdent indent | removeformat | help"
-  content_style="body
-  {
-    font-family:Helvetica,Arial,sans-serif;
-    font-size:14px
-  }"
+  content_css="default,{{attachmentsdir}}/demo-content/content.css"
   >
   <!-- Adding some initial editor content -->
-  &lt;p&gt;Welcome to the {{productname}} Web Component example!&lt;/p&gt;
+  &lt;h1&gt;Volunteer guide: Saturday food distribution&lt;/h1&gt;
+  &lt;p&gt;Thank you for volunteering with Northside Food Share. Each Saturday about 40 volunteers pack and hand out groceries to more than 250 households.&lt;/p&gt;
+  &lt;h2&gt;Before your first shift&lt;/h2&gt;
+  &lt;ol&gt;
+  &lt;li&gt;Complete the online orientation (about 20 minutes).&lt;/li&gt;
+  &lt;li&gt;Sign the volunteer agreement at the front desk.&lt;/li&gt;
+  &lt;li&gt;Wear closed-toe shoes and bring a water bottle.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;h2&gt;Shift times&lt;/h2&gt;
+  &lt;table style="border-collapse: collapse; width: 100%;" border="1"&gt;
+  &lt;colgroup&gt;&lt;col style="width: 20.2%;"&gt;&lt;col style="width: 28.1%;"&gt;&lt;col style="width: 51.7%;"&gt;&lt;/colgroup&gt;
+  &lt;thead&gt;
+  &lt;tr&gt;&lt;th&gt;Shift&lt;/th&gt;&lt;th&gt;Time&lt;/th&gt;&lt;th&gt;Tasks&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;tr&gt;&lt;td&gt;Setup&lt;/td&gt;&lt;td&gt;7:30 AM to 9:30 AM&lt;/td&gt;&lt;td&gt;Unload the truck, set up tables&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Distribution&lt;/td&gt;&lt;td&gt;9:30 AM to 12:30 PM&lt;/td&gt;&lt;td&gt;Greet guests, pack bags, carry groceries&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Cleanup&lt;/td&gt;&lt;td&gt;12:30 PM to 2 PM&lt;/td&gt;&lt;td&gt;Sort leftovers, sweep, stack crates&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;/table&gt;
+  &lt;h2&gt;On the day&lt;/h2&gt;
+  &lt;ul&gt;
+  &lt;li&gt;Check in with the shift lead at the blue tent.&lt;/li&gt;
+  &lt;li&gt;Treat every guest with respect. Do not ask for ID or proof of income.&lt;/li&gt;
+  &lt;li&gt;Lift with your legs, and ask for help with boxes over 30 pounds.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;Cannot make a shift? Text the volunteer coordinator, Priya Shah, at (555) 010-0119 by Friday at 5 PM.&lt;/p&gt;
 </tinymce-editor>
 <!--
   Sourcing the `tinymce-webcomponent` from jsDelivr,

@@ -1,0 +1,29 @@
+// "Try it" guide card for the url-conversion-relative-1 live demo. It is included directly above
+// liveDemo::url-conversion-relative-1[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Relative URLs">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Relative URLs</span>
+    <span class="demo-guide__tier">Core feature</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This support team wiki page loads its two photos from full addresses on www.tiny.cloud, the same site as this page. Check how the editor saves both addresses relative to this page, then add a new link.</p>
+    <ol class="demo-guide__steps">
+      <li>Select <span class="demo-ui">Source code</span> in the toolbar, or open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Source code</span>. The laptop photo is saved as <code>../../../../images/image-two.jpg</code> and the portrait as <code>../_images/unsplash/uifaces-unsplash-portrait-Natali_Craig.jpg</code>.</li>
+      <li>Find the three wiki links, such as <code>../it-requests/</code>. They are already relative, so they stay as written. The help center link points to another site, so it keeps its full address. Select <span class="demo-ui">Cancel</span>.</li>
+      <li>Select a word, select <span class="demo-ui">Insert/edit link</span>, enter <code>https://www.tiny.cloud/docs/tinymce/latest/link/</code> as the <span class="demo-ui">URL</span>, and select <span class="demo-ui">Save</span>.</li>
+      <li>Open <span class="demo-ui">Source code</span> again. The new link is saved as <code>../link/</code>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>relative_urls: true</code> saves addresses on the same site as <code>document_base_url</code> relative to it. <code>document_base_url</code> is not set, so it defaults to the folder of this page. <code>true</code> is also the default value.</li>
+    </ul>
+  </details>
+</div>
+++++

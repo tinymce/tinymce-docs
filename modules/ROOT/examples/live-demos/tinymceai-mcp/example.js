@@ -6,10 +6,20 @@ tinymce.init({
   selector: 'textarea#tinymceai-mcp',
   height: 'clamp(650px, 80vh, 1200px)',
   plugins: [
-    'autolink', 'link', 'emoticons', 'lists', 'table', 'advlist', 'searchreplace', 'wordcount', 'autocorrect', 'tinymcespellchecker', 'charmap', 'fullscreen', 'advcode', 'accordion', 'anchor', 'footnotes', 'powerpaste', 'importword', 'exportpdf', 'exportword', 'markdown', 'a11ychecker', 'typography', 'casechange', 'checklist', 'advtable', 'formatpainter', 'permanentpen', 'tableofcontents', 'help', 'math', 'linkchecker', 'media', 'mediaembed',
-    'quickbars', 'tinymceai', 'tinycomments', 'uploadcare'
+    'tinymceai',
+    'advlist', 'autolink', 'lists', 'link', 'uploadcare', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'advcode', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount',
+    'quickbars', 'tinycomments',
+    'emoticons', 'autocorrect', 'tinymcespellchecker', 'accordion', 'footnotes', 'powerpaste',
+    'importword', 'exportpdf', 'exportword', 'markdown', 'a11ychecker', 'typography', 'casechange',
+    'checklist', 'advtable', 'formatpainter', 'permanentpen', 'tableofcontents', 'math',
+    'linkchecker', 'mediaembed'
   ],
-  toolbar: 'undo redo | tinymceai-chat tinymceai-review | ai-quickactions-translate | styles fontsizeinput | bold italic underline forecolor backcolor casechange | link uploadcare table addcomment | align bullist numlist checklist removeformat | code fullscreen help',
+  toolbar: 'tinymceai-chat tinymceai-review ai-quickactions-translate | undo redo | blocks | ' +
+    'bold italic forecolor backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link uploadcare table | removeformat | help',
   quickbars_selection_toolbar: 'tinymceai-quickactions ai-quickactions-improve-writing addcomment',
   body_class: 'tox-comments-visible', // Ensure comments show up on init
   sidebar_show: 'tinymceai-chat',
@@ -36,6 +46,15 @@ tinymce.init({
       },
       icon: 'document-properties'
     },
+    {
+      title: 'Analyze and summarize our last closed-lost deal',
+      command: 'TinyMCEAIChatPrompt',
+      value: {
+        prompt: 'Find the closed lost deal record from "TinyMCE demo data" Airtable database and fill in all placeholders in this document. In "M&A deal summary" placeholder list 3 potential reasons for why the deal was lost - use ol element with proper markup',
+        displayedPrompt: 'Analyze and summarize our last closed-lost deal in Airtable data'
+      },
+      icon: 'document-properties'
+    },
     { text: '**Explore data via chat**' },
     {
       title: 'Compile an open deals summary report',
@@ -44,7 +63,15 @@ tinymce.init({
         prompt: 'Find all deals in "proposal sent" status and provide a summary in chat with their deal value, notes, confidence level and potential red flags'
       },
       icon: 'comment'
-    }
+    },
+    {
+      title: 'Analyze stalled deals, and identify recurring issues',
+      command: 'TinyMCEAIChatPrompt',
+      value: {
+        prompt: 'Look across all deals and their linked companies. Identify any pattern in which deals stall or lose confidence — for example by industry, deal stage, deal size, or ownership structure. State the pattern you find and cite the specific deals that support it. Respond in chat.'
+      },
+      icon: 'comment'
+    },
   ],
   tinymceai_languages: [
     { title: 'English', language: 'english' },
@@ -53,8 +80,12 @@ tinymce.init({
     { title: 'German', language: 'german' },
     { title: 'Japanese', language: 'japanese' },
     { title: 'Portuguese', language: 'portuguese' },
+    { title: 'Swedish', language: 'Burträskmål' },
     { title: 'Korean', language: 'korean' },
-    { title: 'Italian', language: 'italian' }
+    { title: 'Hindi (Devanagari)', language: 'hindi devanagari'},
+    { title: 'Italian', language: 'italian' },
+    { title: 'Klingon', language: 'klingon' },
+    { title: 'Dothraki', language: 'dothraki' },
   ],
   // Required for authentication. Replace with the token endpoint for the AI service.
   tinymceai_token_provider: () => {

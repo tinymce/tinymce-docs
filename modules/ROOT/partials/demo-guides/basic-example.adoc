@@ -1,0 +1,30 @@
+// "Try it" guide card for the basic-example live demo. It is included directly above
+// liveDemo::basic-example[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Basic example">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Basic example</span>
+    <span class="demo-guide__tier">Editor setup</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This {productname} overview page has three sections and a table of three ways to get {productname}. Center the last heading, remove the highlight from the first paragraph, and add a fourth row to the table.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point in the <strong>Why TinyMCE 👀</strong> heading and select <span class="demo-ui">Align center</span>.</li>
+      <li>Select the highlighted words <strong>battle-tested rich text editor</strong> in the first paragraph and open <span class="demo-ui">Format</span> &gt; <span class="demo-ui">Clear formatting</span>.</li>
+      <li>Place the insertion point in the <strong>Open source</strong> row of the table and open <span class="demo-ui">Table</span> &gt; <span class="demo-ui">Row</span> &gt; <span class="demo-ui">Insert row after</span>. Type a fourth option in the new row.</li>
+      <li>The status bar counts <strong>267 words</strong> before any edits. Check the count again after typing in the new row.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li>The <code>mediaembed</code> plugin turns media URLs entered with <span class="demo-ui">Insert</span> &gt; <span class="demo-ui">Media…</span> into embedded rich media.</li>
+      <li><code>height: 600</code> sets the editor height.</li>
+    </ul>
+  </details>
+</div>
+++++

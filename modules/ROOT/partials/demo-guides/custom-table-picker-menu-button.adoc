@@ -1,0 +1,31 @@
+// "Try it" guide card for the custom-table-picker-menu-button live demo. It is included directly above
+// liveDemo::custom-table-picker-menu-button[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Table picker menu button">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Table picker menu button</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This marketing content calendar has a table for December, but none yet for January. Insert a table with 5 columns and 5 rows for January: a header row and one row for each week.</p>
+    <ol class="demo-guide__steps">
+      <li>Click the empty line under the paragraph that starts with <strong>The January theme</strong>.</li>
+      <li>Select <span class="demo-ui">Insert table</span> (the table icon), the first button in the toolbar. A 10 by 10 grid opens.</li>
+      <li>Move the pointer over the grid until the label under it reads <strong>5x5</strong> (columns by rows), then click.</li>
+      <li>The new table has 5 columns and 5 rows, and its first row is a header row, like the December table.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.ui.registry.addMenuButton</code> adds <strong>Insert table</strong>, a menu button that contains a single <code>fancymenuitem</code>.</li>
+      <li><code>fancytype: 'inserttable'</code> shows the table grid picker in the menu.</li>
+      <li><code>onAction</code> runs <code>mceInsertTable</code> with the chosen numbers of rows and columns, and <code>headerRows: 1</code> makes the first row a header row.</li>
+    </ul>
+  </details>
+</div>
+++++

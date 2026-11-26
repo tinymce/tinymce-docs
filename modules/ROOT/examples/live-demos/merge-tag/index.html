@@ -1,25 +1,20 @@
 <textarea id="mergetags">
-  <blockquote>
-    <p><strong>Try it:</strong></p>
-    <ul>
-      <li>Select <strong>Insert merge tag</strong> in the toolbar and open <strong>Customer</strong> &gt; <strong>Billing address</strong> to browse a nested category.</li>
-      <li>Type <code>{*</code> in the text, followed by part of a name such as <code>seat</code>, and pick a tag from the list that appears.</li>
-      <li>Select an existing merge tag, then pick a different one from <strong>Insert merge tag</strong> to replace it. Type in the <strong>Filter merge tags</strong> box to search every category at once.</li>
-    </ul>
-  </blockquote>
   <p><strong>Subject:</strong> {*Customer.FirstName*}, your {*Subscription.PlanName*} plan renews on {*Subscription.RenewalDate*}</p>
+  <hr>
   <h1>Your plan renews soon</h1>
   <p>Hi {*Customer.FirstName*},</p>
   <p>The {*Subscription.PlanName*} subscription for {*Customer.Company*} renews automatically on <strong>{*Subscription.RenewalDate*}</strong>. Backups keep running without interruption, and no action is needed unless the details below have changed.</p>
+  <p>Amount due at renewal: <strong><span style="color: #335dff;">{*Billing.AmountDue*}</span></strong></p>
   <h2>Renewal summary</h2>
-  <table>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 30.4%;"><col style="width: 69.6%;"></colgroup>
     <thead>
       <tr><th>Item</th><th>Details</th></tr>
     </thead>
     <tbody>
       <tr><td>Plan</td><td>{*Subscription.PlanName*}</td></tr>
       <tr><td>Seats</td><td>{*Subscription.Seats*}</td></tr>
-      <tr><td>Amount due</td><td>{*Billing.AmountDue*}</td></tr>
+      <tr><td>Storage used</td><td>{*Subscription.StorageUsed*} of {*Subscription.StorageLimit*}</td></tr>
       <tr><td>Payment method</td><td>{*Billing.CardBrand*} ending in {*Billing.CardLast4*}</td></tr>
       <tr><td>Billing address</td><td>{*Customer.Address.Street*}, {*Customer.Address.City*}, {*Customer.Address.Country*}</td></tr>
     </tbody>

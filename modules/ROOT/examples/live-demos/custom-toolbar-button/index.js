@@ -1,6 +1,15 @@
 tinymce.init({
   selector: 'textarea#custom-toolbar-button',
-  toolbar: 'customInsertButton customDateButton',
+  height: 640,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'customInsertButton customDateButton | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'removeformat | help',
   setup: (editor) => {
 
     editor.ui.registry.addButton('customInsertButton', {
@@ -26,5 +35,5 @@ tinymce.init({
       }
     });
   },
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

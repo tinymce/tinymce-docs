@@ -1,0 +1,30 @@
+// "Try it" guide card for the url-conversion-absolute-2 live demo. It is included directly above
+// liveDemo::url-conversion-absolute-2[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Absolute URLs with the domain">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Absolute URLs with the domain</span>
+    <span class="demo-guide__tier">Core feature</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This help center migration checklist links to the migration tracker and the redirect map with relative addresses. Check how the editor saves both links as full addresses, including the protocol and host name, then add a new relative link.</p>
+    <ol class="demo-guide__steps">
+      <li>Select <span class="demo-ui">Source code</span> in the toolbar, or open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Source code</span>. The link written as <code>../migration-tracker/</code> is saved as <code>https://www.tiny.cloud/docs/tinymce/latest/migration-tracker/</code>, and <code>redirect-map/</code> is saved as <code>https://www.tiny.cloud/docs/tinymce/latest/url-handling/redirect-map/</code>.</li>
+      <li>Find the vendor site link. It already has a full address, so it stays as written. Select <span class="demo-ui">Cancel</span>.</li>
+      <li>Select a word, select <span class="demo-ui">Insert/edit link</span>, enter <code>../link/</code> as the <span class="demo-ui">URL</span>, and select <span class="demo-ui">Save</span>.</li>
+      <li>Open <span class="demo-ui">Source code</span> again. The new link is saved as <code>https://www.tiny.cloud/docs/tinymce/latest/link/</code>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>relative_urls: false</code> saves relative addresses as absolute addresses, resolved from <code>document_base_url</code>, which defaults to the folder of this page.</li>
+      <li><code>remove_script_host: false</code> keeps the protocol and host name of <code>document_base_url</code> in each converted address.</li>
+    </ul>
+  </details>
+</div>
+++++

@@ -1,0 +1,29 @@
+// "Try it" guide card for the math live demo. It is included directly above
+// liveDemo::{plugincode}[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Math">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Math</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This physics lab report has 14 equations: 10 inline with the text and 4 on their own lines. Edit one, then complete the last step of the Theory section.</p>
+    <ol class="demo-guide__steps">
+      <li>Select the time of flight and range equation, then select <span class="demo-ui">Insert/edit math</span> in the toolbar. Change the LaTeX in <span class="demo-ui">Formula</span> and watch the <span class="demo-ui">Preview</span> update, then select <span class="demo-ui">Save</span>.</li>
+      <li>Open the maximum height equation the same way. It was written in MathML, and the <span class="demo-ui">Language</span> list shows <strong>MathML</strong> instead of <strong>LaTeX</strong>.</li>
+      <li>Place the insertion point after <strong>conservation of energy:</strong> at the end of the Theory section. Open <span class="demo-ui">Insert</span> &gt; <span class="demo-ui">Math…</span> and enter <code>v = \sqrt{v_0^2 - 2gh}</code>.</li>
+      <li>Set <span class="demo-ui">Text Wrap</span> to <span class="demo-ui">Inline with text</span> to keep the equation in the sentence, or <span class="demo-ui">Text above and below</span> to put it on its own line, then select <span class="demo-ui">Save</span>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li>The <code>math</code> toolbar button opens the <span class="demo-ui">Insert/Edit Math</span> dialog. The {pluginname} plugin has no configuration options.</li>
+    </ul>
+  </details>
+</div>
+++++

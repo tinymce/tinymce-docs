@@ -1,19 +1,50 @@
 <textarea id="custom-view">
-  {{logofordemoshtml}}
-  <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
-  <p>Select the "Show Code View" toolbar button to open the custom view. This will enable you to modify the source code of the editor content.</p>
-
-  <h2>Got questions or need help?</h2>
+  <h1>Release checklist: version 3.8 of the mobile banking app</h1>
+  <p>Release manager: Kenji Watanabe. Target release date: Wednesday, December 16, at 10:00 AM Eastern Time. Update the status of each step as soon as it is complete.</p>
+  <h2>Release steps</h2>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 51.9%;"><col style="width: 31.2%;"><col style="width: 16.9%;"></colgroup>
+    <thead>
+      <tr>
+        <th>Step</th>
+        <th>Owner</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Freeze the release branch</td>
+        <td>Kenji Watanabe</td>
+        <td>Pending</td>
+      </tr>
+      <tr>
+        <td>Run the full regression test suite</td>
+        <td>QA team</td>
+        <td>Pending</td>
+      </tr>
+      <tr>
+        <td>Security review sign-off</td>
+        <td>Rachel Kim</td>
+        <td>Done</td>
+      </tr>
+      <tr>
+        <td>Submit builds to the app stores</td>
+        <td>Kenji Watanabe</td>
+        <td>Pending</td>
+      </tr>
+      <tr>
+        <td>Publish the release notes</td>
+        <td>Documentation team</td>
+        <td>Pending</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Go or no-go criteria</h2>
   <ul>
-    <li>Our <a href="{{site-url}}/tinymce/8/">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
-    <li>Have a specific question? Try the <a href="{{communitysupporturl}}" target="_blank" rel="noopener"><code>{{prodnamecode}}</code> tag at Stack Overflow</a>.</li>
-    <li>We also offer enterprise grade support as part of <a href="{{pricingpage}}">TinyMCE premium plans</a>.</li>
+    <li>No open bugs with severity High or Critical.</li>
+    <li>Crash-free sessions in the beta group above 99.5%.</li>
+    <li>Customer support has the updated help articles.</li>
   </ul>
-
-  <h2>Found a bug?</h2>
-  <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
-
-  <h2>Finally ...</h2>
-  <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br/>
-    All the best from the TinyMCE team.</p>
+  <h2>Rollback plan</h2>
+  <p>If the crash rate passes 1% in the first 24 hours, pause the staged rollout in both app stores and post an update in the <a href="https://www.example.com/chat/release-room">#release-room</a> channel. On-call engineer: Luis Ortega, (555) 010-0174.</p>
 </textarea>

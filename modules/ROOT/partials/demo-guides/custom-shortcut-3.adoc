@@ -1,0 +1,29 @@
+// "Try it" guide card for the custom-shortcut-3 live demo. It is included directly above
+// liveDemo::custom-shortcut-3[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Shortcut on a toolbar button">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Shortcut on a toolbar button</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">In this event run sheet, 3 items have the owner <strong>Unassigned</strong>. Claim all three by replacing <strong>Unassigned</strong> with a username.</p>
+    <ol class="demo-guide__steps">
+      <li>Point to the <strong>+</strong> button, the first button in the toolbar. Its tooltip reads <span class="demo-ui">Insert Username</span>, followed by the shortcut.</li>
+      <li>Double-click <strong>Unassigned</strong> in the 3:30 PM row to select it, then select <span class="demo-ui">Insert Username</span>. <strong>@jordan.ellis</strong> replaces it.</li>
+      <li>Select <strong>Unassigned</strong> in the 6:00 PM and 10:30 PM rows and press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>U</kbd> (<kbd>⌘</kbd>+<kbd>Option</kbd>+<kbd>U</kbd> on macOS) instead.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editor.addShortcut('meta+alt+U', 'Insert username', …)</code> registers the keyboard shortcut.</li>
+      <li><code>editor.ui.registry.addButton</code> adds the <strong>+</strong> button with <code>tooltip: 'Insert Username'</code> and <code>shortcut: 'meta+alt+U'</code>, which adds the shortcut to the tooltip.</li>
+    </ul>
+  </details>
+</div>
+++++

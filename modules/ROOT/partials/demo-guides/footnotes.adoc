@@ -1,0 +1,28 @@
+// "Try it" guide card for the footnotes live demo. It is included directly above
+// liveDemo::footnotes[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Footnotes">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Footnotes</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This lease review memo has 5 footnotes. Add a citation, jump between a footnote number and its note, and clean up a note that is left behind when a table row is deleted.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point at the end of the second requested change, after <strong>10 business days.</strong>, and select <span class="demo-ui">Insert footnote</span> in the toolbar. The new footnote becomes number 5, the sublease note becomes number 6, and the insertion point moves to the new note so it can be typed.</li>
+      <li>Press <kbd>Ctrl</kbd> (<kbd>⌘</kbd> on macOS) and select a footnote number to jump to its note, then select the caret (<strong>^</strong>) before the note to return.</li>
+      <li>Place the insertion point in the <strong>Year 5</strong> table row and open <span class="demo-ui">Table</span> &gt; <span class="demo-ui">Row</span> &gt; <span class="demo-ui">Delete row</span>. The row's note stays at the end of the memo, so select <span class="demo-ui">Update footnotes</span> in the toolbar to remove it and renumber the rest.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li>No options. The toolbar includes the <code>footnotesupdate</code> button, <strong>Update footnotes</strong>, which is not in any default menu. The <strong>CSS</strong> tab shows the styles that display footnotes on a published page.</li>
+    </ul>
+  </details>
+</div>
+++++

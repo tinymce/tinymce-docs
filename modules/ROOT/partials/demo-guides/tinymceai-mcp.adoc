@@ -1,0 +1,35 @@
+// "Try it" guide card for the tinymceai-mcp live demo. It is included directly above
+// liveDemo::tinymceai-mcp[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: {pluginname} with MCP tools">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">{pluginname} with MCP tools</span>
+    <span class="demo-guide__tier">Premium service</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This deal summary template has 13 gray placeholders. Fill every one with the Nuvo Technologies record from the sample deals database that the AI service reaches through its MCP server.</p>
+    <ol class="demo-guide__steps">
+      <li>The <span class="demo-ui">AI Chat</span> sidebar is open with four suggested actions. Select <span class="demo-ui">Fill with "Nuvo Technologies" account details</span>.</li>
+      <li>Chat notes <strong>Used connected tools for this response</strong> while the model queries the database, then proposes the filled-in document. Select <span class="demo-ui">View details</span> to preview the changes.</li>
+      <li>Step through the changes with <span class="demo-ui">Previous</span> and <span class="demo-ui">Next</span>, then select <span class="demo-ui">Apply all</span>, or <span class="demo-ui">Apply suggestion</span> and <span class="demo-ui">Skip suggestion</span> one at a time.</li>
+      <li>Select <span class="demo-ui">New chat</span>, then <span class="demo-ui">Compile an open deals summary report</span> to get an answer in Chat without changing the document.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>tinymceai_chat_welcome_message</code> and <code>tinymceai_chat_welcome_actions</code> describe the connected database and add four prompts, two that fill the document and two that answer in Chat.</li>
+      <li><code>tinymceai_default_model: 'claude-4-6-sonnet'</code> runs every request on one model, and <code>tinymceai_allow_model_selection: false</code> hides the model menu in Chat.</li>
+      <li><code>sidebar_show: 'tinymceai-chat'</code> opens the Chat sidebar when the editor loads.</li>
+      <li><code>tinymceai_languages</code> sets the 12 languages in the <strong>Translate</strong> toolbar menu.</li>
+      <li><code>quickbars_selection_toolbar</code> shows <strong>AI Quick Actions</strong>, <strong>Improve writing</strong> and <strong>Add comment</strong> above selected text.</li>
+      <li><code>tinymceai_token_provider</code> fetches a JSON Web Token (JWT) from a demo session before each AI request. The <strong>JS</strong> tab shows a placeholder endpoint instead.</li>
+      <li>The MCP server itself is configured on the AI service, not in the editor.</li>
+    </ul>
+  </details>
+</div>
+++++

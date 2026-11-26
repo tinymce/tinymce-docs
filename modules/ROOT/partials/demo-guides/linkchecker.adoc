@@ -1,0 +1,29 @@
+// "Try it" guide card for the linkchecker live demo. It is included directly above
+// liveDemo::linkchecker[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Link Checker">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Link Checker</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This museum exhibit guide has 8 web links, and 3 of them are broken. Find the broken links and fix or ignore each one.</p>
+    <ol class="demo-guide__steps">
+      <li>Links are checked when the guide loads. The 3 links that point to missing pages or to a domain that does not exist are highlighted in red.</li>
+      <li>Right-click the <code>exhibit catalog</code> link and select <span class="demo-ui">Link…</span> to open the link dialog. Replace the address with <code>https://en.wikipedia.org/wiki/Hokusai_Manga</code> and select <span class="demo-ui">Save</span>. The link is checked again and the highlight disappears.</li>
+      <li>Right-click the <code>tours office</code> link and select <span class="demo-ui">Ignore</span> to keep it as it is.</li>
+      <li>Right-click the <code>audio guide</code> link and select <span class="demo-ui">Remove link</span>, or add a new link with <span class="demo-ui">Link</span> in the toolbar. New and changed links are checked as the content changes.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li>No options: adding <code>linkchecker</code> to <code>plugins</code> is enough when the editor loads from {cloudname}, because the link checking service is configured automatically.</li>
+    </ul>
+  </details>
+</div>
+++++

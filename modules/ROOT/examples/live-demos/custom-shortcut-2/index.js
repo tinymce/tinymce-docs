@@ -1,11 +1,18 @@
 tinymce.init({
   selector: '#custom-shortcut-2',
-  height: 300,
-  plugins: 'autolink lists link',
-  toolbar: 'undo redo | bold italic link bullist | insertUsername',
+  height: 640,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'insertUsername | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'removeformat | help',
   setup: (editor) => {
     const insertUsername = () => {
-      editor.insertContent(`@username`);
+      editor.insertContent(`@jordan.ellis`);
     };
 
     editor.addShortcut('meta+alt+U', 'Insert username', () => {
@@ -27,5 +34,5 @@ tinymce.init({
       }
     });
   },
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

@@ -28,6 +28,8 @@ tinymce.init({
 });
 ----
 
+include::partial$demo-guides/suggestededits-access-feedback.adoc[]
+
 liveDemo::suggestededits-access-feedback[]
 
 .Example: `suggestededits_access: 'read'`
@@ -41,5 +43,7 @@ tinymce.init({
   readonly: false // Set to true to restrict editing
 });
 ----
+
+include::partial$demo-guides/suggestededits-access-read.adoc[]
 
 liveDemo::suggestededits-access-read[]

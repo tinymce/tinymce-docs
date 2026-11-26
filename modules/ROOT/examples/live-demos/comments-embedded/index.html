@@ -1,30 +1,58 @@
 <textarea id="comments-embedded">
-  <blockquote><p><strong>Try it:</strong> select highlighted text to open its conversation in the <strong>Comments</strong> sidebar and add a reply. Select any other text and choose <strong>Add comment</strong>, in the toolbar or in the toolbar that appears over the selection, to start a new conversation. The signed-in user is James Wilson, so his comments can be edited or deleted, and his conversation about map tiles can be resolved from the <strong>Conversation Actions</strong> menu.</p></blockquote>
-  <h1>Offline mode: product specification</h1>
-  <p>Status: draft for review. Owner: Mia Andersson. Target release: version 4.2.</p>
-  <h2>Problem</h2>
-  <p>Field inspectors often work at sites with no mobile signal. When the connection drops, the app discards unsaved inspection reports. Support logged 214 tickets about lost reports last quarter.</p>
-  <h2>Goals</h2>
-  <ul>
-    <li>Inspectors can create and edit reports, and attach photos, without a connection.</li>
-    <li>Reports <span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_sync-time" data-mce-annotation="tinycomments">sync automatically within 60 seconds</span> of the connection returning.</li>
-    <li>No report is lost or overwritten without a warning.</li>
-  </ul>
-  <h2>Requirements</h2>
-  <table>
+  <h1>Digital Skills for Older Adults: grant proposal</h1>
+  <p><strong>Applicant:</strong> Riverside Public Library<br><strong>Funder:</strong> Hartwell Community Foundation, Community Learning Fund<br><strong>Amount requested:</strong> $48,500 over 12 months<br><strong>Submission deadline:</strong> December 15</p>
+  <h2>Summary</h2>
+  <p>Riverside Public Library requests $48,500 to run free, small-group technology classes for residents aged 60 and over. Over 12 months, the program will teach <span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_learner-target" data-mce-annotation="tinycomments">320 older adults</span> to use email, video calls, online banking and telehealth portals safely.<img style="display: block; margin-left: auto; margin-right: auto;" src="https://www.tiny.cloud/images/image-two.jpg" alt="Hands typing on a laptop next to a smartphone and a cup of coffee" width="200" height="115"></p>
+  <h2>Need</h2>
+  <p>In a library survey of 412 patrons over 60, 58% said they had missed a medical appointment or a bill payment because they could not use an online service. The waiting list for our drop-in help sessions averages three weeks.</p>
+  <h2>Program activities</h2>
+  <ol>
+    <li>A six-week beginner course with two 90-minute classes a week and 8 learners per class</li>
+    <li>Monthly scam awareness workshops run with the Riverside Police Department</li>
+    <li>Loans of 40 tablets with data plans for learners without a device at home</li>
+    <li><span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_volunteers" data-mce-annotation="tinycomments">One-on-one follow-up sessions with trained volunteers</span></li>
+  </ol>
+  <h2>Budget</h2>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 78.7%;"><col style="width: 21.3%;"></colgroup>
     <thead>
-      <tr><th>Requirement</th><th>Priority</th><th>Notes</th></tr>
+      <tr>
+        <th>Item</th>
+        <th>Cost</th>
+      </tr>
     </thead>
     <tbody>
-      <tr><td><span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_report-limit" data-mce-annotation="tinycomments">Store up to 50 reports on the device</span></td><td>Must</td><td>Encrypted at rest</td></tr>
-      <tr><td>Queue changes and retry the upload</td><td>Must</td><td>Retry every 30 seconds</td></tr>
-      <tr><td>Warn when two people edit the same report</td><td>Should</td><td>Show both versions side by side</td></tr>
-      <tr><td><span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_map-tiles" data-mce-annotation="tinycomments">Offline map tiles</span></td><td>Could</td><td>Deferred to a later release</td></tr>
+      <tr>
+        <td>Instructor wages, two part-time instructors</td>
+        <td>$24,000</td>
+      </tr>
+      <tr>
+        <td>Tablets and data plans, 40 devices</td>
+        <td>$14,400</td>
+      </tr>
+      <tr>
+        <td>Volunteer training and background checks</td>
+        <td>$3,600</td>
+      </tr>
+      <tr>
+        <td>Printed course materials</td>
+        <td>$2,500</td>
+      </tr>
+      <tr>
+        <td><span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_evaluation-cost" data-mce-annotation="tinycomments">Evaluation by an external consultant</span></td>
+        <td>$4,000</td>
+      </tr>
+      <tr>
+        <td><strong>Total</strong></td>
+        <td><strong>$48,500</strong></td>
+      </tr>
     </tbody>
   </table>
-  <h2>Out of scope</h2>
-  <p>Editing the same report on more than one device while offline is not supported in this release.</p>
-  <h2>Timeline</h2>
-  <p>Design review on December 3, beta with two regional teams in January, and general release in version 4.2.</p>
-  <!--tinycomments|2.1|data:application/json;base64,eyJtY2UtY29udmVyc2F0aW9uX3N5bmMtdGltZSI6eyJ1aWQiOiJtY2UtY29udmVyc2F0aW9uX3N5bmMtdGltZSIsImNvbW1lbnRzIjpbeyJ1aWQiOiJtY2UtY29udmVyc2F0aW9uX3N5bmMtdGltZSIsImF1dGhvciI6Im1pYS1hbmRlcnNzb24iLCJhdXRob3JOYW1lIjoiTWlhIEFuZGVyc3NvbiIsImF1dGhvckF2YXRhciI6Imh0dHBzOi8vc25lYWstcHJldmlldy50aW55LmNsb3VkL2RlbW91c2VyZGlyZWN0b3J5L2ltYWdlcy9lbXBsb3llZV9taWEtYW5kZXJzc29uXzEyOF9lNmY5NDI0Yi5qcGciLCJjb250ZW50IjoiSXMgNjAgc2Vjb25kcyByZWFsaXN0aWMgb24gYSB3ZWFrIHNpZ25hbD8iLCJjcmVhdGVkQXQiOiIyMDI2LTExLTE2VDA5OjIwOjAwLjAwMFoiLCJtb2RpZmllZEF0IjoiMjAyNi0xMS0xNlQwOToyMDowMC4wMDBaIn0seyJ1aWQiOiJtY2UtY29udmVyc2F0aW9uX3N5bmMtdGltZS1yZXBseS0xIiwiYXV0aG9yIjoiamFtZXMtd2lsc29uIiwiYXV0aG9yTmFtZSI6IkphbWVzIFdpbHNvbiIsImF1dGhvckF2YXRhciI6Imh0dHBzOi8vc25lYWstcHJldmlldy50aW55LmNsb3VkL2RlbW91c2VyZGlyZWN0b3J5L2ltYWdlcy9lbXBsb3llZV9qYW1lcy13aWxzb25fMTI4XzUyZjE5NDEyLmpwZyIsImNvbnRlbnQiOiJUZXN0IHVwbG9hZHMgb3ZlciAzRyB0b29rIDIwIHRvIDQwIHNlY29uZHMgZm9yIGEgcmVwb3J0IHdpdGggZml2ZSBwaG90b3MsIHNvIDYwIHNlY29uZHMgaG9sZHMgZm9yIG1vc3QgcmVwb3J0cy4gUmVwb3J0cyB3aXRoIG1hbnkgcGhvdG9zIHRha2UgbG9uZ2VyLiIsImNyZWF0ZWRBdCI6IjIwMjYtMTEtMTdUMTQ6MDU6MDAuMDAwWiIsIm1vZGlmaWVkQXQiOiIyMDI2LTExLTE3VDE0OjA1OjAwLjAwMFoifSx7InVpZCI6Im1jZS1jb252ZXJzYXRpb25fc3luYy10aW1lLXJlcGx5LTIiLCJhdXRob3IiOiJqYWRlLXNjb3R0IiwiYXV0aG9yTmFtZSI6IkphZGUgU2NvdHQiLCJhdXRob3JBdmF0YXIiOiJodHRwczovL3NuZWFrLXByZXZpZXcudGlueS5jbG91ZC9kZW1vdXNlcmRpcmVjdG9yeS9pbWFnZXMvZW1wbG95ZWVfamFkZS1zY290dF8xMjhfNTE1ZGM2YTEuanBnIiwiY29udGVudCI6IkFkZGluZyBhIHRlc3QgY2FzZSBmb3IgYSByZXBvcnQgd2l0aCAyMCBwaG90b3MgdG8gdGhlIHJlZ3Jlc3Npb24gc3VpdGUuIFJlc3VsdHMgd2lsbCBiZSBpbiB0aGUgRnJpZGF5IHRlc3QgcmVwb3J0LiIsImNyZWF0ZWRBdCI6IjIwMjYtMTEtMThUMDg6NDA6MDAuMDAwWiIsIm1vZGlmaWVkQXQiOiIyMDI2LTExLTE4VDA4OjQwOjAwLjAwMFoifV19LCJtY2UtY29udmVyc2F0aW9uX3JlcG9ydC1saW1pdCI6eyJ1aWQiOiJtY2UtY29udmVyc2F0aW9uX3JlcG9ydC1saW1pdCIsImNvbW1lbnRzIjpbeyJ1aWQiOiJtY2UtY29udmVyc2F0aW9uX3JlcG9ydC1saW1pdCIsImF1dGhvciI6ImFubmEtcGV0cm92IiwiYXV0aG9yTmFtZSI6IkFubmEgUGV0cm92IiwiYXV0aG9yQXZhdGFyIjoiaHR0cHM6Ly9zbmVhay1wcmV2aWV3LnRpbnkuY2xvdWQvZGVtb3VzZXJkaXJlY3RvcnkvaW1hZ2VzL2VtcGxveWVlX2FubmEtcGV0cm92XzEyOF8wMGY3Zjk1MS5qcGciLCJjb250ZW50IjoiV2hhdCBoYXBwZW5zIHdoZW4gYW4gaW5zcGVjdG9yIHJlYWNoZXMgdGhlIDUwLXJlcG9ydCBsaW1pdD8gUGxlYXNlIGRlc2NyaWJlIHRoZSBleHBlY3RlZCBiZWhhdmlvciBpbiB0aGlzIHRhYmxlLiIsImNyZWF0ZWRBdCI6IjIwMjYtMTEtMThUMDM6MTU6MDAuMDAwWiIsIm1vZGlmaWVkQXQiOiIyMDI2LTExLTE4VDAzOjE1OjAwLjAwMFoifV19LCJtY2UtY29udmVyc2F0aW9uX21hcC10aWxlcyI6eyJ1aWQiOiJtY2UtY29udmVyc2F0aW9uX21hcC10aWxlcyIsImNvbW1lbnRzIjpbeyJ1aWQiOiJtY2UtY29udmVyc2F0aW9uX21hcC10aWxlcyIsImF1dGhvciI6ImphbWVzLXdpbHNvbiIsImF1dGhvck5hbWUiOiJKYW1lcyBXaWxzb24iLCJhdXRob3JBdmF0YXIiOiJodHRwczovL3NuZWFrLXByZXZpZXcudGlueS5jbG91ZC9kZW1vdXNlcmRpcmVjdG9yeS9pbWFnZXMvZW1wbG95ZWVfamFtZXMtd2lsc29uXzEyOF81MmYxOTQxMi5qcGciLCJjb250ZW50IjoiTWFwIHRpbGVzIG5lZWQgYWJvdXQgMzAwIE1CIG9mIHN0b3JhZ2UgcGVyIHJlZ2lvbi4gU3VnZ2VzdCBsZWF2aW5nIHRoZW0gb3V0IG9mIHZlcnNpb24gNC4yLiIsImNyZWF0ZWRBdCI6IjIwMjYtMTEtMThUMTA6MzA6MDAuMDAwWiIsIm1vZGlmaWVkQXQiOiIyMDI2LTExLTE4VDEwOjMwOjAwLjAwMFoifV19fQ==-->
+  <h2>Outcomes</h2>
+  <ul>
+    <li>At least 80% of learners complete the six-week course.</li>
+    <li>At least 70% of learners use one new online service on their own three months after the course.</li>
+  </ul>
+  <p>Contact: Nicholas Butler, Grants Coordinator, (555) 010-0187. This proposal follows the <a href="https://www.example.com/">Community Learning Fund guidelines</a>.</p>
+  <!--tinycomments|2.1|data:application/json;base64,eyJtY2UtY29udmVyc2F0aW9uX2xlYXJuZXItdGFyZ2V0Ijp7InVpZCI6Im1jZS1jb252ZXJzYXRpb25fbGVhcm5lci10YXJnZXQiLCJjb21tZW50cyI6W3sidWlkIjoibWNlLWNvbnZlcnNhdGlvbl9sZWFybmVyLXRhcmdldCIsImF1dGhvciI6Im1hcmdhcmV0LWxvbmciLCJhdXRob3JOYW1lIjoiTWFyZ2FyZXQgTG9uZyIsImF1dGhvckF2YXRhciI6Imh0dHBzOi8vc25lYWstcHJldmlldy50aW55LmNsb3VkL2RlbW91c2VyZGlyZWN0b3J5L2ltYWdlcy9lbXBsb3llZV9tYXJnYXJldC1sb25nXzEyOF8wZGQ3NzkzMy5qcGciLCJjb250ZW50IjoiMzIwIGFzc3VtZXMgNDAgY2xhc3NlcyBvZiA4IGxlYXJuZXJzLiBXaXRoIHRoZSBob2xpZGF5IGNsb3N1cmVzIHdlIGNhbiBydW4gMzYgY2xhc3NlcyBhdCBtb3N0LCBzbyB0aGUgdGFyZ2V0IHNob3VsZCBiZSAyODguIiwiY3JlYXRlZEF0IjoiMjAyNi0xMS0yMFQxNToxMDowMC4wMDBaIiwibW9kaWZpZWRBdCI6IjIwMjYtMTEtMjBUMTU6MTA6MDAuMDAwWiJ9LHsidWlkIjoibWNlLWNvbnZlcnNhdGlvbl9sZWFybmVyLXRhcmdldC1yZXBseS0xIiwiYXV0aG9yIjoibmljaG9sYXMtYnV0bGVyIiwiYXV0aG9yTmFtZSI6Ik5pY2hvbGFzIEJ1dGxlciIsImF1dGhvckF2YXRhciI6Imh0dHBzOi8vc25lYWstcHJldmlldy50aW55LmNsb3VkL2RlbW91c2VyZGlyZWN0b3J5L2ltYWdlcy9lbXBsb3llZV9uaWNob2xhcy1idXRsZXJfMTI4XzFhODljMGQ5LmpwZyIsImNvbnRlbnQiOiJHb29kIGNhdGNoLiBJIHdpbGwgY2hhbmdlIHRoZSBudW1iZXIgb25jZSBFbGVuYSBjb25maXJtcyB0aGUgaW5zdHJ1Y3RvciBob3VycyBpbiB0aGUgYnVkZ2V0LiIsImNyZWF0ZWRBdCI6IjIwMjYtMTEtMjFUMDk6MjU6MDAuMDAwWiIsIm1vZGlmaWVkQXQiOiIyMDI2LTExLTIxVDA5OjI1OjAwLjAwMFoifV19LCJtY2UtY29udmVyc2F0aW9uX3ZvbHVudGVlcnMiOnsidWlkIjoibWNlLWNvbnZlcnNhdGlvbl92b2x1bnRlZXJzIiwiY29tbWVudHMiOlt7InVpZCI6Im1jZS1jb252ZXJzYXRpb25fdm9sdW50ZWVycyIsImF1dGhvciI6Im5pY2hvbGFzLWJ1dGxlciIsImF1dGhvck5hbWUiOiJOaWNob2xhcyBCdXRsZXIiLCJhdXRob3JBdmF0YXIiOiJodHRwczovL3NuZWFrLXByZXZpZXcudGlueS5jbG91ZC9kZW1vdXNlcmRpcmVjdG9yeS9pbWFnZXMvZW1wbG95ZWVfbmljaG9sYXMtYnV0bGVyXzEyOF8xYTg5YzBkOS5qcGciLCJjb250ZW50IjoiSG93IG1hbnkgdm9sdW50ZWVycyBoYXZlIHdlIGNvbmZpcm1lZCBzbyBmYXI/IFRoZSBmb3VuZGF0aW9uIGFza3MgZm9yIG51bWJlcnMsIG5vdCBwbGFucy4iLCJjcmVhdGVkQXQiOiIyMDI2LTExLTIyVDE4OjQwOjAwLjAwMFoiLCJtb2RpZmllZEF0IjoiMjAyNi0xMS0yMlQxODo0MDowMC4wMDBaIn0seyJ1aWQiOiJtY2UtY29udmVyc2F0aW9uX3ZvbHVudGVlcnMtcmVwbHktMSIsImF1dGhvciI6Im1hcmdhcmV0LWxvbmciLCJhdXRob3JOYW1lIjoiTWFyZ2FyZXQgTG9uZyIsImF1dGhvckF2YXRhciI6Imh0dHBzOi8vc25lYWstcHJldmlldy50aW55LmNsb3VkL2RlbW91c2VyZGlyZWN0b3J5L2ltYWdlcy9lbXBsb3llZV9tYXJnYXJldC1sb25nXzEyOF8wZGQ3NzkzMy5qcGciLCJjb250ZW50IjoiVHdlbHZlIHNpZ25lZCB1cCBhZnRlciB0aGUgTm92ZW1iZXIgdm9sdW50ZWVyIGZhaXIsIGFuZCBmb3VyIG1vcmUgYXJlIGZpbmlzaGluZyB0aGVpciBiYWNrZ3JvdW5kIGNoZWNrcy4iLCJjcmVhdGVkQXQiOiIyMDI2LTExLTIzVDE0OjA1OjAwLjAwMFoiLCJtb2RpZmllZEF0IjoiMjAyNi0xMS0yM1QxNDowNTowMC4wMDBaIn1dfSwibWNlLWNvbnZlcnNhdGlvbl9ldmFsdWF0aW9uLWNvc3QiOnsidWlkIjoibWNlLWNvbnZlcnNhdGlvbl9ldmFsdWF0aW9uLWNvc3QiLCJjb21tZW50cyI6W3sidWlkIjoibWNlLWNvbnZlcnNhdGlvbl9ldmFsdWF0aW9uLWNvc3QiLCJhdXRob3IiOiJlbGVuYS1yb2RyaWd1ZXoiLCJhdXRob3JOYW1lIjoiRWxlbmEgUm9kcmlndWV6IiwiYXV0aG9yQXZhdGFyIjoiaHR0cHM6Ly9zbmVhay1wcmV2aWV3LnRpbnkuY2xvdWQvZGVtb3VzZXJkaXJlY3RvcnkvaW1hZ2VzL2VtcGxveWVlX2VsZW5hLXJvZHJpZ3Vlel8xMjhfZjhjYzAxYWYuanBnIiwiY29udGVudCI6IlRoZSBmb3VuZGF0aW9uIGNhcHMgZXZhbHVhdGlvbiBhdCA1JSBvZiB0aGUgcmVxdWVzdCwgd2hpY2ggaXMgJDIsNDI1LiBBdCAkNCwwMDAgd2UgYXJlIGF0IDguMiUuIENhbiB3ZSBtb3ZlICQxLDU3NSBpbnRvIGluc3RydWN0b3Igd2FnZXM/IiwiY3JlYXRlZEF0IjoiMjAyNi0xMS0yNVQxNjozMDowMC4wMDBaIiwibW9kaWZpZWRBdCI6IjIwMjYtMTEtMjVUMTY6MzA6MDAuMDAwWiJ9XX19-->
 </textarea>

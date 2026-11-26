@@ -20,6 +20,8 @@ The following demo shows the editor experience that <<mcp-integration,MCP config
 
 On premises, the editor configuration shown in the *JS* tab also needs xref:tinymceai.adoc#tinymceai_service_url[`+tinymceai_service_url+`] set to the AI service URL, and xref:tinymceai.adoc#tinymceai_default_model[`+tinymceai_default_model+`] set to a model ID defined in `+MODELS+`. MCP servers are declared on the AI service through <<mcp-integration,`+MCP_SERVERS+`>>, not in the editor configuration.
 
+include::partial$demo-guides/tinymceai-mcp.adoc[]
+
 liveDemo::tinymceai-mcp[script_url_override="{tinymceai_mcp_live_demo_url}"]
 
 == Prerequisites

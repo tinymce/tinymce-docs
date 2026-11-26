@@ -1,0 +1,31 @@
+// "Try it" guide card for the editable-class-and-editable-root live demo. It is included directly above
+// liveDemo::editable-class-and-editable-root[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Editable areas in locked content">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Editable areas in locked content</span>
+    <span class="demo-guide__tier">Core feature</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This services agreement template is locked, except for 3 highlighted areas: the client details, the start date, and the special terms. Fill in the agreement for a new client.</p>
+    <ol class="demo-guide__steps">
+      <li>Click in a numbered clause, such as <strong>4. Confidentiality</strong>. The text cannot be changed, and formatting buttons such as <span class="demo-ui">Bold</span> and <span class="demo-ui">Italic</span> are unavailable.</li>
+      <li>Click in the highlighted <strong>Client</strong> line and replace the client name and address.</li>
+      <li>Change the <strong>Start date</strong>, then add a second paragraph under <strong>5. Special terms</strong>. Formatting buttons are available inside the highlighted areas.</li>
+      <li>Select <span class="demo-ui">Source code</span> in the toolbar, or open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Source code</span>. The areas keep <code>class="editable"</code>, and no <code>contenteditable</code> attribute is saved.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>editable_root: false</code> makes the whole document non-editable.</li>
+      <li><code>editable_class: 'editable'</code> makes elements with the <code>editable</code> class editable again, in place of the default <code>mceEditable</code> class.</li>
+      <li><code>content_style</code> highlights the editable areas with a dashed outline.</li>
+    </ul>
+  </details>
+</div>
+++++

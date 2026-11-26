@@ -1,0 +1,33 @@
+// "Try it" guide card for the drive live demo. It is included directly above
+// liveDemo::drive[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Tiny Drive">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Tiny Drive</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This asset brief is missing two files that are already in the campaign's file library: the coffee competition flyer and the vector logo for the printer. Insert both from {cloudfilemanager}.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point at the start of the <strong>Coffee competition</strong> paragraph and select <span class="demo-ui">Insert file</span> in the toolbar, or open <span class="demo-ui">Insert</span> &gt; <span class="demo-ui">File</span>. The file manager opens on 2 folders and 6 files.</li>
+      <li>Select the name <strong>Promo-may-love-coffee.jpg</strong>. Image files are inserted as images, and the file manager closes.</li>
+      <li>Place the insertion point after <strong>Vector logo for the printer:</strong>, open the file manager again, open the <strong>logos</strong> folder and select <strong>logo-on-white.svg</strong>. Other file types are inserted as links.</li>
+      <li>Open <span class="demo-ui">Insert</span> &gt; <span class="demo-ui">Image…</span> and select <span class="demo-ui">Browse files</span> next to <span class="demo-ui">Source</span>. The same library opens, showing only folders and images.</li>
+      <li>Paste or drag an image file into the brief. It is uploaded to a new <strong>Campaign uploads</strong> folder, which appears in the file manager.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>menu.insert</code> adds <strong>File</strong> to the <strong>Insert</strong> menu and keeps its other items. <strong>File</strong> and the <code>insertfile</code> toolbar button both open the file manager.</li>
+      <li><code>tinydrive_upload_path: '/Campaign uploads'</code> sets the folder that pasted and dropped images are uploaded to.</li>
+      <li><code>tinydrive_token_provider</code> supplies the JSON Web Token that authorizes each request. In this demo it returns a fixed token and the file manager opens a sample library instead of a real {cloudfilemanager} account.</li>
+      <li>The <code>editimage</code> plugin adds <strong>Rotate</strong>, <strong>Flip</strong>, <strong>Edit image</strong> and <strong>Image options</strong> buttons to the toolbar that appears when an image is selected.</li>
+    </ul>
+  </details>
+</div>
+++++

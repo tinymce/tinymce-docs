@@ -66,7 +66,17 @@
 .demo-dfree .dfree-body a {
   text-decoration: underline;
 }
-.demo-dfree .dfree-body td,
-.demo-dfree .dfree-body tr {
+.demo-dfree .dfree-body table {
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+.demo-dfree .dfree-body th,
+.demo-dfree .dfree-body td {
   border: 1px solid #696969;
+  padding: 4px 10px;
+  text-align: left;
+}
+.demo-dfree .dfree-body ul,
+.demo-dfree .dfree-body ol {
+  margin-bottom: 10px;
 }

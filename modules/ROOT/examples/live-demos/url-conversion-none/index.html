@@ -1,4 +1,25 @@
 <textarea id="url-conversion-none">
-  <p>Some relative urls: <a href="../index.html">content</a>. <img src="{{logofordemos}}" alt="Tiny Logo" width="128" height="128"></p>
-  <p>Some absolute urls: <a href="https://www.tiny.cloud/index.html">content</a>. <img src="{{logofordemos}}" alt="Tiny Logo" width="128" height="128"></p>
+  <h1>Incident report: delayed email notifications</h1>
+  <p><strong>Status: Resolved.</strong> Posted December 2 at 4:45 PM Eastern Time.</p>
+  <h2>Summary</h2>
+  <p>Between 1:10 PM and 3:55 PM Eastern Time on December 2, email notifications for new tickets and replies were delayed by up to 90 minutes. No messages were lost. In-app notifications and the ticket queue were not affected.</p>
+  <h2>Timeline</h2>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 23.8%;"><col style="width: 76.2%;"></colgroup>
+    <thead>
+      <tr><th>Time (ET)</th><th>Update</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1:10 PM</td><td>Notification queue starts to back up after a configuration change.</td></tr>
+      <tr><td>1:42 PM</td><td>Engineers confirm the delay and post an initial notice.</td></tr>
+      <tr><td>2:30 PM</td><td>Configuration change rolled back. Queue starts to drain.</td></tr>
+      <tr><td>3:55 PM</td><td>All delayed notifications delivered.</td></tr>
+    </tbody>
+  </table>
+  <h2>What we are changing</h2>
+  <ul>
+    <li>Queue length alerts now page the on-call engineer after 5 minutes, not 30.</li>
+    <li>Configuration changes to the notification service now need a second reviewer.</li>
+  </ul>
+  <p>See earlier incidents on the <a href="/status/history/">status history</a> page, or read the <a href="../postmortems/notification-delays/">full postmortem</a>. To get updates by email, <a href="https://www.example.com/">subscribe to status alerts</a>.</p>
 </textarea>

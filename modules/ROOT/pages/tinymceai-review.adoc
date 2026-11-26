@@ -17,7 +17,9 @@ The Review feature is available as a plugin UI and through the Reviews API. This
 [[demo]]
 == Demo
 
-The interactive demo below loads the editor with the Review feature. Use the Review toolbar button to open the Review sidebar and run the built-in reviews.
+The interactive demo below loads the editor with the Review sidebar open. Select *Run* under a built-in review to analyze the whole document.
+
+include::partial$demo-guides/tinymceai-review.adoc[]
 
 liveDemo::tinymceai-review[]
 

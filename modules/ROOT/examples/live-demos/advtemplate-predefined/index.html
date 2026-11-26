@@ -1,21 +1,34 @@
 <textarea id="template-predefined">
-  <blockquote>
-    <p><strong>Try it:</strong></p>
-    <ul>
-      <li>Place the insertion point at the end of this message, select <strong>Insert template</strong> in the toolbar, expand <strong>Offers</strong>, and select <strong>Offer summary</strong> to preview it. Select <strong>Insert</strong> to add it with its headings, lists, and merge tags.</li>
-      <li>Type part of a name, such as <code>reschedule</code>, in the <strong>Search</strong> box to find a template in any category.</li>
-    </ul>
-  </blockquote>
+  <p><strong>To:</strong> {{prefix}}Candidate.FirstName{{suffix}} {{prefix}}Candidate.LastName{{suffix}}<br><strong>Subject:</strong> Your offer for the {{prefix}}Role.Title{{suffix}} position</p>
   <p>Hi {{prefix}}Candidate.FirstName{{suffix}},</p>
-  <p>Thank you for applying for the {{prefix}}Role.Title{{suffix}} position. The hiring team would like to invite you to an interview.</p>
-  <table>
+  <p>Thank you for meeting with {{prefix}}Role.HiringManager{{suffix}} and the {{prefix}}Role.Department{{suffix}} team. The panel enjoyed the portfolio walkthrough, and we are delighted to offer you the {{prefix}}Role.Title{{suffix}} position.</p>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 37.3%;"><col style="width: 28.8%;"><col style="width: 33.9%;"></colgroup>
+    <thead>
+      <tr>
+        <th>Interview stage</th>
+        <th>Date</th>
+        <th>Outcome</th>
+      </tr>
+    </thead>
     <tbody>
-      <tr><th>Date</th><td>{{prefix}}Interview.Date{{suffix}}</td></tr>
-      <tr><th>Time</th><td>{{prefix}}Interview.Time{{suffix}}</td></tr>
-      <tr><th>Location</th><td>{{prefix}}Interview.Location{{suffix}}</td></tr>
-      <tr><th>Panel</th><td>{{prefix}}Role.HiringManager{{suffix}} and {{prefix}}Recruiter.Name{{suffix}}</td></tr>
+      <tr>
+        <td>Phone screen</td>
+        <td>November 18</td>
+        <td>Passed</td>
+      </tr>
+      <tr>
+        <td>Portfolio review</td>
+        <td>November 25</td>
+        <td>Passed</td>
+      </tr>
+      <tr>
+        <td>Panel interview</td>
+        <td>December 2</td>
+        <td>Offer approved</td>
+      </tr>
     </tbody>
   </table>
-  <p>The interview takes about 45 minutes. Please reply to confirm the time.</p>
-  <p>Kind regards,<br>{{prefix}}Recruiter.Name{{suffix}}</p>
+  <p>The key terms of the offer are below. Please reply by December 19 to accept, or to ask any questions about the offer.</p>
+  <p>&nbsp;</p>
 </textarea>

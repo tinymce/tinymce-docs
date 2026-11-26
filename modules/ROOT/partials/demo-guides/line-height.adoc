@@ -1,0 +1,29 @@
+// "Try it" guide card for the line-height live demo. It is included directly above
+// liveDemo::line-height[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Line height">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Line height</span>
+    <span class="demo-guide__tier">Core feature</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This patient handout prints the same instructions twice: in standard print, and in easy-to-read print with wider line spacing. Change the spacing of any block and compare the two versions.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point in the <strong>Standard print</strong> paragraph and open <span class="demo-ui">Line height</span> in the toolbar. The check mark shows the value set on that paragraph, <strong>1.3</strong>.</li>
+      <li>Choose <strong>2</strong> to match the easy-to-read version. Select several blocks, such as the three list items, to change them together.</li>
+      <li>Choose the checked value again to remove it. The block goes back to the line height in the content stylesheet, and the menu no longer marks a value.</li>
+      <li>Open <span class="demo-ui">Format</span> &gt; <span class="demo-ui">Line height</span> to apply the same values from the menu bar.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>line_height_formats</code> lists the values in the menu, mixing multipliers such as <code>1.5</code> with a fixed <code>24px</code>, which the list items use.</li>
+    </ul>
+  </details>
+</div>
+++++

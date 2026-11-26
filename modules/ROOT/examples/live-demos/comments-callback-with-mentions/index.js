@@ -180,16 +180,17 @@ const mentions_select = (mention, success) => {
 
 tinymce.init({
   selector: 'textarea#comments-callback-with-mentions',
-  height: 680,
-  plugins: 'tinycomments mentions quickbars lists link advlist autolink image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
-  toolbar: 'addcomment showcomments | undo redo | blocks | bold italic | ' +
-    'bullist numlist | link | backcolor | ' +
-    'alignleft aligncenter alignright alignjustify | outdent indent | ' +
+  height: 720,
+  plugins: [
+    'tinycomments', 'mentions', 'quickbars',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'addcomment showcomments | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
     'removeformat | help',
-  menubar: 'file edit view insert format tools table comments help',
-  menu: {
-    comments: { title: 'Comments', items: 'addcomment showcomments deleteallconversations' }
-  },
   quickbars_selection_toolbar: 'addcomment | bold italic | quicklink',
   quickbars_insert_toolbar: false,
   content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],

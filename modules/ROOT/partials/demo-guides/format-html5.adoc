@@ -1,0 +1,31 @@
+// "Try it" guide card for the format-html5 live demo. It is included directly above
+// liveDemo::format-html5[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: HTML5 containers">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">HTML5 containers</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">On this bookstore staff picks page, each genre is a <code>section</code> and each book is an <code>article</code>: 2 sections and 3 articles. The <strong>Young readers</strong> pick at the end is not wrapped yet. Wrap it to match.</p>
+    <ol class="demo-guide__steps">
+      <li>Outlines show each container and its element name, because <span class="demo-ui">Show blocks</span> is on. Select <span class="demo-ui">Show blocks</span> in the toolbar to turn the outlines off and on.</li>
+      <li>Select from the <strong>Young readers</strong> heading to the end of <strong>Picked by Rosa</strong>, open the <span class="demo-ui">Formats</span> dropdown and choose <span class="demo-ui">Containers</span> &gt; <span class="demo-ui">section</span>.</li>
+      <li>Select from the heading <strong>The Moon Library by Priya Shah</strong> to the end of <strong>Picked by Rosa</strong> and choose <span class="demo-ui">Containers</span> &gt; <span class="demo-ui">article</span>. The page now has 3 sections and 4 articles.</li>
+      <li>Place the insertion point at the end of <strong>Picked by Rosa</strong> and press <kbd>Enter</kbd> twice. The second <kbd>Enter</kbd> ends the article and starts a paragraph after it, inside the section.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>style_formats</code> groups block formats for headings, blocks and HTML5 containers, such as <code>section</code>, <code>article</code>, <code>aside</code> and <code>figure</code>, into three submenus. Container formats use <code>wrapper: true</code> to wrap the selected blocks.</li>
+      <li><code>visualblocks_default_state: true</code> shows the block outlines when the editor loads.</li>
+      <li><code>end_container_on_empty_block: true</code> lets an empty paragraph end any container, not only a blockquote.</li>
+    </ul>
+  </details>
+</div>
+++++

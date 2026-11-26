@@ -1,0 +1,30 @@
+// "Try it" guide card for the valid-elements live demo. It is included directly above
+// liveDemo::valid-elements[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Extended valid elements">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Extended valid elements</span>
+    <span class="demo-guide__tier">Core feature</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This help desk article was written with 5 bold and 2 italic phrases, which the <span class="demo-ui">HTML</span> tab shows. The filtering rules removed all 7 tags when the article loaded, and rewrote the image tag. Check both changes, then try to add bold text and a new image.</p>
+    <ol class="demo-guide__steps">
+      <li>Select <span class="demo-ui">Source code</span> in the toolbar, or open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Source code</span>. The article has no <code>&lt;strong&gt;</code> or <code>&lt;em&gt;</code> tags, and the laptop photo now has <code>class="myclass"</code> and <code>border="0"</code>. Select <span class="demo-ui">Cancel</span>.</li>
+      <li>Select a word and select <span class="demo-ui">Bold</span>. The word looks bold while editing, but <span class="demo-ui">Source code</span> shows no <code>&lt;strong&gt;</code> tag, and selecting <span class="demo-ui">Save</span> in that dialog removes the bold formatting.</li>
+      <li>Select <span class="demo-ui">Insert/edit image</span>, enter <code>https://www.tiny.cloud/docs/tinymce/latest/_images/tiny-husky.jpg</code> as the <span class="demo-ui">Source</span>, and select <span class="demo-ui">Save</span>.</li>
+      <li>Open <span class="demo-ui">Source code</span> again. The new image also has <code>class="myclass"</code> and <code>border="0"</code>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>extended_valid_elements: 'img[class=myclass|!src|border~0|alt|title|width|height|style]'</code> replaces the rule for images: <code>class=myclass</code> adds a default class when an image has none, <code>!src</code> makes the source required, <code>border~0</code> forces <code>border="0"</code>, and any attribute not listed is removed.</li>
+      <li><code>invalid_elements: 'strong,b,em,i'</code> removes bold and italic tags and keeps their text.</li>
+    </ul>
+  </details>
+</div>
+++++

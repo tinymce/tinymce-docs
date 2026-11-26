@@ -1,0 +1,35 @@
+// "Try it" guide card for the open-source-plugins live demo. It is included directly above
+// liveDemo::open-source-plugins[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--opensource" role="note" aria-label="Try it: Full featured open source demo">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Full featured open source demo</span>
+    <span class="demo-guide__tier">Open source plugins</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This {productname} overview page loads 28 open source plugins. Add a collapsible question under the feature list and link to it from the <strong>Open source</strong> row of the table.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point at the end of the last item under <strong>⭐️ Popular features</strong> and press <kbd>Enter</kbd> twice to end the list. Type <code>Is TinyMCE open source?</code>, select the new text and select <span class="demo-ui">Insert accordion</span>. The text becomes the title. Replace <strong>Accordion body…</strong> with <code>Yes, under the GPLv2+ license.</code></li>
+      <li>Place the insertion point at the start of the accordion title, open <span class="demo-ui">Insert</span> &gt; <span class="demo-ui">Anchor…</span>, enter <code>license</code> and select <span class="demo-ui">Save</span>.</li>
+      <li>In the <strong>Open source</strong> row of the table, select <strong>GPLv2+ license</strong>, then select <span class="demo-ui">Link</span> in the toolbar that appears over the selection. Enter <code>#license</code> and press <kbd>Enter</kbd>.</li>
+      <li>Wait 20 seconds, then reload the page and open <span class="demo-ui">File</span> &gt; <span class="demo-ui">Restore last draft</span> to bring the edits back.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>toolbar_mode: 'sliding'</code> moves the toolbar buttons that do not fit into a drawer, opened with <strong>Reveal or hide additional toolbar items</strong>.</li>
+      <li><code>autosave_interval: '20s'</code>, <code>autosave_retention: '30m'</code> and <code>autosave_prefix</code> save a draft in the browser every 20 seconds and keep it for 30 minutes.</li>
+      <li><code>image_advtab</code>, <code>image_caption</code> and <code>image_list</code> add an <strong>Advanced</strong> tab, a <strong>Show caption</strong> option and an <strong>Image list</strong> with the {productname} logo and a laptop photo to the image dialog.</li>
+      <li><code>link_list</code> adds two sample pages to the <strong>Link list</strong> in the link dialog.</li>
+      <li><code>file_picker_types: 'file image'</code> and <code>file_picker_callback</code> add a <strong>Browse links</strong> button to the link dialog and a <strong>Browse files</strong> button to the image dialog, which fill in the {productname} logo.</li>
+      <li><code>quickbars_selection_toolbar</code> adds <strong>Link</strong>, <strong>Insert image</strong> and <strong>Insert table</strong> to the toolbar that appears over selected text.</li>
+      <li><code>contextmenu: 'link image table'</code> limits the right-click menu to link, image and table items.</li>
+    </ul>
+  </details>
+</div>
+++++

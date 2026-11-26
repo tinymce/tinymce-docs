@@ -1,0 +1,30 @@
+// "Try it" guide card for the file-image-upload live demo. It is included directly above
+// liveDemo::file-image-upload[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Image upload">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Image upload</span>
+    <span class="demo-guide__tier">Core feature</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This backpacking gear guide has one photo, in the <strong>Backpack</strong> section. Add a photo to the <strong>Camp kitchen</strong> section. The demo simulates the upload, so no image leaves the browser.</p>
+    <ol class="demo-guide__steps">
+      <li>Paste an image from the clipboard, or drag a JPEG, PNG or WebP file from the desktop into the <strong>Camp kitchen</strong> paragraph. An <span class="demo-ui">Image uploading…</span> notification shows the progress.</li>
+      <li>Select <span class="demo-ui">Insert/edit image</span> in the toolbar, open the <span class="demo-ui">Upload</span> tab and select <span class="demo-ui">Browse for an image</span>. After the upload, the dialog switches to the <span class="demo-ui">General</span> tab with the returned address in <span class="demo-ui">Source</span>.</li>
+      <li>Drag a GIF file into the content. The editor shows <strong>Dropped file type is not supported</strong> and does not insert it.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>images_upload_handler</code> simulates an upload in five 20% steps and returns the local image address instead of a server URL. Setting it also adds the <strong>Upload</strong> tab to the image dialog.</li>
+      <li><code>automatic_uploads: true</code> uploads each image as soon as it is added to the content.</li>
+      <li><code>images_file_types: 'jpeg,jpg,png,webp'</code> leaves GIF out of the accepted file types.</li>
+    </ul>
+  </details>
+</div>
+++++

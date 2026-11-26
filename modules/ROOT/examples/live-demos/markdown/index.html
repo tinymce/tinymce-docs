@@ -1,8 +1,9 @@
 <textarea id="markdown">
-  <blockquote><p><strong>Try it:</strong> select <strong>Convert to Markdown</strong> in the toolbar to write these release notes as Markdown into the box below the editor. Then copy the Markdown in the box, or the sample that is already there, and paste it into the editor: it becomes headings, lists, links and code again. <strong>Insert Markdown</strong> inserts the box contents at the insertion point without the clipboard. Symbols such as (C) and emoji codes such as :rocket: are converted too.</p></blockquote>
-  <h1>Atlas CLI 3.2 release notes</h1>
-  <p>Atlas 3.2 adds incremental sync and a new <code>doctor</code> command, and removes support for configuration files in the 1.x format. Released <strong>18 November 2026</strong>.</p>
-  <h2>New features</h2>
+  <h1>Atlas CLI changelog</h1>
+  <p>All notable changes to Atlas CLI are listed here, newest first. Atlas follows <a href="https://semver.org/">semantic versioning</a>.</p>
+  <h2>3.2.0</h2>
+  <p>Released <strong>November 18, 2026</strong>. This release adds incremental sync and a new <code>doctor</code> command, and removes support for configuration files in the 1.x format.</p>
+  <h3>New features</h3>
   <ul>
     <li><strong>Incremental sync:</strong> <code>atlas sync</code> now uploads only the files that changed since the last run.
       <ul>
@@ -12,7 +13,7 @@
     </li>
     <li><strong>Health checks:</strong> <code>atlas doctor</code> checks credentials, network access and the local cache, and suggests a fix for each problem it finds.</li>
   </ul>
-  <h2>Upgrading</h2>
+  <h3>Upgrading</h3>
   <ol>
     <li>Back up the <code>.atlas</code> folder in the project root.</li>
     <li>Install the new version and run the migration:
@@ -21,17 +22,23 @@ atlas config migrate</code></pre>
     </li>
     <li>Run <code>atlas doctor</code> to confirm that the project is ready.</li>
   </ol>
-  <h2>Breaking changes</h2>
-  <p>Configuration files in the 1.x format are no longer read. Run <code>atlas config migrate</code> before upgrading, or see the <a href="https://example.com/">migration guide</a>.</p>
+  <h3>Breaking changes</h3>
+  <p>Configuration files in the 1.x format are no longer read. Run <code>atlas config migrate</code> before upgrading, or see the <a href="https://www.example.com/">migration guide</a>.</p>
+  <h2>3.1.4</h2>
+  <p>Released <strong>October 2, 2026</strong>.</p>
+  <ul>
+    <li>Fixed a crash in <code>atlas login</code> when the system proxy required authentication.</li>
+    <li>Progress bars now respect the <code>NO_COLOR</code> environment variable.</li>
+  </ul>
   <hr>
-  <p><em>Thanks to everyone who reported issues during the beta.</em></p>
+  <p><em>Thanks to everyone who reported issues during the 3.2 beta.</em></p>
 </textarea>
 
 <div style="margin-top: 16px;">
   <p><label for="markdown-source"><strong>Markdown</strong></label></p>
-  <textarea id="markdown-source" rows="16" style="box-sizing: border-box; width: 100%; padding: 12px; font-family: Menlo, Consolas, monospace; font-size: 14px;">## Atlas 3.2.1
+  <textarea id="markdown-source" rows="16" style="box-sizing: border-box; width: 100%; padding: 12px; font-family: Menlo, Consolas, monospace; font-size: 14px;">## 3.2.1
 
-Released **2 December 2026**.
+Released **December 2, 2026**.
 
 ### Fixed
 
@@ -40,7 +47,7 @@ Released **2 December 2026**.
 
 > Run `atlas doctor` after upgrading to check the local cache.
 
-See the [upgrade guide](https://example.com/) for details. :rocket:
+See the [upgrade guide](https://www.example.com/) for details. :rocket:
 
-Atlas(TM) is a trademark of Example Tools Ltd. (C) 2026</textarea>
+Atlas(TM) and Atlas Cloud(SM) are trademarks of Example Tools, Inc. (C) 2026</textarea>
 </div>

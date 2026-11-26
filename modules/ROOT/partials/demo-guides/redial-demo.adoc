@@ -1,0 +1,32 @@
+// "Try it" guide card for the redial-demo live demo. It is included directly above
+// liveDemo::redial-demo[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Multipage dialog with redial">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Multipage dialog with redial</span>
+    <span class="demo-guide__tier">Editor API</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This newsletter reports the office mascot vote. Cast a vote with the two-page dialog that collected the votes.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point at the end of the paragraph under <strong>Mascot vote results</strong> and select the <span class="demo-ui">{;}</span> button, the first button in the toolbar.</li>
+      <li>The <strong>Redial Demo</strong> dialog opens with <span class="demo-ui">Previous</span> and <span class="demo-ui">Next</span> both disabled. Check <span class="demo-ui">I agree to disagree</span> to enable <span class="demo-ui">Next</span>.</li>
+      <li>Select <span class="demo-ui">Next</span>. The same dialog redraws as <strong>Redial Demo - Page 2</strong>, with a <span class="demo-ui">Choose a pet</span> list.</li>
+      <li>Choose <strong>Rock</strong> and select <span class="demo-ui">Done</span>. The dialog closes and inserts <strong>You chose wisely: thunk</strong>, using the value of the chosen item rather than its label.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>page1Config</code> starts with both footer buttons disabled. Its <code>onChange</code> callback calls <code>dialogApi.setEnabled('uniquename', data.anyterms)</code> to follow the checkbox.</li>
+      <li>Its <code>onAction</code> callback calls <code>dialogApi.redial(page2Config)</code> when <span class="demo-ui">Next</span> is selected.</li>
+      <li><code>page2Config</code> adds a <code>selectbox</code> whose items have the values <code>meow</code>, <code>woof</code>, and <code>thunk</code>. Its <code>onAction</code> inserts the chosen value and calls <code>dialogApi.close()</code>.</li>
+      <li><code>editor.ui.registry.addButton('wizardExample')</code> adds the toolbar button, which opens the first page.</li>
+    </ul>
+  </details>
+</div>
+++++

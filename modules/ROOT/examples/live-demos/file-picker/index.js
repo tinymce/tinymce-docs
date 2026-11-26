@@ -1,18 +1,27 @@
 tinymce.init({
   selector: 'textarea#file-picker',
-  plugins: 'image code',
-  toolbar: 'undo redo | link image | code',
-  /* enable title field in the Image dialog*/
+  height: 760,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'image | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'removeformat | help',
+  /* enable title field in the Image dialog */
   image_title: true,
-  /* enable automatic uploads of images represented by blob or data URIs*/
+  /* enable automatic uploads of images represented by blob or data URIs */
   automatic_uploads: true,
   /*
-    URL of our upload handler (for more details check: https://www.tiny.cloud/docs/configure/file-image-upload/#images_upload_url)
+    URL of the upload handler (for more details see:
+    https://www.tiny.cloud/docs/tinymce/latest/image-upload/#images_upload_url)
     images_upload_url: 'postAcceptor.php',
-    here we add custom filepicker only to Image dialog
+    here the custom file picker is added to the Image dialog only
   */
   file_picker_types: 'image',
-  /* and here's our custom image picker*/
+  /* and here is the custom image picker */
   file_picker_callback: (cb, value, meta) => {
     const input = document.createElement('input');
     input.setAttribute('type', 'file');
@@ -24,9 +33,8 @@ tinymce.init({
       const reader = new FileReader();
       reader.addEventListener('load', () => {
         /*
-          Note: Now we need to register the blob in TinyMCEs image blob
-          registry. In the next release this part hopefully won't be
-          necessary, as we are looking to handle it internally.
+          Register the blob in the editor's image blob cache,
+          so the editor can upload it like a pasted image.
         */
         const id = 'blobid' + (new Date()).getTime();
         const blobCache =  tinymce.activeEditor.editorUpload.blobCache;
@@ -42,5 +50,5 @@ tinymce.init({
 
     input.click();
   },
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

@@ -264,6 +264,7 @@ const revisions = [
       <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
       <h2>A simple table to play with</h2>
       <table style="border-collapse: collapse; width: 100%;" border="1">
+      <colgroup><col style="width: 34.2%;"><col style="width: 31.6%;"><col style="width: 34.2%;"></colgroup>
       <thead>
       <tr>
       <th>Product</th>
@@ -297,7 +298,7 @@ const revisions = [
     content: `
       <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/tinymce/latest/_images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
       <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
-      <h2>Got questions or need help?</span></h2>
+      <h2>Got questions or need help?</h2>
       <ol>
       <li>Our <a href="../">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
       <li>Have a specific question? Try the <a href="https://stackoverflow.com/questions/tagged/tinymce" target="_blank" rel="noopener"><code>tinymce</code> tag at Stack Overflow</a>.</li>
@@ -305,6 +306,7 @@ const revisions = [
       </ol>
       <h2>A simple table to play with</h2>
       <table style="border-collapse: collapse; width: 100%;" border="1">
+      <colgroup><col style="width: 34.2%;"><col style="width: 31.6%;"><col style="width: 34.2%;"></colgroup>
       <thead>
       <tr>
       <th>Product</th>
@@ -346,6 +348,7 @@ const revisions = [
       </ul>
       <h2>A simple table to play with</h2>
       <table style="border-collapse: collapse; width: 100%;" border="1">
+      <colgroup><col style="width: 34.2%;"><col style="width: 31.6%;"><col style="width: 34.2%;"></colgroup>
       <thead>
       <tr>
       <th>Product</th>
@@ -380,9 +383,9 @@ const revisionhistory_fetch = () => new Promise((resolve) => {
 
 const revisionhistory_fetch_revision = (_editor, revision) => new Promise((resolve, reject) => {
   setTimeout(() => {
-    const revision = revisions.find((r) => r.revisionId === revision.revisionId);
-    if (revision) {
-      resolve(revision);
+    const found = revisions.find((r) => r.revisionId === revision.revisionId);
+    if (found) {
+      resolve(found);
     } else {
       reject(`Revision ${revision.revisionId} is not found`);
     }
@@ -482,13 +485,13 @@ tinymce.init({
     { title: 'My page 2', value: 'http://www.moxiecode.com' }
   ],
   importcss_append: true,
-  height: 600,
+  height: 800,
   quickbars_selection_toolbar: 'tinymceai-quickactions ai-quickactions-translate | bold italic | quicklink h2 h3 blockquote quicktable | addcomment',
   noneditable_class: 'mceNonEditable',
   toolbar_mode: 'sliding',
   spellchecker_ignore_list: ['Ephox', 'Moxiecode', 'tinymce', 'TinyMCE'],
-  content_style: '.mymention{ color: gray; }' +
-  'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  content_style: '.mymention{ color: gray; }',
   contextmenu: 'link uploadcare uploadcare-video table spellchecker configurepermanentpen',
   
   tinymceai_token_provider: async () => {

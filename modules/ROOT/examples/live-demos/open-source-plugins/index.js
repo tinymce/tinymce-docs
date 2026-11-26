@@ -1,62 +1,44 @@
-const useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const isSmallScreen = window.matchMedia('(max-width: 1023.5px)').matches;
-
 tinymce.init({
   selector: 'textarea#open-source-plugins',
+  height: 720,
   plugins: [
-    'accordion', 'advlist', 'anchor', 'autolink', 'autoresize', 'autosave', 'charmap', 'code',
+    'accordion', 'advlist', 'anchor', 'autolink', 'autosave', 'charmap', 'code',
     'codesample', 'directionality', 'emoticons', 'fullscreen', 'help', 'image',
     'importcss', 'insertdatetime', 'link', 'lists', 'media',
     'nonbreaking', 'pagebreak', 'preview', 'quickbars', 'save', 'searchreplace',
-    'table', 'visualblocks', 'visualchars', 'wordcount',
-    /* Premium plugins for demo purposes only */
-    'mediaembed',
+    'table', 'visualblocks', 'visualchars', 'wordcount'
   ],
-  editimage_cors_hosts: ['picsum.photos'],
-  menubar: 'file edit view insert format tools table help',
-  toolbar: "undo redo | accordion accordionremove | blocks fontfamily fontsize | bold italic underline strikethrough | align numlist bullist | link image | table media | lineheight outdent indent| forecolor backcolor removeformat | charmap emoticons | code fullscreen preview | save print | pagebreak anchor codesample | ltr rtl",
-  autosave_ask_before_unload: true,
-  autosave_interval: '30s',
+  toolbar: 'undo redo | accordion accordionremove | blocks fontfamily fontsize | ' +
+    'bold italic underline strikethrough | align numlist bullist | link image | ' +
+    'table media | lineheight outdent indent | forecolor backcolor removeformat | ' +
+    'charmap emoticons | code fullscreen preview | save print | ' +
+    'pagebreak anchor codesample | ltr rtl | help',
+  toolbar_mode: 'sliding',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  autosave_interval: '20s',
+  autosave_retention: '30m',
   autosave_prefix: '{path}{query}-{id}-',
-  autosave_restore_when_empty: false,
-  autosave_retention: '2m',
   image_advtab: true,
+  image_caption: true,
+  image_list: [
+    { title: 'TinyMCE logo', value: 'https://www.tiny.cloud/docs/tinymce/latest/_images/logos/android-chrome-256x256.png' },
+    { title: 'Laptop with code', value: 'https://www.tiny.cloud/images/medium-pic.jpg' }
+  ],
   link_list: [
     { title: 'My page 1', value: 'https://www.tiny.cloud' },
     { title: 'My page 2', value: 'http://www.moxiecode.com' }
   ],
-  image_list: [
-    { title: 'My page 1', value: 'https://www.tiny.cloud' },
-    { title: 'My page 2', value: 'http://www.moxiecode.com' }
-  ],
-  image_class_list: [
-    { title: 'None', value: '' },
-    { title: 'Some class', value: 'class-name' }
-  ],
-  importcss_append: true,
+  file_picker_types: 'file image',
   file_picker_callback: (callback, value, meta) => {
     /* Provide file and text for the link dialog */
     if (meta.filetype === 'file') {
-      callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
+      callback('https://www.tiny.cloud/docs/tinymce/latest/_images/logos/android-chrome-256x256.png', { text: 'TinyMCE logo' });
     }
-
     /* Provide image and alt text for the image dialog */
     if (meta.filetype === 'image') {
-      callback('https://www.google.com/logos/google.jpg', { alt: 'My alt text' });
-    }
-
-    /* Provide alternative source and posted for the media dialog */
-    if (meta.filetype === 'media') {
-      callback('movie.mp4', { source2: 'alt.ogg', poster: 'https://www.google.com/logos/google.jpg' });
+      callback('https://www.tiny.cloud/docs/tinymce/latest/_images/logos/android-chrome-256x256.png', { alt: 'TinyMCE logo' });
     }
   },
-  height: 600,
-  image_caption: true,
   quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
-  noneditable_class: 'mceNonEditable',
-  toolbar_mode: 'sliding',
-  contextmenu: 'link image table',
-  skin: useDarkMode ? 'oxide-dark' : 'oxide',
-  content_css: useDarkMode ? 'dark' : 'default',
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  contextmenu: 'link image table'
 });

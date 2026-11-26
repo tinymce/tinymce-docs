@@ -102,7 +102,9 @@ The following example shows the {productname} Web Component in an HTML page, wit
 * Various {productname} configuration options set using attributes.
 * {productname} sourced from the {cloudname}.
 
-liveDemo::web-component[tab="html"]
+include::partial$demo-guides/web-component.adoc[]
+
+liveDemo::web-component[]
 endif::[]
 
 == Next Steps

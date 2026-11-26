@@ -1,50 +1,40 @@
 <textarea id="inline-css">
-  <blockquote><p><strong>Try it:</strong> select <strong>Generate email HTML</strong> below the editor. Every rule from the newsletter stylesheet is copied into a <code>style</code> attribute on the matching element, so the raw HTML renders the same in an email client that ignores stylesheets. Change a heading, a price or the button text, then generate the HTML again.</p></blockquote>
-  <h1>Copperleaf Coffee Roasters: December newsletter</h1>
-  <p>This month the roastery switches to the winter lineup, and the holiday gift boxes are back for a limited time.</p>
-  <h2>New this month</h2>
-  <table>
+  <h1>Lantern Street Books: December newsletter</h1>
+  <p>The shop stays open until 9 PM every weekday in December, and gift wrapping is free on every order until December 24.</p>
+  <h2>Staff picks</h2>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 51.5%;"><col style="width: 30.9%;"><col style="width: 17.6%;"></colgroup>
     <thead>
       <tr>
-        <th>Coffee</th>
-        <th>Tasting notes</th>
+        <th>Title</th>
+        <th>Author</th>
         <th class="price">Price</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Ethiopia Guji, 250 g</td>
-        <td>Peach, jasmine, honey</td>
-        <td class="price">$16.50</td>
+        <td>The Lighthouse Year</td>
+        <td>Rosa Delgado</td>
+        <td class="price">$27.00</td>
       </tr>
       <tr>
-        <td>Colombia Huila, 250 g</td>
-        <td>Red apple, caramel</td>
-        <td class="price">$14.00</td>
+        <td>Small Hours</td>
+        <td>James Whitfield</td>
+        <td class="price">$18.95</td>
       </tr>
       <tr>
-        <td>Winter Blend, 1 kg</td>
-        <td>Dark chocolate, spice</td>
-        <td class="price">$42.00</td>
+        <td>A Field Guide to Winter Birds</td>
+        <td>Priya Natarajan</td>
+        <td class="price">$22.50</td>
       </tr>
     </tbody>
   </table>
-  <h2>Holiday gift boxes</h2>
-  <p>Each box holds three 250 g bags chosen by the roasting team, a tasting card and a handwritten note.</p>
+  <h2>Events this month</h2>
   <ul>
-    <li>Order by <strong>15 December</strong> for delivery before the holidays.</li>
-    <li>Free shipping on orders over $50.</li>
+    <li><strong>December 6, 7 PM:</strong> Rosa Delgado reads from <em>The Lighthouse Year</em>.</li>
+    <li><strong>December 13, 10 AM:</strong> Story time for ages 3 to 7.</li>
+    <li><strong>December 20, 6 PM:</strong> Winter book swap. Bring a book, take a book.</li>
   </ul>
-  <p><a class="button" href="https://example.com/">Order a gift box</a></p>
-  <p class="small-print">Copperleaf Coffee Roasters, 18 Mill Lane, Portland, OR. This email was sent to subscribers of the Copperleaf newsletter.</p>
+  <p><a class="button" href="https://www.example.com/">Reserve a seat</a></p>
+  <p class="small-print">Lantern Street Books, 418 Lantern Street, Madison, WI 53703. (555) 010-0175. This email was sent to newsletter subscribers.</p>
 </textarea>
-
-<div id="inlinecss-api-runner" style="margin-top: 16px;">
-  <button id="inline-css-btn" type="button">Generate email HTML</button>
-  <h2>Raw HTML with inlined CSS</h2>
-  <textarea id="output-text-area" readonly style="display: block; box-sizing: border-box; width: 100%; min-height: 250px; padding: 12px; font-family: Menlo, Consolas, monospace; font-size: 13px;"></textarea>
-  <h2>Rendered output (no stylesheets)</h2>
-  <div style="height: 480px; display: flex; flex-direction: column; overflow: hidden; border: 1px solid #d9deef;">
-    <iframe id="outputIframe" title="Rendered email output" style="flex: 1; width: 100%; height: 100%; border: 0;"></iframe>
-  </div>
-</div>

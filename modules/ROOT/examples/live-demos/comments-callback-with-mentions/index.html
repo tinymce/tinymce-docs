@@ -1,9 +1,8 @@
 <textarea id="comments-callback-with-mentions">
-  <blockquote><p><strong>Try it:</strong> select highlighted text to open its conversation in the <strong>Comments</strong> sidebar, then reply and type <kbd>@</kbd> to mention a colleague. Hover over a mention, in a comment or in the text, to see that person's profile card. Select any other text and choose <strong>Add comment</strong> to start a new conversation. The signed-in user is James Wilson, so his comments can be edited or deleted, and his conversation about map tiles can be resolved from the <strong>Conversation Actions</strong> menu.</p></blockquote>
-  <h1>Offline mode: product specification</h1>
-  <p>Status: draft for review. Owner: <span class="mymention" data-mention-id="mia-andersson">@Mia Andersson</span>. Target release: version 4.2.</p>
+  <h1>Offline mode for field inspections: product requirements</h1>
+  <p><strong>Status:</strong> Draft for review<br><strong>Product owner:</strong> <span class="mymention" data-mention-id="mia-andersson">@Mia Andersson</span><br><strong>QA owner:</strong> <span class="mymention" data-mention-id="jade-scott">@Jade Scott</span><br><strong>Target release:</strong> Version 4.2</p>
   <h2>Problem</h2>
-  <p>Field inspectors often work at sites with no mobile signal. When the connection drops, the app discards unsaved inspection reports. Support logged 214 tickets about lost reports last quarter.</p>
+  <p>Field inspectors often work at sites with no mobile signal. When the connection drops, the app discards unsaved inspection reports. Support logged 214 tickets about lost reports last quarter, as listed in the <a href="https://www.example.com/">support ticket summary</a>.</p>
   <h2>Goals</h2>
   <ul>
     <li>Inspectors can create and edit reports, and attach photos, without a connection.</li>
@@ -11,19 +10,44 @@
     <li>No report is lost or overwritten without a warning.</li>
   </ul>
   <h2>Requirements</h2>
-  <table>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 48.0%;"><col style="width: 14.3%;"><col style="width: 37.7%;"></colgroup>
     <thead>
-      <tr><th>Requirement</th><th>Priority</th><th>Notes</th></tr>
+      <tr>
+        <th>Requirement</th>
+        <th>Priority</th>
+        <th>Notes</th>
+      </tr>
     </thead>
     <tbody>
-      <tr><td><span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_report-limit" data-mce-annotation="tinycomments">Store up to 50 reports on the device</span></td><td>Must</td><td>Encrypted at rest</td></tr>
-      <tr><td>Queue changes and retry the upload</td><td>Must</td><td>Retry every 30 seconds</td></tr>
-      <tr><td>Warn when two people edit the same report</td><td>Should</td><td>Show both versions side by side</td></tr>
-      <tr><td><span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_map-tiles" data-mce-annotation="tinycomments">Offline map tiles</span></td><td>Could</td><td>Deferred to a later release</td></tr>
+      <tr>
+        <td><span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_report-limit" data-mce-annotation="tinycomments">Store up to 50 reports on the device</span></td>
+        <td>Must</td>
+        <td>Encrypted at rest</td>
+      </tr>
+      <tr>
+        <td>Queue changes and retry the upload</td>
+        <td>Must</td>
+        <td>Retry every 30 seconds</td>
+      </tr>
+      <tr>
+        <td>Warn when two people edit the same report</td>
+        <td>Should</td>
+        <td>Show both versions side by side</td>
+      </tr>
+      <tr>
+        <td><span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_map-tiles" data-mce-annotation="tinycomments">Offline map tiles</span></td>
+        <td>Could</td>
+        <td>Deferred to a later release</td>
+      </tr>
     </tbody>
   </table>
   <h2>Out of scope</h2>
   <p>Editing the same report on more than one device while offline is not supported in this release.</p>
   <h2>Timeline</h2>
-  <p>Design review on December 3, beta with two regional teams in January, and general release in version 4.2.</p>
+  <ol>
+    <li>Design review on December 3</li>
+    <li>Beta with two regional inspection teams in January</li>
+    <li>General release in version 4.2</li>
+  </ol>
 </textarea>

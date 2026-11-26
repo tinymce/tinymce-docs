@@ -17,9 +17,13 @@ Example: `+http://www.example.com/path1/path2/file.htm+` >> `+path2/file.htm+`
 
 ==== Example: relative URLs on links and images
 
+include::partial$demo-guides/url-conversion-relative-1.adoc[]
+
 liveDemo::url-conversion-relative-1[]
 
 ==== Example: relative URLs on links and images to a specific page
+
+include::partial$demo-guides/url-conversion-relative-2.adoc[]
 
 liveDemo::url-conversion-relative-2[]
 
@@ -41,9 +45,13 @@ Example: `+path2/file.htm+` >> `+/path1/path2/file.htm+`
 
 ==== Example: absolute URLs on links and images
 
+include::partial$demo-guides/url-conversion-absolute-1.adoc[]
+
 liveDemo::url-conversion-absolute-1[]
 
 ==== Example: absolute URLs and including domain on links and images
+
+include::partial$demo-guides/url-conversion-absolute-2.adoc[]
 
 liveDemo::url-conversion-absolute-2[]
 

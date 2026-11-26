@@ -28,6 +28,8 @@ Applications can store images on a server instead of keeping them in the content
 [[interactive-example]]
 == Interactive example
 
+include::partial$demo-guides/file-image-upload.adoc[]
+
 liveDemo::file-image-upload[]
 
 The demo uses a custom xref:#images_upload_handler[`+images_upload_handler+`] function that simulates an upload with progress and returns the local image address instead of a server URL, so no image leaves the browser. Paste or drop an image into the content, or use the *Upload* tab in the *Insert/edit image* dialog.

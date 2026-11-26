@@ -1,21 +1,24 @@
 tinymce.init({
   selector: 'textarea#codesample',
-  height: 640,
-  plugins: 'codesample code lists link advlist autolink image charmap preview anchor searchreplace visualblocks fullscreen insertdatetime media table help wordcount',
-  toolbar: 'codesample code | undo redo | blocks | bold italic | bullist numlist | ' +
-    'link | backcolor | alignleft aligncenter alignright alignjustify | ' +
-    'outdent indent | removeformat | help',
-  codesample_languages: [
-    { text: 'HTML/XML', value: 'markup' },
-    { text: 'JavaScript', value: 'javascript' },
-    { text: 'CSS', value: 'css' },
-    { text: 'PHP', value: 'php' },
-    { text: 'Ruby', value: 'ruby' },
-    { text: 'Python', value: 'python' },
-    { text: 'Java', value: 'java' },
-    { text: 'C', value: 'c' },
-    { text: 'C#', value: 'csharp' },
-    { text: 'C++', value: 'cpp' }
+  height: 760,
+  plugins: [
+    'codesample',
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
   ],
-  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
+  toolbar: 'codesample | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'link table code | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  codesample_languages: [
+    { text: 'Node.js', value: 'javascript' },
+    { text: 'Python', value: 'python' },
+    { text: 'Ruby', value: 'ruby' },
+    { text: 'PHP', value: 'php' },
+    { text: 'Java', value: 'java' },
+    { text: 'C#', value: 'csharp' },
+    { text: 'HTML', value: 'markup' }
+  ]
 });

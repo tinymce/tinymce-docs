@@ -1,0 +1,32 @@
+// "Try it" guide card for the comments-ui-mode live demo. It is included directly above
+// liveDemo::comments-ui-mode[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Comment-only access">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Comment-only access</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This research manuscript is under peer review. The demo is signed in as Maya Patel, one of the reviewers: the manuscript text is locked, but the 3 review conversations are open. Answer the handling editor and add a new review comment.</p>
+    <ol class="demo-guide__steps">
+      <li>Try to type in the manuscript. Nothing changes, because the editor is in read-only mode.</li>
+      <li>Select the highlighted text "more than doubled after 12-hour shifts" to open Nora Hansen's question. Select <span class="demo-ui">Add comment…</span>, type a reply and select <span class="demo-ui">Save</span>.</li>
+      <li>Select other text, such as "Caffeine intake was self-reported.", then select <span class="demo-ui">Add comment</span> in the toolbar. Type a comment and select <span class="demo-ui">Save</span>.</li>
+      <li>Select "Day and night shifts were analyzed together." and open <span class="demo-ui">Comment Actions</span> on Maya's reply to edit or delete it.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>tinycomments_access: 'comment'</code> switches the editor to read-only mode and keeps adding, replying to, editing and deleting comments available.</li>
+      <li><code>tinycomments_mode: 'embedded'</code> stores the 3 review conversations in the editor content.</li>
+      <li><code>user_id: 'maya-patel'</code> and <code>fetch_users</code> sign in Maya Patel and look up names and avatars in a demo user directory.</li>
+      <li><code>sidebar_show: 'showcomments'</code> opens the <span class="demo-ui">Comments</span> sidebar when the editor loads.</li>
+    </ul>
+  </details>
+</div>
+++++

@@ -14,16 +14,22 @@ include::partial$misc/shortcut-os-mappings.adoc[]
 
 == Example: custom keyboard shortcut
 
-liveDemo::custom-shortcut[tab="js"]
+include::partial$demo-guides/custom-shortcut.adoc[]
+
+liveDemo::custom-shortcut[]
 
 == Example: adding a custom shortcut for a menu item
 
 When adding a shortcut for a custom menu item, add both a custom shortcut and a custom menu item. To display the shortcut on a custom menu item, add the `+shortcut+` configuration option when creating the menu item.
 
-liveDemo::custom-shortcut-2[tab="js"]
+include::partial$demo-guides/custom-shortcut-2.adoc[]
+
+liveDemo::custom-shortcut-2[]
 
 == Example: adding a custom shortcut for a toolbar button
 
 To include the keyboard shortcut information in the tooltip for a custom toolbar button, add the `+shortcut+` configuration option when creating the toolbar button.
 
-liveDemo::custom-shortcut-3[tab="js"]
+include::partial$demo-guides/custom-shortcut-3.adoc[]
+
+liveDemo::custom-shortcut-3[]

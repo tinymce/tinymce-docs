@@ -1,30 +1,55 @@
 <textarea id="comments-embedded-with-mentions">
-  <blockquote><p><strong>Try it:</strong> select highlighted text to open its conversation in the <strong>Comments</strong> sidebar, then reply and type <kbd>@</kbd> to mention a colleague. Hover over a mention, in a comment or in the text, to see that person's profile card. Select any other text and choose <strong>Add comment</strong> to start a new conversation. The signed-in user is James Wilson, so his comments can be edited or deleted, and his conversation about map tiles can be resolved from the <strong>Conversation Actions</strong> menu.</p></blockquote>
-  <h1>Offline mode: product specification</h1>
-  <p>Status: draft for review. Owner: <span class="mymention" data-mention-id="mia-andersson">@Mia Andersson</span>. Target release: version 4.2.</p>
-  <h2>Problem</h2>
-  <p>Field inspectors often work at sites with no mobile signal. When the connection drops, the app discards unsaved inspection reports. Support logged 214 tickets about lost reports last quarter.</p>
-  <h2>Goals</h2>
-  <ul>
-    <li>Inspectors can create and edit reports, and attach photos, without a connection.</li>
-    <li>Reports <span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_sync-time" data-mce-annotation="tinycomments">sync automatically within 60 seconds</span> of the connection returning.</li>
-    <li>No report is lost or overwritten without a warning.</li>
-  </ul>
-  <h2>Requirements</h2>
-  <table>
+  <h1>Campaign brief: Brew at Home winter launch</h1>
+  <p><strong>Client:</strong> Cedar &amp; Steam Coffee Roasters<br><strong>Campaign owner:</strong> <span class="mymention" data-mention-id="william-patterson">@William Patterson</span><br><strong>Design lead:</strong> <span class="mymention" data-mention-id="zara-khan">@Zara Khan</span><br><strong>Launch date:</strong> January 12<br><strong>Budget:</strong> $85,000</p>
+  <h2>Objective</h2>
+  <p>Launch the Brew at Home stovetop espresso kit to existing customers and to coffee drinkers aged 25 to 44 who make coffee at home. The goal is <span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_sales-target" data-mce-annotation="tinycomments">2,500 kit sales in the first eight weeks</span>, with at least 30% of buyers signing up for a monthly bean subscription.<img style="display: block; margin-left: auto; margin-right: auto;" src="https://www.tiny.cloud/docs/tinymce/latest/_images/tiny-drive-demo/images/Hero%20Backgrounds/aluminium-antique-coffee-6255_thumb.jpg" alt="A silver stovetop espresso maker on a gas burner in front of weathered blue and white boards" width="220" height="147"></p>
+  <h2>Key message</h2>
+  <p><strong>Café-quality espresso on the stove you already own, in five minutes.</strong></p>
+  <h2>Channels</h2>
+  <table style="border-collapse: collapse; width: 100%;" border="1">
+    <colgroup><col style="width: 38.8%;"><col style="width: 15.3%;"><col style="width: 27.1%;"><col style="width: 18.8%;"></colgroup>
     <thead>
-      <tr><th>Requirement</th><th>Priority</th><th>Notes</th></tr>
+      <tr>
+        <th>Channel</th>
+        <th>Budget</th>
+        <th>Owner</th>
+        <th>Start</th>
+      </tr>
     </thead>
     <tbody>
-      <tr><td><span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_report-limit" data-mce-annotation="tinycomments">Store up to 50 reports on the device</span></td><td>Must</td><td>Encrypted at rest</td></tr>
-      <tr><td>Queue changes and retry the upload</td><td>Must</td><td>Retry every 30 seconds</td></tr>
-      <tr><td>Warn when two people edit the same report</td><td>Should</td><td>Show both versions side by side</td></tr>
-      <tr><td><span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_map-tiles" data-mce-annotation="tinycomments">Offline map tiles</span></td><td>Could</td><td>Deferred to a later release</td></tr>
+      <tr>
+        <td>Email to 18,000 subscribers</td>
+        <td>$4,000</td>
+        <td>Samantha Coleman</td>
+        <td>January 12</td>
+      </tr>
+      <tr>
+        <td>Paid social video</td>
+        <td>$38,000</td>
+        <td>Samantha Coleman</td>
+        <td>January 12</td>
+      </tr>
+      <tr>
+        <td>Tasting events in 12 cafés</td>
+        <td>$27,000</td>
+        <td>William Patterson</td>
+        <td>January 17</td>
+      </tr>
+      <tr>
+        <td><span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_influencer-disclosure" data-mce-annotation="tinycomments">Creator partnerships</span></td>
+        <td>$16,000</td>
+        <td>Samantha Coleman</td>
+        <td>January 19</td>
+      </tr>
     </tbody>
   </table>
-  <h2>Out of scope</h2>
-  <p>Editing the same report on more than one device while offline is not supported in this release.</p>
-  <h2>Timeline</h2>
-  <p>Design review on December 3, beta with two regional teams in January, and general release in version 4.2.</p>
-  <!--tinycomments|2.1|data:application/json;base64,eyJtY2UtY29udmVyc2F0aW9uX3N5bmMtdGltZSI6eyJ1aWQiOiJtY2UtY29udmVyc2F0aW9uX3N5bmMtdGltZSIsImNvbW1lbnRzIjpbeyJ1aWQiOiJtY2UtY29udmVyc2F0aW9uX3N5bmMtdGltZSIsImF1dGhvciI6Im1pYS1hbmRlcnNzb24iLCJhdXRob3JOYW1lIjoiTWlhIEFuZGVyc3NvbiIsImF1dGhvckF2YXRhciI6Imh0dHBzOi8vc25lYWstcHJldmlldy50aW55LmNsb3VkL2RlbW91c2VyZGlyZWN0b3J5L2ltYWdlcy9lbXBsb3llZV9taWEtYW5kZXJzc29uXzEyOF9lNmY5NDI0Yi5qcGciLCJjb250ZW50IjoiQGphbWVzLXdpbHNvbiBpcyA2MCBzZWNvbmRzIHJlYWxpc3RpYyBvbiBhIHdlYWsgc2lnbmFsPyIsImNyZWF0ZWRBdCI6IjIwMjYtMTEtMTZUMDk6MjA6MDAuMDAwWiIsIm1vZGlmaWVkQXQiOiIyMDI2LTExLTE2VDA5OjIwOjAwLjAwMFoifSx7InVpZCI6Im1jZS1jb252ZXJzYXRpb25fc3luYy10aW1lLXJlcGx5LTEiLCJhdXRob3IiOiJqYW1lcy13aWxzb24iLCJhdXRob3JOYW1lIjoiSmFtZXMgV2lsc29uIiwiYXV0aG9yQXZhdGFyIjoiaHR0cHM6Ly9zbmVhay1wcmV2aWV3LnRpbnkuY2xvdWQvZGVtb3VzZXJkaXJlY3RvcnkvaW1hZ2VzL2VtcGxveWVlX2phbWVzLXdpbHNvbl8xMjhfNTJmMTk0MTIuanBnIiwiY29udGVudCI6IkBtaWEtYW5kZXJzc29uIHRlc3QgdXBsb2FkcyBvdmVyIDNHIHRvb2sgMjAgdG8gNDAgc2Vjb25kcyBmb3IgYSByZXBvcnQgd2l0aCBmaXZlIHBob3Rvcywgc28gNjAgc2Vjb25kcyBob2xkcyBmb3IgbW9zdCByZXBvcnRzLiBSZXBvcnRzIHdpdGggbWFueSBwaG90b3MgdGFrZSBsb25nZXIuIiwiY3JlYXRlZEF0IjoiMjAyNi0xMS0xN1QxNDowNTowMC4wMDBaIiwibW9kaWZpZWRBdCI6IjIwMjYtMTEtMTdUMTQ6MDU6MDAuMDAwWiJ9LHsidWlkIjoibWNlLWNvbnZlcnNhdGlvbl9zeW5jLXRpbWUtcmVwbHktMiIsImF1dGhvciI6ImphZGUtc2NvdHQiLCJhdXRob3JOYW1lIjoiSmFkZSBTY290dCIsImF1dGhvckF2YXRhciI6Imh0dHBzOi8vc25lYWstcHJldmlldy50aW55LmNsb3VkL2RlbW91c2VyZGlyZWN0b3J5L2ltYWdlcy9lbXBsb3llZV9qYWRlLXNjb3R0XzEyOF81MTVkYzZhMS5qcGciLCJjb250ZW50IjoiQGphbWVzLXdpbHNvbiBhZGRpbmcgYSB0ZXN0IGNhc2UgZm9yIGEgcmVwb3J0IHdpdGggMjAgcGhvdG9zIHRvIHRoZSByZWdyZXNzaW9uIHN1aXRlLiBSZXN1bHRzIHdpbGwgYmUgaW4gdGhlIEZyaWRheSB0ZXN0IHJlcG9ydC4iLCJjcmVhdGVkQXQiOiIyMDI2LTExLTE4VDA4OjQwOjAwLjAwMFoiLCJtb2RpZmllZEF0IjoiMjAyNi0xMS0xOFQwODo0MDowMC4wMDBaIn1dfSwibWNlLWNvbnZlcnNhdGlvbl9yZXBvcnQtbGltaXQiOnsidWlkIjoibWNlLWNvbnZlcnNhdGlvbl9yZXBvcnQtbGltaXQiLCJjb21tZW50cyI6W3sidWlkIjoibWNlLWNvbnZlcnNhdGlvbl9yZXBvcnQtbGltaXQiLCJhdXRob3IiOiJhbm5hLXBldHJvdiIsImF1dGhvck5hbWUiOiJBbm5hIFBldHJvdiIsImF1dGhvckF2YXRhciI6Imh0dHBzOi8vc25lYWstcHJldmlldy50aW55LmNsb3VkL2RlbW91c2VyZGlyZWN0b3J5L2ltYWdlcy9lbXBsb3llZV9hbm5hLXBldHJvdl8xMjhfMDBmN2Y5NTEuanBnIiwiY29udGVudCI6IkBtaWEtYW5kZXJzc29uIHdoYXQgaGFwcGVucyB3aGVuIGFuIGluc3BlY3RvciByZWFjaGVzIHRoZSA1MC1yZXBvcnQgbGltaXQ/IFBsZWFzZSBkZXNjcmliZSB0aGUgZXhwZWN0ZWQgYmVoYXZpb3IgaW4gdGhpcyB0YWJsZS4iLCJjcmVhdGVkQXQiOiIyMDI2LTExLTE4VDAzOjE1OjAwLjAwMFoiLCJtb2RpZmllZEF0IjoiMjAyNi0xMS0xOFQwMzoxNTowMC4wMDBaIn1dfSwibWNlLWNvbnZlcnNhdGlvbl9tYXAtdGlsZXMiOnsidWlkIjoibWNlLWNvbnZlcnNhdGlvbl9tYXAtdGlsZXMiLCJjb21tZW50cyI6W3sidWlkIjoibWNlLWNvbnZlcnNhdGlvbl9tYXAtdGlsZXMiLCJhdXRob3IiOiJqYW1lcy13aWxzb24iLCJhdXRob3JOYW1lIjoiSmFtZXMgV2lsc29uIiwiYXV0aG9yQXZhdGFyIjoiaHR0cHM6Ly9zbmVhay1wcmV2aWV3LnRpbnkuY2xvdWQvZGVtb3VzZXJkaXJlY3RvcnkvaW1hZ2VzL2VtcGxveWVlX2phbWVzLXdpbHNvbl8xMjhfNTJmMTk0MTIuanBnIiwiY29udGVudCI6Ik1hcCB0aWxlcyBuZWVkIGFib3V0IDMwMCBNQiBvZiBzdG9yYWdlIHBlciByZWdpb24uIFN1Z2dlc3QgbGVhdmluZyB0aGVtIG91dCBvZiB2ZXJzaW9uIDQuMi4iLCJjcmVhdGVkQXQiOiIyMDI2LTExLTE4VDEwOjMwOjAwLjAwMFoiLCJtb2RpZmllZEF0IjoiMjAyNi0xMS0xOFQxMDozMDowMC4wMDBaIn1dfX0=-->
+  <h2>Deliverables</h2>
+  <ul>
+    <li>Product page and launch email, due December 19</li>
+    <li>Three 15-second videos for paid social, due January 5</li>
+    <li><span class="mce-annotation tox-comment" data-mce-annotation-uid="mce-conversation_voucher-cost" data-mce-annotation="tinycomments">Tasting event kit with table signs, recipe cards and a $5 discount voucher</span></li>
+  </ul>
+  <h2>Approvals</h2>
+  <p>Legal review by December 12 and final sign-off by December 16. All creative follows the <a href="https://www.example.com/">Cedar &amp; Steam brand guidelines</a>. Questions go to the marketing desk at (555) 010-0163.</p>
+  <!--tinycomments|2.1|data:application/json;base64,eyJtY2UtY29udmVyc2F0aW9uX3NhbGVzLXRhcmdldCI6eyJ1aWQiOiJtY2UtY29udmVyc2F0aW9uX3NhbGVzLXRhcmdldCIsImNvbW1lbnRzIjpbeyJ1aWQiOiJtY2UtY29udmVyc2F0aW9uX3NhbGVzLXRhcmdldCIsImF1dGhvciI6IndpbGxpYW0tcGF0dGVyc29uIiwiYXV0aG9yTmFtZSI6IldpbGxpYW0gUGF0dGVyc29uIiwiYXV0aG9yQXZhdGFyIjoiaHR0cHM6Ly9zbmVhay1wcmV2aWV3LnRpbnkuY2xvdWQvZGVtb3VzZXJkaXJlY3RvcnkvaW1hZ2VzL2VtcGxveWVlX3dpbGxpYW0tcGF0dGVyc29uXzEyOF8wNWJlYjJiZC5qcGciLCJjb250ZW50IjoiQHNhbWFudGhhLWNvbGVtYW4gaXMgMiw1MDAgcmVhbGlzdGljPyBUaGUgZ3JpbmRlciBsYXVuY2ggbGFzdCB5ZWFyIHNvbGQgMSw5MDAga2l0cyBpbiBlaWdodCB3ZWVrcy4iLCJjcmVhdGVkQXQiOiIyMDI2LTExLTE5VDE3OjE1OjAwLjAwMFoiLCJtb2RpZmllZEF0IjoiMjAyNi0xMS0xOVQxNzoxNTowMC4wMDBaIn0seyJ1aWQiOiJtY2UtY29udmVyc2F0aW9uX3NhbGVzLXRhcmdldC1yZXBseS0xIiwiYXV0aG9yIjoic2FtYW50aGEtY29sZW1hbiIsImF1dGhvck5hbWUiOiJTYW1hbnRoYSBDb2xlbWFuIiwiYXV0aG9yQXZhdGFyIjoiaHR0cHM6Ly9zbmVhay1wcmV2aWV3LnRpbnkuY2xvdWQvZGVtb3VzZXJkaXJlY3RvcnkvaW1hZ2VzL2VtcGxveWVlX3NhbWFudGhhLWNvbGVtYW5fMTI4X2I3OTVlNzUzLmpwZyIsImNvbnRlbnQiOiJAd2lsbGlhbS1wYXR0ZXJzb24gdGhlIGdyaW5kZXIgbGF1bmNoIGhhZCBubyBlbWFpbCBjYW1wYWlnbi4gV2l0aCB0aGUgc3Vic2NyaWJlciBsaXN0LCAyLDUwMCBzaXRzIGluc2lkZSBvdXIgZm9yZWNhc3QgcmFuZ2UuIiwiY3JlYXRlZEF0IjoiMjAyNi0xMS0yMFQxMDowNTowMC4wMDBaIiwibW9kaWZpZWRBdCI6IjIwMjYtMTEtMjBUMTA6MDU6MDAuMDAwWiJ9XX0sIm1jZS1jb252ZXJzYXRpb25faW5mbHVlbmNlci1kaXNjbG9zdXJlIjp7InVpZCI6Im1jZS1jb252ZXJzYXRpb25faW5mbHVlbmNlci1kaXNjbG9zdXJlIiwiY29tbWVudHMiOlt7InVpZCI6Im1jZS1jb252ZXJzYXRpb25faW5mbHVlbmNlci1kaXNjbG9zdXJlIiwiYXV0aG9yIjoicGVuZWxvcGUtYnV0bGVyIiwiYXV0aG9yTmFtZSI6IlBlbmVsb3BlIEJ1dGxlciIsImF1dGhvckF2YXRhciI6Imh0dHBzOi8vc25lYWstcHJldmlldy50aW55LmNsb3VkL2RlbW91c2VyZGlyZWN0b3J5L2ltYWdlcy9lbXBsb3llZV9wZW5lbG9wZS1idXRsZXJfMTI4XzI0YWQ0YzNhLmpwZyIsImNvbnRlbnQiOiJAd2lsbGlhbS1wYXR0ZXJzb24gZXZlcnkgY3JlYXRvciBwb3N0IG5lZWRzIGEgY2xlYXIgI2FkIGxhYmVsIHRvIG1lZXQgdGhlIEZUQyBlbmRvcnNlbWVudCBndWlkZXMuIFBsZWFzZSBhZGQgaXQgdG8gdGhlIGNyZWF0b3IgY29udHJhY3QgY2hlY2tsaXN0LiIsImNyZWF0ZWRBdCI6IjIwMjYtMTEtMjNUMjE6NDU6MDAuMDAwWiIsIm1vZGlmaWVkQXQiOiIyMDI2LTExLTIzVDIxOjQ1OjAwLjAwMFoifSx7InVpZCI6Im1jZS1jb252ZXJzYXRpb25faW5mbHVlbmNlci1kaXNjbG9zdXJlLXJlcGx5LTEiLCJhdXRob3IiOiJ3aWxsaWFtLXBhdHRlcnNvbiIsImF1dGhvck5hbWUiOiJXaWxsaWFtIFBhdHRlcnNvbiIsImF1dGhvckF2YXRhciI6Imh0dHBzOi8vc25lYWstcHJldmlldy50aW55LmNsb3VkL2RlbW91c2VyZGlyZWN0b3J5L2ltYWdlcy9lbXBsb3llZV93aWxsaWFtLXBhdHRlcnNvbl8xMjhfMDViZWIyYmQuanBnIiwiY29udGVudCI6IkBzYW1hbnRoYS1jb2xlbWFuIGNhbiB5b3UgYWRkIHRoZSBkaXNjbG9zdXJlIGNsYXVzZSB0byB0aGUgY29udHJhY3QgdGVtcGxhdGUgYmVmb3JlIEZyaWRheT8iLCJjcmVhdGVkQXQiOiIyMDI2LTExLTI0VDA4OjMwOjAwLjAwMFoiLCJtb2RpZmllZEF0IjoiMjAyNi0xMS0yNFQwODozMDowMC4wMDBaIn1dfSwibWNlLWNvbnZlcnNhdGlvbl92b3VjaGVyLWNvc3QiOnsidWlkIjoibWNlLWNvbnZlcnNhdGlvbl92b3VjaGVyLWNvc3QiLCJjb21tZW50cyI6W3sidWlkIjoibWNlLWNvbnZlcnNhdGlvbl92b3VjaGVyLWNvc3QiLCJhdXRob3IiOiJhbWFuZGEtamVua2lucyIsImF1dGhvck5hbWUiOiJBbWFuZGEgSmVua2lucyIsImF1dGhvckF2YXRhciI6Imh0dHBzOi8vc25lYWstcHJldmlldy50aW55LmNsb3VkL2RlbW91c2VyZGlyZWN0b3J5L2ltYWdlcy9lbXBsb3llZV9hbWFuZGEtamVua2luc18xMjhfODU0NTg4YWMuanBnIiwiY29udGVudCI6IkB3aWxsaWFtLXBhdHRlcnNvbiB0aGUgJDUgdm91Y2hlciBpcyBub3QgaW4gdGhlIGJ1ZGdldCB0YWJsZS4gQXQgMiw1MDAgcmVkZW1wdGlvbnMgaXQgYWRkcyAkMTIsNTAwLiIsImNyZWF0ZWRBdCI6IjIwMjYtMTEtMjVUMTU6MjA6MDAuMDAwWiIsIm1vZGlmaWVkQXQiOiIyMDI2LTExLTI1VDE1OjIwOjAwLjAwMFoifSx7InVpZCI6Im1jZS1jb252ZXJzYXRpb25fdm91Y2hlci1jb3N0LXJlcGx5LTEiLCJhdXRob3IiOiJ6YXJhLWtoYW4iLCJhdXRob3JOYW1lIjoiWmFyYSBLaGFuIiwiYXV0aG9yQXZhdGFyIjoiaHR0cHM6Ly9zbmVhay1wcmV2aWV3LnRpbnkuY2xvdWQvZGVtb3VzZXJkaXJlY3RvcnkvaW1hZ2VzL2VtcGxveWVlX3phcmEta2hhbl8xMjhfYTQ2NWIwODIuanBnIiwiY29udGVudCI6IkBhbWFuZGEtamVua2lucyB0aGUgdm91Y2hlciBhcnR3b3JrIGlzIGZpbmlzaGVkLCBzbyBvbmx5IHRoZSBidWRnZXQgZGVjaXNpb24gaXMgbGVmdC4iLCJjcmVhdGVkQXQiOiIyMDI2LTExLTI1VDE5OjUwOjAwLjAwMFoiLCJtb2RpZmllZEF0IjoiMjAyNi0xMS0yNVQxOTo1MDowMC4wMDBaIn1dfX0=-->
 </textarea>

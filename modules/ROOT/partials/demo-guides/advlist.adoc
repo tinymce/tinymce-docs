@@ -1,0 +1,30 @@
+// "Try it" guide card for the advlist live demo. It is included directly above
+// liveDemo::advlist[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--opensource" role="note" aria-label="Try it: List Styles">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">List Styles</span>
+    <span class="demo-guide__tier">Open source plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">Articles I and II of this airline baggage policy follow the outline style: Roman numerals, then capital letters, then lowercase letters. Article III was pasted in with plain numbers in its 2 nested lists. Restyle them to match.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point in the first item under <strong>Delayed and damaged baggage</strong>, open the arrow next to <span class="demo-ui">Numbered list</span> and choose <span class="demo-ui">Upper Alpha</span>.</li>
+      <li>Place the insertion point in <strong>$50 per day for the first five days</strong> and choose <span class="demo-ui">Lower Alpha</span> from the same menu. The menu offers 5 styles, in the order the outline uses them.</li>
+      <li>Place the insertion point in the first item under <strong>Schedule B</strong>, open the arrow next to <span class="demo-ui">Bullet list</span> and switch between the 2 bullet styles, <span class="demo-ui">Square</span> and <span class="demo-ui">Disc</span>.</li>
+      <li>Press <kbd>Tab</kbd> in a list item to nest it one level deeper, then give the new level its own style.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>advlist_number_styles: 'default,upper-roman,upper-alpha,lower-alpha,lower-roman'</code> lists the numbering styles in outline order and leaves out <strong>Lower Greek</strong>.</li>
+      <li><code>advlist_bullet_styles: 'square,disc'</code> limits the bullet styles to the two that the policy uses.</li>
+    </ul>
+  </details>
+</div>
+++++

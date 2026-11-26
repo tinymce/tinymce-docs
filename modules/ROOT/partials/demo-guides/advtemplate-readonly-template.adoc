@@ -1,0 +1,32 @@
+// "Try it" guide card for the advtemplate-readonly-template live demo. It is included directly above
+// liveDemo::{plugincode}-readonly-template[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Read-only template categories">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Read-only template categories</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This welcome email to a new hire uses an onboarding template library with 3 categories. The People Team has locked 2 of them, so the approved policy and benefits wording cannot be changed from the editor. Find out what the lock allows and what it prevents.</p>
+    <ol class="demo-guide__steps">
+      <li>Select <span class="demo-ui">Insert template</span> in the toolbar. <strong>Policy acknowledgments</strong> and <strong>Payroll and benefits</strong> show a lock icon with the tooltip <span class="demo-ui">Locked for editing</span>.</li>
+      <li>Expand <strong>Payroll and benefits</strong>, select <strong>Benefits enrollment</strong> to preview it, and select <span class="demo-ui">Insert</span>. Locked templates can still be inserted, but they have no <span class="demo-ui">Template actions</span> menu.</li>
+      <li>Open <span class="demo-ui">Insert template</span> again and open <span class="demo-ui">Template actions</span> next to a template in <strong>Welcome messages</strong>. <span class="demo-ui">Rename…</span>, <span class="demo-ui">Move to…</span>, and <span class="demo-ui">Delete</span> are available there. <span class="demo-ui">Move to…</span> does not list the locked categories.</li>
+      <li>Close the dialog, select the paragraph that starts "On the first day", and select <span class="demo-ui">Save as template</span>. The <span class="demo-ui">Category</span> list offers only <strong>Uncategorized</strong> and <strong>Welcome messages</strong>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>locked: true</code> on two categories in the data that <code>advtemplate_list</code> returns makes those categories and their 4 templates read-only.</li>
+      <li><code>advtemplate_list</code>, <code>advtemplate_get_template</code>, and the create, rename, move, and delete callbacks connect the dialogs to an in-memory store that stands in for a remote template service.</li>
+      <li><code>contextmenu: 'advtemplate'</code> shows <span class="demo-ui">Save as template…</span> when selected text is right-clicked.</li>
+      <li><code>mergetags_list</code> defines the employee, manager, and company merge tags used in the templates.</li>
+    </ul>
+  </details>
+</div>
+++++

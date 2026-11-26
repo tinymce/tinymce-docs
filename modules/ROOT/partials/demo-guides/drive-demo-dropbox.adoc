@@ -1,0 +1,32 @@
+// "Try it" guide card for the drive-demo-dropbox live demo. It is included directly above
+// liveDemo::drive-demo-dropbox[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Tiny Drive with Dropbox">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Tiny Drive with Dropbox</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">The bike manufacturer shares its launch photos and spec sheets through Dropbox. Import them into the {cloudfilemanager} library, then add one to the 3 items under <strong>Launch assets</strong> in this launch kit.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point at the end of the first <strong>Launch assets</strong> item and select <span class="demo-ui">Insert file</span> in the toolbar.</li>
+      <li>In the file manager, select <span class="demo-ui">Upload/Create</span>. The menu lists <span class="demo-ui">Upload file</span>, <span class="demo-ui">Dropbox</span> and <span class="demo-ui">Create folder</span>.</li>
+      <li>Select <span class="demo-ui">Dropbox</span> to open the Dropbox chooser, then select one or more files from a Dropbox account. The chosen files are copied into the {cloudfilemanager} library.</li>
+      <li>Select the name of an imported file, or of a file already in the library, to insert it into the kit. Images are inserted as images and other files as links.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>tinydrive_dropbox_app_key</code> connects {cloudfilemanager} to a Dropbox app and adds <strong>Dropbox</strong> to the <strong>Upload/Create</strong> menu.</li>
+      <li>The <code>insertfile</code> toolbar button opens the file manager.</li>
+      <li><code>tinydrive_token_provider</code> supplies the JSON Web Token that authorizes each request. In this demo it returns a fixed token and the file manager opens a sample library instead of a real {cloudfilemanager} account.</li>
+      <li>The <code>editimage</code> plugin adds <strong>Rotate</strong>, <strong>Flip</strong>, <strong>Edit image</strong> and <strong>Image options</strong> buttons to the toolbar that appears when an image is selected.</li>
+    </ul>
+  </details>
+</div>
+++++

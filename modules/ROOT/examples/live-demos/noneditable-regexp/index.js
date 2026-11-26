@@ -1,10 +1,16 @@
 tinymce.init({
   selector: 'textarea#noneditable-regexp',
-  height: 500,
-  content_style: `
-  body { font-family:Helvetica,Arial,sans-serif; font-size:16px }
-  .green { border: 0.1rem solid green; border-radius: 0.8rem; padding: 0.2rem; }
-  .red * { border: 0.1rem solid red; border-radius: 0.8rem; padding: 0.2rem; }
-  `,
-  noneditable_regexp: /apikey|\d{3}-\d{3}-\d{3}/g,
+  height: 680,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
+  content_style: '.mceNonEditable { background-color: #f9f9fb; outline: 1px dashed #335dff; border-radius: 4px; }',
+  noneditable_regexp: /apikey|\d{3}-\d{3}-\d{3}/g
 });

@@ -1,0 +1,32 @@
+// "Try it" guide card for the text-color live demo. It is included directly above
+// liveDemo::text-color[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Text and background color">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Text and background color</span>
+    <span class="demo-guide__tier">Core feature</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This cosmetics ingredient sheet highlights fragrance allergens in yellow and colors key ingredients blue. Two marks are missing: the third allergen, <strong>Citronellol</strong>, and the third key ingredient, <strong>Ceramide NP</strong>.</p>
+    <ol class="demo-guide__steps">
+      <li>Select <strong>Citronellol</strong> in the ingredient list and select the main part of the <span class="demo-ui">Background color</span> button. Before any other color is chosen, it applies <strong>Allergen yellow</strong>.</li>
+      <li>Select <strong>Ceramide NP</strong>, open <span class="demo-ui">Text color menu</span> (the arrow beside the text color button) and choose <span class="demo-ui">Key ingredient blue</span>. Hover a swatch to see its name.</li>
+      <li>Select a <strong>Repeat required</strong> result and choose <span class="demo-ui">Remove color</span> from the same menu.</li>
+      <li>Choose <span class="demo-ui">Custom color</span>, pick a color in the <span class="demo-ui">Color Picker</span> dialog and select <span class="demo-ui">Save</span>. The color is added to that grid after the palette colors.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>color_map_foreground</code> replaces the text color grid with six named colors, including <strong>Key ingredient blue</strong> and <strong>Warning red</strong>.</li>
+      <li><code>color_map_background</code> gives the background color grid its own four highlight colors.</li>
+      <li><code>color_cols_foreground: 3</code> and <code>color_cols_background: 2</code> lay out the grids in three and two columns.</li>
+      <li><code>color_default_foreground: '#335DFF'</code> and <code>color_default_background: '#FFF3B0'</code> set the colors that the main part of each button applies before a color is chosen.</li>
+    </ul>
+  </details>
+</div>
+++++

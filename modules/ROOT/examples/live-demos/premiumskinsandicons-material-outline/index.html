@@ -6,11 +6,11 @@
   <div class="mdc-layout-grid__inner">
     <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6" data-mdc-auto-init="MDCTextField">
       <div class="mdc-text-field mdc-text-field--outlined" style="width: 100%">
-        <input type="text" id="tf-outlined-registered" class="mdc-text-field__input">
+        <input type="text" id="tf-outlined-title" class="mdc-text-field__input" value="New overtime salary threshold">
         <div class="mdc-notched-outline">
           <div class="mdc-notched-outline__leading"></div>
           <div class="mdc-notched-outline__notch">
-            <label for="tf-outlined-registered" class="mdc-floating-label">Registered by</label>
+            <label for="tf-outlined-title" class="mdc-floating-label">Alert title</label>
           </div>
           <div class="mdc-notched-outline__trailing"></div>
         </div>
@@ -19,11 +19,11 @@
 
     <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6" data-mdc-auto-init="MDCTextField">
       <div class="mdc-text-field mdc-text-field--outlined" style="width: 100%">
-        <input type="text" id="tf-outlined-date" class="mdc-text-field__input">
+        <input type="text" id="tf-outlined-area" class="mdc-text-field__input" value="Employment and labor">
         <div class="mdc-notched-outline">
           <div class="mdc-notched-outline__leading"></div>
           <div class="mdc-notched-outline__notch">
-            <label for="tf-outlined-date" class="mdc-floating-label">Date</label>
+            <label for="tf-outlined-area" class="mdc-floating-label">Practice area</label>
           </div>
           <div class="mdc-notched-outline__trailing"></div>
         </div>
@@ -31,7 +31,33 @@
     </div>
 
     <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
-      <textarea id="premiumskinsandicons-material-outline"></textarea>
+      <textarea id="premiumskinsandicons-material-outline">
+        <h1>Client alert: new overtime salary threshold takes effect January 1</h1>
+        <p><em>Prepared by the Employment and Labor group, Carver Bell LLP, December 2</em></p>
+        <p>The state legislature has raised the minimum salary that an employee must earn to be treated as exempt from overtime. Employers have until January 1 to review salaried roles and adjust pay or classification.</p>
+        <h2>What changes</h2>
+        <table style="border-collapse: collapse; width: 100%;" border="1">
+          <colgroup><col style="width: 38.6%;"><col style="width: 32.9%;"><col style="width: 28.5%;"></colgroup>
+          <thead>
+            <tr><th>Employer size</th><th>Current threshold</th><th>From January 1</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>26 or more employees</td><td>$54,600 a year</td><td>$58,240 a year</td></tr>
+            <tr><td>25 or fewer employees</td><td>$52,000 a year</td><td>$56,160 a year</td></tr>
+          </tbody>
+        </table>
+        <h2>Recommended steps</h2>
+        <ol>
+          <li>List every salaried employee treated as exempt, with current annual pay.</li>
+          <li>Flag anyone paid below the new threshold for their employer size.</li>
+          <li>Decide, role by role, whether to raise the salary or reclassify the role as hourly.</li>
+          <li>Update offer letters, payroll settings and timekeeping before the first pay period in January.</li>
+        </ol>
+        <h2>Penalties</h2>
+        <p>Employers who misclassify employees can owe back overtime for up to three years, plus an equal amount in damages and the employee's attorney fees.</p>
+        <p>For advice on a specific role, contact Renee Carver at (555) 010-0119.</p>
+        <p><em>This alert is general information and is not legal advice.</em></p>
+      </textarea>
     </div>
 
     <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
@@ -45,13 +71,13 @@
             <div class="mdc-checkbox__mixedmark"></div>
           </div>
         </div>
-        <label for="checkbox-1">I agree to the <a href="#">Terms and conditions</a></label>
+        <label for="checkbox-1">Send to the client mailing list</label>
       </div>
     </div>
 
     <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
       <div style="text-align: right;">
-        <button class="foo-button mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple">Submit Claim</button>
+        <button class="foo-button mdc-button mdc-button--raised" data-mdc-auto-init="MDCRipple">Send alert</button>
       </div>
     </div>
   </div>

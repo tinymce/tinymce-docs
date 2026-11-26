@@ -1,0 +1,33 @@
+// "Try it" guide card for the editor-dfree live demo. It is included directly above
+// liveDemo::editor-dfree[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Distraction-free editor">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Distraction-free editor</span>
+    <span class="demo-guide__tier">Editor setup</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This cycling club newsletter has no menu bar or toolbar. Use the quick toolbars and the context menu instead: add a Wednesday night ride (Wednesday, 6 PM, 12 miles) to the ride schedule.</p>
+    <ol class="demo-guide__steps">
+      <li>Right-click a cell in the <strong>Winter ride schedule</strong> table and choose <span class="demo-ui">Row</span> &gt; <span class="demo-ui">Insert row after</span>. Type the new ride.</li>
+      <li>Select a word in the body. A quick toolbar appears with <span class="demo-ui">Bold</span>, <span class="demo-ui">Italic</span>, <span class="demo-ui">Underline</span>, a block format list, <span class="demo-ui">Blockquote</span>, and <span class="demo-ui">Link</span>.</li>
+      <li>Press <kbd>Enter</kbd> at the end of the last paragraph. On the empty line, a quick toolbar offers <span class="demo-ui">Insert table</span>, <span class="demo-ui">Insert/edit image</span>, <span class="demo-ui">Insert/edit media</span>, and <span class="demo-ui">Insert/edit code sample</span>.</li>
+      <li>Select a word in the title. Its quick toolbar has only <span class="demo-ui">Italic</span> and <span class="demo-ui">Underline</span>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>inline: true</code>, <code>menubar: false</code>, and <code>toolbar: false</code> remove the editor interface around the content.</li>
+      <li><code>quickbars_selection_toolbar</code> sets the buttons shown when text is selected, different for the title and the body.</li>
+      <li><code>quickbars_insert_toolbar</code> sets the buttons shown on an empty line.</li>
+      <li><code>contextmenu</code> sets the right-click menu items, including the table row and column items.</li>
+      <li><code>powerpaste_word_import: 'clean'</code> and <code>powerpaste_html_import: 'clean'</code> strip formatting from pasted content.</li>
+    </ul>
+  </details>
+</div>
+++++

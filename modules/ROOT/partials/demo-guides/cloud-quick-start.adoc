@@ -1,0 +1,31 @@
+// "Try it" guide card for the cloud-quick-start live demo. It is included directly above
+// liveDemo::cloud-quick-start[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--core" role="note" aria-label="Try it: Cloud quick start">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Cloud quick start</span>
+    <span class="demo-guide__tier">Editor setup</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This local news post runs on the quick start configuration above. Paddleboards are now available at $20 an hour or $50 for a half day: add them to the price table, then check the post in preview.</p>
+    <ol class="demo-guide__steps">
+      <li>Place the insertion point in the <strong>Double kayak</strong> row and open <span class="demo-ui">Table</span> &gt; <span class="demo-ui">Row</span> &gt; <span class="demo-ui">Insert row after</span>.</li>
+      <li>Type <code>Paddleboard</code>, <code>$20</code>, and <code>$50</code> in the new row. The table now lists four boats.</li>
+      <li>Open <span class="demo-ui">View</span> &gt; <span class="demo-ui">Preview</span> to see the post without the editor interface.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>plugins</code> adds <code>codesample</code> and <code>emoticons</code> to the most common plugins.</li>
+      <li><code>menubar: 'file edit view insert format tools table help'</code> lists the default menus in their default order.</li>
+      <li><code>toolbar</code> adds font family and font size lists, and buttons for links, images, media, tables, special characters, emojis, code samples, source code, preview, and full screen.</li>
+      <li><code>height: 500</code> sets the editor height.</li>
+    </ul>
+  </details>
+</div>
+++++

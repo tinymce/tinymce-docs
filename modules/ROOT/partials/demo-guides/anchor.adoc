@@ -1,0 +1,30 @@
+// "Try it" guide card for the anchor live demo. It is included directly above
+// liveDemo::anchor[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--opensource" role="note" aria-label="Try it: Anchor">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Anchor</span>
+    <span class="demo-guide__tier">Open source plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This hotel guest guide links to 5 sections from its contents list, but only 4 of them have an anchor. The Parking links go nowhere. Add the missing anchor.</p>
+    <ol class="demo-guide__steps">
+      <li>Select the <strong>Dining</strong> link in the contents list, then select <span class="demo-ui">Open link</span> in the toolbar that appears. The editor scrolls to the Dining section.</li>
+      <li>Select the anchor icon at the start of the <strong>Dining</strong> heading, then select <span class="demo-ui">Anchor</span> in the main toolbar to see its ID, <code>dining</code>.</li>
+      <li>Select the word <strong>Parking</strong> in the last heading, select <span class="demo-ui">Anchor</span>, enter <code>parking</code> and select <span class="demo-ui">Save</span>. The anchor wraps the selected text.</li>
+      <li>Select the <strong>Parking</strong> link in the contents list and select <span class="demo-ui">Open link</span> again. To link other text to the new anchor, select <span class="demo-ui">Insert/edit link</span> and choose <code>parking</code> from the <span class="demo-ui">Anchors</span> list.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>allow_html_in_named_anchor: true</code> wraps selected text in the new anchor, instead of inserting an empty anchor before it.</li>
+      <li><code>link_context_toolbar: true</code> shows the link toolbar with <strong>Open link</strong> when a link is selected, so the links can be tested in the editor.</li>
+    </ul>
+  </details>
+</div>
+++++

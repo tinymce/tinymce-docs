@@ -1,8 +1,14 @@
 tinymce.init({
   selector: 'textarea#custom-toolbar-group-button',
-  height: 500,
+  height: 640,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
   toolbar_mode: 'floating',
-  toolbar: 'alignment',
+  toolbar: 'alignment | undo redo | blocks | bold italic backcolor | ' +
+    'bullist numlist outdent indent | removeformat | help',
   setup: (editor) => {
 
     /* example, adding a group toolbar button */
@@ -13,5 +19,5 @@ tinymce.init({
     });
 
   },
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css']
 });

@@ -1,0 +1,31 @@
+// "Try it" guide card for the uploadcare-documents live demo. It is included directly above
+// liveDemo::uploadcare-documents[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Media Optimizer files and documents">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Media Optimizer: files and documents</span>
+    <span class="demo-guide__tier">Premium plugin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This HR policy library lists 6 policies, and 2 of them still show <strong>Awaiting upload</strong> in the <strong>Document</strong> column. Upload a file for each one.</p>
+    <ol class="demo-guide__steps">
+      <li>Select the words <strong>Awaiting upload</strong> in the <strong>Travel and expenses</strong> row.</li>
+      <li>Select <span class="demo-ui">Insert/edit link</span> in the toolbar and open the <span class="demo-ui">Upload</span> tab.</li>
+      <li>Drop a file on <span class="demo-ui">Drop a file here</span>, or select <span class="demo-ui">Browse for a file</span>. PDF, Word, Excel, PowerPoint, iWork, audio and archive files are accepted.</li>
+      <li>When the upload finishes, the dialog returns to the <span class="demo-ui">General</span> tab with the <span class="demo-ui">URL</span>, <span class="demo-ui">Text to display</span> and <span class="demo-ui">Title</span> filled in from the file. Select <span class="demo-ui">Save</span>, then repeat for the <strong>Information security</strong> row.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>documents_file_types</code> lists the 22 file types the <strong>Upload</strong> tab accepts, from Office documents and PDF to iWork, WAV, MP3, OGG and ZIP, TAR, 7Z and RAR archives. The list matches the plugin's default.</li>
+      <li><code>uploadcare_store_type: 'temporary'</code> stores files uploaded in this demo temporarily: Uploadcare removes them after 24 hours.</li>
+      <li><code>uploadcare_public_key</code> connects the editor to the Uploadcare project that stores and serves the media.</li>
+    </ul>
+  </details>
+</div>
+++++

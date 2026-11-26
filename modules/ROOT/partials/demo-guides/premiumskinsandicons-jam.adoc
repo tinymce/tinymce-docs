@@ -1,0 +1,30 @@
+// "Try it" guide card for the premiumskinsandicons-jam live demo. It is included directly above
+// liveDemo::premiumskinsandicons-jam[] so it sits outside the editor and editing the demo cannot change it.
+// Styles: attachments/demo-content/demo-guide.css
+[subs="attributes+"]
+++++
+<link rel="stylesheet" href="{attachmentsdir}/demo-content/demo-guide.css">
+<div class="demo-guide demo-guide--premium" role="note" aria-label="Try it: Jam skin and icons">
+  <div class="demo-guide__head">
+    <span class="demo-guide__eyebrow">Try it</span>
+    <span class="demo-guide__title">Jam skin and icons</span>
+    <span class="demo-guide__tier">Premium skin</span>
+  </div>
+  <div class="demo-guide__body">
+    <p class="demo-guide__task">This wine shop tasting sheet uses the Jam skin and the Jam icon pack. Highlight the two wines priced under $30 with a background color, then link <strong>Wine club</strong> to <code>https://www.example.com/</code>.</p>
+    <ol class="demo-guide__steps">
+      <li>Look at the toolbar and menu bar: compact buttons with the rounded Jam icons, and menu titles in a bold, rounded typeface.</li>
+      <li>Select the <strong>Alder Ridge Estate</strong> row, open the arrow next to <span class="demo-ui">Background color</span> and choose a light color. Repeat for <strong>Tillamook Bend</strong>.</li>
+      <li>Select <strong>Wine club</strong> in the last list item and select <span class="demo-ui">Insert/edit link</span>. The dialog buttons are pill-shaped, with a yellow <span class="demo-ui">Save</span> button.</li>
+      <li>Type <code>https://www.example.com/</code> in <span class="demo-ui">URL</span> and select <span class="demo-ui">Save</span>.</li>
+    </ol>
+  </div>
+  <details class="demo-guide__config">
+    <summary class="demo-guide__label">Configured in this demo</summary>
+    <ul class="demo-guide__options">
+      <li><code>skin: 'jam'</code> gives the editor compact toolbar buttons, a bold rounded typeface, pill-shaped dialog buttons and yellow highlights.</li>
+      <li><code>icons: 'jam'</code> replaces the toolbar and menu icons with the Jam icon pack.</li>
+    </ul>
+  </details>
+</div>
+++++

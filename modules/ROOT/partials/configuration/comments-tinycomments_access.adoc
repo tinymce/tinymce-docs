@@ -29,6 +29,8 @@ tinymce.init({
 });
 ----
 
+include::partial$demo-guides/comments-ui-mode.adoc[]
+
 liveDemo::comments-ui-mode[]
 
 === Comments with `readonly` set to `true`
@@ -51,5 +53,7 @@ tinymce.init({
   readonly: true, // set the editor to read-only mode
 });
 ----
+
+include::partial$demo-guides/comments-readonly-mode.adoc[]
 
 liveDemo::comments-readonly-mode[]

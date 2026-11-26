@@ -1,7 +1,16 @@
 tinymce.init({
   selector: 'textarea#url-dialog',
-  toolbar: 'urldialog',
-  height: 300,
+  height: 680,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount'
+  ],
+  toolbar: 'urldialog | undo redo | blocks | ' +
+    'bold italic backcolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'table | removeformat | help',
+  content_css: ['default', '{{attachmentsdir}}/demo-content/content.css'],
   setup: (editor) => {
     editor.ui.registry.addButton('urldialog', {
       icon: 'code-sample',
@@ -12,6 +21,5 @@ tinymce.init({
         width: 640
       })
     })
-  },
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  }
 });

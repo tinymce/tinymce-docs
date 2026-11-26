@@ -1,0 +1,32 @@
+%%{init: {"theme": "base", "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif", "themeVariables": {"fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif", "fontSize": "14px", "actorBkg": "#17224f", "actorBorder": "#17224f", "actorTextColor": "#ffffff", "actorLineColor": "#c6ccdc", "signalColor": "#17224f", "signalTextColor": "#17224f", "noteBkgColor": "#ffffff", "noteBorderColor": "#a0aac5", "noteTextColor": "#17224f", "sequenceNumberColor": "#ffffff"}, "sequence": {"useMaxWidth": false, "mirrorActors": false, "actorMargin": 16, "width": 110, "height": 40, "boxMargin": 4, "messageMargin": 16, "noteMargin": 6, "messageFontSize": 14, "noteFontSize": 13, "wrap": false}}}%%
+sequenceDiagram
+    autonumber
+    participant Dev as Developer
+    participant Agent as Agent + skill
+    participant Proj as Project
+    participant Docs as Docs
+    participant Check as Checker
+    participant Web as Browser
+    Dev->>Agent: "Add comments"
+    rect rgb(249, 249, 251)
+        Note over Agent,Web: Read before writing
+        Agent->>Proj: Read setup
+        Proj-->>Agent: 8.10, Cloud, React
+        Agent->>Docs: Comments page, version 8
+        Docs-->>Agent: Needs tinycomments_mode
+        Agent->>Check: Check current configuration
+        Check-->>Agent: Baseline: no errors
+    end
+    Agent-->>Dev: Plan: embedded mode
+    rect rgb(238, 241, 255)
+        Note over Agent,Web: Change the minimum: plugin, buttons, tinycomments_mode
+        Agent->>Proj: Add plugin
+    end
+    rect rgb(232, 246, 233)
+        Note over Agent,Web: Verify
+        Agent->>Check: Check changed configuration
+        Check-->>Agent: No new findings
+        Agent->>Web: Run the health check
+        Web-->>Agent: Editable, plugin loaded
+    end
+    Agent-->>Dev: Report and links

@@ -1,0 +1,310 @@
+= Using the {productname} agent skill
+:navtitle: {productname} agent skill
+:description: Install and update the {productname} agent skill, which teaches AI coding agents to install, configure, upgrade, and troubleshoot {productname}, using the current documentation and built-in verification checks.
+:description_short: Install and update the {productname} agent skill for AI coding agents.
+:keywords: ai, agent skill, agent skills, skills, tinymce/skills, tinymce-setup, tinymce-ai-skills, coding agent, claude code, cursor, codex, copilot, opencode, windsurf, gemini, cline, install, update, upgrade, migrate, troubleshoot, configuration checker, health check, license key, premium plugins
+
+The {productname} agent skill stays in a project and handles its editor for as long as the project uses {productname}: self-hosted and {cloudname} installations, new features in an editor that already works, upgrades from {productname} 5, 6, or 7, switching from another editor, and fixing an editor that fails without an error. Before reporting a change as finished, the agent checks it with the scripts that ship with the skill.
+
+For a first-time {cloudname} setup, start with the xref:cloud-quick-start-ai.adoc[{cloudname} AI quick start guide], which uses the `+tinymce-setup+` skill, and install this skill alongside it. See xref:#choose-a-skill[The tinymce-setup skill and the {productname} agent skill].
+
+An agent skill is a folder of instructions and scripts that an AI coding agent reads when a task calls for it. Once the skill is installed, no command is needed to use it. The agent loads it whenever a request is about {productname}, and looks up version-specific details in this documentation.
+
+The skill contains:
+
+* *Instructions* (`+SKILL.md+`): the workflow the agent follows, and the rules that rarely change, such as the license key requirement in {productname} {productmajorversion}.
+* *Reference files*, read only when a task needs them: licensing, premium plugins and the options each one requires, framework integrations, upgrading, switching from another editor, deployment, and a catalog of failures that produce no error.
+* *Scripts*: a configuration checker and a runtime health check, which the agent runs to verify its work.
+
+The skill is published in the https://github.com/tinymce/skills[`+tinymce/skills+`] repository. It uses the open https://agentskills.io/home[Agent Skills] format, so it works in Claude Code, Cursor, Codex, OpenCode, GitHub Copilot, Windsurf, Gemini, Cline, AMP, Zed, and other agents that support the format.
+
+[[install-the-skill]]
+== Install the skill
+
+The skill is installed into each project, alongside the project's code. Choose one of the following methods.
+
+[[install-with-one-command]]
+=== Install with one command
+
+This method requires Node.js. From the project directory, run:
+
+[source,bash]
+----
+npx skills add tinymce/skills
+----
+
+The installer detects the agents present in the project, installs the skill for each of them, and lists the directory it installed into, for example `+.claude/skills/tinymce/+` for Claude Code.
+
+[[claude-code-plugin-marketplace]]
+=== Install from the Claude Code plugin marketplace
+
+In Claude Code, run:
+
+[source,text]
+----
+/plugin marketplace add tinymce/skills
+/plugin install tinymce@tinymce
+----
+
+[[manual-installation]]
+=== Install manually
+
+Copy the `+skills/tinymce/+` directory from the https://github.com/tinymce/skills[`+tinymce/skills+`] repository into the agent's skills directory, for example `+.claude/skills/tinymce/+` for Claude Code. For other agents, see the agent's own documentation for the location of its skills directory.
+
+The skill installs inside the project, so linters that check every file also check its scripts. Add the skill directory, for example `+.claude/skills/+`, to the linter's ignore list.
+
+TIP: The skill does not require a documentation MCP server. When one is connected, the agent also uses it to search the documentation. See xref:ai-coding-agents.adoc#connect-the-documentation-mcp-server[Connect the {productname} documentation MCP server].
+
+[[the-skill-at-work]]
+== The skill at work
+
+Ask for the result required, in plain language. The two examples below show what the agent does with a request in a project that already has {productname}. Every request follows the same pattern: the agent reads the project before changing it, says what it plans to do, makes the change, and verifies the result.
+
+[[example-add-comments]]
+=== Example: add comments to an existing editor
+
+A React application loads {productname} {productmajorversion} from the {cloudname} through the `+@tinymce/tinymce-react+` integration, with a customized toolbar. The developer asks:
+
+[quote]
+____
+Add comments to the editor in our React app.
+____
+
+image::tinymce-agent-skill/example-add-comments.svg[alt="Sequence diagram between the developer, the agent with the skill, the project, the documentation, the configuration checker, and the browser. The developer asks to add comments. Read before writing: the agent reads the editor setup and finds TinyMCE 8.10 on Tiny Cloud with React, reads the Comments page for version 8 and learns that tinycomments_mode is required, and runs the checker on the current configuration for a baseline with no errors. The agent tells the developer its plan to use embedded mode. Change the minimum: it adds the plugin, its buttons, and tinycomments_mode. Verify: the checker reports no new findings, and the health check reports the editor editable with the plugin loaded. The agent reports back with documentation links."]
+
+The diagram shows three behaviors that apply to every change to an existing editor:
+
+* *The agent reads before it writes.* The installed version decides which documentation pages apply, and the existing configuration often carries deliberate decisions, such as the toolbar arrangement, `+content_css+`, or content filtering rules. The agent keeps those, inserts the new buttons into the toolbar group they belong to, and does not regenerate a working configuration.
+* *The baseline check comes first.* Running the configuration checker before the change separates problems that were already there from problems the change introduced.
+* *A plugin, its toolbar buttons, and its required options are added together.* A premium plugin added without its required option, such as `+tinycomments_mode+` for Comments, is the most common reason a new feature does nothing.
+
+If the same project were self-hosted with `+license_key: 'gpl'+`, the agent would first explain that Comments is a xref:plugins.adoc#premium-plugins[premium plugin] that needs a commercial license or a trial, before changing anything.
+
+[[example-upgrade]]
+=== Example: upgrade from {productname} 6
+
+A project runs {productname} 6 and the developer asks:
+
+[quote]
+____
+Upgrade this project from {productname} 6 to {productname} {productmajorversion}.
+____
+
+image::tinymce-agent-skill/example-upgrade.svg[alt="Flowchart of an upgrade in three stages. Before changing anything: step 1 records the baseline, which is the version, every editor, its plugins and toolbar, and its content; step 2 confirms the target version and the license decision with the developer, who decides. Plan the upgrade: step 3 runs the configuration checker in upgrade mode to list every change; step 4 reads the migration guide and the release notes; step 5 builds a checklist of each change with its file and line. Change and verify: step 6 applies the packages, framework integration, license, and each change; step 7 verifies the build and configuration checker and compares the result with the baseline, returning to step 6 if a feature was lost or an error remains; when nothing was lost, step 8 reports what changed and what is left."]
+
+* *The baseline is the definition of done.* Before changing anything, the agent records the plugins, toolbar buttons, and content of every editor, in a browser where one is available. The upgrade is complete when the upgraded editors match that baseline.
+* *The license decision belongs to the developer.* {productname} {productmajorversion} requires a license key, and the agent raises this before planning the work. License keys from {productname} 7 do not work on {productname} {productmajorversion}.
+* *The worklist comes from the project's own files.* In upgrade mode, the configuration checker lists each removed or renamed plugin, option, toolbar button, menu item, and API between the installed version and {productname} {productmajorversion}, with the file, the line, and the release that made the change. The agent then reads the xref:migration-guides.adoc[migration guide] and the release notes for the versions in between.
+* *Verification compares, not counts.* The agent checks the result plugin by plugin and button by button against the baseline, loads the saved content to check that nothing was lost, and checks that the project's custom editor styles still apply. The report names any change to the saved HTML that other code might depend on.
+
+[[other-requests]]
+=== Other requests
+
+[cols="1,1",options="header"]
+|===
+|Task |Example request
+
+|Add {productname} to a new project, self-hosted
+|"Add {productname} to my React app, self-hosted via npm."
+
+|Set up on-premises premium services
+|"Our self-hosted build's spell checker says the service URL is not set."
+
+|Move between the {cloudname} and self-hosted
+|"Move us from {cloudname} to self-hosted."
+
+|Switch from another rich text editor
+|"Replace Quill with {productname}."
+
+|Troubleshoot an editor that is read-only, blank, or missing features
+|"The editor loads, but nothing can be typed into it."
+|===
+
+In a new project, the agent first asks what content the editor is for and who uses it, any constraints such as self-hosting or a Content Security Policy, and whether a Tiny account or key already exists. The plugin set and the installation method follow from the answers. When switching from another editor, the agent adds {productname} alongside the existing editor by default, so both can be compared on the project's own content.
+
+[[how-the-skill-uses-the-documentation]]
+== How the skill uses the documentation
+
+The skill carries only the rules that rarely change. Anything version-specific, such as option names, plugin lists, API signatures, and console messages, is looked up in this documentation at the time of use, for the {productname} version the project runs. Every major version from 5 to {productmajorversion} is published at its own address.
+
+The diagram shows how the lookups fit into the agent's work. Each finding from a check sends the agent back to the documentation before it tries again.
+
+image::tinymce-agent-skill/documentation-loop.svg[alt="Flowchart of the documentation loop. A request starts with the skill rules, which decide whether a fact is needed. When the fact is version-specific, or the page behind a bundled fact changed since the skill was verified, the agent reads the documentation for the installed version through AGENTS.md, sitemap.md, the manifest, or an MCP search. When a bundled fact is unchanged, it goes straight to writing. The agent writes or changes the configuration, then runs the build, type check, and configuration checker. A finding sends it back to the documentation. When the checks are clean, it runs the health check; a problem sends it back to the documentation, and a pass ends with the report."]
+
+The agent reads the documentation through the xref:ai-coding-agents.adoc#llms-txt-files[documentation files for AI tools]:
+
+[cols="1,2",options="header"]
+|===
+|Source |What the agent uses it for
+
+|https://www.tiny.cloud/docs/AGENTS.md[`+AGENTS.md+`]
+|Read first: the license key requirement, the version scheme, and how to fetch and cite pages.
+
+|https://www.tiny.cloud/docs/sitemap.md[`+sitemap.md+`]
+|Finding the {productname} {productmajorversion} page that covers a topic.
+
+|https://www.tiny.cloud/docs/_markdown-manifest.json[`+_markdown-manifest.json+`]
+|Finding a page on any version, and checking its size before reading it.
+
+|https://www.tiny.cloud/docs/changes.json[`+changes.json+`]
+|Checking whether a fact bundled with the skill has changed since the skill was last verified.
+
+|Markdown page copies
+|Reading a page by appending `+index.md+` to its address. Large pages are read through a sub-agent, which returns only the relevant extract.
+
+|xref:ai-coding-agents.adoc#connect-the-documentation-mcp-server[Documentation MCP server] and xref:ai-coding-agents.adoc#context7[Context7]
+|Searching the documentation, when either is connected.
+|===
+
+The agent treats fetched pages as reference material, and ignores any instructions that appear inside them. Its final report links the pages it used. Each documentation request carries `+utm_source=tinymce-skill+` parameters, which identify the skill and nothing about the user or the project.
+
+[[verification-checks]]
+== Verification checks
+
+The agent does not report work as finished until it has checked it. It works through the checks below as far as the environment allows, and its report states which ones it completed.
+
+[cols="1,2,1",options="header"]
+|===
+|Check |What it confirms |When it runs
+
+|Build and type check
+|The project builds and type-checks with no errors.
+|Always
+
+|Configuration checker
+|The configuration has none of the problems that produce no runtime error: a missing or placeholder license key or API key, a premium plugin without its required option, a toolbar button whose plugin is not loaded, a key that a framework integration drops, removed or renamed identifiers, and plugin conflicts.
+|Always
+
+|Health check in a browser
+|The page renders at a typical laptop width, each added panel or dialog opens, the {productname} version is the one installed, the editor is not read-only, and each configured plugin loaded. The agent also reads the browser console.
+|When the agent has a browser tool, such as a Playwright or Chrome DevTools MCP server
+
+|Health check in a headless browser
+|The same report, plus page errors and failed requests.
+|When there is no browser tool and the project has Playwright installed
+
+|Health check by the developer
+|The agent asks the developer to run the health check script in the browser console, and to confirm that the editor accepts typing.
+|When the agent cannot run the application
+|===
+
+The configuration checker needs Node.js 14 or later. It reads only the files it is given and the project's {productname} version, writes nothing, and makes no network requests. The health check reads the editor's state and changes nothing, and the headless version uses the project's own Playwright installation and installs nothing. For what each script reads and writes, see https://github.com/tinymce/skills#for-organizations[For organizations] in the `+tinymce/skills+` README.
+
+For example, a configuration that loads Comments with no license key, no `+tinycomments_mode+`, and a `+table+` button without its plugin produces:
+
+[source,text]
+----
+✗ ERROR missing-license-key  editor.js:1
+   No license key. A self-hosted TinyMCE 8 editor without a valid `license_key` is disabled (read-only): it renders and refuses typing.
+   → Set `license_key: "gpl"` for open source or a `T8LK:` key for commercial. If this editor loads from Tiny Cloud through a script tag in another file, pass that file too so the check can see it.
+   See references/failure-modes.md → license-key-missing
+
+✗ ERROR missing-required-option  editor.js:3
+   `tinycomments` is loaded but `tinycomments_mode` is not set — it will fail silently.
+   → Add `tinycomments_mode`. See references/premium-plugins.md.
+   See references/failure-modes.md → premium-required-option-missing
+
+✗ ERROR button-without-plugin  editor.js:4
+   Toolbar button `table` renders nothing — no plugin providing it is loaded.
+   → Add `table` to `plugins`.
+   See references/failure-modes.md → toolbar-button-without-plugin
+
+3 error(s), 0 warning(s) across 1 file(s).
+----
+
+Each finding names an entry in the skill's catalog of failures, which gives the cause and a corrected configuration. The agent fixes every error before moving on. The one exception is a key the developer does not have yet: the agent marks where the key goes and reports it as missing, and does not insert a placeholder key.
+
+The configuration checker and both health checks can also be run by hand, without an agent. See https://github.com/tinymce/skills#checking-a-configuration[Checking a configuration] in the `+tinymce/skills+` README.
+
+[[choose-a-skill]]
+== The tinymce-setup skill and the {productname} agent skill
+
+Tiny publishes two agent skills for {productname}, designed to be installed together.
+
+[cols="1,2,2",options="header"]
+|===
+| |`+tinymce-setup+` |{productname} agent skill
+
+|Repository
+|https://github.com/tinymce/tinymce-ai-skills[`+tinymce/tinymce-ai-skills+`]
+|https://github.com/tinymce/skills[`+tinymce/skills+`]
+
+|Leads
+|A first-time {cloudname} setup in a project with no {productname} yet: detecting the environment, recommending plugins for the use case, validating the API key, and writing the integration code.
+|Everything else: self-hosted installations, changes to an existing editor, on-premises premium services, upgrades, switching from another editor, deployment, and troubleshooting.
+
+|Guide
+|xref:cloud-quick-start-ai.adoc[{cloudname} AI quick start guide]
+|This page
+|===
+
+To install both, run from the project directory:
+
+[source,bash]
+----
+npx skills add tinymce/tinymce-ai-skills
+npx skills add tinymce/skills
+----
+
+With both installed, `+tinymce-setup+` leads a first-time {cloudname} setup, and the {productname} agent skill takes over for all later work. It reuses what the setup established, such as the framework, the installation method, where the key is read from, the plugins, and the toolbar, and confirms it instead of asking again. With only the {productname} agent skill installed, it handles the first-time {cloudname} setup itself.
+
+[[update-the-skill]]
+== Update the skill
+
+An installed skill is a copy and does not update itself. A project keeps the version it was installed with until the skill is updated.
+
+To find the installed version, open the installed `+SKILL.md+` file. In its front matter, `+version+` is the skill release, and `+verified_against+` is the {productname} release that the skill's facts were last checked against. When the project runs a {productname} release well ahead of `+verified_against+`, the agent says so once and explains how to update the skill.
+
+[[update-an-npx-install]]
+=== Installed with npx skills add
+
+From the project directory, run:
+
+[source,bash]
+----
+npx skills update
+----
+
+An install pinned to a release tag stays on that tag. To move a pinned install to the latest version, run the install command again without a tag. This overwrites the installed copy and removes the pin:
+
+[source,bash]
+----
+npx skills add tinymce/skills
+----
+
+[[update-a-marketplace-install]]
+=== Installed from the Claude Code plugin marketplace
+
+Run:
+
+[source,bash]
+----
+claude plugin marketplace update tinymce
+claude plugin update tinymce@tinymce
+----
+
+Marketplace installs update by version number, so they receive a change only after it is released in a new version.
+
+[[update-a-manual-install]]
+=== Copied manually
+
+Copy the `+skills/tinymce/+` directory from the https://github.com/tinymce/skills[`+tinymce/skills+`] repository again, replacing the installed copy.
+
+[[pin-a-version]]
+=== Pin a version across a team
+
+To keep the same behavior across a team, install the same release tag in every project, for example:
+
+[source,bash]
+----
+npx skills add tinymce/skills#v0.8.0
+----
+
+Releases and their notes are listed on the https://github.com/tinymce/skills/releases[`+tinymce/skills+` releases page].
+
+[[feedback]]
+== Feedback
+
+Report guidance in the skill that is wrong, outdated, or missing with the https://github.com/tinymce/skills/issues/new?template=skill-feedback.yml[skill feedback issue template]. Issues are public, so leave out keys, tokens, and anything that identifies a company or its users.
+
+Report bugs in {productname} itself in the https://github.com/tinymce/tinymce/issues[`+tinymce/tinymce+` repository], and documentation errors in the https://github.com/tinymce/tinymce-docs/issues[`+tinymce/tinymce-docs+` repository].

@@ -1,0 +1,26 @@
+%%{init: {"theme": "base", "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif", "themeCSS": ".nodeLabel, .edgeLabel { font-family: Inter, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif; }", "themeVariables": {"fontFamily": "Inter, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif", "fontSize": "14px", "primaryColor": "#ffffff", "primaryBorderColor": "#335dff", "primaryTextColor": "#17224f", "lineColor": "#747b94", "edgeLabelBackground": "#ffffff"}, "flowchart": {"useMaxWidth": false, "curve": "basis", "nodeSpacing": 28, "rankSpacing": 26, "padding": 8, "wrappingWidth": 200}}}%%
+flowchart LR
+    Rules(["<b>Request</b>"]):::ask
+    Need{{"Skill rules:<br>fact needed?"}}:::decide
+    Docs[("<b>Read the docs</b><br>installed version:<br>AGENTS.md, sitemap.md,<br>manifest, MCP")]:::docs
+    Write["<b>Write or<br>change config</b>"]:::step
+    Check{{"Build, types,<br>checker"}}:::check
+    Run{{"Health<br>check"}}:::check
+    Done(["<b>Report</b>"]):::good
+    Rules --> Need
+    Need -->|"version-specific<br>or changed"| Docs
+    Need -->|"bundled,<br>unchanged"| Write
+    Docs --> Write --> Check
+    Check -->|"clean"| Run
+    Run -->|"pass"| Done
+    Check -->|"finding"| Docs
+    Run -->|"problem"| Docs
+    classDef ask fill:#17224f,stroke:#17224f,color:#ffffff
+    classDef decide fill:#eef1ff,stroke:#335dff,color:#17224f
+    classDef step fill:#ffffff,stroke:#335dff,color:#17224f,stroke-width:1.5px
+    classDef check fill:#fff4e5,stroke:#e18114,color:#17224f,stroke-width:1.5px
+    classDef good fill:#e8f6e9,stroke:#41af46,color:#17224f,stroke-width:1.5px
+    classDef docs fill:#eef1ff,stroke:#6686ff,color:#17224f
+    linkStyle 6 stroke:#41af46,stroke-width:2px
+    linkStyle 7 stroke:#e18114,stroke-width:2px
+    linkStyle 8 stroke:#e18114,stroke-width:2px

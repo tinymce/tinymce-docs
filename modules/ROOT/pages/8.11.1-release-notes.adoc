@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Screen readers announced URL fields in dialogs as invalid for relative URLs, anchors, URLs without a scheme or partial input. The `+urlinput+` component now uses `+type="text"+` with `+inputmode="url"+` instead of `+type="url"+`.
+// #TINYMCE-15099
+
+Previously, URL fields in dialogs, such as the *URL* field in the Link dialog, used the native `+<input type="url">+` element. The browser treated any value that was not an absolute URL, such as `+https://tiny.cloud+`, as invalid, so screen readers announced "invalid entry" for anchors, relative paths, URLs without a scheme, and partial input. Screen readers also announced valid values selected from the dropdown as invalid. The issue affected the Link, Image, Media, and Page Embed dialogs, and custom dialogs that use the xref:dialog-components.adoc#urlinput[`+urlinput+`] component.
+
+In {productname} {release-version}, the `+urlinput+` component renders a text input with the `+inputmode="url"+`, `+autocapitalize="none"+`, `+autocorrect="off"+`, and `+spellcheck="false"+` attributes. Only the editor's validator can now mark the field as invalid, so screen readers no longer announce valid values as invalid. On mobile devices, the field keeps the behavior of a native URL field, including the URL keyboard layout. Custom CSS or test selectors that target `+input[type="url"]+` no longer match these fields.
+
 
 [[security-fixes]]
 == Security fixes

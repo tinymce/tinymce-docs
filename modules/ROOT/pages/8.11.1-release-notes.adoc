@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Toggling underline or strikethrough on subscript or superscript text inside a `+code+` element left empty `+code+` elements behind, which added extra whitespace around the text.
+// #TINYMCE-15190
+
+Previously, when a user selected subscript or superscript text inside inline code formatting and toggled underline or strikethrough, {productname} split the `+<code>+` element around the selected text and left an empty `+<code>+` element behind each time. Because `+<code>+` elements have padding by default, each empty element added extra whitespace around the text while editing. Content retrieved from the editor did not include this extra whitespace.
+
+In {productname} {release-version}, {productname} removes the empty elements that remain after splitting formatted elements around the selection. Toggling underline or strikethrough on selected subscript or superscript text inside a `+<code>+` element no longer adds whitespace around the text.
+
 
 [[security-fixes]]
 == Security fixes
